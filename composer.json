@@ -17,6 +17,7 @@
         "zozlak/rdf-constants": "^1.1",
         "zozlak/rdf-helpers": "*",
         "zozlak/rdf-interface": "*",
+        "zozlak/quick-rdf": "*",
         "pietercolpaert/hardf": "*"
     },
     "suggest": {

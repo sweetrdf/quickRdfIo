@@ -32,7 +32,7 @@ use pietercolpaert\hardf\TriGParser as Parser;
 use rdfInterface\QuadIterator as iQuadIterator;
 use rdfInterface\Parser as iParser;
 use rdfInterface\Quad as iQuad;
-use quickRdfIo\DataFactory as DF;
+use quickRdf\DataFactory as DF;
 
 /**
  * Description of Parser
