@@ -46,17 +46,17 @@ class TurtleSerializer implements \rdfInterface\Serializer {
         $output = '';
         $stream = fopen('php://memory', 'r+');
         if ($stream === false) {
-            throw new RdfException('Failed to convert input to stream');
+            throw new RdfIoException('Failed to convert input to stream');
         }
         $this->serialiseStream($stream, $graph, $nmsp);
         $len = ftell($stream);
         if ($len === false) {
-            throw new RdfException('Failed to seek in output streem');
+            throw new RdfIoException('Failed to seek in output streem');
         }
         rewind($stream);
         $output = fread($stream, $len);
         if ($output === false) {
-            throw new RdfException('Failed to read from output streem');
+            throw new RdfIoException('Failed to read from output streem');
         }
         fclose($stream);
         return $output;

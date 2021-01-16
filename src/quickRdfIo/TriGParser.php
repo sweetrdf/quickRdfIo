@@ -100,7 +100,7 @@ class TriGParser implements iParser, iQuadIterator {
         $this->closeTmpStream();
         $tmp = fopen('php://memory', 'r+');
         if ($tmp === false) {
-            throw new RdfException('Failed to convert input to stream');
+            throw new RdfIoException('Failed to convert input to stream');
         }
         $this->tmpStream = $tmp;
         fwrite($this->tmpStream, $input);
@@ -110,7 +110,7 @@ class TriGParser implements iParser, iQuadIterator {
 
     public function parseStream($input): iQuadIterator {
         if (!is_resource($input)) {
-            throw new RdfException("Input has to be a resource");
+            throw new RdfIoException("Input has to be a resource");
         }
 
         $this->input       = $input;
@@ -170,7 +170,7 @@ class TriGParser implements iParser, iQuadIterator {
     public function rewind(): void {
         $ret = rewind($this->input);
         if ($ret !== true) {
-            throw new RdfException("Can't seek in the input stream");
+            throw new RdfIoException("Can't seek in the input stream");
         }
         $this->next();
     }
