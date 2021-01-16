@@ -16,7 +16,8 @@
         "php": ">=8.0",
         "zozlak/rdf-constants": "^1.1",
         "zozlak/rdf-helpers": "*",
-        "zozlak/rdf-interface": "*"
+        "zozlak/rdf-interface": "*",
+        "pietercolpaert/hardf": "*"
     },
     "suggest": {
         "zozlak/quick-rdf": "*"
