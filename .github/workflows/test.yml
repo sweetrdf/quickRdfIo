@@ -21,4 +21,17 @@ jobs:
         export COVERALLS_RUN_LOCALLY=1
         export COVERALLS_REPO_TOKEN=${{ secrets.coverallsToken }}
         php vendor/bin/php-coveralls -v
+  phpstan:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: composer
+      run: composer update
+    - uses: actions/cache@v2
+      with: 
+        path: vendor
+        key: ${{ runner.os }}-composer-${{ hashFiles('**/composer.lock') }}
+        restore-keys: ${{ runner.os }}-composer-
+    - name: phpstan
+      run: vendor/bin/phpstan analyse -l 8 src tests
 
