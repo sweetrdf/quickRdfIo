@@ -1,5 +1,10 @@
 # quickRdfIo
 
+[![Latest Stable Version](https://poser.pugx.org/zozlak/quick-rdf-io/v/stable)](https://packagist.org/packages/zozlak/quick-rdf-io)
+![Build status](https://github.com/zozlak/quickRdfIo/workflows/phpunit/badge.svg?branch=master)
+[![Coverage Status](https://coveralls.io/repos/github/zozlak/quickRdfIo/badge.svg?branch=master)](https://coveralls.io/github/zozlak/quickRdfIo?branch=master)
+[![License](https://poser.pugx.org/zozlak/quicki-rdf/license)](https://packagist.org/packages/zozlak/quick-rdf-io)
+
 Collection of parsers and serializers implementing the https://github.com/zozlak/rdfInterface interface.
 
 Originally developed for the [quickRdf](https://github.com/zozlak/quickRdf) library.
