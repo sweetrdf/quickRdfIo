@@ -27,6 +27,7 @@
 namespace quickRdfIo;
 
 use zozlak\RdfConstants as RDF;
+use quickRdf\RdfNamespace;
 
 /**
  * Description of TurtleSerializer

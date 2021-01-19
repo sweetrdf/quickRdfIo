@@ -26,7 +26,7 @@
 
 namespace quickRdfIo;
 
-use quickRdfIo\DataFactory as DF;
+use quickRdf\DataFactory as DF;
 
 /**
  * Description of TriGParserTest
@@ -50,7 +50,7 @@ class TriGParserTest extends \PHPUnit\Framework\TestCase
             foreach ($parser->parseStream($stream) as $i) {
                 $n++;
                 if ($N < 0 && $tmpl->equals($i)) {
-                    $N = (int) $i->getObject()->getValue();
+                    $N = (int) (string) $i->getObject()->getValue();
                 }
             }
             fclose($stream);
