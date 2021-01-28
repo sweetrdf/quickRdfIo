@@ -3,7 +3,7 @@
     "type": "library",
     "description": "Collection of parser and serializers for zozlak/quick-rdf (compatible with zozlak/rdfInterface)",
     "keywords": [],
-    "homepage": "https://github.com/zozlak/quickRdfIo",
+    "homepage": "https://github.com/sweetrdf/quickRdfIo",
     "license": "MIT",
     "authors": [
         {

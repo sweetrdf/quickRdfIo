@@ -40,7 +40,7 @@ class NQuadsSerializer implements \rdfInterface\Serializer
     {
     }
 
-    public function serialise(
+    public function serialize(
         \rdfInterface\QuadIterator $graph,
         ?\rdfInterface\RdfNamespace $nmsp = null
     ): string {
@@ -49,7 +49,7 @@ class NQuadsSerializer implements \rdfInterface\Serializer
         if ($stream === false) {
             throw new RdfIoException('Failed to convert input to stream');
         }
-        $this->serialiseStream($stream, $graph, $nmsp);
+        $this->serializeStream($stream, $graph, $nmsp);
         $len = ftell($stream);
         if ($len === false) {
             throw new RdfIoException('Failed to seek in output streem');
@@ -64,7 +64,7 @@ class NQuadsSerializer implements \rdfInterface\Serializer
         return $output;
     }
 
-    public function serialiseStream(
+    public function serializeStream(
         $output,
         \rdfInterface\QuadIterator $graph,
         ?\rdfInterface\RdfNamespace $nmsp = null
@@ -74,12 +74,12 @@ class NQuadsSerializer implements \rdfInterface\Serializer
         }
         foreach ($graph as $i) {
             /* @var $i \rdfInterface\Quad */
-            $subject   = NtriplesUtil::serialiseIri($i->getSubject());
+            $subject   = NtriplesUtil::serializeIri($i->getSubject());
             $predicate = '<' . NtriplesUtil::escapeIri($i->getPredicate()->getValue()) . '>';
-            $object    = NtriplesUtil::serialise($i->getObject());
+            $object    = NtriplesUtil::serialize($i->getObject());
             $graph     = $i->getGraphIri();
             if ($graph !== null) {
-                $graph = NtriplesUtil::serialiseIri($graph);
+                $graph = NtriplesUtil::serializeIri($graph);
             }
 
             fwrite($output, "$subject $predicate $object $graph .\n");

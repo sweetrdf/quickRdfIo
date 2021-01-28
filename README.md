@@ -34,7 +34,7 @@ $instream = fopen('pathToTurtleFile', 'r');
 $iterator = $parser->parseStream($stream);
 $serializer = new quickRdfIo\NQuadsSerializer();
 $outstream = fopen('pathToOutputTurtleFile', 'w');
-$serializer->serialiseStream($stream, $iterator);
+$serializer->serializeStream($stream, $iterator);
 fclose($outstream);
 fclose($instream);
 ```

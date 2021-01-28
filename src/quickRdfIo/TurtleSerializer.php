@@ -40,7 +40,7 @@ class TurtleSerializer implements \rdfInterface\Serializer {
         
     }
 
-    public function serialise(
+    public function serialize(
         \rdfInterface\QuadIterator $graph,
         ?\rdfInterface\RdfNamespace $nmsp = null
     ): string {
@@ -49,7 +49,7 @@ class TurtleSerializer implements \rdfInterface\Serializer {
         if ($stream === false) {
             throw new RdfIoException('Failed to convert input to stream');
         }
-        $this->serialiseStream($stream, $graph, $nmsp);
+        $this->serializeStream($stream, $graph, $nmsp);
         $len = ftell($stream);
         if ($len === false) {
             throw new RdfIoException('Failed to seek in output streem');
@@ -63,7 +63,7 @@ class TurtleSerializer implements \rdfInterface\Serializer {
         return $output;
     }
 
-    public function serialiseStream(
+    public function serializeStream(
         $output, \rdfInterface\QuadIterator $graph,
         ?\rdfInterface\RdfNamespace $nmsp = null
     ): void {
