@@ -41,6 +41,8 @@ use quickRdf\DataFactory as DF;
  */
 class TriGParser implements iParser, iQuadIterator {
 
+    use TmpStreamTrait;
+
     private const CHUNK_SIZE = 8192;
 
     /**
@@ -70,12 +72,6 @@ class TriGParser implements iParser, iQuadIterator {
 
     /**
      *
-     * @var resource|null
-     */
-    private $tmpStream;
-
-    /**
-     *
      * @var callable|null
      */
     private $prefixCallback;
@@ -94,18 +90,6 @@ class TriGParser implements iParser, iQuadIterator {
 
     public function __destruct() {
         $this->closeTmpStream();
-    }
-
-    public function parse(string $input): iQuadIterator {
-        $this->closeTmpStream();
-        $tmp = fopen('php://memory', 'r+');
-        if ($tmp === false) {
-            throw new RdfIoException('Failed to convert input to stream');
-        }
-        $this->tmpStream = $tmp;
-        fwrite($this->tmpStream, $input);
-        rewind($this->tmpStream);
-        return $this->parseStream($this->tmpStream);
     }
 
     public function parseStream($input): iQuadIterator {
@@ -168,21 +152,16 @@ class TriGParser implements iParser, iQuadIterator {
     }
 
     public function rewind(): void {
-        $ret = rewind($this->input);
-        if ($ret !== true) {
-            throw new RdfIoException("Can't seek in the input stream");
+        if (ftell($this->input) !== 0) {
+            $ret = rewind($this->input);
+            if ($ret !== true) {
+                throw new RdfIoException("Can't seek in the input stream");
+            }
         }
         $this->next();
     }
 
     public function valid(): bool {
         return $this->quadsBuffer->valid();
-    }
-
-    private function closeTmpStream(): void {
-        if (is_resource($this->tmpStream)) {
-            fclose($this->tmpStream);
-            $this->tmpStream = null;
-        }
     }
 }

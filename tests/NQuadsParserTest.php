@@ -29,14 +29,14 @@ namespace quickRdfIo;
 use quickRdf\DataFactory as DF;
 
 /**
- * Description of TriGParserTest
+ * Description of NQuadsParserTest
  *
  * @author zozlak
  */
-class TriGParserTest extends \PHPUnit\Framework\TestCase {
+class NQuadsParserTest extends \PHPUnit\Framework\TestCase {
 
     public function testBig(): void {
-        $parser = new TriGParser();
+        $parser = new NQuadsParser(true, true);
         $n      = 0;
         $N      = -1;
         $stream = fopen(__DIR__ . '/puzzle4d_100k.ntriples', 'r');
@@ -54,35 +54,5 @@ class TriGParserTest extends \PHPUnit\Framework\TestCase {
             fclose($stream);
         }
         $this->assertEquals($N, $n);
-    }
-
-    public function testString(): void
-    {
-        $input   = <<<IN
-<http://foo> <http://bar> "baz" .
-<http://foo> <http://bar> "baz"@en .
-<http://foo> <http://baz>  <http://bar> .
-IN;
-        $parser  = new TriGParser();
-        $iter    = $parser->parse($input);
-        $triples = [];
-        foreach ($iter as $i) {
-            $this->assertEquals(count($triples), $iter->key());
-            $triples[] = $i;
-        }
-        $this->assertEquals(3, count($triples));
-    }
-
-    public function testRepeat(): void
-    {
-        $input  = <<<IN
-<http://foo> <http://bar> "baz" .
-<http://foo> <http://bar> "baz"@en .
-<http://foo> <http://baz>  <http://bar> .
-IN;
-        $parser = new TriGParser();
-        $t1     = iterator_to_array($parser->parse($input));
-        $t2     = iterator_to_array($parser->parse($input));
-        $this->assertEquals($t1, $t2);
     }
 }
