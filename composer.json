@@ -1,5 +1,5 @@
 {
-    "name": "zozlak/quick-rdf-io",
+    "name": "sweetrdf/quick-rdf-io",
     "type": "library",
     "description": "Collection of parser and serializers for zozlak/quick-rdf (compatible with zozlak/rdfInterface)",
     "keywords": [],
@@ -15,9 +15,9 @@
     "require": {
         "php": ">=8.0",
         "zozlak/rdf-constants": "^1.1",
-        "zozlak/rdf-helpers": "*",
-        "zozlak/rdf-interface": "*",
-        "zozlak/quick-rdf": "*",
+        "sweetrdf/rdf-helpers": "*",
+        "sweetrdf/rdf-interface": "*",
+        "sweetrdf/quick-rdf": "*",
         "pietercolpaert/hardf": "*"
     },
     "suggest": {
