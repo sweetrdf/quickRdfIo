@@ -1,7 +1,7 @@
 {
     "name": "sweetrdf/quick-rdf-io",
     "type": "library",
-    "description": "Collection of parser and serializers for zozlak/quick-rdf (compatible with zozlak/rdfInterface)",
+    "description": "Collection of parser and serializers compatible with sweetrdf/rdfInterface",
     "keywords": [],
     "homepage": "https://github.com/sweetrdf/quickRdfIo",
     "license": "MIT",
@@ -17,7 +17,6 @@
         "zozlak/rdf-constants": "^1.1",
         "sweetrdf/rdf-helpers": "*",
         "sweetrdf/rdf-interface": "*",
-        "sweetrdf/quick-rdf": "*",
         "pietercolpaert/hardf": "*"
     },
     "suggest": {
@@ -33,7 +32,8 @@
         "phpunit/php-code-coverage": "^9.2",
         "phpstan/phpstan": "*",
         "squizlabs/php_codesniffer": "*",
-        "php-coveralls/php-coveralls": "^2.4"
+        "php-coveralls/php-coveralls": "^2.4",
+        "sweetrdf/quick-rdf": "*"
     },
     "autoload-dev": {
         "psr-4": {

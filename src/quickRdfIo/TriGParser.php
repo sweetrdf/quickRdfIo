@@ -32,7 +32,7 @@ use pietercolpaert\hardf\TriGParser as Parser;
 use rdfInterface\QuadIterator as iQuadIterator;
 use rdfInterface\Parser as iParser;
 use rdfInterface\Quad as iQuad;
-use quickRdf\DataFactory as DF;
+use rdfInterface\DataFactory as iDataFactory;
 
 /**
  * Description of Parser
@@ -45,6 +45,8 @@ class TriGParser implements iParser, iQuadIterator {
 
     private const CHUNK_SIZE = 8192;
 
+    private iDataFactory $dataFactory;
+
     /**
      *
      * @var array<mixed>
@@ -53,7 +55,6 @@ class TriGParser implements iParser, iQuadIterator {
 
     /**
      *
-     * @var \pietercolpaert\hardf\TriGParser
      */
     private Parser $parser;
 
@@ -78,12 +79,14 @@ class TriGParser implements iParser, iQuadIterator {
 
     /**
      *
+     * @param DataFactory $dataFactory factory to be used to generate RDF terms.
      * @param array<mixed> $options
      * @param callable|null $prefixCallback
      */
-    public function __construct(
-        array $options = [], callable | null $prefixCallback = null
+    public function __construct(iDataFactory $dataFactory, array $options = [],
+                                callable | null $prefixCallback = null
     ) {
+        $this->dataFactory    = $dataFactory;
         $this->options        = $options;
         $this->prefixCallback = $prefixCallback;
     }
@@ -123,22 +126,23 @@ class TriGParser implements iParser, iQuadIterator {
                     throw $e;
                 }
                 if ($quad) {
+                    $df   = $this->dataFactory;
                     $sbj  = Util::isBlank($quad['subject']) ?
-                        DF::BlankNode($quad['subject']) : DF::NamedNode($quad['subject']);
-                    $prop = DF::NamedNode($quad['predicate']);
+                        $df::BlankNode($quad['subject']) : $df::NamedNode($quad['subject']);
+                    $prop = $df::NamedNode($quad['predicate']);
                     if (substr($quad['object'], 0, 1) !== '"') {
                         $obj = Util::isBlank($quad['object']) ?
-                            DF::BlankNode($quad['object']) : DF::NamedNode($quad['object']);
+                            $df::BlankNode($quad['object']) : $df::NamedNode($quad['object']);
                     } else {
                         // as Util::getLiteralValue() doesn't work for multiline values
                         $value    = substr($quad['object'], 1, strrpos($quad['object'], '"') - 1);
                         $lang     = Util::getLiteralLanguage($quad['object']);
                         $datatype = empty($lang) ? Util::getLiteralType($quad['object']) : '';
-                        $obj      = DF::Literal($value, $lang, $datatype);
+                        $obj      = $df::Literal($value, $lang, $datatype);
                     }
                     $graph               = !empty($quad['graph']) ?
-                        DF::namedNode($quad['graph']) : DF::defaultGraph();
-                    $this->quadsBuffer[] = DF::quad($sbj, $prop, $obj, $graph);
+                        $df::namedNode($quad['graph']) : $df::defaultGraph();
+                    $this->quadsBuffer[] = $df::quad($sbj, $prop, $obj, $graph);
                 }
             });
             while (!feof($this->input) && $this->quadsBuffer->count() === 0) {

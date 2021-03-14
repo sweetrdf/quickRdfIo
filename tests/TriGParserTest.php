@@ -36,15 +36,12 @@ use quickRdf\DataFactory as DF;
 class TriGParserTest extends \PHPUnit\Framework\TestCase {
 
     public function testBig(): void {
-        $parser = new TriGParser();
+        $parser = new TriGParser(new DF());
         $n      = 0;
         $N      = -1;
         $stream = fopen(__DIR__ . '/puzzle4d_100k.ntriples', 'r');
         if ($stream) {
-            $tmpl = DF::quadTemplate(
-                    DF::namedNode('https://technical#subject'),
-                                  DF::namedNode('https://technical#tripleCount')
-            );
+            $tmpl = DF::quadTemplate(DF::namedNode('https://technical#subject'), DF::namedNode('https://technical#tripleCount'));
             foreach ($parser->parseStream($stream) as $i) {
                 $n++;
                 if ($N < 0 && $tmpl->equals($i)) {
@@ -56,14 +53,13 @@ class TriGParserTest extends \PHPUnit\Framework\TestCase {
         $this->assertEquals($N, $n);
     }
 
-    public function testString(): void
-    {
+    public function testString(): void {
         $input   = <<<IN
 <http://foo> <http://bar> "baz" .
 <http://foo> <http://bar> "baz"@en .
 <http://foo> <http://baz>  <http://bar> .
 IN;
-        $parser  = new TriGParser();
+        $parser  = new TriGParser(new DF());
         $iter    = $parser->parse($input);
         $triples = [];
         foreach ($iter as $i) {
@@ -73,14 +69,13 @@ IN;
         $this->assertEquals(3, count($triples));
     }
 
-    public function testRepeat(): void
-    {
+    public function testRepeat(): void {
         $input  = <<<IN
 <http://foo> <http://bar> "baz" .
 <http://foo> <http://bar> "baz"@en .
 <http://foo> <http://baz>  <http://bar> .
 IN;
-        $parser = new TriGParser();
+        $parser = new TriGParser(new DF());
         $t1     = iterator_to_array($parser->parse($input));
         $t2     = iterator_to_array($parser->parse($input));
         $this->assertEquals($t1, $t2);

@@ -36,15 +36,12 @@ use quickRdf\DataFactory as DF;
 class NQuadsParserTest extends \PHPUnit\Framework\TestCase {
 
     public function testBig(): void {
-        $parser = new NQuadsParser(true, true);
+        $parser = new NQuadsParser(new DF(), true, true);
         $n      = 0;
         $N      = -1;
         $stream = fopen(__DIR__ . '/puzzle4d_100k.ntriples', 'r');
         if ($stream) {
-            $tmpl = DF::quadTemplate(
-                    DF::namedNode('https://technical#subject'),
-                                  DF::namedNode('https://technical#tripleCount')
-            );
+            $tmpl = DF::quadTemplate(DF::namedNode('https://technical#subject'), DF::namedNode('https://technical#tripleCount'));
             foreach ($parser->parseStream($stream) as $i) {
                 $n++;
                 if ($N < 0 && $tmpl->equals($i)) {

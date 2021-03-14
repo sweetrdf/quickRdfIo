@@ -12,7 +12,7 @@ use Generator;
 use rdfInterface\QuadIterator as iQuadIterator;
 use rdfInterface\Parser as iParser;
 use rdfInterface\Quad as iQuad;
-use quickRdf\DataFactory as DF;
+use rdfInterface\DataFactory as iDataFactory;
 
 /**
  * Parses only n-quads and n-triples but does it fast (thanks to parsing in chunks
@@ -37,6 +37,8 @@ class NQuadsParser implements iParser, iQuadIterator {
     const LITERAL_STRICT    = '"((?:[^\x{22}\x{5C}\x{0A}\x{0D}]|\\\\[tbnrf"\'\\\\]|\\\\u[0-9A-Fa-f]{4}|\\\\U[0-9A-Fa-f]{8})*)"';
     const LITERAL           = '"([^"]*)"';
     use TmpStreamTrait;
+
+    private iDataFactory $dataFactory;
 
     /**
      *
@@ -71,14 +73,16 @@ class NQuadsParser implements iParser, iQuadIterator {
      * match the optional graph IRI. It provides a little faster parsing but can deal
      * only with n-triples input.
      * 
+     * @param DataFactory $dataFactory factory to be used to generate RDF terms.
      * @param bool $strict should strict RDF syntax be enforced?
      * @param bool $ntriples should parsing be done in n-triples only mode?
      * @param int $chunkSize parsing chunk size. Default value should be just fine.
      */
-    public function __construct(bool $strict = false, bool $ntriples = false,
-                                int $chunkSize = 8192) {
-        $eol     = self::EOL;
-        $comment = self::COMMENT;
+    public function __construct(iDataFactory $dataFactory, bool $strict = false,
+                                bool $ntriples = false, int $chunkSize = 8192) {
+        $this->dataFactory = $dataFactory;
+        $eol               = self::EOL;
+        $comment           = self::COMMENT;
         if ($strict) {
             $iri     = self::IRIREF_STRICT;
             $blank   = '(' . self::BLANKNODE1_STRICT . self::BLANKNODE2_STRICT . '(?:' . self::BLANKNODE3_STRICT . '*' . self::BLANKNODE4_STRICT . ')?)';
@@ -182,12 +186,13 @@ class NQuadsParser implements iParser, iQuadIterator {
      * @return iQuad
      */
     private function makeQuad(array &$matches): iQuad {
-        $sbj  = $matches[1] !== null ? DF::namedNode($matches[1]) : DF::blankNode($matches[2]);
-        $pred = DF::namedNode($matches[3] ?? '');
+        $df   = $this->dataFactory;
+        $sbj  = $matches[1] !== null ? $df::namedNode($matches[1]) : $df::blankNode($matches[2]);
+        $pred = $df::namedNode($matches[3] ?? '');
         if ($matches[4] !== null) {
-            $obj = DF::namedNode($matches[4]);
+            $obj = $df::namedNode($matches[4]);
         } elseif ($matches[5] !== null) {
-            $obj = DF::blankNode($matches[5]);
+            $obj = $df::blankNode($matches[5]);
         } else {
             $value   = $matches[6] ?? '';
             $escapes = null;
@@ -200,11 +205,11 @@ class NQuadsParser implements iParser, iQuadIterator {
                 }
                 $value = strtr($value, $dict);
             }
-            $obj = DF::literal($value, $matches[8], $matches[7]);
+            $obj = $df::literal($value, $matches[8], $matches[7]);
         }
         if (array_key_exists(9, $matches)) {
-            $graph = $matches[9] !== null ? DF::namedNode($matches[9]) : DF::blankNode($matches[10]);
+            $graph = $matches[9] !== null ? $df::namedNode($matches[9]) : $df::blankNode($matches[10]);
         }
-        return DF::quad($sbj, $pred, $obj, $graph ?? null);
+        return $df::quad($sbj, $pred, $obj, $graph ?? null);
     }
 }
