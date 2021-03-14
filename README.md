@@ -3,7 +3,7 @@
 [![Latest Stable Version](https://poser.pugx.org/sweetrdf/quick-rdf-io/v/stable)](https://packagist.org/packages/sweetrdf/quick-rdf-io)
 ![Build status](https://github.com/sweetrdf/quickRdfIo/workflows/phpunit/badge.svg?branch=master)
 [![Coverage Status](https://coveralls.io/repos/github/sweetrdf/quickRdfIo/badge.svg?branch=master)](https://coveralls.io/github/sweetrdf/quickRdfIo?branch=master)
-[![License](https://poser.pugx.org/sweetrdf/quicki-rdf/license)](https://packagist.org/packages/sweetrdf/quick-rdf-io)
+[![License](https://poser.pugx.org/sweetrdf/quick-rdf-io/license)](https://packagist.org/packages/sweetrdf/quick-rdf-io)
 
 Collection of parsers and serializers implementing the https://github.com/sweetrdf/rdfInterface interface.
 
