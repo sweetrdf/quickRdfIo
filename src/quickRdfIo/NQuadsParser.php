@@ -73,7 +73,7 @@ class NQuadsParser implements iParser, iQuadIterator {
      * match the optional graph IRI. It provides a little faster parsing but can deal
      * only with n-triples input.
      * 
-     * @param DataFactory $dataFactory factory to be used to generate RDF terms.
+     * @param iDataFactory $dataFactory factory to be used to generate RDF terms.
      * @param bool $strict should strict RDF syntax be enforced?
      * @param bool $ntriples should parsing be done in n-triples only mode?
      * @param int $chunkSize parsing chunk size. Default value should be just fine.

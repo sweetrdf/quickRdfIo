@@ -79,7 +79,7 @@ class TriGParser implements iParser, iQuadIterator {
 
     /**
      *
-     * @param DataFactory $dataFactory factory to be used to generate RDF terms.
+     * @param iDataFactory $dataFactory factory to be used to generate RDF terms.
      * @param array<mixed> $options
      * @param callable|null $prefixCallback
      */
