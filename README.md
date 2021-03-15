@@ -23,15 +23,15 @@ include 'vendor/autoload.php';
 
 // parse turle/ntriples/nquad file
 $parser = new quickRdfIo\TriGParser();
-$instream = fopen('pathToTurtleFile', 'r');
+$stream = fopen('pathToTurtleFile', 'r');
 foreach($parser->parseStream($stream) as $quad) {
    echo "$quad\n";
 }
-fclose($instream);
+fclose($stream);
 
 // convert to nquads/ntriples
 $instream = fopen('pathToTurtleFile', 'r');
-$iterator = $parser->parseStream($stream);
+$iterator = $parser->parseStream($instream);
 $serializer = new quickRdfIo\NQuadsSerializer();
 $outstream = fopen('pathToOutputTurtleFile', 'w');
 $serializer->serializeStream($stream, $iterator);
