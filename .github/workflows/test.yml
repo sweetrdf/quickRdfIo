@@ -7,8 +7,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-    - name: composer
-      run: composer update
     - uses: actions/cache@v2
       with: 
         path: vendor
@@ -21,6 +19,18 @@ jobs:
         export COVERALLS_RUN_LOCALLY=1
         export COVERALLS_REPO_TOKEN=${{ secrets.coverallsToken }}
         php vendor/bin/php-coveralls -v
+    - name: composer
+      run: composer update
+    - name: document
+      run: |
+        docker run --rm -v $(pwd):/data phpdoc/phpdoc:3 -d src -d vendor/sweetrdf/rdf-interface/src  -d vendor/sweetrdf/rdf-helpers/src/ -t docs
+        git fetch && git checkout docs --
+        for i in `ls -1 | grep -v ^docs$`; do rm -fR $i ; done
+        cp -R docs/* .
+        git config user.email "workflow@github.actions"
+        git config user.name "Github Actions Workflow"
+        git add * || true
+        git commit -a -m 'Automatic documentation generation' && git push origin docs || true
   phpstan:
     runs-on: ubuntu-latest
     steps:
