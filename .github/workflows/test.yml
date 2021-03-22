@@ -35,13 +35,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-    - name: composer
-      run: composer update
     - uses: actions/cache@v2
       with: 
         path: vendor
         key: ${{ runner.os }}-composer-${{ hashFiles('**/composer.lock') }}
         restore-keys: ${{ runner.os }}-composer-
+    - name: composer
+      run: composer update
     - name: phpstan
       run: vendor/bin/phpstan analyse -l 8 src tests
 
