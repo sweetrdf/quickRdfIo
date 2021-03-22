@@ -12,6 +12,8 @@ jobs:
         path: vendor
         key: ${{ runner.os }}-composer-${{ hashFiles('**/composer.lock') }}
         restore-keys: ${{ runner.os }}-composer-
+    - name: composer
+      run: composer update
     - name: phpunit
       run: XDEBUG_MODE=coverage vendor/bin/phpunit
     - name: coveralls
@@ -19,8 +21,6 @@ jobs:
         export COVERALLS_RUN_LOCALLY=1
         export COVERALLS_REPO_TOKEN=${{ secrets.coverallsToken }}
         php vendor/bin/php-coveralls -v
-    - name: composer
-      run: composer update
     - name: document
       run: |
         docker run --rm -v $(pwd):/data phpdoc/phpdoc:3 -d src -d vendor/sweetrdf/rdf-interface/src  -d vendor/sweetrdf/rdf-helpers/src/ -t docs
