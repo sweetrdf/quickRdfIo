@@ -18,7 +18,7 @@ Quite quick and dirty at the moment.
 
 ## Automatically generated documentation
 
-https://sweetrdf.github.io/quickRdfIo/
+https://sweetrdf.github.io/quickRdfIo/namespaces/quickrdfio.html
 
 It's very incomplite but better than nothing.\
 [RdfInterface](https://github.com/sweetrdf/rdfInterface/) documentation is included.
