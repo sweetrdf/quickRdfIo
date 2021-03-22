@@ -16,6 +16,13 @@ Quite quick and dirty at the moment.
 * Obtain the [Composer](https://getcomposer.org)
 * Run `composer require sweetrdf/quick-rdf-io`
 
+## Automatically generated documentation
+
+https://sweetrdf.github.io/quickRdfIo/
+
+It's very incomplite but better than nothing.\
+[RdfInterface](https://github.com/sweetrdf/rdfInterface/) documentation is included.
+
 ## Usage
 
 ```
