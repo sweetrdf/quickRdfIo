@@ -16,7 +16,7 @@
         "php": ">=8.0",
         "zozlak/rdf-constants": "^1.1",
         "sweetrdf/rdf-helpers": "*",
-        "sweetrdf/rdf-interface": "*",
+        "sweetrdf/rdf-interface": "dev-termCompare",
         "pietercolpaert/hardf": "*"
     },
     "suggest": {
@@ -33,7 +33,8 @@
         "phpstan/phpstan": "*",
         "squizlabs/php_codesniffer": "*",
         "php-coveralls/php-coveralls": "^2.4",
-        "sweetrdf/quick-rdf": "*"
+        "sweetrdf/quick-rdf": "dev-master",
+        "sweetrdf/term-templates": "*"
     },
     "autoload-dev": {
         "psr-4": {

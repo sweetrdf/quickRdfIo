@@ -91,9 +91,9 @@ class TurtleSerializer implements \rdfInterface\Serializer {
             } else {
                 $object = (string) $object->getValue();
             }
-            $graphIri = $i->getGraphIri();
-            $graphIri = $graphIri->getValue() === $graphIri->getType() ? null : (string) $graphIri->getValue();
-            $serializer->addTriple($subject, $predicate, $object, $graphIri);
+            $graph = $i->getGraph();
+            $graph = $graph instanceof \rdfInterface\DefaultGraph ? null : (string) $graph->getValue();
+            $serializer->addTriple($subject, $predicate, $object, $graph);
             fwrite($output, $serializer->read());
         }
         fwrite($output, $serializer->end() ?? '');

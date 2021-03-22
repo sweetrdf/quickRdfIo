@@ -27,6 +27,7 @@
 namespace quickRdfIo;
 
 use quickRdf\DataFactory as DF;
+use termTemplates\QuadTemplate;
 
 /**
  * Description of TriGParserTest
@@ -41,7 +42,7 @@ class TriGParserTest extends \PHPUnit\Framework\TestCase {
         $N      = -1;
         $stream = fopen(__DIR__ . '/puzzle4d_100k.ntriples', 'r');
         if ($stream) {
-            $tmpl = DF::quadTemplate(DF::namedNode('https://technical#subject'), DF::namedNode('https://technical#tripleCount'));
+            $tmpl = new QuadTemplate(DF::namedNode('https://technical#subject'), DF::namedNode('https://technical#tripleCount'));
             foreach ($parser->parseStream($stream) as $i) {
                 $n++;
                 if ($N < 0 && $tmpl->equals($i)) {

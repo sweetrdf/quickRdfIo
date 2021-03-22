@@ -186,30 +186,41 @@ class NQuadsParser implements iParser, iQuadIterator {
      * @return iQuad
      */
     private function makeQuad(array &$matches): iQuad {
-        $df   = $this->dataFactory;
-        $sbj  = $matches[1] !== null ? $df::namedNode($matches[1]) : $df::blankNode($matches[2]);
-        $pred = $df::namedNode($matches[3] ?? '');
+        $df = $this->dataFactory;
+        
+        if ($matches[1] !== null) {
+            $sbj = $df::namedNode($this->unescapeUnicode($matches[1]));
+        } else {
+            $sbj = $df::blankNode($matches[2]);
+        }
+        
+        $pred = $df::namedNode($this->unescapeUnicode($matches[3] ?? ''));
+        
         if ($matches[4] !== null) {
             $obj = $df::namedNode($matches[4]);
         } elseif ($matches[5] !== null) {
             $obj = $df::blankNode($matches[5]);
         } else {
-            $value   = $matches[6] ?? '';
-            $escapes = null;
-            // deal with unicode escapes
-            $count   = preg_match_all('%' . self::UCHAR . '%', $value, $escapes);
-            if ($count > 0) {
-                $dict = [];
-                foreach ($escapes[0] as $i) {
-                    $dict[$i] = mb_chr((int) hexdec(substr($i, 2)));
-                }
-                $value = strtr($value, $dict);
-            }
-            $obj = $df::literal($value, $matches[8], $matches[7]);
+            $value = $matches[6] ?? '';
+            $value = $this->unescapeUnicode($value);
+            $obj   = $df::literal($value, $matches[8], $matches[7]);
         }
         if (array_key_exists(9, $matches)) {
             $graph = $matches[9] !== null ? $df::namedNode($matches[9]) : $df::blankNode($matches[10]);
         }
         return $df::quad($sbj, $pred, $obj, $graph ?? null);
+    }
+
+    private function unescapeUnicode(string $value): string {
+        $escapes = null;
+        $count   = preg_match_all('%' . self::UCHAR . '%', $value, $escapes);
+        if ($count > 0) {
+            $dict = [];
+            foreach ($escapes[0] as $i) {
+                $dict[$i] = mb_chr((int) hexdec(substr($i, 2)));
+            }
+            $value = strtr($value, $dict);
+        }
+        return $value;
     }
 }
