@@ -528,37 +528,37 @@ Search.appendIndex(
         },                {
             "fqsen": "\\rdfInterface\\Dataset\u003A\u003Acopy\u0028\u0029",
             "name": "copy",
-            "summary": "",
+            "summary": "Creates\u0020a\u0020copy\u0020of\u0020the\u0020dataset.",
             "url": "classes/rdfInterface-Dataset.html#method_copy"
         },                {
             "fqsen": "\\rdfInterface\\Dataset\u003A\u003AcopyExcept\u0028\u0029",
             "name": "copyExcept",
-            "summary": "",
+            "summary": "Creates\u0020a\u0020copy\u0020of\u0020the\u0020dataset.",
             "url": "classes/rdfInterface-Dataset.html#method_copyExcept"
         },                {
             "fqsen": "\\rdfInterface\\Dataset\u003A\u003Aunion\u0028\u0029",
             "name": "union",
-            "summary": "",
+            "summary": "Returns\u0020a\u0020new\u0020dataset\u0020being\u0020a\u0020union\u0020of\u0020the\u0020current\u0020one\u0020and\u0020the\u0020\u0024other\u0020one.",
             "url": "classes/rdfInterface-Dataset.html#method_union"
         },                {
             "fqsen": "\\rdfInterface\\Dataset\u003A\u003Axor\u0028\u0029",
             "name": "xor",
-            "summary": "",
+            "summary": "Returns\u0020a\u0020dataset\u0020being\u0020a\u0020symmetric\u0020difference\u0020of\u0020the\u0020current\u0020dataset\u0020and\nthe\u0020\u0024other\u0020one.",
             "url": "classes/rdfInterface-Dataset.html#method_xor"
         },                {
             "fqsen": "\\rdfInterface\\Dataset\u003A\u003Aadd\u0028\u0029",
             "name": "add",
-            "summary": "Adds\u0020set\u0020of\u0020quads.",
+            "summary": "Adds\u0020quad\u0028s\u0029\u0020to\u0020the\u0020dataset.",
             "url": "classes/rdfInterface-Dataset.html#method_add"
         },                {
             "fqsen": "\\rdfInterface\\Dataset\u003A\u003Adelete\u0028\u0029",
             "name": "delete",
-            "summary": "",
+            "summary": "In\u002Dplace\u0020removes\u0020quads\u0020from\u0020the\u0020dataset.",
             "url": "classes/rdfInterface-Dataset.html#method_delete"
         },                {
             "fqsen": "\\rdfInterface\\Dataset\u003A\u003AdeleteExcept\u0028\u0029",
             "name": "deleteExcept",
-            "summary": "",
+            "summary": "In\u002Dplace\u0020removes\u0020quads\u0020from\u0020the\u0020dataset.",
             "url": "classes/rdfInterface-Dataset.html#method_deleteExcept"
         },                {
             "fqsen": "\\rdfInterface\\Dataset\u003A\u003AforEach\u0028\u0029",
@@ -568,23 +568,28 @@ Search.appendIndex(
         },                {
             "fqsen": "\\rdfInterface\\Dataset\u003A\u003AoffsetExists\u0028\u0029",
             "name": "offsetExists",
-            "summary": "",
+            "summary": "Checks\u0020if\u0020a\u0020given\u0020offset\u0020exists.",
             "url": "classes/rdfInterface-Dataset.html#method_offsetExists"
         },                {
             "fqsen": "\\rdfInterface\\Dataset\u003A\u003AoffsetGet\u0028\u0029",
             "name": "offsetGet",
-            "summary": "",
+            "summary": "Returns\u0020a\u0020quad\u0020matching\u0020the\u0020\u0024offset.",
             "url": "classes/rdfInterface-Dataset.html#method_offsetGet"
         },                {
             "fqsen": "\\rdfInterface\\Dataset\u003A\u003AoffsetSet\u0028\u0029",
             "name": "offsetSet",
-            "summary": "",
+            "summary": "Assigns\u0020a\u0020new\u0020value\u0020to\u0020the\u0020quad\u0020matching\u0020the\u0020\u0024offset.",
             "url": "classes/rdfInterface-Dataset.html#method_offsetSet"
         },                {
             "fqsen": "\\rdfInterface\\Dataset\u003A\u003AoffsetUnset\u0028\u0029",
             "name": "offsetUnset",
-            "summary": "",
+            "summary": "Removes\u0020a\u0020quad\u0020matching\u0020the\u0020\u0024offset.",
             "url": "classes/rdfInterface-Dataset.html#method_offsetUnset"
+        },                {
+            "fqsen": "\\rdfInterface\\Dataset\u003A\u003Acurrent\u0028\u0029",
+            "name": "current",
+            "summary": "Returns\u0020the\u0020current\u0020quad.",
+            "url": "classes/rdfInterface-Dataset.html#method_current"
         },                {
             "fqsen": "\\rdfInterface\\DatasetCompare",
             "name": "DatasetCompare",
