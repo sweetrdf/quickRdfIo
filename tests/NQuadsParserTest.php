@@ -151,7 +151,8 @@ class NQuadsParserTest extends \PHPUnit\Framework\TestCase {
             fclose($stream);
         }
         for ($i = 1; $i < count($datasets); $i++) {
-            $this->assertTrue($datasets[0]->equals($datasets[$i]), "Dataset $i");
+            // compare count() on copy() because Dataset::equals() skips blank nodes
+            $this->assertEquals(count($datasets[0]), count($datasets[0]->copy($datasets[$i])), "Dataset $i");
         }
     }
 
@@ -163,7 +164,8 @@ class NQuadsParserTest extends \PHPUnit\Framework\TestCase {
         }
         for ($i = 1; $i < count($datasets); $i++) {
             $this->assertEquals(count($datasets[0]), count($datasets[$i]), $modes[$i]);
-            $this->assertTrue($datasets[0]->equals($datasets[$i]), $modes[$i]);
+            // compare count() on copy() because Dataset::equals() skips blank nodes
+            $this->assertEquals(count($datasets[0]), count($datasets[0]->copy($datasets[$i])), $modes[$i]);
         }
     }
 
@@ -185,7 +187,8 @@ class NQuadsParserTest extends \PHPUnit\Framework\TestCase {
         }
         for ($i = 1; $i < count($datasets); $i++) {
             $this->assertEquals(count($datasets[0]), count($datasets[$i]), $modes[$i]);
-            $this->assertTrue($datasets[0]->equals($datasets[$i]), $modes[$i]);
+            // compare count() on copy() because Dataset::equals() skips blank nodes
+            $this->assertEquals(count($datasets[0]), count($datasets[0]->copy($datasets[$i])), $modes[$i]);
         }
     }
 
@@ -199,25 +202,6 @@ class NQuadsParserTest extends \PHPUnit\Framework\TestCase {
         }
     }
 
-//    public function testTriplesStrictPositive(): void {
-//        $modes = $this->getModes(null, null, null);
-//        $tests = $this->readTestLines(__DIR__ . '/files/triplesStrictPositive.nt');
-//        foreach ($tests as $t => $test) {
-//            $datasets = [];
-//            foreach ($modes as $m => $mode) {
-//                if ($mode->strict) {
-//                    $this->checkFails($test, $mode, "Test $t " . $mode);
-//                } else {
-//                    $datasets[$m] = $this->checkPasses($test, $mode, "Test $t " . $mode);
-//                }
-//            }
-//            for ($i = 1; $i < count($datasets); $i++) {
-//                $this->assertEquals(count($datasets[0]), count($datasets[$i]), $modes[array_keys($datasets)[$i]]);
-//                $this->assertTrue($datasets[0]->equals($datasets[$i]), $modes[array_keys($datasets)[$i]]);
-//            }
-//        }
-//    }
-
     public function testQuadsPositive(): void {
         $modes    = $this->getModes(null, true, null);
         $datasets = [];
@@ -226,7 +210,8 @@ class NQuadsParserTest extends \PHPUnit\Framework\TestCase {
         }
         for ($i = 1; $i < count($datasets); $i++) {
             $this->assertEquals(count($datasets[0]), count($datasets[$i]), $modes[$i]);
-            $this->assertTrue($datasets[0]->equals($datasets[$i]), $modes[$i]);
+            // compare count() on copy() because Dataset::equals() skips blank nodes
+            $this->assertEquals(count($datasets[0]), count($datasets[0]->copy($datasets[$i])), $modes[$i]);
         }
     }
 
@@ -248,28 +233,10 @@ class NQuadsParserTest extends \PHPUnit\Framework\TestCase {
         }
         for ($i = 1; $i < count($datasets); $i++) {
             $this->assertEquals(count($datasets[0]), count($datasets[$i]), $modes[$i]);
-            $this->assertTrue($datasets[0]->equals($datasets[$i]), $modes[$i]);
+            // compare count() on copy() because Dataset::equals() skips blank nodes
+            $this->assertEquals(count($datasets[0]), count($datasets[0]->copy($datasets[$i])), $modes[$i]);
         }
     }
-
-//    public function testQuadsStrictPositive(): void {
-//        $modes = $this->getModes(null, true, null);
-//        $tests = $this->readTestLines(__DIR__ . '/files/quadsStrictPositive.nt');
-//        foreach ($tests as $t => $test) {
-//            $datasets = [];
-//            foreach ($modes as $m => $mode) {
-//                if ($mode->strict) {
-//                    $this->checkFails($test, $mode, "Test $t " . $mode);
-//                } else {
-//                    $datasets[$m] = $this->checkPasses($test, $mode, "Test $t " . $mode);
-//                }
-//            }
-//            for ($i = 1; $i < count($datasets); $i++) {
-//                $this->assertEquals(count($datasets[0]), count($datasets[$i]), $modes[array_keys($datasets)[$i]]);
-//                $this->assertTrue($datasets[0]->equals($datasets[$i]), $modes[array_keys($datasets)[$i]]);
-//            }
-//        }
-//    }
 
     public function testInputExceptions(): void {
         $parser = new NQuadsParser(new DF());
