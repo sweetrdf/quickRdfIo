@@ -20,7 +20,7 @@ Quite quick and dirty at the moment.
 
 https://sweetrdf.github.io/quickRdfIo/namespaces/quickrdfio.html
 
-It's very incomplite but better than nothing.\
+It's very incomplete but better than nothing.\
 [RdfInterface](https://github.com/sweetrdf/rdfInterface/) documentation is included.
 
 ## Usage
