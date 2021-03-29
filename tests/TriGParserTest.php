@@ -26,6 +26,7 @@
 
 namespace quickRdfIo;
 
+use quickRdf\Dataset;
 use quickRdf\DataFactory as DF;
 use termTemplates\QuadTemplate;
 
@@ -80,5 +81,22 @@ IN;
         $t1     = iterator_to_array($parser->parse($input));
         $t2     = iterator_to_array($parser->parse($input));
         $this->assertEquals($t1, $t2);
+    }
+    
+    public function testMatchesNQuadsSerializer(): void {
+        $stream = fopen(__DIR__ . '/files/puzzle4d_100k.nt', 'r');
+        if ($stream) {
+            $trig = new TriGParser(new DF());
+            $d1 = new Dataset();
+            $d1->add($trig->parseStream($stream));
+            
+            fseek($stream, 0);
+            $quads = new NQuadsParser(new DF());
+            $d2 = new Dataset();
+            $d2->add($quads->parseStream($stream));
+            
+            $this->assertEquals(count($d1), count($d2));
+            $this->assertTrue($d1->equals($d2));
+        }
     }
 }
