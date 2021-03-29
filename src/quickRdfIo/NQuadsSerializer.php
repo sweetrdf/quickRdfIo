@@ -27,17 +27,18 @@
 namespace quickRdfIo;
 
 use rdfHelpers\NtriplesUtil;
+use rdfInterface\Quad as iQuad;
+use rdfInterface\DefaultGraph as iDefaultGraph;
 
 /**
  * Description of Serializer
  *
  * @author zozlak
  */
-class NQuadsSerializer implements \rdfInterface\Serializer
-{
+class NQuadsSerializer implements \rdfInterface\Serializer {
 
-    public function __construct()
-    {
+    public function __construct() {
+        
     }
 
     public function serialize(
@@ -65,24 +66,41 @@ class NQuadsSerializer implements \rdfInterface\Serializer
     }
 
     public function serializeStream(
-        $output,
-        \rdfInterface\QuadIterator $graph,
+        $output, \rdfInterface\QuadIterator $graph,
         ?\rdfInterface\RdfNamespace $nmsp = null
     ): void {
         if (!is_resource($output)) {
             throw new RdfIoException("output has to be a resource");
         }
         foreach ($graph as $i) {
-            /* @var $i \rdfInterface\Quad */
-            $subject   = NtriplesUtil::serializeIri($i->getSubject());
-            $predicate = '<' . NtriplesUtil::escapeIri($i->getPredicate()->getValue()) . '>';
-            $object    = NtriplesUtil::serialize($i->getObject());
-            $graph     = $i->getGraphIri();
-            if ($graph !== null) {
-                $graph = NtriplesUtil::serializeIri($graph);
-            }
-
-            fwrite($output, "$subject $predicate $object $graph .\n");
+            fwrite($output, $this->serializeQuad($i));
         }
+    }
+
+    private function serializeQuad(iQuad $quad, string $end = " .\n"): string {
+        $subject = $quad->getSubject();
+        if ($subject instanceof iQuad) {
+            $subject = '<< ' . $this->serializeQuad($subject, '') . ' >>';
+        } else {
+            $subject = NtriplesUtil::serializeIri($subject);
+        }
+
+        $predicate = '<' . NtriplesUtil::escapeIri($quad->getPredicate()->getValue()) . '>';
+
+        $object = $quad->getObject();
+        if ($object instanceof iQuad) {
+            $object = '<< ' . $this->serializeQuad($object, '') . ' >>';
+        } else {
+            $object = NtriplesUtil::serialize($object);
+        }
+
+        $graph = $quad->getGraph();
+        if ($graph !== null && !($graph instanceof iDefaultGraph)) {
+            $graph = NtriplesUtil::serializeIri($graph);
+        } else {
+            $graph = '';
+        }
+
+        return "$subject $predicate $object $graph$end";
     }
 }
