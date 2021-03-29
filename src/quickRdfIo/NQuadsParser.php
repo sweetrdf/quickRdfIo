@@ -70,6 +70,11 @@ class NQuadsParser implements iParser, iQuadIterator {
     const STAR_END          = '%\\G\s*>>%';
     use TmpStreamTrait;
 
+    /**
+     * See https://www.w3.org/TR/n-quads/#grammar-production-ECHAR
+     * @var array<string, string>
+     */
+    private array $unescapeMap;
     private iDataFactory $dataFactory;
 
     /**
@@ -78,9 +83,9 @@ class NQuadsParser implements iParser, iQuadIterator {
      */
     private $input;
     private int $mode;
-    // non-star parser regexp
+// non-star parser regexp
     private string $regexp;
-    // star parser regexps
+// star parser regexps
     private string $regexpSbjPred;
     private string $regexpObjGraph;
     private string $regexpPred;
@@ -177,6 +182,18 @@ class NQuadsParser implements iParser, iQuadIterator {
             $comment                 = $strict ? self::COMMENT2_STRICT : self::COMMENT2;
             $this->regexpCommentLine = "%^($comment|\\s*)$eol$%";
         }
+
+        // can't be initialized statically because of chr() usage
+        $this->unescapeMap = [
+            '\n'   => "\n",
+            '\r'   => "\r",
+            '\"'   => '"',
+            "\\'"  => "'",
+            '\t'   => "\t",
+            '\b'   => chr(8),
+            '\f'   => chr(12),
+            '\\\\' => '\\',
+        ];
     }
 
     public function __destruct() {
@@ -258,12 +275,12 @@ class NQuadsParser implements iParser, iQuadIterator {
         $df = $this->dataFactory;
 
         if ($matches[1] !== null) {
-            $sbj = $df::namedNode($this->unescapeUnicode($matches[1]));
+            $sbj = $df::namedNode($this->unescape($matches[1]));
         } else {
             $sbj = $df::blankNode($matches[2]);
         }
 
-        $pred = $df::namedNode($this->unescapeUnicode($matches[3] ?? ''));
+        $pred = $df::namedNode($this->unescape($matches[3] ?? ''));
 
         if ($matches[4] !== null) {
             $obj = $df::namedNode($matches[4]);
@@ -271,7 +288,7 @@ class NQuadsParser implements iParser, iQuadIterator {
             $obj = $df::blankNode($matches[5]);
         } else {
             $value = $matches[6] ?? '';
-            $value = $this->unescapeUnicode($value);
+            $value = $this->unescape($value);
             $obj   = $df::literal($value, $matches[8], $matches[7]);
         }
         if ($matches[9] ?? null !== null) {
@@ -330,13 +347,12 @@ class NQuadsParser implements iParser, iQuadIterator {
             }
             $this->offset += strlen($matches[0]);
             if ($matches[1] !== null) {
-                $sbj = $this->dataFactory::namedNode($this->unescapeUnicode($matches[1]));
+                $sbj = $this->dataFactory::namedNode($this->unescape($matches[1]));
             } else {
                 $sbj = $this->dataFactory::blankNode($matches[2]);
             }
             $pred = $this->dataFactory::namedNode($matches[3]);
         }
-        // is object star?
         if (preg_match(self::STAR_START, $this->line, $matches, 0, $this->offset)) {
             $this->offset += strlen($matches[0]);
             $this->level++;
@@ -360,7 +376,7 @@ class NQuadsParser implements iParser, iQuadIterator {
                 $obj = $this->dataFactory::blankNode($matches[2]);
             } else {
                 $value = $matches[3] ?? '';
-                $value = $this->unescapeUnicode($value);
+                $value = $this->unescape($value);
                 $obj   = $this->dataFactory::literal($value, $matches[5], $matches[4]);
             }
             if ($matches[6] ?? null !== null) {
@@ -380,7 +396,8 @@ class NQuadsParser implements iParser, iQuadIterator {
         return $quad;
     }
 
-    private function unescapeUnicode(string $value): string {
+    private function unescape(string $value): string {
+        $value   = strtr($value, $this->unescapeMap);
         $escapes = null;
         $count   = preg_match_all('%' . self::UCHAR . '%', $value, $escapes);
         if ($count > 0) {
