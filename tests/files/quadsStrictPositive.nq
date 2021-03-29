@@ -1,0 +1,2 @@
+<_:foo> <foo> "foo" <{>.
+<_:foo> <foo> "foo" <_:foo>.foo

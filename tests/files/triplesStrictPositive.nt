@@ -1,0 +1,5 @@
+<_:{> <foo> "foo" .
+<_:foo> <{> "foo" .
+<_:foo> <foo> "foo"@09 .
+<_:foo> <foo> "foo" .foo
+<_:foo> <foo> "foo"^^<{> .

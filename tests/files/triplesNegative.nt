@@ -1,0 +1,67 @@
+# nt-syntax-bad-base-01.nt
+@base <http://example/> .
+# nt-syntax-bad-esc-01.nt
+# Bad string escape
+<http://example/s> <http://example/p> "a\zb" .
+# nt-syntax-bad-esc-02.nt
+# Bad string escape
+<http://example/s> <http://example/p> "\uWXYZ" .
+# nt-syntax-bad-esc-03.nt
+# Bad string escape
+<http://example/s> <http://example/p> "\U0000WXYZ" .
+# nt-syntax-bad-lang-01.nt
+# Bad lang tag
+<http://example/s> <http://example/p> "string"@1 .
+# nt-syntax-bad-num-01.nt
+<http://example/s> <http://example/p> 1 .
+# nt-syntax-bad-num-02.nt
+<http://example/s> <http://example/p> 1.0 .
+# nt-syntax-bad-num-03.nt
+<http://example/s> <http://example/p> 1.0e0 .
+# nt-syntax-bad-prefix-01.nt
+@prefix : <http://example/> .
+# nt-syntax-bad-string-01.nt
+<http://example/s> <http://example/p> "abc' .
+# nt-syntax-bad-string-02.nt
+<http://example/s> <http://example/p> 1.0 .
+# nt-syntax-bad-string-03.nt
+<http://example/s> <http://example/p> 1.0e1 .
+# nt-syntax-bad-string-04.nt
+<http://example/s> <http://example/p> '''abc''' .
+# nt-syntax-bad-string-05.nt
+<http://example/s> <http://example/p> """abc""" .
+# nt-syntax-bad-string-06.nt
+<http://example/s> <http://example/p> "abc .
+# nt-syntax-bad-string-07.nt
+<http://example/s> <http://example/p> abc" .
+# nt-syntax-bad-struct-01.nt
+<http://example/s> <http://example/p> <http://example/o>, <http://example/o2> .
+# nt-syntax-bad-struct-02.nt
+<http://example/s> <http://example/p> <http://example/o>; <http://example/p2>, <http://example/o2> .
+# nt-syntax-bad-uri-01.nt
+# Bad IRI : space.
+<http://example/ space> <http://example/p> <http://example/o> .
+# nt-syntax-bad-uri-02.nt
+# Bad IRI : bad escape
+<http://example/\u00ZZ11> <http://example/p> <http://example/o> .
+# nt-syntax-bad-uri-03.nt
+# Bad IRI : bad escape
+<http://example/\U00ZZ1111> <http://example/p> <http://example/o> .
+# nt-syntax-bad-uri-04.nt
+# Bad IRI : character escapes not allowed.
+<http://example/\n> <http://example/p> <http://example/o> .
+# nt-syntax-bad-uri-05.nt
+# Bad IRI : character escapes not allowed.
+<http://example/\/> <http://example/p> <http://example/o> .
+# nt-syntax-bad-uri-06.nt [removed as it's valid according to the https://www.w3.org/TR/n-triples/#grammar-production-IRIREF]
+# No relative IRIs in N-Triples
+#<s> <http://example/p> <http://example/o> .
+# nt-syntax-bad-uri-07.nt
+# No relative IRIs in N-Triples [removed as it's valid according to the https://www.w3.org/TR/n-triples/#grammar-production-IRIREF]
+#<http://example/s> <p> <http://example/o> .
+# nt-syntax-bad-uri-08.nt
+# No relative IRIs in N-Triples [removed as it's valid according to the https://www.w3.org/TR/n-triples/#grammar-production-IRIREF]
+#<http://example/s> <http://example/p> <o> .
+# nt-syntax-bad-uri-09.nt
+# No relative IRIs in N-Triples [removed as it's valid according to the https://www.w3.org/TR/n-triples/#grammar-production-IRIREF]
+#<http://example/s> <http://example/p> "foo"^^<dt> .

@@ -27,6 +27,7 @@
 namespace quickRdfIo;
 
 use quickRdf\DataFactory as DF;
+use quickRdf\Dataset;
 use termTemplates\QuadTemplate;
 
 /**
@@ -36,21 +37,248 @@ use termTemplates\QuadTemplate;
  */
 class NQuadsParserTest extends \PHPUnit\Framework\TestCase {
 
-    public function testBig(): void {
-        $parser = new NQuadsParser(new DF(), true, true);
-        $n      = 0;
-        $N      = -1;
-        $stream = fopen(__DIR__ . '/puzzle4d_100k.ntriples', 'r');
-        if ($stream) {
-            $tmpl = new QuadTemplate(DF::namedNode('https://technical#subject'), DF::namedNode('https://technical#tripleCount'));
-            foreach ($parser->parseStream($stream) as $i) {
-                $n++;
-                if ($N < 0 && $tmpl->equals($i)) {
-                    $N = (int) (string) $i->getObject()->getValue();
+    /**
+     * 
+     * @param bool|null $strict
+     * @param bool|null $quads
+     * @param bool|null $star
+     * @return array<ParsingMode>
+     */
+    private function getModes(?bool $strict, ?bool $quads, ?bool $star): array {
+        $allModes = [
+            new ParsingMode(false, NQuadsParser::MODE_TRIPLES),
+            new ParsingMode(false, NQuadsParser::MODE_QUADS),
+            new ParsingMode(false, NQuadsParser::MODE_TRIPLES_STAR),
+            new ParsingMode(false, NQuadsParser::MODE_QUADS_STAR),
+            new ParsingMode(true, NQuadsParser::MODE_TRIPLES),
+            new ParsingMode(true, NQuadsParser::MODE_QUADS),
+            new ParsingMode(true, NQuadsParser::MODE_TRIPLES_STAR),
+            new ParsingMode(true, NQuadsParser::MODE_QUADS_STAR),
+        ];
+        $modes    = [];
+        $q        = [NQuadsParser::MODE_QUADS, NQuadsParser::MODE_QUADS_STAR];
+        $s        = [NQuadsParser::MODE_TRIPLES_STAR, NQuadsParser::MODE_QUADS_STAR];
+        foreach ($allModes as $i) {
+            $match = ($strict === null || $i->strict === $strict) &&
+                ($quads === null || $quads === $i->isQuads()) &&
+                ($star === null || $star === $i->isStar());
+            if ($match) {
+                $modes[] = $i;
+            }
+        }
+        return $modes;
+    }
+
+    /**
+     * Reads tests from a given file skipping comment lines but preserving line
+     * numbers.
+     * 
+     * @param string $filename
+     * @return array<string>
+     */
+    private function readTestLines(string $filename): array {
+        $tests = [];
+        foreach (file($filename) as $n => $l) {
+            if (substr($l, 0, 1) !== '#') {
+                $tests[$n + 1] = $l;
+            }
+        }
+        return $tests;
+    }
+
+    private function checkFails(string $test, ParsingMode $mode, string $msg): ?Dataset {
+        return $this->evalTest(false, $test, $mode, $msg);
+    }
+
+    private function checkPasses(string $test, ParsingMode $mode, string $msg): ?Dataset {
+        return $this->evalTest(true, $test, $mode, $msg);
+    }
+
+    private function evalTest(bool $outcome, string $test, ParsingMode $mode,
+                              string $msg): ?Dataset {
+        $parser = new NQuadsParser(new DF(), $mode->strict, $mode->mode);
+        try {
+            if (file_exists($test)) {
+                $stream = fopen($test, 'r');
+                if ($stream !== false) {
+                    $quads = iterator_to_array($parser->parseStream($stream));
+                } else {
+                    throw new \RuntimeException("failed to open $test file");
                 }
+            } else {
+                $quads = iterator_to_array($parser->parse($test));
+            }
+            $this->assertTrue($outcome, $msg);
+        } catch (RdfIoException $ex) {
+            if ($outcome) {
+                $this->assertTrue(false, $msg . "\n" . $ex);
+            } else {
+                $this->assertFalse($outcome, $msg);
+            }
+        }
+        $dataset = null;
+        if (isset($quads)) {
+            $dataset = new Dataset(false);
+            foreach ($quads as $q) {
+                $dataset->add($q);
+            }
+        }
+        return $dataset;
+    }
+
+    public function testBig(): void {
+        $tmpl        = new QuadTemplate(DF::namedNode('https://technical#subject'), DF::namedNode('https://technical#tripleCount'));
+        $dataFactory = new DF();
+        $stream      = fopen(__DIR__ . '/files/puzzle4d_100k.nt', 'r');
+        $modes       = $this->getModes(null, null, null);
+        $datasets    = [];
+        if ($stream) {
+            foreach ($modes as $mode) {
+                fseek($stream, 0);
+                $dataset = new Dataset(false);
+                $parser  = new NQuadsParser($dataFactory, $mode->strict, $mode->mode);
+                $n       = 0;
+                $N       = -1;
+                foreach ($parser->parseStream($stream) as $i) {
+                    $dataset->add($i);
+                    if ($N < 0 && $tmpl->equals($i)) {
+                        $N = (int) (string) $i->getObject()->getValue();
+                    }
+                }
+                $this->assertEquals($N, count($dataset));
+                $datasets[] = $dataset;
             }
             fclose($stream);
         }
-        $this->assertEquals($N, $n);
+        for ($i = 1; $i < count($datasets); $i++) {
+            $this->assertTrue($datasets[0]->equals($datasets[$i]), "Dataset $i");
+        }
+    }
+
+    public function testTriplesPositive(): void {
+        $modes    = $this->getModes(null, null, null);
+        $datasets = [];
+        foreach ($modes as $n => $mode) {
+            $datasets[] = $this->checkPasses(__DIR__ . '/files/triplesPositive.nt', $mode, (string) $mode);
+        }
+        for ($i = 1; $i < count($datasets); $i++) {
+            $this->assertEquals(count($datasets[0]), count($datasets[$i]), $modes[$i]);
+            $this->assertTrue($datasets[0]->equals($datasets[$i]), $modes[$i]);
+        }
+    }
+
+    public function testTriplesNegative(): void {
+        $modes = $this->getModes(true, null, null);
+        $tests = $this->readTestLines(__DIR__ . '/files/triplesNegative.nt');
+        foreach ($tests as $t => $test) {
+            foreach ($modes as $m => $mode) {
+                $this->checkFails($test, $mode, "Test $t " . $mode);
+            }
+        }
+    }
+
+    public function testTriplesStarPositive(): void {
+        $modes    = $this->getModes(null, null, true);
+        $datasets = [];
+        foreach ($modes as $mode) {
+            $datasets[] = $this->checkPasses(__DIR__ . '/files/triplesStarPositive.nt', $mode, (string) $mode);
+        }
+        for ($i = 1; $i < count($datasets); $i++) {
+            $this->assertEquals(count($datasets[0]), count($datasets[$i]), $modes[$i]);
+            $this->assertTrue($datasets[0]->equals($datasets[$i]), $modes[$i]);
+        }
+    }
+
+    public function testTriplesStarNegative(): void {
+        $modes = $this->getModes(true, null, true);
+        $tests = $this->readTestLines(__DIR__ . '/files/triplesStarNegative.nt');
+        foreach ($tests as $t => $test) {
+            foreach ($modes as $mode) {
+                $this->checkFails($test, $mode, "Test $t " . $mode);
+            }
+        }
+    }
+
+//    public function testTriplesStrictPositive(): void {
+//        $modes = $this->getModes(null, null, null);
+//        $tests = $this->readTestLines(__DIR__ . '/files/triplesStrictPositive.nt');
+//        foreach ($tests as $t => $test) {
+//            $datasets = [];
+//            foreach ($modes as $m => $mode) {
+//                if ($mode->strict) {
+//                    $this->checkFails($test, $mode, "Test $t " . $mode);
+//                } else {
+//                    $datasets[$m] = $this->checkPasses($test, $mode, "Test $t " . $mode);
+//                }
+//            }
+//            for ($i = 1; $i < count($datasets); $i++) {
+//                $this->assertEquals(count($datasets[0]), count($datasets[$i]), $modes[array_keys($datasets)[$i]]);
+//                $this->assertTrue($datasets[0]->equals($datasets[$i]), $modes[array_keys($datasets)[$i]]);
+//            }
+//        }
+//    }
+
+    public function testQuadsPositive(): void {
+        $modes    = $this->getModes(null, true, null);
+        $datasets = [];
+        foreach ($modes as $mode) {
+            $datasets[] = $this->checkPasses(__DIR__ . '/files/quadsPositive.nq', $mode, (string) $mode);
+        }
+        for ($i = 1; $i < count($datasets); $i++) {
+            $this->assertEquals(count($datasets[0]), count($datasets[$i]), $modes[$i]);
+            $this->assertTrue($datasets[0]->equals($datasets[$i]), $modes[$i]);
+        }
+    }
+
+    public function testQuadsNegative(): void {
+        $modes = $this->getModes(true, true, null);
+        $tests = $this->readTestLines(__DIR__ . '/files/quadsNegative.nq');
+        foreach ($tests as $t => $test) {
+            foreach ($modes as $m => $mode) {
+                $this->checkFails($test, $mode, "Test $t " . $mode);
+            }
+        }
+    }
+
+    public function testQuadsStarPositive(): void {
+        $modes    = $this->getModes(null, true, true);
+        $datasets = [];
+        foreach ($modes as $mode) {
+            $datasets[] = $this->checkPasses(__DIR__ . '/files/quadsStarPositive.nq', $mode, (string) $mode);
+        }
+        for ($i = 1; $i < count($datasets); $i++) {
+            $this->assertEquals(count($datasets[0]), count($datasets[$i]), $modes[$i]);
+            $this->assertTrue($datasets[0]->equals($datasets[$i]), $modes[$i]);
+        }
+    }
+
+//    public function testQuadsStrictPositive(): void {
+//        $modes = $this->getModes(null, true, null);
+//        $tests = $this->readTestLines(__DIR__ . '/files/quadsStrictPositive.nt');
+//        foreach ($tests as $t => $test) {
+//            $datasets = [];
+//            foreach ($modes as $m => $mode) {
+//                if ($mode->strict) {
+//                    $this->checkFails($test, $mode, "Test $t " . $mode);
+//                } else {
+//                    $datasets[$m] = $this->checkPasses($test, $mode, "Test $t " . $mode);
+//                }
+//            }
+//            for ($i = 1; $i < count($datasets); $i++) {
+//                $this->assertEquals(count($datasets[0]), count($datasets[$i]), $modes[array_keys($datasets)[$i]]);
+//                $this->assertTrue($datasets[0]->equals($datasets[$i]), $modes[array_keys($datasets)[$i]]);
+//            }
+//        }
+//    }
+
+    public function testInputExceptions(): void {
+        $parser = new NQuadsParser(new DF());
+
+        try {
+            $parser->parseStream("<foo> <bar> <baz> .");
+            $this->assertTrue(false);
+        } catch (RdfIoException $ex) {
+            $this->assertEquals("Input has to be a resource", $ex->getMessage());
+        }
     }
 }

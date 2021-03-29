@@ -1,0 +1,79 @@
+# nq-syntax-bad-literal-01.nq
+<http://example/s> <http://example/p> <http://example/o> "o" .
+# nq-syntax-bad-literal-02.nq
+<http://example/s> <http://example/p> <http://example/o> "o"@en .
+# nq-syntax-bad-literal-03.nq
+<http://example/s> <http://example/p> <http://example/o> "o"^^<http://www.w3.org/2001/XMLSchema#string> .
+# nq-syntax-bad-quint-01.nq
+# N-Quads rejects a quint
+<http://example/s> <http://example/p> <http://example/o> <http://example/g> <http://example/n> .
+# nq-syntax-bad-uri-01.nq
+# No relative IRIs in N-Quads [removed as it's valid according to the https://www.w3.org/TR/n-quads/#grammar-production-IRIREF]
+#<http://example/s> <http://example/p> <http://example/o> <g>.
+# nt-syntax-bad-base-01.nq
+@base <http://example/> .
+# nt-syntax-bad-esc-01.nq
+# Bad string escape
+<http://example/s> <http://example/p> "a\zb" .
+# nt-syntax-bad-esc-02.nq
+# Bad string escape
+<http://example/s> <http://example/p> "\uWXYZ" .
+# nt-syntax-bad-esc-03.nq
+# Bad string escape
+<http://example/s> <http://example/p> "\U0000WXYZ" .
+# nt-syntax-bad-lang-01.nq
+# Bad lang tag
+<http://example/s> <http://example/p> "string"@1 .
+# nt-syntax-bad-num-01.nq
+<http://example/s> <http://example/p> 1 .
+# nt-syntax-bad-num-02.nq
+<http://example/s> <http://example/p> 1.0 .
+# nt-syntax-bad-num-03.nq
+<http://example/s> <http://example/p> 1.0e0 .
+# nt-syntax-bad-prefix-01.nq
+@prefix : <http://example/> .
+# nt-syntax-bad-string-01.nq
+<http://example/s> <http://example/p> "abc' .
+# nt-syntax-bad-string-02.nq
+<http://example/s> <http://example/p> 1.0 .
+# nt-syntax-bad-string-03.nq
+<http://example/s> <http://example/p> 1.0e1 .
+# nt-syntax-bad-string-04.nq
+<http://example/s> <http://example/p> '''abc''' .
+# nt-syntax-bad-string-05.nq
+<http://example/s> <http://example/p> """abc""" .
+# nt-syntax-bad-string-06.nq
+<http://example/s> <http://example/p> "abc .
+# nt-syntax-bad-string-07.nq
+<http://example/s> <http://example/p> abc" .
+# nt-syntax-bad-struct-01.nq
+<http://example/s> <http://example/p> <http://example/o>, <http://example/o2> .
+# nt-syntax-bad-struct-02.nq
+<http://example/s> <http://example/p> <http://example/o>; <http://example/p2>, <http://example/o2> .
+# nt-syntax-bad-uri-01.nq
+# Bad IRI : space.
+<http://example/ space> <http://example/p> <http://example/o> .
+# nt-syntax-bad-uri-02.nq
+# Bad IRI : bad escape
+<http://example/\u00ZZ11> <http://example/p> <http://example/o> .
+# nt-syntax-bad-uri-03.nq
+# Bad IRI : bad escape
+<http://example/\U00ZZ1111> <http://example/p> <http://example/o> .
+# nt-syntax-bad-uri-04.nq
+# Bad IRI : character escapes not allowed.
+<http://example/\n> <http://example/p> <http://example/o> .
+# nt-syntax-bad-uri-05.nq
+# Bad IRI : character escapes not allowed.
+<http://example/\/> <http://example/p> <http://example/o> .
+# nt-syntax-bad-uri-06.nq
+# No relative IRIs in N-Triples [removed as it's valid according to the https://www.w3.org/TR/n-quads/#grammar-production-IRIREF]
+#<s> <http://example/p> <http://example/o> .
+# nt-syntax-bad-uri-07.nq
+# No relative IRIs in N-Triples [removed as it's valid according to the https://www.w3.org/TR/n-quads/#grammar-production-IRIREF]
+#<http://example/s> <p> <http://example/o> .
+# nt-syntax-bad-uri-08.nq
+# No relative IRIs in N-Triples [removed as it's valid according to the https://www.w3.org/TR/n-quads/#grammar-production-IRIREF]
+#<http://example/s> <http://example/p> <o> .
+# nt-syntax-bad-uri-09.nq
+# No relative IRIs in N-Triples [removed as it's valid according to the https://www.w3.org/TR/n-quads/#grammar-production-IRIREF]
+#<http://example/s> <http://example/p> "foo"^^<dt> .

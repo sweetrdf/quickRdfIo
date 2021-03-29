@@ -40,7 +40,7 @@ class TriGParserTest extends \PHPUnit\Framework\TestCase {
         $parser = new TriGParser(new DF());
         $n      = 0;
         $N      = -1;
-        $stream = fopen(__DIR__ . '/puzzle4d_100k.ntriples', 'r');
+        $stream = fopen(__DIR__ . '/files/puzzle4d_100k.nt', 'r');
         if ($stream) {
             $tmpl = new QuadTemplate(DF::namedNode('https://technical#subject'), DF::namedNode('https://technical#tripleCount'));
             foreach ($parser->parseStream($stream) as $i) {

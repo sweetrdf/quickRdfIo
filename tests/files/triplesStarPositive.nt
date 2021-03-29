@@ -1,0 +1,24 @@
+# https://w3c.github.io/rdf-star/tests/nt/syntax/manifest.html#ntriples-star-1
+<< <http://example/s> <http://example/p> <http://example/o> >> <http://example/q> <http://example/z> .
+# https://w3c.github.io/rdf-star/tests/nt/syntax/manifest.html#ntriples-star-2
+<http://example/x> <http://example/p> << <http://example/s> <http://example/p> <http://example/o> >> .
+# https://w3c.github.io/rdf-star/tests/nt/syntax/manifest.html#ntriples-star-3
+<< <http://example/s1> <http://example/p1> <http://example/o1> >> <http://example/q> << <http://example/s2> <http://example/p2> <http://example/o2> >> .
+# https://w3c.github.io/rdf-star/tests/nt/syntax/manifest.html#ntriples-star-4
+<<<http://example/s1><http://example/p1><http://example/o1>>><http://example/q><<<http://example/s2><http://example/p2><http://example/o2>>>.
+# https://w3c.github.io/rdf-star/tests/nt/syntax/manifest.html#ntriples-star-5
+<<<<<http://example/s1><http://example/p1><http://example/o1>>><http://example/q1><<<http://example/s2><http://example/p2><http://example/o2>>>>><http://example/q2><<<<<http://example/s3><http://example/p3><http://example/o3>>><http://example/q3><<<http://example/s4><http://example/p4><http://example/o4>>>>>.
+# https://w3c.github.io/rdf-star/tests/nt/syntax/manifest.html#ntriples-star-bnode-1
+_:b0 <http://example/p> <http://example/o> .
+<< _:b0 <http://example/p> <http://example/o> >> <http://example/q> "ABC" .
+# https://w3c.github.io/rdf-star/tests/nt/syntax/manifest.html#ntriples-star-bnode-2
+<http://example/s> <http://example/p> _:b1 .
+<< <http://example/s> <http://example/p> _:b1 >> <http://example/q> "456"^^<http://www.w3.org/2001/XMLSchema#integer> .
+# https://w3c.github.io/rdf-star/tests/nt/syntax/manifest.html#ntriples-star-nested-1
+<http://example/s> <http://example/p> <http://example/o> .
+<< <http://example/s> <http://example/p> <http://example/o> >> <http://example/r> <http://example/z> .
+<< << <http://example/s> <http://example/p> <http://example/o> >> <http://example/r> <http://example/z> >> <http://example/q> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+# https://w3c.github.io/rdf-star/tests/nt/syntax/manifest.html#ntriples-star-nested-2
+<http://example/s> <http://example/p> <http://example/o> .
+<http://example/a> <http://example/q> << <http://example/s> <http://example/p> <http://example/o> >> .
+<< <http://example/a> <http://example/q> << <http://example/s> <http://example/p> <http://example/o> >> >> <http://example/r> <http://example/z> .
