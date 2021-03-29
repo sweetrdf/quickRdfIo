@@ -56,10 +56,40 @@ Search.appendIndex(
             "summary": "Converts\u0020regex\u0020matches\u0020array\u0020into\u0020a\u0020Quad.",
             "url": "classes/quickRdfIo-NQuadsParser.html#method_makeQuad"
         },                {
-            "fqsen": "\\quickRdfIo\\NQuadsParser\u003A\u003AunescapeUnicode\u0028\u0029",
-            "name": "unescapeUnicode",
+            "fqsen": "\\quickRdfIo\\NQuadsParser\u003A\u003AstarQuadGenerator\u0028\u0029",
+            "name": "starQuadGenerator",
             "summary": "",
-            "url": "classes/quickRdfIo-NQuadsParser.html#method_unescapeUnicode"
+            "url": "classes/quickRdfIo-NQuadsParser.html#method_starQuadGenerator"
+        },                {
+            "fqsen": "\\quickRdfIo\\NQuadsParser\u003A\u003AparseStar\u0028\u0029",
+            "name": "parseStar",
+            "summary": "",
+            "url": "classes/quickRdfIo-NQuadsParser.html#method_parseStar"
+        },                {
+            "fqsen": "\\quickRdfIo\\NQuadsParser\u003A\u003Aunescape\u0028\u0029",
+            "name": "unescape",
+            "summary": "",
+            "url": "classes/quickRdfIo-NQuadsParser.html#method_unescape"
+        },                {
+            "fqsen": "\\quickRdfIo\\NQuadsParser\u003A\u003AMODE_TRIPLES",
+            "name": "MODE_TRIPLES",
+            "summary": "",
+            "url": "classes/quickRdfIo-NQuadsParser.html#constant_MODE_TRIPLES"
+        },                {
+            "fqsen": "\\quickRdfIo\\NQuadsParser\u003A\u003AMODE_QUADS",
+            "name": "MODE_QUADS",
+            "summary": "",
+            "url": "classes/quickRdfIo-NQuadsParser.html#constant_MODE_QUADS"
+        },                {
+            "fqsen": "\\quickRdfIo\\NQuadsParser\u003A\u003AMODE_TRIPLES_STAR",
+            "name": "MODE_TRIPLES_STAR",
+            "summary": "",
+            "url": "classes/quickRdfIo-NQuadsParser.html#constant_MODE_TRIPLES_STAR"
+        },                {
+            "fqsen": "\\quickRdfIo\\NQuadsParser\u003A\u003AMODE_QUADS_STAR",
+            "name": "MODE_QUADS_STAR",
+            "summary": "",
+            "url": "classes/quickRdfIo-NQuadsParser.html#constant_MODE_QUADS_STAR"
         },                {
             "fqsen": "\\quickRdfIo\\NQuadsParser\u003A\u003AEOL",
             "name": "EOL",
@@ -71,10 +101,25 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/quickRdfIo-NQuadsParser.html#constant_UCHAR"
         },                {
+            "fqsen": "\\quickRdfIo\\NQuadsParser\u003A\u003ACOMMENT_STRICT",
+            "name": "COMMENT_STRICT",
+            "summary": "",
+            "url": "classes/quickRdfIo-NQuadsParser.html#constant_COMMENT_STRICT"
+        },                {
             "fqsen": "\\quickRdfIo\\NQuadsParser\u003A\u003ACOMMENT",
             "name": "COMMENT",
             "summary": "",
             "url": "classes/quickRdfIo-NQuadsParser.html#constant_COMMENT"
+        },                {
+            "fqsen": "\\quickRdfIo\\NQuadsParser\u003A\u003ACOMMENT2_STRICT",
+            "name": "COMMENT2_STRICT",
+            "summary": "",
+            "url": "classes/quickRdfIo-NQuadsParser.html#constant_COMMENT2_STRICT"
+        },                {
+            "fqsen": "\\quickRdfIo\\NQuadsParser\u003A\u003ACOMMENT2",
+            "name": "COMMENT2",
+            "summary": "",
+            "url": "classes/quickRdfIo-NQuadsParser.html#constant_COMMENT2"
         },                {
             "fqsen": "\\quickRdfIo\\NQuadsParser\u003A\u003ALANGTAG_STRICT",
             "name": "LANGTAG_STRICT",
@@ -131,6 +176,21 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/quickRdfIo-NQuadsParser.html#constant_LITERAL"
         },                {
+            "fqsen": "\\quickRdfIo\\NQuadsParser\u003A\u003ASTAR_START",
+            "name": "STAR_START",
+            "summary": "",
+            "url": "classes/quickRdfIo-NQuadsParser.html#constant_STAR_START"
+        },                {
+            "fqsen": "\\quickRdfIo\\NQuadsParser\u003A\u003ASTAR_END",
+            "name": "STAR_END",
+            "summary": "",
+            "url": "classes/quickRdfIo-NQuadsParser.html#constant_STAR_END"
+        },                {
+            "fqsen": "\\quickRdfIo\\NQuadsParser\u003A\u003A\u0024unescapeMap",
+            "name": "unescapeMap",
+            "summary": "See\u0020https\u003A\/\/www.w3.org\/TR\/n\u002Dquads\/\u0023grammar\u002Dproduction\u002DECHAR",
+            "url": "classes/quickRdfIo-NQuadsParser.html#property_unescapeMap"
+        },                {
             "fqsen": "\\quickRdfIo\\NQuadsParser\u003A\u003A\u0024dataFactory",
             "name": "dataFactory",
             "summary": "",
@@ -141,15 +201,60 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/quickRdfIo-NQuadsParser.html#property_input"
         },                {
-            "fqsen": "\\quickRdfIo\\NQuadsParser\u003A\u003A\u0024chunkSize",
-            "name": "chunkSize",
+            "fqsen": "\\quickRdfIo\\NQuadsParser\u003A\u003A\u0024mode",
+            "name": "mode",
             "summary": "",
-            "url": "classes/quickRdfIo-NQuadsParser.html#property_chunkSize"
+            "url": "classes/quickRdfIo-NQuadsParser.html#property_mode"
         },                {
             "fqsen": "\\quickRdfIo\\NQuadsParser\u003A\u003A\u0024regexp",
             "name": "regexp",
             "summary": "",
             "url": "classes/quickRdfIo-NQuadsParser.html#property_regexp"
+        },                {
+            "fqsen": "\\quickRdfIo\\NQuadsParser\u003A\u003A\u0024regexpSbjPred",
+            "name": "regexpSbjPred",
+            "summary": "",
+            "url": "classes/quickRdfIo-NQuadsParser.html#property_regexpSbjPred"
+        },                {
+            "fqsen": "\\quickRdfIo\\NQuadsParser\u003A\u003A\u0024regexpObjGraph",
+            "name": "regexpObjGraph",
+            "summary": "",
+            "url": "classes/quickRdfIo-NQuadsParser.html#property_regexpObjGraph"
+        },                {
+            "fqsen": "\\quickRdfIo\\NQuadsParser\u003A\u003A\u0024regexpPred",
+            "name": "regexpPred",
+            "summary": "",
+            "url": "classes/quickRdfIo-NQuadsParser.html#property_regexpPred"
+        },                {
+            "fqsen": "\\quickRdfIo\\NQuadsParser\u003A\u003A\u0024regexpGraph",
+            "name": "regexpGraph",
+            "summary": "",
+            "url": "classes/quickRdfIo-NQuadsParser.html#property_regexpGraph"
+        },                {
+            "fqsen": "\\quickRdfIo\\NQuadsParser\u003A\u003A\u0024regexpLineEnd",
+            "name": "regexpLineEnd",
+            "summary": "",
+            "url": "classes/quickRdfIo-NQuadsParser.html#property_regexpLineEnd"
+        },                {
+            "fqsen": "\\quickRdfIo\\NQuadsParser\u003A\u003A\u0024regexpCommentLine",
+            "name": "regexpCommentLine",
+            "summary": "",
+            "url": "classes/quickRdfIo-NQuadsParser.html#property_regexpCommentLine"
+        },                {
+            "fqsen": "\\quickRdfIo\\NQuadsParser\u003A\u003A\u0024line",
+            "name": "line",
+            "summary": "Input\u0020line",
+            "url": "classes/quickRdfIo-NQuadsParser.html#property_line"
+        },                {
+            "fqsen": "\\quickRdfIo\\NQuadsParser\u003A\u003A\u0024offset",
+            "name": "offset",
+            "summary": "Character\u0020offset\u0020within\u0020a\u0020parsed\u0020line\u0020\u0028used\u0020by\u0020the\u0020star\u0020parser\u0029",
+            "url": "classes/quickRdfIo-NQuadsParser.html#property_offset"
+        },                {
+            "fqsen": "\\quickRdfIo\\NQuadsParser\u003A\u003A\u0024level",
+            "name": "level",
+            "summary": "Recursion\u0020level\u0020of\u0020the\u0020start\u0020parser",
+            "url": "classes/quickRdfIo-NQuadsParser.html#property_level"
         },                {
             "fqsen": "\\quickRdfIo\\NQuadsParser\u003A\u003A\u0024quads",
             "name": "quads",
@@ -175,6 +280,11 @@ Search.appendIndex(
             "name": "serializeStream",
             "summary": "",
             "url": "classes/quickRdfIo-NQuadsSerializer.html#method_serializeStream"
+        },                {
+            "fqsen": "\\quickRdfIo\\NQuadsSerializer\u003A\u003AserializeQuad\u0028\u0029",
+            "name": "serializeQuad",
+            "summary": "",
+            "url": "classes/quickRdfIo-NQuadsSerializer.html#method_serializeQuad"
         },                {
             "fqsen": "\\quickRdfIo\\RdfIoException",
             "name": "RdfIoException",

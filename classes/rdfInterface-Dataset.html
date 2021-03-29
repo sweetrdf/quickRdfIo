@@ -463,7 +463,7 @@ All quads for which the callable returns true are copied.</li>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">copyExcept</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__return-type"><a href="classes/rdfInterface-QuadCompare.html"><abbr title="\rdfInterface\QuadCompare">QuadCompare</abbr></a>|<a href="classes/rdfInterface-QuadIterator.html"><abbr title="\rdfInterface\QuadIterator">QuadIterator</abbr></a>|callable|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$filter</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/rdfInterface-Dataset.html"><abbr title="\rdfInterface\Dataset">Dataset</abbr></a></span></code>
+                <span class="phpdocumentor-signature__name">copyExcept</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href="classes/rdfInterface-QuadCompare.html"><abbr title="\rdfInterface\QuadCompare">QuadCompare</abbr></a>|<a href="classes/rdfInterface-QuadIterator.html"><abbr title="\rdfInterface\QuadIterator">QuadIterator</abbr></a>|callable|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$filter</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/rdfInterface-Dataset.html"><abbr title="\rdfInterface\Dataset">Dataset</abbr></a></span></code>
 
         <section class="phpdocumentor-description"><p>If $filter is provided, the copy contains only quads not matching the
 $filter.</p>
@@ -484,7 +484,7 @@ All quads for which the callable returns false are copied.</li>
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-signature__argument__name">$filter</span>
                 : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/rdfInterface-QuadCompare.html"><abbr title="\rdfInterface\QuadCompare">QuadCompare</abbr></a>|<a href="classes/rdfInterface-QuadIterator.html"><abbr title="\rdfInterface\QuadIterator">QuadIterator</abbr></a>|callable|null</span>
-                 = <span class="phpdocumentor-signature__argument__default-value">null</span>            </dt>
+                            </dt>
             <dd class="phpdocumentor-argument-list__definition">
                     <section class="phpdocumentor-description"></section>
 
@@ -588,7 +588,7 @@ an exception).</p>
 <li>A callable with signature <code class="prettyprint">fn(\rdfInterface\Quad, \rdfInterface\Dataset): bool</code>
 All quads for which the callable returns true are removed.</li>
 </ul>
-<p>A copying equivalent is the copyExcept($filter) method.</p>
+<p>An immputable equivalent is the copyExcept($filter) method.</p>
 </section>
 
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
@@ -660,7 +660,7 @@ All quads for which the callable returns true are removed.</li>
 <li>A callable with signature <code class="prettyprint">fn(\rdfInterface\Quad, \rdfInterface\Dataset): bool</code>
 All quads for which the callable returns false are removed.</li>
 </ul>
-<p>A copying equivalent is the copy($filter) method.</p>
+<p>An immputable equivalent is the copy($filter) method.</p>
 </section>
 
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
