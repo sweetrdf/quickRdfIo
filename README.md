@@ -25,10 +25,10 @@ It's very incomplite but better than nothing.\
 
 ## Usage
 
-```
+```php
 include 'vendor/autoload.php';
 
-// parse turle/ntriples/nquad file
+// parse turle/ntriples/nquad/ntriples* file
 $parser = new quickRdfIo\TriGParser();
 $stream = fopen('pathToTurtleFile', 'r');
 foreach($parser->parseStream($stream) as $quad) {
@@ -36,7 +36,7 @@ foreach($parser->parseStream($stream) as $quad) {
 }
 fclose($stream);
 
-// convert to nquads/ntriples
+// convert to nquads/ntriples/ntriples*
 $instream = fopen('pathToTurtleFile', 'r');
 $iterator = $parser->parseStream($instream);
 $serializer = new quickRdfIo\NQuadsSerializer();
