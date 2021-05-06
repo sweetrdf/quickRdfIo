@@ -481,6 +481,46 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/rdfHelpers-GenericQuadIterator.html#property_iter"
         },                {
+            "fqsen": "\\rdfHelpers\\GenericTermIterator",
+            "name": "GenericTermIterator",
+            "summary": "Wrapper\u0020making\u0020almost\u0020anything\u0020\u0028e.g.\u0020array,\u0020generator\u0020or\u0020a\u0020single\u0020Quad\u0020object\u0029\na\u0020QuadIterator.",
+            "url": "classes/rdfHelpers-GenericTermIterator.html"
+        },                {
+            "fqsen": "\\rdfHelpers\\GenericTermIterator\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "",
+            "url": "classes/rdfHelpers-GenericTermIterator.html#method___construct"
+        },                {
+            "fqsen": "\\rdfHelpers\\GenericTermIterator\u003A\u003Acurrent\u0028\u0029",
+            "name": "current",
+            "summary": "",
+            "url": "classes/rdfHelpers-GenericTermIterator.html#method_current"
+        },                {
+            "fqsen": "\\rdfHelpers\\GenericTermIterator\u003A\u003Akey\u0028\u0029",
+            "name": "key",
+            "summary": "",
+            "url": "classes/rdfHelpers-GenericTermIterator.html#method_key"
+        },                {
+            "fqsen": "\\rdfHelpers\\GenericTermIterator\u003A\u003Anext\u0028\u0029",
+            "name": "next",
+            "summary": "",
+            "url": "classes/rdfHelpers-GenericTermIterator.html#method_next"
+        },                {
+            "fqsen": "\\rdfHelpers\\GenericTermIterator\u003A\u003Arewind\u0028\u0029",
+            "name": "rewind",
+            "summary": "",
+            "url": "classes/rdfHelpers-GenericTermIterator.html#method_rewind"
+        },                {
+            "fqsen": "\\rdfHelpers\\GenericTermIterator\u003A\u003Avalid\u0028\u0029",
+            "name": "valid",
+            "summary": "",
+            "url": "classes/rdfHelpers-GenericTermIterator.html#method_valid"
+        },                {
+            "fqsen": "\\rdfHelpers\\GenericTermIterator\u003A\u003A\u0024iter",
+            "name": "iter",
+            "summary": "",
+            "url": "classes/rdfHelpers-GenericTermIterator.html#property_iter"
+        },                {
             "fqsen": "\\rdfHelpers\\NtriplesUtil",
             "name": "NtriplesUtil",
             "summary": "Description\u0020of\u0020Util",
@@ -720,6 +760,31 @@ Search.appendIndex(
             "name": "any",
             "summary": "",
             "url": "classes/rdfInterface-DatasetCompare.html#method_any"
+        },                {
+            "fqsen": "\\rdfInterface\\DatasetListQuadParts",
+            "name": "DatasetListQuadParts",
+            "summary": "Set\u0020of\u0020methods\u0020for\u0020listing\u0020distinct\u0020Terms\u0020being\u0020used\u0020on\u0020a\u0020given\u0020position\nof\u0020dataset\u0020quads.",
+            "url": "classes/rdfInterface-DatasetListQuadParts.html"
+        },                {
+            "fqsen": "\\rdfInterface\\DatasetListQuadParts\u003A\u003AlistSubjects\u0028\u0029",
+            "name": "listSubjects",
+            "summary": "",
+            "url": "classes/rdfInterface-DatasetListQuadParts.html#method_listSubjects"
+        },                {
+            "fqsen": "\\rdfInterface\\DatasetListQuadParts\u003A\u003AlistPredicates\u0028\u0029",
+            "name": "listPredicates",
+            "summary": "",
+            "url": "classes/rdfInterface-DatasetListQuadParts.html#method_listPredicates"
+        },                {
+            "fqsen": "\\rdfInterface\\DatasetListQuadParts\u003A\u003AlistObjects\u0028\u0029",
+            "name": "listObjects",
+            "summary": "",
+            "url": "classes/rdfInterface-DatasetListQuadParts.html#method_listObjects"
+        },                {
+            "fqsen": "\\rdfInterface\\DatasetListQuadParts\u003A\u003AlistGraphs\u0028\u0029",
+            "name": "listGraphs",
+            "summary": "",
+            "url": "classes/rdfInterface-DatasetListQuadParts.html#method_listGraphs"
         },                {
             "fqsen": "\\rdfInterface\\DatasetMapReduce",
             "name": "DatasetMapReduce",
@@ -1005,6 +1070,16 @@ Search.appendIndex(
             "name": "__toString",
             "summary": "",
             "url": "classes/rdfInterface-TermCompare.html#method___toString"
+        },                {
+            "fqsen": "\\rdfInterface\\TermIterator",
+            "name": "TermIterator",
+            "summary": "",
+            "url": "classes/rdfInterface-TermIterator.html"
+        },                {
+            "fqsen": "\\rdfInterface\\TermIterator\u003A\u003Acurrent\u0028\u0029",
+            "name": "current",
+            "summary": "",
+            "url": "classes/rdfInterface-TermIterator.html#method_current"
         },                {
             "fqsen": "\\",
             "name": "\\",
