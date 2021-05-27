@@ -546,6 +546,11 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/rdfHelpers-NtriplesUtil.html#method_serializeLiteral"
         },                {
+            "fqsen": "\\rdfHelpers\\NtriplesUtil\u003A\u003AserializeQuad\u0028\u0029",
+            "name": "serializeQuad",
+            "summary": "",
+            "url": "classes/rdfHelpers-NtriplesUtil.html#method_serializeQuad"
+        },                {
             "fqsen": "\\rdfHelpers\\NtriplesUtil\u003A\u003Aserialize\u0028\u0029",
             "name": "serialize",
             "summary": "",
