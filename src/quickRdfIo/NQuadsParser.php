@@ -250,7 +250,7 @@ class NQuadsParser implements iParser, iQuadIterator {
         $loop    = true;
         while ($loop) {
             $n++;
-            $this->line = fgets($this->input);
+            $this->line = (string) fgets($this->input);
             $loop       = !feof($this->input);
             if (!$loop) {
                 $this->line .= "\n"; // add new line to avoid issues with last line without \n
@@ -259,7 +259,7 @@ class NQuadsParser implements iParser, iQuadIterator {
             if ($ret === 0 && !empty(trim($this->line))) {
                 throw new RdfIoException("Can't parse line $n: " . $this->line);
             }
-            if ($matches[3] ?? null !== null) {
+            if (($matches[3] ?? null) !== null) {
                 yield $this->makeQuad($matches);
             }
         }
@@ -291,9 +291,9 @@ class NQuadsParser implements iParser, iQuadIterator {
             $value = $this->unescape($value);
             $obj   = $df::literal($value, $matches[8], $matches[7]);
         }
-        if ($matches[9] ?? null !== null) {
-            $graph = $df::namedNode($matches[9]);
-        } elseif ($matches[10] ?? null !== null) {
+        if (($matches[9] ?? null) !== null) {
+            $graph = $df::namedNode((string) $matches[9]);
+        } elseif (($matches[10] ?? null) !== null) {
             $graph = $df::blankNode($matches[10]);
         }
         return $df::quad($sbj, $pred, $obj, $graph ?? null);
@@ -311,7 +311,7 @@ class NQuadsParser implements iParser, iQuadIterator {
             $n++;
             $this->offset = 0;
             $this->level  = 0;
-            $this->line   = fgets($this->input);
+            $this->line   = (string) fgets($this->input);
             $loop         = !feof($this->input);
             if (!$loop) {
                 $this->line .= "\n"; // add new line to avoid issues with last line without \n
@@ -359,9 +359,9 @@ class NQuadsParser implements iParser, iQuadIterator {
             $obj          = $this->parseStar();
             $ret          = preg_match($this->regexpGraph, $this->line, $matches, PREG_UNMATCHED_AS_NULL, $this->offset);
             $this->offset += strlen($matches[0]);
-            if ($matches[1] ?? null !== null) {
+            if (($matches[1] ?? null) !== null) {
                 $graph = $this->dataFactory::namedNode($matches[1]);
-            } else if ($matches[2] ?? null !== null) {
+            } else if (($matches[2] ?? null) !== null) {
                 $graph = $this->dataFactory::blankNode($matches[2]);
             }
         } else {
@@ -379,9 +379,9 @@ class NQuadsParser implements iParser, iQuadIterator {
                 $value = $this->unescape($value);
                 $obj   = $this->dataFactory::literal($value, $matches[5], $matches[4]);
             }
-            if ($matches[6] ?? null !== null) {
+            if (($matches[6] ?? null) !== null) {
                 $graph = $this->dataFactory::namedNode($matches[6]);
-            } elseif ($matches[7] ?? null !== null) {
+            } elseif (($matches[7] ?? null) !== null) {
                 $graph = $this->dataFactory::blankNode($matches[7]);
             }
         }
