@@ -16,9 +16,10 @@
         "php": ">=8.0",
         "zozlak/rdf-constants": "^1.1",
         "sweetrdf/rdf-helpers": "*",
-        "sweetrdf/rdf-interface": ">=0.8.0",
+        "sweetrdf/rdf-interface": "dev-master",
         "sweetrdf/quick-rdf": "*",
-        "pietercolpaert/hardf": "*"
+        "pietercolpaert/hardf": "*",
+        "guzzlehttp/psr7": "^1"
     },
     "suggest": {
         "zozlak/quick-rdf": "*"

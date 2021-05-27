@@ -27,6 +27,7 @@
 namespace quickRdfIo;
 
 use Generator;
+use Psr\Http\Message\StreamInterface;
 use rdfInterface\QuadIterator as iQuadIterator;
 use rdfInterface\Parser as iParser;
 use rdfInterface\Quad as iQuad;
@@ -76,12 +77,7 @@ class NQuadsParser implements iParser, iQuadIterator {
      */
     private array $unescapeMap;
     private iDataFactory $dataFactory;
-
-    /**
-     *
-     * @var resource
-     */
-    private $input;
+    private StreamInterface $input;
     private int $mode;
 // non-star parser regexp
     private string $regexp;
@@ -201,8 +197,11 @@ class NQuadsParser implements iParser, iQuadIterator {
     }
 
     public function parseStream($input): iQuadIterator {
-        if (!is_resource($input)) {
-            throw new RdfIoException("Input has to be a resource");
+        if (!is_resource($input) && !($input instanceof StreamInterface)) {
+            throw new RdfIoException("Input has to be a resource or a Psr\Http\Message\StreamInterface");
+        }
+        if (is_resource($input)) {
+            $input = \GuzzleHttp\Psr7\Utils::streamFor($input);
         }
 
         $this->input = $input;
