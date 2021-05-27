@@ -18,8 +18,7 @@
         "sweetrdf/rdf-helpers": "*",
         "sweetrdf/rdf-interface": ">=0.9",
         "sweetrdf/quick-rdf": "*",
-        "pietercolpaert/hardf": "*",
-        "guzzlehttp/psr7": "^1"
+        "pietercolpaert/hardf": "*"
     },
     "suggest": {
         "zozlak/quick-rdf": "*"
