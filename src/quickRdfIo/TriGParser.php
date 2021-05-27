@@ -58,7 +58,11 @@ class TriGParser implements iParser, iQuadIterator {
      *
      */
     private Parser $parser;
-    private StreamInterface $input;
+    /**
+     * 
+     * @var resource
+     */
+    private $input;
 
     /**
      *
@@ -96,7 +100,7 @@ class TriGParser implements iParser, iQuadIterator {
             throw new RdfIoException("Input has to be a resource or a Psr\Http\Message\StreamInterface");
         }
         if (is_resource($input)) {
-            $input = \GuzzleHttp\Psr7\Utils::streamFor($input);
+            $input = \GuzzleHttp\Psr7\StreamWrapper::getResource($input);
         }
 
         $this->input       = $input;

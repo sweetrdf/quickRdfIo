@@ -77,7 +77,12 @@ class NQuadsParser implements iParser, iQuadIterator {
      */
     private array $unescapeMap;
     private iDataFactory $dataFactory;
-    private StreamInterface $input;
+
+    /**
+     * 
+     * @var resource
+     */
+    private $input;
     private int $mode;
 // non-star parser regexp
     private string $regexp;
@@ -200,8 +205,8 @@ class NQuadsParser implements iParser, iQuadIterator {
         if (!is_resource($input) && !($input instanceof StreamInterface)) {
             throw new RdfIoException("Input has to be a resource or a Psr\Http\Message\StreamInterface");
         }
-        if (is_resource($input)) {
-            $input = \GuzzleHttp\Psr7\Utils::streamFor($input);
+        if ($input instanceof StreamInterface) {
+            $input = \GuzzleHttp\Psr7\StreamWrapper::getResource($input);
         }
 
         $this->input = $input;
