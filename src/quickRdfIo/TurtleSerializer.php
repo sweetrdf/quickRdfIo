@@ -27,6 +27,8 @@
 namespace quickRdfIo;
 
 use zozlak\RdfConstants as RDF;
+use rdfInterface\QuadIterator as iQuadIterator;
+use rdfInterface\RdfNamespace as iRdfNamespace;
 use quickRdf\RdfNamespace;
 
 /**
@@ -36,37 +38,14 @@ use quickRdf\RdfNamespace;
  */
 class TurtleSerializer implements \rdfInterface\Serializer {
 
+    use TmpStreamSerializerTrait;
+
     public function __construct() {
         
     }
 
-    public function serialize(
-        \rdfInterface\QuadIterator $graph,
-        ?\rdfInterface\RdfNamespace $nmsp = null
-    ): string {
-        $output = '';
-        $stream = fopen('php://memory', 'r+');
-        if ($stream === false) {
-            throw new RdfIoException('Failed to convert input to stream');
-        }
-        $this->serializeStream($stream, $graph, $nmsp);
-        $len = ftell($stream);
-        if ($len === false) {
-            throw new RdfIoException('Failed to seek in output streem');
-        }
-        rewind($stream);
-        $output = fread($stream, $len);
-        if ($output === false) {
-            throw new RdfIoException('Failed to read from output streem');
-        }
-        fclose($stream);
-        return $output;
-    }
-
-    public function serializeStream(
-        $output, \rdfInterface\QuadIterator $graph,
-        ?\rdfInterface\RdfNamespace $nmsp = null
-    ): void {
+    public function serializeStream($output, iQuadIterator $graph,
+                                    ?iRdfNamespace $nmsp = null): void {
         $nmsp       = $nmsp ?? new RdfNamespace();
         $serializer = new \pietercolpaert\hardf\TriGWriter(['format' => 'turtle']);
         if ($nmsp !== null) {

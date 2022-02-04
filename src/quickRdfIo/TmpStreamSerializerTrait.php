@@ -3,7 +3,7 @@
 /*
  * The MIT License
  *
- * Copyright 2021 zozlak.
+ * Copyright 2022 zozlak.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -27,36 +27,32 @@
 namespace quickRdfIo;
 
 use rdfInterface\QuadIterator as iQuadIterator;
+use rdfInterface\RdfNamespace as iRdfNamespace;
 
 /**
- * Description of TmpStreamTrait
+ * Description of TmpStreamSerializerTrait
  *
  * @author zozlak
  */
-trait TmpStreamTrait {
+trait TmpStreamSerializerTrait {
 
-    /**
-     *
-     * @var resource|null
-     */
-    private $tmpStream;
-
-    public function parse(string $input): iQuadIterator {
-        $this->closeTmpStream();
-        $tmp = fopen('php://memory', 'r+');
-        if ($tmp === false) {
+    public function serialize(iQuadIterator $graph, ?iRdfNamespace $nmsp = null): string {
+        $output = '';
+        $stream = fopen('php://memory', 'r+');
+        if ($stream === false) {
             throw new RdfIoException('Failed to convert input to stream');
         }
-        $this->tmpStream = $tmp;
-        fwrite($this->tmpStream, $input);
-        rewind($this->tmpStream);
-        return $this->parseStream($this->tmpStream);
-    }
-
-    private function closeTmpStream(): void {
-        if (is_resource($this->tmpStream)) {
-            fclose($this->tmpStream);
-            $this->tmpStream = null;
+        $this->serializeStream($stream, $graph, $nmsp);
+        $len = ftell($stream);
+        if ($len === false) {
+            throw new RdfIoException('Failed to seek in output streem');
         }
+        rewind($stream);
+        $output = fread($stream, $len);
+        if ($output === false) {
+            throw new RdfIoException('Failed to read from output streem');
+        }
+        fclose($stream);
+        return $output;
     }
 }
