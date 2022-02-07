@@ -41,7 +41,7 @@ use rdfInterface\DataFactory as iDataFactory;
  */
 class TriGParser implements iParser, iQuadIterator {
 
-    use TmpStreamTrait;
+    use TmpStreamParserTrait;
 
     private const CHUNK_SIZE = 8192;
 

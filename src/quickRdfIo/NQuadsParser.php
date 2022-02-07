@@ -32,11 +32,6 @@ use rdfInterface\Parser as iParser;
 use rdfInterface\Quad as iQuad;
 use rdfInterface\DataFactory as iDataFactory;
 
-// TODO - n-quads-star:
-// https://w3c.github.io/rdf-star/cg-spec/editors_draft.html#n-triples-star
-// and
-// https://w3c.github.io/rdf-star/tests/nt/syntax/manifest.html
-
 /**
  * Parses only n-quads and n-triples but does it fast (thanks to parsing in chunks
  * and extensive use of regullar expressions).
@@ -68,7 +63,7 @@ class NQuadsParser implements iParser, iQuadIterator {
     const LITERAL           = '"((?>[^"]|\\")*)"';
     const STAR_START        = '%\\G\s*<<%';
     const STAR_END          = '%\\G\s*>>%';
-    use TmpStreamTrait;
+    use TmpStreamParserTrait;
 
     /**
      * See https://www.w3.org/TR/n-quads/#grammar-production-ECHAR
@@ -83,9 +78,9 @@ class NQuadsParser implements iParser, iQuadIterator {
      */
     private $input;
     private int $mode;
-// non-star parser regexp
+    // non-star parser regexp
     private string $regexp;
-// star parser regexps
+    // star parser regexps
     private string $regexpSbjPred;
     private string $regexpObjGraph;
     private string $regexpPred;
