@@ -257,7 +257,7 @@ class RdfXmlParser implements iParser, iQuadIterator {
         // https://www.w3.org/TR/rdf-syntax-grammar/#section-Syntax-blank-nodes
         // https://www.w3.org/TR/rdf-syntax-grammar/#section-Syntax-ID-xml-base
         if (isset($attributes[self::RDF_ABOUT])) {
-            $subject = $this->dataFactory->namedNode($this->resolveIri($attributes[self::RDF_ABOUT]));
+            $subject = $this->dataFactory->namedNode($this->resolveIri($attributes[self::RDF_ABOUT]) ?? '');
         } elseif (isset($attributes[self::RDF_ID])) {
             $subject = $this->dataFactory->namedNode($this->baseUri . '#' . $attributes[self::RDF_ID]);
         } elseif (isset($attributes[self::RDF_NODEID])) {
@@ -306,7 +306,7 @@ class RdfXmlParser implements iParser, iQuadIterator {
 
         // rdf:resource attribute
         if (isset($attributes[self::RDF_RESOURCE])) {
-            $this->addTriple(null, $this->curPredicate, $this->resolveIri($attributes[self::RDF_RESOURCE]));
+            $this->addTriple(null, $this->curPredicate, $this->resolveIri($attributes[self::RDF_RESOURCE]) ?? '');
         }
 
         // rdf:nodeID attribute
