@@ -133,8 +133,6 @@ class RdfXmlSerializer implements \rdfInterface\Serializer {
                 }
                 $xml .= '>' . $this->e($o->getValue()) . "</$pTag>";
                 fwrite($output, $xml);
-            } else {
-                throw new RdfIoException("Unsupported object class " . $o::class);
             }
             fwrite($output, $nl);
         }
