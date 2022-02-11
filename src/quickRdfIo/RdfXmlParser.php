@@ -42,36 +42,43 @@ use zozlak\RdfConstants as RDF;
  */
 class RdfXmlParser implements iParser, iQuadIterator {
 
-    const RDF_ROOT           = 'http://www.w3.org/1999/02/22-rdf-syntax-ns#RDF';
-    const RDF_ABOUT          = 'http://www.w3.org/1999/02/22-rdf-syntax-ns#about';
-    const RDF_DATATYPE       = 'http://www.w3.org/1999/02/22-rdf-syntax-ns#datatype';
-    const RDF_RESOURCE       = 'http://www.w3.org/1999/02/22-rdf-syntax-ns#resource';
-    const RDF_NODEID         = 'http://www.w3.org/1999/02/22-rdf-syntax-ns#nodeID';
-    const RDF_ID             = 'http://www.w3.org/1999/02/22-rdf-syntax-ns#ID';
-    const RDF_DESCRIPTION    = 'http://www.w3.org/1999/02/22-rdf-syntax-ns#Description';
-    const RDF_PARSETYPE      = 'http://www.w3.org/1999/02/22-rdf-syntax-ns#parseType';
-    const PARSETYPE_RESOURCE = 'Resource';
-    const PARSETYPE_LITERAL  = 'Literal';
-    const XML_BASE           = 'http://www.w3.org/XML/1998/namespacebase';
-    const XML_LANG           = 'http://www.w3.org/XML/1998/namespacelang';
-    const STATE_ROOT         = 'root';
-    const STATE_NODE         = 'node';
-    const STATE_PREDICATE    = 'predicate';
-    const STATE_VALUE        = 'value';
-    const STATE_XMLLITERAL   = 'xmlliteral'; //https://www.w3.org/TR/rdf-syntax-grammar/#section-Syntax-XML-literals
-    const CHUNK_SIZE         = 1000000;
+    const RDF_ROOT            = 'http://www.w3.org/1999/02/22-rdf-syntax-ns#RDF';
+    const RDF_ABOUT           = 'http://www.w3.org/1999/02/22-rdf-syntax-ns#about';
+    const RDF_DATATYPE        = 'http://www.w3.org/1999/02/22-rdf-syntax-ns#datatype';
+    const RDF_RESOURCE        = 'http://www.w3.org/1999/02/22-rdf-syntax-ns#resource';
+    const RDF_NODEID          = 'http://www.w3.org/1999/02/22-rdf-syntax-ns#nodeID';
+    const RDF_ID              = 'http://www.w3.org/1999/02/22-rdf-syntax-ns#ID';
+    const RDF_DESCRIPTION     = 'http://www.w3.org/1999/02/22-rdf-syntax-ns#Description';
+    const RDF_PARSETYPE       = 'http://www.w3.org/1999/02/22-rdf-syntax-ns#parseType';
+    const RDF_ABOUTEACHPREFIX = 'http://www.w3.org/1999/02/22-rdf-syntax-ns#aboutEachPrefix';
+    const RDF_ABOUTEACH       = 'http://www.w3.org/1999/02/22-rdf-syntax-ns#aboutEach';
+    const PARSETYPE_RESOURCE  = 'Resource';
+    const PARSETYPE_LITERAL   = 'Literal';
+    const XML_BASE            = 'http://www.w3.org/XML/1998/namespacebase';
+    const XML_LANG            = 'http://www.w3.org/XML/1998/namespacelang';
+    const STATE_ROOT          = 'root';
+    const STATE_NODE          = 'node';
+    const STATE_PREDICATE     = 'predicate';
+    const STATE_VALUE         = 'value';
+    const STATE_XMLLITERAL    = 'xmlliteral'; //https://www.w3.org/TR/rdf-syntax-grammar/#section-Syntax-XML-literals
+    const CHUNK_SIZE          = 1000000;
 
     /**
      * 
      * @var array<string>
      */
-    private static array $skipAttributes = [
+    private static array $skipAttributes    = [
         self::RDF_ABOUT,
         self::RDF_ID,
         self::RDF_NODEID,
         self::RDF_RESOURCE,
         self::RDF_DATATYPE,
         self::RDF_PARSETYPE,
+        self::XML_LANG,
+    ];
+    private static array $literalAttributes = [
+        self::RDF_ID,
+        self::RDF_DATATYPE,
         self::XML_LANG,
     ];
     use TmpStreamParserTrait;
@@ -85,14 +92,27 @@ class RdfXmlParser implements iParser, iQuadIterator {
     private $input;
     private XmlParser $parser;
     private string $baseUri;
-    private string $lang;
+    private string $baseUriDefault;
+    private string $baseUriEmpty;
     private ?string $datatype;
+
+    /**
+     * 
+     * @var array<int, array<string, string>>
+     */
+    private array $langStack;
+
+    /**
+     * 
+     * @var array<string, iNamedNode>
+     */
+    private array $elementIds;
 
     /**
      * 
      * @var array<iNamedNode | iBlankNode>
      */
-    private array $subjectsStack;
+    private array $subjectStack;
 
     /**
      * 
@@ -100,7 +120,8 @@ class RdfXmlParser implements iParser, iQuadIterator {
      */
     private array $subjectChangeTagsStack;
     private iNamedNode $curPredicate;
-    private ?bool $cdataPredicate;
+    private string $curLang;
+    private bool $cdataPredicate;
     private ?string $literalValue;
     private int $literalValueDepth;
     private iBlankNode | iNamedNode | null $reifyAs;
@@ -119,8 +140,8 @@ class RdfXmlParser implements iParser, iQuadIterator {
     private array $triples;
 
     public function __construct(iDataFactory $dataFactory, string $baseUri = '') {
-        $this->dataFactory = $dataFactory;
-        $this->baseUri     = $baseUri;
+        $this->dataFactory    = $dataFactory;
+        $this->baseUriDefault = $baseUri;
     }
 
     public function __destruct() {
@@ -130,7 +151,7 @@ class RdfXmlParser implements iParser, iQuadIterator {
     }
 
     public function setBaseUri(string $baseUri): void {
-        $this->baseUri = $baseUri;
+        $this->baseUriDefault = $baseUri;
     }
 
     public function current(): iQuad {
@@ -176,12 +197,14 @@ class RdfXmlParser implements iParser, iQuadIterator {
         }
         $this->state                  = self::STATE_ROOT;
         $this->nmsp                   = [];
-        $this->subjectsStack          = [];
+        $this->subjectStack           = [];
         $this->subjectChangeTagsStack = [];
-        $this->baseUri                = '';
-        $this->lang                   = '';
+        $this->elementIds             = [];
+        $this->langStack              = [];
         $this->literalValueDepth      = 0;
+        $this->curLang                = '';
         $this->reifyAs                = null;
+        $this->parseBaseUri($this->baseUriDefault);
         $this->parser                 = xml_parser_create_ns('UTF-8', '');
         xml_parser_set_option($this->parser, XML_OPTION_CASE_FOLDING, 0);
         xml_parser_set_option($this->parser, XML_OPTION_SKIP_TAGSTART, 0);
@@ -208,6 +231,7 @@ class RdfXmlParser implements iParser, iQuadIterator {
     private function onElementStart(string $name, array &$attribs): void {
         $prevState = $this->state;
 
+        $this->setLangDatatype($name, $attribs);
         switch ($this->state) {
             case self::STATE_ROOT:
                 $name === self::RDF_ROOT ? $this->onRoot($attribs) : $this->onNode($name, $attribs);
@@ -232,7 +256,7 @@ class RdfXmlParser implements iParser, iQuadIterator {
                 throw new RdfIoException("Unknown parser state $this->state");
         }
 
-        echo "START $prevState=>$this->state $name ($this->literalValueDepth)\n";
+        //echo "START $prevState=>$this->state $name ($this->literalValueDepth)\n";
     }
 
     /**
@@ -241,9 +265,10 @@ class RdfXmlParser implements iParser, iQuadIterator {
      * @return void
      */
     private function onRoot(array &$attributes): void {
-        $this->state   = self::STATE_NODE;
-        $this->baseUri = $attributes[self::XML_BASE] ?? '';
-        $this->lang    = $attributes[self::XML_LANG] ?? '';
+        $this->state = self::STATE_NODE;
+        if (isset($attributes[self::XML_BASE])) {
+            $this->parseBaseUri($attributes[self::XML_BASE]);
+        }
     }
 
     /**
@@ -253,19 +278,24 @@ class RdfXmlParser implements iParser, iQuadIterator {
      * @return iNamedNode|iBlankNode
      */
     private function onNode(string $tag, array &$attributes): iNamedNode | iBlankNode {
+        // standard conformance
+        if (isset($attributes[self::RDF_ABOUTEACH]) || isset($attributes[self::RDF_ABOUTEACHPREFIX])) {
+            throw new RdfIoException("Obsolete attribute '" . (isset($attributes[self::RDF_ABOUTEACH]) ? self::RDF_ABOUTEACH : self::RDF_ABOUTEACHPREFIX) . "' used");
+        }
+
         // create subject
         // https://www.w3.org/TR/rdf-syntax-grammar/#section-Syntax-blank-nodes
         // https://www.w3.org/TR/rdf-syntax-grammar/#section-Syntax-ID-xml-base
         if (isset($attributes[self::RDF_ABOUT])) {
             $subject = $this->dataFactory->namedNode($this->resolveIri($attributes[self::RDF_ABOUT]) ?? '');
         } elseif (isset($attributes[self::RDF_ID])) {
-            $subject = $this->dataFactory->namedNode($this->baseUri . '#' . $attributes[self::RDF_ID]);
+            $subject = $this->handleElementId($attributes[self::RDF_ID]);
         } elseif (isset($attributes[self::RDF_NODEID])) {
             $subject = $this->dataFactory->blankNode('_:' . $attributes[self::RDF_NODEID]);
         } else {
             $subject = $this->dataFactory->blankNode();
         }
-        $this->subjectsStack[]          = $subject;
+        $this->subjectStack[]           = $subject;
         $this->subjectChangeTagsStack[] = $tag;
 
         // type as tag
@@ -274,14 +304,11 @@ class RdfXmlParser implements iParser, iQuadIterator {
             $this->addTriple($subject, RDF::RDF_TYPE, $tag);
         }
 
-        // lang and datatype
-        $this->setLangDatatype($attributes);
-
         // predicates&values as attributes
         // https://www.w3.org/TR/rdf-syntax-grammar/#section-Syntax-property-attributes
         $attrToProcess = array_diff(array_keys($attributes), self::$skipAttributes);
         foreach ($attrToProcess as $attr) {
-            $this->addTriple($subject, (string) $attr, $attributes[$attr], $this->lang, $this->datatype ?? '');
+            $this->addTriple($subject, (string) $attr, $attributes[$attr], $this->curLang, $this->datatype ?? '');
         }
 
         // change the state
@@ -297,31 +324,34 @@ class RdfXmlParser implements iParser, iQuadIterator {
      */
     private function onPredicate(string $tag, array &$attributes): void {
         $this->state             = self::STATE_VALUE;
-        $this->cdataPredicate    = null;
+        // https://www.w3.org/TR/rdf-syntax-grammar/#emptyPropertyElt
+        $this->cdataPredicate    = count(array_diff(array_keys($attributes), self::$literalAttributes)) === 0;
         $this->literalValue      = '';
         $this->literalValueDepth = 1;
         $this->curPredicate      = $this->dataFactory->namedNode($tag);
-        $this->setLangDatatype($attributes);
         $parseType               = $attributes[self::RDF_PARSETYPE] ?? '';
+        $subjectTmp              = null;
 
-        // rdf:resource attribute
         if (isset($attributes[self::RDF_RESOURCE])) {
-            $this->addTriple(null, $this->curPredicate, $this->resolveIri($attributes[self::RDF_RESOURCE]) ?? '');
+            // rdf:resource attribute
+            $subjectTmp = $this->dataFactory->namedNode($this->resolveIri($attributes[self::RDF_RESOURCE]) ?? '');
+            $this->addTriple(null, $this->curPredicate, $subjectTmp);
+        } elseif (isset($attributes[self::RDF_NODEID])) {
+            // rdf:nodeID attribute
+            $subjectTmp = $this->dataFactory->blankNode($attributes[self::RDF_NODEID]);
+            $this->addTriple(null, $this->curPredicate, $subjectTmp);
         }
 
-        // rdf:nodeID attribute
-        if (isset($attributes[self::RDF_NODEID])) {
-            $this->addTriple(null, $this->curPredicate, $this->dataFactory->blankNode($attributes[self::RDF_NODEID]));
-        }
-
-        // attributes as nested triples with implicit blank node
+        // attributes as nested triples with implicit intermidiate node
         // https://www.w3.org/TR/rdf-syntax-grammar/#section-Syntax-property-attributes-on-property-element
         $attrToProcess = array_diff(array_keys($attributes), self::$skipAttributes);
         if (count($attrToProcess) > 0) {
-            $blankNode = $this->dataFactory->blankNode();
-            $this->addTriple(null, $tag, $blankNode);
+            if ($subjectTmp === null) {
+                $subjectTmp = $this->dataFactory->blankNode();
+                $this->addTriple(null, $tag, $subjectTmp);
+            }
             foreach ($attrToProcess as $attr) {
-                $this->addTriple($blankNode, (string) $attr, $attributes[$attr], $this->lang, $this->datatype ?? '');
+                $this->addTriple($subjectTmp, (string) $attr, $attributes[$attr], $this->curLang, $this->datatype ?? '');
             }
         }
 
@@ -330,7 +360,7 @@ class RdfXmlParser implements iParser, iQuadIterator {
         if ($parseType === self::PARSETYPE_RESOURCE) {
             $blankNode                      = $this->dataFactory->blankNode();
             $this->addTriple(null, $tag, $blankNode);
-            $this->subjectsStack[]          = $blankNode;
+            $this->subjectStack[]           = $blankNode;
             $this->subjectChangeTagsStack[] = $tag;
             $this->state                    = self::STATE_PREDICATE;
         }
@@ -344,8 +374,8 @@ class RdfXmlParser implements iParser, iQuadIterator {
         // reification
         // https://www.w3.org/TR/rdf-syntax-grammar/#section-Syntax-reifying
         if (isset($attributes[self::RDF_ID])) {
-            echo "reifying\n";
-            $this->reifyAs = $this->dataFactory->namedNode($this->baseUri . '#' . $attributes[self::RDF_ID]);
+            $this->reifyAs = $this->handleElementId($attributes[self::RDF_ID]);
+            //echo "reifying as $this->reifyAs\n";
         }
     }
 
@@ -353,7 +383,7 @@ class RdfXmlParser implements iParser, iQuadIterator {
         $prevState = $this->state;
 
         if ($this->state === self::STATE_VALUE && $this->cdataPredicate === true) {
-            $this->addTriple(null, $this->curPredicate, $this->literalValue ?? '', $this->lang, $this->datatype ?? '');
+            $this->addTriple(null, $this->curPredicate, $this->literalValue ?? '', $this->curLang, $this->datatype ?? '');
             $this->literalValue   = '';
             $this->cdataPredicate = false;
         } elseif ($this->state === self::STATE_XMLLITERAL) {
@@ -367,26 +397,30 @@ class RdfXmlParser implements iParser, iQuadIterator {
                 $this->literalValue .= "</" . $this->shorten($name) . ">";
             }
         } elseif ($this->state === self::STATE_PREDICATE && $name === end($this->subjectChangeTagsStack)) {
-            echo "removing from the subjects stack\n";
-            array_pop($this->subjectsStack);
+            //echo "removing from the subjects stack\n";
+            array_pop($this->subjectStack);
             array_pop($this->subjectChangeTagsStack);
             $this->cdataPredicate = false;
         }
 
         $this->state = match ($this->state) {
             self::STATE_VALUE => self::STATE_PREDICATE,
-            self::STATE_PREDICATE => count($this->subjectsStack) > 0 ? self::STATE_VALUE : self::STATE_NODE,
+            self::STATE_PREDICATE => count($this->subjectStack) > 0 ? self::STATE_VALUE : self::STATE_NODE,
             self::STATE_NODE => self::STATE_VALUE,
             self::STATE_XMLLITERAL => $this->literalValueDepth === 0 ? self::STATE_PREDICATE : self::STATE_XMLLITERAL,
             default => throw new RdfIoException("Wrong parser state $this->state"),
         };
 
-        echo "END $prevState=>$this->state $name ($this->cdataPredicate,$this->literalValueDepth) (" . implode(', ', $this->subjectsStack) . ")\n";
+        if ($name === (end($this->langStack) ?: [''])[0]) {
+            $this->curLang = array_pop($this->langStack)[1];
+        }
+
+        //echo "END $prevState=>$this->state $name ($this->cdataPredicate,$this->literalValueDepth) (" . implode(', ', $this->subjectStack) . ")\n";
     }
 
     private function onNamespaceStart(XMLParser $parser, string $prefix,
                                       string $uri): void {
-        echo "NMSP SET $prefix $uri\n";
+        //echo "NMSP SET $prefix $uri\n";
         if (!isset($this->nmsp[$prefix])) {
             $this->nmsp[$prefix] = [];
         }
@@ -394,7 +428,7 @@ class RdfXmlParser implements iParser, iQuadIterator {
     }
 
     private function onNamespaceEnd(XMLParser $parser, string $prefix): void {
-        echo "NMSP UNSET $prefix\n";
+        //echo "NMSP UNSET $prefix\n";
         array_pop($this->nmsp[$prefix]);
     }
 
@@ -402,9 +436,9 @@ class RdfXmlParser implements iParser, iQuadIterator {
         if ($this->state === self::STATE_VALUE && $this->cdataPredicate !== false || $this->state === self::STATE_XMLLITERAL) {
             $this->cdataPredicate = true;
             $this->literalValue   .= $data;
-            echo "CDATA $this->state $this->literalValue\n";
+            //echo "CDATA $this->state $this->literalValue\n";
         } else {
-            echo "CDATA $this->state (skip) $data\n";
+            //echo "CDATA $this->state (skip) $data\n";
         }
     }
 
@@ -432,8 +466,7 @@ class RdfXmlParser implements iParser, iQuadIterator {
         }
         $triple          = $df->quad($subject, $predicate, $object);
         $this->triples[] = $triple;
-        echo "adding $triple\n";
-
+        //echo "adding $triple\n";
         // reification
         // https://www.w3.org/TR/rdf-syntax-grammar/#section-Syntax-reifying
         if (!empty($this->reifyAs)) {
@@ -450,9 +483,10 @@ class RdfXmlParser implements iParser, iQuadIterator {
      * @param array<string, string> $attributes
      * @return void
      */
-    private function setLangDatatype(array &$attributes): void {
+    private function setLangDatatype(string $elementName, array &$attributes): void {
         if (isset($attributes[self::XML_LANG])) {
-            $this->lang = $attributes[self::XML_LANG];
+            $this->langStack[] = [$elementName, $this->curLang];
+            $this->curLang     = $attributes[self::XML_LANG];
         }
         $this->datatype = $this->resolveIri($attributes[self::RDF_DATATYPE] ?? null);
     }
@@ -498,7 +532,7 @@ class RdfXmlParser implements iParser, iQuadIterator {
     }
 
     private function getCurrentSubject(): iNamedNode | iBlankNode {
-        return end($this->subjectsStack) ?: throw new RdfIoException("Subjects stack empty");
+        return end($this->subjectStack) ?: throw new RdfIoException("Subjects stack empty");
     }
 
     /**
@@ -513,8 +547,35 @@ class RdfXmlParser implements iParser, iQuadIterator {
         }
         if (preg_match('`^[a-zA-Z][a-zA-Z0-9+-.]*://`', $iri)) {
             return $iri;
+        } elseif (empty($iri)) {
+            return $this->baseUriEmpty;
         } else {
             return $this->baseUri . $iri;
         }
+    }
+
+    private function handleElementId(string $id): iNamedNode {
+        if (isset($this->elementIds[$id])) {
+            throw new RdfIoException("Duplicated element id '$id'");
+        }
+        $this->elementIds[$id] = $this->dataFactory->namedNode($this->baseUriEmpty . '#' . $id);
+        return $this->elementIds[$id];
+    }
+
+    private function parseBaseUri(string $baseUri): void {
+        // https://www.w3.org/TR/rdf-syntax-grammar/#section-baseURIs
+        $bu                 = parse_url($baseUri);
+        $path               = $bu['path'] ?? '/';
+        $query              = isset($bu['query']) ? '?' . $bu['query'] : '';
+        $baseUri            = (isset($bu['scheme']) ? $bu['scheme'] . '://' : '') .
+            ($bu['host'] ?? '') .
+            (isset($bu['port']) ? ':' . $bu['port'] : '');
+        $this->baseUriEmpty = $baseUri . $path . $query;
+        $path               = explode('/', $path);
+        if (!empty(end($path))) {
+            $path[count($path) - 1] = '';
+        }
+        $path          = implode('/', $path);
+        $this->baseUri = $baseUri . $path;
     }
 }

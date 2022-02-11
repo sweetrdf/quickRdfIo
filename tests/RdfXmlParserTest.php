@@ -50,16 +50,30 @@ class RdfXmlParserTest extends \PHPUnit\Framework\TestCase {
         return $quad;
     }
 
+    /**
+     * Test against all tests/files/spec*rdf files
+     * @return void
+     */
     public function testSpecs(): void {
         $df       = new DataFactory();
         $parser   = new RdfXmlParser($df);
         $ntParser = new NQuadsParser($df, false, NQuadsParser::MODE_TRIPLES);
 
-        $baseDir = __DIR__ . '/files';
-        $files   = scandir($baseDir);
+        $baseDir      = __DIR__ . '/files';
+        $files        = scandir($baseDir);
         sort($files);
+        $skip         = [
+            'spec2.15.1.rdf', // rdf:Seq
+            'spec2.15.2.rdf', // rdf:Seq 
+            'spec2.16.rdf', // rdf:Collection
+        ];
+        $expectErrors = [
+            'spec5.4.rdf'     => 'Duplicated element id',
+            'spec7.2.4.1.rdf' => 'Obsolete attribute',
+            'spec7.2.4.2.rdf' => 'Obsolete attribute',
+        ];
         foreach ($files as $i) {
-            if (in_array($i, ['spec2.15.1.rdf', 'spec2.15.2.rdf', 'spec2.16.rdf'])) {
+            if (in_array($i, $skip)) {
                 continue;
             }
 
@@ -68,31 +82,63 @@ class RdfXmlParserTest extends \PHPUnit\Framework\TestCase {
             }
 
             $input    = fopen("$baseDir/$i", 'r');
-            $refInput = fopen("$baseDir/" . substr($i, 0, -3) . "nt", 'r');
+            $refInput = null;
             try {
-                $dataset = new Dataset();
-                $dataset->add($parser->parseStream($input));
-                $dataset = $dataset->map(fn($x) => $this->unblank($x, $df));
+                if (isset($expectErrors[$i])) {
+                    try {
+                        foreach ($parser->parseStream($input) as $j) {
+                            
+                        }
+                        $this->assertTrue(false, "No error in $i");
+                    } catch (RdfIoException $ex) {
+                        $this->assertStringContainsString($expectErrors[$i], $ex->getMessage(), "Wrong error message in $i");
+                    }
+                } else {
+                    $dataset = new Dataset();
+                    $dataset->add($parser->parseStream($input));
+                    $dataset = $dataset->map(fn($x) => $this->unblank($x, $df));
 
-                $ref = new Dataset();
-                $ref->add($ntParser->parseStream($refInput));
-                $ref = $ref->map(fn($x) => $this->unblank($x, $df));
+                    $refInput = fopen("$baseDir/" . substr($i, 0, -3) . "nt", 'r');
+                    $ref      = new Dataset();
+                    $ref->add($ntParser->parseStream($refInput));
+                    $ref      = $ref->map(fn($x) => $this->unblank($x, $df));
 
-                echo "\n### $i -------------------------\n";
-                echo "$dataset";
-                echo "----------------------------------\n";
-                echo "$ref";
-                echo "##################################\n";
-                echo $dataset->copyExcept($ref);
-                echo "---\n";
-                echo $ref->copyExcept($dataset);
-                echo "###\n";
-
-                $this->assertTrue($ref->equals($dataset), "Failed on $i");
+                    $this->assertTrue($ref->equals($dataset), "Failed on $i");
+                }
             } finally {
                 fclose($input);
-                fclose($refInput);
+                if ($refInput !== null) {
+                    fclose($refInput);
+                    $refInput = null;
+                }
             }
         }
+    }
+
+    /**
+     * Test the n-triplesFile->parse->serializeAsXml->parse roundtrip on a large
+     * n-triples file.
+     * 
+     * @return void
+     */
+    public function testRoundtrip(): void {
+        $df            = new DataFactory();
+        $ntParser      = new NQuadsParser($df, false, NQuadsParser::MODE_TRIPLES);
+        $xmlSerializer = new RdfXmlSerializer(false);
+        $xmlParser     = new RdfXmlParser($df);
+        $ntDataset     = new Dataset();
+        $xmlDataset    = new Dataset();
+
+        $input = fopen(__DIR__ . '/files/puzzle4d_100k.nt', 'r');
+        $ntDataset->add($ntParser->parseStream($input));
+        fclose($input);
+
+        $output = fopen('php://temp', 'rw');
+        $xmlSerializer->serializeStream($output, $ntDataset);
+        fseek($output, 0);
+        $xmlDataset->add($xmlParser->parseStream($output));
+        fclose($output);
+        
+        $this->assertTrue($ntDataset->equals($xmlDataset));
     }
 }

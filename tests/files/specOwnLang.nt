@@ -1,0 +1,3 @@
+<https://foo> <http://example.org/stuff/1.0/langProp> "lang-tagged-value"@en .
+<https://foo> <http://example.org/stuff/1.0/stdProp> "std-value" .
+
