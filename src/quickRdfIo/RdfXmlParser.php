@@ -67,7 +67,7 @@ class RdfXmlParser implements iParser, iQuadIterator {
      * 
      * @var array<string>
      */
-    private static array $skipAttributes    = [
+    private static array $skipAttributes = [
         self::RDF_ABOUT,
         self::RDF_ID,
         self::RDF_NODEID,
@@ -76,6 +76,11 @@ class RdfXmlParser implements iParser, iQuadIterator {
         self::RDF_PARSETYPE,
         self::XML_LANG,
     ];
+
+    /**
+     * 
+     * @var array<string>
+     */
     private static array $literalAttributes = [
         self::RDF_ID,
         self::RDF_DATATYPE,
@@ -98,7 +103,7 @@ class RdfXmlParser implements iParser, iQuadIterator {
 
     /**
      * 
-     * @var array<int, array<string, string>>
+     * @var array<int, array<string>>
      */
     private array $langStack;
 
@@ -412,7 +417,7 @@ class RdfXmlParser implements iParser, iQuadIterator {
         };
 
         if ($name === (end($this->langStack) ?: [''])[0]) {
-            $this->curLang = array_pop($this->langStack)[1];
+            $this->curLang = array_pop($this->langStack)[1] ?? '';
         }
 
         //echo "END $prevState=>$this->state $name ($this->cdataPredicate,$this->literalValueDepth) (" . implode(', ', $this->subjectStack) . ")\n";
@@ -564,7 +569,7 @@ class RdfXmlParser implements iParser, iQuadIterator {
 
     private function parseBaseUri(string $baseUri): void {
         // https://www.w3.org/TR/rdf-syntax-grammar/#section-baseURIs
-        $bu                 = parse_url($baseUri);
+        $bu                 = parse_url($baseUri) ?: [];
         $path               = $bu['path'] ?? '/';
         $query              = isset($bu['query']) ? '?' . $bu['query'] : '';
         $baseUri            = (isset($bu['scheme']) ? $bu['scheme'] . '://' : '') .

@@ -48,7 +48,7 @@ class RdfXmlSerializerTest extends \PHPUnit\Framework\TestCase {
         $p2 = DF::namedNode('https://prop/2');
         $o1 = DF::namedNode('https://obj/1');
         $o2 = DF::namedNode('https://obj/2');
-        $oB = DF::blankNode();
+        $oB = DF::blankNode('');
         $l1 = DF::literal('foo');
         $l2 = DF::literal('bar', 'en');
         $l3 = DF::literal(3, null, RDF::XSD_INT);
@@ -67,6 +67,7 @@ class RdfXmlSerializerTest extends \PHPUnit\Framework\TestCase {
         $nmsp->add('https://prop/', 'ns0');
         $serializer = new RdfXmlSerializer();
         $output     = $serializer->serialize(self::$data, $nmsp);
+        $output     = preg_replace('`genid[0-9]+`', 'genid', $output); // we can't really reliably guess blank node ids
 
         $refOutput = <<<RO
 <?xml version="1.0" encoding="UTF-8"?>
@@ -74,7 +75,7 @@ class RdfXmlSerializerTest extends \PHPUnit\Framework\TestCase {
   <rdf:Description rdf:about="https://sbj/1">
     <ns0:1 rdf:resource="https://obj/1"/>
     <ns0:1 rdf:resource="https://obj/2"/>
-    <ns0:2 rdf:nodeID="genid1"/>
+    <ns0:2 rdf:nodeID="genid"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://sbj/2">
     <ns0:1>foo</ns0:1>
@@ -82,7 +83,7 @@ class RdfXmlSerializerTest extends \PHPUnit\Framework\TestCase {
   <rdf:Description rdf:about="https://sbj/1">
     <ns0:1 xml:lang="en">bar</ns0:1>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="genid0">
+  <rdf:Description rdf:nodeID="genid">
     <ns0:2 rdf:datatype="http://www.w3.org/2001/XMLSchema#int">3</ns0:2>
   </rdf:Description>
 </rdf:RDF>
@@ -93,6 +94,7 @@ RO;
     public function testWithoutNmspPretty(): void {
         $serializer = new RdfXmlSerializer();
         $output     = $serializer->serialize(self::$data);
+        $output     = preg_replace('`genid[0-9]+`', 'genid', $output); // we can't really reliably guess blank node ids
 
         $refOutput = <<<RO
 <?xml version="1.0" encoding="UTF-8"?>
@@ -100,7 +102,7 @@ RO;
   <rdf:Description rdf:about="https://sbj/1">
     <ns:1 xmlns:ns="https://prop/" rdf:resource="https://obj/1"/>
     <ns:1 xmlns:ns="https://prop/" rdf:resource="https://obj/2"/>
-    <ns:2 xmlns:ns="https://prop/" rdf:nodeID="genid1"/>
+    <ns:2 xmlns:ns="https://prop/" rdf:nodeID="genid"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://sbj/2">
     <ns:1 xmlns:ns="https://prop/">foo</ns:1>
@@ -108,7 +110,7 @@ RO;
   <rdf:Description rdf:about="https://sbj/1">
     <ns:1 xmlns:ns="https://prop/" xml:lang="en">bar</ns:1>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="genid0">
+  <rdf:Description rdf:nodeID="genid">
     <ns:2 xmlns:ns="https://prop/" rdf:datatype="http://www.w3.org/2001/XMLSchema#int">3</ns:2>
   </rdf:Description>
 </rdf:RDF>
@@ -121,10 +123,11 @@ RO;
         $nmsp->add('https://prop/', 'ns0');
         $serializer = new RdfXmlSerializer(false);
         $output     = $serializer->serialize(self::$data, $nmsp);
+        $output     = preg_replace('`genid[0-9]+`', 'genid', $output); // we can't really reliably guess blank node ids
 
         $refOutput = <<<RO
 <?xml version="1.0" encoding="UTF-8"?>
-<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:ns0="https://prop/"><rdf:Description rdf:about="https://sbj/1"><ns0:1 rdf:resource="https://obj/1"/><ns0:1 rdf:resource="https://obj/2"/><ns0:2 rdf:nodeID="genid1"/></rdf:Description><rdf:Description rdf:about="https://sbj/2"><ns0:1>foo</ns0:1></rdf:Description><rdf:Description rdf:about="https://sbj/1"><ns0:1 xml:lang="en">bar</ns0:1></rdf:Description><rdf:Description rdf:nodeID="genid0"><ns0:2 rdf:datatype="http://www.w3.org/2001/XMLSchema#int">3</ns0:2></rdf:Description></rdf:RDF>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:ns0="https://prop/"><rdf:Description rdf:about="https://sbj/1"><ns0:1 rdf:resource="https://obj/1"/><ns0:1 rdf:resource="https://obj/2"/><ns0:2 rdf:nodeID="genid"/></rdf:Description><rdf:Description rdf:about="https://sbj/2"><ns0:1>foo</ns0:1></rdf:Description><rdf:Description rdf:about="https://sbj/1"><ns0:1 xml:lang="en">bar</ns0:1></rdf:Description><rdf:Description rdf:nodeID="genid"><ns0:2 rdf:datatype="http://www.w3.org/2001/XMLSchema#int">3</ns0:2></rdf:Description></rdf:RDF>
 RO;
         $this->assertEquals($refOutput, $output);
     }
@@ -132,10 +135,11 @@ RO;
     public function testWithoutNmspUgly(): void {
         $serializer = new RdfXmlSerializer(false);
         $output     = $serializer->serialize(self::$data);
+        $output     = preg_replace('`genid[0-9]+`', 'genid', $output); // we can't really reliably guess blank node ids
 
         $refOutput = <<<RO
 <?xml version="1.0" encoding="UTF-8"?>
-<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"><rdf:Description rdf:about="https://sbj/1"><ns:1 xmlns:ns="https://prop/" rdf:resource="https://obj/1"/><ns:1 xmlns:ns="https://prop/" rdf:resource="https://obj/2"/><ns:2 xmlns:ns="https://prop/" rdf:nodeID="genid1"/></rdf:Description><rdf:Description rdf:about="https://sbj/2"><ns:1 xmlns:ns="https://prop/">foo</ns:1></rdf:Description><rdf:Description rdf:about="https://sbj/1"><ns:1 xmlns:ns="https://prop/" xml:lang="en">bar</ns:1></rdf:Description><rdf:Description rdf:nodeID="genid0"><ns:2 xmlns:ns="https://prop/" rdf:datatype="http://www.w3.org/2001/XMLSchema#int">3</ns:2></rdf:Description></rdf:RDF>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"><rdf:Description rdf:about="https://sbj/1"><ns:1 xmlns:ns="https://prop/" rdf:resource="https://obj/1"/><ns:1 xmlns:ns="https://prop/" rdf:resource="https://obj/2"/><ns:2 xmlns:ns="https://prop/" rdf:nodeID="genid"/></rdf:Description><rdf:Description rdf:about="https://sbj/2"><ns:1 xmlns:ns="https://prop/">foo</ns:1></rdf:Description><rdf:Description rdf:about="https://sbj/1"><ns:1 xmlns:ns="https://prop/" xml:lang="en">bar</ns:1></rdf:Description><rdf:Description rdf:nodeID="genid"><ns:2 xmlns:ns="https://prop/" rdf:datatype="http://www.w3.org/2001/XMLSchema#int">3</ns:2></rdf:Description></rdf:RDF>
 RO;
         $this->assertEquals($refOutput, $output);
     }
