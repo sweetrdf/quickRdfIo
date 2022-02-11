@@ -96,7 +96,7 @@
 
     <article class="phpdocumentor-element -class">
         <h2 class="phpdocumentor-content__title">
-    TurtleSerializer
+    RdfXmlSerializer
 
     
             <div class="phpdocumentor-element__package">
@@ -116,14 +116,35 @@
     </h2>
 
         <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/TurtleSerializer.php"><a href="files/src-quickrdfio-turtleserializer.html"><abbr title="src/quickRdfIo/TurtleSerializer.php">TurtleSerializer.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/RdfXmlSerializer.php"><a href="files/src-quickrdfio-rdfxmlserializer.html"><abbr title="src/quickRdfIo/RdfXmlSerializer.php">RdfXmlSerializer.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">39</span>
+    <span class="phpdocumentor-element-found-in__line">60</span>
 
     </aside>
 
-            <p class="phpdocumentor-summary">Description of TurtleSerializer</p>
+            <p class="phpdocumentor-summary">Simple RDF-XML serializer. It is optimized for speed and low memory footprint.</p>
 
+    <section class="phpdocumentor-description"><p>This means it doesn't perform any preprocessing of the serialized data.
+As a consequence:</p>
+<ul>
+<li>All namespaces which aren't passed to the serializeStream()/serialize()
+methods using the $nmsp parameter are just declared in-place in each XML
+tag in which they are needed.</li>
+<li>The tag representing the subject is reused only if subsequent triples
+being serialized share the same subject. For the sake of simplicity, speed
+and low memory usage this class doesn't try to reorder triples in a way
+each subject in the graph has only single XML tag representing it.</li>
+</ul>
+<p>Other limitations:</p>
+<ul>
+<li>Only triples can be serialized as the RDF-XML serialization format is
+defined only for the base RDF.</li>
+<li>This class naivly shortens predicate URIs splitting on the last hash, slash,
+star or semicolon. This doesn't guarantee generation of a proper XML
+PrefixedName. The simplest corner case is just an URI ending with a number
+like http://foo/123 which is shortened to ns:123 which is invalid in XML.</li>
+</ul>
+</section>
 
 
     <h5 class="phpdocumentor-tag-list__heading" id="tags">
@@ -165,8 +186,22 @@
 </h3>
 
 <dl class="phpdocumentor-table-of-contents">
-                        <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/quickRdfIo-TurtleSerializer.html#method___construct">__construct()</a>
+                    <dt class="phpdocumentor-table-of-contents__entry -property -private">
+    <a href="classes/quickRdfIo-RdfXmlSerializer.html#property_prefixes">$prefixes</a>
+    <span>
+                        &nbsp;: array&lt;string|int, mixed&gt;            </span>
+</dt>
+<dd></dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -property -private">
+    <a href="classes/quickRdfIo-RdfXmlSerializer.html#property_prettyPrint">$prettyPrint</a>
+    <span>
+                        &nbsp;: bool            </span>
+</dt>
+<dd></dd>
+
+                <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/quickRdfIo-RdfXmlSerializer.html#method___construct">__construct()</a>
     <span>
                                 &nbsp;: mixed    </span>
 </dt>
@@ -180,9 +215,23 @@
 <dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/quickRdfIo-TurtleSerializer.html#method_serializeStream">serializeStream()</a>
+    <a href="classes/quickRdfIo-RdfXmlSerializer.html#method_serializeStream">serializeStream()</a>
     <span>
                                 &nbsp;: void    </span>
+</dt>
+<dd></dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -private">
+    <a href="classes/quickRdfIo-RdfXmlSerializer.html#method_e">e()</a>
+    <span>
+                                &nbsp;: string    </span>
+</dt>
+<dd></dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -private">
+    <a href="classes/quickRdfIo-RdfXmlSerializer.html#method_shorten">shorten()</a>
+    <span>
+                                &nbsp;: array&lt;string|int, string&gt;    </span>
 </dt>
 <dd></dd>
 
@@ -193,11 +242,83 @@
         
 
         
+    <section class="phpdocumentor-properties">
+        <h3 class="phpdocumentor-elements__header" id="properties">
+            Properties
+            <a href="classes/quickRdfIo-RdfXmlSerializer.html#properties" class="headerlink"><i class="fas fa-link"></i></a>
+        </h3>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
+            -private
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="property_prefixes">
+        $prefixes
+        <a href="classes/quickRdfIo-RdfXmlSerializer.html#property_prefixes" class="headerlink"><i class="fas fa-link"></i></a>
+        <span class="phpdocumentor-element__modifiers">
+                                </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/RdfXmlSerializer.php"><a href="files/src-quickrdfio-rdfxmlserializer.html"><abbr title="src/quickRdfIo/RdfXmlSerializer.php">RdfXmlSerializer.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">68</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+        <span class="phpdocumentor-signature__type">array&lt;string|int, mixed&gt;</span>
+    <span class="phpdocumentor-signature__name">$prefixes</span>
+    </code>
+
+    
+    
+    
+
+</article>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
+            -private
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="property_prettyPrint">
+        $prettyPrint
+        <a href="classes/quickRdfIo-RdfXmlSerializer.html#property_prettyPrint" class="headerlink"><i class="fas fa-link"></i></a>
+        <span class="phpdocumentor-element__modifiers">
+                                </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/RdfXmlSerializer.php"><a href="files/src-quickrdfio-rdfxmlserializer.html"><abbr title="src/quickRdfIo/RdfXmlSerializer.php">RdfXmlSerializer.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">69</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+        <span class="phpdocumentor-signature__type">bool</span>
+    <span class="phpdocumentor-signature__name">$prettyPrint</span>
+    </code>
+
+        <section class="phpdocumentor-description"></section>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+
+</article>
+            </section>
 
             <section class="phpdocumentor-methods">
         <h3 class="phpdocumentor-elements__header" id="methods">
             Methods
-            <a href="classes/quickRdfIo-TurtleSerializer.html#methods" class="headerlink"><i class="fas fa-link"></i></a>
+            <a href="classes/quickRdfIo-RdfXmlSerializer.html#methods" class="headerlink"><i class="fas fa-link"></i></a>
         </h3>
                     <article
         class="phpdocumentor-element
@@ -207,23 +328,34 @@
 >
     <h4 class="phpdocumentor-element__name" id="method___construct">
         __construct()
-        <a href="classes/quickRdfIo-TurtleSerializer.html#method___construct" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/quickRdfIo-RdfXmlSerializer.html#method___construct" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/TurtleSerializer.php"><a href="files/src-quickrdfio-turtleserializer.html"><abbr title="src/quickRdfIo/TurtleSerializer.php">TurtleSerializer.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/RdfXmlSerializer.php"><a href="files/src-quickrdfio-rdfxmlserializer.html"><abbr title="src/quickRdfIo/RdfXmlSerializer.php">RdfXmlSerializer.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">43</span>
+    <span class="phpdocumentor-element-found-in__line">71</span>
 
     </aside>
 
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">__construct</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+                <span class="phpdocumentor-signature__name">__construct</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__return-type">bool&nbsp;</span><span class="phpdocumentor-signature__argument__name">$prettyPrint</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">true</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
 
         <section class="phpdocumentor-description"></section>
 
-    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$prettyPrint</span>
+                : <span class="phpdocumentor-signature__argument__return-type">bool</span>
+                 = <span class="phpdocumentor-signature__argument__default-value">true</span>            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
+            </dl>
+
     
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
@@ -292,12 +424,12 @@
 >
     <h4 class="phpdocumentor-element__name" id="method_serializeStream">
         serializeStream()
-        <a href="classes/quickRdfIo-TurtleSerializer.html#method_serializeStream" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/quickRdfIo-RdfXmlSerializer.html#method_serializeStream" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/TurtleSerializer.php"><a href="files/src-quickrdfio-turtleserializer.html"><abbr title="src/quickRdfIo/TurtleSerializer.php">TurtleSerializer.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/RdfXmlSerializer.php"><a href="files/src-quickrdfio-rdfxmlserializer.html"><abbr title="src/quickRdfIo/RdfXmlSerializer.php">RdfXmlSerializer.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">47</span>
+    <span class="phpdocumentor-element-found-in__line">75</span>
 
     </aside>
 
@@ -336,6 +468,92 @@
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type">void</span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -private
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_e">
+        e()
+        <a href="classes/quickRdfIo-RdfXmlSerializer.html#method_e" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/RdfXmlSerializer.php"><a href="files/src-quickrdfio-rdfxmlserializer.html"><abbr title="src/quickRdfIo/RdfXmlSerializer.php">RdfXmlSerializer.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">160</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+                <span class="phpdocumentor-signature__name">e</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$value</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$value</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">string</span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -private
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_shorten">
+        shorten()
+        <a href="classes/quickRdfIo-RdfXmlSerializer.html#method_shorten" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/RdfXmlSerializer.php"><a href="files/src-quickrdfio-rdfxmlserializer.html"><abbr title="src/quickRdfIo/RdfXmlSerializer.php">RdfXmlSerializer.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">151</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+                <span class="phpdocumentor-signature__name">shorten</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$uri</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, string&gt;</span></code>
+
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$uri</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">array&lt;string|int, string&gt;</span>
             &mdash;
         
     
@@ -418,7 +636,7 @@
 </section>
             </div>
         </div>
-        <a href="classes/quickRdfIo-TurtleSerializer.html#top" class="phpdocumentor-back-to-top"><i class="fas fa-chevron-circle-up"></i></a>
+        <a href="classes/quickRdfIo-RdfXmlSerializer.html#top" class="phpdocumentor-back-to-top"><i class="fas fa-chevron-circle-up"></i></a>
 
     </main>
 
