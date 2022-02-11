@@ -29,7 +29,8 @@ It's very incomplete but better than nothing.\
 include 'vendor/autoload.php';
 
 // parse turle/ntriples/nquad/ntriples* file
-$parser = new quickRdfIo\TriGParser();
+$dataFactory = new DataFactory();
+$parser = new quickRdfIo\TriGParser($dataFactory);
 $stream = fopen('pathToTurtleFile', 'r');
 foreach($parser->parseStream($stream) as $quad) {
    echo "$quad\n";
