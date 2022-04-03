@@ -62,21 +62,12 @@ class RdfXmlParserTest extends \PHPUnit\Framework\TestCase {
         $baseDir      = __DIR__ . '/files';
         $files        = scandir($baseDir);
         sort($files);
-        $skip         = [
-            'spec2.15.1.rdf', // rdf:Seq
-            'spec2.15.2.rdf', // rdf:Seq 
-            'spec2.16.rdf', // rdf:Collection
-        ];
         $expectErrors = [
             'spec5.4.rdf'     => 'Duplicated element id',
             'spec7.2.4.1.rdf' => 'Obsolete attribute',
             'spec7.2.4.2.rdf' => 'Obsolete attribute',
         ];
         foreach ($files as $i) {
-            if (in_array($i, $skip)) {
-                continue;
-            }
-
             if (!preg_match('/^spec.*rdf$/', $i)) {
                 continue;
             }

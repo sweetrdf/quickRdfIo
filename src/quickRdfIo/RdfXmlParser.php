@@ -36,32 +36,41 @@ use rdfInterface\NamedNode as iNamedNode;
 use zozlak\RdfConstants as RDF;
 
 /**
- * Description of RdfXmlParser
+ * Streaming RDF-XML parser. Fast and with low memory footprint.
+ * 
+ * Known deviations from the RDF-XML specification:
+ * 
+ * - Doesn't resolve "/.." in relative IRIs.
+ * - Doesn't support rdf:Seq shorthand syntax
+ * - Doesn't support rdf:Collection shorthand syntax
  *
  * @author zozlak
  */
 class RdfXmlParser implements iParser, iQuadIterator {
 
-    const RDF_ROOT            = 'http://www.w3.org/1999/02/22-rdf-syntax-ns#RDF';
-    const RDF_ABOUT           = 'http://www.w3.org/1999/02/22-rdf-syntax-ns#about';
-    const RDF_DATATYPE        = 'http://www.w3.org/1999/02/22-rdf-syntax-ns#datatype';
-    const RDF_RESOURCE        = 'http://www.w3.org/1999/02/22-rdf-syntax-ns#resource';
-    const RDF_NODEID          = 'http://www.w3.org/1999/02/22-rdf-syntax-ns#nodeID';
-    const RDF_ID              = 'http://www.w3.org/1999/02/22-rdf-syntax-ns#ID';
-    const RDF_DESCRIPTION     = 'http://www.w3.org/1999/02/22-rdf-syntax-ns#Description';
-    const RDF_PARSETYPE       = 'http://www.w3.org/1999/02/22-rdf-syntax-ns#parseType';
-    const RDF_ABOUTEACHPREFIX = 'http://www.w3.org/1999/02/22-rdf-syntax-ns#aboutEachPrefix';
-    const RDF_ABOUTEACH       = 'http://www.w3.org/1999/02/22-rdf-syntax-ns#aboutEach';
-    const PARSETYPE_RESOURCE  = 'Resource';
-    const PARSETYPE_LITERAL   = 'Literal';
-    const XML_BASE            = 'http://www.w3.org/XML/1998/namespacebase';
-    const XML_LANG            = 'http://www.w3.org/XML/1998/namespacelang';
-    const STATE_ROOT          = 'root';
-    const STATE_NODE          = 'node';
-    const STATE_PREDICATE     = 'predicate';
-    const STATE_VALUE         = 'value';
-    const STATE_XMLLITERAL    = 'xmlliteral'; //https://www.w3.org/TR/rdf-syntax-grammar/#section-Syntax-XML-literals
-    const CHUNK_SIZE          = 1000000;
+    const RDF_ROOT             = 'http://www.w3.org/1999/02/22-rdf-syntax-ns#RDF';
+    const RDF_ABOUT            = 'http://www.w3.org/1999/02/22-rdf-syntax-ns#about';
+    const RDF_DATATYPE         = 'http://www.w3.org/1999/02/22-rdf-syntax-ns#datatype';
+    const RDF_RESOURCE         = 'http://www.w3.org/1999/02/22-rdf-syntax-ns#resource';
+    const RDF_NODEID           = 'http://www.w3.org/1999/02/22-rdf-syntax-ns#nodeID';
+    const RDF_ID               = 'http://www.w3.org/1999/02/22-rdf-syntax-ns#ID';
+    const RDF_DESCRIPTION      = 'http://www.w3.org/1999/02/22-rdf-syntax-ns#Description';
+    const RDF_PARSETYPE        = 'http://www.w3.org/1999/02/22-rdf-syntax-ns#parseType';
+    const RDF_ABOUTEACHPREFIX  = 'http://www.w3.org/1999/02/22-rdf-syntax-ns#aboutEachPrefix';
+    const RDF_ABOUTEACH        = 'http://www.w3.org/1999/02/22-rdf-syntax-ns#aboutEach';
+    const RDF_LI               = 'http://www.w3.org/1999/02/22-rdf-syntax-ns#li';
+    const RDF_COLLELPREFIX     = 'http://www.w3.org/1999/02/22-rdf-syntax-ns#_';
+    const PARSETYPE_RESOURCE   = 'Resource';
+    const PARSETYPE_LITERAL    = 'Literal';
+    const PARSETYPE_COLLECTION = 'Collection';
+    const XML_BASE             = 'http://www.w3.org/XML/1998/namespacebase';
+    const XML_LANG             = 'http://www.w3.org/XML/1998/namespacelang';
+    const STATE_ROOT           = 'root';
+    const STATE_NODE           = 'node';
+    const STATE_PREDICATE      = 'predicate';
+    const STATE_VALUE          = 'value';
+    const STATE_XMLLITERAL     = 'xmlliteral'; //https://www.w3.org/TR/rdf-syntax-grammar/#section-Syntax-XML-literals
+    const CHUNK_SIZE           = 1000000;
 
     /**
      * 
@@ -131,6 +140,12 @@ class RdfXmlParser implements iParser, iQuadIterator {
     private int $literalValueDepth;
     private iBlankNode | iNamedNode | null $reifyAs;
     private string $state;
+
+    /**
+     * 
+     * @var array<int>
+     */
+    private array $seqElCounterStack;
 
     /**
      * 
@@ -300,8 +315,7 @@ class RdfXmlParser implements iParser, iQuadIterator {
         } else {
             $subject = $this->dataFactory->blankNode();
         }
-        $this->subjectStack[]           = $subject;
-        $this->subjectChangeTagsStack[] = $tag;
+        $this->pushSubjectStack($subject, $tag);
 
         // type as tag
         // https://www.w3.org/TR/rdf-syntax-grammar/#section-Syntax-typed-nodes
@@ -336,6 +350,17 @@ class RdfXmlParser implements iParser, iQuadIterator {
         $this->curPredicate      = $this->dataFactory->namedNode($tag);
         $parseType               = $attributes[self::RDF_PARSETYPE] ?? '';
         $subjectTmp              = null;
+        // https://www.w3.org/TR/rdf-syntax-grammar/#section-Syntax-parsetype-Collection
+        // Naive implementation which doesn't handle nested collections.
+        // A property implementation would require stack.
+        $this->parseAsCollection = $parseType === self::PARSETYPE_COLLECTION;
+
+        // rdf:li to rdf:_n promotion
+        // https://www.w3.org/TR/rdf-syntax-grammar/#section-Syntax-list-elements
+        if ($tag === self::RDF_LI) {
+            $this->curPredicate = $this->dataFactory->namedNode(self::RDF_COLLELPREFIX . end($this->seqElCounterStack));
+            $this->seqElCounterStack[count($this->seqElCounterStack) - 1]++;
+        }
 
         if (isset($attributes[self::RDF_RESOURCE])) {
             // rdf:resource attribute
@@ -363,11 +388,10 @@ class RdfXmlParser implements iParser, iQuadIterator {
         // implicit blank node due to parseType="Resource"
         // https://www.w3.org/TR/rdf-syntax-grammar/#section-Syntax-parsetype-resource
         if ($parseType === self::PARSETYPE_RESOURCE) {
-            $blankNode                      = $this->dataFactory->blankNode();
+            $blankNode   = $this->dataFactory->blankNode();
             $this->addTriple(null, $tag, $blankNode);
-            $this->subjectStack[]           = $blankNode;
-            $this->subjectChangeTagsStack[] = $tag;
-            $this->state                    = self::STATE_PREDICATE;
+            $this->pushSubjectStack($blankNode, $tag);
+            $this->state = self::STATE_PREDICATE;
         }
 
         // XML literal value due to parseType="Literal"
@@ -385,7 +409,7 @@ class RdfXmlParser implements iParser, iQuadIterator {
     }
 
     private function onElementEnd(string $name): void {
-        $prevState = $this->state;
+        //$prevState = $this->state;
 
         if ($this->state === self::STATE_VALUE && $this->cdataPredicate === true) {
             $this->addTriple(null, $this->curPredicate, $this->literalValue ?? '', $this->curLang, $this->datatype ?? '');
@@ -405,6 +429,7 @@ class RdfXmlParser implements iParser, iQuadIterator {
             //echo "removing from the subjects stack\n";
             array_pop($this->subjectStack);
             array_pop($this->subjectChangeTagsStack);
+            array_pop($this->seqElCounterStack);
             $this->cdataPredicate = false;
         }
 
@@ -421,6 +446,12 @@ class RdfXmlParser implements iParser, iQuadIterator {
         }
 
         //echo "END $prevState=>$this->state $name ($this->cdataPredicate,$this->literalValueDepth) (" . implode(', ', $this->subjectStack) . ")\n";
+    }
+
+    private function pushSubjectStack(string $subject, string $changeTag): void {
+        $this->subjectStack[]           = $subject;
+        $this->subjectChangeTagsStack[] = $changeTag;
+        $this->seqElCounterStack[]      = 1;
     }
 
     private function onNamespaceStart(XMLParser $parser, string $prefix,
