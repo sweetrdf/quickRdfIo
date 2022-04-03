@@ -14,10 +14,14 @@
     ],
     "require": {
         "php": ">=8.0",
+        "ext-mbstring": "*",
+        "ext-pcre": "*",
+        "ext-xmlreader" : "*",
         "zozlak/rdf-constants": "^1.1",
         "sweetrdf/rdf-helpers": "*",
         "sweetrdf/rdf-interface": ">=0.9",
-        "pietercolpaert/hardf": "*"
+        "pietercolpaert/hardf": "*",
+        "ml/json-ld": "^1.2"
     },
     "suggest": {
         "sweetrdf/quick-rdf": "*"
