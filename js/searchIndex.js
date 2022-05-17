@@ -291,9 +291,104 @@ Search.appendIndex(
             "summary": "Description\u0020of\u0020RdfException",
             "url": "classes/quickRdfIo-RdfIoException.html"
         },                {
+            "fqsen": "\\quickRdfIo\\RdfXmlParserState",
+            "name": "RdfXmlParserState",
+            "summary": "",
+            "url": "classes/quickRdfIo-RdfXmlParserState.html"
+        },                {
+            "fqsen": "\\quickRdfIo\\RdfXmlParserState\u003A\u003AwithState\u0028\u0029",
+            "name": "withState",
+            "summary": "",
+            "url": "classes/quickRdfIo-RdfXmlParserState.html#method_withState"
+        },                {
+            "fqsen": "\\quickRdfIo\\RdfXmlParserState\u003A\u003AwithSubject\u0028\u0029",
+            "name": "withSubject",
+            "summary": "",
+            "url": "classes/quickRdfIo-RdfXmlParserState.html#method_withSubject"
+        },                {
+            "fqsen": "\\quickRdfIo\\RdfXmlParserState\u003A\u003ASTATE_ROOT",
+            "name": "STATE_ROOT",
+            "summary": "",
+            "url": "classes/quickRdfIo-RdfXmlParserState.html#constant_STATE_ROOT"
+        },                {
+            "fqsen": "\\quickRdfIo\\RdfXmlParserState\u003A\u003ASTATE_NODE",
+            "name": "STATE_NODE",
+            "summary": "",
+            "url": "classes/quickRdfIo-RdfXmlParserState.html#constant_STATE_NODE"
+        },                {
+            "fqsen": "\\quickRdfIo\\RdfXmlParserState\u003A\u003ASTATE_PREDICATE",
+            "name": "STATE_PREDICATE",
+            "summary": "",
+            "url": "classes/quickRdfIo-RdfXmlParserState.html#constant_STATE_PREDICATE"
+        },                {
+            "fqsen": "\\quickRdfIo\\RdfXmlParserState\u003A\u003ASTATE_VALUE",
+            "name": "STATE_VALUE",
+            "summary": "",
+            "url": "classes/quickRdfIo-RdfXmlParserState.html#constant_STATE_VALUE"
+        },                {
+            "fqsen": "\\quickRdfIo\\RdfXmlParserState\u003A\u003ASTATE_XMLLITERAL",
+            "name": "STATE_XMLLITERAL",
+            "summary": "",
+            "url": "classes/quickRdfIo-RdfXmlParserState.html#constant_STATE_XMLLITERAL"
+        },                {
+            "fqsen": "\\quickRdfIo\\RdfXmlParserState\u003A\u003A\u0024state",
+            "name": "state",
+            "summary": "",
+            "url": "classes/quickRdfIo-RdfXmlParserState.html#property_state"
+        },                {
+            "fqsen": "\\quickRdfIo\\RdfXmlParserState\u003A\u003A\u0024datatype",
+            "name": "datatype",
+            "summary": "",
+            "url": "classes/quickRdfIo-RdfXmlParserState.html#property_datatype"
+        },                {
+            "fqsen": "\\quickRdfIo\\RdfXmlParserState\u003A\u003A\u0024lang",
+            "name": "lang",
+            "summary": "",
+            "url": "classes/quickRdfIo-RdfXmlParserState.html#property_lang"
+        },                {
+            "fqsen": "\\quickRdfIo\\RdfXmlParserState\u003A\u003A\u0024subject",
+            "name": "subject",
+            "summary": "",
+            "url": "classes/quickRdfIo-RdfXmlParserState.html#property_subject"
+        },                {
+            "fqsen": "\\quickRdfIo\\RdfXmlParserState\u003A\u003A\u0024predicate",
+            "name": "predicate",
+            "summary": "",
+            "url": "classes/quickRdfIo-RdfXmlParserState.html#property_predicate"
+        },                {
+            "fqsen": "\\quickRdfIo\\RdfXmlParserState\u003A\u003A\u0024literalValue",
+            "name": "literalValue",
+            "summary": "",
+            "url": "classes/quickRdfIo-RdfXmlParserState.html#property_literalValue"
+        },                {
+            "fqsen": "\\quickRdfIo\\RdfXmlParserState\u003A\u003A\u0024literalValueDepth",
+            "name": "literalValueDepth",
+            "summary": "",
+            "url": "classes/quickRdfIo-RdfXmlParserState.html#property_literalValueDepth"
+        },                {
+            "fqsen": "\\quickRdfIo\\RdfXmlParserState\u003A\u003A\u0024isCDataPredicate",
+            "name": "isCDataPredicate",
+            "summary": "",
+            "url": "classes/quickRdfIo-RdfXmlParserState.html#property_isCDataPredicate"
+        },                {
+            "fqsen": "\\quickRdfIo\\RdfXmlParserState\u003A\u003A\u0024isCollection",
+            "name": "isCollection",
+            "summary": "",
+            "url": "classes/quickRdfIo-RdfXmlParserState.html#property_isCollection"
+        },                {
+            "fqsen": "\\quickRdfIo\\RdfXmlParserState\u003A\u003A\u0024sequenceNo",
+            "name": "sequenceNo",
+            "summary": "",
+            "url": "classes/quickRdfIo-RdfXmlParserState.html#property_sequenceNo"
+        },                {
+            "fqsen": "\\quickRdfIo\\RdfXmlParserState\u003A\u003A\u0024reifyAs",
+            "name": "reifyAs",
+            "summary": "",
+            "url": "classes/quickRdfIo-RdfXmlParserState.html#property_reifyAs"
+        },                {
             "fqsen": "\\quickRdfIo\\RdfXmlParser",
             "name": "RdfXmlParser",
-            "summary": "Description\u0020of\u0020RdfXmlParser",
+            "summary": "Streaming\u0020RDF\u002DXML\u0020parser.\u0020Fast\u0020and\u0020with\u0020low\u0020memory\u0020footprint.",
             "url": "classes/quickRdfIo-RdfXmlParser.html"
         },                {
             "fqsen": "\\quickRdfIo\\RdfXmlParser\u003A\u003A__construct\u0028\u0029",
@@ -391,11 +486,6 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/quickRdfIo-RdfXmlParser.html#method_addTriple"
         },                {
-            "fqsen": "\\quickRdfIo\\RdfXmlParser\u003A\u003AsetLangDatatype\u0028\u0029",
-            "name": "setLangDatatype",
-            "summary": "",
-            "url": "classes/quickRdfIo-RdfXmlParser.html#method_setLangDatatype"
-        },                {
             "fqsen": "\\quickRdfIo\\RdfXmlParser\u003A\u003AonXmlLiteralElement\u0028\u0029",
             "name": "onXmlLiteralElement",
             "summary": "",
@@ -405,11 +495,6 @@ Search.appendIndex(
             "name": "shorten",
             "summary": "",
             "url": "classes/quickRdfIo-RdfXmlParser.html#method_shorten"
-        },                {
-            "fqsen": "\\quickRdfIo\\RdfXmlParser\u003A\u003AgetCurrentSubject\u0028\u0029",
-            "name": "getCurrentSubject",
-            "summary": "",
-            "url": "classes/quickRdfIo-RdfXmlParser.html#method_getCurrentSubject"
         },                {
             "fqsen": "\\quickRdfIo\\RdfXmlParser\u003A\u003AresolveIri\u0028\u0029",
             "name": "resolveIri",
@@ -476,6 +561,16 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/quickRdfIo-RdfXmlParser.html#constant_RDF_ABOUTEACH"
         },                {
+            "fqsen": "\\quickRdfIo\\RdfXmlParser\u003A\u003ARDF_LI",
+            "name": "RDF_LI",
+            "summary": "",
+            "url": "classes/quickRdfIo-RdfXmlParser.html#constant_RDF_LI"
+        },                {
+            "fqsen": "\\quickRdfIo\\RdfXmlParser\u003A\u003ARDF_COLLELPREFIX",
+            "name": "RDF_COLLELPREFIX",
+            "summary": "",
+            "url": "classes/quickRdfIo-RdfXmlParser.html#constant_RDF_COLLELPREFIX"
+        },                {
             "fqsen": "\\quickRdfIo\\RdfXmlParser\u003A\u003APARSETYPE_RESOURCE",
             "name": "PARSETYPE_RESOURCE",
             "summary": "",
@@ -486,6 +581,11 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/quickRdfIo-RdfXmlParser.html#constant_PARSETYPE_LITERAL"
         },                {
+            "fqsen": "\\quickRdfIo\\RdfXmlParser\u003A\u003APARSETYPE_COLLECTION",
+            "name": "PARSETYPE_COLLECTION",
+            "summary": "",
+            "url": "classes/quickRdfIo-RdfXmlParser.html#constant_PARSETYPE_COLLECTION"
+        },                {
             "fqsen": "\\quickRdfIo\\RdfXmlParser\u003A\u003AXML_BASE",
             "name": "XML_BASE",
             "summary": "",
@@ -495,31 +595,6 @@ Search.appendIndex(
             "name": "XML_LANG",
             "summary": "",
             "url": "classes/quickRdfIo-RdfXmlParser.html#constant_XML_LANG"
-        },                {
-            "fqsen": "\\quickRdfIo\\RdfXmlParser\u003A\u003ASTATE_ROOT",
-            "name": "STATE_ROOT",
-            "summary": "",
-            "url": "classes/quickRdfIo-RdfXmlParser.html#constant_STATE_ROOT"
-        },                {
-            "fqsen": "\\quickRdfIo\\RdfXmlParser\u003A\u003ASTATE_NODE",
-            "name": "STATE_NODE",
-            "summary": "",
-            "url": "classes/quickRdfIo-RdfXmlParser.html#constant_STATE_NODE"
-        },                {
-            "fqsen": "\\quickRdfIo\\RdfXmlParser\u003A\u003ASTATE_PREDICATE",
-            "name": "STATE_PREDICATE",
-            "summary": "",
-            "url": "classes/quickRdfIo-RdfXmlParser.html#constant_STATE_PREDICATE"
-        },                {
-            "fqsen": "\\quickRdfIo\\RdfXmlParser\u003A\u003ASTATE_VALUE",
-            "name": "STATE_VALUE",
-            "summary": "",
-            "url": "classes/quickRdfIo-RdfXmlParser.html#constant_STATE_VALUE"
-        },                {
-            "fqsen": "\\quickRdfIo\\RdfXmlParser\u003A\u003ASTATE_XMLLITERAL",
-            "name": "STATE_XMLLITERAL",
-            "summary": "",
-            "url": "classes/quickRdfIo-RdfXmlParser.html#constant_STATE_XMLLITERAL"
         },                {
             "fqsen": "\\quickRdfIo\\RdfXmlParser\u003A\u003ACHUNK_SIZE",
             "name": "CHUNK_SIZE",
@@ -566,70 +641,25 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/quickRdfIo-RdfXmlParser.html#property_baseUriEmpty"
         },                {
-            "fqsen": "\\quickRdfIo\\RdfXmlParser\u003A\u003A\u0024datatype",
-            "name": "datatype",
-            "summary": "",
-            "url": "classes/quickRdfIo-RdfXmlParser.html#property_datatype"
-        },                {
-            "fqsen": "\\quickRdfIo\\RdfXmlParser\u003A\u003A\u0024langStack",
-            "name": "langStack",
-            "summary": "",
-            "url": "classes/quickRdfIo-RdfXmlParser.html#property_langStack"
-        },                {
             "fqsen": "\\quickRdfIo\\RdfXmlParser\u003A\u003A\u0024elementIds",
             "name": "elementIds",
             "summary": "",
             "url": "classes/quickRdfIo-RdfXmlParser.html#property_elementIds"
         },                {
-            "fqsen": "\\quickRdfIo\\RdfXmlParser\u003A\u003A\u0024subjectStack",
-            "name": "subjectStack",
+            "fqsen": "\\quickRdfIo\\RdfXmlParser\u003A\u003A\u0024nmsp",
+            "name": "nmsp",
             "summary": "",
-            "url": "classes/quickRdfIo-RdfXmlParser.html#property_subjectStack"
+            "url": "classes/quickRdfIo-RdfXmlParser.html#property_nmsp"
         },                {
-            "fqsen": "\\quickRdfIo\\RdfXmlParser\u003A\u003A\u0024subjectChangeTagsStack",
-            "name": "subjectChangeTagsStack",
+            "fqsen": "\\quickRdfIo\\RdfXmlParser\u003A\u003A\u0024stack",
+            "name": "stack",
             "summary": "",
-            "url": "classes/quickRdfIo-RdfXmlParser.html#property_subjectChangeTagsStack"
-        },                {
-            "fqsen": "\\quickRdfIo\\RdfXmlParser\u003A\u003A\u0024curPredicate",
-            "name": "curPredicate",
-            "summary": "",
-            "url": "classes/quickRdfIo-RdfXmlParser.html#property_curPredicate"
-        },                {
-            "fqsen": "\\quickRdfIo\\RdfXmlParser\u003A\u003A\u0024curLang",
-            "name": "curLang",
-            "summary": "",
-            "url": "classes/quickRdfIo-RdfXmlParser.html#property_curLang"
-        },                {
-            "fqsen": "\\quickRdfIo\\RdfXmlParser\u003A\u003A\u0024cdataPredicate",
-            "name": "cdataPredicate",
-            "summary": "",
-            "url": "classes/quickRdfIo-RdfXmlParser.html#property_cdataPredicate"
-        },                {
-            "fqsen": "\\quickRdfIo\\RdfXmlParser\u003A\u003A\u0024literalValue",
-            "name": "literalValue",
-            "summary": "",
-            "url": "classes/quickRdfIo-RdfXmlParser.html#property_literalValue"
-        },                {
-            "fqsen": "\\quickRdfIo\\RdfXmlParser\u003A\u003A\u0024literalValueDepth",
-            "name": "literalValueDepth",
-            "summary": "",
-            "url": "classes/quickRdfIo-RdfXmlParser.html#property_literalValueDepth"
-        },                {
-            "fqsen": "\\quickRdfIo\\RdfXmlParser\u003A\u003A\u0024reifyAs",
-            "name": "reifyAs",
-            "summary": "",
-            "url": "classes/quickRdfIo-RdfXmlParser.html#property_reifyAs"
+            "url": "classes/quickRdfIo-RdfXmlParser.html#property_stack"
         },                {
             "fqsen": "\\quickRdfIo\\RdfXmlParser\u003A\u003A\u0024state",
             "name": "state",
             "summary": "",
             "url": "classes/quickRdfIo-RdfXmlParser.html#property_state"
-        },                {
-            "fqsen": "\\quickRdfIo\\RdfXmlParser\u003A\u003A\u0024nmsp",
-            "name": "nmsp",
-            "summary": "",
-            "url": "classes/quickRdfIo-RdfXmlParser.html#property_nmsp"
         },                {
             "fqsen": "\\quickRdfIo\\RdfXmlParser\u003A\u003A\u0024triples",
             "name": "triples",
