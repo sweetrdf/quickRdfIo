@@ -36,12 +36,13 @@ use quickRdf\Dataset;
  */
 class NQuadsSerializerTest extends \PHPUnit\Framework\TestCase {
 
-    public function checkRoundtrip(string $file) {
+    public function checkRoundtrip(string $file): void {
         $parser     = new NQuadsParser(new DF());
         $serializer = new NQuadsSerializer();
 
         $dInput = new Dataset();
-        $dInput->add($parser->parse(file_get_contents($file)));
+        $sInput = file_get_contents($file) ?: throw new \RuntimeException("Failed to open $file");
+        $dInput->add($parser->parse($sInput));
         $output = $serializer->serialize($dInput);
 
         $dOutput = new Dataset();
@@ -50,7 +51,7 @@ class NQuadsSerializerTest extends \PHPUnit\Framework\TestCase {
         $this->assertEquals(count($dInput), count($dOutput));
         $this->assertEquals(count($dInput), count($dInput->copy($dOutput)));
     }
-    
+
     public function testTriplesRoundtrip(): void {
         $this->checkRoundtrip(__DIR__ . '/files/triplesPositive.nt');
     }
@@ -62,5 +63,4 @@ class NQuadsSerializerTest extends \PHPUnit\Framework\TestCase {
     public function testStarRoundtrip(): void {
         $this->checkRoundtrip(__DIR__ . '/files/triplesStarPositive.nt');
     }
-    
 }

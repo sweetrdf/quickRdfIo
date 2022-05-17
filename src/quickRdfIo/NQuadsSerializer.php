@@ -52,7 +52,7 @@ class NQuadsSerializer implements \rdfInterface\Serializer {
         }
         $this->serializeStream($stream, $graph, $nmsp);
         $len = ftell($stream);
-        if ($len === false) {
+        if ($len === false || $len < 0) {
             throw new RdfIoException('Failed to seek in output streem');
         }
         rewind($stream);

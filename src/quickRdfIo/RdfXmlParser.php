@@ -425,7 +425,7 @@ class RdfXmlParser implements iParser, iQuadIterator {
         /* @var $oldState RdfXmlParserState */
         $oldState                      = array_pop($this->stack) ?: throw new RdfIoException('Empty states stack');
         $this->state                   = end($this->stack) ?: throw new RdfIoException('Empty states stack');
-        $this->state->isCDataPredicate &= $oldState->isCDataPredicate;
+        $this->state->isCDataPredicate = $this->state->isCDataPredicate && $oldState->isCDataPredicate;
 
         if ($oldState->state === RdfXmlParserState::STATE_VALUE && $oldState->isCDataPredicate === true) {
             $this->addTriple(null, $oldState->predicate, $oldState->literalValue ?? '', $oldState->lang, $oldState->datatype ?? '', $oldState->reifyAs);

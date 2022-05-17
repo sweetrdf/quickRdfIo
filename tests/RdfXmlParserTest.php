@@ -38,7 +38,7 @@ use rdfInterface\BlankNode;
  */
 class RdfXmlParserTest extends \PHPUnit\Framework\TestCase {
 
-    private function unblank(Quad $quad, DataFactory $df): Quad {
+    private function unblank(Quad $quad, DataFactory $df): \rdfInterface\Quad {
         $sbj = $quad->getSubject();
         if ($sbj instanceof BlankNode) {
             $quad = $quad->withSubject($df->namedNode('bn:' . $sbj->getValue()));
@@ -60,7 +60,7 @@ class RdfXmlParserTest extends \PHPUnit\Framework\TestCase {
         $ntParser = new NQuadsParser($df, false, NQuadsParser::MODE_TRIPLES);
 
         $baseDir      = __DIR__ . '/files';
-        $files        = scandir($baseDir);
+        $files        = scandir($baseDir) ?: [];
         natsort($files);
         $expectErrors = [
             'spec5.4.rdf'     => 'Duplicated element id',
@@ -72,7 +72,7 @@ class RdfXmlParserTest extends \PHPUnit\Framework\TestCase {
                 continue;
             }
 
-            $input    = fopen("$baseDir/$i", 'r');
+            $input    = fopen("$baseDir/$i", 'r') ?: throw new \RuntimeException("Failed to open $baseDir/$i");
             $refInput = null;
             try {
                 if (isset($expectErrors[$i])) {
@@ -89,15 +89,15 @@ class RdfXmlParserTest extends \PHPUnit\Framework\TestCase {
                     $dataset->add($parser->parseStream($input));
                     $dataset = $dataset->map(fn($x) => $this->unblank($x, $df));
 
-                    $refInput = fopen("$baseDir/" . substr($i, 0, -3) . "nt", 'r');
+                    $refInput = fopen("$baseDir/" . substr($i, 0, -3) . "nt", 'r') ?: throw new \RuntimeException("Failed to open the test file");
                     $ref      = new Dataset();
                     $ref->add($ntParser->parseStream($refInput));
                     $ref      = $ref->map(fn($x) => $this->unblank($x, $df));
 
-if ($ref->equals($dataset) === false) {
-    echo "\n### $i\n";
-    echo "$ref---\n$dataset@@@\n".$ref->copyExcept($dataset)."^^^\n".$dataset->copyExcept($ref);
-}
+                    if ($ref->equals($dataset) === false) {
+                        echo "\n### $i\n";
+                        echo "$ref---\n$dataset@@@\n" . $ref->copyExcept($dataset) . "^^^\n" . $dataset->copyExcept($ref);
+                    }
                     $this->assertTrue($ref->equals($dataset), "Failed on $i");
                 }
             } finally {
@@ -124,16 +124,16 @@ if ($ref->equals($dataset) === false) {
         $ntDataset     = new Dataset();
         $xmlDataset    = new Dataset();
 
-        $input = fopen(__DIR__ . '/files/puzzle4d_100k.nt', 'r');
+        $input = fopen(__DIR__ . '/files/puzzle4d_100k.nt', 'r') ?: throw new \RuntimeException("Failed to open puzzle4d_100k.nt");
         $ntDataset->add($ntParser->parseStream($input));
         fclose($input);
 
-        $output = fopen('php://temp', 'rw');
+        $output = fopen('php://temp', 'rw') ?: throw new \RuntimeException("Failed to open the temp file");
         $xmlSerializer->serializeStream($output, $ntDataset);
         fseek($output, 0);
         $xmlDataset->add($xmlParser->parseStream($output));
         fclose($output);
-        
+
         $this->assertTrue($ntDataset->equals($xmlDataset));
     }
 }

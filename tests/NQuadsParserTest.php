@@ -78,7 +78,8 @@ class NQuadsParserTest extends \PHPUnit\Framework\TestCase {
      */
     private function readTestLines(string $filename): array {
         $tests = [];
-        foreach (file($filename) as $n => $l) {
+        $data = file($filename) ?: throw new \RuntimeException("Failed to open $filename");
+        foreach ($data as $n => $l) {
             if (substr($l, 0, 1) !== '#') {
                 $tests[$n + 1] = $l;
             }
