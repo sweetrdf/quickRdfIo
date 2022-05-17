@@ -61,7 +61,7 @@ class RdfXmlParserTest extends \PHPUnit\Framework\TestCase {
 
         $baseDir      = __DIR__ . '/files';
         $files        = scandir($baseDir);
-        sort($files);
+        natsort($files);
         $expectErrors = [
             'spec5.4.rdf'     => 'Duplicated element id',
             'spec7.2.4.1.rdf' => 'Obsolete attribute',
@@ -94,6 +94,10 @@ class RdfXmlParserTest extends \PHPUnit\Framework\TestCase {
                     $ref->add($ntParser->parseStream($refInput));
                     $ref      = $ref->map(fn($x) => $this->unblank($x, $df));
 
+if ($ref->equals($dataset) === false) {
+    echo "\n### $i\n";
+    echo "$ref---\n$dataset@@@\n".$ref->copyExcept($dataset)."^^^\n".$dataset->copyExcept($ref);
+}
                     $this->assertTrue($ref->equals($dataset), "Failed on $i");
                 }
             } finally {
