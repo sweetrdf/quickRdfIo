@@ -5,11 +5,21 @@
 [![Coverage Status](https://coveralls.io/repos/github/sweetrdf/quickRdfIo/badge.svg?branch=master)](https://coveralls.io/github/sweetrdf/quickRdfIo?branch=master)
 [![License](https://poser.pugx.org/sweetrdf/quick-rdf-io/license)](https://packagist.org/packages/sweetrdf/quick-rdf-io)
 
-Collection of parsers and serializers implementing the https://github.com/sweetrdf/rdfInterface interface.
+Collection of RDF parsers and serializers implementing the https://github.com/sweetrdf/rdfInterface interface.
 
 Originally developed for the [quickRdf](https://github.com/sweetrdf/quickRdf) library.
 
-Quite quick and dirty at the moment.
+## Supported serializations
+
+| serialization | read/write | class                          | implementation       |
+|---------------|------------|--------------------------------|----------------------|
+| n-triples     | rw         | NQuadsParser, NQuadsSerializer | own                  |
+| n-triples*    | rw         | NQuadsParser, NQuadsSerializer | own                  |
+| n-quads       | rw         | NQuadsParser, NQuadsSerializer | own                  |
+| n-quads*      | rw         | NQuadsParser, NQuadsSerializer | own                  |
+| rdf-xml       | rw         | RdfXmlParser, RdfXmlSerializer | own                  |
+| turtle        | rw         | TriGParser, TurtleSerializer   | pietercolpaert\hardf |
+| TriG          | r          | TriGParser                     | pietercolpaert\hardf |
 
 ## Installation
 
@@ -28,8 +38,8 @@ It's very incomplete but better than nothing.\
 ```php
 include 'vendor/autoload.php';
 
-// parse turle/ntriples/nquad/ntriples* file
-$dataFactory = new DataFactory();
+// parse turle/n-triples/n-quads/n-triples*/n-quads* file
+$dataFactory = new quickRdf\DataFactory();
 $parser = new quickRdfIo\TriGParser($dataFactory);
 $stream = fopen('pathToTurtleFile', 'r');
 foreach($parser->parseStream($stream) as $quad) {
@@ -37,11 +47,11 @@ foreach($parser->parseStream($stream) as $quad) {
 }
 fclose($stream);
 
-// convert to nquads/ntriples/ntriples*
+// convert to n-quads/n-triples/n-triples*/n-quads*
 $instream = fopen('pathToTurtleFile', 'r');
 $iterator = $parser->parseStream($instream);
 $serializer = new quickRdfIo\NQuadsSerializer();
-$outstream = fopen('pathToOutputTurtleFile', 'w');
+$outstream = fopen('pathToOutputNQuadsFile', 'w');
 $serializer->serializeStream($stream, $iterator);
 fclose($outstream);
 fclose($instream);
