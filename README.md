@@ -11,15 +11,18 @@ Originally developed for the [quickRdf](https://github.com/sweetrdf/quickRdf) li
 
 ## Supported serializations
 
-| serialization | read/write | class                          | implementation       |
-|---------------|------------|--------------------------------|----------------------|
-| n-triples     | rw         | NQuadsParser, NQuadsSerializer | own                  |
-| n-triples*    | rw         | NQuadsParser, NQuadsSerializer | own                  |
-| n-quads       | rw         | NQuadsParser, NQuadsSerializer | own                  |
-| n-quads*      | rw         | NQuadsParser, NQuadsSerializer | own                  |
-| rdf-xml       | rw         | RdfXmlParser, RdfXmlSerializer | own                  |
-| turtle        | rw         | TriGParser, TurtleSerializer   | pietercolpaert\hardf |
-| TriG          | r          | TriGParser                     | pietercolpaert\hardf |
+| serialization | read/write | class                          | implementation       | streaming[1] |
+|---------------|------------|--------------------------------|----------------------|--------------|
+| n-triples     | rw         | NQuadsParser, NQuadsSerializer | own                  | yes          |
+| n-triples*    | rw         | NQuadsParser, NQuadsSerializer | own                  | yes          |
+| n-quads       | rw         | NQuadsParser, NQuadsSerializer | own                  | yes          |
+| n-quads*      | rw         | NQuadsParser, NQuadsSerializer | own                  | yes          |
+| rdf-xml       | rw         | RdfXmlParser, RdfXmlSerializer | own                  | yes          |
+| turtle        | rw         | TriGParser, TurtleSerializer   | pietercolpaert/hardf | yes          |
+| TriG          | r          | TriGParser                     | pietercolpaert/hardf | yes          |
+| JsonLD        | rw         | JsonLdParser, JsonLdSerializer | ml/json-ld           | no           |
+
+[1] A streaming parser/serializer doesn't materialize the whole dataset in memory which makes it suitable for processing large datasets.
 
 ## Installation
 
