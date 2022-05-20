@@ -83,11 +83,13 @@ class JsonLdSerializer implements \rdfInterface\Serializer {
      *   or `ML\JsonLD\JsonLD::flatten()` when `$transform` equals
      *   `JsonLdSerializer::TRANSFORM_COMPACT` or `JsonLdSerializer::TRANSFORM_FLATTEN`,
      *   repectively.
-     *   See the in-line documentation on https://github.com/lanthaler/JsonLD/blob/master/JsonLD.php
      * @param array<string, mixed> $options options to be passed to the corresponding
      *   `ML\JsonLD\JsonLD` method (`expand()`, `compact()` or `flatten()`
      *   according to the `$transform` parameter value).
-     *   See the in-line documentation on https://github.com/lanthaler/JsonLD/blob/master/JsonLD.php
+     * @see \ML\JsonLD\JsonLD::expand()
+     * @see \ML\JsonLD\JsonLD::flatten()
+     * @see \ML\JsonLD\JsonLD::compact()
+     * @see \json_encode()
      */
     public function __construct(?string $baseUri = null,
                                 int $transform = self::TRANSFORM_NONE,
