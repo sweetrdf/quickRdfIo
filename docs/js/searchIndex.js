@@ -1,6 +1,141 @@
 Search.appendIndex(
     [
                 {
+            "fqsen": "\\quickRdfIo\\JsonLdParser",
+            "name": "JsonLdParser",
+            "summary": "Thin\u0020wrapper\u0020providing\u0020RdfInterface\\Parser\u0020API\u0020for\u0020JSON\u002DLD\u0020the\u0020parser\nprovided\u0020by\u0020the\u0020ml\/json\u002Dld\u0020library.",
+            "url": "classes/quickRdfIo-JsonLdParser.html"
+        },                {
+            "fqsen": "\\quickRdfIo\\JsonLdParser\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "",
+            "url": "classes/quickRdfIo-JsonLdParser.html#method___construct"
+        },                {
+            "fqsen": "\\quickRdfIo\\JsonLdParser\u003A\u003AsetBaseUri\u0028\u0029",
+            "name": "setBaseUri",
+            "summary": "",
+            "url": "classes/quickRdfIo-JsonLdParser.html#method_setBaseUri"
+        },                {
+            "fqsen": "\\quickRdfIo\\JsonLdParser\u003A\u003Acurrent\u0028\u0029",
+            "name": "current",
+            "summary": "",
+            "url": "classes/quickRdfIo-JsonLdParser.html#method_current"
+        },                {
+            "fqsen": "\\quickRdfIo\\JsonLdParser\u003A\u003Akey\u0028\u0029",
+            "name": "key",
+            "summary": "",
+            "url": "classes/quickRdfIo-JsonLdParser.html#method_key"
+        },                {
+            "fqsen": "\\quickRdfIo\\JsonLdParser\u003A\u003Anext\u0028\u0029",
+            "name": "next",
+            "summary": "",
+            "url": "classes/quickRdfIo-JsonLdParser.html#method_next"
+        },                {
+            "fqsen": "\\quickRdfIo\\JsonLdParser\u003A\u003Aparse\u0028\u0029",
+            "name": "parse",
+            "summary": "",
+            "url": "classes/quickRdfIo-JsonLdParser.html#method_parse"
+        },                {
+            "fqsen": "\\quickRdfIo\\JsonLdParser\u003A\u003AparseStream\u0028\u0029",
+            "name": "parseStream",
+            "summary": "",
+            "url": "classes/quickRdfIo-JsonLdParser.html#method_parseStream"
+        },                {
+            "fqsen": "\\quickRdfIo\\JsonLdParser\u003A\u003Arewind\u0028\u0029",
+            "name": "rewind",
+            "summary": "",
+            "url": "classes/quickRdfIo-JsonLdParser.html#method_rewind"
+        },                {
+            "fqsen": "\\quickRdfIo\\JsonLdParser\u003A\u003Avalid\u0028\u0029",
+            "name": "valid",
+            "summary": "",
+            "url": "classes/quickRdfIo-JsonLdParser.html#method_valid"
+        },                {
+            "fqsen": "\\quickRdfIo\\JsonLdParser\u003A\u003A\u0024dataFactory",
+            "name": "dataFactory",
+            "summary": "",
+            "url": "classes/quickRdfIo-JsonLdParser.html#property_dataFactory"
+        },                {
+            "fqsen": "\\quickRdfIo\\JsonLdParser\u003A\u003A\u0024baseUri",
+            "name": "baseUri",
+            "summary": "",
+            "url": "classes/quickRdfIo-JsonLdParser.html#property_baseUri"
+        },                {
+            "fqsen": "\\quickRdfIo\\JsonLdParser\u003A\u003A\u0024curQuad",
+            "name": "curQuad",
+            "summary": "",
+            "url": "classes/quickRdfIo-JsonLdParser.html#property_curQuad"
+        },                {
+            "fqsen": "\\quickRdfIo\\JsonLdParser\u003A\u003A\u0024quads",
+            "name": "quads",
+            "summary": "",
+            "url": "classes/quickRdfIo-JsonLdParser.html#property_quads"
+        },                {
+            "fqsen": "\\quickRdfIo\\JsonLdSerializer",
+            "name": "JsonLdSerializer",
+            "summary": "Thin\u0020wrapper\u0020providing\u0020RdfInterface\\Serializer\u0020API\u0020for\u0020JSON\u002DLD\u0020the\u0020parser\nprovided\u0020by\u0020the\u0020ml\/json\u002Dld\u0020library.",
+            "url": "classes/quickRdfIo-JsonLdSerializer.html"
+        },                {
+            "fqsen": "\\quickRdfIo\\JsonLdSerializer\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "",
+            "url": "classes/quickRdfIo-JsonLdSerializer.html#method___construct"
+        },                {
+            "fqsen": "\\quickRdfIo\\JsonLdSerializer\u003A\u003Aserialize\u0028\u0029",
+            "name": "serialize",
+            "summary": "",
+            "url": "classes/quickRdfIo-JsonLdSerializer.html#method_serialize"
+        },                {
+            "fqsen": "\\quickRdfIo\\JsonLdSerializer\u003A\u003AserializeStream\u0028\u0029",
+            "name": "serializeStream",
+            "summary": "",
+            "url": "classes/quickRdfIo-JsonLdSerializer.html#method_serializeStream"
+        },                {
+            "fqsen": "\\quickRdfIo\\JsonLdSerializer\u003A\u003ATRANSFORM_NONE",
+            "name": "TRANSFORM_NONE",
+            "summary": "",
+            "url": "classes/quickRdfIo-JsonLdSerializer.html#constant_TRANSFORM_NONE"
+        },                {
+            "fqsen": "\\quickRdfIo\\JsonLdSerializer\u003A\u003ATRANSFORM_EXPAND",
+            "name": "TRANSFORM_EXPAND",
+            "summary": "",
+            "url": "classes/quickRdfIo-JsonLdSerializer.html#constant_TRANSFORM_EXPAND"
+        },                {
+            "fqsen": "\\quickRdfIo\\JsonLdSerializer\u003A\u003ATRANSFORM_FLATTEN",
+            "name": "TRANSFORM_FLATTEN",
+            "summary": "",
+            "url": "classes/quickRdfIo-JsonLdSerializer.html#constant_TRANSFORM_FLATTEN"
+        },                {
+            "fqsen": "\\quickRdfIo\\JsonLdSerializer\u003A\u003ATRANSFORM_COMPACT",
+            "name": "TRANSFORM_COMPACT",
+            "summary": "",
+            "url": "classes/quickRdfIo-JsonLdSerializer.html#constant_TRANSFORM_COMPACT"
+        },                {
+            "fqsen": "\\quickRdfIo\\JsonLdSerializer\u003A\u003A\u0024baseUri",
+            "name": "baseUri",
+            "summary": "",
+            "url": "classes/quickRdfIo-JsonLdSerializer.html#property_baseUri"
+        },                {
+            "fqsen": "\\quickRdfIo\\JsonLdSerializer\u003A\u003A\u0024transform",
+            "name": "transform",
+            "summary": "",
+            "url": "classes/quickRdfIo-JsonLdSerializer.html#property_transform"
+        },                {
+            "fqsen": "\\quickRdfIo\\JsonLdSerializer\u003A\u003A\u0024jsonEncodeFlags",
+            "name": "jsonEncodeFlags",
+            "summary": "",
+            "url": "classes/quickRdfIo-JsonLdSerializer.html#property_jsonEncodeFlags"
+        },                {
+            "fqsen": "\\quickRdfIo\\JsonLdSerializer\u003A\u003A\u0024context",
+            "name": "context",
+            "summary": "",
+            "url": "classes/quickRdfIo-JsonLdSerializer.html#property_context"
+        },                {
+            "fqsen": "\\quickRdfIo\\JsonLdSerializer\u003A\u003A\u0024options",
+            "name": "options",
+            "summary": "",
+            "url": "classes/quickRdfIo-JsonLdSerializer.html#property_options"
+        },                {
             "fqsen": "\\quickRdfIo\\NQuadsParser",
             "name": "NQuadsParser",
             "summary": "Parses\u0020only\u0020n\u002Dquads\u0020and\u0020n\u002Dtriples\u0020but\u0020does\u0020it\u0020fast\u0020\u0028thanks\u0020to\u0020parsing\u0020in\u0020chunks\nand\u0020extensive\u0020use\u0020of\u0020regullar\u0020expressions\u0029.",
@@ -411,10 +546,10 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/quickRdfIo-RdfXmlParser.html#method_current"
         },                {
-            "fqsen": "\\quickRdfIo\\RdfXmlParser\u003A\u003Akey\u0028\u0029",
+            "fqsen": "\\quickRdfIo\\RdfXmlParser\u003A\u003A\u0024key",
             "name": "key",
             "summary": "",
-            "url": "classes/quickRdfIo-RdfXmlParser.html#method_key"
+            "url": "classes/quickRdfIo-RdfXmlParser.html#property_key"
         },                {
             "fqsen": "\\quickRdfIo\\RdfXmlParser\u003A\u003Anext\u0028\u0029",
             "name": "next",
