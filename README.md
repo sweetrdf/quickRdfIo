@@ -31,7 +31,7 @@ Originally developed for the [quickRdf](https://github.com/sweetrdf/quickRdf) li
 https://sweetrdf.github.io/quickRdfIo/namespaces/quickrdfio.html
 
 It's very incomplete but better than nothing.\
-[RdfInterface](https://github.com/sweetrdf/rdfInterface/) documentation is included.
+[RdfInterface](https://github.com/sweetrdf/rdfInterface/) and [ml/json-ld](https://github.com/lanthaler/JsonLD) documentation is included.
 
 ## Usage
 
