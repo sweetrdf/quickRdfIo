@@ -68,10 +68,22 @@ class RdfXmlSerializer implements \rdfInterface\Serializer {
     private array $prefixes;
     private bool $prettyPrint;
 
+    /**
+     * 
+     * @param bool $prettyPrint should output XML be pretty-formatted?
+     */
     public function __construct(bool $prettyPrint = true) {
         $this->prettyPrint = $prettyPrint;
     }
 
+    /**
+     * 
+     * @param resource $output
+     * @param iQuadIterator $graph
+     * @param iRdfNamespace|null $nmsp
+     * @return void
+     * @throws RdfIoException
+     */
     public function serializeStream($output, iQuadIterator $graph,
                                     ?iRdfNamespace $nmsp = null): void {
         $nl             = $this->prettyPrint ? "\n" : "";

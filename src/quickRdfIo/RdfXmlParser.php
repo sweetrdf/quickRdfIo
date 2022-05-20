@@ -136,6 +136,7 @@ class RdfXmlParser implements iParser, iQuadIterator {
     private string $baseUri;
     private string $baseUriDefault;
     private string $baseUriEmpty;
+    private ?int $key = null;
 
     /**
      * 
@@ -178,14 +179,15 @@ class RdfXmlParser implements iParser, iQuadIterator {
     }
 
     public function current(): iQuad {
-        return current($this->triples);
+        return current($this->triples) ?: throw new \OutOfBoundsException();
     }
 
-    public function key() {
-        return key($this->triples);
+    public function key(): int | null {
+        return key($this->triples) === null ? null : $this->key;
     }
 
     public function next(): void {
+        $this->key++;
         next($this->triples);
         while (key($this->triples) === null && !feof($this->input)) {
             $this->triples = [];

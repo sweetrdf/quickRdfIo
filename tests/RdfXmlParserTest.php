@@ -38,17 +38,7 @@ use rdfInterface\BlankNode;
  */
 class RdfXmlParserTest extends \PHPUnit\Framework\TestCase {
 
-    private function unblank(Quad $quad, DataFactory $df): \rdfInterface\Quad {
-        $sbj = $quad->getSubject();
-        if ($sbj instanceof BlankNode) {
-            $quad = $quad->withSubject($df->namedNode('bn:' . $sbj->getValue()));
-        }
-        $obj = $quad->getObject();
-        if ($obj instanceof BlankNode) {
-            $quad = $quad->withObject($df->namedNode('bn:' . $obj->getValue()));
-        }
-        return $quad;
-    }
+    use TestUtilsTrait;
 
     /**
      * Test against all tests/files/spec*rdf files
@@ -93,12 +83,7 @@ class RdfXmlParserTest extends \PHPUnit\Framework\TestCase {
                     $ref      = new Dataset();
                     $ref->add($ntParser->parseStream($refInput));
                     $ref      = $ref->map(fn($x) => $this->unblank($x, $df));
-
-                    if ($ref->equals($dataset) === false) {
-                        echo "\n### $i\n";
-                        echo "$ref---\n$dataset@@@\n" . $ref->copyExcept($dataset) . "^^^\n" . $dataset->copyExcept($ref);
-                    }
-                    $this->assertTrue($ref->equals($dataset), "Failed on $i");
+                    $this->assertDatasetsEqual($dataset, $ref, "Failed on $i");
                 }
             } finally {
                 fclose($input);
