@@ -34,18 +34,18 @@ use quickRdf\Dataset;
  *
  * @author zozlak
  */
-class JsonLdTest extends \PHPUnit\Framework\TestCase {
+class JsonLdStreamTest extends \PHPUnit\Framework\TestCase {
 
     use TestUtilsTrait;
 
     private JsonLdParser $parser;
-    private JsonLdSerializer $serializer;
+    private JsonLdStreamSerializer $serializer;
 
     public function setUp(): void {
         $this->df         = new DataFactory();
         $this->refParser  = new NQuadsParser($this->df, false, NQuadsParser::MODE_QUADS);
         $this->parser     = new JsonLdParser($this->df);
-        $this->serializer = new JsonLdSerializer(null);
+        $this->serializer = new JsonLdStreamSerializer(null);
     }
 
     public function testSimple(): void {

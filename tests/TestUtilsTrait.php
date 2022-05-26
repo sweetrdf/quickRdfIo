@@ -26,10 +26,13 @@
 
 namespace quickRdfIo;
 
-use rdfInterface\DataFactory;
-use rdfInterface\Quad;
-use rdfInterface\BlankNode;
-use rdfInterface\Dataset;
+use rdfInterface\DataFactory as iDataFactory;
+use rdfInterface\Quad as iQuad;
+use rdfInterface\BlankNode as iBlankNode;
+use rdfInterface\Dataset as iDataset;
+use rdfInterface\Parser as iParser;
+use quickRdf\Dataset;
+use rdfInterface\DatasetMapReduce as iDatasetMapReduce;
 
 /**
  * Description of TestUtils
@@ -38,19 +41,23 @@ use rdfInterface\Dataset;
  */
 trait TestUtilsTrait {
 
-    public function unblank(Quad $quad, DataFactory $df): Quad {
+    private iDataFactory $df;
+    private iParser $refParser;
+
+    private function unblank(iQuad $quad): iQuad {
         $sbj = $quad->getSubject();
         if ($sbj instanceof BlankNode) {
-            $quad = $quad->withSubject($df->namedNode('bn:' . $sbj->getValue()));
+            $quad = $quad->withSubject($this->df->namedNode('bn:' . $sbj->getValue()));
         }
         $obj = $quad->getObject();
         if ($obj instanceof BlankNode) {
-            $quad = $quad->withObject($df->namedNode('bn:' . $obj->getValue()));
+            $quad = $quad->withObject($this->df->namedNode('bn:' . $obj->getValue()));
         }
         return $quad;
     }
 
-    public function assertDatasetsEqual(Dataset $test, Dataset $ref, string $msg = ''): void {
+    private function assertDatasetsEqual(iDataset $test, iDataset $ref,
+                                         string $msg = ''): void {
         if ($ref->equals($test) === false) {
             echo "\n" .
             "REF:\n$ref" .
@@ -58,6 +65,25 @@ trait TestUtilsTrait {
             "MISSING:\n" . $ref->copyExcept($test) .
             "ADDITIONAL:\n" . $test->copyExcept($ref);
         }
+        $this->assertEquals($ref->count(), $test->count());
         $this->assertTrue($ref->equals($test), $msg);
+    }
+
+    private function blankGraphAsDefaultGraph(iQuad $q): iQuad {
+        if ($q->getGraph() instanceof iBlankNode) {
+            return $q->withGraph($this->df->defaultGraph());
+        }
+        return $q;
+    }
+
+    private function parseRef(string $refFile, bool $unblank): iDatasetMapReduce {
+        $refInput = fopen($refFile, 'r') ?: throw new RuntimeException("Failed to open $refFile");
+        $ref      = new Dataset();
+        $ref->add($this->refParser->parseStream($refInput));
+        fclose($refInput);
+        if ($unblank) {
+            $ref = $ref->map(fn($x) => $this->unblank($x, $this->df));
+        }
+        return $ref;
     }
 }

@@ -84,29 +84,29 @@ class JsonLdStreamSerializer implements \rdfInterface\Serializer {
     }
 
     private function serializeQuad(iQuad $quad): string {
+        $graph  = $quad->getGraph()->getValue();
         $output = [
-            '@id'    => $quad->getGraph()->getValue(),
+            '@id'    => empty($graph) ? '_:defaultGraph' : $graph,
             '@graph' => $this->serializeNode($quad),
         ];
         return json_encode($output) ?: throw new RdfIoException("Failed to serialize quad $quad");
     }
 
     private function serializeNode(iTerm $node): mixed {
-        if ($node instanceof iNamedNode) {
-            return $node->getValue();
+        if ($node instanceof iNamedNode || $node instanceof iBlankNode) {
+            return ['@id' => $node->getValue()];
         } elseif ($node instanceof iLiteral) {
             $val = ['@value' => $node->getValue()];
             if (!empty($node->getLang())) {
-                $val['@lang'] = $node->getLang();
+                $val['@language'] = $node->getLang();
             } elseif ($node->getDatatype() !== RDF::XSD_STRING) {
                 $val['@type'] = $node->getDatatype();
             }
             return $val;
         } elseif ($node instanceof iQuad) {
-            return [
-                '@id'                             => $this->serializeNode($node->getSubject()),
-                $node->getPredicate()->getValue() => $this->serializeNode($node->getObject()),
-            ];
+            $val                                    = $this->serializeNode($node->getSubject());
+            $val[$node->getPredicate()->getValue()] = $this->serializeNode($node->getObject());
+            return $val;
         } else {
             throw new RdfIoException("Can't serialize object of class " . get_class($node));
         }

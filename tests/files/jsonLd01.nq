@@ -3,6 +3,6 @@
 <http://sbj/1> <http://pred/2> "obj/3" <http://graph/1> .
 <http://sbj/1> <http://pred/2> "obj/4"@en .
 <http://sbj/1> <http://pred/2> "obj/4"@de <http://graph/2> .
-<http://sbj/1> <http://pred/2> ""456"^^<http://www.w3.org/2001/XMLSchema#integer> .
-<http://sbj/1> <http://pred/2> ""789"^^<http://www.w3.org/2001/XMLSchema#integer> <http://graph/1> .
+<http://sbj/1> <http://pred/2> "456"^^<http://www.w3.org/2001/XMLSchema#integer> .
+<http://sbj/1> <http://pred/2> "789"^^<http://www.w3.org/2001/XMLSchema#integer> <http://graph/1> .
 <http://obj/1> <http://pred/3> <http://sbj/1> .
