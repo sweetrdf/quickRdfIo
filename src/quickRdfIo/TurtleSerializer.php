@@ -26,6 +26,7 @@
 
 namespace quickRdfIo;
 
+use Psr\Http\Message\StreamInterface;
 use zozlak\RdfConstants as RDF;
 use rdfInterface\QuadIterator as iQuadIterator;
 use rdfInterface\RdfNamespace as iRdfNamespace;
@@ -44,8 +45,22 @@ class TurtleSerializer implements \rdfInterface\Serializer {
         
     }
 
+    /**
+     * 
+     * @param resource | StreamInterface $output
+     * @param iQuadIterator $graph
+     * @param iRdfNamespace|null $nmsp
+     * @return void
+     */
     public function serializeStream($output, iQuadIterator $graph,
                                     ?iRdfNamespace $nmsp = null): void {
+        if (is_resource($output)) {
+            $output = new ResourceWrapper($output);
+        }
+        if (!($output instanceof StreamInterface)) {
+            throw new RdfIoException("Output has to be a resource or " . StreamInterface::class . " object");
+        }
+        
         $nmsp       = $nmsp ?? new RdfNamespace();
         $serializer = new \pietercolpaert\hardf\TriGWriter(['format' => 'turtle']);
         if ($nmsp !== null) {
@@ -73,8 +88,8 @@ class TurtleSerializer implements \rdfInterface\Serializer {
             $graph = $i->getGraph();
             $graph = $graph instanceof \rdfInterface\DefaultGraph ? null : (string) $graph->getValue();
             $serializer->addTriple($subject, $predicate, $object, $graph);
-            fwrite($output, $serializer->read());
+            $output->write($serializer->read());
         }
-        fwrite($output, $serializer->end() ?? '');
+        $output->write($serializer->end() ?? '');
     }
 }

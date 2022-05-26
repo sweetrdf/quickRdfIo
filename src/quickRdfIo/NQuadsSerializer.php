@@ -26,9 +26,12 @@
 
 namespace quickRdfIo;
 
+use Psr\Http\Message\StreamInterface;
 use rdfHelpers\NtriplesUtil;
 use rdfInterface\Quad as iQuad;
 use rdfInterface\DefaultGraph as iDefaultGraph;
+use rdfInterface\QuadIterator as iQuadIterator;
+use rdfInterface\RdfNamespace as iRdfNamespace;
 
 /**
  * Description of Serializer
@@ -37,43 +40,31 @@ use rdfInterface\DefaultGraph as iDefaultGraph;
  */
 class NQuadsSerializer implements \rdfInterface\Serializer {
 
+    use TmpStreamSerializerTrait;
+
     public function __construct() {
         
     }
 
-    public function serialize(
-        \rdfInterface\QuadIterator $graph,
-        ?\rdfInterface\RdfNamespace $nmsp = null
-    ): string {
-        $output = '';
-        $stream = fopen('php://memory', 'r+');
-        if ($stream === false) {
-            throw new RdfIoException('Failed to convert input to stream');
-        }
-        $this->serializeStream($stream, $graph, $nmsp);
-        $len = ftell($stream);
-        if ($len === false || $len < 0) {
-            throw new RdfIoException('Failed to seek in output streem');
-        }
-        rewind($stream);
-        $output = fread($stream, $len);
-        if ($output === false) {
-            throw new RdfIoException('Failed to read from output streem');
-        }
-        fclose($stream);
-
-        return $output;
-    }
-
-    public function serializeStream(
-        $output, \rdfInterface\QuadIterator $graph,
-        ?\rdfInterface\RdfNamespace $nmsp = null
+    /**
+     * 
+     * @param resource | StreamInterface $output
+     * @param iQuadIterator $graph
+     * @param iRdfNamespace|null $nmsp
+     * @return void
+     */
+    public function serializeStream($output, iQuadIterator $graph,
+                                    ?iRdfNamespace $nmsp = null
     ): void {
-        if (!is_resource($output)) {
-            throw new RdfIoException("output has to be a resource");
+        if (is_resource($output)) {
+            $output = new ResourceWrapper($output);
         }
+        if (!($output instanceof StreamInterface)) {
+            throw new RdfIoException("Output has to be a resource or " . StreamInterface::class . " object");
+        }
+
         foreach ($graph as $i) {
-            fwrite($output, $this->serializeQuad($i));
+            $output->write($this->serializeQuad($i));
         }
     }
 

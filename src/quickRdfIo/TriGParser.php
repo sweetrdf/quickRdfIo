@@ -27,6 +27,7 @@
 namespace quickRdfIo;
 
 use ArrayIterator;
+use Psr\Http\Message\StreamInterface;
 use pietercolpaert\hardf\Util;
 use pietercolpaert\hardf\TriGParser as Parser;
 use rdfInterface\QuadIterator as iQuadIterator;
@@ -52,17 +53,8 @@ class TriGParser implements iParser, iQuadIterator {
      * @var array<mixed>
      */
     private array $options;
-
-    /**
-     *
-     */
     private Parser $parser;
-
-    /**
-     *
-     * @var resource
-     */
-    private $input;
+    private StreamInterface $input;
 
     /**
      *
@@ -80,8 +72,11 @@ class TriGParser implements iParser, iQuadIterator {
     /**
      *
      * @param iDataFactory $dataFactory factory to be used to generate RDF terms.
-     * @param array<mixed> $options
-     * @param callable|null $prefixCallback
+     * @param array<mixed> $options options to be passed to the pietercolpaert\hardf\TriGParser
+     *   constructor
+     * @param callable|null $prefixCallback a callable for handling prefixes
+     *   to be passed to the pietercolpaert\hardf\TriGParser constructor
+     * @see \pietercolpaert\hardf\TriGParser::__construct()
      */
     public function __construct(iDataFactory $dataFactory, array $options = [],
                                 callable | null $prefixCallback = null
@@ -95,9 +90,17 @@ class TriGParser implements iParser, iQuadIterator {
         $this->closeTmpStream();
     }
 
+    /**
+     * 
+     * @param resource | StreamInterface $input
+     * @return iQuadIterator
+     */
     public function parseStream($input): iQuadIterator {
-        if (!is_resource($input)) {
-            throw new RdfIoException("Input has to be a resource");
+        if (is_resource($input)) {
+            $input = new ResourceWrapper($input);
+        }
+        if (!($input instanceof StreamInterface)) {
+            throw new RdfIoException("Input has to be a resource or " . StreamInterface::class . " object");
         }
 
         $this->input       = $input;
@@ -145,10 +148,10 @@ class TriGParser implements iParser, iQuadIterator {
                     $this->quadsBuffer[] = $df::quad($sbj, $prop, $obj, $graph);
                 }
             });
-            while (!feof($this->input) && $this->quadsBuffer->count() === 0) {
-                $this->parser->parseChunk(fgets($this->input, self::CHUNK_SIZE));
+            while (!$this->input->eof() && $this->quadsBuffer->count() === 0) {
+                $this->parser->parseChunk($this->input->read(self::CHUNK_SIZE));
             }
-            if (feof($this->input)) {
+            if ($this->input->eof()) {
                 $this->parser->end();
             }
         }
@@ -156,8 +159,8 @@ class TriGParser implements iParser, iQuadIterator {
     }
 
     public function rewind(): void {
-        if (ftell($this->input) !== 0) {
-            $ret = rewind($this->input);
+        if ($this->input->tell() !== 0) {
+            $ret = $this->input->rewind();
             if ($ret !== true) {
                 throw new RdfIoException("Can't seek in the input stream");
             }
