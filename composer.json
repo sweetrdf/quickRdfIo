@@ -33,7 +33,7 @@
         }
     },
     "require-dev": {
-        "sweetrdf/quick-rdf": "*",
+        "sweetrdf/quick-rdf": ">=0.9.0",
         "phpunit/phpunit": "^9.5",
         "phpunit/php-code-coverage": "^9.2",
         "phpstan/phpstan": "*",

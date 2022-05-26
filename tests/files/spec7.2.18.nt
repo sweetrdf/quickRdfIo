@@ -11,4 +11,4 @@
 # $Id: test004.nt,v 1.1 2014-02-20 20:36:06 sandro Exp $
 # 
 #####################################################################
-<http://random.ioctl.org/#bar> <http://random.ioctl.org/#someProperty> _:genid10 .
+<http://random.ioctl.org/#bar> <http://random.ioctl.org/#someProperty> _:genid0 .

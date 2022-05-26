@@ -27,6 +27,7 @@
 namespace quickRdfIo;
 
 use XmlParser;
+use Psr\Http\Message\StreamInterface;
 use rdfInterface\QuadIterator as iQuadIterator;
 use rdfInterface\Parser as iParser;
 use rdfInterface\Quad as iQuad;
@@ -126,12 +127,7 @@ class RdfXmlParser implements iParser, iQuadIterator {
     use TmpStreamParserTrait;
 
     private iDataFactory $dataFactory;
-
-    /**
-     *
-     * @var resource
-     */
-    private $input;
+    private StreamInterface $input;
     private XmlParser $parser;
     private string $baseUri;
     private string $baseUriDefault;
@@ -189,21 +185,29 @@ class RdfXmlParser implements iParser, iQuadIterator {
     public function next(): void {
         $this->key++;
         next($this->triples);
-        while (key($this->triples) === null && !feof($this->input)) {
+        while (key($this->triples) === null && !$this->input->eof()) {
             $this->triples = [];
-            $ret           = xml_parse($this->parser, fread($this->input, self::CHUNK_SIZE) ?: '', false);
+            $ret           = xml_parse($this->parser, $this->input->read(self::CHUNK_SIZE) ?: '', false);
             if ($ret !== 1) {
                 $this->reportError();
             }
         }
-        if (feof($this->input)) {
+        if ($this->input->eof()) {
             $ret = xml_parse($this->parser, '', true);
         }
     }
 
+    /**
+     * 
+     * @param resource | StreamInterface $input
+     * @return iQuadIterator
+     */
     public function parseStream($input): iQuadIterator {
-        if (!is_resource($input)) {
-            throw new RdfIoException("Input has to be a resource");
+        if (is_resource($input)) {
+            $input = new ResourceWrapper($input);
+        }
+        if (!($input instanceof StreamInterface)) {
+            throw new RdfIoException("Input has to be a resource or " . StreamInterface::class . " object");
         }
 
         $this->input = $input;
@@ -211,8 +215,8 @@ class RdfXmlParser implements iParser, iQuadIterator {
     }
 
     public function rewind(): void {
-        if (ftell($this->input) !== 0) {
-            $ret = rewind($this->input);
+        if ($this->input->tell() !== 0) {
+            $ret = $this->input->rewind();
             if ($ret !== true) {
                 throw new RdfIoException("Can't seek in the input stream");
             }

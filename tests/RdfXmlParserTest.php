@@ -29,7 +29,7 @@ namespace quickRdfIo;
 use quickRdf\DataFactory;
 use quickRdf\Dataset;
 use quickRdf\Quad;
-use rdfInterface\BlankNode;
+use quickRdf\BlankNode;
 
 /**
  * Description of RdfXmlParserTest
@@ -61,6 +61,7 @@ class RdfXmlParserTest extends \PHPUnit\Framework\TestCase {
             if (!preg_match('/^spec.*rdf$/', $i)) {
                 continue;
             }
+            BlankNode::resetCounter();
 
             $input    = fopen("$baseDir/$i", 'r') ?: throw new \RuntimeException("Failed to open $baseDir/$i");
             $refInput = null;
@@ -102,6 +103,7 @@ class RdfXmlParserTest extends \PHPUnit\Framework\TestCase {
      * @return void
      */
     public function testRoundtrip(): void {
+        BlankNode::resetCounter();
         $df            = new DataFactory();
         $ntParser      = new NQuadsParser($df, false, NQuadsParser::MODE_TRIPLES);
         $xmlSerializer = new RdfXmlSerializer(false);

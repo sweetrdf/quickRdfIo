@@ -26,6 +26,7 @@
 
 namespace quickRdfIo;
 
+use Psr\Http\Message\StreamInterface;
 use rdfInterface\QuadIterator as iQuadIterator;
 use rdfInterface\RdfNamespace as iRdfNamespace;
 use rdfInterface\Literal as iLiteral;
@@ -78,7 +79,7 @@ class RdfXmlSerializer implements \rdfInterface\Serializer {
 
     /**
      * 
-     * @param resource $output
+     * @param resource | StreamInterface $output
      * @param iQuadIterator $graph
      * @param iRdfNamespace|null $nmsp
      * @return void
@@ -86,6 +87,13 @@ class RdfXmlSerializer implements \rdfInterface\Serializer {
      */
     public function serializeStream($output, iQuadIterator $graph,
                                     ?iRdfNamespace $nmsp = null): void {
+        if (is_resource($output)) {
+            $output = new ResourceWrapper($output);
+        }
+        if (!($output instanceof StreamInterface)) {
+            throw new RdfIoException("Output has to be a resource or " . StreamInterface::class . " object");
+        }
+
         $nl             = $this->prettyPrint ? "\n" : "";
         $ind1           = $this->prettyPrint ? "  " : "";
         $ind2           = $this->prettyPrint ? "    " : "";
@@ -95,12 +103,12 @@ class RdfXmlSerializer implements \rdfInterface\Serializer {
             $this->prefixes = array_combine(array_values($tmp), array_keys($tmp));
         }
 
-        fwrite($output, '<?xml version="1.0" encoding="UTF-8"?>' . "\n");
-        fwrite($output, '<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"');
+        $output->write('<?xml version="1.0" encoding="UTF-8"?>' . "\n");
+        $output->write('<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"');
         foreach ($this->prefixes as $prefix => $alias) {
-            fwrite($output, ' xmlns:' . $alias . '="' . $this->e($prefix) . '"');
+            $output->write(' xmlns:' . $alias . '="' . $this->e($prefix) . '"');
         }
-        fwrite($output, ">$nl");
+        $output->write(">$nl");
 
         $prevSbj = null;
         foreach ($graph as $i) {
@@ -120,19 +128,19 @@ class RdfXmlSerializer implements \rdfInterface\Serializer {
 
             if ($prevSbj === null || $s->equals($prevSbj) === false) {
                 if ($prevSbj !== null) {
-                    fwrite($output, "$ind1</rdf:Description>$nl");
+                    $output->write("$ind1</rdf:Description>$nl");
                 }
                 $attr    = $s instanceof iBlankNode ? 'rdf:nodeID' : 'rdf:about';
                 $val     = $s instanceof iBlankNode ? substr($s->getValue(), 2) : $s->getValue();
-                fwrite($output, "$ind1<rdf:Description " . $attr . '="' . $this->e($val) . '">' . $nl);
+                $output->write("$ind1<rdf:Description " . $attr . '="' . $this->e($val) . '">' . $nl);
                 $prevSbj = $i->getSubject();
             }
 
             list($pTag, $pNmsp) = $this->shorten($p->getValue());
             if ($o instanceof iBlankNode) {
-                fwrite($output, "$ind2<$pTag$pNmsp" . ' rdf:nodeID="' . $this->e(substr($o->getValue(), 2)) . '"/>');
+                $output->write("$ind2<$pTag$pNmsp" . ' rdf:nodeID="' . $this->e(substr($o->getValue(), 2)) . '"/>');
             } elseif ($o instanceof iNamedNode) {
-                fwrite($output, "$ind2<$pTag$pNmsp" . ' rdf:resource="' . $this->e($o->getValue()) . '"/>');
+                $output->write("$ind2<$pTag$pNmsp" . ' rdf:resource="' . $this->e($o->getValue()) . '"/>');
             } elseif ($o instanceof iLiteral) {
                 $lang = $o->getLang();
                 $dt   = $o->getDatatype();
@@ -144,14 +152,14 @@ class RdfXmlSerializer implements \rdfInterface\Serializer {
                     $xml .= ' rdf:datatype="' . $this->e($dt) . '"';
                 }
                 $xml .= '>' . $this->e($o->getValue()) . "</$pTag>";
-                fwrite($output, $xml);
+                $output->write($xml);
             }
-            fwrite($output, $nl);
+            $output->write($nl);
         }
         if ($prevSbj !== null) {
-            fwrite($output, "$ind1</rdf:Description>$nl");
+            $output->write("$ind1</rdf:Description>$nl");
         }
-        fwrite($output, "</rdf:RDF>");
+        $output->write("</rdf:RDF>");
         $this->prefixes = [];
     }
 

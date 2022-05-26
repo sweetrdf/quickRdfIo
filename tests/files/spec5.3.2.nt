@@ -11,8 +11,8 @@
 # $Id: test004.nt,v 1.1 2014-02-20 20:36:31 sandro Exp $
 #
 #####################################################################
-_:genid9 <http://example.org/value> "v" .
+_:genid0 <http://example.org/value> "v" .
 <http://example.org/dir/file#frag> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement> .
-<http://example.org/dir/file#frag> <http://www.w3.org/1999/02/22-rdf-syntax-ns#subject> _:genid9 .
+<http://example.org/dir/file#frag> <http://www.w3.org/1999/02/22-rdf-syntax-ns#subject> _:genid0 .
 <http://example.org/dir/file#frag> <http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate> <http://example.org/value> .
 <http://example.org/dir/file#frag> <http://www.w3.org/1999/02/22-rdf-syntax-ns#object> "v" .
