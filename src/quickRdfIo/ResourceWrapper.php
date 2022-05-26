@@ -158,6 +158,10 @@ class ResourceWrapper implements \Psr\Http\Message\StreamInterface {
      * @return int
      */
     public function write($string): int {
-        return fwrite($this->res, $string) ?: throw new RuntimeException("Writing to resource/stream failed");
+        $ret = fwrite($this->res, $string);
+        if ($ret === false) {
+            throw new RuntimeException("Writing to resource/stream failed");
+        }
+        return $ret;
     }
 }
