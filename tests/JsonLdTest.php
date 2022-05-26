@@ -29,7 +29,6 @@ namespace quickRdfIo;
 use RuntimeException;
 use quickRdf\DataFactory;
 use quickRdf\Dataset;
-use quickRdf\Quad;
 use rdfInterface\BlankNode as iBlankNode;
 use rdfInterface\Quad as iQuad;
 use rdfInterface\DatasetMapReduce as iDatasetMapReduce;
@@ -57,8 +56,8 @@ class JsonLdTest extends \PHPUnit\Framework\TestCase {
 
     public function testSimple(): void {
         $ref     = $this->parseRef(__DIR__ . '/files/jsonLd01.nq', false);
-        $d = new Dataset();
-        $df = $this->df;
+        $d       = new Dataset();
+        $df      = $this->df;
         $d->add($df->quad($df->namedNode('http://foo'), $df->namedNode('http://predicate'), $df->blankNode()));
         $d->add($df->quad($df->blankNode(), $df->namedNode('http://predicate'), $df->NamedNode('http://bar')));
         $d->add($df->quad($df->namedNode('http://foo'), $df->namedNode('http://predicate'), $df->literal('value')));
@@ -71,6 +70,15 @@ class JsonLdTest extends \PHPUnit\Framework\TestCase {
         $dataset = new Dataset();
         $dataset->add($this->parser->parse($jsonld));
         $dataset = $dataset->map(fn($x) => $this->unblank($x, $this->df));
+        $dataset = $dataset->map(fn($x) => $this->blankGraphAsDefaultGraph($x));
+        $this->assertDatasetsEqual($dataset, $ref);
+    }
+
+    public function testBig(): void {
+        $ref     = $this->parseRef(__DIR__ . '/files/puzzle4d_100k.nt', true);
+        $jsonld  = $this->serializer->serialize($ref);
+        $dataset = new Dataset();
+        $dataset->add($this->parser->parse($jsonld));
         $dataset = $dataset->map(fn($x) => $this->blankGraphAsDefaultGraph($x));
         $this->assertDatasetsEqual($dataset, $ref);
     }
