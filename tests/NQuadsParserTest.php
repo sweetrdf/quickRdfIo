@@ -246,7 +246,7 @@ class NQuadsParserTest extends \PHPUnit\Framework\TestCase {
             $parser->parseStream("<foo> <bar> <baz> .");
             $this->assertTrue(false);
         } catch (RdfIoException $ex) {
-            $this->assertEquals("Input has to be a resource", $ex->getMessage());
+            $this->assertEquals('Input has to be a resource or Psr\Http\Message\StreamInterface object', $ex->getMessage());
         }
     }
 }

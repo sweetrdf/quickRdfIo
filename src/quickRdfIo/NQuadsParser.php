@@ -27,6 +27,9 @@
 namespace quickRdfIo;
 
 use Generator;
+use SplQueue;
+use LogicException;
+use Psr\Http\Message\StreamInterface;
 use rdfInterface\QuadIterator as iQuadIterator;
 use rdfInterface\Parser as iParser;
 use rdfInterface\Quad as iQuad;
@@ -63,6 +66,7 @@ class NQuadsParser implements iParser, iQuadIterator {
     const LITERAL           = '"((?>[^"]|\\")*)"';
     const STAR_START        = '%\\G\s*<<%';
     const STAR_END          = '%\\G\s*>>%';
+    const READ_BUF_SIZE     = 8096;
     use TmpStreamParserTrait;
 
     /**
@@ -71,12 +75,7 @@ class NQuadsParser implements iParser, iQuadIterator {
      */
     private array $unescapeMap;
     private iDataFactory $dataFactory;
-
-    /**
-     *
-     * @var resource
-     */
-    private $input;
+    private StreamInterface $input;
     private int $mode;
     // non-star parser regexp
     private string $regexp;
@@ -87,6 +86,13 @@ class NQuadsParser implements iParser, iQuadIterator {
     private string $regexpGraph;
     private string $regexpLineEnd;
     private string $regexpCommentLine;
+    private string $readBuffer;
+
+    /**
+     * 
+     * @var SplQueue<string>
+     */
+    private SplQueue $linesBuffer;
 
     /**
      * Input line
@@ -195,9 +201,17 @@ class NQuadsParser implements iParser, iQuadIterator {
         $this->closeTmpStream();
     }
 
+    /**
+     * 
+     * @param resource | StreamInterface $input
+     * @return iQuadIterator
+     */
     public function parseStream($input): iQuadIterator {
-        if (!is_resource($input)) {
-            throw new RdfIoException("Input has to be a resource");
+        if (is_resource($input)) {
+            $input = new ResourceWrapper($input);
+        }
+        if (!($input instanceof StreamInterface)) {
+            throw new RdfIoException("Input has to be a resource or " . StreamInterface::class . " object");
         }
 
         $this->input = $input;
@@ -217,17 +231,16 @@ class NQuadsParser implements iParser, iQuadIterator {
     }
 
     public function rewind(): void {
-        if (ftell($this->input) !== 0) {
-            $ret = rewind($this->input);
-            if ($ret !== true) {
-                throw new RdfIoException("Can't seek in the input stream");
-            }
+        if ($this->input->tell() !== 0) {
+            $this->input->rewind();
         }
         if ($this->mode === self::MODE_TRIPLES || $this->mode === self::MODE_QUADS) {
             $this->quads = $this->quadGenerator();
         } else {
             $this->quads = $this->starQuadGenerator();
         }
+        $this->linesBuffer = new SplQueue();
+        $this->readBuffer  = '';
     }
 
     public function valid(): bool {
@@ -242,21 +255,20 @@ class NQuadsParser implements iParser, iQuadIterator {
     private function quadGenerator(): Generator {
         $matches = null;
         $n       = 0;
-        $loop    = true;
-        while ($loop) {
-            $n++;
-            $this->line = (string) fgets($this->input);
-            $loop       = !feof($this->input);
-            if (!$loop) {
-                $this->line .= "\n"; // add new line to avoid issues with last line without \n
+        try {
+            while (true) {
+                $n++;
+                $this->line = $this->readLine();
+                $ret        = preg_match($this->regexp, $this->line, $matches, PREG_UNMATCHED_AS_NULL);
+                if ($ret === 0 && !empty(trim($this->line))) {
+                    throw new RdfIoException("Can't parse line $n: " . $this->line);
+                }
+                if (($matches[3] ?? null) !== null) {
+                    yield $this->makeQuad($matches);
+                }
             }
-            $ret = preg_match($this->regexp, $this->line, $matches, PREG_UNMATCHED_AS_NULL);
-            if ($ret === 0 && !empty(trim($this->line))) {
-                throw new RdfIoException("Can't parse line $n: " . $this->line);
-            }
-            if (($matches[3] ?? null) !== null) {
-                yield $this->makeQuad($matches);
-            }
+        } catch (LogicException $e) {
+            
         }
     }
 
@@ -300,25 +312,24 @@ class NQuadsParser implements iParser, iQuadIterator {
      * @throws RdfIoException
      */
     private function starQuadGenerator(): Generator {
-        $n    = 0;
-        $loop = true;
-        while ($loop) {
-            $n++;
-            $this->offset = 0;
-            $this->level  = 0;
-            $this->line   = (string) fgets($this->input);
-            $loop         = !feof($this->input);
-            if (!$loop) {
-                $this->line .= "\n"; // add new line to avoid issues with last line without \n
-            }
-            try {
-                yield $this->parseStar();
-            } catch (RdfIoException $e) {
-                $ret = preg_match($this->regexpCommentLine, $this->line);
-                if ($ret === 0) {
-                    throw $e;
+        $n = 0;
+        try {
+            while (true) {
+                $n++;
+                $this->offset = 0;
+                $this->level  = 0;
+                $this->line   = $this->readLine();
+                try {
+                    yield $this->parseStar();
+                } catch (RdfIoException $e) {
+                    $ret = preg_match($this->regexpCommentLine, $this->line);
+                    if ($ret === 0) {
+                        throw $e;
+                    }
                 }
             }
+        } catch (LogicException $e) {
+            
         }
     }
 
@@ -403,5 +414,31 @@ class NQuadsParser implements iParser, iQuadIterator {
             $value = strtr($value, $dict);
         }
         return $value;
+    }
+
+    /**
+     * 
+     * @return string
+     * @throws LogicException
+     */
+    private function readLine(): string {
+        $notEof = !$this->input->eof();
+        while ($this->linesBuffer->count() === 0 && $notEof) {
+            $this->readBuffer .= $this->input->read(self::READ_BUF_SIZE);
+            $notEof           = !$this->input->eof();
+            $lines            = explode("\n", $this->readBuffer);
+            for ($i = 0; $i < count($lines) - 1; $i++) {
+                $this->linesBuffer->enqueue($lines[$i] . "\n");
+            }
+            if ($notEof) {
+                $this->readBuffer = end($lines);
+            } else {
+                $this->linesBuffer->enqueue(end($lines) . "\n");
+            }
+        }
+        if ($this->linesBuffer->isEmpty()) {
+            throw new LogicException();
+        }
+        return $this->linesBuffer->dequeue();
     }
 }
