@@ -26,6 +26,7 @@
 
 namespace quickRdfIo;
 
+use Psr\Http\Message\StreamInterface;
 use ML\IRI\IRI;
 use ML\JsonLD\JsonLD;
 use ML\JsonLD\Quad as JsonLdQuad;
@@ -117,8 +118,14 @@ class JsonLdParser implements iParser, iQuadIterator {
         return $this;
     }
 
+    /**
+     * 
+     * @param resource | StreamInterface $input
+     * @return iQuadIterator
+     */
     public function parseStream($input): iQuadIterator {
-        return $this->parse(stream_get_contents($input) ?: '');
+        $input = is_resource($input) ? stream_get_contents($input) : $input->getContents();
+        return $this->parse($input ?: '');
     }
 
     public function rewind(): void {

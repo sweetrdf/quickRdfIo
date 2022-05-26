@@ -26,6 +26,7 @@
 
 namespace quickRdfIo;
 
+use Psr\Http\Message\StreamInterface;
 use rdfInterface\QuadIterator as iQuadIterator;
 use rdfInterface\RdfNamespace as iRdfNamespace;
 use rdfInterface\Quad as iQuad;
@@ -93,8 +94,8 @@ class JsonLdSerializer implements \rdfInterface\Serializer {
      */
     public function __construct(?string $baseUri = null,
                                 int $transform = self::TRANSFORM_NONE,
-                                int $jsonEncodeFlags = 0, mixed $context = null,
-                                array $options = []) {
+                                int $jsonEncodeFlags = JSON_UNESCAPED_SLASHES,
+                                mixed $context = null, array $options = []) {
         $this->baseUri         = $baseUri;
         $this->transform       = $transform;
         $this->jsonEncodeFlags = $jsonEncodeFlags;
@@ -188,7 +189,7 @@ class JsonLdSerializer implements \rdfInterface\Serializer {
 
     /**
      * 
-     * @param resource $output
+     * @param resource | StreamInterface $output
      * @param iQuadIterator $graph
      * @param iRdfNamespace|null $nmsp unused but required for compatibility with
      *   the `\rdfInterface\Serializer`.
@@ -196,6 +197,13 @@ class JsonLdSerializer implements \rdfInterface\Serializer {
      */
     public function serializeStream($output, iQuadIterator $graph,
                                     iRdfNamespace | null $nmsp = null): void {
-        fwrite($output, $this->serialize($graph, $nmsp));
+        if (is_resource($output)) {
+            $output = new ResourceWrapper($output);
+        }
+        if (!($output instanceof StreamInterface)) {
+            throw new RdfIoException("Output has to be a resource or " . StreamInterface::class . " object");
+        }
+
+        $output->write($this->serialize($graph, $nmsp));
     }
 }

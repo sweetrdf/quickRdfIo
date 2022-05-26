@@ -52,11 +52,20 @@ class JsonLdTest extends \PHPUnit\Framework\TestCase {
         $this->df         = new DataFactory();
         $this->refParser  = new NQuadsParser($this->df, false, NQuadsParser::MODE_QUADS);
         $this->parser     = new JsonLdParser($this->df);
-        $this->serializer = new JsonLdSerializer();
+        $this->serializer = new JsonLdSerializer(null);
     }
 
     public function testSimple(): void {
         $ref     = $this->parseRef(__DIR__ . '/files/jsonLd01.nq', false);
+        $d = new Dataset();
+        $df = $this->df;
+        $d->add($df->quad($df->namedNode('http://foo'), $df->namedNode('http://predicate'), $df->blankNode()));
+        $d->add($df->quad($df->blankNode(), $df->namedNode('http://predicate'), $df->NamedNode('http://bar')));
+        $d->add($df->quad($df->namedNode('http://foo'), $df->namedNode('http://predicate'), $df->literal('value')));
+        $d->add($df->quad($df->namedNode('http://foo'), $df->namedNode('http://predicate'), $df->literal('value', 'en')));
+        $d->add($df->quad($df->namedNode('http://foo'), $df->namedNode('http://predicate'), $df->literal('2022-05-11', null, \zozlak\RdfConstants::XSD_DATE)));
+        $d->add($df->quad($df->namedNode('http://foo'), $df->namedNode('http://predicate'), $df->literal(3, null, \zozlak\RdfConstants::XSD_INT)));
+        $d->add($df->quad($df->namedNode('http://foo'), $df->namedNode('http://predicate'), $df->literal(4, null, \zozlak\RdfConstants::XSD_INT), $df->namedNode('http://graph')));
         $jsonld  = $this->serializer->serialize($ref);
         $ref     = $ref->map(fn($x) => $this->unblank($x, $this->df));
         $dataset = new Dataset();
