@@ -21,7 +21,8 @@
         "sweetrdf/rdf-helpers": "*",
         "sweetrdf/rdf-interface": ">=0.9",
         "pietercolpaert/hardf": "*",
-        "ml/json-ld": "^1.2"
+        "ml/json-ld": "^1.2",
+        "psr/http-message": "^1.0"
     },
     "suggest": {
         "sweetrdf/quick-rdf": "*"
