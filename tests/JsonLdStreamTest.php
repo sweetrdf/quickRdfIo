@@ -45,7 +45,7 @@ class JsonLdStreamTest extends \PHPUnit\Framework\TestCase {
         $this->df         = new DataFactory();
         $this->refParser  = new NQuadsParser($this->df, false, NQuadsParser::MODE_QUADS);
         $this->parser     = new JsonLdParser($this->df);
-        $this->serializer = new JsonLdStreamSerializer(null);
+        $this->serializer = new JsonLdStreamSerializer();
     }
 
     public function testSimple(): void {
