@@ -39,7 +39,8 @@
         "phpstan/phpstan": "*",
         "squizlabs/php_codesniffer": "*",
         "php-coveralls/php-coveralls": "^2.4",
-        "sweetrdf/term-templates": "*"
+        "sweetrdf/term-templates": "*",
+        "sweetrdf/simple-rdf": "^0.7.2"
     },
     "autoload-dev": {
         "psr-4": {
