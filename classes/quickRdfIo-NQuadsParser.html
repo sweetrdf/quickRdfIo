@@ -128,7 +128,7 @@
         <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/NQuadsParser.php"><a href="files/src-quickrdfio-nquadsparser.html"><abbr title="src/quickRdfIo/NQuadsParser.php">NQuadsParser.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">41</span>
+    <span class="phpdocumentor-element-found-in__line">44</span>
 
     </aside>
 
@@ -319,6 +319,13 @@ and extensive use of regullar expressions).</p>
 <dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -constant -public">
+    <a href="classes/quickRdfIo-NQuadsParser.html#constant_READ_BUF_SIZE">READ_BUF_SIZE</a>
+    <span>
+        &nbsp;= 8096                            </span>
+</dt>
+<dd></dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -constant -public">
     <a href="classes/quickRdfIo-NQuadsParser.html#constant_STAR_END">STAR_END</a>
     <span>
         &nbsp;= &#039;%\\G\\s*&gt;&gt;%&#039;                            </span>
@@ -349,7 +356,7 @@ and extensive use of regullar expressions).</p>
             <dt class="phpdocumentor-table-of-contents__entry -property -private">
     <a href="classes/quickRdfIo-NQuadsParser.html#property_input">$input</a>
     <span>
-                        &nbsp;: resource            </span>
+                        &nbsp;: <abbr title="\Psr\Http\Message\StreamInterface">StreamInterface</abbr>            </span>
 </dt>
 <dd></dd>
 
@@ -366,6 +373,13 @@ and extensive use of regullar expressions).</p>
                         &nbsp;: string            </span>
 </dt>
 <dd>Input line</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -property -private">
+    <a href="classes/quickRdfIo-NQuadsParser.html#property_linesBuffer">$linesBuffer</a>
+    <span>
+                        &nbsp;: <abbr title="\SplQueue">SplQueue</abbr>            </span>
+</dt>
+<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -private">
     <a href="classes/quickRdfIo-NQuadsParser.html#property_mode">$mode</a>
@@ -385,6 +399,13 @@ and extensive use of regullar expressions).</p>
     <a href="classes/quickRdfIo-NQuadsParser.html#property_quads">$quads</a>
     <span>
                         &nbsp;: <abbr title="\Generator">Generator</abbr>            </span>
+</dt>
+<dd></dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -property -private">
+    <a href="classes/quickRdfIo-NQuadsParser.html#property_readBuffer">$readBuffer</a>
+    <span>
+                        &nbsp;: string            </span>
 </dt>
 <dd></dd>
 
@@ -543,6 +564,13 @@ and extensive use of regullar expressions).</p>
 <dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -private">
+    <a href="classes/quickRdfIo-NQuadsParser.html#method_readLine">readLine()</a>
+    <span>
+                                &nbsp;: string    </span>
+</dt>
+<dd></dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -private">
     <a href="classes/quickRdfIo-NQuadsParser.html#method_starQuadGenerator">starQuadGenerator()</a>
     <span>
                                 &nbsp;: <abbr title="\Generator">Generator</abbr>&lt;string|int, <a href="classes/rdfInterface-Quad.html"><abbr title="\rdfInterface\Quad">Quad</abbr></a>&gt;    </span>
@@ -575,7 +603,7 @@ and extensive use of regullar expressions).</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/NQuadsParser.php"><a href="files/src-quickrdfio-nquadsparser.html"><abbr title="src/quickRdfIo/NQuadsParser.php">NQuadsParser.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">61</span>
+    <span class="phpdocumentor-element-found-in__line">64</span>
 
     </aside>
 
@@ -604,7 +632,7 @@ and extensive use of regullar expressions).</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/NQuadsParser.php"><a href="files/src-quickrdfio-nquadsparser.html"><abbr title="src/quickRdfIo/NQuadsParser.php">NQuadsParser.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">57</span>
+    <span class="phpdocumentor-element-found-in__line">60</span>
 
     </aside>
 
@@ -633,7 +661,7 @@ and extensive use of regullar expressions).</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/NQuadsParser.php"><a href="files/src-quickrdfio-nquadsparser.html"><abbr title="src/quickRdfIo/NQuadsParser.php">NQuadsParser.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">58</span>
+    <span class="phpdocumentor-element-found-in__line">61</span>
 
     </aside>
 
@@ -662,7 +690,7 @@ and extensive use of regullar expressions).</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/NQuadsParser.php"><a href="files/src-quickrdfio-nquadsparser.html"><abbr title="src/quickRdfIo/NQuadsParser.php">NQuadsParser.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">59</span>
+    <span class="phpdocumentor-element-found-in__line">62</span>
 
     </aside>
 
@@ -691,7 +719,7 @@ and extensive use of regullar expressions).</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/NQuadsParser.php"><a href="files/src-quickrdfio-nquadsparser.html"><abbr title="src/quickRdfIo/NQuadsParser.php">NQuadsParser.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">60</span>
+    <span class="phpdocumentor-element-found-in__line">63</span>
 
     </aside>
 
@@ -720,7 +748,7 @@ and extensive use of regullar expressions).</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/NQuadsParser.php"><a href="files/src-quickrdfio-nquadsparser.html"><abbr title="src/quickRdfIo/NQuadsParser.php">NQuadsParser.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">50</span>
+    <span class="phpdocumentor-element-found-in__line">53</span>
 
     </aside>
 
@@ -749,7 +777,7 @@ and extensive use of regullar expressions).</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/NQuadsParser.php"><a href="files/src-quickrdfio-nquadsparser.html"><abbr title="src/quickRdfIo/NQuadsParser.php">NQuadsParser.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">52</span>
+    <span class="phpdocumentor-element-found-in__line">55</span>
 
     </aside>
 
@@ -778,7 +806,7 @@ and extensive use of regullar expressions).</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/NQuadsParser.php"><a href="files/src-quickrdfio-nquadsparser.html"><abbr title="src/quickRdfIo/NQuadsParser.php">NQuadsParser.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">51</span>
+    <span class="phpdocumentor-element-found-in__line">54</span>
 
     </aside>
 
@@ -807,7 +835,7 @@ and extensive use of regullar expressions).</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/NQuadsParser.php"><a href="files/src-quickrdfio-nquadsparser.html"><abbr title="src/quickRdfIo/NQuadsParser.php">NQuadsParser.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">49</span>
+    <span class="phpdocumentor-element-found-in__line">52</span>
 
     </aside>
 
@@ -836,7 +864,7 @@ and extensive use of regullar expressions).</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/NQuadsParser.php"><a href="files/src-quickrdfio-nquadsparser.html"><abbr title="src/quickRdfIo/NQuadsParser.php">NQuadsParser.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">47</span>
+    <span class="phpdocumentor-element-found-in__line">50</span>
 
     </aside>
 
@@ -865,7 +893,7 @@ and extensive use of regullar expressions).</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/NQuadsParser.php"><a href="files/src-quickrdfio-nquadsparser.html"><abbr title="src/quickRdfIo/NQuadsParser.php">NQuadsParser.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">56</span>
+    <span class="phpdocumentor-element-found-in__line">59</span>
 
     </aside>
 
@@ -894,7 +922,7 @@ and extensive use of regullar expressions).</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/NQuadsParser.php"><a href="files/src-quickrdfio-nquadsparser.html"><abbr title="src/quickRdfIo/NQuadsParser.php">NQuadsParser.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">55</span>
+    <span class="phpdocumentor-element-found-in__line">58</span>
 
     </aside>
 
@@ -923,7 +951,7 @@ and extensive use of regullar expressions).</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/NQuadsParser.php"><a href="files/src-quickrdfio-nquadsparser.html"><abbr title="src/quickRdfIo/NQuadsParser.php">NQuadsParser.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">54</span>
+    <span class="phpdocumentor-element-found-in__line">57</span>
 
     </aside>
 
@@ -952,7 +980,7 @@ and extensive use of regullar expressions).</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/NQuadsParser.php"><a href="files/src-quickrdfio-nquadsparser.html"><abbr title="src/quickRdfIo/NQuadsParser.php">NQuadsParser.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">53</span>
+    <span class="phpdocumentor-element-found-in__line">56</span>
 
     </aside>
 
@@ -981,7 +1009,7 @@ and extensive use of regullar expressions).</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/NQuadsParser.php"><a href="files/src-quickrdfio-nquadsparser.html"><abbr title="src/quickRdfIo/NQuadsParser.php">NQuadsParser.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">63</span>
+    <span class="phpdocumentor-element-found-in__line">66</span>
 
     </aside>
 
@@ -1010,7 +1038,7 @@ and extensive use of regullar expressions).</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/NQuadsParser.php"><a href="files/src-quickrdfio-nquadsparser.html"><abbr title="src/quickRdfIo/NQuadsParser.php">NQuadsParser.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">62</span>
+    <span class="phpdocumentor-element-found-in__line">65</span>
 
     </aside>
 
@@ -1039,7 +1067,7 @@ and extensive use of regullar expressions).</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/NQuadsParser.php"><a href="files/src-quickrdfio-nquadsparser.html"><abbr title="src/quickRdfIo/NQuadsParser.php">NQuadsParser.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">44</span>
+    <span class="phpdocumentor-element-found-in__line">47</span>
 
     </aside>
 
@@ -1068,7 +1096,7 @@ and extensive use of regullar expressions).</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/NQuadsParser.php"><a href="files/src-quickrdfio-nquadsparser.html"><abbr title="src/quickRdfIo/NQuadsParser.php">NQuadsParser.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">46</span>
+    <span class="phpdocumentor-element-found-in__line">49</span>
 
     </aside>
 
@@ -1097,7 +1125,7 @@ and extensive use of regullar expressions).</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/NQuadsParser.php"><a href="files/src-quickrdfio-nquadsparser.html"><abbr title="src/quickRdfIo/NQuadsParser.php">NQuadsParser.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">43</span>
+    <span class="phpdocumentor-element-found-in__line">46</span>
 
     </aside>
 
@@ -1126,7 +1154,7 @@ and extensive use of regullar expressions).</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/NQuadsParser.php"><a href="files/src-quickrdfio-nquadsparser.html"><abbr title="src/quickRdfIo/NQuadsParser.php">NQuadsParser.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">45</span>
+    <span class="phpdocumentor-element-found-in__line">48</span>
 
     </aside>
 
@@ -1147,6 +1175,35 @@ and extensive use of regullar expressions).</p>
 
 </article>
                     <article class="phpdocumentor-element -constant -public ">
+    <h4 class="phpdocumentor-element__name" id="constant_READ_BUF_SIZE">
+        READ_BUF_SIZE
+        <a href="classes/quickRdfIo-NQuadsParser.html#constant_READ_BUF_SIZE" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/NQuadsParser.php"><a href="files/src-quickrdfio-nquadsparser.html"><abbr title="src/quickRdfIo/NQuadsParser.php">NQuadsParser.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">69</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-signature phpdocumentor-code ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+        <span class="phpdocumentor-signature__type">mixed</span>
+    <span class="phpdocumentor-signature__name">READ_BUF_SIZE</span>
+    = <span class="phpdocumentor-signature__default-value">8096</span>
+</code>
+
+
+        <section class="phpdocumentor-description"></section>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+
+</article>
+                    <article class="phpdocumentor-element -constant -public ">
     <h4 class="phpdocumentor-element__name" id="constant_STAR_END">
         STAR_END
         <a href="classes/quickRdfIo-NQuadsParser.html#constant_STAR_END" class="headerlink"><i class="fas fa-link"></i></a>
@@ -1155,7 +1212,7 @@ and extensive use of regullar expressions).</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/NQuadsParser.php"><a href="files/src-quickrdfio-nquadsparser.html"><abbr title="src/quickRdfIo/NQuadsParser.php">NQuadsParser.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">65</span>
+    <span class="phpdocumentor-element-found-in__line">68</span>
 
     </aside>
 
@@ -1184,7 +1241,7 @@ and extensive use of regullar expressions).</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/NQuadsParser.php"><a href="files/src-quickrdfio-nquadsparser.html"><abbr title="src/quickRdfIo/NQuadsParser.php">NQuadsParser.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">64</span>
+    <span class="phpdocumentor-element-found-in__line">67</span>
 
     </aside>
 
@@ -1213,7 +1270,7 @@ and extensive use of regullar expressions).</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/NQuadsParser.php"><a href="files/src-quickrdfio-nquadsparser.html"><abbr title="src/quickRdfIo/NQuadsParser.php">NQuadsParser.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">48</span>
+    <span class="phpdocumentor-element-found-in__line">51</span>
 
     </aside>
 
@@ -1257,7 +1314,7 @@ and extensive use of regullar expressions).</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/NQuadsParser.php"><a href="files/src-quickrdfio-nquadsparser.html"><abbr title="src/quickRdfIo/NQuadsParser.php">NQuadsParser.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">73</span>
+    <span class="phpdocumentor-element-found-in__line">77</span>
 
     </aside>
 
@@ -1291,19 +1348,21 @@ and extensive use of regullar expressions).</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/NQuadsParser.php"><a href="files/src-quickrdfio-nquadsparser.html"><abbr title="src/quickRdfIo/NQuadsParser.php">NQuadsParser.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">79</span>
+    <span class="phpdocumentor-element-found-in__line">78</span>
 
     </aside>
 
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">private</span>
-        <span class="phpdocumentor-signature__type">resource</span>
+        <span class="phpdocumentor-signature__type"><abbr title="\Psr\Http\Message\StreamInterface">StreamInterface</abbr></span>
     <span class="phpdocumentor-signature__name">$input</span>
     </code>
 
-    
-    
+        <section class="phpdocumentor-description"></section>
+
+        <section class="phpdocumentor-description"></section>
+
     
 
 </article>
@@ -1323,7 +1382,7 @@ and extensive use of regullar expressions).</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/NQuadsParser.php"><a href="files/src-quickrdfio-nquadsparser.html"><abbr title="src/quickRdfIo/NQuadsParser.php">NQuadsParser.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">107</span>
+    <span class="phpdocumentor-element-found-in__line">113</span>
 
     </aside>
 
@@ -1356,7 +1415,7 @@ and extensive use of regullar expressions).</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/NQuadsParser.php"><a href="files/src-quickrdfio-nquadsparser.html"><abbr title="src/quickRdfIo/NQuadsParser.php">NQuadsParser.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">95</span>
+    <span class="phpdocumentor-element-found-in__line">101</span>
 
     </aside>
 
@@ -1380,6 +1439,38 @@ and extensive use of regullar expressions).</p>
             -private
                                                         "
 >
+    <h4 class="phpdocumentor-element__name" id="property_linesBuffer">
+        $linesBuffer
+        <a href="classes/quickRdfIo-NQuadsParser.html#property_linesBuffer" class="headerlink"><i class="fas fa-link"></i></a>
+        <span class="phpdocumentor-element__modifiers">
+                                </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/NQuadsParser.php"><a href="files/src-quickrdfio-nquadsparser.html"><abbr title="src/quickRdfIo/NQuadsParser.php">NQuadsParser.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">95</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+        <span class="phpdocumentor-signature__type"><abbr title="\SplQueue">SplQueue</abbr></span>
+    <span class="phpdocumentor-signature__name">$linesBuffer</span>
+    </code>
+
+    
+    
+    
+
+</article>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
+            -private
+                                                        "
+>
     <h4 class="phpdocumentor-element__name" id="property_mode">
         $mode
         <a href="classes/quickRdfIo-NQuadsParser.html#property_mode" class="headerlink"><i class="fas fa-link"></i></a>
@@ -1389,7 +1480,7 @@ and extensive use of regullar expressions).</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/NQuadsParser.php"><a href="files/src-quickrdfio-nquadsparser.html"><abbr title="src/quickRdfIo/NQuadsParser.php">NQuadsParser.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">80</span>
+    <span class="phpdocumentor-element-found-in__line">79</span>
 
     </aside>
 
@@ -1423,7 +1514,7 @@ and extensive use of regullar expressions).</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/NQuadsParser.php"><a href="files/src-quickrdfio-nquadsparser.html"><abbr title="src/quickRdfIo/NQuadsParser.php">NQuadsParser.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">101</span>
+    <span class="phpdocumentor-element-found-in__line">107</span>
 
     </aside>
 
@@ -1456,7 +1547,7 @@ and extensive use of regullar expressions).</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/NQuadsParser.php"><a href="files/src-quickrdfio-nquadsparser.html"><abbr title="src/quickRdfIo/NQuadsParser.php">NQuadsParser.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">113</span>
+    <span class="phpdocumentor-element-found-in__line">119</span>
 
     </aside>
 
@@ -1479,6 +1570,40 @@ and extensive use of regullar expressions).</p>
             -private
                                                         "
 >
+    <h4 class="phpdocumentor-element__name" id="property_readBuffer">
+        $readBuffer
+        <a href="classes/quickRdfIo-NQuadsParser.html#property_readBuffer" class="headerlink"><i class="fas fa-link"></i></a>
+        <span class="phpdocumentor-element__modifiers">
+                                </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/NQuadsParser.php"><a href="files/src-quickrdfio-nquadsparser.html"><abbr title="src/quickRdfIo/NQuadsParser.php">NQuadsParser.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">89</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+        <span class="phpdocumentor-signature__type">string</span>
+    <span class="phpdocumentor-signature__name">$readBuffer</span>
+    </code>
+
+        <section class="phpdocumentor-description"></section>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+
+</article>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
+            -private
+                                                        "
+>
     <h4 class="phpdocumentor-element__name" id="property_regexp">
         $regexp
         <a href="classes/quickRdfIo-NQuadsParser.html#property_regexp" class="headerlink"><i class="fas fa-link"></i></a>
@@ -1488,7 +1613,7 @@ and extensive use of regullar expressions).</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/NQuadsParser.php"><a href="files/src-quickrdfio-nquadsparser.html"><abbr title="src/quickRdfIo/NQuadsParser.php">NQuadsParser.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">82</span>
+    <span class="phpdocumentor-element-found-in__line">81</span>
 
     </aside>
 
@@ -1522,7 +1647,7 @@ and extensive use of regullar expressions).</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/NQuadsParser.php"><a href="files/src-quickrdfio-nquadsparser.html"><abbr title="src/quickRdfIo/NQuadsParser.php">NQuadsParser.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">89</span>
+    <span class="phpdocumentor-element-found-in__line">88</span>
 
     </aside>
 
@@ -1556,7 +1681,7 @@ and extensive use of regullar expressions).</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/NQuadsParser.php"><a href="files/src-quickrdfio-nquadsparser.html"><abbr title="src/quickRdfIo/NQuadsParser.php">NQuadsParser.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">87</span>
+    <span class="phpdocumentor-element-found-in__line">86</span>
 
     </aside>
 
@@ -1590,7 +1715,7 @@ and extensive use of regullar expressions).</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/NQuadsParser.php"><a href="files/src-quickrdfio-nquadsparser.html"><abbr title="src/quickRdfIo/NQuadsParser.php">NQuadsParser.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">88</span>
+    <span class="phpdocumentor-element-found-in__line">87</span>
 
     </aside>
 
@@ -1624,7 +1749,7 @@ and extensive use of regullar expressions).</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/NQuadsParser.php"><a href="files/src-quickrdfio-nquadsparser.html"><abbr title="src/quickRdfIo/NQuadsParser.php">NQuadsParser.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">85</span>
+    <span class="phpdocumentor-element-found-in__line">84</span>
 
     </aside>
 
@@ -1658,7 +1783,7 @@ and extensive use of regullar expressions).</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/NQuadsParser.php"><a href="files/src-quickrdfio-nquadsparser.html"><abbr title="src/quickRdfIo/NQuadsParser.php">NQuadsParser.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">86</span>
+    <span class="phpdocumentor-element-found-in__line">85</span>
 
     </aside>
 
@@ -1692,7 +1817,7 @@ and extensive use of regullar expressions).</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/NQuadsParser.php"><a href="files/src-quickrdfio-nquadsparser.html"><abbr title="src/quickRdfIo/NQuadsParser.php">NQuadsParser.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">84</span>
+    <span class="phpdocumentor-element-found-in__line">83</span>
 
     </aside>
 
@@ -1758,7 +1883,7 @@ and extensive use of regullar expressions).</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/NQuadsParser.php"><a href="files/src-quickrdfio-nquadsparser.html"><abbr title="src/quickRdfIo/NQuadsParser.php">NQuadsParser.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">72</span>
+    <span class="phpdocumentor-element-found-in__line">76</span>
 
     </aside>
 
@@ -1795,7 +1920,7 @@ and extensive use of regullar expressions).</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/NQuadsParser.php"><a href="files/src-quickrdfio-nquadsparser.html"><abbr title="src/quickRdfIo/NQuadsParser.php">NQuadsParser.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">142</span>
+    <span class="phpdocumentor-element-found-in__line">148</span>
 
     </aside>
 
@@ -1879,7 +2004,7 @@ to assure the input data follow a given format.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/NQuadsParser.php"><a href="files/src-quickrdfio-nquadsparser.html"><abbr title="src/quickRdfIo/NQuadsParser.php">NQuadsParser.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">194</span>
+    <span class="phpdocumentor-element-found-in__line">200</span>
 
     </aside>
 
@@ -1912,7 +2037,7 @@ to assure the input data follow a given format.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/NQuadsParser.php"><a href="files/src-quickrdfio-nquadsparser.html"><abbr title="src/quickRdfIo/NQuadsParser.php">NQuadsParser.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">207</span>
+    <span class="phpdocumentor-element-found-in__line">221</span>
 
     </aside>
 
@@ -1945,7 +2070,7 @@ to assure the input data follow a given format.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/NQuadsParser.php"><a href="files/src-quickrdfio-nquadsparser.html"><abbr title="src/quickRdfIo/NQuadsParser.php">NQuadsParser.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">211</span>
+    <span class="phpdocumentor-element-found-in__line">225</span>
 
     </aside>
 
@@ -1978,7 +2103,7 @@ to assure the input data follow a given format.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/NQuadsParser.php"><a href="files/src-quickrdfio-nquadsparser.html"><abbr title="src/quickRdfIo/NQuadsParser.php">NQuadsParser.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">215</span>
+    <span class="phpdocumentor-element-found-in__line">229</span>
 
     </aside>
 
@@ -2055,7 +2180,7 @@ to assure the input data follow a given format.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/NQuadsParser.php"><a href="files/src-quickrdfio-nquadsparser.html"><abbr title="src/quickRdfIo/NQuadsParser.php">NQuadsParser.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">198</span>
+    <span class="phpdocumentor-element-found-in__line">209</span>
 
     </aside>
 
@@ -2072,7 +2197,8 @@ to assure the input data follow a given format.</p>
                 : <span class="phpdocumentor-signature__argument__return-type">mixed</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                
+                    <section class="phpdocumentor-description"></section>
+
             </dd>
             </dl>
 
@@ -2097,7 +2223,7 @@ to assure the input data follow a given format.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/NQuadsParser.php"><a href="files/src-quickrdfio-nquadsparser.html"><abbr title="src/quickRdfIo/NQuadsParser.php">NQuadsParser.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">219</span>
+    <span class="phpdocumentor-element-found-in__line">233</span>
 
     </aside>
 
@@ -2130,7 +2256,7 @@ to assure the input data follow a given format.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/NQuadsParser.php"><a href="files/src-quickrdfio-nquadsparser.html"><abbr title="src/quickRdfIo/NQuadsParser.php">NQuadsParser.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">233</span>
+    <span class="phpdocumentor-element-found-in__line">246</span>
 
     </aside>
 
@@ -2196,7 +2322,7 @@ to assure the input data follow a given format.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/NQuadsParser.php"><a href="files/src-quickrdfio-nquadsparser.html"><abbr title="src/quickRdfIo/NQuadsParser.php">NQuadsParser.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">269</span>
+    <span class="phpdocumentor-element-found-in__line">281</span>
 
     </aside>
 
@@ -2239,7 +2365,7 @@ to assure the input data follow a given format.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/NQuadsParser.php"><a href="files/src-quickrdfio-nquadsparser.html"><abbr title="src/quickRdfIo/NQuadsParser.php">NQuadsParser.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">325</span>
+    <span class="phpdocumentor-element-found-in__line">336</span>
 
     </aside>
 
@@ -2272,7 +2398,7 @@ to assure the input data follow a given format.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/NQuadsParser.php"><a href="files/src-quickrdfio-nquadsparser.html"><abbr title="src/quickRdfIo/NQuadsParser.php">NQuadsParser.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">242</span>
+    <span class="phpdocumentor-element-found-in__line">255</span>
 
     </aside>
 
@@ -2311,6 +2437,52 @@ to assure the input data follow a given format.</p>
             -private
                                                         "
 >
+    <h4 class="phpdocumentor-element__name" id="method_readLine">
+        readLine()
+        <a href="classes/quickRdfIo-NQuadsParser.html#method_readLine" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/NQuadsParser.php"><a href="files/src-quickrdfio-nquadsparser.html"><abbr title="src/quickRdfIo/NQuadsParser.php">NQuadsParser.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">424</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+                    <span class="phpdocumentor-signature__name">readLine</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
+
+    
+    
+    
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">throws</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                <span class="phpdocumentor-tag-link"><abbr title="\LogicException">LogicException</abbr></span>
+                                                            
+                                             
+                                    </dd>
+                        </dl>
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">string</span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -private
+                                                        "
+>
     <h4 class="phpdocumentor-element__name" id="method_starQuadGenerator">
         starQuadGenerator()
         <a href="classes/quickRdfIo-NQuadsParser.html#method_starQuadGenerator" class="headerlink"><i class="fas fa-link"></i></a>
@@ -2318,7 +2490,7 @@ to assure the input data follow a given format.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/NQuadsParser.php"><a href="files/src-quickrdfio-nquadsparser.html"><abbr title="src/quickRdfIo/NQuadsParser.php">NQuadsParser.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">302</span>
+    <span class="phpdocumentor-element-found-in__line">314</span>
 
     </aside>
 
@@ -2364,7 +2536,7 @@ to assure the input data follow a given format.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/NQuadsParser.php"><a href="files/src-quickrdfio-nquadsparser.html"><abbr title="src/quickRdfIo/NQuadsParser.php">NQuadsParser.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">394</span>
+    <span class="phpdocumentor-element-found-in__line">405</span>
 
     </aside>
 

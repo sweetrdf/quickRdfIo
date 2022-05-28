@@ -136,6 +136,56 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/quickRdfIo-JsonLdSerializer.html#property_options"
         },                {
+            "fqsen": "\\quickRdfIo\\JsonLdStreamSerializer",
+            "name": "JsonLdStreamSerializer",
+            "summary": "A\u0020steaming\u0020JsonLD\u0020serializer.\u0020Generates\u0020output\u0020in\u0020the\u0020\u0028extremely\u0029\u0020flatten\nJsonLD\u0020format\u0020which\u0020is\u0020only\u0020suitable\u0020for\u0020being\u0020parsed\u0020\u0028or\u0020framed\u0029\u0020with\na\u0020Json\u002DLD\u0020parsing\u0020library.\u0020This\u0020drawback\u0020is\u0020compenstated\u0020by\u0020high\u0020speed\u0020and\nminimal\u0020memory\u0020footprint.",
+            "url": "classes/quickRdfIo-JsonLdStreamSerializer.html"
+        },                {
+            "fqsen": "\\quickRdfIo\\JsonLdStreamSerializer\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "",
+            "url": "classes/quickRdfIo-JsonLdStreamSerializer.html#method___construct"
+        },                {
+            "fqsen": "\\quickRdfIo\\JsonLdStreamSerializer\u003A\u003AserializeStream\u0028\u0029",
+            "name": "serializeStream",
+            "summary": "",
+            "url": "classes/quickRdfIo-JsonLdStreamSerializer.html#method_serializeStream"
+        },                {
+            "fqsen": "\\quickRdfIo\\JsonLdStreamSerializer\u003A\u003AserializeQuad\u0028\u0029",
+            "name": "serializeQuad",
+            "summary": "",
+            "url": "classes/quickRdfIo-JsonLdStreamSerializer.html#method_serializeQuad"
+        },                {
+            "fqsen": "\\quickRdfIo\\JsonLdStreamSerializer\u003A\u003AserializeTriple\u0028\u0029",
+            "name": "serializeTriple",
+            "summary": "",
+            "url": "classes/quickRdfIo-JsonLdStreamSerializer.html#method_serializeTriple"
+        },                {
+            "fqsen": "\\quickRdfIo\\JsonLdStreamSerializer\u003A\u003AserializeNode\u0028\u0029",
+            "name": "serializeNode",
+            "summary": "",
+            "url": "classes/quickRdfIo-JsonLdStreamSerializer.html#method_serializeNode"
+        },                {
+            "fqsen": "\\quickRdfIo\\JsonLdStreamSerializer\u003A\u003AMODE_TRIPLES",
+            "name": "MODE_TRIPLES",
+            "summary": "",
+            "url": "classes/quickRdfIo-JsonLdStreamSerializer.html#constant_MODE_TRIPLES"
+        },                {
+            "fqsen": "\\quickRdfIo\\JsonLdStreamSerializer\u003A\u003AMODE_GRAPH",
+            "name": "MODE_GRAPH",
+            "summary": "",
+            "url": "classes/quickRdfIo-JsonLdStreamSerializer.html#constant_MODE_GRAPH"
+        },                {
+            "fqsen": "\\quickRdfIo\\JsonLdStreamSerializer\u003A\u003ADEFAULT_GRAPH_ID",
+            "name": "DEFAULT_GRAPH_ID",
+            "summary": "",
+            "url": "classes/quickRdfIo-JsonLdStreamSerializer.html#constant_DEFAULT_GRAPH_ID"
+        },                {
+            "fqsen": "\\quickRdfIo\\JsonLdStreamSerializer\u003A\u003A\u0024mode",
+            "name": "mode",
+            "summary": "",
+            "url": "classes/quickRdfIo-JsonLdStreamSerializer.html#property_mode"
+        },                {
             "fqsen": "\\quickRdfIo\\NQuadsParser",
             "name": "NQuadsParser",
             "summary": "Parses\u0020only\u0020n\u002Dquads\u0020and\u0020n\u002Dtriples\u0020but\u0020does\u0020it\u0020fast\u0020\u0028thanks\u0020to\u0020parsing\u0020in\u0020chunks\nand\u0020extensive\u0020use\u0020of\u0020regullar\u0020expressions\u0029.",
@@ -205,6 +255,11 @@ Search.appendIndex(
             "name": "unescape",
             "summary": "",
             "url": "classes/quickRdfIo-NQuadsParser.html#method_unescape"
+        },                {
+            "fqsen": "\\quickRdfIo\\NQuadsParser\u003A\u003AreadLine\u0028\u0029",
+            "name": "readLine",
+            "summary": "",
+            "url": "classes/quickRdfIo-NQuadsParser.html#method_readLine"
         },                {
             "fqsen": "\\quickRdfIo\\NQuadsParser\u003A\u003AMODE_TRIPLES",
             "name": "MODE_TRIPLES",
@@ -321,6 +376,11 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/quickRdfIo-NQuadsParser.html#constant_STAR_END"
         },                {
+            "fqsen": "\\quickRdfIo\\NQuadsParser\u003A\u003AREAD_BUF_SIZE",
+            "name": "READ_BUF_SIZE",
+            "summary": "",
+            "url": "classes/quickRdfIo-NQuadsParser.html#constant_READ_BUF_SIZE"
+        },                {
             "fqsen": "\\quickRdfIo\\NQuadsParser\u003A\u003A\u0024unescapeMap",
             "name": "unescapeMap",
             "summary": "See\u0020https\u003A\/\/www.w3.org\/TR\/n\u002Dquads\/\u0023grammar\u002Dproduction\u002DECHAR",
@@ -376,6 +436,16 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/quickRdfIo-NQuadsParser.html#property_regexpCommentLine"
         },                {
+            "fqsen": "\\quickRdfIo\\NQuadsParser\u003A\u003A\u0024readBuffer",
+            "name": "readBuffer",
+            "summary": "",
+            "url": "classes/quickRdfIo-NQuadsParser.html#property_readBuffer"
+        },                {
+            "fqsen": "\\quickRdfIo\\NQuadsParser\u003A\u003A\u0024linesBuffer",
+            "name": "linesBuffer",
+            "summary": "",
+            "url": "classes/quickRdfIo-NQuadsParser.html#property_linesBuffer"
+        },                {
             "fqsen": "\\quickRdfIo\\NQuadsParser\u003A\u003A\u0024line",
             "name": "line",
             "summary": "Input\u0020line",
@@ -405,11 +475,6 @@ Search.appendIndex(
             "name": "__construct",
             "summary": "",
             "url": "classes/quickRdfIo-NQuadsSerializer.html#method___construct"
-        },                {
-            "fqsen": "\\quickRdfIo\\NQuadsSerializer\u003A\u003Aserialize\u0028\u0029",
-            "name": "serialize",
-            "summary": "",
-            "url": "classes/quickRdfIo-NQuadsSerializer.html#method_serialize"
         },                {
             "fqsen": "\\quickRdfIo\\NQuadsSerializer\u003A\u003AserializeStream\u0028\u0029",
             "name": "serializeStream",
@@ -836,6 +901,96 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/quickRdfIo-RdfXmlSerializer.html#property_prettyPrint"
         },                {
+            "fqsen": "\\quickRdfIo\\ResourceWrapper",
+            "name": "ResourceWrapper",
+            "summary": "A\u0020wrapper\u0020for\u0020a\u0020resource\u0020providing\u0020it\u0020with\u0020a\u0020PSR\u002D7\u0020StreamInterface\u0020API.",
+            "url": "classes/quickRdfIo-ResourceWrapper.html"
+        },                {
+            "fqsen": "\\quickRdfIo\\ResourceWrapper\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "",
+            "url": "classes/quickRdfIo-ResourceWrapper.html#method___construct"
+        },                {
+            "fqsen": "\\quickRdfIo\\ResourceWrapper\u003A\u003A__toString\u0028\u0029",
+            "name": "__toString",
+            "summary": "",
+            "url": "classes/quickRdfIo-ResourceWrapper.html#method___toString"
+        },                {
+            "fqsen": "\\quickRdfIo\\ResourceWrapper\u003A\u003Aclose\u0028\u0029",
+            "name": "close",
+            "summary": "",
+            "url": "classes/quickRdfIo-ResourceWrapper.html#method_close"
+        },                {
+            "fqsen": "\\quickRdfIo\\ResourceWrapper\u003A\u003Adetach\u0028\u0029",
+            "name": "detach",
+            "summary": "",
+            "url": "classes/quickRdfIo-ResourceWrapper.html#method_detach"
+        },                {
+            "fqsen": "\\quickRdfIo\\ResourceWrapper\u003A\u003Aeof\u0028\u0029",
+            "name": "eof",
+            "summary": "",
+            "url": "classes/quickRdfIo-ResourceWrapper.html#method_eof"
+        },                {
+            "fqsen": "\\quickRdfIo\\ResourceWrapper\u003A\u003AgetContents\u0028\u0029",
+            "name": "getContents",
+            "summary": "",
+            "url": "classes/quickRdfIo-ResourceWrapper.html#method_getContents"
+        },                {
+            "fqsen": "\\quickRdfIo\\ResourceWrapper\u003A\u003AgetMetadata\u0028\u0029",
+            "name": "getMetadata",
+            "summary": "",
+            "url": "classes/quickRdfIo-ResourceWrapper.html#method_getMetadata"
+        },                {
+            "fqsen": "\\quickRdfIo\\ResourceWrapper\u003A\u003AgetSize\u0028\u0029",
+            "name": "getSize",
+            "summary": "",
+            "url": "classes/quickRdfIo-ResourceWrapper.html#method_getSize"
+        },                {
+            "fqsen": "\\quickRdfIo\\ResourceWrapper\u003A\u003AisReadable\u0028\u0029",
+            "name": "isReadable",
+            "summary": "",
+            "url": "classes/quickRdfIo-ResourceWrapper.html#method_isReadable"
+        },                {
+            "fqsen": "\\quickRdfIo\\ResourceWrapper\u003A\u003AisSeekable\u0028\u0029",
+            "name": "isSeekable",
+            "summary": "",
+            "url": "classes/quickRdfIo-ResourceWrapper.html#method_isSeekable"
+        },                {
+            "fqsen": "\\quickRdfIo\\ResourceWrapper\u003A\u003AisWritable\u0028\u0029",
+            "name": "isWritable",
+            "summary": "",
+            "url": "classes/quickRdfIo-ResourceWrapper.html#method_isWritable"
+        },                {
+            "fqsen": "\\quickRdfIo\\ResourceWrapper\u003A\u003Aread\u0028\u0029",
+            "name": "read",
+            "summary": "",
+            "url": "classes/quickRdfIo-ResourceWrapper.html#method_read"
+        },                {
+            "fqsen": "\\quickRdfIo\\ResourceWrapper\u003A\u003Arewind\u0028\u0029",
+            "name": "rewind",
+            "summary": "",
+            "url": "classes/quickRdfIo-ResourceWrapper.html#method_rewind"
+        },                {
+            "fqsen": "\\quickRdfIo\\ResourceWrapper\u003A\u003Aseek\u0028\u0029",
+            "name": "seek",
+            "summary": "",
+            "url": "classes/quickRdfIo-ResourceWrapper.html#method_seek"
+        },                {
+            "fqsen": "\\quickRdfIo\\ResourceWrapper\u003A\u003Atell\u0028\u0029",
+            "name": "tell",
+            "summary": "",
+            "url": "classes/quickRdfIo-ResourceWrapper.html#method_tell"
+        },                {
+            "fqsen": "\\quickRdfIo\\ResourceWrapper\u003A\u003Awrite\u0028\u0029",
+            "name": "write",
+            "summary": "",
+            "url": "classes/quickRdfIo-ResourceWrapper.html#method_write"
+        },                {
+            "fqsen": "\\quickRdfIo\\ResourceWrapper\u003A\u003A\u0024res",
+            "name": "res",
+            "summary": "",
+            "url": "classes/quickRdfIo-ResourceWrapper.html#property_res"
+        },                {
             "fqsen": "\\quickRdfIo\\TmpStreamParserTrait",
             "name": "TmpStreamParserTrait",
             "summary": "Description\u0020of\u0020TmpStreamTrait",
@@ -965,6 +1120,36 @@ Search.appendIndex(
             "name": "serializeStream",
             "summary": "",
             "url": "classes/quickRdfIo-TurtleSerializer.html#method_serializeStream"
+        },                {
+            "fqsen": "\\quickRdfIo\\Util",
+            "name": "Util",
+            "summary": "Provides\u0020static\u0020factory\u0020methods\u0020for\u0020plug\u0026play\u0020parsers\/serializers\u0020creation.",
+            "url": "classes/quickRdfIo-Util.html"
+        },                {
+            "fqsen": "\\quickRdfIo\\Util\u003A\u003AgetSerializerClass\u0028\u0029",
+            "name": "getSerializerClass",
+            "summary": "",
+            "url": "classes/quickRdfIo-Util.html#method_getSerializerClass"
+        },                {
+            "fqsen": "\\quickRdfIo\\Util\u003A\u003AgetParser\u0028\u0029",
+            "name": "getParser",
+            "summary": "",
+            "url": "classes/quickRdfIo-Util.html#method_getParser"
+        },                {
+            "fqsen": "\\quickRdfIo\\Util\u003A\u003AgetSerializer\u0028\u0029",
+            "name": "getSerializer",
+            "summary": "",
+            "url": "classes/quickRdfIo-Util.html#method_getSerializer"
+        },                {
+            "fqsen": "\\quickRdfIo\\Util\u003A\u003Aparse\u0028\u0029",
+            "name": "parse",
+            "summary": "",
+            "url": "classes/quickRdfIo-Util.html#method_parse"
+        },                {
+            "fqsen": "\\quickRdfIo\\Util\u003A\u003Aserialize\u0028\u0029",
+            "name": "serialize",
+            "summary": "",
+            "url": "classes/quickRdfIo-Util.html#method_serialize"
         },                {
             "fqsen": "\\ML\\JsonLD\\DefaultDocumentFactory",
             "name": "DefaultDocumentFactory",

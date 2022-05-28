@@ -121,6 +121,11 @@ provided by the ml/json-ld library.</dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/quickRdfIo-JsonLdSerializer.html"><abbr title="\quickRdfIo\JsonLdSerializer">JsonLdSerializer</abbr></a></dt>
         <dd>Thin wrapper providing RdfInterface\Serializer API for JSON-LD the parser
 provided by the ml/json-ld library.</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/quickRdfIo-JsonLdStreamSerializer.html"><abbr title="\quickRdfIo\JsonLdStreamSerializer">JsonLdStreamSerializer</abbr></a></dt>
+        <dd>A steaming JsonLD serializer. Generates output in the (extremely) flatten
+JsonLD format which is only suitable for being parsed (or framed) with
+a Json-LD parsing library. This drawback is compenstated by high speed and
+minimal memory footprint.</dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/quickRdfIo-NQuadsParser.html"><abbr title="\quickRdfIo\NQuadsParser">NQuadsParser</abbr></a></dt>
         <dd>Parses only n-quads and n-triples but does it fast (thanks to parsing in chunks
 and extensive use of regullar expressions).</dd>
@@ -134,10 +139,14 @@ and extensive use of regullar expressions).</dd>
         <dd>Streaming RDF-XML parser. Fast and with low memory footprint.</dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/quickRdfIo-RdfXmlSerializer.html"><abbr title="\quickRdfIo\RdfXmlSerializer">RdfXmlSerializer</abbr></a></dt>
         <dd>Simple RDF-XML serializer. It is optimized for speed and low memory footprint.</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/quickRdfIo-ResourceWrapper.html"><abbr title="\quickRdfIo\ResourceWrapper">ResourceWrapper</abbr></a></dt>
+        <dd>A wrapper for a resource providing it with a PSR-7 StreamInterface API.</dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/quickRdfIo-TriGParser.html"><abbr title="\quickRdfIo\TriGParser">TriGParser</abbr></a></dt>
         <dd>Description of Parser</dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/quickRdfIo-TurtleSerializer.html"><abbr title="\quickRdfIo\TurtleSerializer">TurtleSerializer</abbr></a></dt>
         <dd>Description of TurtleSerializer</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/quickRdfIo-Util.html"><abbr title="\quickRdfIo\Util">Util</abbr></a></dt>
+        <dd>Provides static factory methods for plug&amp;play parsers/serializers creation.</dd>
     
             <dt class="phpdocumentor-table-of-contents__entry -trait"><a href="classes/quickRdfIo-TmpStreamParserTrait.html"><abbr title="\quickRdfIo\TmpStreamParserTrait">TmpStreamParserTrait</abbr></a></dt>
         <dd>Description of TmpStreamTrait</dd>

@@ -106,7 +106,7 @@
 
     <article class="phpdocumentor-element -class">
         <h2 class="phpdocumentor-content__title">
-    TurtleSerializer
+    JsonLdStreamSerializer
 
     
             <div class="phpdocumentor-element__package">
@@ -126,13 +126,16 @@
     </h2>
 
         <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/TurtleSerializer.php"><a href="files/src-quickrdfio-turtleserializer.html"><abbr title="src/quickRdfIo/TurtleSerializer.php">TurtleSerializer.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/JsonLdStreamSerializer.php"><a href="files/src-quickrdfio-jsonldstreamserializer.html"><abbr title="src/quickRdfIo/JsonLdStreamSerializer.php">JsonLdStreamSerializer.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">40</span>
+    <span class="phpdocumentor-element-found-in__line">47</span>
 
     </aside>
 
-            <p class="phpdocumentor-summary">Description of TurtleSerializer</p>
+            <p class="phpdocumentor-summary">A steaming JsonLD serializer. Generates output in the (extremely) flatten
+JsonLD format which is only suitable for being parsed (or framed) with
+a Json-LD parsing library. This drawback is compenstated by high speed and
+minimal memory footprint.</p>
 
 
 
@@ -175,8 +178,36 @@
 </h3>
 
 <dl class="phpdocumentor-table-of-contents">
-                        <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/quickRdfIo-TurtleSerializer.html#method___construct">__construct()</a>
+            <dt class="phpdocumentor-table-of-contents__entry -constant -public">
+    <a href="classes/quickRdfIo-JsonLdStreamSerializer.html#constant_DEFAULT_GRAPH_ID">DEFAULT_GRAPH_ID</a>
+    <span>
+        &nbsp;= &#039;_:defaultGraph&#039;                            </span>
+</dt>
+<dd></dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -constant -public">
+    <a href="classes/quickRdfIo-JsonLdStreamSerializer.html#constant_MODE_GRAPH">MODE_GRAPH</a>
+    <span>
+        &nbsp;= 2                            </span>
+</dt>
+<dd></dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -constant -public">
+    <a href="classes/quickRdfIo-JsonLdStreamSerializer.html#constant_MODE_TRIPLES">MODE_TRIPLES</a>
+    <span>
+        &nbsp;= 1                            </span>
+</dt>
+<dd></dd>
+
+                    <dt class="phpdocumentor-table-of-contents__entry -property -private">
+    <a href="classes/quickRdfIo-JsonLdStreamSerializer.html#property_mode">$mode</a>
+    <span>
+                        &nbsp;: int            </span>
+</dt>
+<dd></dd>
+
+                <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/quickRdfIo-JsonLdStreamSerializer.html#method___construct">__construct()</a>
     <span>
                                 &nbsp;: mixed    </span>
 </dt>
@@ -190,9 +221,30 @@
 <dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/quickRdfIo-TurtleSerializer.html#method_serializeStream">serializeStream()</a>
+    <a href="classes/quickRdfIo-JsonLdStreamSerializer.html#method_serializeStream">serializeStream()</a>
     <span>
                                 &nbsp;: void    </span>
+</dt>
+<dd></dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -private">
+    <a href="classes/quickRdfIo-JsonLdStreamSerializer.html#method_serializeNode">serializeNode()</a>
+    <span>
+                                &nbsp;: mixed    </span>
+</dt>
+<dd></dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -private">
+    <a href="classes/quickRdfIo-JsonLdStreamSerializer.html#method_serializeQuad">serializeQuad()</a>
+    <span>
+                                &nbsp;: string    </span>
+</dt>
+<dd></dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -private">
+    <a href="classes/quickRdfIo-JsonLdStreamSerializer.html#method_serializeTriple">serializeTriple()</a>
+    <span>
+                                &nbsp;: string    </span>
 </dt>
 <dd></dd>
 
@@ -201,13 +253,146 @@
 
 
         
+    <section class="phpdocumentor-constants">
+        <h3 class="phpdocumentor-elements__header" id="constants">
+            Constants
+            <a href="classes/quickRdfIo-JsonLdStreamSerializer.html#constants" class="headerlink"><i class="fas fa-link"></i></a>
+        </h3>
+                    <article class="phpdocumentor-element -constant -public ">
+    <h4 class="phpdocumentor-element__name" id="constant_DEFAULT_GRAPH_ID">
+        DEFAULT_GRAPH_ID
+        <a href="classes/quickRdfIo-JsonLdStreamSerializer.html#constant_DEFAULT_GRAPH_ID" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/JsonLdStreamSerializer.php"><a href="files/src-quickrdfio-jsonldstreamserializer.html"><abbr title="src/quickRdfIo/JsonLdStreamSerializer.php">JsonLdStreamSerializer.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">51</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-signature phpdocumentor-code ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+        <span class="phpdocumentor-signature__type">mixed</span>
+    <span class="phpdocumentor-signature__name">DEFAULT_GRAPH_ID</span>
+    = <span class="phpdocumentor-signature__default-value">&#039;_:defaultGraph&#039;</span>
+</code>
+
+
+        <section class="phpdocumentor-description"></section>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+
+</article>
+                    <article class="phpdocumentor-element -constant -public ">
+    <h4 class="phpdocumentor-element__name" id="constant_MODE_GRAPH">
+        MODE_GRAPH
+        <a href="classes/quickRdfIo-JsonLdStreamSerializer.html#constant_MODE_GRAPH" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/JsonLdStreamSerializer.php"><a href="files/src-quickrdfio-jsonldstreamserializer.html"><abbr title="src/quickRdfIo/JsonLdStreamSerializer.php">JsonLdStreamSerializer.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">50</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-signature phpdocumentor-code ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+        <span class="phpdocumentor-signature__type">mixed</span>
+    <span class="phpdocumentor-signature__name">MODE_GRAPH</span>
+    = <span class="phpdocumentor-signature__default-value">2</span>
+</code>
+
+
+        <section class="phpdocumentor-description"></section>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+
+</article>
+                    <article class="phpdocumentor-element -constant -public ">
+    <h4 class="phpdocumentor-element__name" id="constant_MODE_TRIPLES">
+        MODE_TRIPLES
+        <a href="classes/quickRdfIo-JsonLdStreamSerializer.html#constant_MODE_TRIPLES" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/JsonLdStreamSerializer.php"><a href="files/src-quickrdfio-jsonldstreamserializer.html"><abbr title="src/quickRdfIo/JsonLdStreamSerializer.php">JsonLdStreamSerializer.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">49</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-signature phpdocumentor-code ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+        <span class="phpdocumentor-signature__type">mixed</span>
+    <span class="phpdocumentor-signature__name">MODE_TRIPLES</span>
+    = <span class="phpdocumentor-signature__default-value">1</span>
+</code>
+
+
+        <section class="phpdocumentor-description"></section>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+
+</article>
+            </section>
 
         
+    <section class="phpdocumentor-properties">
+        <h3 class="phpdocumentor-elements__header" id="properties">
+            Properties
+            <a href="classes/quickRdfIo-JsonLdStreamSerializer.html#properties" class="headerlink"><i class="fas fa-link"></i></a>
+        </h3>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
+            -private
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="property_mode">
+        $mode
+        <a href="classes/quickRdfIo-JsonLdStreamSerializer.html#property_mode" class="headerlink"><i class="fas fa-link"></i></a>
+        <span class="phpdocumentor-element__modifiers">
+                                </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/JsonLdStreamSerializer.php"><a href="files/src-quickrdfio-jsonldstreamserializer.html"><abbr title="src/quickRdfIo/JsonLdStreamSerializer.php">JsonLdStreamSerializer.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">54</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+        <span class="phpdocumentor-signature__type">int</span>
+    <span class="phpdocumentor-signature__name">$mode</span>
+    </code>
+
+        <section class="phpdocumentor-description"></section>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+
+</article>
+            </section>
 
             <section class="phpdocumentor-methods">
         <h3 class="phpdocumentor-elements__header" id="methods">
             Methods
-            <a href="classes/quickRdfIo-TurtleSerializer.html#methods" class="headerlink"><i class="fas fa-link"></i></a>
+            <a href="classes/quickRdfIo-JsonLdStreamSerializer.html#methods" class="headerlink"><i class="fas fa-link"></i></a>
         </h3>
                     <article
         class="phpdocumentor-element
@@ -217,23 +402,34 @@
 >
     <h4 class="phpdocumentor-element__name" id="method___construct">
         __construct()
-        <a href="classes/quickRdfIo-TurtleSerializer.html#method___construct" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/quickRdfIo-JsonLdStreamSerializer.html#method___construct" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/TurtleSerializer.php"><a href="files/src-quickrdfio-turtleserializer.html"><abbr title="src/quickRdfIo/TurtleSerializer.php">TurtleSerializer.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/JsonLdStreamSerializer.php"><a href="files/src-quickrdfio-jsonldstreamserializer.html"><abbr title="src/quickRdfIo/JsonLdStreamSerializer.php">JsonLdStreamSerializer.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">44</span>
+    <span class="phpdocumentor-element-found-in__line">56</span>
 
     </aside>
 
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">__construct</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+                    <span class="phpdocumentor-signature__name">__construct</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$mode</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">self::MODE_GRAPH</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
 
         <section class="phpdocumentor-description"></section>
 
-    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$mode</span>
+                : <span class="phpdocumentor-signature__argument__return-type">int</span>
+                 = <span class="phpdocumentor-signature__argument__default-value">self::MODE_GRAPH</span>            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
+            </dl>
+
     
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
@@ -302,12 +498,12 @@
 >
     <h4 class="phpdocumentor-element__name" id="method_serializeStream">
         serializeStream()
-        <a href="classes/quickRdfIo-TurtleSerializer.html#method_serializeStream" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/quickRdfIo-JsonLdStreamSerializer.html#method_serializeStream" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/TurtleSerializer.php"><a href="files/src-quickrdfio-turtleserializer.html"><abbr title="src/quickRdfIo/TurtleSerializer.php">TurtleSerializer.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/JsonLdStreamSerializer.php"><a href="files/src-quickrdfio-jsonldstreamserializer.html"><abbr title="src/quickRdfIo/JsonLdStreamSerializer.php">JsonLdStreamSerializer.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">55</span>
+    <span class="phpdocumentor-element-found-in__line">70</span>
 
     </aside>
 
@@ -347,6 +543,138 @@
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type">void</span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -private
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_serializeNode">
+        serializeNode()
+        <a href="classes/quickRdfIo-JsonLdStreamSerializer.html#method_serializeNode" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/JsonLdStreamSerializer.php"><a href="files/src-quickrdfio-jsonldstreamserializer.html"><abbr title="src/quickRdfIo/JsonLdStreamSerializer.php">JsonLdStreamSerializer.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">108</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+                    <span class="phpdocumentor-signature__name">serializeNode</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href="classes/rdfInterface-Term.html"><abbr title="\rdfInterface\Term">Term</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$node</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$node</span>
+                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/rdfInterface-Term.html"><abbr title="\rdfInterface\Term">Term</abbr></a></span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">mixed</span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -private
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_serializeQuad">
+        serializeQuad()
+        <a href="classes/quickRdfIo-JsonLdStreamSerializer.html#method_serializeQuad" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/JsonLdStreamSerializer.php"><a href="files/src-quickrdfio-jsonldstreamserializer.html"><abbr title="src/quickRdfIo/JsonLdStreamSerializer.php">JsonLdStreamSerializer.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">95</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+                    <span class="phpdocumentor-signature__name">serializeQuad</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href="classes/rdfInterface-Quad.html"><abbr title="\rdfInterface\Quad">Quad</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$quad</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$quad</span>
+                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/rdfInterface-Quad.html"><abbr title="\rdfInterface\Quad">Quad</abbr></a></span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">string</span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -private
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_serializeTriple">
+        serializeTriple()
+        <a href="classes/quickRdfIo-JsonLdStreamSerializer.html#method_serializeTriple" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/JsonLdStreamSerializer.php"><a href="files/src-quickrdfio-jsonldstreamserializer.html"><abbr title="src/quickRdfIo/JsonLdStreamSerializer.php">JsonLdStreamSerializer.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">104</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+                    <span class="phpdocumentor-signature__name">serializeTriple</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href="classes/rdfInterface-Quad.html"><abbr title="\rdfInterface\Quad">Quad</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$quad</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$quad</span>
+                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/rdfInterface-Quad.html"><abbr title="\rdfInterface\Quad">Quad</abbr></a></span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">string</span>
             &mdash;
         
     
@@ -429,7 +757,7 @@
 </section>
             </div>
         </div>
-        <a href="classes/quickRdfIo-TurtleSerializer.html#top" class="phpdocumentor-back-to-top"><i class="fas fa-chevron-circle-up"></i></a>
+        <a href="classes/quickRdfIo-JsonLdStreamSerializer.html#top" class="phpdocumentor-back-to-top"><i class="fas fa-chevron-circle-up"></i></a>
 
     </main>
 
