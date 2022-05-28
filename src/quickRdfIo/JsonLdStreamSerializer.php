@@ -30,16 +30,10 @@ use Psr\Http\Message\StreamInterface;
 use rdfInterface\QuadIterator as iQuadIterator;
 use rdfInterface\RdfNamespace as iRdfNamespace;
 use rdfInterface\Quad as iQuad;
-use rdfInterface\DefaultGraph as iDefaultGraph;
 use rdfInterface\Literal as iLiteral;
 use rdfInterface\NamedNode as iNamedNode;
 use rdfInterface\BlankNode as iBlankNode;
 use rdfInterface\Term as iTerm;
-use ML\JsonLD\JsonLD;
-use ML\JsonLD\Document;
-use ML\JsonLD\LanguageTaggedString;
-use ML\JsonLD\TypedValue;
-use ML\JsonLD\Node;
 use zozlak\RdfConstants as RDF;
 
 /**
@@ -52,10 +46,18 @@ use zozlak\RdfConstants as RDF;
  */
 class JsonLdStreamSerializer implements \rdfInterface\Serializer {
 
+    const MODE_TRIPLES     = 1;
+    const MODE_GRAPH       = 2;
+    const DEFAULT_GRAPH_ID = '_:defaultGraph';
     use TmpStreamSerializerTrait;
 
-    public function __construct() {
-        
+    private int $mode;
+
+    public function __construct(int $mode = self::MODE_GRAPH) {
+        if (!in_array($mode, [self::MODE_TRIPLES, self::MODE_GRAPH])) {
+            throw new RdfIoException("Wrong mode");
+        }
+        $this->mode = $mode;
     }
 
     /**
@@ -76,9 +78,16 @@ class JsonLdStreamSerializer implements \rdfInterface\Serializer {
 
         $output->write('[');
         $coma = '';
-        foreach ($graph as $i) {
-            $output->write($coma . $this->serializeQuad($i));
-            $coma = ',';
+        if ($this->mode === self::MODE_GRAPH) {
+            foreach ($graph as $i) {
+                $output->write($coma . $this->serializeQuad($i));
+                $coma = ',';
+            }
+        } else {
+            foreach ($graph as $i) {
+                $output->write($coma . $this->serializeTriple($i));
+                $coma = ',';
+            }
         }
         $output->write(']');
     }
@@ -86,10 +95,14 @@ class JsonLdStreamSerializer implements \rdfInterface\Serializer {
     private function serializeQuad(iQuad $quad): string {
         $graph  = $quad->getGraph()->getValue();
         $output = [
-            '@id'    => empty($graph) ? '_:defaultGraph' : $graph,
+            '@id'    => empty($graph) ? self::DEFAULT_GRAPH_ID : $graph,
             '@graph' => $this->serializeNode($quad),
         ];
         return json_encode($output) ?: throw new RdfIoException("Failed to serialize quad $quad");
+    }
+
+    private function serializeTriple(iQuad $quad): string {
+        return json_encode($this->serializeNode($quad)) ?: throw new RdfIoException("Failed to serialize quad $quad");
     }
 
     private function serializeNode(iTerm $node): mixed {
