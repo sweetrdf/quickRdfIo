@@ -106,8 +106,8 @@ class JsonLdSerializer implements \rdfInterface\Serializer {
     /**
      * 
      * @param iQuadIterator $graph
-     * @param iRdfNamespace|null $nmsp unused but required for compatibility with
-     *   the `\rdfInterface\Serializer`.
+     * @param iRdfNamespace|null $nmsp If passed, it's used for compacting the
+     *   output. Unfortunately only property URIs can be compacted that way.
      * @return string
      * @throws RdfIoException
      */
@@ -183,6 +183,10 @@ class JsonLdSerializer implements \rdfInterface\Serializer {
             case self::TRANSFORM_COMPACT:
                 $output = JsonLD::compact($output, $this->context, $this->options);
                 break;
+        }
+        $context = $nmsp->getAll();
+        if (count($context) > 0) {
+            $output = JsonLD::compact($output, $context, $this->options);
         }
         return json_encode($output, $this->jsonEncodeFlags) ?: throw new RdfIoException("Failed to serialize the data");
     }
