@@ -184,7 +184,7 @@ class JsonLdSerializer implements \rdfInterface\Serializer {
                 $output = JsonLD::compact($output, $this->context, $this->options);
                 break;
         }
-        $context = $nmsp->getAll();
+        $context = $nmsp?->getAll();
         if (count($context) > 0) {
             $output = JsonLD::compact($output, $context, $this->options);
         }
