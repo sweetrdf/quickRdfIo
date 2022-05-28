@@ -185,7 +185,7 @@ class JsonLdSerializer implements \rdfInterface\Serializer {
                 break;
         }
         $context = $nmsp?->getAll();
-        if (count($context) > 0) {
+        if ($context !== null && count($context) > 0) {
             $output = JsonLD::compact($output, $context, $this->options);
         }
         return json_encode($output, $this->jsonEncodeFlags) ?: throw new RdfIoException("Failed to serialize the data");
