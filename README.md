@@ -24,9 +24,9 @@ Originally developed for the [quickRdf](https://github.com/sweetrdf/quickRdf) li
 | JsonLD[2]  | w          | JsonLdStreamSerializer         | own[3]               | yes          |
 
 [1] A streaming parser/serializer doesn't materialize the whole dataset in memory which assures constant (and low) memory footprint.
-    (this feature applies only to the parser/serializer - see the section on memory usage below)
-[2] Use the `jsonld-stream` value for the `$format` parameter of the `\quickRdfIo\Util::serialize()` to use this serializer.
-[3] Outputs data only in the extremely flattened Json-LD but works in a streaming mode.
+    (this feature applies only to the parser/serializer - see the section on memory usage below)  
+[2] Use the `jsonld-stream` value for the `$format` parameter of the `\quickRdfIo\Util::serialize()` to use this serializer.  
+[3] Outputs data only in the extremely flattened Json-LD but works in a streaming mode.  
 
 ## Installation
 
