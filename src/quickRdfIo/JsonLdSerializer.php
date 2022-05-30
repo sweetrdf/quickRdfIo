@@ -86,7 +86,8 @@ class JsonLdSerializer implements \rdfInterface\Serializer {
      *   repectively.
      * @param array<string, mixed> $options options to be passed to the corresponding
      *   `ML\JsonLD\JsonLD` method (`expand()`, `compact()` or `flatten()`
-     *   according to the `$transform` parameter value).
+     *   according to the `$transform` parameter value). If you would like these methods
+     *   to be better documented, then you are not then only one... :-(
      * @see \ML\JsonLD\JsonLD::expand()
      * @see \ML\JsonLD\JsonLD::flatten()
      * @see \ML\JsonLD\JsonLD::compact()
@@ -107,7 +108,8 @@ class JsonLdSerializer implements \rdfInterface\Serializer {
      * 
      * @param iQuadIterator $graph
      * @param iRdfNamespace|null $nmsp If passed, it's used for compacting the
-     *   output. Unfortunately only property URIs can be compacted that way.
+     *   output. Unfortunately only property URIs can be compacted that way
+     *   (of course for that full property URIs must be registered as "namespaces").
      * @return string
      * @throws RdfIoException
      */
@@ -186,7 +188,7 @@ class JsonLdSerializer implements \rdfInterface\Serializer {
         }
         $context = $nmsp?->getAll();
         if ($context !== null && count($context) > 0) {
-            $output = JsonLD::compact($output, $context, $this->options);
+            $output = JsonLD::compact($output, (object) $context, $this->options);
         }
         return json_encode($output, $this->jsonEncodeFlags) ?: throw new RdfIoException("Failed to serialize the data");
     }

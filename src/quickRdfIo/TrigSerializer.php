@@ -28,21 +28,42 @@ namespace quickRdfIo;
 
 use Psr\Http\Message\StreamInterface;
 use zozlak\RdfConstants as RDF;
+use rdfInterface\Literal as iLiteral;
 use rdfInterface\QuadIterator as iQuadIterator;
 use rdfInterface\RdfNamespace as iRdfNamespace;
+use rdfInterface\NamedNode as iNamedNode;
+use rdfInterface\BlankNode as iBlankNode;
+use rdfInterface\DefaultGraph as iDefaultGraph;
 use quickRdf\RdfNamespace;
 
 /**
- * Description of TurtleSerializer
+ * Serializes to TriG and Turtle formats
  *
  * @author zozlak
  */
-class TurtleSerializer implements \rdfInterface\Serializer {
+class TrigSerializer implements \rdfInterface\Serializer {
 
+    const MODE_TURTLE = 1;
+    const MODE_TRIG   = 2;
     use TmpStreamSerializerTrait;
 
-    public function __construct() {
-        
+    private int $mode;
+    private bool $strict;
+
+    /**
+     * 
+     * @param int $mode serialization mode `TrigSerializer::MODE_TRIG` or 
+     *   `TrigSerializer::MODE_TURTLE`. The exact behavior depends on the 
+     *   `$strict` parameter.
+     * @param bool $strict if `$mode` equal `TrigSerializer::MODE_TURTLE` and
+     *   a triple with graph not being a default graph is encountered and
+     *   `$strict` equals `false`, then the graph URI is just skipped. Otherwise
+     *   an exception is rised.
+     */
+    public function __construct(int $mode = self::MODE_TRIG,
+                                bool $strict = false) {
+        $this->mode   = $mode;
+        $this->strict = $strict;
     }
 
     /**
@@ -60,7 +81,7 @@ class TurtleSerializer implements \rdfInterface\Serializer {
         if (!($output instanceof StreamInterface)) {
             throw new RdfIoException("Output has to be a resource or " . StreamInterface::class . " object");
         }
-        
+
         $nmsp       = $nmsp ?? new RdfNamespace();
         $serializer = new \pietercolpaert\hardf\TriGWriter(['format' => 'turtle']);
         if ($nmsp !== null) {
@@ -73,7 +94,7 @@ class TurtleSerializer implements \rdfInterface\Serializer {
             $subject   = (string) $i->getSubject()->getValue();
             $predicate = (string) $i->getPredicate()->getValue();
             $object    = $i->getObject();
-            if ($object instanceof \rdfInterface\Literal) {
+            if ($object instanceof iLiteral) {
                 $langtype = $object->getLang();
                 if (empty($langtype)) {
                     $langtype = $object->getDatatype();
@@ -82,11 +103,22 @@ class TurtleSerializer implements \rdfInterface\Serializer {
                     }
                 }
                 $object = \pietercolpaert\hardf\Util::createLiteral((string) $object->getValue(), $langtype);
-            } else {
+            } elseif ($object instanceof iNamedNode || $object instanceof iBlankNode) {
                 $object = (string) $object->getValue();
+            } else {
+                throw new RdfIoException("Can't serialize object of class " . get_class($object));
             }
-            $graph = $i->getGraph();
-            $graph = $graph instanceof \rdfInterface\DefaultGraph ? null : (string) $graph->getValue();
+            $graph        = $i->getGraph();
+            $defaultGraph = $graph instanceof iDefaultGraph;
+            if ($this->mode === self::MODE_TURTLE && !$defaultGraph) {
+                if ($this->strict) {
+                    throw new RdfIoException("Can't serialize non-default graphs in MODE_TURTLE");
+                } else {
+                    $graph = null;
+                }
+            } else {
+                $graph = $defaultGraph ? null : $graph->getValue();
+            }
             $serializer->addTriple($subject, $predicate, $object, $graph);
             $output->write($serializer->read());
         }

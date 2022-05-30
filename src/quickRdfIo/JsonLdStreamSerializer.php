@@ -34,14 +34,19 @@ use rdfInterface\Literal as iLiteral;
 use rdfInterface\NamedNode as iNamedNode;
 use rdfInterface\BlankNode as iBlankNode;
 use rdfInterface\Term as iTerm;
+use rdfInterface\DefaultGraph as iDefaultGraph;
 use zozlak\RdfConstants as RDF;
 
 /**
- * A steaming JsonLD serializer. Generates output in the (extremely) flatten 
- * JsonLD format which is only suitable for being parsed (or framed) with 
- * a Json-LD parsing library. This drawback is compenstated by high speed and
- * minimal memory footprint.
+ * A steaming JsonLD serializer. Generates output in the flatten JsonLD format
+ * and does it in a greedy way (meaning subjects/predicates/values are acumulated
+ * within graph/subject/predicate only if adjacent triples share the same
+ * graph/subject/predicate). On the brigh side it's fast and has minimal memory 
+ * footprint.
  *
+ * To use this parser with the `\quickRdfIo\Util::serialize()` use the special
+ * `jsonld-stream` value as `$format`.
+ * 
  * @author zozlak
  */
 class JsonLdStreamSerializer implements \rdfInterface\Serializer {
@@ -52,6 +57,10 @@ class JsonLdStreamSerializer implements \rdfInterface\Serializer {
     use TmpStreamSerializerTrait;
 
     private int $mode;
+    private iTerm $prevGraph;
+    private iTerm $prevSubject;
+    private iTerm $prevPredicate;
+    private bool $firstValue;
 
     public function __construct(int $mode = self::MODE_GRAPH) {
         if (!in_array($mode, [self::MODE_TRIPLES, self::MODE_GRAPH])) {
@@ -62,9 +71,10 @@ class JsonLdStreamSerializer implements \rdfInterface\Serializer {
 
     /**
      * 
-     * @param resource | StreamInterface $output
-     * @param iQuadIterator $graph
-     * @param iRdfNamespace|null $nmsp
+     * @param resource | StreamInterface $output output to serialize to
+     * @param iQuadIterator $graph data to serialize
+     * @param iRdfNamespace|null $nmsp parameter required for the `\rdfInterface\Serializer`
+     *   interface compatibility but not being used.
      * @return void
      */
     public function serializeStream($output, iQuadIterator $graph,
@@ -76,33 +86,75 @@ class JsonLdStreamSerializer implements \rdfInterface\Serializer {
             throw new RdfIoException("Output has to be a resource or " . StreamInterface::class . " object");
         }
 
+        unset($this->prevGraph);
+        unset($this->prevSubject);
+        unset($this->prevPredicate);
+
         $output->write('[');
-        $coma = '';
-        if ($this->mode === self::MODE_GRAPH) {
-            foreach ($graph as $i) {
-                $output->write($coma . $this->serializeQuad($i));
-                $coma = ',';
+        foreach ($graph as $i) {
+            if ($this->mode === self::MODE_GRAPH) {
+                $this->processGraph($output, $i->getGraph());
             }
-        } else {
-            foreach ($graph as $i) {
-                $output->write($coma . $this->serializeTriple($i));
-                $coma = ',';
-            }
+            $this->processSubject($output, $i->getSubject());
+            $this->processPredicate($output, $i->getPredicate());
+            $this->processObject($output, $i->getObject());
         }
-        $output->write(']');
+        $end = '';
+        $end .= isset($this->prevPredicate) ? ']' : '';
+        $end .= isset($this->prevSubject) ? '}' : '';
+        $end .= isset($this->prevGraph) ? ']}' : '';
+        $end .= ']';
+        $output->write($end);
     }
 
-    private function serializeQuad(iQuad $quad): string {
-        $graph  = $quad->getGraph()->getValue();
-        $output = [
-            '@id'    => empty($graph) ? self::DEFAULT_GRAPH_ID : $graph,
-            '@graph' => $this->serializeNode($quad),
-        ];
-        return json_encode($output) ?: throw new RdfIoException("Failed to serialize quad $quad");
+    private function processGraph(StreamInterface $output,
+                                  iDefaultGraph | iNamedNode | iBlankNode $graph): void {
+        $graphUri = $graph instanceof iDefaultGraph ? self::DEFAULT_GRAPH_ID : $graph->getValue();
+        if (!isset($this->prevGraph)) {
+            $output->write('{' . $this->serializeId($graphUri) . ',"@graph":[');
+            unset($this->prevSubject);
+        } elseif (!$this->prevGraph->equals($graph)) {
+            $end = '';
+            $end .= isset($this->prevPredicate) ? ']' : '';
+            $end .= isset($this->prevSubject) ? '}' : '';
+            $output->write($end . ']},{' . $this->serializeId($graphUri) . ',"@graph":[');
+            unset($this->prevSubject);
+        }
+        $this->prevGraph = $graph;
     }
 
-    private function serializeTriple(iQuad $quad): string {
-        return json_encode($this->serializeNode($quad)) ?: throw new RdfIoException("Failed to serialize quad $quad");
+    private function processSubject(StreamInterface $output,
+                                    iNamedNode | iBlankNode $subject): void {
+        if (!isset($this->prevSubject)) {
+            $output->write('{' . $this->serializeId($subject));
+            unset($this->prevPredicate);
+        } elseif (!$this->prevSubject->equals($subject)) {
+            $end = isset($this->prevPredicate) ? ']' : '';
+            $output->write($end . '},{' . $this->serializeId($subject));
+            unset($this->prevPredicate);
+        }
+        $this->prevSubject = $subject;
+    }
+
+    private function processPredicate(StreamInterface $output,
+                                      iNamedNode $predicate): void {
+        if (!isset($this->prevPredicate) || !$this->prevPredicate->equals($predicate)) {
+            $coma             = !isset($this->prevPredicate) ? ',' : '],';
+            $output->write($coma . json_encode($predicate->getValue(), JSON_UNESCAPED_SLASHES) . ':[');
+            $this->firstValue = true;
+        }
+        $this->prevPredicate = $predicate;
+    }
+
+    private function processObject(StreamInterface $output, iTerm $object): void {
+        $coma             = $this->firstValue ? '' : ',';
+        $output->write($coma . json_encode($this->serializeNode($object), JSON_UNESCAPED_SLASHES));
+        $this->firstValue = false;
+    }
+
+    private function serializeId(string | iTerm $term): string {
+        $value = is_string($term) ? $term : $term->getValue();
+        return '"@id":' . json_encode($value, JSON_UNESCAPED_SLASHES);
     }
 
     private function serializeNode(iTerm $node): mixed {

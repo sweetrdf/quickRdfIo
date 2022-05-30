@@ -41,7 +41,16 @@ use Psr\Http\Message\StreamInterface;
  */
 class Util {
 
-    static public function getSerializerClass(string $formatOrFilename): string {
+    /**
+     * Returns a serializer object for a given format or file name (in the latter
+     * case the match is based on the file name extenstion).
+     * 
+     * Use a special value of `jsonld-stream` to get the `JsonLdStreamSerializer`
+     * serializer.
+     * @param string $formatOrFilename
+     * @return iSerializer
+     */
+    static public function getSerializer(string $formatOrFilename): iSerializer {
         $format = preg_replace('/;[^;]*/', '', $formatOrFilename) ?? ''; // skip accept header additional data
         $format = preg_replace('/^.+[.]/', '', $format) ?? '';
         $format = strtolower($format);
@@ -49,36 +58,50 @@ class Util {
             'ttl',
             'turtle',
             'n3',
-            'trig',
             'text/turle',
             'application/turtle',
             'text/n3',
             'text/rdf+n3',
-            'application/rdf+n3',
-            'application/trig' => TurtleSerializer::class,
+            'application/rdf+n3' => new TrigSerializer(TrigSerializer::MODE_TURTLE),
+            'trig',
+            'application/trig' => new TrigSerializer(TrigSerializer::MODE_TRIG),
             'nt',
             'ntriples',
+            'ntriplesstar',
+            'n-triples',
+            'n-triples-star',
             'application/n-triples',
-            'text/plain' => NQuadsSerializer::class,
+            'text/plain' => new NQuadsSerializer(),
             'application/n-quads',
             'nq',
-            'nqads',
-            'application/n-quads' => NQuadsSerializer::class,
+            'nquads',
+            'nquadstar',
+            'n-quads',
+            'n-quads-star',
+            'application/n-quads' => new NQuadsSerializer(),
             'xml',
             'rdf',
             'application/rdf+xml',
             'text/rdf',
             'application/xml',
-            'text/xml' => RdfXmlSerializer::class,
+            'text/xml' => new RdfXmlSerializer(),
             'json',
             'jsonld',
             'application/ld+json',
-            'application/json' => JsonLdSerializer::class,
-            'jsonld-stream' => JsonLdStreamSerializer::class,
+            'application/json' => new JsonLdSerializer(),
+            'jsonld-stream' => new JsonLdStreamSerializer(),
             default => throw new RdfIoException("Unknown format $format ($formatOrFilename)")
         };
     }
 
+    /**
+     * Returns a parser object for a given format or file name (in the latter case
+     * the match is based on the file name extension).
+     * @param string $formatOrFilename
+     * @param iDataFactory $dataFactory
+     * @param string|null $baseUri
+     * @return iParser
+     */
     static public function getParser(string $formatOrFilename,
                                      iDataFactory $dataFactory,
                                      ?string $baseUri = null): iParser {
@@ -98,10 +121,16 @@ class Util {
             'application/trig' => new TriGParser($dataFactory, ['documentIRI' => $baseUri]),
             'nt',
             'ntriples',
+            'ntriplesstar',
+            'n-triples',
+            'n-triples-star',
             'application/n-triples',
             'text/plain' => new NQuadsParser($dataFactory, false, NQuadsParser::MODE_TRIPLES_STAR),
             'nq',
-            'nqads',
+            'nquads',
+            'nquadstar',
+            'n-quads',
+            'n-quads-star',
             'application/n-quads' => new NQuadsParser($dataFactory, false, NQuadsParser::MODE_QUADS_STAR),
             'xml',
             'rdf',
@@ -115,11 +144,6 @@ class Util {
             'application/json' => new JsonLdParser($dataFactory, $baseUri),
             default => throw new RdfIoException("Unknown format $format ($formatOrFilename)")
         };
-    }
-
-    static public function getSerializer(string $formatOrFilename): iSerializer {
-        $class = self::getSerializerClass($formatOrFilename);
-        return new $class();
     }
 
     /**
@@ -202,7 +226,9 @@ class Util {
      *   to. String value is taken as a path passed to `fopen($output, 'wb')`.
      *   If null, output as string is provided as function return value.
      * @param iRdfNamespace | null $nmsp An optional RdfNamespace object driving 
-     *   namespace aliases creation.
+     *   namespace aliases creation. It can be used for compacting for the JsonLD
+     *   serialization, just in such a case remember to register aliases for
+     *   full URIs instead of for namespaces.
      * @return string | null
      * @throws RdfIoException
      */

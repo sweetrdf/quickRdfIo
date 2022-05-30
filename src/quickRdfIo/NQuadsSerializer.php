@@ -34,7 +34,7 @@ use rdfInterface\QuadIterator as iQuadIterator;
 use rdfInterface\RdfNamespace as iRdfNamespace;
 
 /**
- * Description of Serializer
+ * Serializes n-quads and n-quads-star.
  *
  * @author zozlak
  */

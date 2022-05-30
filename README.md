@@ -13,13 +13,13 @@ Originally developed for the [quickRdf](https://github.com/sweetrdf/quickRdf) li
 
 | format     | read/write | class                          | implementation       | streaming[1] |
 |------------|------------|--------------------------------|----------------------|--------------|
+| rdf-xml    | rw         | RdfXmlParser, RdfXmlSerializer | own                  | yes          |
 | n-triples  | rw         | NQuadsParser, NQuadsSerializer | own                  | yes          |
 | n-triples* | rw         | NQuadsParser, NQuadsSerializer | own                  | yes          |
 | n-quads    | rw         | NQuadsParser, NQuadsSerializer | own                  | yes          |
 | n-quads*   | rw         | NQuadsParser, NQuadsSerializer | own                  | yes          |
-| rdf-xml    | rw         | RdfXmlParser, RdfXmlSerializer | own                  | yes          |
-| turtle     | rw         | TriGParser, TurtleSerializer   | pietercolpaert/hardf | yes          |
-| TriG       | r          | TriGParser                     | pietercolpaert/hardf | yes          |
+| turtle     | rw         | TriGParser, TrigSerializer     | pietercolpaert/hardf | yes          |
+| trig       | rw         | TriGParser, TrigSerializer     | pietercolpaert/hardf | yes          |
 | JsonLD     | rw         | JsonLdParser, JsonLdSerializer | ml/json-ld           | no           |
 | JsonLD[2]  | w          | JsonLdStreamSerializer         | own[3]               | yes          |
 
@@ -54,6 +54,7 @@ Just use `\quickRdfIo\Util::parse($input, $dataFactory, $format, $baseUri)`, whe
   (an RDF string, a path to a file, an URL, an opened resource (result of `fopen()`), a PSR-7 response or a PSR-7 StreamInterface object).
 * `$dataFactory` is an object implementing the `\rdfInterface\DataFactory` interface, e.g. `new \quickRdf\DataFactory()`.
 * `$format` is an **optional** explicit RDF format indication for handling rare situtations when the format can't be autodetected.
+  See the `src/quickRdfIo/Util.php::getParser()` source code to see a list of all accepted `$format` values.
 * `$baseUri` is an **optional** baseURI value (for some kind of `$input` values it can be autodected).
 
 ```php
@@ -96,6 +97,20 @@ echo $dataset;
 
 ### Basic serialization
 
+Just use `\quickRdfIo\Util::serialize($data, $format, $output, $nmsp)`, where: 
+
+* `$data` is an object implementing the `\rdfInterface\QuadIterator` interface,
+  e.g. a Dataset or an iterator returned by the parser.
+* `$format` specifies an RDF serialization format, e.g. `turtle` or `ntriples`.
+  See the `src/quickRdfIo/Util.php::getSeriazlier()` source code to see a list of all accepted `$format` values.
+* `$output` is an **optional** parameter describing where the output should be written.
+  If it's missing or null, output is returned as a string. If it's a string, 
+  it's treated as a path to open with `fopen($output, 'wb')`. If it's a stream
+  resource or PSR-8 `StreamInterface` instance, the output is just written into it.
+* `$nmsp` is an **optional** parameter used to pass desired RDF namespace aliases
+  to the serializer. Note some formats like n-triples and n-quads don't support
+  namespace aliases while in others (e.g. turtle) it's very common to use them.
+
 ```php
 include 'vendor/autoload.php';
 
@@ -107,7 +122,7 @@ $iterator = ...some \rdfInterface\QuadIterator, e.g. one from parsing examples..
 echo \quickRdfIo\Util::serialize($iterator, 'turtle');
 
 // use given namespace aliases when serializing to turtle
-$nmsp = new \rdfHelpers\RdfNamespace();
+$nmsp = new \quickRdf\RdfNamespace();
 $nmsp->add('http://purl.org/dc/terms/', 'dc');
 $nmsp->add('http://www.w3.org/1999/02/22-rdf-syntax-ns#', 'rdf');
 echo \quickRdfIo\Util::serialize($iterator, 'turtle', null, $nmsp);
