@@ -138,7 +138,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\quickRdfIo\\JsonLdStreamSerializer",
             "name": "JsonLdStreamSerializer",
-            "summary": "A\u0020steaming\u0020JsonLD\u0020serializer.\u0020Generates\u0020output\u0020in\u0020the\u0020\u0028extremely\u0029\u0020flatten\nJsonLD\u0020format\u0020which\u0020is\u0020only\u0020suitable\u0020for\u0020being\u0020parsed\u0020\u0028or\u0020framed\u0029\u0020with\na\u0020Json\u002DLD\u0020parsing\u0020library.\u0020This\u0020drawback\u0020is\u0020compenstated\u0020by\u0020high\u0020speed\u0020and\nminimal\u0020memory\u0020footprint.",
+            "summary": "A\u0020steaming\u0020JsonLD\u0020serializer.\u0020Generates\u0020output\u0020in\u0020the\u0020flatten\u0020JsonLD\u0020format\nand\u0020does\u0020it\u0020in\u0020a\u0020greedy\u0020way\u0020\u0028meaning\u0020subjects\/predicates\/values\u0020are\u0020acumulated\nwithin\u0020graph\/subject\/predicate\u0020only\u0020if\u0020adjacent\u0020triples\u0020share\u0020the\u0020same\ngraph\/subject\/predicate\u0029.\u0020On\u0020the\u0020brigh\u0020side\u0020it\u0027s\u0020fast\u0020and\u0020has\u0020minimal\u0020memory\nfootprint.",
             "url": "classes/quickRdfIo-JsonLdStreamSerializer.html"
         },                {
             "fqsen": "\\quickRdfIo\\JsonLdStreamSerializer\u003A\u003A__construct\u0028\u0029",
@@ -151,15 +151,30 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/quickRdfIo-JsonLdStreamSerializer.html#method_serializeStream"
         },                {
-            "fqsen": "\\quickRdfIo\\JsonLdStreamSerializer\u003A\u003AserializeQuad\u0028\u0029",
-            "name": "serializeQuad",
+            "fqsen": "\\quickRdfIo\\JsonLdStreamSerializer\u003A\u003AprocessGraph\u0028\u0029",
+            "name": "processGraph",
             "summary": "",
-            "url": "classes/quickRdfIo-JsonLdStreamSerializer.html#method_serializeQuad"
+            "url": "classes/quickRdfIo-JsonLdStreamSerializer.html#method_processGraph"
         },                {
-            "fqsen": "\\quickRdfIo\\JsonLdStreamSerializer\u003A\u003AserializeTriple\u0028\u0029",
-            "name": "serializeTriple",
+            "fqsen": "\\quickRdfIo\\JsonLdStreamSerializer\u003A\u003AprocessSubject\u0028\u0029",
+            "name": "processSubject",
             "summary": "",
-            "url": "classes/quickRdfIo-JsonLdStreamSerializer.html#method_serializeTriple"
+            "url": "classes/quickRdfIo-JsonLdStreamSerializer.html#method_processSubject"
+        },                {
+            "fqsen": "\\quickRdfIo\\JsonLdStreamSerializer\u003A\u003AprocessPredicate\u0028\u0029",
+            "name": "processPredicate",
+            "summary": "",
+            "url": "classes/quickRdfIo-JsonLdStreamSerializer.html#method_processPredicate"
+        },                {
+            "fqsen": "\\quickRdfIo\\JsonLdStreamSerializer\u003A\u003AprocessObject\u0028\u0029",
+            "name": "processObject",
+            "summary": "",
+            "url": "classes/quickRdfIo-JsonLdStreamSerializer.html#method_processObject"
+        },                {
+            "fqsen": "\\quickRdfIo\\JsonLdStreamSerializer\u003A\u003AserializeId\u0028\u0029",
+            "name": "serializeId",
+            "summary": "",
+            "url": "classes/quickRdfIo-JsonLdStreamSerializer.html#method_serializeId"
         },                {
             "fqsen": "\\quickRdfIo\\JsonLdStreamSerializer\u003A\u003AserializeNode\u0028\u0029",
             "name": "serializeNode",
@@ -185,6 +200,26 @@ Search.appendIndex(
             "name": "mode",
             "summary": "",
             "url": "classes/quickRdfIo-JsonLdStreamSerializer.html#property_mode"
+        },                {
+            "fqsen": "\\quickRdfIo\\JsonLdStreamSerializer\u003A\u003A\u0024prevGraph",
+            "name": "prevGraph",
+            "summary": "",
+            "url": "classes/quickRdfIo-JsonLdStreamSerializer.html#property_prevGraph"
+        },                {
+            "fqsen": "\\quickRdfIo\\JsonLdStreamSerializer\u003A\u003A\u0024prevSubject",
+            "name": "prevSubject",
+            "summary": "",
+            "url": "classes/quickRdfIo-JsonLdStreamSerializer.html#property_prevSubject"
+        },                {
+            "fqsen": "\\quickRdfIo\\JsonLdStreamSerializer\u003A\u003A\u0024prevPredicate",
+            "name": "prevPredicate",
+            "summary": "",
+            "url": "classes/quickRdfIo-JsonLdStreamSerializer.html#property_prevPredicate"
+        },                {
+            "fqsen": "\\quickRdfIo\\JsonLdStreamSerializer\u003A\u003A\u0024firstValue",
+            "name": "firstValue",
+            "summary": "",
+            "url": "classes/quickRdfIo-JsonLdStreamSerializer.html#property_firstValue"
         },                {
             "fqsen": "\\quickRdfIo\\NQuadsParser",
             "name": "NQuadsParser",
@@ -468,7 +503,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\quickRdfIo\\NQuadsSerializer",
             "name": "NQuadsSerializer",
-            "summary": "Description\u0020of\u0020Serializer",
+            "summary": "Serializes\u0020n\u002Dquads\u0020and\u0020n\u002Dquads\u002Dstar.",
             "url": "classes/quickRdfIo-NQuadsSerializer.html"
         },                {
             "fqsen": "\\quickRdfIo\\NQuadsSerializer\u003A\u003A__construct\u0028\u0029",
@@ -1106,40 +1141,55 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/quickRdfIo-TriGParser.html#property_prefixCallback"
         },                {
-            "fqsen": "\\quickRdfIo\\TurtleSerializer",
-            "name": "TurtleSerializer",
-            "summary": "Description\u0020of\u0020TurtleSerializer",
-            "url": "classes/quickRdfIo-TurtleSerializer.html"
+            "fqsen": "\\quickRdfIo\\TrigSerializer",
+            "name": "TrigSerializer",
+            "summary": "Serializes\u0020to\u0020TriG\u0020and\u0020Turtle\u0020formats",
+            "url": "classes/quickRdfIo-TrigSerializer.html"
         },                {
-            "fqsen": "\\quickRdfIo\\TurtleSerializer\u003A\u003A__construct\u0028\u0029",
+            "fqsen": "\\quickRdfIo\\TrigSerializer\u003A\u003A__construct\u0028\u0029",
             "name": "__construct",
             "summary": "",
-            "url": "classes/quickRdfIo-TurtleSerializer.html#method___construct"
+            "url": "classes/quickRdfIo-TrigSerializer.html#method___construct"
         },                {
-            "fqsen": "\\quickRdfIo\\TurtleSerializer\u003A\u003AserializeStream\u0028\u0029",
+            "fqsen": "\\quickRdfIo\\TrigSerializer\u003A\u003AserializeStream\u0028\u0029",
             "name": "serializeStream",
             "summary": "",
-            "url": "classes/quickRdfIo-TurtleSerializer.html#method_serializeStream"
+            "url": "classes/quickRdfIo-TrigSerializer.html#method_serializeStream"
+        },                {
+            "fqsen": "\\quickRdfIo\\TrigSerializer\u003A\u003AMODE_TURTLE",
+            "name": "MODE_TURTLE",
+            "summary": "",
+            "url": "classes/quickRdfIo-TrigSerializer.html#constant_MODE_TURTLE"
+        },                {
+            "fqsen": "\\quickRdfIo\\TrigSerializer\u003A\u003AMODE_TRIG",
+            "name": "MODE_TRIG",
+            "summary": "",
+            "url": "classes/quickRdfIo-TrigSerializer.html#constant_MODE_TRIG"
+        },                {
+            "fqsen": "\\quickRdfIo\\TrigSerializer\u003A\u003A\u0024mode",
+            "name": "mode",
+            "summary": "",
+            "url": "classes/quickRdfIo-TrigSerializer.html#property_mode"
+        },                {
+            "fqsen": "\\quickRdfIo\\TrigSerializer\u003A\u003A\u0024strict",
+            "name": "strict",
+            "summary": "",
+            "url": "classes/quickRdfIo-TrigSerializer.html#property_strict"
         },                {
             "fqsen": "\\quickRdfIo\\Util",
             "name": "Util",
             "summary": "Provides\u0020static\u0020factory\u0020methods\u0020for\u0020plug\u0026play\u0020parsers\/serializers\u0020creation.",
             "url": "classes/quickRdfIo-Util.html"
         },                {
-            "fqsen": "\\quickRdfIo\\Util\u003A\u003AgetSerializerClass\u0028\u0029",
-            "name": "getSerializerClass",
-            "summary": "",
-            "url": "classes/quickRdfIo-Util.html#method_getSerializerClass"
+            "fqsen": "\\quickRdfIo\\Util\u003A\u003AgetSerializer\u0028\u0029",
+            "name": "getSerializer",
+            "summary": "Returns\u0020a\u0020serializer\u0020object\u0020for\u0020a\u0020given\u0020format\u0020or\u0020file\u0020name\u0020\u0028in\u0020the\u0020latter\ncase\u0020the\u0020match\u0020is\u0020based\u0020on\u0020the\u0020file\u0020name\u0020extenstion\u0029.",
+            "url": "classes/quickRdfIo-Util.html#method_getSerializer"
         },                {
             "fqsen": "\\quickRdfIo\\Util\u003A\u003AgetParser\u0028\u0029",
             "name": "getParser",
-            "summary": "",
+            "summary": "Returns\u0020a\u0020parser\u0020object\u0020for\u0020a\u0020given\u0020format\u0020or\u0020file\u0020name\u0020\u0028in\u0020the\u0020latter\u0020case\nthe\u0020match\u0020is\u0020based\u0020on\u0020the\u0020file\u0020name\u0020extension\u0029.",
             "url": "classes/quickRdfIo-Util.html#method_getParser"
-        },                {
-            "fqsen": "\\quickRdfIo\\Util\u003A\u003AgetSerializer\u0028\u0029",
-            "name": "getSerializer",
-            "summary": "",
-            "url": "classes/quickRdfIo-Util.html#method_getSerializer"
         },                {
             "fqsen": "\\quickRdfIo\\Util\u003A\u003Aparse\u0028\u0029",
             "name": "parse",

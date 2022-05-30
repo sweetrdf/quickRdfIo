@@ -122,15 +122,16 @@ provided by the ml/json-ld library.</dd>
         <dd>Thin wrapper providing RdfInterface\Serializer API for JSON-LD the parser
 provided by the ml/json-ld library.</dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/quickRdfIo-JsonLdStreamSerializer.html"><abbr title="\quickRdfIo\JsonLdStreamSerializer">JsonLdStreamSerializer</abbr></a></dt>
-        <dd>A steaming JsonLD serializer. Generates output in the (extremely) flatten
-JsonLD format which is only suitable for being parsed (or framed) with
-a Json-LD parsing library. This drawback is compenstated by high speed and
-minimal memory footprint.</dd>
+        <dd>A steaming JsonLD serializer. Generates output in the flatten JsonLD format
+and does it in a greedy way (meaning subjects/predicates/values are acumulated
+within graph/subject/predicate only if adjacent triples share the same
+graph/subject/predicate). On the brigh side it&#039;s fast and has minimal memory
+footprint.</dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/quickRdfIo-NQuadsParser.html"><abbr title="\quickRdfIo\NQuadsParser">NQuadsParser</abbr></a></dt>
         <dd>Parses only n-quads and n-triples but does it fast (thanks to parsing in chunks
 and extensive use of regullar expressions).</dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/quickRdfIo-NQuadsSerializer.html"><abbr title="\quickRdfIo\NQuadsSerializer">NQuadsSerializer</abbr></a></dt>
-        <dd>Description of Serializer</dd>
+        <dd>Serializes n-quads and n-quads-star.</dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/quickRdfIo-RdfIoException.html"><abbr title="\quickRdfIo\RdfIoException">RdfIoException</abbr></a></dt>
         <dd>Description of RdfException</dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/quickRdfIo-RdfXmlParserState.html"><abbr title="\quickRdfIo\RdfXmlParserState">RdfXmlParserState</abbr></a></dt>
@@ -143,8 +144,8 @@ and extensive use of regullar expressions).</dd>
         <dd>A wrapper for a resource providing it with a PSR-7 StreamInterface API.</dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/quickRdfIo-TriGParser.html"><abbr title="\quickRdfIo\TriGParser">TriGParser</abbr></a></dt>
         <dd>Description of Parser</dd>
-            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/quickRdfIo-TurtleSerializer.html"><abbr title="\quickRdfIo\TurtleSerializer">TurtleSerializer</abbr></a></dt>
-        <dd>Description of TurtleSerializer</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/quickRdfIo-TrigSerializer.html"><abbr title="\quickRdfIo\TrigSerializer">TrigSerializer</abbr></a></dt>
+        <dd>Serializes to TriG and Turtle formats</dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/quickRdfIo-Util.html"><abbr title="\quickRdfIo\Util">Util</abbr></a></dt>
         <dd>Provides static factory methods for plug&amp;play parsers/serializers creation.</dd>
     

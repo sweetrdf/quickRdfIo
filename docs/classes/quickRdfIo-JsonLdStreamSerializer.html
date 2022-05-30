@@ -128,15 +128,19 @@
         <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/JsonLdStreamSerializer.php"><a href="files/src-quickrdfio-jsonldstreamserializer.html"><abbr title="src/quickRdfIo/JsonLdStreamSerializer.php">JsonLdStreamSerializer.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">47</span>
+    <span class="phpdocumentor-element-found-in__line">52</span>
 
     </aside>
 
-            <p class="phpdocumentor-summary">A steaming JsonLD serializer. Generates output in the (extremely) flatten
-JsonLD format which is only suitable for being parsed (or framed) with
-a Json-LD parsing library. This drawback is compenstated by high speed and
-minimal memory footprint.</p>
+            <p class="phpdocumentor-summary">A steaming JsonLD serializer. Generates output in the flatten JsonLD format
+and does it in a greedy way (meaning subjects/predicates/values are acumulated
+within graph/subject/predicate only if adjacent triples share the same
+graph/subject/predicate). On the brigh side it&#039;s fast and has minimal memory
+footprint.</p>
 
+    <section class="phpdocumentor-description"><p>To use this parser with the <code class="prettyprint">\quickRdfIo\Util::serialize()</code> use the special
+<code class="prettyprint">jsonld-stream</code> value as <code class="prettyprint">$format</code>.</p>
+</section>
 
 
     <h5 class="phpdocumentor-tag-list__heading" id="tags">
@@ -200,9 +204,37 @@ minimal memory footprint.</p>
 <dd></dd>
 
                     <dt class="phpdocumentor-table-of-contents__entry -property -private">
+    <a href="classes/quickRdfIo-JsonLdStreamSerializer.html#property_firstValue">$firstValue</a>
+    <span>
+                        &nbsp;: bool            </span>
+</dt>
+<dd></dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -property -private">
     <a href="classes/quickRdfIo-JsonLdStreamSerializer.html#property_mode">$mode</a>
     <span>
                         &nbsp;: int            </span>
+</dt>
+<dd></dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -property -private">
+    <a href="classes/quickRdfIo-JsonLdStreamSerializer.html#property_prevGraph">$prevGraph</a>
+    <span>
+                        &nbsp;: <a href="classes/rdfInterface-Term.html"><abbr title="\rdfInterface\Term">Term</abbr></a>            </span>
+</dt>
+<dd></dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -property -private">
+    <a href="classes/quickRdfIo-JsonLdStreamSerializer.html#property_prevPredicate">$prevPredicate</a>
+    <span>
+                        &nbsp;: <a href="classes/rdfInterface-Term.html"><abbr title="\rdfInterface\Term">Term</abbr></a>            </span>
+</dt>
+<dd></dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -property -private">
+    <a href="classes/quickRdfIo-JsonLdStreamSerializer.html#property_prevSubject">$prevSubject</a>
+    <span>
+                        &nbsp;: <a href="classes/rdfInterface-Term.html"><abbr title="\rdfInterface\Term">Term</abbr></a>            </span>
 </dt>
 <dd></dd>
 
@@ -228,23 +260,44 @@ minimal memory footprint.</p>
 <dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -private">
+    <a href="classes/quickRdfIo-JsonLdStreamSerializer.html#method_processGraph">processGraph()</a>
+    <span>
+                                &nbsp;: void    </span>
+</dt>
+<dd></dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -private">
+    <a href="classes/quickRdfIo-JsonLdStreamSerializer.html#method_processObject">processObject()</a>
+    <span>
+                                &nbsp;: void    </span>
+</dt>
+<dd></dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -private">
+    <a href="classes/quickRdfIo-JsonLdStreamSerializer.html#method_processPredicate">processPredicate()</a>
+    <span>
+                                &nbsp;: void    </span>
+</dt>
+<dd></dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -private">
+    <a href="classes/quickRdfIo-JsonLdStreamSerializer.html#method_processSubject">processSubject()</a>
+    <span>
+                                &nbsp;: void    </span>
+</dt>
+<dd></dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -private">
+    <a href="classes/quickRdfIo-JsonLdStreamSerializer.html#method_serializeId">serializeId()</a>
+    <span>
+                                &nbsp;: string    </span>
+</dt>
+<dd></dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -private">
     <a href="classes/quickRdfIo-JsonLdStreamSerializer.html#method_serializeNode">serializeNode()</a>
     <span>
                                 &nbsp;: mixed    </span>
-</dt>
-<dd></dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -method -private">
-    <a href="classes/quickRdfIo-JsonLdStreamSerializer.html#method_serializeQuad">serializeQuad()</a>
-    <span>
-                                &nbsp;: string    </span>
-</dt>
-<dd></dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -method -private">
-    <a href="classes/quickRdfIo-JsonLdStreamSerializer.html#method_serializeTriple">serializeTriple()</a>
-    <span>
-                                &nbsp;: string    </span>
 </dt>
 <dd></dd>
 
@@ -267,7 +320,7 @@ minimal memory footprint.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/JsonLdStreamSerializer.php"><a href="files/src-quickrdfio-jsonldstreamserializer.html"><abbr title="src/quickRdfIo/JsonLdStreamSerializer.php">JsonLdStreamSerializer.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">51</span>
+    <span class="phpdocumentor-element-found-in__line">56</span>
 
     </aside>
 
@@ -296,7 +349,7 @@ minimal memory footprint.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/JsonLdStreamSerializer.php"><a href="files/src-quickrdfio-jsonldstreamserializer.html"><abbr title="src/quickRdfIo/JsonLdStreamSerializer.php">JsonLdStreamSerializer.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">50</span>
+    <span class="phpdocumentor-element-found-in__line">55</span>
 
     </aside>
 
@@ -325,7 +378,7 @@ minimal memory footprint.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/JsonLdStreamSerializer.php"><a href="files/src-quickrdfio-jsonldstreamserializer.html"><abbr title="src/quickRdfIo/JsonLdStreamSerializer.php">JsonLdStreamSerializer.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">49</span>
+    <span class="phpdocumentor-element-found-in__line">54</span>
 
     </aside>
 
@@ -360,6 +413,40 @@ minimal memory footprint.</p>
             -private
                                                         "
 >
+    <h4 class="phpdocumentor-element__name" id="property_firstValue">
+        $firstValue
+        <a href="classes/quickRdfIo-JsonLdStreamSerializer.html#property_firstValue" class="headerlink"><i class="fas fa-link"></i></a>
+        <span class="phpdocumentor-element__modifiers">
+                                </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/JsonLdStreamSerializer.php"><a href="files/src-quickrdfio-jsonldstreamserializer.html"><abbr title="src/quickRdfIo/JsonLdStreamSerializer.php">JsonLdStreamSerializer.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">63</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+        <span class="phpdocumentor-signature__type">bool</span>
+    <span class="phpdocumentor-signature__name">$firstValue</span>
+    </code>
+
+        <section class="phpdocumentor-description"></section>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+
+</article>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
+            -private
+                                                        "
+>
     <h4 class="phpdocumentor-element__name" id="property_mode">
         $mode
         <a href="classes/quickRdfIo-JsonLdStreamSerializer.html#property_mode" class="headerlink"><i class="fas fa-link"></i></a>
@@ -369,7 +456,7 @@ minimal memory footprint.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/JsonLdStreamSerializer.php"><a href="files/src-quickrdfio-jsonldstreamserializer.html"><abbr title="src/quickRdfIo/JsonLdStreamSerializer.php">JsonLdStreamSerializer.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">54</span>
+    <span class="phpdocumentor-element-found-in__line">59</span>
 
     </aside>
 
@@ -378,6 +465,108 @@ minimal memory footprint.</p>
     <span class="phpdocumentor-signature__visibility">private</span>
         <span class="phpdocumentor-signature__type">int</span>
     <span class="phpdocumentor-signature__name">$mode</span>
+    </code>
+
+        <section class="phpdocumentor-description"></section>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+
+</article>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
+            -private
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="property_prevGraph">
+        $prevGraph
+        <a href="classes/quickRdfIo-JsonLdStreamSerializer.html#property_prevGraph" class="headerlink"><i class="fas fa-link"></i></a>
+        <span class="phpdocumentor-element__modifiers">
+                                </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/JsonLdStreamSerializer.php"><a href="files/src-quickrdfio-jsonldstreamserializer.html"><abbr title="src/quickRdfIo/JsonLdStreamSerializer.php">JsonLdStreamSerializer.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">60</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+        <span class="phpdocumentor-signature__type"><a href="classes/rdfInterface-Term.html"><abbr title="\rdfInterface\Term">Term</abbr></a></span>
+    <span class="phpdocumentor-signature__name">$prevGraph</span>
+    </code>
+
+        <section class="phpdocumentor-description"></section>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+
+</article>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
+            -private
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="property_prevPredicate">
+        $prevPredicate
+        <a href="classes/quickRdfIo-JsonLdStreamSerializer.html#property_prevPredicate" class="headerlink"><i class="fas fa-link"></i></a>
+        <span class="phpdocumentor-element__modifiers">
+                                </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/JsonLdStreamSerializer.php"><a href="files/src-quickrdfio-jsonldstreamserializer.html"><abbr title="src/quickRdfIo/JsonLdStreamSerializer.php">JsonLdStreamSerializer.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">62</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+        <span class="phpdocumentor-signature__type"><a href="classes/rdfInterface-Term.html"><abbr title="\rdfInterface\Term">Term</abbr></a></span>
+    <span class="phpdocumentor-signature__name">$prevPredicate</span>
+    </code>
+
+        <section class="phpdocumentor-description"></section>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+
+</article>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
+            -private
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="property_prevSubject">
+        $prevSubject
+        <a href="classes/quickRdfIo-JsonLdStreamSerializer.html#property_prevSubject" class="headerlink"><i class="fas fa-link"></i></a>
+        <span class="phpdocumentor-element__modifiers">
+                                </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/JsonLdStreamSerializer.php"><a href="files/src-quickrdfio-jsonldstreamserializer.html"><abbr title="src/quickRdfIo/JsonLdStreamSerializer.php">JsonLdStreamSerializer.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">61</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+        <span class="phpdocumentor-signature__type"><a href="classes/rdfInterface-Term.html"><abbr title="\rdfInterface\Term">Term</abbr></a></span>
+    <span class="phpdocumentor-signature__name">$prevSubject</span>
     </code>
 
         <section class="phpdocumentor-description"></section>
@@ -407,7 +596,7 @@ minimal memory footprint.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/JsonLdStreamSerializer.php"><a href="files/src-quickrdfio-jsonldstreamserializer.html"><abbr title="src/quickRdfIo/JsonLdStreamSerializer.php">JsonLdStreamSerializer.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">56</span>
+    <span class="phpdocumentor-element-found-in__line">65</span>
 
     </aside>
 
@@ -503,7 +692,7 @@ minimal memory footprint.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/JsonLdStreamSerializer.php"><a href="files/src-quickrdfio-jsonldstreamserializer.html"><abbr title="src/quickRdfIo/JsonLdStreamSerializer.php">JsonLdStreamSerializer.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">70</span>
+    <span class="phpdocumentor-element-found-in__line">80</span>
 
     </aside>
 
@@ -528,14 +717,19 @@ minimal memory footprint.</p>
                 : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/rdfInterface-QuadIterator.html"><abbr title="\rdfInterface\QuadIterator">QuadIterator</abbr></a></span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                
+                    <section class="phpdocumentor-description"><p>data to serialize</p>
+</section>
+
             </dd>
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-signature__argument__name">$nmsp</span>
                 : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/rdfInterface-RdfNamespace.html"><abbr title="\rdfInterface\RdfNamespace">RdfNamespace</abbr></a>|null</span>
                  = <span class="phpdocumentor-signature__argument__default-value">null</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                
+                    <section class="phpdocumentor-description"><p>parameter required for the <code class="prettyprint">\rdfInterface\Serializer</code>
+interface compatibility but not being used.</p>
+</section>
+
             </dd>
             </dl>
 
@@ -553,6 +747,258 @@ minimal memory footprint.</p>
             -private
                                                         "
 >
+    <h4 class="phpdocumentor-element__name" id="method_processGraph">
+        processGraph()
+        <a href="classes/quickRdfIo-JsonLdStreamSerializer.html#method_processGraph" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/JsonLdStreamSerializer.php"><a href="files/src-quickrdfio-jsonldstreamserializer.html"><abbr title="src/quickRdfIo/JsonLdStreamSerializer.php">JsonLdStreamSerializer.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">110</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+                    <span class="phpdocumentor-signature__name">processGraph</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><abbr title="\Psr\Http\Message\StreamInterface">StreamInterface</abbr>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$output</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type"><a href="classes/rdfInterface-DefaultGraph.html"><abbr title="\rdfInterface\DefaultGraph">DefaultGraph</abbr></a>|<a href="classes/rdfInterface-NamedNode.html"><abbr title="\rdfInterface\NamedNode">NamedNode</abbr></a>|<a href="classes/rdfInterface-BlankNode.html"><abbr title="\rdfInterface\BlankNode">BlankNode</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$graph</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$output</span>
+                : <span class="phpdocumentor-signature__argument__return-type"><abbr title="\Psr\Http\Message\StreamInterface">StreamInterface</abbr></span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$graph</span>
+                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/rdfInterface-DefaultGraph.html"><abbr title="\rdfInterface\DefaultGraph">DefaultGraph</abbr></a>|<a href="classes/rdfInterface-NamedNode.html"><abbr title="\rdfInterface\NamedNode">NamedNode</abbr></a>|<a href="classes/rdfInterface-BlankNode.html"><abbr title="\rdfInterface\BlankNode">BlankNode</abbr></a></span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">void</span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -private
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_processObject">
+        processObject()
+        <a href="classes/quickRdfIo-JsonLdStreamSerializer.html#method_processObject" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/JsonLdStreamSerializer.php"><a href="files/src-quickrdfio-jsonldstreamserializer.html"><abbr title="src/quickRdfIo/JsonLdStreamSerializer.php">JsonLdStreamSerializer.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">149</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+                    <span class="phpdocumentor-signature__name">processObject</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><abbr title="\Psr\Http\Message\StreamInterface">StreamInterface</abbr>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$output</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type"><a href="classes/rdfInterface-Term.html"><abbr title="\rdfInterface\Term">Term</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$object</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$output</span>
+                : <span class="phpdocumentor-signature__argument__return-type"><abbr title="\Psr\Http\Message\StreamInterface">StreamInterface</abbr></span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$object</span>
+                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/rdfInterface-Term.html"><abbr title="\rdfInterface\Term">Term</abbr></a></span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">void</span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -private
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_processPredicate">
+        processPredicate()
+        <a href="classes/quickRdfIo-JsonLdStreamSerializer.html#method_processPredicate" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/JsonLdStreamSerializer.php"><a href="files/src-quickrdfio-jsonldstreamserializer.html"><abbr title="src/quickRdfIo/JsonLdStreamSerializer.php">JsonLdStreamSerializer.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">139</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+                    <span class="phpdocumentor-signature__name">processPredicate</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><abbr title="\Psr\Http\Message\StreamInterface">StreamInterface</abbr>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$output</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type"><a href="classes/rdfInterface-NamedNode.html"><abbr title="\rdfInterface\NamedNode">NamedNode</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$predicate</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$output</span>
+                : <span class="phpdocumentor-signature__argument__return-type"><abbr title="\Psr\Http\Message\StreamInterface">StreamInterface</abbr></span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$predicate</span>
+                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/rdfInterface-NamedNode.html"><abbr title="\rdfInterface\NamedNode">NamedNode</abbr></a></span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">void</span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -private
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_processSubject">
+        processSubject()
+        <a href="classes/quickRdfIo-JsonLdStreamSerializer.html#method_processSubject" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/JsonLdStreamSerializer.php"><a href="files/src-quickrdfio-jsonldstreamserializer.html"><abbr title="src/quickRdfIo/JsonLdStreamSerializer.php">JsonLdStreamSerializer.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">126</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+                    <span class="phpdocumentor-signature__name">processSubject</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><abbr title="\Psr\Http\Message\StreamInterface">StreamInterface</abbr>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$output</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type"><a href="classes/rdfInterface-NamedNode.html"><abbr title="\rdfInterface\NamedNode">NamedNode</abbr></a>|<a href="classes/rdfInterface-BlankNode.html"><abbr title="\rdfInterface\BlankNode">BlankNode</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$subject</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$output</span>
+                : <span class="phpdocumentor-signature__argument__return-type"><abbr title="\Psr\Http\Message\StreamInterface">StreamInterface</abbr></span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$subject</span>
+                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/rdfInterface-NamedNode.html"><abbr title="\rdfInterface\NamedNode">NamedNode</abbr></a>|<a href="classes/rdfInterface-BlankNode.html"><abbr title="\rdfInterface\BlankNode">BlankNode</abbr></a></span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">void</span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -private
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_serializeId">
+        serializeId()
+        <a href="classes/quickRdfIo-JsonLdStreamSerializer.html#method_serializeId" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/JsonLdStreamSerializer.php"><a href="files/src-quickrdfio-jsonldstreamserializer.html"><abbr title="src/quickRdfIo/JsonLdStreamSerializer.php">JsonLdStreamSerializer.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">155</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+                    <span class="phpdocumentor-signature__name">serializeId</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string|<a href="classes/rdfInterface-Term.html"><abbr title="\rdfInterface\Term">Term</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$term</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$term</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string|<a href="classes/rdfInterface-Term.html"><abbr title="\rdfInterface\Term">Term</abbr></a></span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">string</span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -private
+                                                        "
+>
     <h4 class="phpdocumentor-element__name" id="method_serializeNode">
         serializeNode()
         <a href="classes/quickRdfIo-JsonLdStreamSerializer.html#method_serializeNode" class="headerlink"><i class="fas fa-link"></i></a>
@@ -560,7 +1006,7 @@ minimal memory footprint.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/JsonLdStreamSerializer.php"><a href="files/src-quickrdfio-jsonldstreamserializer.html"><abbr title="src/quickRdfIo/JsonLdStreamSerializer.php">JsonLdStreamSerializer.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">108</span>
+    <span class="phpdocumentor-element-found-in__line">160</span>
 
     </aside>
 
@@ -587,94 +1033,6 @@ minimal memory footprint.</p>
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type">mixed</span>
-            &mdash;
-        
-    
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -private
-                                                        "
->
-    <h4 class="phpdocumentor-element__name" id="method_serializeQuad">
-        serializeQuad()
-        <a href="classes/quickRdfIo-JsonLdStreamSerializer.html#method_serializeQuad" class="headerlink"><i class="fas fa-link"></i></a>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/JsonLdStreamSerializer.php"><a href="files/src-quickrdfio-jsonldstreamserializer.html"><abbr title="src/quickRdfIo/JsonLdStreamSerializer.php">JsonLdStreamSerializer.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">95</span>
-
-    </aside>
-
-    
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">private</span>
-                    <span class="phpdocumentor-signature__name">serializeQuad</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href="classes/rdfInterface-Quad.html"><abbr title="\rdfInterface\Quad">Quad</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$quad</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
-
-        <section class="phpdocumentor-description"></section>
-
-        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
-    <dl class="phpdocumentor-argument-list">
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$quad</span>
-                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/rdfInterface-Quad.html"><abbr title="\rdfInterface\Quad">Quad</abbr></a></span>
-                            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
-
-            </dd>
-            </dl>
-
-    
-
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">string</span>
-            &mdash;
-        
-    
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -private
-                                                        "
->
-    <h4 class="phpdocumentor-element__name" id="method_serializeTriple">
-        serializeTriple()
-        <a href="classes/quickRdfIo-JsonLdStreamSerializer.html#method_serializeTriple" class="headerlink"><i class="fas fa-link"></i></a>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/JsonLdStreamSerializer.php"><a href="files/src-quickrdfio-jsonldstreamserializer.html"><abbr title="src/quickRdfIo/JsonLdStreamSerializer.php">JsonLdStreamSerializer.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">104</span>
-
-    </aside>
-
-    
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">private</span>
-                    <span class="phpdocumentor-signature__name">serializeTriple</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href="classes/rdfInterface-Quad.html"><abbr title="\rdfInterface\Quad">Quad</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$quad</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
-
-        <section class="phpdocumentor-description"></section>
-
-        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
-    <dl class="phpdocumentor-argument-list">
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$quad</span>
-                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/rdfInterface-Quad.html"><abbr title="\rdfInterface\Quad">Quad</abbr></a></span>
-                            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
-
-            </dd>
-            </dl>
-
-    
-
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">string</span>
             &mdash;
         
     

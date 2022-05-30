@@ -106,7 +106,7 @@
 
     <article class="phpdocumentor-element -class">
         <h2 class="phpdocumentor-content__title">
-    TurtleSerializer
+    TrigSerializer
 
     
             <div class="phpdocumentor-element__package">
@@ -126,13 +126,13 @@
     </h2>
 
         <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/TurtleSerializer.php"><a href="files/src-quickrdfio-turtleserializer.html"><abbr title="src/quickRdfIo/TurtleSerializer.php">TurtleSerializer.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/TrigSerializer.php"><a href="files/src-quickrdfio-trigserializer.html"><abbr title="src/quickRdfIo/TrigSerializer.php">TrigSerializer.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">40</span>
+    <span class="phpdocumentor-element-found-in__line">44</span>
 
     </aside>
 
-            <p class="phpdocumentor-summary">Description of TurtleSerializer</p>
+            <p class="phpdocumentor-summary">Serializes to TriG and Turtle formats</p>
 
 
 
@@ -175,8 +175,36 @@
 </h3>
 
 <dl class="phpdocumentor-table-of-contents">
-                        <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/quickRdfIo-TurtleSerializer.html#method___construct">__construct()</a>
+            <dt class="phpdocumentor-table-of-contents__entry -constant -public">
+    <a href="classes/quickRdfIo-TrigSerializer.html#constant_MODE_TRIG">MODE_TRIG</a>
+    <span>
+        &nbsp;= 2                            </span>
+</dt>
+<dd></dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -constant -public">
+    <a href="classes/quickRdfIo-TrigSerializer.html#constant_MODE_TURTLE">MODE_TURTLE</a>
+    <span>
+        &nbsp;= 1                            </span>
+</dt>
+<dd></dd>
+
+                    <dt class="phpdocumentor-table-of-contents__entry -property -private">
+    <a href="classes/quickRdfIo-TrigSerializer.html#property_mode">$mode</a>
+    <span>
+                        &nbsp;: int            </span>
+</dt>
+<dd></dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -property -private">
+    <a href="classes/quickRdfIo-TrigSerializer.html#property_strict">$strict</a>
+    <span>
+                        &nbsp;: bool            </span>
+</dt>
+<dd></dd>
+
+                <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/quickRdfIo-TrigSerializer.html#method___construct">__construct()</a>
     <span>
                                 &nbsp;: mixed    </span>
 </dt>
@@ -190,7 +218,7 @@
 <dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/quickRdfIo-TurtleSerializer.html#method_serializeStream">serializeStream()</a>
+    <a href="classes/quickRdfIo-TrigSerializer.html#method_serializeStream">serializeStream()</a>
     <span>
                                 &nbsp;: void    </span>
 </dt>
@@ -201,13 +229,151 @@
 
 
         
+    <section class="phpdocumentor-constants">
+        <h3 class="phpdocumentor-elements__header" id="constants">
+            Constants
+            <a href="classes/quickRdfIo-TrigSerializer.html#constants" class="headerlink"><i class="fas fa-link"></i></a>
+        </h3>
+                    <article class="phpdocumentor-element -constant -public ">
+    <h4 class="phpdocumentor-element__name" id="constant_MODE_TRIG">
+        MODE_TRIG
+        <a href="classes/quickRdfIo-TrigSerializer.html#constant_MODE_TRIG" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/TrigSerializer.php"><a href="files/src-quickrdfio-trigserializer.html"><abbr title="src/quickRdfIo/TrigSerializer.php">TrigSerializer.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">47</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-signature phpdocumentor-code ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+        <span class="phpdocumentor-signature__type">mixed</span>
+    <span class="phpdocumentor-signature__name">MODE_TRIG</span>
+    = <span class="phpdocumentor-signature__default-value">2</span>
+</code>
+
+
+        <section class="phpdocumentor-description"></section>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+
+</article>
+                    <article class="phpdocumentor-element -constant -public ">
+    <h4 class="phpdocumentor-element__name" id="constant_MODE_TURTLE">
+        MODE_TURTLE
+        <a href="classes/quickRdfIo-TrigSerializer.html#constant_MODE_TURTLE" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/TrigSerializer.php"><a href="files/src-quickrdfio-trigserializer.html"><abbr title="src/quickRdfIo/TrigSerializer.php">TrigSerializer.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">46</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-signature phpdocumentor-code ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+        <span class="phpdocumentor-signature__type">mixed</span>
+    <span class="phpdocumentor-signature__name">MODE_TURTLE</span>
+    = <span class="phpdocumentor-signature__default-value">1</span>
+</code>
+
+
+        <section class="phpdocumentor-description"></section>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+
+</article>
+            </section>
 
         
+    <section class="phpdocumentor-properties">
+        <h3 class="phpdocumentor-elements__header" id="properties">
+            Properties
+            <a href="classes/quickRdfIo-TrigSerializer.html#properties" class="headerlink"><i class="fas fa-link"></i></a>
+        </h3>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
+            -private
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="property_mode">
+        $mode
+        <a href="classes/quickRdfIo-TrigSerializer.html#property_mode" class="headerlink"><i class="fas fa-link"></i></a>
+        <span class="phpdocumentor-element__modifiers">
+                                </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/TrigSerializer.php"><a href="files/src-quickrdfio-trigserializer.html"><abbr title="src/quickRdfIo/TrigSerializer.php">TrigSerializer.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">50</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+        <span class="phpdocumentor-signature__type">int</span>
+    <span class="phpdocumentor-signature__name">$mode</span>
+    </code>
+
+        <section class="phpdocumentor-description"></section>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+
+</article>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
+            -private
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="property_strict">
+        $strict
+        <a href="classes/quickRdfIo-TrigSerializer.html#property_strict" class="headerlink"><i class="fas fa-link"></i></a>
+        <span class="phpdocumentor-element__modifiers">
+                                </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/TrigSerializer.php"><a href="files/src-quickrdfio-trigserializer.html"><abbr title="src/quickRdfIo/TrigSerializer.php">TrigSerializer.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">51</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+        <span class="phpdocumentor-signature__type">bool</span>
+    <span class="phpdocumentor-signature__name">$strict</span>
+    </code>
+
+        <section class="phpdocumentor-description"></section>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+
+</article>
+            </section>
 
             <section class="phpdocumentor-methods">
         <h3 class="phpdocumentor-elements__header" id="methods">
             Methods
-            <a href="classes/quickRdfIo-TurtleSerializer.html#methods" class="headerlink"><i class="fas fa-link"></i></a>
+            <a href="classes/quickRdfIo-TrigSerializer.html#methods" class="headerlink"><i class="fas fa-link"></i></a>
         </h3>
                     <article
         class="phpdocumentor-element
@@ -217,23 +383,48 @@
 >
     <h4 class="phpdocumentor-element__name" id="method___construct">
         __construct()
-        <a href="classes/quickRdfIo-TurtleSerializer.html#method___construct" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/quickRdfIo-TrigSerializer.html#method___construct" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/TurtleSerializer.php"><a href="files/src-quickrdfio-turtleserializer.html"><abbr title="src/quickRdfIo/TurtleSerializer.php">TurtleSerializer.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/TrigSerializer.php"><a href="files/src-quickrdfio-trigserializer.html"><abbr title="src/quickRdfIo/TrigSerializer.php">TrigSerializer.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">44</span>
+    <span class="phpdocumentor-element-found-in__line">63</span>
 
     </aside>
 
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">__construct</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
-
-        <section class="phpdocumentor-description"></section>
+                    <span class="phpdocumentor-signature__name">__construct</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$mode</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">self::MODE_TRIG</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">bool&nbsp;</span><span class="phpdocumentor-signature__argument__name">$strict</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">false</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
 
     
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$mode</span>
+                : <span class="phpdocumentor-signature__argument__return-type">int</span>
+                 = <span class="phpdocumentor-signature__argument__default-value">self::MODE_TRIG</span>            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>serialization mode <code class="prettyprint">TrigSerializer::MODE_TRIG</code> or
+<code class="prettyprint">TrigSerializer::MODE_TURTLE</code>. The exact behavior depends on the
+<code class="prettyprint">$strict</code> parameter.</p>
+</section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$strict</span>
+                : <span class="phpdocumentor-signature__argument__return-type">bool</span>
+                 = <span class="phpdocumentor-signature__argument__default-value">false</span>            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>if <code class="prettyprint">$mode</code> equal <code class="prettyprint">TrigSerializer::MODE_TURTLE</code> and
+a triple with graph not being a default graph is encountered and
+<code class="prettyprint">$strict</code> equals <code class="prettyprint">false</code>, then the graph URI is just skipped. Otherwise
+an exception is rised.</p>
+</section>
+
+            </dd>
+            </dl>
+
     
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
@@ -302,12 +493,12 @@
 >
     <h4 class="phpdocumentor-element__name" id="method_serializeStream">
         serializeStream()
-        <a href="classes/quickRdfIo-TurtleSerializer.html#method_serializeStream" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/quickRdfIo-TrigSerializer.html#method_serializeStream" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/TurtleSerializer.php"><a href="files/src-quickrdfio-turtleserializer.html"><abbr title="src/quickRdfIo/TurtleSerializer.php">TurtleSerializer.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/TrigSerializer.php"><a href="files/src-quickrdfio-trigserializer.html"><abbr title="src/quickRdfIo/TrigSerializer.php">TrigSerializer.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">55</span>
+    <span class="phpdocumentor-element-found-in__line">76</span>
 
     </aside>
 
@@ -429,7 +620,7 @@
 </section>
             </div>
         </div>
-        <a href="classes/quickRdfIo-TurtleSerializer.html#top" class="phpdocumentor-back-to-top"><i class="fas fa-chevron-circle-up"></i></a>
+        <a href="classes/quickRdfIo-TrigSerializer.html#top" class="phpdocumentor-back-to-top"><i class="fas fa-chevron-circle-up"></i></a>
 
     </main>
 

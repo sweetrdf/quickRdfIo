@@ -122,10 +122,11 @@
 <dl class="phpdocumentor-table-of-contents">
     
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/quickRdfIo-JsonLdStreamSerializer.html"><abbr title="\quickRdfIo\JsonLdStreamSerializer">JsonLdStreamSerializer</abbr></a></dt>
-        <dd>A steaming JsonLD serializer. Generates output in the (extremely) flatten
-JsonLD format which is only suitable for being parsed (or framed) with
-a Json-LD parsing library. This drawback is compenstated by high speed and
-minimal memory footprint.</dd>
+        <dd>A steaming JsonLD serializer. Generates output in the flatten JsonLD format
+and does it in a greedy way (meaning subjects/predicates/values are acumulated
+within graph/subject/predicate only if adjacent triples share the same
+graph/subject/predicate). On the brigh side it&#039;s fast and has minimal memory
+footprint.</dd>
     
     
     </dl>
