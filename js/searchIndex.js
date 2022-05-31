@@ -181,6 +181,11 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/quickRdfIo-JsonLdStreamSerializer.html#method_serializeNode"
         },                {
+            "fqsen": "\\quickRdfIo\\JsonLdStreamSerializer\u003A\u003AprepareContext\u0028\u0029",
+            "name": "prepareContext",
+            "summary": "",
+            "url": "classes/quickRdfIo-JsonLdStreamSerializer.html#method_prepareContext"
+        },                {
             "fqsen": "\\quickRdfIo\\JsonLdStreamSerializer\u003A\u003AMODE_TRIPLES",
             "name": "MODE_TRIPLES",
             "summary": "",
@@ -220,6 +225,16 @@ Search.appendIndex(
             "name": "firstValue",
             "summary": "",
             "url": "classes/quickRdfIo-JsonLdStreamSerializer.html#property_firstValue"
+        },                {
+            "fqsen": "\\quickRdfIo\\JsonLdStreamSerializer\u003A\u003A\u0024context",
+            "name": "context",
+            "summary": "",
+            "url": "classes/quickRdfIo-JsonLdStreamSerializer.html#property_context"
+        },                {
+            "fqsen": "\\quickRdfIo\\JsonLdStreamSerializer\u003A\u003A\u0024contextJson",
+            "name": "contextJson",
+            "summary": "",
+            "url": "classes/quickRdfIo-JsonLdStreamSerializer.html#property_contextJson"
         },                {
             "fqsen": "\\quickRdfIo\\NQuadsParser",
             "name": "NQuadsParser",

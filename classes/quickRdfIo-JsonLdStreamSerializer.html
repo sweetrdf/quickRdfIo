@@ -204,6 +204,20 @@ footprint.</p>
 <dd></dd>
 
                     <dt class="phpdocumentor-table-of-contents__entry -property -private">
+    <a href="classes/quickRdfIo-JsonLdStreamSerializer.html#property_context">$context</a>
+    <span>
+                        &nbsp;: array&lt;string|int, mixed&gt;            </span>
+</dt>
+<dd></dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -property -private">
+    <a href="classes/quickRdfIo-JsonLdStreamSerializer.html#property_contextJson">$contextJson</a>
+    <span>
+                        &nbsp;: string            </span>
+</dt>
+<dd></dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -property -private">
     <a href="classes/quickRdfIo-JsonLdStreamSerializer.html#property_firstValue">$firstValue</a>
     <span>
                         &nbsp;: bool            </span>
@@ -256,6 +270,13 @@ footprint.</p>
     <a href="classes/quickRdfIo-JsonLdStreamSerializer.html#method_serializeStream">serializeStream()</a>
     <span>
                                 &nbsp;: void    </span>
+</dt>
+<dd></dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -private">
+    <a href="classes/quickRdfIo-JsonLdStreamSerializer.html#method_prepareContext">prepareContext()</a>
+    <span>
+                                &nbsp;: mixed    </span>
 </dt>
 <dd></dd>
 
@@ -406,6 +427,72 @@ footprint.</p>
             Properties
             <a href="classes/quickRdfIo-JsonLdStreamSerializer.html#properties" class="headerlink"><i class="fas fa-link"></i></a>
         </h3>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
+            -private
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="property_context">
+        $context
+        <a href="classes/quickRdfIo-JsonLdStreamSerializer.html#property_context" class="headerlink"><i class="fas fa-link"></i></a>
+        <span class="phpdocumentor-element__modifiers">
+                                </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/JsonLdStreamSerializer.php"><a href="files/src-quickrdfio-jsonldstreamserializer.html"><abbr title="src/quickRdfIo/JsonLdStreamSerializer.php">JsonLdStreamSerializer.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">69</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+        <span class="phpdocumentor-signature__type">array&lt;string|int, mixed&gt;</span>
+    <span class="phpdocumentor-signature__name">$context</span>
+    </code>
+
+    
+    
+    
+
+</article>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
+            -private
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="property_contextJson">
+        $contextJson
+        <a href="classes/quickRdfIo-JsonLdStreamSerializer.html#property_contextJson" class="headerlink"><i class="fas fa-link"></i></a>
+        <span class="phpdocumentor-element__modifiers">
+                                </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/JsonLdStreamSerializer.php"><a href="files/src-quickrdfio-jsonldstreamserializer.html"><abbr title="src/quickRdfIo/JsonLdStreamSerializer.php">JsonLdStreamSerializer.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">70</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+        <span class="phpdocumentor-signature__type">string</span>
+    <span class="phpdocumentor-signature__name">$contextJson</span>
+    </code>
+
+        <section class="phpdocumentor-description"></section>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+
+</article>
                     <article
         class="
             phpdocumentor-element
@@ -596,7 +683,7 @@ footprint.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/JsonLdStreamSerializer.php"><a href="files/src-quickrdfio-jsonldstreamserializer.html"><abbr title="src/quickRdfIo/JsonLdStreamSerializer.php">JsonLdStreamSerializer.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">65</span>
+    <span class="phpdocumentor-element-found-in__line">72</span>
 
     </aside>
 
@@ -692,7 +779,7 @@ footprint.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/JsonLdStreamSerializer.php"><a href="files/src-quickrdfio-jsonldstreamserializer.html"><abbr title="src/quickRdfIo/JsonLdStreamSerializer.php">JsonLdStreamSerializer.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">80</span>
+    <span class="phpdocumentor-element-found-in__line">88</span>
 
     </aside>
 
@@ -726,8 +813,9 @@ footprint.</p>
                 : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/rdfInterface-RdfNamespace.html"><abbr title="\rdfInterface\RdfNamespace">RdfNamespace</abbr></a>|null</span>
                  = <span class="phpdocumentor-signature__argument__default-value">null</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>parameter required for the <code class="prettyprint">\rdfInterface\Serializer</code>
-interface compatibility but not being used.</p>
+                    <section class="phpdocumentor-description"><p>allows to provide context for predicates.
+For that, register full predicate URIs as namespaces in the <code class="prettyprint">$nmsp</code>
+object.</p>
 </section>
 
             </dd>
@@ -747,6 +835,50 @@ interface compatibility but not being used.</p>
             -private
                                                         "
 >
+    <h4 class="phpdocumentor-element__name" id="method_prepareContext">
+        prepareContext()
+        <a href="classes/quickRdfIo-JsonLdStreamSerializer.html#method_prepareContext" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/JsonLdStreamSerializer.php"><a href="files/src-quickrdfio-jsonldstreamserializer.html"><abbr title="src/quickRdfIo/JsonLdStreamSerializer.php">JsonLdStreamSerializer.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">201</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+                    <span class="phpdocumentor-signature__name">prepareContext</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href="classes/rdfInterface-RdfNamespace.html"><abbr title="\rdfInterface\RdfNamespace">RdfNamespace</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$context</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$context</span>
+                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/rdfInterface-RdfNamespace.html"><abbr title="\rdfInterface\RdfNamespace">RdfNamespace</abbr></a></span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">mixed</span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -private
+                                                        "
+>
     <h4 class="phpdocumentor-element__name" id="method_processGraph">
         processGraph()
         <a href="classes/quickRdfIo-JsonLdStreamSerializer.html#method_processGraph" class="headerlink"><i class="fas fa-link"></i></a>
@@ -754,7 +886,7 @@ interface compatibility but not being used.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/JsonLdStreamSerializer.php"><a href="files/src-quickrdfio-jsonldstreamserializer.html"><abbr title="src/quickRdfIo/JsonLdStreamSerializer.php">JsonLdStreamSerializer.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">110</span>
+    <span class="phpdocumentor-element-found-in__line">129</span>
 
     </aside>
 
@@ -806,7 +938,7 @@ interface compatibility but not being used.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/JsonLdStreamSerializer.php"><a href="files/src-quickrdfio-jsonldstreamserializer.html"><abbr title="src/quickRdfIo/JsonLdStreamSerializer.php">JsonLdStreamSerializer.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">149</span>
+    <span class="phpdocumentor-element-found-in__line">170</span>
 
     </aside>
 
@@ -858,7 +990,7 @@ interface compatibility but not being used.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/JsonLdStreamSerializer.php"><a href="files/src-quickrdfio-jsonldstreamserializer.html"><abbr title="src/quickRdfIo/JsonLdStreamSerializer.php">JsonLdStreamSerializer.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">139</span>
+    <span class="phpdocumentor-element-found-in__line">158</span>
 
     </aside>
 
@@ -910,7 +1042,7 @@ interface compatibility but not being used.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/JsonLdStreamSerializer.php"><a href="files/src-quickrdfio-jsonldstreamserializer.html"><abbr title="src/quickRdfIo/JsonLdStreamSerializer.php">JsonLdStreamSerializer.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">126</span>
+    <span class="phpdocumentor-element-found-in__line">145</span>
 
     </aside>
 
@@ -962,7 +1094,7 @@ interface compatibility but not being used.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/JsonLdStreamSerializer.php"><a href="files/src-quickrdfio-jsonldstreamserializer.html"><abbr title="src/quickRdfIo/JsonLdStreamSerializer.php">JsonLdStreamSerializer.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">155</span>
+    <span class="phpdocumentor-element-found-in__line">176</span>
 
     </aside>
 
@@ -1006,7 +1138,7 @@ interface compatibility but not being used.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/JsonLdStreamSerializer.php"><a href="files/src-quickrdfio-jsonldstreamserializer.html"><abbr title="src/quickRdfIo/JsonLdStreamSerializer.php">JsonLdStreamSerializer.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">160</span>
+    <span class="phpdocumentor-element-found-in__line">181</span>
 
     </aside>
 
