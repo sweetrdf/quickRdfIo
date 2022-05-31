@@ -62,6 +62,13 @@ class JsonLdStreamSerializer implements \rdfInterface\Serializer {
     private iTerm $prevPredicate;
     private bool $firstValue;
 
+    /**
+     * 
+     * @var array<string, string>
+     */
+    private array $context;
+    private string $contextJson;
+
     public function __construct(int $mode = self::MODE_GRAPH) {
         if (!in_array($mode, [self::MODE_TRIPLES, self::MODE_GRAPH])) {
             throw new RdfIoException("Wrong mode");
@@ -73,8 +80,9 @@ class JsonLdStreamSerializer implements \rdfInterface\Serializer {
      * 
      * @param resource | StreamInterface $output output to serialize to
      * @param iQuadIterator $graph data to serialize
-     * @param iRdfNamespace|null $nmsp parameter required for the `\rdfInterface\Serializer`
-     *   interface compatibility but not being used.
+     * @param iRdfNamespace|null $nmsp allows to provide context for predicates.
+     *   For that, register full predicate URIs as namespaces in the `$nmsp`
+     *   object.
      * @return void
      */
     public function serializeStream($output, iQuadIterator $graph,
@@ -89,7 +97,15 @@ class JsonLdStreamSerializer implements \rdfInterface\Serializer {
         unset($this->prevGraph);
         unset($this->prevSubject);
         unset($this->prevPredicate);
+        $this->context     = [];
+        $this->contextJson = '';
+        if ($nmsp !== null) {
+            $this->prepareContext($nmsp);
+        }
 
+        if ($this->mode === self::MODE_TRIPLES && count($this->context) > 0) {
+            $output->write('{' . $this->contextJson . '"@graph":');
+        }
         $output->write('[');
         foreach ($graph as $i) {
             if ($this->mode === self::MODE_GRAPH) {
@@ -104,6 +120,9 @@ class JsonLdStreamSerializer implements \rdfInterface\Serializer {
         $end .= isset($this->prevSubject) ? '}' : '';
         $end .= isset($this->prevGraph) ? ']}' : '';
         $end .= ']';
+        if ($this->mode === self::MODE_TRIPLES && count($this->context) > 0) {
+            $end .= '}';
+        }
         $output->write($end);
     }
 
@@ -111,13 +130,13 @@ class JsonLdStreamSerializer implements \rdfInterface\Serializer {
                                   iDefaultGraph | iNamedNode | iBlankNode $graph): void {
         $graphUri = $graph instanceof iDefaultGraph ? self::DEFAULT_GRAPH_ID : $graph->getValue();
         if (!isset($this->prevGraph)) {
-            $output->write('{' . $this->serializeId($graphUri) . ',"@graph":[');
+            $output->write('{' . $this->contextJson . $this->serializeId($graphUri) . ',"@graph":[');
             unset($this->prevSubject);
         } elseif (!$this->prevGraph->equals($graph)) {
             $end = '';
             $end .= isset($this->prevPredicate) ? ']' : '';
             $end .= isset($this->prevSubject) ? '}' : '';
-            $output->write($end . ']},{' . $this->serializeId($graphUri) . ',"@graph":[');
+            $output->write($end . ']},{' . $this->contextJson . $this->serializeId($graphUri) . ',"@graph":[');
             unset($this->prevSubject);
         }
         $this->prevGraph = $graph;
@@ -140,7 +159,9 @@ class JsonLdStreamSerializer implements \rdfInterface\Serializer {
                                       iNamedNode $predicate): void {
         if (!isset($this->prevPredicate) || !$this->prevPredicate->equals($predicate)) {
             $coma             = !isset($this->prevPredicate) ? ',' : '],';
-            $output->write($coma . json_encode($predicate->getValue(), JSON_UNESCAPED_SLASHES) . ':[');
+            $uri              = $predicate->getValue();
+            $uri              = $this->context[$uri] ?? $uri;
+            $output->write($coma . json_encode($uri, JSON_UNESCAPED_SLASHES) . ':[');
             $this->firstValue = true;
         }
         $this->prevPredicate = $predicate;
@@ -175,5 +196,10 @@ class JsonLdStreamSerializer implements \rdfInterface\Serializer {
         } else {
             throw new RdfIoException("Can't serialize object of class " . get_class($node));
         }
+    }
+
+    private function prepareContext(iRdfNamespace $context) {
+        $this->context     = array_flip($context->getAll());
+        $this->contextJson = '"@context":' . json_encode($this->context, JSON_UNESCAPED_SLASHES) . ",";
     }
 }
