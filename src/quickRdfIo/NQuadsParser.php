@@ -222,7 +222,7 @@ class NQuadsParser implements iParser, iQuadIterator {
         return $this->quads->current();
     }
 
-    public function key() {
+    public function key(): mixed {
         return $this->quads->key();
     }
 

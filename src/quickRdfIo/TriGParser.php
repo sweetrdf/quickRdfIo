@@ -114,7 +114,7 @@ class TriGParser implements iParser, iQuadIterator {
         return $this->quadsBuffer->current();
     }
 
-    public function key() {
+    public function key(): mixed {
         return $this->n;
     }
 
