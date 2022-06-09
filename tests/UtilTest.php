@@ -73,7 +73,7 @@ class UtilTest extends \PHPUnit\Framework\TestCase {
         $nmsp->add('http://www.w3.org/1999/02/22-rdf-syntax-ns#', 'rdf');
 
         $formats = [
-            'ttl', 'turtle', 'n3', 'text/turle', 'application/turtle', 'text/n3',
+            'ttl', 'turtle', 'n3', 'text/turtle', 'application/turtle', 'text/n3',
             'text/rdf+n3', 'application/rdf+n3', 'trig', 'application/trig',
             'nt', 'ntriples', 'ntriplesstar', 'n-triples', 'n-triples-star', 'application/n-triples',
             'text/plain',
