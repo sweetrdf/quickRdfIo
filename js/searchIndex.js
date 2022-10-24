@@ -2868,13 +2868,33 @@ Search.appendIndex(
         },                {
             "fqsen": "\\ML\\JsonLD\\Test\\NQuadsTest\u003A\u003AtestInvalidParse\u0028\u0029",
             "name": "testInvalidParse",
-            "summary": "Tests\u0020the\u0020expansion\u0020API",
+            "summary": "Tests\u0020that\u0020parsing\u0020an\u0020invalid\u0020NQuad\u0020file\u0020fails",
             "url": "classes/ML-JsonLD-Test-NQuadsTest.html#method_testInvalidParse"
         },                {
             "fqsen": "\\ML\\JsonLD\\Test\\NQuadsTest\u003A\u003AtestEscaping\u0028\u0029",
             "name": "testEscaping",
             "summary": "Tests\u0020escaping",
             "url": "classes/ML-JsonLD-Test-NQuadsTest.html#method_testEscaping"
+        },                {
+            "fqsen": "\\ML\\JsonLD\\Test\\NQuadsTest\u003A\u003AtestParseBlankNodes\u0028\u0029",
+            "name": "testParseBlankNodes",
+            "summary": "Tests\u0020blank\u0020node\u0020label\u0020parsing",
+            "url": "classes/ML-JsonLD-Test-NQuadsTest.html#method_testParseBlankNodes"
+        },                {
+            "fqsen": "\\ML\\JsonLD\\Test\\NQuadsTest\u003A\u003AtestParseBlankNodeDashAtTheBeginning\u0028\u0029",
+            "name": "testParseBlankNodeDashAtTheBeginning",
+            "summary": "Tests\u0020that\u0020parsing\u0020fails\u0020for\u0020blank\u0020node\u0020labels\u0020beginning\u0020with\u0020\u0022\u002D\u0022",
+            "url": "classes/ML-JsonLD-Test-NQuadsTest.html#method_testParseBlankNodeDashAtTheBeginning"
+        },                {
+            "fqsen": "\\ML\\JsonLD\\Test\\NQuadsTest\u003A\u003AtestParseBlankNodePeriodAtTheBeginning\u0028\u0029",
+            "name": "testParseBlankNodePeriodAtTheBeginning",
+            "summary": "Tests\u0020that\u0020parsing\u0020fails\u0020for\u0020blank\u0020node\u0020labels\u0020beginning\u0020with\u0020\u0022.\u0022",
+            "url": "classes/ML-JsonLD-Test-NQuadsTest.html#method_testParseBlankNodePeriodAtTheBeginning"
+        },                {
+            "fqsen": "\\ML\\JsonLD\\Test\\NQuadsTest\u003A\u003AtestParseBlankNodePeriodAtTheEnd\u0028\u0029",
+            "name": "testParseBlankNodePeriodAtTheEnd",
+            "summary": "Tests\u0020that\u0020parsing\u0020fails\u0020for\u0020blank\u0020node\u0020labels\u0020ending\u0020with\u0020\u0022.\u0022",
+            "url": "classes/ML-JsonLD-Test-NQuadsTest.html#method_testParseBlankNodePeriodAtTheEnd"
         },                {
             "fqsen": "\\ML\\JsonLD\\Test\\TestManifestIterator",
             "name": "TestManifestIterator",
@@ -3218,7 +3238,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\rdfHelpers\\GenericTermIterator",
             "name": "GenericTermIterator",
-            "summary": "Wrapper\u0020making\u0020almost\u0020anything\u0020\u0028e.g.\u0020array,\u0020generator\u0020or\u0020a\u0020single\u0020Quad\u0020object\u0029\na\u0020QuadIterator.",
+            "summary": "Wrapper\u0020making\u0020almost\u0020anything\u0020\u0028e.g.\u0020array,\u0020generator\u0020or\u0020a\u0020single\nQuadInterface\u0020object\u0029\u0020a\u0020QuadIteratorInterface.",
             "url": "classes/rdfHelpers-GenericTermIterator.html"
         },                {
             "fqsen": "\\rdfHelpers\\GenericTermIterator\u003A\u003A__construct\u0028\u0029",
@@ -3356,470 +3376,475 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/rdfHelpers-RdfNamespace.html#property_namespaces"
         },                {
-            "fqsen": "\\rdfInterface\\BlankNode",
-            "name": "BlankNode",
+            "fqsen": "\\rdfInterface\\BlankNodeInterface",
+            "name": "BlankNodeInterface",
             "summary": "Description\u0020of\u0020RdfTerm",
-            "url": "classes/rdfInterface-BlankNode.html"
+            "url": "classes/rdfInterface-BlankNodeInterface.html"
         },                {
-            "fqsen": "\\rdfInterface\\BlankNode\u003A\u003A__construct\u0028\u0029",
+            "fqsen": "\\rdfInterface\\BlankNodeInterface\u003A\u003A__construct\u0028\u0029",
             "name": "__construct",
             "summary": "",
-            "url": "classes/rdfInterface-BlankNode.html#method___construct"
+            "url": "classes/rdfInterface-BlankNodeInterface.html#method___construct"
         },                {
-            "fqsen": "\\rdfInterface\\DataFactory",
-            "name": "DataFactory",
+            "fqsen": "\\rdfInterface\\DataFactoryInterface",
+            "name": "DataFactoryInterface",
             "summary": "",
-            "url": "classes/rdfInterface-DataFactory.html"
+            "url": "classes/rdfInterface-DataFactoryInterface.html"
         },                {
-            "fqsen": "\\rdfInterface\\DataFactory\u003A\u003AnamedNode\u0028\u0029",
+            "fqsen": "\\rdfInterface\\DataFactoryInterface\u003A\u003AnamedNode\u0028\u0029",
             "name": "namedNode",
             "summary": "",
-            "url": "classes/rdfInterface-DataFactory.html#method_namedNode"
+            "url": "classes/rdfInterface-DataFactoryInterface.html#method_namedNode"
         },                {
-            "fqsen": "\\rdfInterface\\DataFactory\u003A\u003AblankNode\u0028\u0029",
+            "fqsen": "\\rdfInterface\\DataFactoryInterface\u003A\u003AblankNode\u0028\u0029",
             "name": "blankNode",
             "summary": "",
-            "url": "classes/rdfInterface-DataFactory.html#method_blankNode"
+            "url": "classes/rdfInterface-DataFactoryInterface.html#method_blankNode"
         },                {
-            "fqsen": "\\rdfInterface\\DataFactory\u003A\u003Aliteral\u0028\u0029",
+            "fqsen": "\\rdfInterface\\DataFactoryInterface\u003A\u003Aliteral\u0028\u0029",
             "name": "literal",
             "summary": "",
-            "url": "classes/rdfInterface-DataFactory.html#method_literal"
+            "url": "classes/rdfInterface-DataFactoryInterface.html#method_literal"
         },                {
-            "fqsen": "\\rdfInterface\\DataFactory\u003A\u003AdefaultGraph\u0028\u0029",
+            "fqsen": "\\rdfInterface\\DataFactoryInterface\u003A\u003AdefaultGraph\u0028\u0029",
             "name": "defaultGraph",
             "summary": "",
-            "url": "classes/rdfInterface-DataFactory.html#method_defaultGraph"
+            "url": "classes/rdfInterface-DataFactoryInterface.html#method_defaultGraph"
         },                {
-            "fqsen": "\\rdfInterface\\DataFactory\u003A\u003Aquad\u0028\u0029",
+            "fqsen": "\\rdfInterface\\DataFactoryInterface\u003A\u003Aquad\u0028\u0029",
             "name": "quad",
             "summary": "",
-            "url": "classes/rdfInterface-DataFactory.html#method_quad"
+            "url": "classes/rdfInterface-DataFactoryInterface.html#method_quad"
         },                {
-            "fqsen": "\\rdfInterface\\Dataset",
-            "name": "Dataset",
+            "fqsen": "\\rdfInterface\\DatasetCompareInterface",
+            "name": "DatasetCompareInterface",
             "summary": "Main,\u0020edge\u0028quad\u0029\u0020and\u0020Dataset\u002Doriented\u0020Dataset\u0020API",
-            "url": "classes/rdfInterface-Dataset.html"
+            "url": "classes/rdfInterface-DatasetCompareInterface.html"
         },                {
-            "fqsen": "\\rdfInterface\\Dataset\u003A\u003A__construct\u0028\u0029",
-            "name": "__construct",
-            "summary": "",
-            "url": "classes/rdfInterface-Dataset.html#method___construct"
-        },                {
-            "fqsen": "\\rdfInterface\\Dataset\u003A\u003A__toString\u0028\u0029",
-            "name": "__toString",
-            "summary": "",
-            "url": "classes/rdfInterface-Dataset.html#method___toString"
-        },                {
-            "fqsen": "\\rdfInterface\\Dataset\u003A\u003Aequals\u0028\u0029",
-            "name": "equals",
-            "summary": "",
-            "url": "classes/rdfInterface-Dataset.html#method_equals"
-        },                {
-            "fqsen": "\\rdfInterface\\Dataset\u003A\u003Acopy\u0028\u0029",
-            "name": "copy",
-            "summary": "Creates\u0020a\u0020copy\u0020of\u0020the\u0020dataset.",
-            "url": "classes/rdfInterface-Dataset.html#method_copy"
-        },                {
-            "fqsen": "\\rdfInterface\\Dataset\u003A\u003AcopyExcept\u0028\u0029",
-            "name": "copyExcept",
-            "summary": "Creates\u0020a\u0020copy\u0020of\u0020the\u0020dataset.",
-            "url": "classes/rdfInterface-Dataset.html#method_copyExcept"
-        },                {
-            "fqsen": "\\rdfInterface\\Dataset\u003A\u003Aunion\u0028\u0029",
-            "name": "union",
-            "summary": "Returns\u0020a\u0020new\u0020dataset\u0020being\u0020a\u0020union\u0020of\u0020the\u0020current\u0020one\u0020and\u0020the\u0020\u0024other\u0020one.",
-            "url": "classes/rdfInterface-Dataset.html#method_union"
-        },                {
-            "fqsen": "\\rdfInterface\\Dataset\u003A\u003Axor\u0028\u0029",
-            "name": "xor",
-            "summary": "Returns\u0020a\u0020dataset\u0020being\u0020a\u0020symmetric\u0020difference\u0020of\u0020the\u0020current\u0020dataset\u0020and\nthe\u0020\u0024other\u0020one.",
-            "url": "classes/rdfInterface-Dataset.html#method_xor"
-        },                {
-            "fqsen": "\\rdfInterface\\Dataset\u003A\u003Aadd\u0028\u0029",
-            "name": "add",
-            "summary": "Adds\u0020quad\u0028s\u0029\u0020to\u0020the\u0020dataset.",
-            "url": "classes/rdfInterface-Dataset.html#method_add"
-        },                {
-            "fqsen": "\\rdfInterface\\Dataset\u003A\u003Adelete\u0028\u0029",
-            "name": "delete",
-            "summary": "In\u002Dplace\u0020removes\u0020quads\u0020from\u0020the\u0020dataset.",
-            "url": "classes/rdfInterface-Dataset.html#method_delete"
-        },                {
-            "fqsen": "\\rdfInterface\\Dataset\u003A\u003AdeleteExcept\u0028\u0029",
-            "name": "deleteExcept",
-            "summary": "In\u002Dplace\u0020removes\u0020quads\u0020from\u0020the\u0020dataset.",
-            "url": "classes/rdfInterface-Dataset.html#method_deleteExcept"
-        },                {
-            "fqsen": "\\rdfInterface\\Dataset\u003A\u003AforEach\u0028\u0029",
-            "name": "forEach",
-            "summary": "Iterates\u0020trough\u0020all\u0020quads\u0020replacing\u0020them\u0020with\u0020a\u0020callback\u0020result.",
-            "url": "classes/rdfInterface-Dataset.html#method_forEach"
-        },                {
-            "fqsen": "\\rdfInterface\\Dataset\u003A\u003AoffsetExists\u0028\u0029",
-            "name": "offsetExists",
-            "summary": "Checks\u0020if\u0020a\u0020given\u0020offset\u0020exists.",
-            "url": "classes/rdfInterface-Dataset.html#method_offsetExists"
-        },                {
-            "fqsen": "\\rdfInterface\\Dataset\u003A\u003AoffsetGet\u0028\u0029",
-            "name": "offsetGet",
-            "summary": "Returns\u0020a\u0020quad\u0020matching\u0020the\u0020\u0024offset.",
-            "url": "classes/rdfInterface-Dataset.html#method_offsetGet"
-        },                {
-            "fqsen": "\\rdfInterface\\Dataset\u003A\u003AoffsetSet\u0028\u0029",
-            "name": "offsetSet",
-            "summary": "Assigns\u0020a\u0020new\u0020value\u0020to\u0020the\u0020quad\u0020matching\u0020the\u0020\u0024offset.",
-            "url": "classes/rdfInterface-Dataset.html#method_offsetSet"
-        },                {
-            "fqsen": "\\rdfInterface\\Dataset\u003A\u003AoffsetUnset\u0028\u0029",
-            "name": "offsetUnset",
-            "summary": "Removes\u0020a\u0020quad\u0020matching\u0020the\u0020\u0024offset.",
-            "url": "classes/rdfInterface-Dataset.html#method_offsetUnset"
-        },                {
-            "fqsen": "\\rdfInterface\\Dataset\u003A\u003Acurrent\u0028\u0029",
-            "name": "current",
-            "summary": "Returns\u0020the\u0020current\u0020quad.",
-            "url": "classes/rdfInterface-Dataset.html#method_current"
-        },                {
-            "fqsen": "\\rdfInterface\\DatasetCompare",
-            "name": "DatasetCompare",
-            "summary": "Main,\u0020edge\u0028quad\u0029\u0020and\u0020Dataset\u002Doriented\u0020Dataset\u0020API",
-            "url": "classes/rdfInterface-DatasetCompare.html"
-        },                {
-            "fqsen": "\\rdfInterface\\DatasetCompare\u003A\u003Aevery\u0028\u0029",
+            "fqsen": "\\rdfInterface\\DatasetCompareInterface\u003A\u003Aevery\u0028\u0029",
             "name": "every",
             "summary": "",
-            "url": "classes/rdfInterface-DatasetCompare.html#method_every"
+            "url": "classes/rdfInterface-DatasetCompareInterface.html#method_every"
         },                {
-            "fqsen": "\\rdfInterface\\DatasetCompare\u003A\u003Anone\u0028\u0029",
+            "fqsen": "\\rdfInterface\\DatasetCompareInterface\u003A\u003Anone\u0028\u0029",
             "name": "none",
             "summary": "",
-            "url": "classes/rdfInterface-DatasetCompare.html#method_none"
+            "url": "classes/rdfInterface-DatasetCompareInterface.html#method_none"
         },                {
-            "fqsen": "\\rdfInterface\\DatasetCompare\u003A\u003Aany\u0028\u0029",
+            "fqsen": "\\rdfInterface\\DatasetCompareInterface\u003A\u003Aany\u0028\u0029",
             "name": "any",
             "summary": "",
-            "url": "classes/rdfInterface-DatasetCompare.html#method_any"
+            "url": "classes/rdfInterface-DatasetCompareInterface.html#method_any"
         },                {
-            "fqsen": "\\rdfInterface\\DatasetListQuadParts",
-            "name": "DatasetListQuadParts",
+            "fqsen": "\\rdfInterface\\DatasetInterface",
+            "name": "DatasetInterface",
+            "summary": "Main,\u0020edge\u0028quad\u0029\u0020and\u0020Dataset\u002Doriented\u0020Dataset\u0020API",
+            "url": "classes/rdfInterface-DatasetInterface.html"
+        },                {
+            "fqsen": "\\rdfInterface\\DatasetInterface\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "",
+            "url": "classes/rdfInterface-DatasetInterface.html#method___construct"
+        },                {
+            "fqsen": "\\rdfInterface\\DatasetInterface\u003A\u003A__toString\u0028\u0029",
+            "name": "__toString",
+            "summary": "",
+            "url": "classes/rdfInterface-DatasetInterface.html#method___toString"
+        },                {
+            "fqsen": "\\rdfInterface\\DatasetInterface\u003A\u003Aequals\u0028\u0029",
+            "name": "equals",
+            "summary": "",
+            "url": "classes/rdfInterface-DatasetInterface.html#method_equals"
+        },                {
+            "fqsen": "\\rdfInterface\\DatasetInterface\u003A\u003Acopy\u0028\u0029",
+            "name": "copy",
+            "summary": "Creates\u0020a\u0020copy\u0020of\u0020the\u0020dataset.",
+            "url": "classes/rdfInterface-DatasetInterface.html#method_copy"
+        },                {
+            "fqsen": "\\rdfInterface\\DatasetInterface\u003A\u003AcopyExcept\u0028\u0029",
+            "name": "copyExcept",
+            "summary": "Creates\u0020a\u0020copy\u0020of\u0020the\u0020dataset.",
+            "url": "classes/rdfInterface-DatasetInterface.html#method_copyExcept"
+        },                {
+            "fqsen": "\\rdfInterface\\DatasetInterface\u003A\u003Aunion\u0028\u0029",
+            "name": "union",
+            "summary": "Returns\u0020a\u0020new\u0020dataset\u0020being\u0020a\u0020union\u0020of\u0020the\u0020current\u0020one\u0020and\u0020the\u0020\u0024other\u0020one.",
+            "url": "classes/rdfInterface-DatasetInterface.html#method_union"
+        },                {
+            "fqsen": "\\rdfInterface\\DatasetInterface\u003A\u003Axor\u0028\u0029",
+            "name": "xor",
+            "summary": "Returns\u0020a\u0020dataset\u0020being\u0020a\u0020symmetric\u0020difference\u0020of\u0020the\u0020current\u0020dataset\u0020and\nthe\u0020\u0024other\u0020one.",
+            "url": "classes/rdfInterface-DatasetInterface.html#method_xor"
+        },                {
+            "fqsen": "\\rdfInterface\\DatasetInterface\u003A\u003Aadd\u0028\u0029",
+            "name": "add",
+            "summary": "Adds\u0020quad\u0028s\u0029\u0020to\u0020the\u0020dataset.",
+            "url": "classes/rdfInterface-DatasetInterface.html#method_add"
+        },                {
+            "fqsen": "\\rdfInterface\\DatasetInterface\u003A\u003Adelete\u0028\u0029",
+            "name": "delete",
+            "summary": "In\u002Dplace\u0020removes\u0020quads\u0020from\u0020the\u0020dataset.",
+            "url": "classes/rdfInterface-DatasetInterface.html#method_delete"
+        },                {
+            "fqsen": "\\rdfInterface\\DatasetInterface\u003A\u003AdeleteExcept\u0028\u0029",
+            "name": "deleteExcept",
+            "summary": "In\u002Dplace\u0020removes\u0020quads\u0020from\u0020the\u0020dataset.",
+            "url": "classes/rdfInterface-DatasetInterface.html#method_deleteExcept"
+        },                {
+            "fqsen": "\\rdfInterface\\DatasetInterface\u003A\u003AforEach\u0028\u0029",
+            "name": "forEach",
+            "summary": "Iterates\u0020trough\u0020all\u0020quads\u0020replacing\u0020them\u0020with\u0020a\u0020callback\u0020result.",
+            "url": "classes/rdfInterface-DatasetInterface.html#method_forEach"
+        },                {
+            "fqsen": "\\rdfInterface\\DatasetInterface\u003A\u003AoffsetExists\u0028\u0029",
+            "name": "offsetExists",
+            "summary": "Checks\u0020if\u0020a\u0020given\u0020offset\u0020exists.",
+            "url": "classes/rdfInterface-DatasetInterface.html#method_offsetExists"
+        },                {
+            "fqsen": "\\rdfInterface\\DatasetInterface\u003A\u003AoffsetGet\u0028\u0029",
+            "name": "offsetGet",
+            "summary": "Returns\u0020a\u0020quad\u0020matching\u0020the\u0020\u0024offset.",
+            "url": "classes/rdfInterface-DatasetInterface.html#method_offsetGet"
+        },                {
+            "fqsen": "\\rdfInterface\\DatasetInterface\u003A\u003AoffsetSet\u0028\u0029",
+            "name": "offsetSet",
+            "summary": "Assigns\u0020a\u0020new\u0020value\u0020to\u0020the\u0020quad\u0020matching\u0020the\u0020\u0024offset.",
+            "url": "classes/rdfInterface-DatasetInterface.html#method_offsetSet"
+        },                {
+            "fqsen": "\\rdfInterface\\DatasetInterface\u003A\u003AoffsetUnset\u0028\u0029",
+            "name": "offsetUnset",
+            "summary": "Removes\u0020a\u0020quad\u0020matching\u0020the\u0020\u0024offset.",
+            "url": "classes/rdfInterface-DatasetInterface.html#method_offsetUnset"
+        },                {
+            "fqsen": "\\rdfInterface\\DatasetListQuadPartsInterface",
+            "name": "DatasetListQuadPartsInterface",
             "summary": "Set\u0020of\u0020methods\u0020for\u0020listing\u0020distinct\u0020Terms\u0020being\u0020used\u0020on\u0020a\u0020given\u0020position\nof\u0020dataset\u0020quads.",
-            "url": "classes/rdfInterface-DatasetListQuadParts.html"
+            "url": "classes/rdfInterface-DatasetListQuadPartsInterface.html"
         },                {
-            "fqsen": "\\rdfInterface\\DatasetListQuadParts\u003A\u003AlistSubjects\u0028\u0029",
+            "fqsen": "\\rdfInterface\\DatasetListQuadPartsInterface\u003A\u003AlistSubjects\u0028\u0029",
             "name": "listSubjects",
             "summary": "",
-            "url": "classes/rdfInterface-DatasetListQuadParts.html#method_listSubjects"
+            "url": "classes/rdfInterface-DatasetListQuadPartsInterface.html#method_listSubjects"
         },                {
-            "fqsen": "\\rdfInterface\\DatasetListQuadParts\u003A\u003AlistPredicates\u0028\u0029",
+            "fqsen": "\\rdfInterface\\DatasetListQuadPartsInterface\u003A\u003AlistPredicates\u0028\u0029",
             "name": "listPredicates",
             "summary": "",
-            "url": "classes/rdfInterface-DatasetListQuadParts.html#method_listPredicates"
+            "url": "classes/rdfInterface-DatasetListQuadPartsInterface.html#method_listPredicates"
         },                {
-            "fqsen": "\\rdfInterface\\DatasetListQuadParts\u003A\u003AlistObjects\u0028\u0029",
+            "fqsen": "\\rdfInterface\\DatasetListQuadPartsInterface\u003A\u003AlistObjects\u0028\u0029",
             "name": "listObjects",
             "summary": "",
-            "url": "classes/rdfInterface-DatasetListQuadParts.html#method_listObjects"
+            "url": "classes/rdfInterface-DatasetListQuadPartsInterface.html#method_listObjects"
         },                {
-            "fqsen": "\\rdfInterface\\DatasetListQuadParts\u003A\u003AlistGraphs\u0028\u0029",
+            "fqsen": "\\rdfInterface\\DatasetListQuadPartsInterface\u003A\u003AlistGraphs\u0028\u0029",
             "name": "listGraphs",
             "summary": "",
-            "url": "classes/rdfInterface-DatasetListQuadParts.html#method_listGraphs"
+            "url": "classes/rdfInterface-DatasetListQuadPartsInterface.html#method_listGraphs"
         },                {
-            "fqsen": "\\rdfInterface\\DatasetMapReduce",
-            "name": "DatasetMapReduce",
+            "fqsen": "\\rdfInterface\\DatasetMapReduceInterface",
+            "name": "DatasetMapReduceInterface",
             "summary": "Immutable\u0020edge\u0020processing\u0020methods",
-            "url": "classes/rdfInterface-DatasetMapReduce.html"
+            "url": "classes/rdfInterface-DatasetMapReduceInterface.html"
         },                {
-            "fqsen": "\\rdfInterface\\DatasetMapReduce\u003A\u003Amap\u0028\u0029",
+            "fqsen": "\\rdfInterface\\DatasetMapReduceInterface\u003A\u003Amap\u0028\u0029",
             "name": "map",
             "summary": "",
-            "url": "classes/rdfInterface-DatasetMapReduce.html#method_map"
+            "url": "classes/rdfInterface-DatasetMapReduceInterface.html#method_map"
         },                {
-            "fqsen": "\\rdfInterface\\DatasetMapReduce\u003A\u003Areduce\u0028\u0029",
+            "fqsen": "\\rdfInterface\\DatasetMapReduceInterface\u003A\u003Areduce\u0028\u0029",
             "name": "reduce",
             "summary": "",
-            "url": "classes/rdfInterface-DatasetMapReduce.html#method_reduce"
+            "url": "classes/rdfInterface-DatasetMapReduceInterface.html#method_reduce"
         },                {
-            "fqsen": "\\rdfInterface\\DefaultGraph",
-            "name": "DefaultGraph",
+            "fqsen": "\\rdfInterface\\DefaultGraphInterface",
+            "name": "DefaultGraphInterface",
             "summary": "Description\u0020of\u0020RdfTerm",
-            "url": "classes/rdfInterface-DefaultGraph.html"
+            "url": "classes/rdfInterface-DefaultGraphInterface.html"
         },                {
-            "fqsen": "\\rdfInterface\\DefaultGraph\u003A\u003A__construct\u0028\u0029",
+            "fqsen": "\\rdfInterface\\DefaultGraphInterface\u003A\u003A__construct\u0028\u0029",
             "name": "__construct",
             "summary": "",
-            "url": "classes/rdfInterface-DefaultGraph.html#method___construct"
+            "url": "classes/rdfInterface-DefaultGraphInterface.html#method___construct"
         },                {
-            "fqsen": "\\rdfInterface\\Literal",
-            "name": "Literal",
+            "fqsen": "\\rdfInterface\\LiteralInterface",
+            "name": "LiteralInterface",
             "summary": "Description\u0020of\u0020RdfTerm",
-            "url": "classes/rdfInterface-Literal.html"
+            "url": "classes/rdfInterface-LiteralInterface.html"
         },                {
-            "fqsen": "\\rdfInterface\\Literal\u003A\u003A__construct\u0028\u0029",
+            "fqsen": "\\rdfInterface\\LiteralInterface\u003A\u003A__construct\u0028\u0029",
             "name": "__construct",
             "summary": "Creates\u0020a\u0020new\u0020literal.",
-            "url": "classes/rdfInterface-Literal.html#method___construct"
+            "url": "classes/rdfInterface-LiteralInterface.html#method___construct"
         },                {
-            "fqsen": "\\rdfInterface\\Literal\u003A\u003AgetValue\u0028\u0029",
+            "fqsen": "\\rdfInterface\\LiteralInterface\u003A\u003AgetValue\u0028\u0029",
             "name": "getValue",
             "summary": "Returns\u0020literal\u0027s\u0020value.",
-            "url": "classes/rdfInterface-Literal.html#method_getValue"
+            "url": "classes/rdfInterface-LiteralInterface.html#method_getValue"
         },                {
-            "fqsen": "\\rdfInterface\\Literal\u003A\u003AgetLang\u0028\u0029",
+            "fqsen": "\\rdfInterface\\LiteralInterface\u003A\u003AgetLang\u0028\u0029",
             "name": "getLang",
             "summary": "Returns\u0020literal\u0027s\u0020language\u0020tag.",
-            "url": "classes/rdfInterface-Literal.html#method_getLang"
+            "url": "classes/rdfInterface-LiteralInterface.html#method_getLang"
         },                {
-            "fqsen": "\\rdfInterface\\Literal\u003A\u003AgetDatatype\u0028\u0029",
+            "fqsen": "\\rdfInterface\\LiteralInterface\u003A\u003AgetDatatype\u0028\u0029",
             "name": "getDatatype",
             "summary": "Returns\u0020literal\u0027s\u0020datatype.",
-            "url": "classes/rdfInterface-Literal.html#method_getDatatype"
+            "url": "classes/rdfInterface-LiteralInterface.html#method_getDatatype"
         },                {
-            "fqsen": "\\rdfInterface\\Literal\u003A\u003AwithValue\u0028\u0029",
+            "fqsen": "\\rdfInterface\\LiteralInterface\u003A\u003AwithValue\u0028\u0029",
             "name": "withValue",
             "summary": "Returns\u0020a\u0020new\u0020literal\u0020being\u0020a\u0020copy\u0020of\u0020this\u0020one\u0020with\u0020a\u0020given\u0020value.",
-            "url": "classes/rdfInterface-Literal.html#method_withValue"
+            "url": "classes/rdfInterface-LiteralInterface.html#method_withValue"
         },                {
-            "fqsen": "\\rdfInterface\\Literal\u003A\u003AwithLang\u0028\u0029",
+            "fqsen": "\\rdfInterface\\LiteralInterface\u003A\u003AwithLang\u0028\u0029",
             "name": "withLang",
             "summary": "Returns\u0020a\u0020new\u0020literal\u0020being\u0020a\u0020copy\u0020of\u0020this\u0020one\u0020with\u0020a\u0020lang\u0020tag\u0020set\u0020to\na\u0020given\u0020value.",
-            "url": "classes/rdfInterface-Literal.html#method_withLang"
+            "url": "classes/rdfInterface-LiteralInterface.html#method_withLang"
         },                {
-            "fqsen": "\\rdfInterface\\Literal\u003A\u003AwithDatatype\u0028\u0029",
+            "fqsen": "\\rdfInterface\\LiteralInterface\u003A\u003AwithDatatype\u0028\u0029",
             "name": "withDatatype",
             "summary": "Returns\u0020a\u0020new\u0020literal\u0020being\u0020a\u0020copy\u0020with\u0020this\u0020one\u0020with\u0020datatype\u0020set\u0020to\na\u0020given\u0020value.",
-            "url": "classes/rdfInterface-Literal.html#method_withDatatype"
+            "url": "classes/rdfInterface-LiteralInterface.html#method_withDatatype"
         },                {
-            "fqsen": "\\rdfInterface\\Literal\u003A\u003ACAST_LEXICAL_FORM",
+            "fqsen": "\\rdfInterface\\LiteralInterface\u003A\u003ACAST_LEXICAL_FORM",
             "name": "CAST_LEXICAL_FORM",
             "summary": "",
-            "url": "classes/rdfInterface-Literal.html#constant_CAST_LEXICAL_FORM"
+            "url": "classes/rdfInterface-LiteralInterface.html#constant_CAST_LEXICAL_FORM"
         },                {
-            "fqsen": "\\rdfInterface\\Literal\u003A\u003ACAST_DATATYPE",
+            "fqsen": "\\rdfInterface\\LiteralInterface\u003A\u003ACAST_DATATYPE",
             "name": "CAST_DATATYPE",
             "summary": "",
-            "url": "classes/rdfInterface-Literal.html#constant_CAST_DATATYPE"
+            "url": "classes/rdfInterface-LiteralInterface.html#constant_CAST_DATATYPE"
         },                {
-            "fqsen": "\\rdfInterface\\NamedNode",
-            "name": "NamedNode",
+            "fqsen": "\\rdfInterface\\NamedNodeInterface",
+            "name": "NamedNodeInterface",
             "summary": "Description\u0020of\u0020RdfTerm",
-            "url": "classes/rdfInterface-NamedNode.html"
+            "url": "classes/rdfInterface-NamedNodeInterface.html"
         },                {
-            "fqsen": "\\rdfInterface\\NamedNode\u003A\u003A__construct\u0028\u0029",
+            "fqsen": "\\rdfInterface\\NamedNodeInterface\u003A\u003A__construct\u0028\u0029",
             "name": "__construct",
             "summary": "",
-            "url": "classes/rdfInterface-NamedNode.html#method___construct"
+            "url": "classes/rdfInterface-NamedNodeInterface.html#method___construct"
         },                {
-            "fqsen": "\\rdfInterface\\Parser",
-            "name": "Parser",
+            "fqsen": "\\rdfInterface\\ParserInterface",
+            "name": "ParserInterface",
             "summary": "",
-            "url": "classes/rdfInterface-Parser.html"
+            "url": "classes/rdfInterface-ParserInterface.html"
         },                {
-            "fqsen": "\\rdfInterface\\Parser\u003A\u003A__construct\u0028\u0029",
+            "fqsen": "\\rdfInterface\\ParserInterface\u003A\u003A__construct\u0028\u0029",
             "name": "__construct",
             "summary": "",
-            "url": "classes/rdfInterface-Parser.html#method___construct"
+            "url": "classes/rdfInterface-ParserInterface.html#method___construct"
         },                {
-            "fqsen": "\\rdfInterface\\Parser\u003A\u003Aparse\u0028\u0029",
+            "fqsen": "\\rdfInterface\\ParserInterface\u003A\u003Aparse\u0028\u0029",
             "name": "parse",
             "summary": "",
-            "url": "classes/rdfInterface-Parser.html#method_parse"
+            "url": "classes/rdfInterface-ParserInterface.html#method_parse"
         },                {
-            "fqsen": "\\rdfInterface\\Parser\u003A\u003AparseStream\u0028\u0029",
+            "fqsen": "\\rdfInterface\\ParserInterface\u003A\u003AparseStream\u0028\u0029",
             "name": "parseStream",
             "summary": "",
-            "url": "classes/rdfInterface-Parser.html#method_parseStream"
+            "url": "classes/rdfInterface-ParserInterface.html#method_parseStream"
         },                {
-            "fqsen": "\\rdfInterface\\Quad",
-            "name": "Quad",
-            "summary": "Extends\u0020Term\u0020because\u0020of\u0020RDF\u002A",
-            "url": "classes/rdfInterface-Quad.html"
+            "fqsen": "\\rdfInterface\\QuadCompareInterface",
+            "name": "QuadCompareInterface",
+            "summary": "Interface\u0020allowing\u0020to\u0020compare\u0020Quads.",
+            "url": "classes/rdfInterface-QuadCompareInterface.html"
         },                {
-            "fqsen": "\\rdfInterface\\Quad\u003A\u003A__construct\u0028\u0029",
-            "name": "__construct",
+            "fqsen": "\\rdfInterface\\QuadCompareInterface\u003A\u003A__toString\u0028\u0029",
+            "name": "__toString",
             "summary": "",
-            "url": "classes/rdfInterface-Quad.html#method___construct"
+            "url": "classes/rdfInterface-QuadCompareInterface.html#method___toString"
         },                {
-            "fqsen": "\\rdfInterface\\Quad\u003A\u003AgetSubject\u0028\u0029",
+            "fqsen": "\\rdfInterface\\QuadCompareInterface\u003A\u003AgetSubject\u0028\u0029",
             "name": "getSubject",
             "summary": "",
-            "url": "classes/rdfInterface-Quad.html#method_getSubject"
+            "url": "classes/rdfInterface-QuadCompareInterface.html#method_getSubject"
         },                {
-            "fqsen": "\\rdfInterface\\Quad\u003A\u003AgetPredicate\u0028\u0029",
+            "fqsen": "\\rdfInterface\\QuadCompareInterface\u003A\u003AgetPredicate\u0028\u0029",
             "name": "getPredicate",
             "summary": "",
-            "url": "classes/rdfInterface-Quad.html#method_getPredicate"
+            "url": "classes/rdfInterface-QuadCompareInterface.html#method_getPredicate"
         },                {
-            "fqsen": "\\rdfInterface\\Quad\u003A\u003AgetObject\u0028\u0029",
+            "fqsen": "\\rdfInterface\\QuadCompareInterface\u003A\u003AgetObject\u0028\u0029",
             "name": "getObject",
             "summary": "",
-            "url": "classes/rdfInterface-Quad.html#method_getObject"
+            "url": "classes/rdfInterface-QuadCompareInterface.html#method_getObject"
         },                {
-            "fqsen": "\\rdfInterface\\Quad\u003A\u003AgetGraph\u0028\u0029",
+            "fqsen": "\\rdfInterface\\QuadCompareInterface\u003A\u003AgetGraph\u0028\u0029",
+            "name": "getGraph",
+            "summary": "",
+            "url": "classes/rdfInterface-QuadCompareInterface.html#method_getGraph"
+        },                {
+            "fqsen": "\\rdfInterface\\QuadInterface",
+            "name": "QuadInterface",
+            "summary": "Extends\u0020Term\u0020because\u0020of\u0020RDF\u002A",
+            "url": "classes/rdfInterface-QuadInterface.html"
+        },                {
+            "fqsen": "\\rdfInterface\\QuadInterface\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "",
+            "url": "classes/rdfInterface-QuadInterface.html#method___construct"
+        },                {
+            "fqsen": "\\rdfInterface\\QuadInterface\u003A\u003AgetSubject\u0028\u0029",
+            "name": "getSubject",
+            "summary": "",
+            "url": "classes/rdfInterface-QuadInterface.html#method_getSubject"
+        },                {
+            "fqsen": "\\rdfInterface\\QuadInterface\u003A\u003AgetPredicate\u0028\u0029",
+            "name": "getPredicate",
+            "summary": "",
+            "url": "classes/rdfInterface-QuadInterface.html#method_getPredicate"
+        },                {
+            "fqsen": "\\rdfInterface\\QuadInterface\u003A\u003AgetObject\u0028\u0029",
+            "name": "getObject",
+            "summary": "",
+            "url": "classes/rdfInterface-QuadInterface.html#method_getObject"
+        },                {
+            "fqsen": "\\rdfInterface\\QuadInterface\u003A\u003AgetGraph\u0028\u0029",
             "name": "getGraph",
             "summary": "Null\u0020is\u0020not\u0020allowed\u0020to\u0020deal\u0020with\u0020the\u0020ambiguity\u0020between\u0020DefaultGraph\u0020and\nnull\u0020which\u0020mean\u0020the\u0020same\u0020\u0028although\u0020it\u0020should\u0020be\u0020noted\u0020that\u0020all\u0020quads\u0020in\nNamedNode\/BlankNode\u0020graphs\u0020also\u0020belong\u0020to\u0020the\u0020DefaultGraph\u0029.",
-            "url": "classes/rdfInterface-Quad.html#method_getGraph"
+            "url": "classes/rdfInterface-QuadInterface.html#method_getGraph"
         },                {
-            "fqsen": "\\rdfInterface\\Quad\u003A\u003AwithSubject\u0028\u0029",
+            "fqsen": "\\rdfInterface\\QuadInterface\u003A\u003AwithSubject\u0028\u0029",
             "name": "withSubject",
             "summary": "",
-            "url": "classes/rdfInterface-Quad.html#method_withSubject"
+            "url": "classes/rdfInterface-QuadInterface.html#method_withSubject"
         },                {
-            "fqsen": "\\rdfInterface\\Quad\u003A\u003AwithPredicate\u0028\u0029",
+            "fqsen": "\\rdfInterface\\QuadInterface\u003A\u003AwithPredicate\u0028\u0029",
             "name": "withPredicate",
             "summary": "",
-            "url": "classes/rdfInterface-Quad.html#method_withPredicate"
+            "url": "classes/rdfInterface-QuadInterface.html#method_withPredicate"
         },                {
-            "fqsen": "\\rdfInterface\\Quad\u003A\u003AwithObject\u0028\u0029",
+            "fqsen": "\\rdfInterface\\QuadInterface\u003A\u003AwithObject\u0028\u0029",
             "name": "withObject",
             "summary": "",
-            "url": "classes/rdfInterface-Quad.html#method_withObject"
+            "url": "classes/rdfInterface-QuadInterface.html#method_withObject"
         },                {
-            "fqsen": "\\rdfInterface\\Quad\u003A\u003AwithGraph\u0028\u0029",
+            "fqsen": "\\rdfInterface\\QuadInterface\u003A\u003AwithGraph\u0028\u0029",
             "name": "withGraph",
             "summary": "",
-            "url": "classes/rdfInterface-Quad.html#method_withGraph"
+            "url": "classes/rdfInterface-QuadInterface.html#method_withGraph"
         },                {
-            "fqsen": "\\rdfInterface\\QuadCompare",
-            "name": "QuadCompare",
-            "summary": "Interface\u0020allowing\u0020to\u0020compare\u0020Quads.",
-            "url": "classes/rdfInterface-QuadCompare.html"
+            "fqsen": "\\rdfInterface\\QuadIteratorAggregateInterface",
+            "name": "QuadIteratorAggregateInterface",
+            "summary": "Description\u0020of\u0020QuadIteratorAggregateInterface",
+            "url": "classes/rdfInterface-QuadIteratorAggregateInterface.html"
         },                {
-            "fqsen": "\\rdfInterface\\QuadCompare\u003A\u003A__toString\u0028\u0029",
-            "name": "__toString",
+            "fqsen": "\\rdfInterface\\QuadIteratorAggregateInterface\u003A\u003AgetIterator\u0028\u0029",
+            "name": "getIterator",
+            "summary": "Returns\u0020QuadIteratorInterface\u0020iterating\u0020over\u0020dataset\u0027s\u0020quads.",
+            "url": "classes/rdfInterface-QuadIteratorAggregateInterface.html#method_getIterator"
+        },                {
+            "fqsen": "\\rdfInterface\\QuadIteratorInterface",
+            "name": "QuadIteratorInterface",
             "summary": "",
-            "url": "classes/rdfInterface-QuadCompare.html#method___toString"
+            "url": "classes/rdfInterface-QuadIteratorInterface.html"
         },                {
-            "fqsen": "\\rdfInterface\\QuadCompare\u003A\u003AgetSubject\u0028\u0029",
-            "name": "getSubject",
-            "summary": "",
-            "url": "classes/rdfInterface-QuadCompare.html#method_getSubject"
-        },                {
-            "fqsen": "\\rdfInterface\\QuadCompare\u003A\u003AgetPredicate\u0028\u0029",
-            "name": "getPredicate",
-            "summary": "",
-            "url": "classes/rdfInterface-QuadCompare.html#method_getPredicate"
-        },                {
-            "fqsen": "\\rdfInterface\\QuadCompare\u003A\u003AgetObject\u0028\u0029",
-            "name": "getObject",
-            "summary": "",
-            "url": "classes/rdfInterface-QuadCompare.html#method_getObject"
-        },                {
-            "fqsen": "\\rdfInterface\\QuadCompare\u003A\u003AgetGraph\u0028\u0029",
-            "name": "getGraph",
-            "summary": "",
-            "url": "classes/rdfInterface-QuadCompare.html#method_getGraph"
-        },                {
-            "fqsen": "\\rdfInterface\\QuadIterator",
-            "name": "QuadIterator",
-            "summary": "",
-            "url": "classes/rdfInterface-QuadIterator.html"
-        },                {
-            "fqsen": "\\rdfInterface\\QuadIterator\u003A\u003Acurrent\u0028\u0029",
+            "fqsen": "\\rdfInterface\\QuadIteratorInterface\u003A\u003Acurrent\u0028\u0029",
             "name": "current",
             "summary": "",
-            "url": "classes/rdfInterface-QuadIterator.html#method_current"
+            "url": "classes/rdfInterface-QuadIteratorInterface.html#method_current"
         },                {
-            "fqsen": "\\rdfInterface\\RdfNamespace",
-            "name": "RdfNamespace",
+            "fqsen": "\\rdfInterface\\RdfNamespaceInterface",
+            "name": "RdfNamespaceInterface",
             "summary": "",
-            "url": "classes/rdfInterface-RdfNamespace.html"
+            "url": "classes/rdfInterface-RdfNamespaceInterface.html"
         },                {
-            "fqsen": "\\rdfInterface\\RdfNamespace\u003A\u003Aadd\u0028\u0029",
+            "fqsen": "\\rdfInterface\\RdfNamespaceInterface\u003A\u003Aadd\u0028\u0029",
             "name": "add",
             "summary": "Registers\u0020a\u0020given\u0020URL\u0020prefix.",
-            "url": "classes/rdfInterface-RdfNamespace.html#method_add"
+            "url": "classes/rdfInterface-RdfNamespaceInterface.html#method_add"
         },                {
-            "fqsen": "\\rdfInterface\\RdfNamespace\u003A\u003Aremove\u0028\u0029",
+            "fqsen": "\\rdfInterface\\RdfNamespaceInterface\u003A\u003Aremove\u0028\u0029",
             "name": "remove",
             "summary": "Drops\u0020a\u0020given\u0020short\u0020name\u0020and\u0020IRI\u0020prefix\u0020associated\u0020with\u0020it.",
-            "url": "classes/rdfInterface-RdfNamespace.html#method_remove"
+            "url": "classes/rdfInterface-RdfNamespaceInterface.html#method_remove"
         },                {
-            "fqsen": "\\rdfInterface\\RdfNamespace\u003A\u003Aget\u0028\u0029",
+            "fqsen": "\\rdfInterface\\RdfNamespaceInterface\u003A\u003Aget\u0028\u0029",
             "name": "get",
             "summary": "Returns\u0020a\u0020IRI\u0020prefix\u0020for\u0020a\u0020given\u0020short\u0020name.",
-            "url": "classes/rdfInterface-RdfNamespace.html#method_get"
+            "url": "classes/rdfInterface-RdfNamespaceInterface.html#method_get"
         },                {
-            "fqsen": "\\rdfInterface\\RdfNamespace\u003A\u003AgetAll\u0028\u0029",
+            "fqsen": "\\rdfInterface\\RdfNamespaceInterface\u003A\u003AgetAll\u0028\u0029",
             "name": "getAll",
             "summary": "Returns\u0020associative\u0020array\u0020of\u0020all\u0020registered\u0020namespaces\u0020with\u0020array\u0020keys\nbeing\u0020namespace\u0020short\u0020names\u0020and\u0020array\u0020values\u0020containing\u0020URL\u0020prefixes.",
-            "url": "classes/rdfInterface-RdfNamespace.html#method_getAll"
+            "url": "classes/rdfInterface-RdfNamespaceInterface.html#method_getAll"
         },                {
-            "fqsen": "\\rdfInterface\\RdfNamespace\u003A\u003Aexpand\u0028\u0029",
+            "fqsen": "\\rdfInterface\\RdfNamespaceInterface\u003A\u003Aexpand\u0028\u0029",
             "name": "expand",
             "summary": "Expands\u0020a\u0020shortened\u0020IRI\u0020to\u0020a\u0020NamedNode.",
-            "url": "classes/rdfInterface-RdfNamespace.html#method_expand"
+            "url": "classes/rdfInterface-RdfNamespaceInterface.html#method_expand"
         },                {
-            "fqsen": "\\rdfInterface\\RdfNamespace\u003A\u003Ashorten\u0028\u0029",
+            "fqsen": "\\rdfInterface\\RdfNamespaceInterface\u003A\u003Ashorten\u0028\u0029",
             "name": "shorten",
             "summary": "Shortens\u0020provided\u0020NamedNode\u0020IRI.",
-            "url": "classes/rdfInterface-RdfNamespace.html#method_shorten"
+            "url": "classes/rdfInterface-RdfNamespaceInterface.html#method_shorten"
         },                {
-            "fqsen": "\\rdfInterface\\Serializer",
-            "name": "Serializer",
+            "fqsen": "\\rdfInterface\\SerializerInterface",
+            "name": "SerializerInterface",
             "summary": "",
-            "url": "classes/rdfInterface-Serializer.html"
+            "url": "classes/rdfInterface-SerializerInterface.html"
         },                {
-            "fqsen": "\\rdfInterface\\Serializer\u003A\u003A__construct\u0028\u0029",
+            "fqsen": "\\rdfInterface\\SerializerInterface\u003A\u003A__construct\u0028\u0029",
             "name": "__construct",
             "summary": "",
-            "url": "classes/rdfInterface-Serializer.html#method___construct"
+            "url": "classes/rdfInterface-SerializerInterface.html#method___construct"
         },                {
-            "fqsen": "\\rdfInterface\\Serializer\u003A\u003Aserialize\u0028\u0029",
+            "fqsen": "\\rdfInterface\\SerializerInterface\u003A\u003Aserialize\u0028\u0029",
             "name": "serialize",
             "summary": "",
-            "url": "classes/rdfInterface-Serializer.html#method_serialize"
+            "url": "classes/rdfInterface-SerializerInterface.html#method_serialize"
         },                {
-            "fqsen": "\\rdfInterface\\Serializer\u003A\u003AserializeStream\u0028\u0029",
+            "fqsen": "\\rdfInterface\\SerializerInterface\u003A\u003AserializeStream\u0028\u0029",
             "name": "serializeStream",
             "summary": "",
-            "url": "classes/rdfInterface-Serializer.html#method_serializeStream"
+            "url": "classes/rdfInterface-SerializerInterface.html#method_serializeStream"
         },                {
-            "fqsen": "\\rdfInterface\\Term",
-            "name": "Term",
-            "summary": "Description\u0020of\u0020RdfTerm",
-            "url": "classes/rdfInterface-Term.html"
+            "fqsen": "\\rdfInterface\\TermCompareInterface",
+            "name": "TermCompareInterface",
+            "summary": "Description\u0020of\u0020TermCompare",
+            "url": "classes/rdfInterface-TermCompareInterface.html"
         },                {
-            "fqsen": "\\rdfInterface\\Term\u003A\u003A__toString\u0028\u0029",
+            "fqsen": "\\rdfInterface\\TermCompareInterface\u003A\u003Aequals\u0028\u0029",
+            "name": "equals",
+            "summary": "",
+            "url": "classes/rdfInterface-TermCompareInterface.html#method_equals"
+        },                {
+            "fqsen": "\\rdfInterface\\TermCompareInterface\u003A\u003A__toString\u0028\u0029",
             "name": "__toString",
             "summary": "",
-            "url": "classes/rdfInterface-Term.html#method___toString"
+            "url": "classes/rdfInterface-TermCompareInterface.html#method___toString"
         },                {
-            "fqsen": "\\rdfInterface\\Term\u003A\u003AgetValue\u0028\u0029",
+            "fqsen": "\\rdfInterface\\TermInterface",
+            "name": "TermInterface",
+            "summary": "Description\u0020of\u0020RdfTerm",
+            "url": "classes/rdfInterface-TermInterface.html"
+        },                {
+            "fqsen": "\\rdfInterface\\TermInterface\u003A\u003A__toString\u0028\u0029",
+            "name": "__toString",
+            "summary": "",
+            "url": "classes/rdfInterface-TermInterface.html#method___toString"
+        },                {
+            "fqsen": "\\rdfInterface\\TermInterface\u003A\u003AgetValue\u0028\u0029",
             "name": "getValue",
             "summary": "",
-            "url": "classes/rdfInterface-Term.html#method_getValue"
+            "url": "classes/rdfInterface-TermInterface.html#method_getValue"
         },                {
-            "fqsen": "\\rdfInterface\\Term\u003A\u003Aequals\u0028\u0029",
+            "fqsen": "\\rdfInterface\\TermInterface\u003A\u003Aequals\u0028\u0029",
             "name": "equals",
             "summary": "",
-            "url": "classes/rdfInterface-Term.html#method_equals"
+            "url": "classes/rdfInterface-TermInterface.html#method_equals"
         },                {
-            "fqsen": "\\rdfInterface\\TermCompare",
-            "name": "TermCompare",
-            "summary": "Description\u0020of\u0020TermCompare",
-            "url": "classes/rdfInterface-TermCompare.html"
-        },                {
-            "fqsen": "\\rdfInterface\\TermCompare\u003A\u003Aequals\u0028\u0029",
-            "name": "equals",
+            "fqsen": "\\rdfInterface\\TermIteratorInterface",
+            "name": "TermIteratorInterface",
             "summary": "",
-            "url": "classes/rdfInterface-TermCompare.html#method_equals"
+            "url": "classes/rdfInterface-TermIteratorInterface.html"
         },                {
-            "fqsen": "\\rdfInterface\\TermCompare\u003A\u003A__toString\u0028\u0029",
-            "name": "__toString",
-            "summary": "",
-            "url": "classes/rdfInterface-TermCompare.html#method___toString"
-        },                {
-            "fqsen": "\\rdfInterface\\TermIterator",
-            "name": "TermIterator",
-            "summary": "",
-            "url": "classes/rdfInterface-TermIterator.html"
-        },                {
-            "fqsen": "\\rdfInterface\\TermIterator\u003A\u003Acurrent\u0028\u0029",
+            "fqsen": "\\rdfInterface\\TermIteratorInterface\u003A\u003Acurrent\u0028\u0029",
             "name": "current",
             "summary": "",
-            "url": "classes/rdfInterface-TermIterator.html#method_current"
+            "url": "classes/rdfInterface-TermIteratorInterface.html#method_current"
         },                {
             "fqsen": "\\",
             "name": "\\",
