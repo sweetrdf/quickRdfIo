@@ -26,7 +26,7 @@
 
 namespace quickRdfIo;
 
-use rdfInterface\QuadIterator as iQuadIterator;
+use rdfInterface\QuadIteratorInterface as iQuadIterator;
 
 /**
  * Description of TmpStreamTrait

@@ -30,10 +30,10 @@ use ArrayIterator;
 use Psr\Http\Message\StreamInterface;
 use pietercolpaert\hardf\Util;
 use pietercolpaert\hardf\TriGParser as Parser;
-use rdfInterface\QuadIterator as iQuadIterator;
-use rdfInterface\Parser as iParser;
-use rdfInterface\Quad as iQuad;
-use rdfInterface\DataFactory as iDataFactory;
+use rdfInterface\QuadIteratorInterface as iQuadIterator;
+use rdfInterface\ParserInterface as iParser;
+use rdfInterface\QuadInterface as iQuad;
+use rdfInterface\DataFactoryInterface as iDataFactory;
 
 /**
  * Description of Parser

@@ -28,17 +28,18 @@ namespace quickRdfIo;
 
 use Psr\Http\Message\StreamInterface;
 use rdfHelpers\NtriplesUtil;
-use rdfInterface\Quad as iQuad;
-use rdfInterface\DefaultGraph as iDefaultGraph;
-use rdfInterface\QuadIterator as iQuadIterator;
-use rdfInterface\RdfNamespace as iRdfNamespace;
+use rdfInterface\QuadInterface as iQuad;
+use rdfInterface\DefaultGraphInterface as iDefaultGraph;
+use rdfInterface\QuadIteratorInterface as iQuadIterator;
+use rdfInterface\QuadIteratorAggregateInterface as iQuadIteratorAggregate;
+use rdfInterface\RdfNamespaceInterface as iRdfNamespace;
 
 /**
  * Serializes n-quads and n-quads-star.
  *
  * @author zozlak
  */
-class NQuadsSerializer implements \rdfInterface\Serializer {
+class NQuadsSerializer implements \rdfInterface\SerializerInterface {
 
     use TmpStreamSerializerTrait;
 
@@ -49,11 +50,12 @@ class NQuadsSerializer implements \rdfInterface\Serializer {
     /**
      * 
      * @param resource | StreamInterface $output
-     * @param iQuadIterator $graph
+     * @param iQuadIterator|iQuadIteratorAggregate $graph
      * @param iRdfNamespace|null $nmsp
      * @return void
      */
-    public function serializeStream($output, iQuadIterator $graph,
+    public function serializeStream(mixed $output,
+                                    iQuadIterator | iQuadIteratorAggregate $graph,
                                     ?iRdfNamespace $nmsp = null
     ): void {
         if (is_resource($output)) {

@@ -30,10 +30,10 @@ use Generator;
 use SplQueue;
 use LogicException;
 use Psr\Http\Message\StreamInterface;
-use rdfInterface\QuadIterator as iQuadIterator;
-use rdfInterface\Parser as iParser;
-use rdfInterface\Quad as iQuad;
-use rdfInterface\DataFactory as iDataFactory;
+use rdfInterface\QuadIteratorInterface as iQuadIterator;
+use rdfInterface\ParserInterface as iParser;
+use rdfInterface\QuadInterface as iQuad;
+use rdfInterface\DataFactoryInterface as iDataFactory;
 
 /**
  * Parses only n-quads and n-triples but does it fast (thanks to parsing in chunks

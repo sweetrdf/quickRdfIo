@@ -26,8 +26,8 @@
 
 namespace quickRdfIo;
 
-use rdfInterface\DataFactory as iDataFactory;
-use rdfInterface\Quad as iQuad;
+use rdfInterface\DataFactoryInterface as iDataFactory;
+use rdfInterface\QuadInterface as iQuad;
 
 /**
  * Description of UtilTest

@@ -28,12 +28,13 @@ namespace quickRdfIo;
 
 use Psr\Http\Message\StreamInterface;
 use zozlak\RdfConstants as RDF;
-use rdfInterface\Literal as iLiteral;
-use rdfInterface\QuadIterator as iQuadIterator;
-use rdfInterface\RdfNamespace as iRdfNamespace;
-use rdfInterface\NamedNode as iNamedNode;
-use rdfInterface\BlankNode as iBlankNode;
-use rdfInterface\DefaultGraph as iDefaultGraph;
+use rdfInterface\LiteralInterface as iLiteral;
+use rdfInterface\QuadIteratorInterface as iQuadIterator;
+use rdfInterface\QuadIteratorAggregateInterface as iQuadIteratorAggregate;
+use rdfInterface\RdfNamespaceInterface as iRdfNamespace;
+use rdfInterface\NamedNodeInterface as iNamedNode;
+use rdfInterface\BlankNodeInterface as iBlankNode;
+use rdfInterface\DefaultGraphInterface as iDefaultGraph;
 use quickRdf\RdfNamespace;
 
 /**
@@ -41,7 +42,7 @@ use quickRdf\RdfNamespace;
  *
  * @author zozlak
  */
-class TrigSerializer implements \rdfInterface\Serializer {
+class TrigSerializer implements \rdfInterface\SerializerInterface {
 
     const MODE_TURTLE = 1;
     const MODE_TRIG   = 2;
@@ -69,11 +70,12 @@ class TrigSerializer implements \rdfInterface\Serializer {
     /**
      * 
      * @param resource | StreamInterface $output
-     * @param iQuadIterator $graph
+     * @param iQuadIterator|iQuadIteratorAggregate $graph
      * @param iRdfNamespace|null $nmsp
      * @return void
      */
-    public function serializeStream($output, iQuadIterator $graph,
+    public function serializeStream(mixed $output,
+                                    iQuadIterator | iQuadIteratorAggregate $graph,
                                     ?iRdfNamespace $nmsp = null): void {
         if (is_resource($output)) {
             $output = new ResourceWrapper($output);

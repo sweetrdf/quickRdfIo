@@ -28,12 +28,12 @@ namespace quickRdfIo;
 
 use XmlParser;
 use Psr\Http\Message\StreamInterface;
-use rdfInterface\QuadIterator as iQuadIterator;
-use rdfInterface\Parser as iParser;
-use rdfInterface\Quad as iQuad;
-use rdfInterface\DataFactory as iDataFactory;
-use rdfInterface\BlankNode as iBlankNode;
-use rdfInterface\NamedNode as iNamedNode;
+use rdfInterface\QuadIteratorInterface as iQuadIterator;
+use rdfInterface\ParserInterface as iParser;
+use rdfInterface\QuadInterface as iQuad;
+use rdfInterface\DataFactoryInterface as iDataFactory;
+use rdfInterface\BlankNodeInterface as iBlankNode;
+use rdfInterface\NamedNodeInterface as iNamedNode;
 use zozlak\RdfConstants as RDF;
 
 class RdfXmlParserState {

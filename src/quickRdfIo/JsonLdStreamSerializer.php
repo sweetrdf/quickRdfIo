@@ -27,14 +27,15 @@
 namespace quickRdfIo;
 
 use Psr\Http\Message\StreamInterface;
-use rdfInterface\QuadIterator as iQuadIterator;
-use rdfInterface\RdfNamespace as iRdfNamespace;
-use rdfInterface\Quad as iQuad;
-use rdfInterface\Literal as iLiteral;
-use rdfInterface\NamedNode as iNamedNode;
-use rdfInterface\BlankNode as iBlankNode;
-use rdfInterface\Term as iTerm;
-use rdfInterface\DefaultGraph as iDefaultGraph;
+use rdfInterface\QuadIteratorInterface as iQuadIterator;
+use rdfInterface\QuadIteratorAggregateInterface as iQuadIteratorAggregate;
+use rdfInterface\RdfNamespaceInterface as iRdfNamespace;
+use rdfInterface\QuadInterface as iQuad;
+use rdfInterface\LiteralInterface as iLiteral;
+use rdfInterface\NamedNodeInterface as iNamedNode;
+use rdfInterface\BlankNodeInterface as iBlankNode;
+use rdfInterface\TermInterface as iTerm;
+use rdfInterface\DefaultGraphInterface as iDefaultGraph;
 use zozlak\RdfConstants as RDF;
 
 /**
@@ -49,7 +50,7 @@ use zozlak\RdfConstants as RDF;
  * 
  * @author zozlak
  */
-class JsonLdStreamSerializer implements \rdfInterface\Serializer {
+class JsonLdStreamSerializer implements \rdfInterface\SerializerInterface {
 
     const MODE_TRIPLES     = 1;
     const MODE_GRAPH       = 2;
@@ -79,13 +80,14 @@ class JsonLdStreamSerializer implements \rdfInterface\Serializer {
     /**
      * 
      * @param resource | StreamInterface $output output to serialize to
-     * @param iQuadIterator $graph data to serialize
+     * @param iQuadIterator|iQuadIteratorAggregate $graph data to serialize
      * @param iRdfNamespace|null $nmsp allows to provide context for predicates.
      *   For that, register full predicate URIs as namespaces in the `$nmsp`
      *   object.
      * @return void
      */
-    public function serializeStream($output, iQuadIterator $graph,
+    public function serializeStream(mixed $output,
+                                    iQuadIterator | iQuadIteratorAggregate $graph,
                                     iRdfNamespace | null $nmsp = null): void {
         if (is_resource($output)) {
             $output = new ResourceWrapper($output);
@@ -198,7 +200,7 @@ class JsonLdStreamSerializer implements \rdfInterface\Serializer {
         }
     }
 
-    private function prepareContext(iRdfNamespace $context) {
+    private function prepareContext(iRdfNamespace $context): void {
         $this->context     = array_flip($context->getAll());
         $this->contextJson = '"@context":' . json_encode($this->context, JSON_UNESCAPED_SLASHES) . ",";
     }

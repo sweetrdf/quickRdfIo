@@ -45,9 +45,9 @@ class RdfXmlParserTest extends \PHPUnit\Framework\TestCase {
      * @return void
      */
     public function testSpecs(): void {
-        $df       = new DataFactory();
-        $parser   = new RdfXmlParser($df);
-        $ntParser = new NQuadsParser($df, false, NQuadsParser::MODE_TRIPLES);
+        $this->df = new DataFactory();
+        $parser   = new RdfXmlParser($this->df);
+        $ntParser = new NQuadsParser($this->df, false, NQuadsParser::MODE_TRIPLES);
 
         $baseDir      = __DIR__ . '/files';
         $files        = scandir($baseDir) ?: [];
@@ -78,12 +78,12 @@ class RdfXmlParserTest extends \PHPUnit\Framework\TestCase {
                 } else {
                     $dataset = new Dataset();
                     $dataset->add($parser->parseStream($input));
-                    $dataset = $dataset->map(fn($x) => $this->unblank($x, $df));
+                    $dataset = $dataset->map(fn($x) => $this->unblank($x));
 
                     $refInput = fopen("$baseDir/" . substr($i, 0, -3) . "nt", 'r') ?: throw new \RuntimeException("Failed to open the test file");
                     $ref      = new Dataset();
                     $ref->add($ntParser->parseStream($refInput));
-                    $ref      = $ref->map(fn($x) => $this->unblank($x, $df));
+                    $ref      = $ref->map(fn($x) => $this->unblank($x));
                     $this->assertDatasetsEqual($dataset, $ref, "Failed on $i");
                 }
             } finally {

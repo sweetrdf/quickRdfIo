@@ -26,11 +26,12 @@
 
 namespace quickRdfIo;
 
-use rdfInterface\DataFactory as iDataFactory;
-use rdfInterface\Parser as iParser;
-use rdfInterface\Serializer as iSerializer;
-use rdfInterface\QuadIterator as iQuadIterator;
-use rdfInterface\RdfNamespace as iRdfNamespace;
+use rdfInterface\DataFactoryInterface as iDataFactory;
+use rdfInterface\ParserInterface as iParser;
+use rdfInterface\SerializerInterface as iSerializer;
+use rdfInterface\QuadIteratorInterface as iQuadIterator;
+use rdfInterface\QuadIteratorAggregateInterface as iQuadIteratorAggregate;
+use rdfInterface\RdfNamespaceInterface as iRdfNamespace;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\StreamInterface;
 
@@ -219,7 +220,7 @@ class Util {
 
     /**
      * 
-     * @param iQuadIterator $data
+     * @param iQuadIterator|iQuadIteratorAggregate $data
      * @param string $format A mime type, file extension HTTP Accept header value
      *   or file name indicating the output format.
      * @param resource | StreamInterface | string | null $output Output to write 
@@ -232,8 +233,8 @@ class Util {
      * @return string | null
      * @throws RdfIoException
      */
-    static public function serialize(iQuadIterator $data, string $format,
-                                     mixed $output = null,
+    static public function serialize(iQuadIterator | iQuadIteratorAggregate $data,
+                                     string $format, mixed $output = null,
                                      ?iRdfNamespace $nmsp = null): ?string {
         $serializer = self::getSerializer($format);
         $close      = false;
@@ -243,7 +244,7 @@ class Util {
         }
         if (is_resource($output) || $output instanceof StreamInterface) {
             $serializer->serializeStream($output, $data, $nmsp);
-            if ($close) {
+            if ($close && is_resource($output)) {
                 fclose($output) ?: throw new RdfIoException("Failed to close the output file");
             }
             return null;

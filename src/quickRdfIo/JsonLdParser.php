@@ -32,10 +32,10 @@ use ML\JsonLD\JsonLD;
 use ML\JsonLD\Quad as JsonLdQuad;
 use ML\JsonLD\LanguageTaggedString;
 use ML\JsonLD\TypedValue;
-use rdfInterface\QuadIterator as iQuadIterator;
-use rdfInterface\Parser as iParser;
-use rdfInterface\Quad as iQuad;
-use rdfInterface\DataFactory as iDataFactory;
+use rdfInterface\QuadIteratorInterface as iQuadIterator;
+use rdfInterface\ParserInterface as iParser;
+use rdfInterface\QuadInterface as iQuad;
+use rdfInterface\DataFactoryInterface as iDataFactory;
 
 /**
  * Thin wrapper providing RdfInterface\Parser API for JSON-LD the parser

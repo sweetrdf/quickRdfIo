@@ -26,13 +26,13 @@
 
 namespace quickRdfIo;
 
-use rdfInterface\DataFactory as iDataFactory;
-use rdfInterface\Quad as iQuad;
-use rdfInterface\BlankNode as iBlankNode;
-use rdfInterface\Dataset as iDataset;
-use rdfInterface\Parser as iParser;
+use rdfInterface\DataFactoryInterface as iDataFactory;
+use rdfInterface\QuadInterface as iQuad;
+use rdfInterface\BlankNodeInterface as iBlankNode;
+use rdfInterface\DatasetInterface as iDataset;
+use rdfInterface\ParserInterface as iParser;
+use rdfInterface\DatasetMapReduceInterface as iDatasetMapReduce;
 use quickRdf\Dataset;
-use rdfInterface\DatasetMapReduce as iDatasetMapReduce;
 
 /**
  * Description of TestUtils
@@ -46,11 +46,11 @@ trait TestUtilsTrait {
 
     private function unblank(iQuad $quad): iQuad {
         $sbj = $quad->getSubject();
-        if ($sbj instanceof BlankNode) {
+        if ($sbj instanceof iBlankNode) {
             $quad = $quad->withSubject($this->df->namedNode('bn:' . $sbj->getValue()));
         }
         $obj = $quad->getObject();
-        if ($obj instanceof BlankNode) {
+        if ($obj instanceof iBlankNode) {
             $quad = $quad->withObject($this->df->namedNode('bn:' . $obj->getValue()));
         }
         return $quad;
@@ -77,12 +77,12 @@ trait TestUtilsTrait {
     }
 
     private function parseRef(string $refFile, bool $unblank): iDatasetMapReduce {
-        $refInput = fopen($refFile, 'r') ?: throw new RuntimeException("Failed to open $refFile");
+        $refInput = fopen($refFile, 'r') ?: throw new \RuntimeException("Failed to open $refFile");
         $ref      = new Dataset();
         $ref->add($this->refParser->parseStream($refInput));
         fclose($refInput);
         if ($unblank) {
-            $ref = $ref->map(fn($x) => $this->unblank($x, $this->df));
+            $ref = $ref->map(fn($x) => $this->unblank($x));
         }
         return $ref;
     }

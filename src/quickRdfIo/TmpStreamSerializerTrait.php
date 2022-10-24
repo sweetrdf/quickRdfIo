@@ -26,8 +26,9 @@
 
 namespace quickRdfIo;
 
-use rdfInterface\QuadIterator as iQuadIterator;
-use rdfInterface\RdfNamespace as iRdfNamespace;
+use rdfInterface\QuadIteratorInterface as iQuadIterator;
+use rdfInterface\QuadIteratorAggregateInterface as iQuadIteratorAggregate;
+use rdfInterface\RdfNamespaceInterface as iRdfNamespace;
 
 /**
  * Description of TmpStreamSerializerTrait
@@ -36,7 +37,7 @@ use rdfInterface\RdfNamespace as iRdfNamespace;
  */
 trait TmpStreamSerializerTrait {
 
-    public function serialize(iQuadIterator $graph, ?iRdfNamespace $nmsp = null): string {
+    public function serialize(iQuadIterator | iQuadIteratorAggregate $graph, ?iRdfNamespace $nmsp = null): string {
         $output = '';
         $stream = fopen('php://memory', 'r+');
         if ($stream === false) {

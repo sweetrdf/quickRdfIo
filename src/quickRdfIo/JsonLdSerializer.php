@@ -27,13 +27,14 @@
 namespace quickRdfIo;
 
 use Psr\Http\Message\StreamInterface;
-use rdfInterface\QuadIterator as iQuadIterator;
-use rdfInterface\RdfNamespace as iRdfNamespace;
-use rdfInterface\Quad as iQuad;
-use rdfInterface\DefaultGraph as iDefaultGraph;
-use rdfInterface\Literal as iLiteral;
-use rdfInterface\NamedNode as iNamedNode;
-use rdfInterface\BlankNode as iBlankNode;
+use rdfInterface\QuadIteratorInterface as iQuadIterator;
+use rdfInterface\QuadIteratorAggregateInterface as iQuadIteratorAggregate;
+use rdfInterface\RdfNamespaceInterface as iRdfNamespace;
+use rdfInterface\QuadInterface as iQuad;
+use rdfInterface\DefaultGraphInterface as iDefaultGraph;
+use rdfInterface\LiteralInterface as iLiteral;
+use rdfInterface\NamedNodeInterface as iNamedNode;
+use rdfInterface\BlankNodeInterface as iBlankNode;
 use ML\JsonLD\JsonLD;
 use ML\JsonLD\Document;
 use ML\JsonLD\LanguageTaggedString;
@@ -51,7 +52,7 @@ use zozlak\RdfConstants as RDF;
  * 
  * @author zozlak
  */
-class JsonLdSerializer implements \rdfInterface\Serializer {
+class JsonLdSerializer implements \rdfInterface\SerializerInterface {
 
     const TRANSFORM_NONE    = 0;
     const TRANSFORM_EXPAND  = 1;
@@ -106,14 +107,15 @@ class JsonLdSerializer implements \rdfInterface\Serializer {
 
     /**
      * 
-     * @param iQuadIterator $graph
+     * @param iQuadIterator|iQuadIteratorAggregate $graph
      * @param iRdfNamespace|null $nmsp If passed, it's used for compacting the
      *   output. Unfortunately only property URIs can be compacted that way
      *   (of course for that full property URIs must be registered as "namespaces").
      * @return string
      * @throws RdfIoException
      */
-    public function serialize(iQuadIterator $graph, ?iRdfNamespace $nmsp = null): string {
+    public function serialize(iQuadIterator | iQuadIteratorAggregate $graph,
+                              ?iRdfNamespace $nmsp = null): string {
         $doc = new Document($this->baseUri);
         foreach ($graph as $quad) {
             /* @var $quad iQuad  */
@@ -196,12 +198,13 @@ class JsonLdSerializer implements \rdfInterface\Serializer {
     /**
      * 
      * @param resource | StreamInterface $output
-     * @param iQuadIterator $graph
+     * @param iQuadIterator|iQuadIteratorAggregate $graph
      * @param iRdfNamespace|null $nmsp unused but required for compatibility with
      *   the `\rdfInterface\Serializer`.
      * @return void
      */
-    public function serializeStream($output, iQuadIterator $graph,
+    public function serializeStream(mixed $output,
+                                    iQuadIterator | iQuadIteratorAggregate $graph,
                                     iRdfNamespace | null $nmsp = null): void {
         if (is_resource($output)) {
             $output = new ResourceWrapper($output);
