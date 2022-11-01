@@ -1094,7 +1094,7 @@ All quads for which the callable returns true are copied.</li>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/sweetrdf/rdf-interface/src/rdfInterface/DatasetInterface.php"><a href="files/vendor-sweetrdf-rdf-interface-src-rdfinterface-datasetinterface.html"><abbr title="vendor/sweetrdf/rdf-interface/src/rdfInterface/DatasetInterface.php">DatasetInterface.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">198</span>
+    <span class="phpdocumentor-element-found-in__line">202</span>
 
     </aside>
 
@@ -1102,7 +1102,7 @@ All quads for which the callable returns true are copied.</li>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">offsetExists</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href="classes/rdfInterface-QuadCompareInterface.html"><abbr title="\rdfInterface\QuadCompareInterface">QuadCompareInterface</abbr></a>|callable&nbsp;</span><span class="phpdocumentor-signature__argument__name">$offset</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
+                    <span class="phpdocumentor-signature__name">offsetExists</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href="classes/rdfInterface-QuadCompareInterface.html"><abbr title="\rdfInterface\QuadCompareInterface">QuadCompareInterface</abbr></a>|callable|int<0, 0>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$offset</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
 
         <section class="phpdocumentor-description"><p>Offset can be specified as:</p>
 <ul>
@@ -1112,6 +1112,14 @@ If more than one quad is matched \OutOfBoundsException must be thrown.</li>
 signature. Matching quads are the ones for which the callable returns
 <code class="prettyprint">true</code>.
 If more than one quad is matched \OutOfBoundsException must be thrown.</li>
+<li>
+<ol start="0">
+<li>This is a shorthand syntax for checking if the dataset is empty.
+The main use case is enabling the <code class="prettyprint">$dataset[0] ?? $defaultQuad</code> syntax
+for &quot;unpacking&quot; a dataset containing one or zero quads.
+Passing any other integer value must throw an \OutOfBoundsException</li>
+</ol>
+</li>
 </ul>
 </section>
 
@@ -1119,7 +1127,7 @@ If more than one quad is matched \OutOfBoundsException must be thrown.</li>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-signature__argument__name">$offset</span>
-                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/rdfInterface-QuadCompareInterface.html"><abbr title="\rdfInterface\QuadCompareInterface">QuadCompareInterface</abbr></a>|callable</span>
+                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/rdfInterface-QuadCompareInterface.html"><abbr title="\rdfInterface\QuadCompareInterface">QuadCompareInterface</abbr></a>|callable|int<0, 0></span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
                 
@@ -1161,7 +1169,7 @@ If more than one quad is matched \OutOfBoundsException must be thrown.</li>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/sweetrdf/rdf-interface/src/rdfInterface/DatasetInterface.php"><a href="files/vendor-sweetrdf-rdf-interface-src-rdfinterface-datasetinterface.html"><abbr title="vendor/sweetrdf/rdf-interface/src/rdfInterface/DatasetInterface.php">DatasetInterface.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">222</span>
+    <span class="phpdocumentor-element-found-in__line">227</span>
 
     </aside>
 
@@ -1183,10 +1191,11 @@ thrown.</li>
 <ol start="0">
 <li>Returns any quad (or throws \OutOfBoundsException it a dataset is
 empty).
+The main use case is enabling the <code class="prettyprint">$dataset[0] ?? $defaultQuad</code> syntax
+for &quot;unpacking&quot; a dataset containing one or zero quads.
 As quads within a dataset don't have order, it makes no sense to access
-them using integer offsets. Still it's nice to have a simple syntax
-for returning any quad. This is particularly useful for unpacking
-a quad from a dataset which should contain only a single quad.</li>
+them using other integer offsets and an attempt of doing so must
+throw an \OutOfBoundsException.</li>
 </ol>
 </li>
 </ul>
@@ -1238,7 +1247,7 @@ a quad from a dataset which should contain only a single quad.</li>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/sweetrdf/rdf-interface/src/rdfInterface/DatasetInterface.php"><a href="files/vendor-sweetrdf-rdf-interface-src-rdfinterface-datasetinterface.html"><abbr title="vendor/sweetrdf/rdf-interface/src/rdfInterface/DatasetInterface.php">DatasetInterface.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">240</span>
+    <span class="phpdocumentor-element-found-in__line">245</span>
 
     </aside>
 
@@ -1304,7 +1313,7 @@ thrown.</li>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/sweetrdf/rdf-interface/src/rdfInterface/DatasetInterface.php"><a href="files/vendor-sweetrdf-rdf-interface-src-rdfinterface-datasetinterface.html"><abbr title="vendor/sweetrdf/rdf-interface/src/rdfInterface/DatasetInterface.php">DatasetInterface.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">258</span>
+    <span class="phpdocumentor-element-found-in__line">263</span>
 
     </aside>
 
