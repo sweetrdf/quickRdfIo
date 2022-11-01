@@ -18,8 +18,8 @@
         "ext-pcre": "*",
         "ext-xmlreader" : "*",
         "zozlak/rdf-constants": "^1.1",
-        "sweetrdf/rdf-helpers": "dev-master",
-        "sweetrdf/rdf-interface": "dev-master",
+        "sweetrdf/rdf-interface": "^1.0.0-RC1",
+        "sweetrdf/rdf-helpers": "^1.0.0-RC1",
         "pietercolpaert/hardf": "*",
         "ml/json-ld": "^1.2"
     },
@@ -32,14 +32,14 @@
         }
     },
     "require-dev": {
-        "sweetrdf/quick-rdf": "dev-master",
         "phpunit/phpunit": "^9.5",
         "phpunit/php-code-coverage": "^9.2",
         "phpstan/phpstan": "*",
         "php-coveralls/php-coveralls": "^2.4",
         "squizlabs/php_codesniffer": "*",
-        "sweetrdf/term-templates": "dev-master",
-        "sweetrdf/simple-rdf": "dev-master"
+        "sweetrdf/quick-rdf": "^1.0.0-RC1",
+        "sweetrdf/term-templates": "^1.0.0-RC1",
+        "sweetrdf/simple-rdf": "^1.0.0-RC1"
     },
     "autoload-dev": {
         "psr-4": {
