@@ -35,7 +35,6 @@ use rdfInterface\RdfNamespaceInterface as iRdfNamespace;
 use rdfInterface\NamedNodeInterface as iNamedNode;
 use rdfInterface\BlankNodeInterface as iBlankNode;
 use rdfInterface\DefaultGraphInterface as iDefaultGraph;
-use quickRdf\RdfNamespace;
 
 /**
  * Serializes to TriG and Turtle formats
@@ -84,7 +83,6 @@ class TrigSerializer implements \rdfInterface\SerializerInterface {
             throw new RdfIoException("Output has to be a resource or " . StreamInterface::class . " object");
         }
 
-        $nmsp       = $nmsp ?? new RdfNamespace();
         $serializer = new \pietercolpaert\hardf\TriGWriter(['format' => 'turtle']);
         if ($nmsp !== null) {
             foreach ($nmsp->getAll() as $alias => $prefix) {
