@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/base.css">
             <link rel="preconnect" href="https://fonts.gstatic.com">
-        <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@100;200;300;400;600;700&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;600;700&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="css/template.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css" integrity="sha256-ybRkN9dBjhcS2qrW1z+hfCxq+1aBdwyQM5wlQoQVt/0=" crossorigin="anonymous" />
@@ -19,6 +19,7 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.23.0/plugins/line-highlight/prism-line-highlight.css">
                 <script src="https://cdn.jsdelivr.net/npm/fuse.js@3.4.6"></script>
         <script src="https://cdn.jsdelivr.net/npm/css-vars-ponyfill@2"></script>
+        <script src="js/template.js"></script>
         <script src="js/search.js"></script>
         <script defer src="js/searchIndex.js"></script>
     </head>
@@ -52,7 +53,7 @@
 <label class="phpdocumentor-sidebar__menu-icon" for="sidebar-button">
     Menu
 </label>
-<aside class="phpdocumentor-column -four phpdocumentor-sidebar">
+<aside class="phpdocumentor-column -three phpdocumentor-sidebar">
                     <section class="phpdocumentor-sidebar__category">
             <h2 class="phpdocumentor-sidebar__category-header">Namespaces</h2>
                                     <h4 class="phpdocumentor-sidebar__root-namespace">
@@ -99,8 +100,9 @@
     </section>
 </aside>
 
-            <div class="phpdocumentor-column -eight phpdocumentor-content">
-                    <ul class="phpdocumentor-breadcrumbs">
+            <div class="phpdocumentor-column -nine phpdocumentor-content">
+                                <section>
+                                        <ul class="phpdocumentor-breadcrumbs">
             <li class="phpdocumentor-breadcrumb"><a href="namespaces/ml.html">ML</a></li>
             <li class="phpdocumentor-breadcrumb"><a href="namespaces/ml-jsonld.html">JsonLD</a></li>
     </ul>
@@ -123,6 +125,13 @@
     
     </h2>
 
+<div class="phpdocumentor-label-line">
+
+    <div class="phpdocumentor-label phpdocumentor-label--success"><span>Final</span><span>Yes</span></div>
+
+
+</div>
+
         <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/ml/json-ld/TypedValue.php"><a href="files/vendor-ml-json-ld-typedvalue.html"><abbr title="vendor/ml/json-ld/TypedValue.php">TypedValue.php</abbr></a></abbr>
     :
@@ -136,7 +145,8 @@
 
     <h5 class="phpdocumentor-tag-list__heading" id="tags">
         Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/ML-JsonLD-TypedValue.html#tags" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h5>
     <dl class="phpdocumentor-tag-list">
                                     <dt class="phpdocumentor-tag-list__entry">
@@ -152,16 +162,27 @@
 
 
 
-
-
-
 <h3 id="toc">
     Table of Contents
-    <a href="#toc" class="headerlink"><i class="fas fa-link"></i></a>
+    <a href="classes/ML-JsonLD-TypedValue.html#toc" class="headerlink"><i class="fas fa-link"></i></a>
+
 </h3>
 
+
+
+
+
+
+
+
+
+<h4 id="toc-properties">
+    Properties
+    <a href="classes/ML-JsonLD-TypedValue.html#toc-properties" class="headerlink"><i class="fas fa-link"></i></a>
+
+</h4>
 <dl class="phpdocumentor-table-of-contents">
-                    <dt class="phpdocumentor-table-of-contents__entry -property -protected">
+            <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a href="classes/ML-JsonLD-Value.html#property_value">$value</a>
     <span>
                         &nbsp;: string            </span>
@@ -175,7 +196,15 @@
 </dt>
 <dd>The type of the value in the form of an IRI.</dd>
 
-                <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    </dl>
+
+<h4 id="toc-methods">
+    Methods
+    <a href="classes/ML-JsonLD-TypedValue.html#toc-methods" class="headerlink"><i class="fas fa-link"></i></a>
+
+</h4>
+<dl class="phpdocumentor-table-of-contents">
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/ML-JsonLD-TypedValue.html#method___construct">__construct()</a>
     <span>
                                 &nbsp;: mixed    </span>
@@ -231,7 +260,8 @@
 </dt>
 <dd>{@inheritdoc}</dd>
 
-        </dl>
+    </dl>
+
 
 
 
@@ -242,6 +272,7 @@
         <h3 class="phpdocumentor-elements__header" id="properties">
             Properties
             <a href="classes/ML-JsonLD-TypedValue.html#properties" class="headerlink"><i class="fas fa-link"></i></a>
+
         </h3>
                     <article
         class="
@@ -253,6 +284,7 @@
     <h4 class="phpdocumentor-element__name" id="property_value">
         $value
         <a href="classes/ML-JsonLD-Value.html#property_value" class="headerlink"><i class="fas fa-link"></i></a>
+
         <span class="phpdocumentor-element__modifiers">
                                 </span>
     </h4>
@@ -274,12 +306,6 @@
     
     
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
 
 </article>
                     <article
@@ -292,6 +318,7 @@
     <h4 class="phpdocumentor-element__name" id="property_type">
         $type
         <a href="classes/ML-JsonLD-TypedValue.html#property_type" class="headerlink"><i class="fas fa-link"></i></a>
+
         <span class="phpdocumentor-element__modifiers">
                                 </span>
     </h4>
@@ -313,12 +340,6 @@
     
     
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
 
 </article>
             </section>
@@ -327,6 +348,7 @@
         <h3 class="phpdocumentor-elements__header" id="methods">
             Methods
             <a href="classes/ML-JsonLD-TypedValue.html#methods" class="headerlink"><i class="fas fa-link"></i></a>
+
         </h3>
                     <article
         class="phpdocumentor-element
@@ -337,6 +359,7 @@
     <h4 class="phpdocumentor-element__name" id="method___construct">
         __construct()
         <a href="classes/ML-JsonLD-TypedValue.html#method___construct" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/ml/json-ld/TypedValue.php"><a href="files/vendor-ml-json-ld-typedvalue.html"><abbr title="vendor/ml/json-ld/TypedValue.php">TypedValue.php</abbr></a></abbr>
@@ -351,6 +374,8 @@
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">__construct</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$value</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$type</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
 
+    <div class="phpdocumentor-label-line">
+        </div>
     
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
@@ -375,17 +400,7 @@
             </dl>
 
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
 
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">mixed</span>
-            &mdash;
-        
     
 </article>
                     <article
@@ -397,6 +412,7 @@
     <h4 class="phpdocumentor-element__name" id="method_equals">
         equals()
         <a href="classes/ML-JsonLD-TypedValue.html#method_equals" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/ml/json-ld/TypedValue.php"><a href="files/vendor-ml-json-ld-typedvalue.html"><abbr title="vendor/ml/json-ld/TypedValue.php">TypedValue.php</abbr></a></abbr>
@@ -411,6 +427,8 @@
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">equals</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$other</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
 
+    <div class="phpdocumentor-label-line">
+        </div>
     
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
@@ -426,21 +444,17 @@
             </dl>
 
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
 
+            <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">bool</span>
-            &mdash;
-            <section class="phpdocumentor-description"><p>Returns true if the passed value is the same as this
+        <span class="phpdocumentor-signature__response_type">bool</span>
+                    &mdash;
+                <section class="phpdocumentor-description"><p>Returns true if the passed value is the same as this
 instance; false otherwise.</p>
 </section>
 
-    
+            </section>
+
 </article>
                     <article
         class="phpdocumentor-element
@@ -451,6 +465,7 @@ instance; false otherwise.</p>
     <h4 class="phpdocumentor-element__name" id="method_fromJsonLd">
         fromJsonLd()
         <a href="classes/ML-JsonLD-Value.html#method_fromJsonLd" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/ml/json-ld/Value.php"><a href="files/vendor-ml-json-ld-value.html"><abbr title="vendor/ml/json-ld/Value.php">Value.php</abbr></a></abbr>
@@ -465,6 +480,8 @@ instance; false otherwise.</p>
     <span class="phpdocumentor-signature__visibility">public</span>
             <span class="phpdocumentor-signature__static">static</span>        <span class="phpdocumentor-signature__name">fromJsonLd</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><abbr title="\stdClass">stdClass</abbr>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$element</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">false|<a href="classes/ML-JsonLD-LanguageTaggedString.html"><abbr title="\ML\JsonLD\LanguageTaggedString">LanguageTaggedString</abbr></a>|<a href="classes/ML-JsonLD-TypedValue.html"><abbr title="\ML\JsonLD\TypedValue">TypedValue</abbr></a></span></code>
 
+    <div class="phpdocumentor-label-line">
+        </div>
         <section class="phpdocumentor-description"><p>If the passed value element can't be transformed to a language-tagged
 string or a typed value false is returned.</p>
 </section>
@@ -483,20 +500,16 @@ string or a typed value false is returned.</p>
             </dl>
 
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
 
+            <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">false|<a href="classes/ML-JsonLD-LanguageTaggedString.html"><abbr title="\ML\JsonLD\LanguageTaggedString">LanguageTaggedString</abbr></a>|<a href="classes/ML-JsonLD-TypedValue.html"><abbr title="\ML\JsonLD\TypedValue">TypedValue</abbr></a></span>
-            &mdash;
-            <section class="phpdocumentor-description"><p>The parsed object</p>
+        <span class="phpdocumentor-signature__response_type">false|<a href="classes/ML-JsonLD-LanguageTaggedString.html"><abbr title="\ML\JsonLD\LanguageTaggedString">LanguageTaggedString</abbr></a>|<a href="classes/ML-JsonLD-TypedValue.html"><abbr title="\ML\JsonLD\TypedValue">TypedValue</abbr></a></span>
+                    &mdash;
+                <section class="phpdocumentor-description"><p>The parsed object</p>
 </section>
 
-    
+            </section>
+
 </article>
                     <article
         class="phpdocumentor-element
@@ -507,6 +520,7 @@ string or a typed value false is returned.</p>
     <h4 class="phpdocumentor-element__name" id="method_getType">
         getType()
         <a href="classes/ML-JsonLD-TypedValue.html#method_getType" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/ml/json-ld/TypedValue.php"><a href="files/vendor-ml-json-ld-typedvalue.html"><abbr title="vendor/ml/json-ld/TypedValue.php">TypedValue.php</abbr></a></abbr>
@@ -521,6 +535,8 @@ string or a typed value false is returned.</p>
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">getType</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
 
+    <div class="phpdocumentor-label-line">
+        </div>
         <section class="phpdocumentor-description"><p>For the sake of simplicity, the type is currently just a Node
 identifier in the form of a string and not a Node reference.
 This might be changed in the future.</p>
@@ -528,20 +544,16 @@ This might be changed in the future.</p>
 
     
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
 
+            <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">string</span>
-            &mdash;
-            <section class="phpdocumentor-description"><p>The type.</p>
+        <span class="phpdocumentor-signature__response_type">string</span>
+                    &mdash;
+                <section class="phpdocumentor-description"><p>The type.</p>
 </section>
 
-    
+            </section>
+
 </article>
                     <article
         class="phpdocumentor-element
@@ -552,6 +564,7 @@ This might be changed in the future.</p>
     <h4 class="phpdocumentor-element__name" id="method_getValue">
         getValue()
         <a href="classes/ML-JsonLD-Value.html#method_getValue" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/ml/json-ld/Value.php"><a href="files/vendor-ml-json-ld-value.html"><abbr title="vendor/ml/json-ld/Value.php">Value.php</abbr></a></abbr>
@@ -566,23 +579,21 @@ This might be changed in the future.</p>
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">getValue</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
 
+    <div class="phpdocumentor-label-line">
+        </div>
     
     
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
 
+            <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">string</span>
-            &mdash;
-            <section class="phpdocumentor-description"><p>The value.</p>
+        <span class="phpdocumentor-signature__response_type">string</span>
+                    &mdash;
+                <section class="phpdocumentor-description"><p>The value.</p>
 </section>
 
-    
+            </section>
+
 </article>
                     <article
         class="phpdocumentor-element
@@ -593,6 +604,7 @@ This might be changed in the future.</p>
     <h4 class="phpdocumentor-element__name" id="method_setType">
         setType()
         <a href="classes/ML-JsonLD-TypedValue.html#method_setType" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/ml/json-ld/TypedValue.php"><a href="files/vendor-ml-json-ld-typedvalue.html"><abbr title="vendor/ml/json-ld/TypedValue.php">TypedValue.php</abbr></a></abbr>
@@ -607,6 +619,8 @@ This might be changed in the future.</p>
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">setType</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$type</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">self</span></code>
 
+    <div class="phpdocumentor-label-line">
+        </div>
         <section class="phpdocumentor-description"><p>For the sake of simplicity, the type is currently just a Node
 identifier in the form of a string and not a Node reference.
 This might be changed in the future.</p>
@@ -628,7 +642,8 @@ This might be changed in the future.</p>
     
     <h5 class="phpdocumentor-tag-list__heading" id="tags">
         Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/ML-JsonLD-TypedValue.html#method_setType#tags" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h5>
     <dl class="phpdocumentor-tag-list">
                                     <dt class="phpdocumentor-tag-list__entry">
@@ -644,11 +659,11 @@ further checks are currently done.</p>
                                     </dd>
                                             </dl>
 
+            <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">self</span>
-            &mdash;
-        
-    
+        <span class="phpdocumentor-signature__response_type">self</span>
+            </section>
+
 </article>
                     <article
         class="phpdocumentor-element
@@ -659,6 +674,7 @@ further checks are currently done.</p>
     <h4 class="phpdocumentor-element__name" id="method_setValue">
         setValue()
         <a href="classes/ML-JsonLD-Value.html#method_setValue" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/ml/json-ld/Value.php"><a href="files/vendor-ml-json-ld-value.html"><abbr title="vendor/ml/json-ld/Value.php">Value.php</abbr></a></abbr>
@@ -673,6 +689,8 @@ further checks are currently done.</p>
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">setValue</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$value</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">self</span></code>
 
+    <div class="phpdocumentor-label-line">
+        </div>
     
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
@@ -690,7 +708,8 @@ further checks are currently done.</p>
     
     <h5 class="phpdocumentor-tag-list__heading" id="tags">
         Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/ML-JsonLD-Value.html#method_setValue#tags" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h5>
     <dl class="phpdocumentor-tag-list">
                                     <dt class="phpdocumentor-tag-list__entry">
@@ -705,11 +724,11 @@ further checks are currently done.</p>
                                     </dd>
                                             </dl>
 
+            <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">self</span>
-            &mdash;
-        
-    
+        <span class="phpdocumentor-signature__response_type">self</span>
+            </section>
+
 </article>
                     <article
         class="phpdocumentor-element
@@ -720,6 +739,7 @@ further checks are currently done.</p>
     <h4 class="phpdocumentor-element__name" id="method_toJsonLd">
         toJsonLd()
         <a href="classes/ML-JsonLD-TypedValue.html#method_toJsonLd" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/ml/json-ld/TypedValue.php"><a href="files/vendor-ml-json-ld-typedvalue.html"><abbr title="vendor/ml/json-ld/TypedValue.php">TypedValue.php</abbr></a></abbr>
@@ -734,6 +754,8 @@ further checks are currently done.</p>
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">toJsonLd</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$useNativeTypes</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">true</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
 
+    <div class="phpdocumentor-label-line">
+        </div>
     
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
@@ -742,23 +764,12 @@ further checks are currently done.</p>
                 : <span class="phpdocumentor-signature__argument__return-type">mixed</span>
                  = <span class="phpdocumentor-signature__argument__default-value">true</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
-
+                
             </dd>
             </dl>
 
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
 
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">mixed</span>
-            &mdash;
-        
     
 </article>
             </section>
@@ -856,7 +867,48 @@ further checks are currently done.</p>
     </script>
 
     </article>
-                <section data-search-results class="phpdocumentor-search-results phpdocumentor-search-results--hidden">
+                                </section>
+                <section class="phpdocumentor-on-this-page__sidebar">
+                                
+    <section class="phpdocumentor-on-this-page__content">
+        <strong class="phpdocumentor-on-this-page__title">On this page</strong>
+
+        <ul class="phpdocumentor-list -clean">
+            <li class="phpdocumentor-on-this-page-section__title">Table Of Contents</li>
+            <li>
+                <ul class="phpdocumentor-list -clean">
+                                                            <li><a href="classes/ML-JsonLD-TypedValue.html#toc-properties">Properties</a></li>
+                                                            <li><a href="classes/ML-JsonLD-TypedValue.html#toc-methods">Methods</a></li>
+                                    </ul>
+            </li>
+            
+                            <li class="phpdocumentor-on-this-page-section__title">Properties</li>
+                <li>
+                    <ul class="phpdocumentor-list -clean">
+                                                    <li><a href="classes/ML-JsonLD-Value.html#property_value">$value<a href="classes/ML-JsonLD-TypedValue.html"></li>
+                                                    <li><a href="classes/ML-JsonLD-TypedValue.html#property_type">$type<a href="classes/ML-JsonLD-TypedValue.html"></li>
+                                            </ul>
+                </li>
+            
+                        <li class="phpdocumentor-on-this-page-section__title">Methods</li>
+            <li>
+                <ul class="phpdocumentor-list -clean">
+                                            <li><a href="classes/ML-JsonLD-TypedValue.html#method___construct">__construct()</a></li>
+                                            <li><a href="classes/ML-JsonLD-TypedValue.html#method_equals">equals()</a></li>
+                                            <li><a href="classes/ML-JsonLD-Value.html#method_fromJsonLd">fromJsonLd()</a></li>
+                                            <li><a href="classes/ML-JsonLD-TypedValue.html#method_getType">getType()</a></li>
+                                            <li><a href="classes/ML-JsonLD-Value.html#method_getValue">getValue()</a></li>
+                                            <li><a href="classes/ML-JsonLD-TypedValue.html#method_setType">setType()</a></li>
+                                            <li><a href="classes/ML-JsonLD-Value.html#method_setValue">setValue()</a></li>
+                                            <li><a href="classes/ML-JsonLD-TypedValue.html#method_toJsonLd">toJsonLd()</a></li>
+                                    </ul>
+            </li>
+                    </ul>
+    </section>
+
+                </section>
+                            </div>
+            <section data-search-results class="phpdocumentor-search-results phpdocumentor-search-results--hidden">
     <section class="phpdocumentor-search-results__dialog">
         <header class="phpdocumentor-search-results__header">
             <h2 class="phpdocumentor-search-results__title">Search results</h2>
@@ -867,7 +919,6 @@ further checks are currently done.</p>
         </section>
     </section>
 </section>
-            </div>
         </div>
         <a href="classes/ML-JsonLD-TypedValue.html#top" class="phpdocumentor-back-to-top"><i class="fas fa-chevron-circle-up"></i></a>
 

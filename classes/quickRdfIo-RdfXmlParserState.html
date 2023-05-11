@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/base.css">
             <link rel="preconnect" href="https://fonts.gstatic.com">
-        <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@100;200;300;400;600;700&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;600;700&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="css/template.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css" integrity="sha256-ybRkN9dBjhcS2qrW1z+hfCxq+1aBdwyQM5wlQoQVt/0=" crossorigin="anonymous" />
@@ -19,6 +19,7 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.23.0/plugins/line-highlight/prism-line-highlight.css">
                 <script src="https://cdn.jsdelivr.net/npm/fuse.js@3.4.6"></script>
         <script src="https://cdn.jsdelivr.net/npm/css-vars-ponyfill@2"></script>
+        <script src="js/template.js"></script>
         <script src="js/search.js"></script>
         <script defer src="js/searchIndex.js"></script>
     </head>
@@ -52,7 +53,7 @@
 <label class="phpdocumentor-sidebar__menu-icon" for="sidebar-button">
     Menu
 </label>
-<aside class="phpdocumentor-column -four phpdocumentor-sidebar">
+<aside class="phpdocumentor-column -three phpdocumentor-sidebar">
                     <section class="phpdocumentor-sidebar__category">
             <h2 class="phpdocumentor-sidebar__category-header">Namespaces</h2>
                                     <h4 class="phpdocumentor-sidebar__root-namespace">
@@ -99,8 +100,9 @@
     </section>
 </aside>
 
-            <div class="phpdocumentor-column -eight phpdocumentor-content">
-                    <ul class="phpdocumentor-breadcrumbs">
+            <div class="phpdocumentor-column -nine phpdocumentor-content">
+                                <section>
+                                        <ul class="phpdocumentor-breadcrumbs">
             <li class="phpdocumentor-breadcrumb"><a href="namespaces/quickrdfio.html">quickRdfIo</a></li>
     </ul>
 
@@ -119,6 +121,11 @@
     
     </h2>
 
+<div class="phpdocumentor-label-line">
+
+
+</div>
+
         <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/RdfXmlParser.php"><a href="files/src-quickrdfio-rdfxmlparser.html"><abbr title="src/quickRdfIo/RdfXmlParser.php">RdfXmlParser.php</abbr></a></abbr>
     :
@@ -127,16 +134,6 @@
     </aside>
 
         
-    <section class="phpdocumentor-description"></section>
-
-
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
-
 
 
 
@@ -144,137 +141,149 @@
 
 <h3 id="toc">
     Table of Contents
-    <a href="#toc" class="headerlink"><i class="fas fa-link"></i></a>
+    <a href="classes/quickRdfIo-RdfXmlParserState.html#toc" class="headerlink"><i class="fas fa-link"></i></a>
+
 </h3>
 
+
+
+
+
+
+
+<h4 id="toc-constants">
+    Constants
+    <a href="classes/quickRdfIo-RdfXmlParserState.html#toc-constants" class="headerlink"><i class="fas fa-link"></i></a>
+
+</h4>
 <dl class="phpdocumentor-table-of-contents">
             <dt class="phpdocumentor-table-of-contents__entry -constant -public">
     <a href="classes/quickRdfIo-RdfXmlParserState.html#constant_STATE_NODE">STATE_NODE</a>
     <span>
         &nbsp;= &#039;node&#039;                            </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -constant -public">
     <a href="classes/quickRdfIo-RdfXmlParserState.html#constant_STATE_PREDICATE">STATE_PREDICATE</a>
     <span>
         &nbsp;= &#039;predicate&#039;                            </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -constant -public">
     <a href="classes/quickRdfIo-RdfXmlParserState.html#constant_STATE_ROOT">STATE_ROOT</a>
     <span>
         &nbsp;= &#039;root&#039;                            </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -constant -public">
     <a href="classes/quickRdfIo-RdfXmlParserState.html#constant_STATE_VALUE">STATE_VALUE</a>
     <span>
         &nbsp;= &#039;value&#039;                            </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -constant -public">
     <a href="classes/quickRdfIo-RdfXmlParserState.html#constant_STATE_XMLLITERAL">STATE_XMLLITERAL</a>
     <span>
         &nbsp;= &#039;xmlliteral&#039;                            </span>
 </dt>
-<dd></dd>
 
-                    <dt class="phpdocumentor-table-of-contents__entry -property -public">
+    </dl>
+
+
+<h4 id="toc-properties">
+    Properties
+    <a href="classes/quickRdfIo-RdfXmlParserState.html#toc-properties" class="headerlink"><i class="fas fa-link"></i></a>
+
+</h4>
+<dl class="phpdocumentor-table-of-contents">
+            <dt class="phpdocumentor-table-of-contents__entry -property -public">
     <a href="classes/quickRdfIo-RdfXmlParserState.html#property_datatype">$datatype</a>
     <span>
                         &nbsp;: string|null            </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -public">
     <a href="classes/quickRdfIo-RdfXmlParserState.html#property_isCDataPredicate">$isCDataPredicate</a>
     <span>
                         &nbsp;: bool|null            </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -public">
     <a href="classes/quickRdfIo-RdfXmlParserState.html#property_isCollection">$isCollection</a>
     <span>
                         &nbsp;: bool            </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -public">
     <a href="classes/quickRdfIo-RdfXmlParserState.html#property_lang">$lang</a>
     <span>
                         &nbsp;: string            </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -public">
     <a href="classes/quickRdfIo-RdfXmlParserState.html#property_literalValue">$literalValue</a>
     <span>
                         &nbsp;: string|null            </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -public">
     <a href="classes/quickRdfIo-RdfXmlParserState.html#property_literalValueDepth">$literalValueDepth</a>
     <span>
                         &nbsp;: int            </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -public">
     <a href="classes/quickRdfIo-RdfXmlParserState.html#property_predicate">$predicate</a>
     <span>
                         &nbsp;: <a href="classes/rdfInterface-NamedNodeInterface.html"><abbr title="\rdfInterface\NamedNodeInterface">NamedNodeInterface</abbr></a>            </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -public">
     <a href="classes/quickRdfIo-RdfXmlParserState.html#property_reifyAs">$reifyAs</a>
     <span>
                         &nbsp;: <a href="classes/rdfInterface-BlankNodeInterface.html"><abbr title="\rdfInterface\BlankNodeInterface">BlankNodeInterface</abbr></a>|<a href="classes/rdfInterface-NamedNodeInterface.html"><abbr title="\rdfInterface\NamedNodeInterface">NamedNodeInterface</abbr></a>|null            </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -public">
     <a href="classes/quickRdfIo-RdfXmlParserState.html#property_sequenceNo">$sequenceNo</a>
     <span>
                         &nbsp;: int            </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -public">
     <a href="classes/quickRdfIo-RdfXmlParserState.html#property_state">$state</a>
     <span>
                         &nbsp;: string            </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -public">
     <a href="classes/quickRdfIo-RdfXmlParserState.html#property_subject">$subject</a>
     <span>
                         &nbsp;: <a href="classes/rdfInterface-NamedNodeInterface.html"><abbr title="\rdfInterface\NamedNodeInterface">NamedNodeInterface</abbr></a>|<a href="classes/rdfInterface-BlankNodeInterface.html"><abbr title="\rdfInterface\BlankNodeInterface">BlankNodeInterface</abbr></a>            </span>
 </dt>
-<dd></dd>
 
-                <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    </dl>
+
+<h4 id="toc-methods">
+    Methods
+    <a href="classes/quickRdfIo-RdfXmlParserState.html#toc-methods" class="headerlink"><i class="fas fa-link"></i></a>
+
+</h4>
+<dl class="phpdocumentor-table-of-contents">
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/quickRdfIo-RdfXmlParserState.html#method_withState">withState()</a>
     <span>
                                 &nbsp;: self    </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/quickRdfIo-RdfXmlParserState.html#method_withSubject">withSubject()</a>
     <span>
                                 &nbsp;: self    </span>
 </dt>
-<dd></dd>
 
-        </dl>
+    </dl>
+
 
 
 
@@ -283,11 +292,13 @@
         <h3 class="phpdocumentor-elements__header" id="constants">
             Constants
             <a href="classes/quickRdfIo-RdfXmlParserState.html#constants" class="headerlink"><i class="fas fa-link"></i></a>
+
         </h3>
                     <article class="phpdocumentor-element -constant -public ">
     <h4 class="phpdocumentor-element__name" id="constant_STATE_NODE">
         STATE_NODE
         <a href="classes/quickRdfIo-RdfXmlParserState.html#constant_STATE_NODE" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
 
     <aside class="phpdocumentor-element-found-in">
@@ -306,23 +317,16 @@
 </code>
 
 
-        <section class="phpdocumentor-description"></section>
-
-        <section class="phpdocumentor-description"></section>
-
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
+    
+    
 
 </article>
                     <article class="phpdocumentor-element -constant -public ">
     <h4 class="phpdocumentor-element__name" id="constant_STATE_PREDICATE">
         STATE_PREDICATE
         <a href="classes/quickRdfIo-RdfXmlParserState.html#constant_STATE_PREDICATE" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
 
     <aside class="phpdocumentor-element-found-in">
@@ -341,23 +345,16 @@
 </code>
 
 
-        <section class="phpdocumentor-description"></section>
-
-        <section class="phpdocumentor-description"></section>
-
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
+    
+    
 
 </article>
                     <article class="phpdocumentor-element -constant -public ">
     <h4 class="phpdocumentor-element__name" id="constant_STATE_ROOT">
         STATE_ROOT
         <a href="classes/quickRdfIo-RdfXmlParserState.html#constant_STATE_ROOT" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
 
     <aside class="phpdocumentor-element-found-in">
@@ -376,23 +373,16 @@
 </code>
 
 
-        <section class="phpdocumentor-description"></section>
-
-        <section class="phpdocumentor-description"></section>
-
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
+    
+    
 
 </article>
                     <article class="phpdocumentor-element -constant -public ">
     <h4 class="phpdocumentor-element__name" id="constant_STATE_VALUE">
         STATE_VALUE
         <a href="classes/quickRdfIo-RdfXmlParserState.html#constant_STATE_VALUE" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
 
     <aside class="phpdocumentor-element-found-in">
@@ -411,23 +401,16 @@
 </code>
 
 
-        <section class="phpdocumentor-description"></section>
-
-        <section class="phpdocumentor-description"></section>
-
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
+    
+    
 
 </article>
                     <article class="phpdocumentor-element -constant -public ">
     <h4 class="phpdocumentor-element__name" id="constant_STATE_XMLLITERAL">
         STATE_XMLLITERAL
         <a href="classes/quickRdfIo-RdfXmlParserState.html#constant_STATE_XMLLITERAL" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
 
     <aside class="phpdocumentor-element-found-in">
@@ -446,17 +429,9 @@
 </code>
 
 
-        <section class="phpdocumentor-description"></section>
-
-        <section class="phpdocumentor-description"></section>
-
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
+    
+    
 
 </article>
             </section>
@@ -466,6 +441,7 @@
         <h3 class="phpdocumentor-elements__header" id="properties">
             Properties
             <a href="classes/quickRdfIo-RdfXmlParserState.html#properties" class="headerlink"><i class="fas fa-link"></i></a>
+
         </h3>
                     <article
         class="
@@ -477,6 +453,7 @@
     <h4 class="phpdocumentor-element__name" id="property_datatype">
         $datatype
         <a href="classes/quickRdfIo-RdfXmlParserState.html#property_datatype" class="headerlink"><i class="fas fa-link"></i></a>
+
         <span class="phpdocumentor-element__modifiers">
                                 </span>
     </h4>
@@ -494,17 +471,9 @@
     <span class="phpdocumentor-signature__name">$datatype</span>
      = <span class="phpdocumentor-signature__default-value">null</span></code>
 
-        <section class="phpdocumentor-description"></section>
-
-        <section class="phpdocumentor-description"></section>
-
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
+    
+    
 
 </article>
                     <article
@@ -517,6 +486,7 @@
     <h4 class="phpdocumentor-element__name" id="property_isCDataPredicate">
         $isCDataPredicate
         <a href="classes/quickRdfIo-RdfXmlParserState.html#property_isCDataPredicate" class="headerlink"><i class="fas fa-link"></i></a>
+
         <span class="phpdocumentor-element__modifiers">
                                 </span>
     </h4>
@@ -534,17 +504,9 @@
     <span class="phpdocumentor-signature__name">$isCDataPredicate</span>
      = <span class="phpdocumentor-signature__default-value">null</span></code>
 
-        <section class="phpdocumentor-description"></section>
-
-        <section class="phpdocumentor-description"></section>
-
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
+    
+    
 
 </article>
                     <article
@@ -557,6 +519,7 @@
     <h4 class="phpdocumentor-element__name" id="property_isCollection">
         $isCollection
         <a href="classes/quickRdfIo-RdfXmlParserState.html#property_isCollection" class="headerlink"><i class="fas fa-link"></i></a>
+
         <span class="phpdocumentor-element__modifiers">
                                 </span>
     </h4>
@@ -574,17 +537,9 @@
     <span class="phpdocumentor-signature__name">$isCollection</span>
      = <span class="phpdocumentor-signature__default-value">false</span></code>
 
-        <section class="phpdocumentor-description"></section>
-
-        <section class="phpdocumentor-description"></section>
-
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
+    
+    
 
 </article>
                     <article
@@ -597,6 +552,7 @@
     <h4 class="phpdocumentor-element__name" id="property_lang">
         $lang
         <a href="classes/quickRdfIo-RdfXmlParserState.html#property_lang" class="headerlink"><i class="fas fa-link"></i></a>
+
         <span class="phpdocumentor-element__modifiers">
                                 </span>
     </h4>
@@ -614,17 +570,9 @@
     <span class="phpdocumentor-signature__name">$lang</span>
      = <span class="phpdocumentor-signature__default-value">&#039;&#039;</span></code>
 
-        <section class="phpdocumentor-description"></section>
-
-        <section class="phpdocumentor-description"></section>
-
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
+    
+    
 
 </article>
                     <article
@@ -637,6 +585,7 @@
     <h4 class="phpdocumentor-element__name" id="property_literalValue">
         $literalValue
         <a href="classes/quickRdfIo-RdfXmlParserState.html#property_literalValue" class="headerlink"><i class="fas fa-link"></i></a>
+
         <span class="phpdocumentor-element__modifiers">
                                 </span>
     </h4>
@@ -654,17 +603,9 @@
     <span class="phpdocumentor-signature__name">$literalValue</span>
      = <span class="phpdocumentor-signature__default-value">null</span></code>
 
-        <section class="phpdocumentor-description"></section>
-
-        <section class="phpdocumentor-description"></section>
-
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
+    
+    
 
 </article>
                     <article
@@ -677,6 +618,7 @@
     <h4 class="phpdocumentor-element__name" id="property_literalValueDepth">
         $literalValueDepth
         <a href="classes/quickRdfIo-RdfXmlParserState.html#property_literalValueDepth" class="headerlink"><i class="fas fa-link"></i></a>
+
         <span class="phpdocumentor-element__modifiers">
                                 </span>
     </h4>
@@ -694,17 +636,9 @@
     <span class="phpdocumentor-signature__name">$literalValueDepth</span>
      = <span class="phpdocumentor-signature__default-value">0</span></code>
 
-        <section class="phpdocumentor-description"></section>
-
-        <section class="phpdocumentor-description"></section>
-
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
+    
+    
 
 </article>
                     <article
@@ -717,6 +651,7 @@
     <h4 class="phpdocumentor-element__name" id="property_predicate">
         $predicate
         <a href="classes/quickRdfIo-RdfXmlParserState.html#property_predicate" class="headerlink"><i class="fas fa-link"></i></a>
+
         <span class="phpdocumentor-element__modifiers">
                                 </span>
     </h4>
@@ -734,17 +669,9 @@
     <span class="phpdocumentor-signature__name">$predicate</span>
     </code>
 
-        <section class="phpdocumentor-description"></section>
-
-        <section class="phpdocumentor-description"></section>
-
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
+    
+    
 
 </article>
                     <article
@@ -757,6 +684,7 @@
     <h4 class="phpdocumentor-element__name" id="property_reifyAs">
         $reifyAs
         <a href="classes/quickRdfIo-RdfXmlParserState.html#property_reifyAs" class="headerlink"><i class="fas fa-link"></i></a>
+
         <span class="phpdocumentor-element__modifiers">
                                 </span>
     </h4>
@@ -774,17 +702,9 @@
     <span class="phpdocumentor-signature__name">$reifyAs</span>
      = <span class="phpdocumentor-signature__default-value">null</span></code>
 
-        <section class="phpdocumentor-description"></section>
-
-        <section class="phpdocumentor-description"></section>
-
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
+    
+    
 
 </article>
                     <article
@@ -797,6 +717,7 @@
     <h4 class="phpdocumentor-element__name" id="property_sequenceNo">
         $sequenceNo
         <a href="classes/quickRdfIo-RdfXmlParserState.html#property_sequenceNo" class="headerlink"><i class="fas fa-link"></i></a>
+
         <span class="phpdocumentor-element__modifiers">
                                 </span>
     </h4>
@@ -814,17 +735,9 @@
     <span class="phpdocumentor-signature__name">$sequenceNo</span>
      = <span class="phpdocumentor-signature__default-value">1</span></code>
 
-        <section class="phpdocumentor-description"></section>
-
-        <section class="phpdocumentor-description"></section>
-
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
+    
+    
 
 </article>
                     <article
@@ -837,6 +750,7 @@
     <h4 class="phpdocumentor-element__name" id="property_state">
         $state
         <a href="classes/quickRdfIo-RdfXmlParserState.html#property_state" class="headerlink"><i class="fas fa-link"></i></a>
+
         <span class="phpdocumentor-element__modifiers">
                                 </span>
     </h4>
@@ -854,17 +768,9 @@
     <span class="phpdocumentor-signature__name">$state</span>
      = <span class="phpdocumentor-signature__default-value">self::STATE_ROOT</span></code>
 
-        <section class="phpdocumentor-description"></section>
-
-        <section class="phpdocumentor-description"></section>
-
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
+    
+    
 
 </article>
                     <article
@@ -877,6 +783,7 @@
     <h4 class="phpdocumentor-element__name" id="property_subject">
         $subject
         <a href="classes/quickRdfIo-RdfXmlParserState.html#property_subject" class="headerlink"><i class="fas fa-link"></i></a>
+
         <span class="phpdocumentor-element__modifiers">
                                 </span>
     </h4>
@@ -894,17 +801,9 @@
     <span class="phpdocumentor-signature__name">$subject</span>
     </code>
 
-        <section class="phpdocumentor-description"></section>
-
-        <section class="phpdocumentor-description"></section>
-
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
+    
+    
 
 </article>
             </section>
@@ -913,6 +812,7 @@
         <h3 class="phpdocumentor-elements__header" id="methods">
             Methods
             <a href="classes/quickRdfIo-RdfXmlParserState.html#methods" class="headerlink"><i class="fas fa-link"></i></a>
+
         </h3>
                     <article
         class="phpdocumentor-element
@@ -923,6 +823,7 @@
     <h4 class="phpdocumentor-element__name" id="method_withState">
         withState()
         <a href="classes/quickRdfIo-RdfXmlParserState.html#method_withState" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/RdfXmlParser.php"><a href="files/src-quickrdfio-rdfxmlparser.html"><abbr title="src/quickRdfIo/RdfXmlParser.php">RdfXmlParser.php</abbr></a></abbr>
@@ -936,8 +837,9 @@
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">withState</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$state</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">self</span></code>
 
-        <section class="phpdocumentor-description"></section>
-
+    <div class="phpdocumentor-label-line">
+        </div>
+    
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
@@ -945,24 +847,17 @@
                 : <span class="phpdocumentor-signature__argument__return-type">string</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
-
+                
             </dd>
             </dl>
 
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
 
+            <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">self</span>
-            &mdash;
-        
-    
+        <span class="phpdocumentor-signature__response_type">self</span>
+            </section>
+
 </article>
                     <article
         class="phpdocumentor-element
@@ -973,6 +868,7 @@
     <h4 class="phpdocumentor-element__name" id="method_withSubject">
         withSubject()
         <a href="classes/quickRdfIo-RdfXmlParserState.html#method_withSubject" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/RdfXmlParser.php"><a href="files/src-quickrdfio-rdfxmlparser.html"><abbr title="src/quickRdfIo/RdfXmlParser.php">RdfXmlParser.php</abbr></a></abbr>
@@ -986,8 +882,9 @@
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">withSubject</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href="classes/rdfInterface-NamedNodeInterface.html"><abbr title="\rdfInterface\NamedNodeInterface">NamedNodeInterface</abbr></a>|<a href="classes/rdfInterface-BlankNodeInterface.html"><abbr title="\rdfInterface\BlankNodeInterface">BlankNodeInterface</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$subject</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">self</span></code>
 
-        <section class="phpdocumentor-description"></section>
-
+    <div class="phpdocumentor-label-line">
+        </div>
+    
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
@@ -995,24 +892,17 @@
                 : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/rdfInterface-NamedNodeInterface.html"><abbr title="\rdfInterface\NamedNodeInterface">NamedNodeInterface</abbr></a>|<a href="classes/rdfInterface-BlankNodeInterface.html"><abbr title="\rdfInterface\BlankNodeInterface">BlankNodeInterface</abbr></a></span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
-
+                
             </dd>
             </dl>
 
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
 
+            <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">self</span>
-            &mdash;
-        
-    
+        <span class="phpdocumentor-signature__response_type">self</span>
+            </section>
+
 </article>
             </section>
 
@@ -1109,7 +999,62 @@
     </script>
 
     </article>
-                <section data-search-results class="phpdocumentor-search-results phpdocumentor-search-results--hidden">
+                                </section>
+                <section class="phpdocumentor-on-this-page__sidebar">
+                                
+    <section class="phpdocumentor-on-this-page__content">
+        <strong class="phpdocumentor-on-this-page__title">On this page</strong>
+
+        <ul class="phpdocumentor-list -clean">
+            <li class="phpdocumentor-on-this-page-section__title">Table Of Contents</li>
+            <li>
+                <ul class="phpdocumentor-list -clean">
+                                        <li><a href="classes/quickRdfIo-RdfXmlParserState.html#toc-constants">Constants</a></li>
+                                                            <li><a href="classes/quickRdfIo-RdfXmlParserState.html#toc-properties">Properties</a></li>
+                                                            <li><a href="classes/quickRdfIo-RdfXmlParserState.html#toc-methods">Methods</a></li>
+                                    </ul>
+            </li>
+                            <li class="phpdocumentor-on-this-page-section__title">Constants</li>
+                <li>
+                    <ul class="phpdocumentor-list -clean">
+                                                    <li><a href="classes/quickRdfIo-RdfXmlParserState.html#constant_STATE_NODE">STATE_NODE</a></li>
+                                                    <li><a href="classes/quickRdfIo-RdfXmlParserState.html#constant_STATE_PREDICATE">STATE_PREDICATE</a></li>
+                                                    <li><a href="classes/quickRdfIo-RdfXmlParserState.html#constant_STATE_ROOT">STATE_ROOT</a></li>
+                                                    <li><a href="classes/quickRdfIo-RdfXmlParserState.html#constant_STATE_VALUE">STATE_VALUE</a></li>
+                                                    <li><a href="classes/quickRdfIo-RdfXmlParserState.html#constant_STATE_XMLLITERAL">STATE_XMLLITERAL</a></li>
+                                            </ul>
+                </li>
+            
+                            <li class="phpdocumentor-on-this-page-section__title">Properties</li>
+                <li>
+                    <ul class="phpdocumentor-list -clean">
+                                                    <li><a href="classes/quickRdfIo-RdfXmlParserState.html#property_datatype">$datatype<a href="classes/quickRdfIo-RdfXmlParserState.html"></li>
+                                                    <li><a href="classes/quickRdfIo-RdfXmlParserState.html#property_isCDataPredicate">$isCDataPredicate<a href="classes/quickRdfIo-RdfXmlParserState.html"></li>
+                                                    <li><a href="classes/quickRdfIo-RdfXmlParserState.html#property_isCollection">$isCollection<a href="classes/quickRdfIo-RdfXmlParserState.html"></li>
+                                                    <li><a href="classes/quickRdfIo-RdfXmlParserState.html#property_lang">$lang<a href="classes/quickRdfIo-RdfXmlParserState.html"></li>
+                                                    <li><a href="classes/quickRdfIo-RdfXmlParserState.html#property_literalValue">$literalValue<a href="classes/quickRdfIo-RdfXmlParserState.html"></li>
+                                                    <li><a href="classes/quickRdfIo-RdfXmlParserState.html#property_literalValueDepth">$literalValueDepth<a href="classes/quickRdfIo-RdfXmlParserState.html"></li>
+                                                    <li><a href="classes/quickRdfIo-RdfXmlParserState.html#property_predicate">$predicate<a href="classes/quickRdfIo-RdfXmlParserState.html"></li>
+                                                    <li><a href="classes/quickRdfIo-RdfXmlParserState.html#property_reifyAs">$reifyAs<a href="classes/quickRdfIo-RdfXmlParserState.html"></li>
+                                                    <li><a href="classes/quickRdfIo-RdfXmlParserState.html#property_sequenceNo">$sequenceNo<a href="classes/quickRdfIo-RdfXmlParserState.html"></li>
+                                                    <li><a href="classes/quickRdfIo-RdfXmlParserState.html#property_state">$state<a href="classes/quickRdfIo-RdfXmlParserState.html"></li>
+                                                    <li><a href="classes/quickRdfIo-RdfXmlParserState.html#property_subject">$subject<a href="classes/quickRdfIo-RdfXmlParserState.html"></li>
+                                            </ul>
+                </li>
+            
+                        <li class="phpdocumentor-on-this-page-section__title">Methods</li>
+            <li>
+                <ul class="phpdocumentor-list -clean">
+                                            <li><a href="classes/quickRdfIo-RdfXmlParserState.html#method_withState">withState()</a></li>
+                                            <li><a href="classes/quickRdfIo-RdfXmlParserState.html#method_withSubject">withSubject()</a></li>
+                                    </ul>
+            </li>
+                    </ul>
+    </section>
+
+                </section>
+                            </div>
+            <section data-search-results class="phpdocumentor-search-results phpdocumentor-search-results--hidden">
     <section class="phpdocumentor-search-results__dialog">
         <header class="phpdocumentor-search-results__header">
             <h2 class="phpdocumentor-search-results__title">Search results</h2>
@@ -1120,7 +1065,6 @@
         </section>
     </section>
 </section>
-            </div>
         </div>
         <a href="classes/quickRdfIo-RdfXmlParserState.html#top" class="phpdocumentor-back-to-top"><i class="fas fa-chevron-circle-up"></i></a>
 

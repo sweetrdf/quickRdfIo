@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/base.css">
             <link rel="preconnect" href="https://fonts.gstatic.com">
-        <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@100;200;300;400;600;700&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;600;700&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="css/template.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css" integrity="sha256-ybRkN9dBjhcS2qrW1z+hfCxq+1aBdwyQM5wlQoQVt/0=" crossorigin="anonymous" />
@@ -19,6 +19,7 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.23.0/plugins/line-highlight/prism-line-highlight.css">
                 <script src="https://cdn.jsdelivr.net/npm/fuse.js@3.4.6"></script>
         <script src="https://cdn.jsdelivr.net/npm/css-vars-ponyfill@2"></script>
+        <script src="js/template.js"></script>
         <script src="js/search.js"></script>
         <script defer src="js/searchIndex.js"></script>
     </head>
@@ -52,7 +53,7 @@
 <label class="phpdocumentor-sidebar__menu-icon" for="sidebar-button">
     Menu
 </label>
-<aside class="phpdocumentor-column -four phpdocumentor-sidebar">
+<aside class="phpdocumentor-column -three phpdocumentor-sidebar">
                     <section class="phpdocumentor-sidebar__category">
             <h2 class="phpdocumentor-sidebar__category-header">Namespaces</h2>
                                     <h4 class="phpdocumentor-sidebar__root-namespace">
@@ -99,8 +100,9 @@
     </section>
 </aside>
 
-            <div class="phpdocumentor-column -eight phpdocumentor-content">
-                    <ul class="phpdocumentor-breadcrumbs">
+            <div class="phpdocumentor-column -nine phpdocumentor-content">
+                                <section>
+                                        <ul class="phpdocumentor-breadcrumbs">
             <li class="phpdocumentor-breadcrumb"><a href="namespaces/ml.html">ML</a></li>
             <li class="phpdocumentor-breadcrumb"><a href="namespaces/ml-jsonld.html">JsonLD</a></li>
     </ul>
@@ -120,6 +122,11 @@
     
     </h2>
 
+<div class="phpdocumentor-label-line">
+
+
+</div>
+
         <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/ml/json-ld/Processor.php"><a href="files/vendor-ml-json-ld-processor.html"><abbr title="vendor/ml/json-ld/Processor.php">Processor.php</abbr></a></abbr>
     :
@@ -134,7 +141,8 @@ specification.</p>
 
     <h5 class="phpdocumentor-tag-list__heading" id="tags">
         Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/ML-JsonLD-Processor.html#tags" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h5>
     <dl class="phpdocumentor-tag-list">
                                     <dt class="phpdocumentor-tag-list__entry">
@@ -150,14 +158,23 @@ specification.</p>
 
 
 
-
-
-
 <h3 id="toc">
     Table of Contents
-    <a href="#toc" class="headerlink"><i class="fas fa-link"></i></a>
+    <a href="classes/ML-JsonLD-Processor.html#toc" class="headerlink"><i class="fas fa-link"></i></a>
+
 </h3>
 
+
+
+
+
+
+
+<h4 id="toc-constants">
+    Constants
+    <a href="classes/ML-JsonLD-Processor.html#toc-constants" class="headerlink"><i class="fas fa-link"></i></a>
+
+</h4>
 <dl class="phpdocumentor-table-of-contents">
             <dt class="phpdocumentor-table-of-contents__entry -constant -public">
     <a href="classes/ML-JsonLD-Processor.html#constant_CONTEXT_MAX_IRI_RECURSIONS">CONTEXT_MAX_IRI_RECURSIONS</a>
@@ -173,26 +190,32 @@ specification.</p>
 </dt>
 <dd>Timeout for retrieving remote documents in seconds</dd>
 
-                    <dt class="phpdocumentor-table-of-contents__entry -property -private">
+    </dl>
+
+
+<h4 id="toc-properties">
+    Properties
+    <a href="classes/ML-JsonLD-Processor.html#toc-properties" class="headerlink"><i class="fas fa-link"></i></a>
+
+</h4>
+<dl class="phpdocumentor-table-of-contents">
+            <dt class="phpdocumentor-table-of-contents__entry -property -private">
     <a href="classes/ML-JsonLD-Processor.html#property_baseIri">$baseIri</a>
     <span>
                         &nbsp;: <abbr title="\ML\IRI\IRI">IRI</abbr>            </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -private">
     <a href="classes/ML-JsonLD-Processor.html#property_blankNodeCounter">$blankNodeCounter</a>
     <span>
                         &nbsp;: int            </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -private">
     <a href="classes/ML-JsonLD-Processor.html#property_blankNodeMap">$blankNodeMap</a>
     <span>
                         &nbsp;: array&lt;string|int, mixed&gt;            </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -private">
     <a href="classes/ML-JsonLD-Processor.html#property_compactArrays">$compactArrays</a>
@@ -206,21 +229,18 @@ specification.</p>
     <span>
                         &nbsp;: <a href="classes/ML-JsonLD-DocumentFactoryInterface.html"><abbr title="\ML\JsonLD\DocumentFactoryInterface">DocumentFactoryInterface</abbr></a>            </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -private">
     <a href="classes/ML-JsonLD-Processor.html#property_documentLoader">$documentLoader</a>
     <span>
                         &nbsp;: <a href="classes/ML-JsonLD-DocumentLoaderInterface.html"><abbr title="\ML\JsonLD\DocumentLoaderInterface">DocumentLoaderInterface</abbr></a>            </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -private">
     <a href="classes/ML-JsonLD-Processor.html#property_framingKeywords">$framingKeywords</a>
     <span>
                         &nbsp;: array&lt;string|int, mixed&gt;            </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -private">
     <a href="classes/ML-JsonLD-Processor.html#property_generalizedRdf">$generalizedRdf</a>
@@ -234,7 +254,6 @@ specification.</p>
     <span>
                         &nbsp;: array&lt;string|int, mixed&gt;            </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -private">
     <a href="classes/ML-JsonLD-Processor.html#property_optimize">$optimize</a>
@@ -257,7 +276,15 @@ specification.</p>
 </dt>
 <dd>Use rdf:type instead of \@type when converting from RDF</dd>
 
-                <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    </dl>
+
+<h4 id="toc-methods">
+    Methods
+    <a href="classes/ML-JsonLD-Processor.html#toc-methods" class="headerlink"><i class="fas fa-link"></i></a>
+
+</h4>
+<dl class="phpdocumentor-table-of-contents">
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/ML-JsonLD-Processor.html#method___construct">__construct()</a>
     <span>
                                 &nbsp;: mixed    </span>
@@ -490,7 +517,8 @@ path (= value profile)</dd>
 </dt>
 <dd>Verifies whether two JSON-LD subtrees are equal not</dd>
 
-        </dl>
+    </dl>
+
 
 
 
@@ -499,11 +527,13 @@ path (= value profile)</dd>
         <h3 class="phpdocumentor-elements__header" id="constants">
             Constants
             <a href="classes/ML-JsonLD-Processor.html#constants" class="headerlink"><i class="fas fa-link"></i></a>
+
         </h3>
                     <article class="phpdocumentor-element -constant -public ">
     <h4 class="phpdocumentor-element__name" id="constant_CONTEXT_MAX_IRI_RECURSIONS">
         CONTEXT_MAX_IRI_RECURSIONS
         <a href="classes/ML-JsonLD-Processor.html#constant_CONTEXT_MAX_IRI_RECURSIONS" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
 
     <aside class="phpdocumentor-element-found-in">
@@ -524,21 +554,15 @@ path (= value profile)</dd>
 
 
     
-        <section class="phpdocumentor-description"></section>
-
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
+    
 
 </article>
                     <article class="phpdocumentor-element -constant -public ">
     <h4 class="phpdocumentor-element__name" id="constant_REMOTE_TIMEOUT">
         REMOTE_TIMEOUT
         <a href="classes/ML-JsonLD-Processor.html#constant_REMOTE_TIMEOUT" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
 
     <aside class="phpdocumentor-element-found-in">
@@ -559,15 +583,8 @@ path (= value profile)</dd>
 
 
     
-        <section class="phpdocumentor-description"></section>
-
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
+    
 
 </article>
             </section>
@@ -577,6 +594,7 @@ path (= value profile)</dd>
         <h3 class="phpdocumentor-elements__header" id="properties">
             Properties
             <a href="classes/ML-JsonLD-Processor.html#properties" class="headerlink"><i class="fas fa-link"></i></a>
+
         </h3>
                     <article
         class="
@@ -588,6 +606,7 @@ path (= value profile)</dd>
     <h4 class="phpdocumentor-element__name" id="property_baseIri">
         $baseIri
         <a href="classes/ML-JsonLD-Processor.html#property_baseIri" class="headerlink"><i class="fas fa-link"></i></a>
+
         <span class="phpdocumentor-element__modifiers">
                                 </span>
     </h4>
@@ -610,12 +629,6 @@ path (= value profile)</dd>
 </section>
 
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
 
 </article>
                     <article
@@ -628,6 +641,7 @@ path (= value profile)</dd>
     <h4 class="phpdocumentor-element__name" id="property_blankNodeCounter">
         $blankNodeCounter
         <a href="classes/ML-JsonLD-Processor.html#property_blankNodeCounter" class="headerlink"><i class="fas fa-link"></i></a>
+
         <span class="phpdocumentor-element__modifiers">
                                 </span>
     </h4>
@@ -650,12 +664,6 @@ path (= value profile)</dd>
 </section>
 
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
 
 </article>
                     <article
@@ -668,6 +676,7 @@ path (= value profile)</dd>
     <h4 class="phpdocumentor-element__name" id="property_blankNodeMap">
         $blankNodeMap
         <a href="classes/ML-JsonLD-Processor.html#property_blankNodeMap" class="headerlink"><i class="fas fa-link"></i></a>
+
         <span class="phpdocumentor-element__modifiers">
                                 </span>
     </h4>
@@ -690,12 +699,6 @@ path (= value profile)</dd>
 </section>
 
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
 
 </article>
                     <article
@@ -708,6 +711,7 @@ path (= value profile)</dd>
     <h4 class="phpdocumentor-element__name" id="property_compactArrays">
         $compactArrays
         <a href="classes/ML-JsonLD-Processor.html#property_compactArrays" class="headerlink"><i class="fas fa-link"></i></a>
+
         <span class="phpdocumentor-element__modifiers">
                                 </span>
     </h4>
@@ -732,12 +736,6 @@ scalars, otherwise the arrays are kept as arrays.</p>
 
     
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
 
 </article>
                     <article
@@ -750,6 +748,7 @@ scalars, otherwise the arrays are kept as arrays.</p>
     <h4 class="phpdocumentor-element__name" id="property_documentFactory">
         $documentFactory
         <a href="classes/ML-JsonLD-Processor.html#property_documentFactory" class="headerlink"><i class="fas fa-link"></i></a>
+
         <span class="phpdocumentor-element__modifiers">
                                 </span>
     </h4>
@@ -772,12 +771,6 @@ scalars, otherwise the arrays are kept as arrays.</p>
 </section>
 
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
 
 </article>
                     <article
@@ -790,6 +783,7 @@ scalars, otherwise the arrays are kept as arrays.</p>
     <h4 class="phpdocumentor-element__name" id="property_documentLoader">
         $documentLoader
         <a href="classes/ML-JsonLD-Processor.html#property_documentLoader" class="headerlink"><i class="fas fa-link"></i></a>
+
         <span class="phpdocumentor-element__modifiers">
                                 </span>
     </h4>
@@ -812,12 +806,6 @@ scalars, otherwise the arrays are kept as arrays.</p>
 </section>
 
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
 
 </article>
                     <article
@@ -830,6 +818,7 @@ scalars, otherwise the arrays are kept as arrays.</p>
     <h4 class="phpdocumentor-element__name" id="property_framingKeywords">
         $framingKeywords
         <a href="classes/ML-JsonLD-Processor.html#property_framingKeywords" class="headerlink"><i class="fas fa-link"></i></a>
+
         <span class="phpdocumentor-element__modifiers">
                                 </span>
     </h4>
@@ -858,12 +847,6 @@ scalars, otherwise the arrays are kept as arrays.</p>
 </section>
 
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
 
 </article>
                     <article
@@ -876,6 +859,7 @@ scalars, otherwise the arrays are kept as arrays.</p>
     <h4 class="phpdocumentor-element__name" id="property_generalizedRdf">
         $generalizedRdf
         <a href="classes/ML-JsonLD-Processor.html#property_generalizedRdf" class="headerlink"><i class="fas fa-link"></i></a>
+
         <span class="phpdocumentor-element__modifiers">
                                 </span>
     </h4>
@@ -900,12 +884,6 @@ dropped when converting to RDF.</p>
 
     
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
 
 </article>
                     <article
@@ -918,6 +896,7 @@ dropped when converting to RDF.</p>
     <h4 class="phpdocumentor-element__name" id="property_keywords">
         $keywords
         <a href="classes/ML-JsonLD-Processor.html#property_keywords" class="headerlink"><i class="fas fa-link"></i></a>
+
         <span class="phpdocumentor-element__modifiers">
                                 </span>
     </h4>
@@ -940,12 +919,6 @@ dropped when converting to RDF.</p>
 </section>
 
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
 
 </article>
                     <article
@@ -958,6 +931,7 @@ dropped when converting to RDF.</p>
     <h4 class="phpdocumentor-element__name" id="property_optimize">
         $optimize
         <a href="classes/ML-JsonLD-Processor.html#property_optimize" class="headerlink"><i class="fas fa-link"></i></a>
+
         <span class="phpdocumentor-element__modifiers">
                                 </span>
     </h4>
@@ -983,12 +957,6 @@ official JSON-LD specification.</p>
 
     
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
 
 </article>
                     <article
@@ -1001,6 +969,7 @@ official JSON-LD specification.</p>
     <h4 class="phpdocumentor-element__name" id="property_useNativeTypes">
         $useNativeTypes
         <a href="classes/ML-JsonLD-Processor.html#property_useNativeTypes" class="headerlink"><i class="fas fa-link"></i></a>
+
         <span class="phpdocumentor-element__modifiers">
                                 </span>
     </h4>
@@ -1027,12 +996,6 @@ whereas xsd:integer and xsd:double values will be converted to numbers.</p>
 
     
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
 
 </article>
                     <article
@@ -1045,6 +1008,7 @@ whereas xsd:integer and xsd:double values will be converted to numbers.</p>
     <h4 class="phpdocumentor-element__name" id="property_useRdfType">
         $useRdfType
         <a href="classes/ML-JsonLD-Processor.html#property_useRdfType" class="headerlink"><i class="fas fa-link"></i></a>
+
         <span class="phpdocumentor-element__modifiers">
                                 </span>
     </h4>
@@ -1069,12 +1033,6 @@ IRI as the property instead of @type when converting from RDF.</p>
 
     
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
 
 </article>
             </section>
@@ -1083,6 +1041,7 @@ IRI as the property instead of @type when converting from RDF.</p>
         <h3 class="phpdocumentor-elements__header" id="methods">
             Methods
             <a href="classes/ML-JsonLD-Processor.html#methods" class="headerlink"><i class="fas fa-link"></i></a>
+
         </h3>
                     <article
         class="phpdocumentor-element
@@ -1093,6 +1052,7 @@ IRI as the property instead of @type when converting from RDF.</p>
     <h4 class="phpdocumentor-element__name" id="method___construct">
         __construct()
         <a href="classes/ML-JsonLD-Processor.html#method___construct" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/ml/json-ld/Processor.php"><a href="files/vendor-ml-json-ld-processor.html"><abbr title="vendor/ml/json-ld/Processor.php">Processor.php</abbr></a></abbr>
@@ -1107,6 +1067,8 @@ IRI as the property instead of @type when converting from RDF.</p>
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">__construct</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><abbr title="\stdClass">stdClass</abbr>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$options</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
 
+    <div class="phpdocumentor-label-line">
+        </div>
         <section class="phpdocumentor-description"><p>The options parameter must be passed and all off the following properties
 have to be set:</p>
 <dl>
@@ -1146,17 +1108,7 @@ have to be set:</p>
             </dl>
 
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
 
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">mixed</span>
-            &mdash;
-        
     
 </article>
                     <article
@@ -1168,6 +1120,7 @@ have to be set:</p>
     <h4 class="phpdocumentor-element__name" id="method_compact">
         compact()
         <a href="classes/ML-JsonLD-Processor.html#method_compact" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/ml/json-ld/Processor.php"><a href="files/vendor-ml-json-ld-processor.html"><abbr title="vendor/ml/json-ld/Processor.php">Processor.php</abbr></a></abbr>
@@ -1182,6 +1135,8 @@ have to be set:</p>
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">compact</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__reference-operator">&amp;</span><span class="phpdocumentor-signature__argument__name">$element</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$activectx</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">array()</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$inversectx</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">array()</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">null|string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$activeprty</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
 
+    <div class="phpdocumentor-label-line">
+        </div>
         <section class="phpdocumentor-description"><p>Attention: This method must be called with an expanded element,
 otherwise it might not work.</p>
 </section>
@@ -1227,20 +1182,16 @@ otherwise it might not work.</p>
             </dl>
 
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
 
+            <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">mixed</span>
-            &mdash;
-            <section class="phpdocumentor-description"><p>The compacted JSON-LD document.</p>
+        <span class="phpdocumentor-signature__response_type">mixed</span>
+                    &mdash;
+                <section class="phpdocumentor-description"><p>The compacted JSON-LD document.</p>
 </section>
 
-    
+            </section>
+
 </article>
                     <article
         class="phpdocumentor-element
@@ -1251,6 +1202,7 @@ otherwise it might not work.</p>
     <h4 class="phpdocumentor-element__name" id="method_createInverseContext">
         createInverseContext()
         <a href="classes/ML-JsonLD-Processor.html#method_createInverseContext" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/ml/json-ld/Processor.php"><a href="files/vendor-ml-json-ld-processor.html"><abbr title="vendor/ml/json-ld/Processor.php">Processor.php</abbr></a></abbr>
@@ -1265,6 +1217,8 @@ otherwise it might not work.</p>
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">createInverseContext</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$activectx</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span></code>
 
+    <div class="phpdocumentor-label-line">
+        </div>
         <section class="phpdocumentor-description"><p>The inverse context is a multidimensional array that has the
 following shape:</p>
 <code class="prettyprint">
@@ -1290,20 +1244,16 @@ following shape:</p>
             </dl>
 
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
 
+            <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span>
-            &mdash;
-            <section class="phpdocumentor-description"><p>The inverse context.</p>
+        <span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span>
+                    &mdash;
+                <section class="phpdocumentor-description"><p>The inverse context.</p>
 </section>
 
-    
+            </section>
+
 </article>
                     <article
         class="phpdocumentor-element
@@ -1314,6 +1264,7 @@ following shape:</p>
     <h4 class="phpdocumentor-element__name" id="method_expand">
         expand()
         <a href="classes/ML-JsonLD-Processor.html#method_expand" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/ml/json-ld/Processor.php"><a href="files/vendor-ml-json-ld-processor.html"><abbr title="vendor/ml/json-ld/Processor.php">Processor.php</abbr></a></abbr>
@@ -1328,6 +1279,8 @@ following shape:</p>
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">expand</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__reference-operator">&amp;</span><span class="phpdocumentor-signature__argument__name">$element</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$activectx</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">array()</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">null|string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$activeprty</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">bool&nbsp;</span><span class="phpdocumentor-signature__argument__name">$frame</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">false</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
 
+    <div class="phpdocumentor-label-line">
+        </div>
     
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
@@ -1372,7 +1325,8 @@ following shape:</p>
     
     <h5 class="phpdocumentor-tag-list__heading" id="tags">
         Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/ML-JsonLD-Processor.html#method_expand#tags" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h5>
     <dl class="phpdocumentor-tag-list">
                                     <dt class="phpdocumentor-tag-list__entry">
@@ -1385,13 +1339,15 @@ following shape:</p>
                                     </dd>
                                             </dl>
 
+            <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">mixed</span>
-            &mdash;
-            <section class="phpdocumentor-description"><p>The expanded document.</p>
+        <span class="phpdocumentor-signature__response_type">mixed</span>
+                    &mdash;
+                <section class="phpdocumentor-description"><p>The expanded document.</p>
 </section>
 
-    
+            </section>
+
 </article>
                     <article
         class="phpdocumentor-element
@@ -1402,6 +1358,7 @@ following shape:</p>
     <h4 class="phpdocumentor-element__name" id="method_flatten">
         flatten()
         <a href="classes/ML-JsonLD-Processor.html#method_flatten" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/ml/json-ld/Processor.php"><a href="files/vendor-ml-json-ld-processor.html"><abbr title="vendor/ml/json-ld/Processor.php">Processor.php</abbr></a></abbr>
@@ -1416,6 +1373,8 @@ following shape:</p>
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">flatten</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$element</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span></code>
 
+    <div class="phpdocumentor-label-line">
+        </div>
     
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
@@ -1431,20 +1390,16 @@ following shape:</p>
             </dl>
 
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
 
+            <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span>
-            &mdash;
-            <section class="phpdocumentor-description"><p>An array representing the flattened element.</p>
+        <span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span>
+                    &mdash;
+                <section class="phpdocumentor-description"><p>An array representing the flattened element.</p>
 </section>
 
-    
+            </section>
+
 </article>
                     <article
         class="phpdocumentor-element
@@ -1455,6 +1410,7 @@ following shape:</p>
     <h4 class="phpdocumentor-element__name" id="method_frame">
         frame()
         <a href="classes/ML-JsonLD-Processor.html#method_frame" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/ml/json-ld/Processor.php"><a href="files/vendor-ml-json-ld-processor.html"><abbr title="vendor/ml/json-ld/Processor.php">Processor.php</abbr></a></abbr>
@@ -1469,6 +1425,8 @@ following shape:</p>
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">frame</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;|<abbr title="\stdClass">stdClass</abbr>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$element</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$frame</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span></code>
 
+    <div class="phpdocumentor-label-line">
+        </div>
     
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
@@ -1495,7 +1453,8 @@ following shape:</p>
     
     <h5 class="phpdocumentor-tag-list__heading" id="tags">
         Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/ML-JsonLD-Processor.html#method_frame#tags" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h5>
     <dl class="phpdocumentor-tag-list">
                                     <dt class="phpdocumentor-tag-list__entry">
@@ -1508,13 +1467,15 @@ following shape:</p>
                                     </dd>
                                             </dl>
 
+            <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span>
-            &mdash;
-            <section class="phpdocumentor-description"><p>$result The framed element in expanded form.</p>
+        <span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span>
+                    &mdash;
+                <section class="phpdocumentor-description"><p>$result The framed element in expanded form.</p>
 </section>
 
-    
+            </section>
+
 </article>
                     <article
         class="phpdocumentor-element
@@ -1525,6 +1486,7 @@ following shape:</p>
     <h4 class="phpdocumentor-element__name" id="method_fromRdf">
         fromRdf()
         <a href="classes/ML-JsonLD-Processor.html#method_fromRdf" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/ml/json-ld/Processor.php"><a href="files/vendor-ml-json-ld-processor.html"><abbr title="vendor/ml/json-ld/Processor.php">Processor.php</abbr></a></abbr>
@@ -1539,6 +1501,8 @@ following shape:</p>
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">fromRdf</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, <a href="classes/ML-JsonLD-Quad.html"><abbr title="\ML\JsonLD\Quad">Quad</abbr></a>&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$quads</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span></code>
 
+    <div class="phpdocumentor-label-line">
+        </div>
         <section class="phpdocumentor-description"><p>The resulting JSON-LD document will be in expanded form.</p>
 </section>
 
@@ -1558,7 +1522,8 @@ following shape:</p>
     
     <h5 class="phpdocumentor-tag-list__heading" id="tags">
         Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/ML-JsonLD-Processor.html#method_fromRdf#tags" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h5>
     <dl class="phpdocumentor-tag-list">
                                     <dt class="phpdocumentor-tag-list__entry">
@@ -1573,13 +1538,15 @@ following shape:</p>
                                     </dd>
                                             </dl>
 
+            <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span>
-            &mdash;
-            <section class="phpdocumentor-description"><p>The JSON-LD document.</p>
+        <span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span>
+                    &mdash;
+                <section class="phpdocumentor-description"><p>The JSON-LD document.</p>
 </section>
 
-    
+            </section>
+
 </article>
                     <article
         class="phpdocumentor-element
@@ -1590,6 +1557,7 @@ following shape:</p>
     <h4 class="phpdocumentor-element__name" id="method_getDocument">
         getDocument()
         <a href="classes/ML-JsonLD-Processor.html#method_getDocument" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/ml/json-ld/Processor.php"><a href="files/vendor-ml-json-ld-processor.html"><abbr title="vendor/ml/json-ld/Processor.php">Processor.php</abbr></a></abbr>
@@ -1604,6 +1572,8 @@ following shape:</p>
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">getDocument</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;|<abbr title="\stdClass">stdClass</abbr>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$input</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/ML-JsonLD-Document.html"><abbr title="\ML\JsonLD\Document">Document</abbr></a></span></code>
 
+    <div class="phpdocumentor-label-line">
+        </div>
     
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
@@ -1621,7 +1591,8 @@ following shape:</p>
     
     <h5 class="phpdocumentor-tag-list__heading" id="tags">
         Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/ML-JsonLD-Processor.html#method_getDocument#tags" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h5>
     <dl class="phpdocumentor-tag-list">
                                     <dt class="phpdocumentor-tag-list__entry">
@@ -1636,13 +1607,15 @@ following shape:</p>
                                     </dd>
                                             </dl>
 
+            <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type"><a href="classes/ML-JsonLD-Document.html"><abbr title="\ML\JsonLD\Document">Document</abbr></a></span>
-            &mdash;
-            <section class="phpdocumentor-description"><p>The parsed JSON-LD document.</p>
+        <span class="phpdocumentor-signature__response_type"><a href="classes/ML-JsonLD-Document.html"><abbr title="\ML\JsonLD\Document">Document</abbr></a></span>
+                    &mdash;
+                <section class="phpdocumentor-description"><p>The parsed JSON-LD document.</p>
 </section>
 
-    
+            </section>
+
 </article>
                     <article
         class="phpdocumentor-element
@@ -1653,6 +1626,7 @@ following shape:</p>
     <h4 class="phpdocumentor-element__name" id="method_parse">
         parse()
         <a href="classes/ML-JsonLD-Processor.html#method_parse" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/ml/json-ld/Processor.php"><a href="files/vendor-ml-json-ld-processor.html"><abbr title="vendor/ml/json-ld/Processor.php">Processor.php</abbr></a></abbr>
@@ -1667,6 +1641,8 @@ following shape:</p>
     <span class="phpdocumentor-signature__visibility">public</span>
             <span class="phpdocumentor-signature__static">static</span>        <span class="phpdocumentor-signature__name">parse</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$document</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
 
+    <div class="phpdocumentor-label-line">
+        </div>
     
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
@@ -1684,7 +1660,8 @@ following shape:</p>
     
     <h5 class="phpdocumentor-tag-list__heading" id="tags">
         Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/ML-JsonLD-Processor.html#method_parse#tags" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h5>
     <dl class="phpdocumentor-tag-list">
                                     <dt class="phpdocumentor-tag-list__entry">
@@ -1699,13 +1676,15 @@ following shape:</p>
                                     </dd>
                                             </dl>
 
+            <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">mixed</span>
-            &mdash;
-            <section class="phpdocumentor-description"><p>A PHP value.</p>
+        <span class="phpdocumentor-signature__response_type">mixed</span>
+                    &mdash;
+                <section class="phpdocumentor-description"><p>A PHP value.</p>
 </section>
 
-    
+            </section>
+
 </article>
                     <article
         class="phpdocumentor-element
@@ -1716,6 +1695,7 @@ following shape:</p>
     <h4 class="phpdocumentor-element__name" id="method_processContext">
         processContext()
         <a href="classes/ML-JsonLD-Processor.html#method_processContext" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/ml/json-ld/Processor.php"><a href="files/vendor-ml-json-ld-processor.html"><abbr title="vendor/ml/json-ld/Processor.php">Processor.php</abbr></a></abbr>
@@ -1730,6 +1710,8 @@ following shape:</p>
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">processContext</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$loclctx</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__reference-operator">&amp;</span><span class="phpdocumentor-signature__argument__name">$activectx</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$remotectxs</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">array()</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
 
+    <div class="phpdocumentor-label-line">
+        </div>
     
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
@@ -1765,7 +1747,8 @@ following shape:</p>
     
     <h5 class="phpdocumentor-tag-list__heading" id="tags">
         Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/ML-JsonLD-Processor.html#method_processContext#tags" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h5>
     <dl class="phpdocumentor-tag-list">
                                     <dt class="phpdocumentor-tag-list__entry">
@@ -1778,10 +1761,6 @@ following shape:</p>
                                     </dd>
                                             </dl>
 
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">mixed</span>
-            &mdash;
-        
     
 </article>
                     <article
@@ -1793,6 +1772,7 @@ following shape:</p>
     <h4 class="phpdocumentor-element__name" id="method_toRdf">
         toRdf()
         <a href="classes/ML-JsonLD-Processor.html#method_toRdf" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/ml/json-ld/Processor.php"><a href="files/vendor-ml-json-ld-processor.html"><abbr title="vendor/ml/json-ld/Processor.php">Processor.php</abbr></a></abbr>
@@ -1807,6 +1787,8 @@ following shape:</p>
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">toRdf</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$document</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, <a href="classes/ML-JsonLD-Quad.html"><abbr title="\ML\JsonLD\Quad">Quad</abbr></a>&gt;</span></code>
 
+    <div class="phpdocumentor-label-line">
+        </div>
         <section class="phpdocumentor-description"><p>The result is an array of Quads.</p>
 </section>
 
@@ -1824,20 +1806,16 @@ following shape:</p>
             </dl>
 
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
 
+            <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">array&lt;string|int, <a href="classes/ML-JsonLD-Quad.html"><abbr title="\ML\JsonLD\Quad">Quad</abbr></a>&gt;</span>
-            &mdash;
-            <section class="phpdocumentor-description"><p>The extracted quads.</p>
+        <span class="phpdocumentor-signature__response_type">array&lt;string|int, <a href="classes/ML-JsonLD-Quad.html"><abbr title="\ML\JsonLD\Quad">Quad</abbr></a>&gt;</span>
+                    &mdash;
+                <section class="phpdocumentor-description"><p>The extracted quads.</p>
 </section>
 
-    
+            </section>
+
 </article>
                     <article
         class="phpdocumentor-element
@@ -1848,6 +1826,7 @@ following shape:</p>
     <h4 class="phpdocumentor-element__name" id="method_addMissingNodeProperties">
         addMissingNodeProperties()
         <a href="classes/ML-JsonLD-Processor.html#method_addMissingNodeProperties" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/ml/json-ld/Processor.php"><a href="files/vendor-ml-json-ld-processor.html"><abbr title="vendor/ml/json-ld/Processor.php">Processor.php</abbr></a></abbr>
@@ -1862,6 +1841,8 @@ following shape:</p>
     <span class="phpdocumentor-signature__visibility">private</span>
                     <span class="phpdocumentor-signature__name">addMissingNodeProperties</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><abbr title="\stdClass">stdClass</abbr>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$node</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type"><abbr title="\stdClass">stdClass</abbr>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$options</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type"><abbr title="\stdClass">stdClass</abbr>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$nodeMap</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$graph</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type"><abbr title="\stdClass">stdClass</abbr>&nbsp;</span><span class="phpdocumentor-signature__argument__reference-operator">&amp;</span><span class="phpdocumentor-signature__argument__name">$result</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$path</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
 
+    <div class="phpdocumentor-label-line">
+        </div>
     
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
@@ -1922,17 +1903,7 @@ following shape:</p>
             </dl>
 
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
 
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">mixed</span>
-            &mdash;
-        
     
 </article>
                     <article
@@ -1944,6 +1915,7 @@ following shape:</p>
     <h4 class="phpdocumentor-element__name" id="method_compactIri">
         compactIri()
         <a href="classes/ML-JsonLD-Processor.html#method_compactIri" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/ml/json-ld/Processor.php"><a href="files/vendor-ml-json-ld-processor.html"><abbr title="vendor/ml/json-ld/Processor.php">Processor.php</abbr></a></abbr>
@@ -1958,6 +1930,8 @@ following shape:</p>
     <span class="phpdocumentor-signature__visibility">private</span>
                     <span class="phpdocumentor-signature__name">compactIri</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$iri</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$activectx</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$inversectx</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$value</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">bool&nbsp;</span><span class="phpdocumentor-signature__argument__name">$vocabRelative</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">false</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">bool&nbsp;</span><span class="phpdocumentor-signature__argument__name">$reverse</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">false</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
 
+    <div class="phpdocumentor-label-line">
+        </div>
         <section class="phpdocumentor-description"><p>If the IRI couldn't be compacted, the IRI is returned as is.</p>
 </section>
 
@@ -2023,21 +1997,17 @@ mechanism is disabled.</p>
             </dl>
 
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
 
+            <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">string</span>
-            &mdash;
-            <section class="phpdocumentor-description"><p>Returns the compacted IRI on success; otherwise the
+        <span class="phpdocumentor-signature__response_type">string</span>
+                    &mdash;
+                <section class="phpdocumentor-description"><p>Returns the compacted IRI on success; otherwise the
 IRI is returned as is.</p>
 </section>
 
-    
+            </section>
+
 </article>
                     <article
         class="phpdocumentor-element
@@ -2048,6 +2018,7 @@ IRI is returned as is.</p>
     <h4 class="phpdocumentor-element__name" id="method_compactValue">
         compactValue()
         <a href="classes/ML-JsonLD-Processor.html#method_compactValue" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/ml/json-ld/Processor.php"><a href="files/vendor-ml-json-ld-processor.html"><abbr title="vendor/ml/json-ld/Processor.php">Processor.php</abbr></a></abbr>
@@ -2062,6 +2033,8 @@ IRI is returned as is.</p>
     <span class="phpdocumentor-signature__visibility">private</span>
                     <span class="phpdocumentor-signature__name">compactValue</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$value</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$definition</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$activectx</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$inversectx</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
 
+    <div class="phpdocumentor-label-line">
+        </div>
         <section class="phpdocumentor-description"><p>The passed property definition must be an associative array
 containing the following data:</p>
 <code class="prettyprint">
@@ -2110,7 +2083,8 @@ containing the following data:</p>
     
     <h5 class="phpdocumentor-tag-list__heading" id="tags">
         Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/ML-JsonLD-Processor.html#method_compactValue#tags" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h5>
     <dl class="phpdocumentor-tag-list">
                                     <dt class="phpdocumentor-tag-list__entry">
@@ -2128,13 +2102,15 @@ containing the following data:</p>
                                     </dd>
                                             </dl>
 
+            <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">mixed</span>
-            &mdash;
-            <section class="phpdocumentor-description"><p>The compacted value.</p>
+        <span class="phpdocumentor-signature__response_type">mixed</span>
+                    &mdash;
+                <section class="phpdocumentor-description"><p>The compacted value.</p>
 </section>
 
-    
+            </section>
+
 </article>
                     <article
         class="phpdocumentor-element
@@ -2145,6 +2121,7 @@ containing the following data:</p>
     <h4 class="phpdocumentor-element__name" id="method_createListObjects">
         createListObjects()
         <a href="classes/ML-JsonLD-Processor.html#method_createListObjects" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/ml/json-ld/Processor.php"><a href="files/vendor-ml-json-ld-processor.html"><abbr title="vendor/ml/json-ld/Processor.php">Processor.php</abbr></a></abbr>
@@ -2159,6 +2136,8 @@ containing the following data:</p>
     <span class="phpdocumentor-signature__visibility">private</span>
                     <span class="phpdocumentor-signature__name">createListObjects</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><abbr title="\stdClass">stdClass</abbr>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$graphs</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type"><abbr title="\stdClass">stdClass</abbr>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$usages</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
 
+    <div class="phpdocumentor-label-line">
+        </div>
     
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
@@ -2183,17 +2162,7 @@ containing the following data:</p>
             </dl>
 
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
 
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">mixed</span>
-            &mdash;
-        
     
 </article>
                     <article
@@ -2205,6 +2174,7 @@ containing the following data:</p>
     <h4 class="phpdocumentor-element__name" id="method_elementToRdf">
         elementToRdf()
         <a href="classes/ML-JsonLD-Processor.html#method_elementToRdf" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/ml/json-ld/Processor.php"><a href="files/vendor-ml-json-ld-processor.html"><abbr title="vendor/ml/json-ld/Processor.php">Processor.php</abbr></a></abbr>
@@ -2219,6 +2189,8 @@ containing the following data:</p>
     <span class="phpdocumentor-signature__visibility">private</span>
                     <span class="phpdocumentor-signature__name">elementToRdf</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><abbr title="\stdClass">stdClass</abbr>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$element</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><abbr title="\ML\IRI\IRI">IRI</abbr>|<a href="classes/ML-JsonLD-TypedValue.html"><abbr title="\ML\JsonLD\TypedValue">TypedValue</abbr></a>|<abbr title="\ML\JsonLD\LanguageTagged">LanguageTagged</abbr>|null</span></code>
 
+    <div class="phpdocumentor-label-line">
+        </div>
     
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
@@ -2234,20 +2206,16 @@ containing the following data:</p>
             </dl>
 
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
 
+            <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type"><abbr title="\ML\IRI\IRI">IRI</abbr>|<a href="classes/ML-JsonLD-TypedValue.html"><abbr title="\ML\JsonLD\TypedValue">TypedValue</abbr></a>|<abbr title="\ML\JsonLD\LanguageTagged">LanguageTagged</abbr>|null</span>
-            &mdash;
-            <section class="phpdocumentor-description"><p>The converted element to be used as Quad object.</p>
+        <span class="phpdocumentor-signature__response_type"><abbr title="\ML\IRI\IRI">IRI</abbr>|<a href="classes/ML-JsonLD-TypedValue.html"><abbr title="\ML\JsonLD\TypedValue">TypedValue</abbr></a>|<abbr title="\ML\JsonLD\LanguageTagged">LanguageTagged</abbr>|null</span>
+                    &mdash;
+                <section class="phpdocumentor-description"><p>The converted element to be used as Quad object.</p>
 </section>
 
-    
+            </section>
+
 </article>
                     <article
         class="phpdocumentor-element
@@ -2258,6 +2226,7 @@ containing the following data:</p>
     <h4 class="phpdocumentor-element__name" id="method_expandIri">
         expandIri()
         <a href="classes/ML-JsonLD-Processor.html#method_expandIri" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/ml/json-ld/Processor.php"><a href="files/vendor-ml-json-ld-processor.html"><abbr title="vendor/ml/json-ld/Processor.php">Processor.php</abbr></a></abbr>
@@ -2273,6 +2242,8 @@ IRI and relabels blank nodes</p>
     <span class="phpdocumentor-signature__visibility">private</span>
                     <span class="phpdocumentor-signature__name">expandIri</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$value</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$activectx</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">bool&nbsp;</span><span class="phpdocumentor-signature__argument__name">$relativeIri</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">false</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">bool&nbsp;</span><span class="phpdocumentor-signature__argument__name">$vocabRelative</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">false</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">null|<abbr title="\stdClass">stdClass</abbr>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$localctx</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$path</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">array()</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
 
+    <div class="phpdocumentor-label-line">
+        </div>
     
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
@@ -2338,20 +2309,16 @@ circular dependencies</p>
             </dl>
 
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
 
+            <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">string</span>
-            &mdash;
-            <section class="phpdocumentor-description"><p>The expanded IRI.</p>
+        <span class="phpdocumentor-signature__response_type">string</span>
+                    &mdash;
+                <section class="phpdocumentor-description"><p>The expanded IRI.</p>
 </section>
 
-    
+            </section>
+
 </article>
                     <article
         class="phpdocumentor-element
@@ -2362,6 +2329,7 @@ circular dependencies</p>
     <h4 class="phpdocumentor-element__name" id="method_expandKeywordValue">
         expandKeywordValue()
         <a href="classes/ML-JsonLD-Processor.html#method_expandKeywordValue" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/ml/json-ld/Processor.php"><a href="files/vendor-ml-json-ld-processor.html"><abbr title="vendor/ml/json-ld/Processor.php">Processor.php</abbr></a></abbr>
@@ -2376,6 +2344,8 @@ circular dependencies</p>
     <span class="phpdocumentor-signature__visibility">private</span>
                     <span class="phpdocumentor-signature__name">expandKeywordValue</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><abbr title="\stdClass">stdClass</abbr>&nbsp;</span><span class="phpdocumentor-signature__argument__reference-operator">&amp;</span><span class="phpdocumentor-signature__argument__name">$element</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$activeprty</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$keyword</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$value</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$activectx</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">bool&nbsp;</span><span class="phpdocumentor-signature__argument__name">$frame</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
 
+    <div class="phpdocumentor-label-line">
+        </div>
     
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
@@ -2438,7 +2408,8 @@ circular dependencies</p>
     
     <h5 class="phpdocumentor-tag-list__heading" id="tags">
         Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/ML-JsonLD-Processor.html#method_expandKeywordValue#tags" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h5>
     <dl class="phpdocumentor-tag-list">
                                     <dt class="phpdocumentor-tag-list__entry">
@@ -2451,10 +2422,6 @@ circular dependencies</p>
                                     </dd>
                                             </dl>
 
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">mixed</span>
-            &mdash;
-        
     
 </article>
                     <article
@@ -2466,6 +2433,7 @@ circular dependencies</p>
     <h4 class="phpdocumentor-element__name" id="method_expandValue">
         expandValue()
         <a href="classes/ML-JsonLD-Processor.html#method_expandValue" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/ml/json-ld/Processor.php"><a href="files/vendor-ml-json-ld-processor.html"><abbr title="vendor/ml/json-ld/Processor.php">Processor.php</abbr></a></abbr>
@@ -2480,6 +2448,8 @@ circular dependencies</p>
     <span class="phpdocumentor-signature__visibility">private</span>
                     <span class="phpdocumentor-signature__name">expandValue</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$value</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$activectx</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$activeprty</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><abbr title="\stdClass">stdClass</abbr></span></code>
 
+    <div class="phpdocumentor-label-line">
+        </div>
     
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
@@ -2513,20 +2483,16 @@ circular dependencies</p>
             </dl>
 
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
 
+            <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type"><abbr title="\stdClass">stdClass</abbr></span>
-            &mdash;
-            <section class="phpdocumentor-description"><p>The expanded value.</p>
+        <span class="phpdocumentor-signature__response_type"><abbr title="\stdClass">stdClass</abbr></span>
+                    &mdash;
+                <section class="phpdocumentor-description"><p>The expanded value.</p>
 </section>
 
-    
+            </section>
+
 </article>
                     <article
         class="phpdocumentor-element
@@ -2537,6 +2503,7 @@ circular dependencies</p>
     <h4 class="phpdocumentor-element__name" id="method_generateNodeMap">
         generateNodeMap()
         <a href="classes/ML-JsonLD-Processor.html#method_generateNodeMap" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/ml/json-ld/Processor.php"><a href="files/vendor-ml-json-ld-processor.html"><abbr title="vendor/ml/json-ld/Processor.php">Processor.php</abbr></a></abbr>
@@ -2551,6 +2518,8 @@ circular dependencies</p>
     <span class="phpdocumentor-signature__visibility">private</span>
                     <span class="phpdocumentor-signature__name">generateNodeMap</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><abbr title="\stdClass">stdClass</abbr>&nbsp;</span><span class="phpdocumentor-signature__argument__reference-operator">&amp;</span><span class="phpdocumentor-signature__argument__name">$nodeMap</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type"><abbr title="\stdClass">stdClass</abbr>|array&lt;string|int, <abbr title="\stdClass">stdClass</abbr>&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$element</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$activegraph</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">JsonLD::DEFAULT_GRAPH</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">null|string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$activeid</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">null|string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$activeprty</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">null|<abbr title="\stdClass">stdClass</abbr>&nbsp;</span><span class="phpdocumentor-signature__argument__reference-operator">&amp;</span><span class="phpdocumentor-signature__argument__name">$list</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
 
+    <div class="phpdocumentor-label-line">
+        </div>
         <section class="phpdocumentor-description"><p>All keys in the node map are prefixed with &quot;-&quot; to support empty strings.</p>
 </section>
 
@@ -2615,17 +2584,7 @@ processed.</p>
             </dl>
 
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
 
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">mixed</span>
-            &mdash;
-        
     
 </article>
                     <article
@@ -2637,6 +2596,7 @@ processed.</p>
     <h4 class="phpdocumentor-element__name" id="method_getBlankNodeId">
         getBlankNodeId()
         <a href="classes/ML-JsonLD-Processor.html#method_getBlankNodeId" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/ml/json-ld/Processor.php"><a href="files/vendor-ml-json-ld-processor.html"><abbr title="vendor/ml/json-ld/Processor.php">Processor.php</abbr></a></abbr>
@@ -2651,6 +2611,8 @@ processed.</p>
     <span class="phpdocumentor-signature__visibility">private</span>
                     <span class="phpdocumentor-signature__name">getBlankNodeId</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__return-type">null|string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$id</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
 
+    <div class="phpdocumentor-label-line">
+        </div>
         <section class="phpdocumentor-description"><p>If an identifier is passed, a new blank node identifier is generated
 for it and stored for subsequent use. Calling the method with the same
 identifier (except null) will thus always return the same blank node
@@ -2671,20 +2633,16 @@ identifier.</p>
             </dl>
 
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
 
+            <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">string</span>
-            &mdash;
-            <section class="phpdocumentor-description"><p>Returns a blank node identifier.</p>
+        <span class="phpdocumentor-signature__response_type">string</span>
+                    &mdash;
+                <section class="phpdocumentor-description"><p>Returns a blank node identifier.</p>
 </section>
 
-    
+            </section>
+
 </article>
                     <article
         class="phpdocumentor-element
@@ -2695,6 +2653,7 @@ identifier.</p>
     <h4 class="phpdocumentor-element__name" id="method_getPropertyDefinition">
         getPropertyDefinition()
         <a href="classes/ML-JsonLD-Processor.html#method_getPropertyDefinition" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/ml/json-ld/Processor.php"><a href="files/vendor-ml-json-ld-processor.html"><abbr title="vendor/ml/json-ld/Processor.php">Processor.php</abbr></a></abbr>
@@ -2709,6 +2668,8 @@ identifier.</p>
     <span class="phpdocumentor-signature__visibility">private</span>
                     <span class="phpdocumentor-signature__name">getPropertyDefinition</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$activectx</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$property</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">null|string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$only</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;|string|null</span></code>
 
+    <div class="phpdocumentor-label-line">
+        </div>
         <section class="phpdocumentor-description"><p>The result will be in the form</p>
 <code class="prettyprint">
   array('@type'      => type or null,
@@ -2753,21 +2714,17 @@ definition will be returned.</p>
             </dl>
 
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
 
+            <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;|string|null</span>
-            &mdash;
-            <section class="phpdocumentor-description"><p>Returns either the property's definition or
+        <span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;|string|null</span>
+                    &mdash;
+                <section class="phpdocumentor-description"><p>Returns either the property's definition or
 null if not found.</p>
 </section>
 
-    
+            </section>
+
 </article>
                     <article
         class="phpdocumentor-element
@@ -2778,6 +2735,7 @@ null if not found.</p>
     <h4 class="phpdocumentor-element__name" id="method_getValueProfile">
         getValueProfile()
         <a href="classes/ML-JsonLD-Processor.html#method_getValueProfile" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/ml/json-ld/Processor.php"><a href="files/vendor-ml-json-ld-processor.html"><abbr title="vendor/ml/json-ld/Processor.php">Processor.php</abbr></a></abbr>
@@ -2792,6 +2750,8 @@ null if not found.</p>
     <span class="phpdocumentor-signature__visibility">private</span>
                     <span class="phpdocumentor-signature__name">getValueProfile</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><abbr title="\stdClass">stdClass</abbr>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$value</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$inversectx</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span></code>
 
+    <div class="phpdocumentor-label-line">
+        </div>
         <section class="phpdocumentor-description"><p>A value profile represent the schema of the value ignoring the
 concrete value. It is an associative array containing the following
 keys-value pairs:</p>
@@ -2835,20 +2795,16 @@ all other values it is set to <code class="prettyprint">null</code>
             </dl>
 
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
 
+            <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span>
-            &mdash;
-            <section class="phpdocumentor-description"><p>The value profile.</p>
+        <span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span>
+                    &mdash;
+                <section class="phpdocumentor-description"><p>The value profile.</p>
 </section>
 
-    
+            </section>
+
 </article>
                     <article
         class="phpdocumentor-element
@@ -2859,6 +2815,7 @@ all other values it is set to <code class="prettyprint">null</code>
     <h4 class="phpdocumentor-element__name" id="method_hasNodeProperties">
         hasNodeProperties()
         <a href="classes/ML-JsonLD-Processor.html#method_hasNodeProperties" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/ml/json-ld/Processor.php"><a href="files/vendor-ml-json-ld-processor.html"><abbr title="vendor/ml/json-ld/Processor.php">Processor.php</abbr></a></abbr>
@@ -2873,6 +2830,8 @@ all other values it is set to <code class="prettyprint">null</code>
     <span class="phpdocumentor-signature__visibility">private</span>
                     <span class="phpdocumentor-signature__name">hasNodeProperties</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><abbr title="\stdClass">stdClass</abbr>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$node</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
 
+    <div class="phpdocumentor-label-line">
+        </div>
         <section class="phpdocumentor-description"><p>This is used to filter nodes consisting just of an @id-member when
 flattening and converting from RDF.</p>
 </section>
@@ -2891,21 +2850,17 @@ flattening and converting from RDF.</p>
             </dl>
 
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
 
+            <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">bool</span>
-            &mdash;
-            <section class="phpdocumentor-description"><p>True if the node has properties (other than @id),
+        <span class="phpdocumentor-signature__response_type">bool</span>
+                    &mdash;
+                <section class="phpdocumentor-description"><p>True if the node has properties (other than @id),
 false otherwise.</p>
 </section>
 
-    
+            </section>
+
 </article>
                     <article
         class="phpdocumentor-element
@@ -2916,6 +2871,7 @@ false otherwise.</p>
     <h4 class="phpdocumentor-element__name" id="method_listToRdf">
         listToRdf()
         <a href="classes/ML-JsonLD-Processor.html#method_listToRdf" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/ml/json-ld/Processor.php"><a href="files/vendor-ml-json-ld-processor.html"><abbr title="vendor/ml/json-ld/Processor.php">Processor.php</abbr></a></abbr>
@@ -2930,6 +2886,8 @@ false otherwise.</p>
     <span class="phpdocumentor-signature__visibility">private</span>
                     <span class="phpdocumentor-signature__name">listToRdf</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$entries</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__reference-operator">&amp;</span><span class="phpdocumentor-signature__argument__name">$quads</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">null|<abbr title="\ML\IRI\IRI">IRI</abbr>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$graph</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><abbr title="\ML\IRI\IRI">IRI</abbr></span></code>
 
+    <div class="phpdocumentor-label-line">
+        </div>
     
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
@@ -2963,20 +2921,16 @@ false otherwise.</p>
             </dl>
 
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
 
+            <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type"><abbr title="\ML\IRI\IRI">IRI</abbr></span>
-            &mdash;
-            <section class="phpdocumentor-description"><p>Returns the IRI of the head of the list</p>
+        <span class="phpdocumentor-signature__response_type"><abbr title="\ML\IRI\IRI">IRI</abbr></span>
+                    &mdash;
+                <section class="phpdocumentor-description"><p>Returns the IRI of the head of the list</p>
 </section>
 
-    
+            </section>
+
 </article>
                     <article
         class="phpdocumentor-element
@@ -2987,6 +2941,7 @@ false otherwise.</p>
     <h4 class="phpdocumentor-element__name" id="method_loadDocument">
         loadDocument()
         <a href="classes/ML-JsonLD-Processor.html#method_loadDocument" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/ml/json-ld/Processor.php"><a href="files/vendor-ml-json-ld-processor.html"><abbr title="vendor/ml/json-ld/Processor.php">Processor.php</abbr></a></abbr>
@@ -3001,6 +2956,8 @@ false otherwise.</p>
     <span class="phpdocumentor-signature__visibility">private</span>
                     <span class="phpdocumentor-signature__name">loadDocument</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">null|string|array&lt;string|int, mixed&gt;|<abbr title="\stdClass">stdClass</abbr>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$input</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
 
+    <div class="phpdocumentor-label-line">
+        </div>
         <section class="phpdocumentor-description"><p>The document can be supplied directly as string, by passing a file
 path, or by passing a URL.</p>
 </section>
@@ -3022,7 +2979,8 @@ or URL pointing to one.</p>
     
     <h5 class="phpdocumentor-tag-list__heading" id="tags">
         Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/ML-JsonLD-Processor.html#method_loadDocument#tags" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h5>
     <dl class="phpdocumentor-tag-list">
                                     <dt class="phpdocumentor-tag-list__entry">
@@ -3035,13 +2993,15 @@ or URL pointing to one.</p>
                                     </dd>
                                             </dl>
 
+            <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">mixed</span>
-            &mdash;
-            <section class="phpdocumentor-description"><p>The loaded JSON-LD document</p>
+        <span class="phpdocumentor-signature__response_type">mixed</span>
+                    &mdash;
+                <section class="phpdocumentor-description"><p>The loaded JSON-LD document</p>
 </section>
 
-    
+            </section>
+
 </article>
                     <article
         class="phpdocumentor-element
@@ -3052,6 +3012,7 @@ or URL pointing to one.</p>
     <h4 class="phpdocumentor-element__name" id="method_mergeIntoProperty">
         mergeIntoProperty()
         <a href="classes/ML-JsonLD-Processor.html#method_mergeIntoProperty" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/ml/json-ld/Processor.php"><a href="files/vendor-ml-json-ld-processor.html"><abbr title="vendor/ml/json-ld/Processor.php">Processor.php</abbr></a></abbr>
@@ -3066,6 +3027,8 @@ or URL pointing to one.</p>
     <span class="phpdocumentor-signature__visibility">private</span>
             <span class="phpdocumentor-signature__static">static</span>        <span class="phpdocumentor-signature__name">mergeIntoProperty</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><abbr title="\stdClass">stdClass</abbr>&nbsp;</span><span class="phpdocumentor-signature__argument__reference-operator">&amp;</span><span class="phpdocumentor-signature__argument__name">$object</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$property</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$value</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">bool&nbsp;</span><span class="phpdocumentor-signature__argument__name">$alwaysArray</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">false</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">bool&nbsp;</span><span class="phpdocumentor-signature__argument__name">$unique</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">false</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
 
+    <div class="phpdocumentor-label-line">
+        </div>
     
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
@@ -3120,17 +3083,7 @@ it doesn't exist yet.</p>
             </dl>
 
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
 
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">mixed</span>
-            &mdash;
-        
     
 </article>
                     <article
@@ -3142,6 +3095,7 @@ it doesn't exist yet.</p>
     <h4 class="phpdocumentor-element__name" id="method_nodeMatchesFrame">
         nodeMatchesFrame()
         <a href="classes/ML-JsonLD-Processor.html#method_nodeMatchesFrame" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/ml/json-ld/Processor.php"><a href="files/vendor-ml-json-ld-processor.html"><abbr title="vendor/ml/json-ld/Processor.php">Processor.php</abbr></a></abbr>
@@ -3156,6 +3110,8 @@ it doesn't exist yet.</p>
     <span class="phpdocumentor-signature__visibility">private</span>
                     <span class="phpdocumentor-signature__name">nodeMatchesFrame</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><abbr title="\stdClass">stdClass</abbr>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$node</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">null|<abbr title="\stdClass">stdClass</abbr>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$frame</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type"><abbr title="\stdClass">stdClass</abbr>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$options</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type"><abbr title="\stdClass">stdClass</abbr>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$nodeMap</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$graph</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__reference-operator">&amp;</span><span class="phpdocumentor-signature__argument__name">$parent</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$path</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">array()</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
 
+    <div class="phpdocumentor-label-line">
+        </div>
     
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
@@ -3225,20 +3181,16 @@ it doesn't exist yet.</p>
             </dl>
 
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
 
+            <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">bool</span>
-            &mdash;
-            <section class="phpdocumentor-description"><p>Returns true if the node matches the frame, otherwise false.</p>
+        <span class="phpdocumentor-signature__response_type">bool</span>
+                    &mdash;
+                <section class="phpdocumentor-description"><p>Returns true if the node matches the frame, otherwise false.</p>
 </section>
 
-    
+            </section>
+
 </article>
                     <article
         class="phpdocumentor-element
@@ -3249,6 +3201,7 @@ it doesn't exist yet.</p>
     <h4 class="phpdocumentor-element__name" id="method_objectToJsonLd">
         objectToJsonLd()
         <a href="classes/ML-JsonLD-Processor.html#method_objectToJsonLd" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/ml/json-ld/Processor.php"><a href="files/vendor-ml-json-ld-processor.html"><abbr title="vendor/ml/json-ld/Processor.php">Processor.php</abbr></a></abbr>
@@ -3263,6 +3216,8 @@ it doesn't exist yet.</p>
     <span class="phpdocumentor-signature__visibility">private</span>
             <span class="phpdocumentor-signature__static">static</span>        <span class="phpdocumentor-signature__name">objectToJsonLd</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><abbr title="\stdClass">stdClass</abbr>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$object</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">bool&nbsp;</span><span class="phpdocumentor-signature__argument__name">$useNativeTypes</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">true</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
 
+    <div class="phpdocumentor-label-line">
+        </div>
         <section class="phpdocumentor-description"><p>Only <a href="IRI">IRIs</a>, <a href="LanguageTaggedString">language-tagged strings</a>,
 and <a href="TypedValue">typed values</a> are converted by this method. All
 other objects are returned as-is.</p>
@@ -3294,20 +3249,16 @@ will be used instead.</p>
             </dl>
 
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
 
+            <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">mixed</span>
-            &mdash;
-            <section class="phpdocumentor-description"><p>The JSON-LD representation of the object.</p>
+        <span class="phpdocumentor-signature__response_type">mixed</span>
+                    &mdash;
+                <section class="phpdocumentor-description"><p>The JSON-LD representation of the object.</p>
 </section>
 
-    
+            </section>
+
 </article>
                     <article
         class="phpdocumentor-element
@@ -3318,6 +3269,7 @@ will be used instead.</p>
     <h4 class="phpdocumentor-element__name" id="method_queryInverseContext">
         queryInverseContext()
         <a href="classes/ML-JsonLD-Processor.html#method_queryInverseContext" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/ml/json-ld/Processor.php"><a href="files/vendor-ml-json-ld-processor.html"><abbr title="vendor/ml/json-ld/Processor.php">Processor.php</abbr></a></abbr>
@@ -3333,6 +3285,8 @@ path (= value profile)</p>
     <span class="phpdocumentor-signature__visibility">private</span>
                     <span class="phpdocumentor-signature__name">queryInverseContext</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$inversectx</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, string&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$containers</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, string&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$typeOrLangs</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, string&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$typeOrLangValues</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">null|string</span></code>
 
+    <div class="phpdocumentor-label-line">
+        </div>
     
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
@@ -3369,20 +3323,16 @@ path (= value profile)</p>
             </dl>
 
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
 
+            <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">null|string</span>
-            &mdash;
-            <section class="phpdocumentor-description"><p>The best matching term or null if none was found.</p>
+        <span class="phpdocumentor-signature__response_type">null|string</span>
+                    &mdash;
+                <section class="phpdocumentor-description"><p>The best matching term or null if none was found.</p>
 </section>
 
-    
+            </section>
+
 </article>
                     <article
         class="phpdocumentor-element
@@ -3393,6 +3343,7 @@ path (= value profile)</p>
     <h4 class="phpdocumentor-element__name" id="method_setProperty">
         setProperty()
         <a href="classes/ML-JsonLD-Processor.html#method_setProperty" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/ml/json-ld/Processor.php"><a href="files/vendor-ml-json-ld-processor.html"><abbr title="vendor/ml/json-ld/Processor.php">Processor.php</abbr></a></abbr>
@@ -3407,6 +3358,8 @@ path (= value profile)</p>
     <span class="phpdocumentor-signature__visibility">private</span>
             <span class="phpdocumentor-signature__static">static</span>        <span class="phpdocumentor-signature__name">setProperty</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><abbr title="\stdClass">stdClass</abbr>&nbsp;</span><span class="phpdocumentor-signature__argument__reference-operator">&amp;</span><span class="phpdocumentor-signature__argument__name">$object</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$property</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$value</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$errorCode</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
 
+    <div class="phpdocumentor-label-line">
+        </div>
         <section class="phpdocumentor-description"><p>If the property already exists, an exception is thrown as otherwise
 the existing value would be lost.</p>
 </section>
@@ -3445,15 +3398,15 @@ the existing value would be lost.</p>
                 : <span class="phpdocumentor-signature__argument__return-type">mixed</span>
                  = <span class="phpdocumentor-signature__argument__default-value">null</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
-
+                
             </dd>
             </dl>
 
     
     <h5 class="phpdocumentor-tag-list__heading" id="tags">
         Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/ML-JsonLD-Processor.html#method_setProperty#tags" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h5>
     <dl class="phpdocumentor-tag-list">
                                     <dt class="phpdocumentor-tag-list__entry">
@@ -3468,10 +3421,6 @@ the existing value would be lost.</p>
                                     </dd>
                                             </dl>
 
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">mixed</span>
-            &mdash;
-        
     
 </article>
                     <article
@@ -3483,6 +3432,7 @@ the existing value would be lost.</p>
     <h4 class="phpdocumentor-element__name" id="method_sortTerms">
         sortTerms()
         <a href="classes/ML-JsonLD-Processor.html#method_sortTerms" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/ml/json-ld/Processor.php"><a href="files/vendor-ml-json-ld-processor.html"><abbr title="vendor/ml/json-ld/Processor.php">Processor.php</abbr></a></abbr>
@@ -3497,6 +3447,8 @@ the existing value would be lost.</p>
     <span class="phpdocumentor-signature__visibility">private</span>
             <span class="phpdocumentor-signature__static">static</span>        <span class="phpdocumentor-signature__name">sortTerms</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$a</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$b</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">int</span></code>
 
+    <div class="phpdocumentor-label-line">
+        </div>
         <section class="phpdocumentor-description"><p>If two strings have different lengths, the shorter one will be
 considered less than the other. If they have the same length, they
 are compared lexicographically.</p>
@@ -3525,24 +3477,20 @@ are compared lexicographically.</p>
             </dl>
 
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
 
+            <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">int</span>
-            &mdash;
-            <section class="phpdocumentor-description"><p>If value A is shorter than value B, -1 will be returned; if it's
+        <span class="phpdocumentor-signature__response_type">int</span>
+                    &mdash;
+                <section class="phpdocumentor-description"><p>If value A is shorter than value B, -1 will be returned; if it's
 longer 1 will be returned. If both values have the same length
 and value A is considered lexicographically less, -1 will be
 returned, if they are equal 0 will be returned, otherwise 1
 will be returned.</p>
 </section>
 
-    
+            </section>
+
 </article>
                     <article
         class="phpdocumentor-element
@@ -3553,6 +3501,7 @@ will be returned.</p>
     <h4 class="phpdocumentor-element__name" id="method_subtreeEquals">
         subtreeEquals()
         <a href="classes/ML-JsonLD-Processor.html#method_subtreeEquals" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/ml/json-ld/Processor.php"><a href="files/vendor-ml-json-ld-processor.html"><abbr title="vendor/ml/json-ld/Processor.php">Processor.php</abbr></a></abbr>
@@ -3567,6 +3516,8 @@ will be returned.</p>
     <span class="phpdocumentor-signature__visibility">private</span>
             <span class="phpdocumentor-signature__static">static</span>        <span class="phpdocumentor-signature__name">subtreeEquals</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$a</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$b</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
 
+    <div class="phpdocumentor-label-line">
+        </div>
         <section class="phpdocumentor-description"><p>Please note that two unlabeled blank nodes will never be equal by
 definition.</p>
 </section>
@@ -3594,21 +3545,17 @@ definition.</p>
             </dl>
 
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
 
+            <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">bool</span>
-            &mdash;
-            <section class="phpdocumentor-description"><p>Returns true if the two subtrees are equal; otherwise
+        <span class="phpdocumentor-signature__response_type">bool</span>
+                    &mdash;
+                <section class="phpdocumentor-description"><p>Returns true if the two subtrees are equal; otherwise
 false.</p>
 </section>
 
-    
+            </section>
+
 </article>
             </section>
 
@@ -3705,7 +3652,91 @@ false.</p>
     </script>
 
     </article>
-                <section data-search-results class="phpdocumentor-search-results phpdocumentor-search-results--hidden">
+                                </section>
+                <section class="phpdocumentor-on-this-page__sidebar">
+                                
+    <section class="phpdocumentor-on-this-page__content">
+        <strong class="phpdocumentor-on-this-page__title">On this page</strong>
+
+        <ul class="phpdocumentor-list -clean">
+            <li class="phpdocumentor-on-this-page-section__title">Table Of Contents</li>
+            <li>
+                <ul class="phpdocumentor-list -clean">
+                                        <li><a href="classes/ML-JsonLD-Processor.html#toc-constants">Constants</a></li>
+                                                            <li><a href="classes/ML-JsonLD-Processor.html#toc-properties">Properties</a></li>
+                                                            <li><a href="classes/ML-JsonLD-Processor.html#toc-methods">Methods</a></li>
+                                    </ul>
+            </li>
+                            <li class="phpdocumentor-on-this-page-section__title">Constants</li>
+                <li>
+                    <ul class="phpdocumentor-list -clean">
+                                                    <li><a href="classes/ML-JsonLD-Processor.html#constant_CONTEXT_MAX_IRI_RECURSIONS">CONTEXT_MAX_IRI_RECURSIONS</a></li>
+                                                    <li><a href="classes/ML-JsonLD-Processor.html#constant_REMOTE_TIMEOUT">REMOTE_TIMEOUT</a></li>
+                                            </ul>
+                </li>
+            
+                            <li class="phpdocumentor-on-this-page-section__title">Properties</li>
+                <li>
+                    <ul class="phpdocumentor-list -clean">
+                                                    <li><a href="classes/ML-JsonLD-Processor.html#property_baseIri">$baseIri<a href="classes/ML-JsonLD-Processor.html"></li>
+                                                    <li><a href="classes/ML-JsonLD-Processor.html#property_blankNodeCounter">$blankNodeCounter<a href="classes/ML-JsonLD-Processor.html"></li>
+                                                    <li><a href="classes/ML-JsonLD-Processor.html#property_blankNodeMap">$blankNodeMap<a href="classes/ML-JsonLD-Processor.html"></li>
+                                                    <li><a href="classes/ML-JsonLD-Processor.html#property_compactArrays">$compactArrays<a href="classes/ML-JsonLD-Processor.html"></li>
+                                                    <li><a href="classes/ML-JsonLD-Processor.html#property_documentFactory">$documentFactory<a href="classes/ML-JsonLD-Processor.html"></li>
+                                                    <li><a href="classes/ML-JsonLD-Processor.html#property_documentLoader">$documentLoader<a href="classes/ML-JsonLD-Processor.html"></li>
+                                                    <li><a href="classes/ML-JsonLD-Processor.html#property_framingKeywords">$framingKeywords<a href="classes/ML-JsonLD-Processor.html"></li>
+                                                    <li><a href="classes/ML-JsonLD-Processor.html#property_generalizedRdf">$generalizedRdf<a href="classes/ML-JsonLD-Processor.html"></li>
+                                                    <li><a href="classes/ML-JsonLD-Processor.html#property_keywords">$keywords<a href="classes/ML-JsonLD-Processor.html"></li>
+                                                    <li><a href="classes/ML-JsonLD-Processor.html#property_optimize">$optimize<a href="classes/ML-JsonLD-Processor.html"></li>
+                                                    <li><a href="classes/ML-JsonLD-Processor.html#property_useNativeTypes">$useNativeTypes<a href="classes/ML-JsonLD-Processor.html"></li>
+                                                    <li><a href="classes/ML-JsonLD-Processor.html#property_useRdfType">$useRdfType<a href="classes/ML-JsonLD-Processor.html"></li>
+                                            </ul>
+                </li>
+            
+                        <li class="phpdocumentor-on-this-page-section__title">Methods</li>
+            <li>
+                <ul class="phpdocumentor-list -clean">
+                                            <li><a href="classes/ML-JsonLD-Processor.html#method___construct">__construct()</a></li>
+                                            <li><a href="classes/ML-JsonLD-Processor.html#method_compact">compact()</a></li>
+                                            <li><a href="classes/ML-JsonLD-Processor.html#method_createInverseContext">createInverseContext()</a></li>
+                                            <li><a href="classes/ML-JsonLD-Processor.html#method_expand">expand()</a></li>
+                                            <li><a href="classes/ML-JsonLD-Processor.html#method_flatten">flatten()</a></li>
+                                            <li><a href="classes/ML-JsonLD-Processor.html#method_frame">frame()</a></li>
+                                            <li><a href="classes/ML-JsonLD-Processor.html#method_fromRdf">fromRdf()</a></li>
+                                            <li><a href="classes/ML-JsonLD-Processor.html#method_getDocument">getDocument()</a></li>
+                                            <li><a href="classes/ML-JsonLD-Processor.html#method_parse">parse()</a></li>
+                                            <li><a href="classes/ML-JsonLD-Processor.html#method_processContext">processContext()</a></li>
+                                            <li><a href="classes/ML-JsonLD-Processor.html#method_toRdf">toRdf()</a></li>
+                                            <li><a href="classes/ML-JsonLD-Processor.html#method_addMissingNodeProperties">addMissingNodeProperties()</a></li>
+                                            <li><a href="classes/ML-JsonLD-Processor.html#method_compactIri">compactIri()</a></li>
+                                            <li><a href="classes/ML-JsonLD-Processor.html#method_compactValue">compactValue()</a></li>
+                                            <li><a href="classes/ML-JsonLD-Processor.html#method_createListObjects">createListObjects()</a></li>
+                                            <li><a href="classes/ML-JsonLD-Processor.html#method_elementToRdf">elementToRdf()</a></li>
+                                            <li><a href="classes/ML-JsonLD-Processor.html#method_expandIri">expandIri()</a></li>
+                                            <li><a href="classes/ML-JsonLD-Processor.html#method_expandKeywordValue">expandKeywordValue()</a></li>
+                                            <li><a href="classes/ML-JsonLD-Processor.html#method_expandValue">expandValue()</a></li>
+                                            <li><a href="classes/ML-JsonLD-Processor.html#method_generateNodeMap">generateNodeMap()</a></li>
+                                            <li><a href="classes/ML-JsonLD-Processor.html#method_getBlankNodeId">getBlankNodeId()</a></li>
+                                            <li><a href="classes/ML-JsonLD-Processor.html#method_getPropertyDefinition">getPropertyDefinition()</a></li>
+                                            <li><a href="classes/ML-JsonLD-Processor.html#method_getValueProfile">getValueProfile()</a></li>
+                                            <li><a href="classes/ML-JsonLD-Processor.html#method_hasNodeProperties">hasNodeProperties()</a></li>
+                                            <li><a href="classes/ML-JsonLD-Processor.html#method_listToRdf">listToRdf()</a></li>
+                                            <li><a href="classes/ML-JsonLD-Processor.html#method_loadDocument">loadDocument()</a></li>
+                                            <li><a href="classes/ML-JsonLD-Processor.html#method_mergeIntoProperty">mergeIntoProperty()</a></li>
+                                            <li><a href="classes/ML-JsonLD-Processor.html#method_nodeMatchesFrame">nodeMatchesFrame()</a></li>
+                                            <li><a href="classes/ML-JsonLD-Processor.html#method_objectToJsonLd">objectToJsonLd()</a></li>
+                                            <li><a href="classes/ML-JsonLD-Processor.html#method_queryInverseContext">queryInverseContext()</a></li>
+                                            <li><a href="classes/ML-JsonLD-Processor.html#method_setProperty">setProperty()</a></li>
+                                            <li><a href="classes/ML-JsonLD-Processor.html#method_sortTerms">sortTerms()</a></li>
+                                            <li><a href="classes/ML-JsonLD-Processor.html#method_subtreeEquals">subtreeEquals()</a></li>
+                                    </ul>
+            </li>
+                    </ul>
+    </section>
+
+                </section>
+                            </div>
+            <section data-search-results class="phpdocumentor-search-results phpdocumentor-search-results--hidden">
     <section class="phpdocumentor-search-results__dialog">
         <header class="phpdocumentor-search-results__header">
             <h2 class="phpdocumentor-search-results__title">Search results</h2>
@@ -3716,7 +3747,6 @@ false.</p>
         </section>
     </section>
 </section>
-            </div>
         </div>
         <a href="classes/ML-JsonLD-Processor.html#top" class="phpdocumentor-back-to-top"><i class="fas fa-chevron-circle-up"></i></a>
 

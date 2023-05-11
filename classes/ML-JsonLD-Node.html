@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/base.css">
             <link rel="preconnect" href="https://fonts.gstatic.com">
-        <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@100;200;300;400;600;700&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;600;700&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="css/template.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css" integrity="sha256-ybRkN9dBjhcS2qrW1z+hfCxq+1aBdwyQM5wlQoQVt/0=" crossorigin="anonymous" />
@@ -19,6 +19,7 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.23.0/plugins/line-highlight/prism-line-highlight.css">
                 <script src="https://cdn.jsdelivr.net/npm/fuse.js@3.4.6"></script>
         <script src="https://cdn.jsdelivr.net/npm/css-vars-ponyfill@2"></script>
+        <script src="js/template.js"></script>
         <script src="js/search.js"></script>
         <script defer src="js/searchIndex.js"></script>
     </head>
@@ -52,7 +53,7 @@
 <label class="phpdocumentor-sidebar__menu-icon" for="sidebar-button">
     Menu
 </label>
-<aside class="phpdocumentor-column -four phpdocumentor-sidebar">
+<aside class="phpdocumentor-column -three phpdocumentor-sidebar">
                     <section class="phpdocumentor-sidebar__category">
             <h2 class="phpdocumentor-sidebar__category-header">Namespaces</h2>
                                     <h4 class="phpdocumentor-sidebar__root-namespace">
@@ -99,8 +100,9 @@
     </section>
 </aside>
 
-            <div class="phpdocumentor-column -eight phpdocumentor-content">
-                    <ul class="phpdocumentor-breadcrumbs">
+            <div class="phpdocumentor-column -nine phpdocumentor-content">
+                                <section>
+                                        <ul class="phpdocumentor-breadcrumbs">
             <li class="phpdocumentor-breadcrumb"><a href="namespaces/ml.html">ML</a></li>
             <li class="phpdocumentor-breadcrumb"><a href="namespaces/ml-jsonld.html">JsonLD</a></li>
     </ul>
@@ -123,6 +125,11 @@
     
     </h2>
 
+<div class="phpdocumentor-label-line">
+
+
+</div>
+
         <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/ml/json-ld/Node.php"><a href="files/vendor-ml-json-ld-node.html"><abbr title="vendor/ml/json-ld/Node.php">Node.php</abbr></a></abbr>
     :
@@ -136,7 +143,8 @@
 
     <h5 class="phpdocumentor-tag-list__heading" id="tags">
         Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/ML-JsonLD-Node.html#tags" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h5>
     <dl class="phpdocumentor-tag-list">
                                     <dt class="phpdocumentor-tag-list__entry">
@@ -152,28 +160,30 @@
 
 
 
-
-<h3 id="interfaces_class_traits">
-    Interfaces, Classes, Traits and Enums
-    <a href="#interfaces_class_traits" class="headerlink"><i class="fas fa-link"></i></a>
-</h3>
-
-<dl class="phpdocumentor-table-of-contents">
-            <dt class="phpdocumentor-table-of-contents__entry -interface"><a href="classes/ML-JsonLD-NodeInterface.html"><abbr title="\ML\JsonLD\NodeInterface">NodeInterface</abbr></a></dt>
-        <dd>A generic interface for nodes in a JSON-LD graph.</dd>
-            <dt class="phpdocumentor-table-of-contents__entry -interface"><a href="classes/ML-JsonLD-JsonLdSerializable.html"><abbr title="\ML\JsonLD\JsonLdSerializable">JsonLdSerializable</abbr></a></dt>
-        <dd>The JsonLdSerializable interface</dd>
-    
-    
-    
-    </dl>
-
-
 <h3 id="toc">
     Table of Contents
-    <a href="#toc" class="headerlink"><i class="fas fa-link"></i></a>
+    <a href="classes/ML-JsonLD-Node.html#toc" class="headerlink"><i class="fas fa-link"></i></a>
+
 </h3>
 
+
+
+    <h4 id="toc-interfaces">
+        Interfaces
+        <a href="classes/ML-JsonLD-Node.html#toc-interfaces" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <dl class="phpdocumentor-table-of-contents">
+                    <dt class="phpdocumentor-table-of-contents__entry -interface"><a href="classes/ML-JsonLD-NodeInterface.html"><abbr title="\ML\JsonLD\NodeInterface">NodeInterface</abbr></a></dt><dd>A generic interface for nodes in a JSON-LD graph.</dd>            <dt class="phpdocumentor-table-of-contents__entry -interface"><a href="classes/ML-JsonLD-JsonLdSerializable.html"><abbr title="\ML\JsonLD\JsonLdSerializable">JsonLdSerializable</abbr></a></dt><dd>The JsonLdSerializable interface</dd>    </dl>
+
+
+
+
+<h4 id="toc-constants">
+    Constants
+    <a href="classes/ML-JsonLD-Node.html#toc-constants" class="headerlink"><i class="fas fa-link"></i></a>
+
+</h4>
 <dl class="phpdocumentor-table-of-contents">
             <dt class="phpdocumentor-table-of-contents__entry -constant -public">
     <a href="classes/ML-JsonLD-Node.html#constant_TYPE">TYPE</a>
@@ -182,26 +192,32 @@
 </dt>
 <dd>The @type constant.</dd>
 
-                    <dt class="phpdocumentor-table-of-contents__entry -property -private">
+    </dl>
+
+
+<h4 id="toc-properties">
+    Properties
+    <a href="classes/ML-JsonLD-Node.html#toc-properties" class="headerlink"><i class="fas fa-link"></i></a>
+
+</h4>
+<dl class="phpdocumentor-table-of-contents">
+            <dt class="phpdocumentor-table-of-contents__entry -property -private">
     <a href="classes/ML-JsonLD-Node.html#property_graph">$graph</a>
     <span>
                         &nbsp;: <a href="classes/ML-JsonLD-GraphInterface.html"><abbr title="\ML\JsonLD\GraphInterface">GraphInterface</abbr></a>            </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -private">
     <a href="classes/ML-JsonLD-Node.html#property_id">$id</a>
     <span>
                         &nbsp;: string            </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -private">
     <a href="classes/ML-JsonLD-Node.html#property_properties">$properties</a>
     <span>
                         &nbsp;: array&lt;string|int, mixed&gt;            </span>
 </dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -private">
     <a href="classes/ML-JsonLD-Node.html#property_revProperties">$revProperties</a>
@@ -211,7 +227,15 @@
 <dd>An associative array holding all reverse properties of this node, i.e.,
 a pointers to all nodes that link to this node.</dd>
 
-                <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    </dl>
+
+<h4 id="toc-methods">
+    Methods
+    <a href="classes/ML-JsonLD-Node.html#toc-methods" class="headerlink"><i class="fas fa-link"></i></a>
+
+</h4>
+<dl class="phpdocumentor-table-of-contents">
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/ML-JsonLD-Node.html#method___construct">__construct()</a>
     <span>
                                 &nbsp;: mixed    </span>
@@ -393,7 +417,8 @@ a pointers to all nodes that link to this node.</dd>
 </dt>
 <dd>Merge a value into a set of existing values.</dd>
 
-        </dl>
+    </dl>
+
 
 
 
@@ -402,11 +427,13 @@ a pointers to all nodes that link to this node.</dd>
         <h3 class="phpdocumentor-elements__header" id="constants">
             Constants
             <a href="classes/ML-JsonLD-Node.html#constants" class="headerlink"><i class="fas fa-link"></i></a>
+
         </h3>
                     <article class="phpdocumentor-element -constant -public ">
     <h4 class="phpdocumentor-element__name" id="constant_TYPE">
         TYPE
         <a href="classes/ML-JsonLD-Node.html#constant_TYPE" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
 
     <aside class="phpdocumentor-element-found-in">
@@ -427,15 +454,8 @@ a pointers to all nodes that link to this node.</dd>
 
 
     
-        <section class="phpdocumentor-description"></section>
-
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
+    
 
 </article>
             </section>
@@ -445,6 +465,7 @@ a pointers to all nodes that link to this node.</dd>
         <h3 class="phpdocumentor-elements__header" id="properties">
             Properties
             <a href="classes/ML-JsonLD-Node.html#properties" class="headerlink"><i class="fas fa-link"></i></a>
+
         </h3>
                     <article
         class="
@@ -456,6 +477,7 @@ a pointers to all nodes that link to this node.</dd>
     <h4 class="phpdocumentor-element__name" id="property_graph">
         $graph
         <a href="classes/ML-JsonLD-Node.html#property_graph" class="headerlink"><i class="fas fa-link"></i></a>
+
         <span class="phpdocumentor-element__modifiers">
                                 </span>
     </h4>
@@ -478,12 +500,6 @@ a pointers to all nodes that link to this node.</dd>
 </section>
 
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
 
 </article>
                     <article
@@ -496,6 +512,7 @@ a pointers to all nodes that link to this node.</dd>
     <h4 class="phpdocumentor-element__name" id="property_id">
         $id
         <a href="classes/ML-JsonLD-Node.html#property_id" class="headerlink"><i class="fas fa-link"></i></a>
+
         <span class="phpdocumentor-element__modifiers">
                                 </span>
     </h4>
@@ -518,12 +535,6 @@ a pointers to all nodes that link to this node.</dd>
 </section>
 
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
 
 </article>
                     <article
@@ -536,6 +547,7 @@ a pointers to all nodes that link to this node.</dd>
     <h4 class="phpdocumentor-element__name" id="property_properties">
         $properties
         <a href="classes/ML-JsonLD-Node.html#property_properties" class="headerlink"><i class="fas fa-link"></i></a>
+
         <span class="phpdocumentor-element__modifiers">
                                 </span>
     </h4>
@@ -558,12 +570,6 @@ a pointers to all nodes that link to this node.</dd>
 </section>
 
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
 
 </article>
                     <article
@@ -576,6 +582,7 @@ a pointers to all nodes that link to this node.</dd>
     <h4 class="phpdocumentor-element__name" id="property_revProperties">
         $revProperties
         <a href="classes/ML-JsonLD-Node.html#property_revProperties" class="headerlink"><i class="fas fa-link"></i></a>
+
         <span class="phpdocumentor-element__modifiers">
                                 </span>
     </h4>
@@ -598,12 +605,6 @@ a pointers to all nodes that link to this node.</p>
     
     
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
 
 </article>
             </section>
@@ -612,6 +613,7 @@ a pointers to all nodes that link to this node.</p>
         <h3 class="phpdocumentor-elements__header" id="methods">
             Methods
             <a href="classes/ML-JsonLD-Node.html#methods" class="headerlink"><i class="fas fa-link"></i></a>
+
         </h3>
                     <article
         class="phpdocumentor-element
@@ -622,6 +624,7 @@ a pointers to all nodes that link to this node.</p>
     <h4 class="phpdocumentor-element__name" id="method___construct">
         __construct()
         <a href="classes/ML-JsonLD-Node.html#method___construct" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/ml/json-ld/Node.php"><a href="files/vendor-ml-json-ld-node.html"><abbr title="vendor/ml/json-ld/Node.php">Node.php</abbr></a></abbr>
@@ -636,6 +639,8 @@ a pointers to all nodes that link to this node.</p>
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">__construct</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href="classes/ML-JsonLD-GraphInterface.html"><abbr title="\ML\JsonLD\GraphInterface">GraphInterface</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$graph</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">null|string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$id</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
 
+    <div class="phpdocumentor-label-line">
+        </div>
     
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
@@ -660,17 +665,7 @@ a pointers to all nodes that link to this node.</p>
             </dl>
 
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
 
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">mixed</span>
-            &mdash;
-        
     
 </article>
                     <article
@@ -682,6 +677,7 @@ a pointers to all nodes that link to this node.</p>
     <h4 class="phpdocumentor-element__name" id="method_addPropertyValue">
         addPropertyValue()
         <a href="classes/ML-JsonLD-Node.html#method_addPropertyValue" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/ml/json-ld/Node.php"><a href="files/vendor-ml-json-ld-node.html"><abbr title="vendor/ml/json-ld/Node.php">Node.php</abbr></a></abbr>
@@ -696,6 +692,8 @@ a pointers to all nodes that link to this node.</p>
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">addPropertyValue</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$property</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$value</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">self</span></code>
 
+    <div class="phpdocumentor-label-line">
+        </div>
     
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
@@ -721,18 +719,12 @@ an array.</p>
             </dl>
 
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
 
+            <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">self</span>
-            &mdash;
-        
-    
+        <span class="phpdocumentor-signature__response_type">self</span>
+            </section>
+
 </article>
                     <article
         class="phpdocumentor-element
@@ -743,6 +735,7 @@ an array.</p>
     <h4 class="phpdocumentor-element__name" id="method_addType">
         addType()
         <a href="classes/ML-JsonLD-Node.html#method_addType" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/ml/json-ld/Node.php"><a href="files/vendor-ml-json-ld-node.html"><abbr title="vendor/ml/json-ld/Node.php">Node.php</abbr></a></abbr>
@@ -757,6 +750,8 @@ an array.</p>
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">addType</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href="classes/ML-JsonLD-NodeInterface.html"><abbr title="\ML\JsonLD\NodeInterface">NodeInterface</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$type</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">self</span></code>
 
+    <div class="phpdocumentor-label-line">
+        </div>
     
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
@@ -765,24 +760,17 @@ an array.</p>
                 : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/ML-JsonLD-NodeInterface.html"><abbr title="\ML\JsonLD\NodeInterface">NodeInterface</abbr></a></span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
-
+                
             </dd>
             </dl>
 
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
 
+            <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">self</span>
-            &mdash;
-        
-    
+        <span class="phpdocumentor-signature__response_type">self</span>
+            </section>
+
 </article>
                     <article
         class="phpdocumentor-element
@@ -793,6 +781,7 @@ an array.</p>
     <h4 class="phpdocumentor-element__name" id="method_equals">
         equals()
         <a href="classes/ML-JsonLD-Node.html#method_equals" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/ml/json-ld/Node.php"><a href="files/vendor-ml-json-ld-node.html"><abbr title="vendor/ml/json-ld/Node.php">Node.php</abbr></a></abbr>
@@ -807,6 +796,8 @@ an array.</p>
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">equals</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href="classes/ML-JsonLD-NodeInterface.html"><abbr title="\ML\JsonLD\NodeInterface">NodeInterface</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$other</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
 
+    <div class="phpdocumentor-label-line">
+        </div>
     
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
@@ -822,21 +813,17 @@ an array.</p>
             </dl>
 
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
 
+            <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">bool</span>
-            &mdash;
-            <section class="phpdocumentor-description"><p>Returns true if the passed value is the same as this
+        <span class="phpdocumentor-signature__response_type">bool</span>
+                    &mdash;
+                <section class="phpdocumentor-description"><p>Returns true if the passed value is the same as this
 instance; false otherwise.</p>
 </section>
 
-    
+            </section>
+
 </article>
                     <article
         class="phpdocumentor-element
@@ -847,6 +834,7 @@ instance; false otherwise.</p>
     <h4 class="phpdocumentor-element__name" id="method_getGraph">
         getGraph()
         <a href="classes/ML-JsonLD-Node.html#method_getGraph" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/ml/json-ld/Node.php"><a href="files/vendor-ml-json-ld-node.html"><abbr title="vendor/ml/json-ld/Node.php">Node.php</abbr></a></abbr>
@@ -861,24 +849,22 @@ instance; false otherwise.</p>
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">getGraph</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">null|<a href="classes/ML-JsonLD-GraphInterface.html"><abbr title="\ML\JsonLD\GraphInterface">GraphInterface</abbr></a></span></code>
 
+    <div class="phpdocumentor-label-line">
+        </div>
     
     
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
 
+            <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">null|<a href="classes/ML-JsonLD-GraphInterface.html"><abbr title="\ML\JsonLD\GraphInterface">GraphInterface</abbr></a></span>
-            &mdash;
-            <section class="phpdocumentor-description"><p>Returns the graph the node belongs to or
+        <span class="phpdocumentor-signature__response_type">null|<a href="classes/ML-JsonLD-GraphInterface.html"><abbr title="\ML\JsonLD\GraphInterface">GraphInterface</abbr></a></span>
+                    &mdash;
+                <section class="phpdocumentor-description"><p>Returns the graph the node belongs to or
 null if the node doesn't belong to any graph.</p>
 </section>
 
-    
+            </section>
+
 </article>
                     <article
         class="phpdocumentor-element
@@ -889,6 +875,7 @@ null if the node doesn't belong to any graph.</p>
     <h4 class="phpdocumentor-element__name" id="method_getId">
         getId()
         <a href="classes/ML-JsonLD-Node.html#method_getId" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/ml/json-ld/Node.php"><a href="files/vendor-ml-json-ld-node.html"><abbr title="vendor/ml/json-ld/Node.php">Node.php</abbr></a></abbr>
@@ -903,23 +890,21 @@ null if the node doesn't belong to any graph.</p>
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">getId</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string|null</span></code>
 
+    <div class="phpdocumentor-label-line">
+        </div>
     
     
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
 
+            <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">string|null</span>
-            &mdash;
-            <section class="phpdocumentor-description"><p>The ID of the node or null.</p>
+        <span class="phpdocumentor-signature__response_type">string|null</span>
+                    &mdash;
+                <section class="phpdocumentor-description"><p>The ID of the node or null.</p>
 </section>
 
-    
+            </section>
+
 </article>
                     <article
         class="phpdocumentor-element
@@ -930,6 +915,7 @@ null if the node doesn't belong to any graph.</p>
     <h4 class="phpdocumentor-element__name" id="method_getNodesWithThisType">
         getNodesWithThisType()
         <a href="classes/ML-JsonLD-Node.html#method_getNodesWithThisType" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/ml/json-ld/Node.php"><a href="files/vendor-ml-json-ld-node.html"><abbr title="vendor/ml/json-ld/Node.php">Node.php</abbr></a></abbr>
@@ -944,24 +930,22 @@ null if the node doesn't belong to any graph.</p>
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">getNodesWithThisType</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, <a href="classes/ML-JsonLD-NodeInterface.html"><abbr title="\ML\JsonLD\NodeInterface">NodeInterface</abbr></a>&gt;</span></code>
 
+    <div class="phpdocumentor-label-line">
+        </div>
     
     
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
 
+            <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">array&lt;string|int, <a href="classes/ML-JsonLD-NodeInterface.html"><abbr title="\ML\JsonLD\NodeInterface">NodeInterface</abbr></a>&gt;</span>
-            &mdash;
-            <section class="phpdocumentor-description"><p>Returns the node(s) having this node as their
+        <span class="phpdocumentor-signature__response_type">array&lt;string|int, <a href="classes/ML-JsonLD-NodeInterface.html"><abbr title="\ML\JsonLD\NodeInterface">NodeInterface</abbr></a>&gt;</span>
+                    &mdash;
+                <section class="phpdocumentor-description"><p>Returns the node(s) having this node as their
 type.</p>
 </section>
 
-    
+            </section>
+
 </article>
                     <article
         class="phpdocumentor-element
@@ -972,6 +956,7 @@ type.</p>
     <h4 class="phpdocumentor-element__name" id="method_getProperties">
         getProperties()
         <a href="classes/ML-JsonLD-Node.html#method_getProperties" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/ml/json-ld/Node.php"><a href="files/vendor-ml-json-ld-node.html"><abbr title="vendor/ml/json-ld/Node.php">Node.php</abbr></a></abbr>
@@ -986,25 +971,23 @@ type.</p>
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">getProperties</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span></code>
 
+    <div class="phpdocumentor-label-line">
+        </div>
     
     
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
 
+            <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span>
-            &mdash;
-            <section class="phpdocumentor-description"><p>Returns an associative array containing all properties
+        <span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span>
+                    &mdash;
+                <section class="phpdocumentor-description"><p>Returns an associative array containing all properties
 of this node. The key is the property name whereas the
 value is the property's value.</p>
 </section>
 
-    
+            </section>
+
 </article>
                     <article
         class="phpdocumentor-element
@@ -1015,6 +998,7 @@ value is the property's value.</p>
     <h4 class="phpdocumentor-element__name" id="method_getProperty">
         getProperty()
         <a href="classes/ML-JsonLD-Node.html#method_getProperty" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/ml/json-ld/Node.php"><a href="files/vendor-ml-json-ld-node.html"><abbr title="vendor/ml/json-ld/Node.php">Node.php</abbr></a></abbr>
@@ -1029,6 +1013,8 @@ value is the property's value.</p>
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">getProperty</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$property</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
 
+    <div class="phpdocumentor-label-line">
+        </div>
     
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
@@ -1044,21 +1030,17 @@ value is the property's value.</p>
             </dl>
 
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
 
+            <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">mixed</span>
-            &mdash;
-            <section class="phpdocumentor-description"><p>Returns the value of the property or null if the
+        <span class="phpdocumentor-signature__response_type">mixed</span>
+                    &mdash;
+                <section class="phpdocumentor-description"><p>Returns the value of the property or null if the
 property doesn't exist.</p>
 </section>
 
-    
+            </section>
+
 </article>
                     <article
         class="phpdocumentor-element
@@ -1069,6 +1051,7 @@ property doesn't exist.</p>
     <h4 class="phpdocumentor-element__name" id="method_getReverseProperties">
         getReverseProperties()
         <a href="classes/ML-JsonLD-Node.html#method_getReverseProperties" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/ml/json-ld/Node.php"><a href="files/vendor-ml-json-ld-node.html"><abbr title="vendor/ml/json-ld/Node.php">Node.php</abbr></a></abbr>
@@ -1083,26 +1066,24 @@ property doesn't exist.</p>
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">getReverseProperties</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span></code>
 
+    <div class="phpdocumentor-label-line">
+        </div>
     
     
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
 
+            <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span>
-            &mdash;
-            <section class="phpdocumentor-description"><p>Returns an associative array containing all reverse
+        <span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span>
+                    &mdash;
+                <section class="phpdocumentor-description"><p>Returns an associative array containing all reverse
 properties of this node. The key is the property name
 whereas the value is an array of nodes linking to this
 instance via that property.</p>
 </section>
 
-    
+            </section>
+
 </article>
                     <article
         class="phpdocumentor-element
@@ -1113,6 +1094,7 @@ instance via that property.</p>
     <h4 class="phpdocumentor-element__name" id="method_getReverseProperty">
         getReverseProperty()
         <a href="classes/ML-JsonLD-Node.html#method_getReverseProperty" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/ml/json-ld/Node.php"><a href="files/vendor-ml-json-ld-node.html"><abbr title="vendor/ml/json-ld/Node.php">Node.php</abbr></a></abbr>
@@ -1127,6 +1109,8 @@ instance via that property.</p>
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">getReverseProperty</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$property</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">null|<a href="classes/ML-JsonLD-NodeInterface.html"><abbr title="\ML\JsonLD\NodeInterface">NodeInterface</abbr></a>|array&lt;string|int, <a href="classes/ML-JsonLD-NodeInterface.html"><abbr title="\ML\JsonLD\NodeInterface">NodeInterface</abbr></a>&gt;</span></code>
 
+    <div class="phpdocumentor-label-line">
+        </div>
     
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
@@ -1142,22 +1126,18 @@ instance via that property.</p>
             </dl>
 
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
 
+            <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">null|<a href="classes/ML-JsonLD-NodeInterface.html"><abbr title="\ML\JsonLD\NodeInterface">NodeInterface</abbr></a>|array&lt;string|int, <a href="classes/ML-JsonLD-NodeInterface.html"><abbr title="\ML\JsonLD\NodeInterface">NodeInterface</abbr></a>&gt;</span>
-            &mdash;
-            <section class="phpdocumentor-description"><p>Returns the node(s) pointing
+        <span class="phpdocumentor-signature__response_type">null|<a href="classes/ML-JsonLD-NodeInterface.html"><abbr title="\ML\JsonLD\NodeInterface">NodeInterface</abbr></a>|array&lt;string|int, <a href="classes/ML-JsonLD-NodeInterface.html"><abbr title="\ML\JsonLD\NodeInterface">NodeInterface</abbr></a>&gt;</span>
+                    &mdash;
+                <section class="phpdocumentor-description"><p>Returns the node(s) pointing
 to this instance via the specified
 property or null if no such node exists.</p>
 </section>
 
-    
+            </section>
+
 </article>
                     <article
         class="phpdocumentor-element
@@ -1168,6 +1148,7 @@ property or null if no such node exists.</p>
     <h4 class="phpdocumentor-element__name" id="method_getType">
         getType()
         <a href="classes/ML-JsonLD-Node.html#method_getType" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/ml/json-ld/Node.php"><a href="files/vendor-ml-json-ld-node.html"><abbr title="vendor/ml/json-ld/Node.php">Node.php</abbr></a></abbr>
@@ -1182,23 +1163,21 @@ property or null if no such node exists.</p>
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">getType</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">null|<a href="classes/ML-JsonLD-NodeInterface.html"><abbr title="\ML\JsonLD\NodeInterface">NodeInterface</abbr></a>|array&lt;string|int, <a href="classes/ML-JsonLD-NodeInterface.html"><abbr title="\ML\JsonLD\NodeInterface">NodeInterface</abbr></a>&gt;</span></code>
 
+    <div class="phpdocumentor-label-line">
+        </div>
     
     
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
 
+            <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">null|<a href="classes/ML-JsonLD-NodeInterface.html"><abbr title="\ML\JsonLD\NodeInterface">NodeInterface</abbr></a>|array&lt;string|int, <a href="classes/ML-JsonLD-NodeInterface.html"><abbr title="\ML\JsonLD\NodeInterface">NodeInterface</abbr></a>&gt;</span>
-            &mdash;
-            <section class="phpdocumentor-description"><p>Returns the type(s) of this node.</p>
+        <span class="phpdocumentor-signature__response_type">null|<a href="classes/ML-JsonLD-NodeInterface.html"><abbr title="\ML\JsonLD\NodeInterface">NodeInterface</abbr></a>|array&lt;string|int, <a href="classes/ML-JsonLD-NodeInterface.html"><abbr title="\ML\JsonLD\NodeInterface">NodeInterface</abbr></a>&gt;</span>
+                    &mdash;
+                <section class="phpdocumentor-description"><p>Returns the type(s) of this node.</p>
 </section>
 
-    
+            </section>
+
 </article>
                     <article
         class="phpdocumentor-element
@@ -1209,6 +1188,7 @@ property or null if no such node exists.</p>
     <h4 class="phpdocumentor-element__name" id="method_isBlankNode">
         isBlankNode()
         <a href="classes/ML-JsonLD-Node.html#method_isBlankNode" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/ml/json-ld/Node.php"><a href="files/vendor-ml-json-ld-node.html"><abbr title="vendor/ml/json-ld/Node.php">Node.php</abbr></a></abbr>
@@ -1223,23 +1203,21 @@ property or null if no such node exists.</p>
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">isBlankNode</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
 
+    <div class="phpdocumentor-label-line">
+        </div>
     
     
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
 
+            <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">bool</span>
-            &mdash;
-            <section class="phpdocumentor-description"><p>Returns true if the node is a blank node, otherwise false.</p>
+        <span class="phpdocumentor-signature__response_type">bool</span>
+                    &mdash;
+                <section class="phpdocumentor-description"><p>Returns true if the node is a blank node, otherwise false.</p>
 </section>
 
-    
+            </section>
+
 </article>
                     <article
         class="phpdocumentor-element
@@ -1250,6 +1228,7 @@ property or null if no such node exists.</p>
     <h4 class="phpdocumentor-element__name" id="method_removeFromGraph">
         removeFromGraph()
         <a href="classes/ML-JsonLD-Node.html#method_removeFromGraph" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/ml/json-ld/Node.php"><a href="files/vendor-ml-json-ld-node.html"><abbr title="vendor/ml/json-ld/Node.php">Node.php</abbr></a></abbr>
@@ -1264,21 +1243,17 @@ property or null if no such node exists.</p>
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">removeFromGraph</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">self</span></code>
 
+    <div class="phpdocumentor-label-line">
+        </div>
     
     
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
 
+            <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">self</span>
-            &mdash;
-        
-    
+        <span class="phpdocumentor-signature__response_type">self</span>
+            </section>
+
 </article>
                     <article
         class="phpdocumentor-element
@@ -1289,6 +1264,7 @@ property or null if no such node exists.</p>
     <h4 class="phpdocumentor-element__name" id="method_removeProperty">
         removeProperty()
         <a href="classes/ML-JsonLD-Node.html#method_removeProperty" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/ml/json-ld/Node.php"><a href="files/vendor-ml-json-ld-node.html"><abbr title="vendor/ml/json-ld/Node.php">Node.php</abbr></a></abbr>
@@ -1303,6 +1279,8 @@ property or null if no such node exists.</p>
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">removeProperty</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$property</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">self</span></code>
 
+    <div class="phpdocumentor-label-line">
+        </div>
     
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
@@ -1318,18 +1296,12 @@ property or null if no such node exists.</p>
             </dl>
 
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
 
+            <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">self</span>
-            &mdash;
-        
-    
+        <span class="phpdocumentor-signature__response_type">self</span>
+            </section>
+
 </article>
                     <article
         class="phpdocumentor-element
@@ -1340,6 +1312,7 @@ property or null if no such node exists.</p>
     <h4 class="phpdocumentor-element__name" id="method_removePropertyValue">
         removePropertyValue()
         <a href="classes/ML-JsonLD-Node.html#method_removePropertyValue" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/ml/json-ld/Node.php"><a href="files/vendor-ml-json-ld-node.html"><abbr title="vendor/ml/json-ld/Node.php">Node.php</abbr></a></abbr>
@@ -1354,6 +1327,8 @@ property or null if no such node exists.</p>
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">removePropertyValue</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$property</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$value</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">self</span></code>
 
+    <div class="phpdocumentor-label-line">
+        </div>
     
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
@@ -1379,18 +1354,12 @@ an array.</p>
             </dl>
 
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
 
+            <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">self</span>
-            &mdash;
-        
-    
+        <span class="phpdocumentor-signature__response_type">self</span>
+            </section>
+
 </article>
                     <article
         class="phpdocumentor-element
@@ -1401,6 +1370,7 @@ an array.</p>
     <h4 class="phpdocumentor-element__name" id="method_removeType">
         removeType()
         <a href="classes/ML-JsonLD-Node.html#method_removeType" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/ml/json-ld/Node.php"><a href="files/vendor-ml-json-ld-node.html"><abbr title="vendor/ml/json-ld/Node.php">Node.php</abbr></a></abbr>
@@ -1415,6 +1385,8 @@ an array.</p>
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">removeType</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href="classes/ML-JsonLD-NodeInterface.html"><abbr title="\ML\JsonLD\NodeInterface">NodeInterface</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$type</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">self</span></code>
 
+    <div class="phpdocumentor-label-line">
+        </div>
     
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
@@ -1423,24 +1395,17 @@ an array.</p>
                 : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/ML-JsonLD-NodeInterface.html"><abbr title="\ML\JsonLD\NodeInterface">NodeInterface</abbr></a></span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
-
+                
             </dd>
             </dl>
 
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
 
+            <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">self</span>
-            &mdash;
-        
-    
+        <span class="phpdocumentor-signature__response_type">self</span>
+            </section>
+
 </article>
                     <article
         class="phpdocumentor-element
@@ -1451,6 +1416,7 @@ an array.</p>
     <h4 class="phpdocumentor-element__name" id="method_setProperty">
         setProperty()
         <a href="classes/ML-JsonLD-Node.html#method_setProperty" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/ml/json-ld/Node.php"><a href="files/vendor-ml-json-ld-node.html"><abbr title="vendor/ml/json-ld/Node.php">Node.php</abbr></a></abbr>
@@ -1465,6 +1431,8 @@ an array.</p>
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">setProperty</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$property</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$value</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">self</span></code>
 
+    <div class="phpdocumentor-label-line">
+        </div>
     
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
@@ -1490,18 +1458,12 @@ an array. Use null to remove the property.</p>
             </dl>
 
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
 
+            <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">self</span>
-            &mdash;
-        
-    
+        <span class="phpdocumentor-signature__response_type">self</span>
+            </section>
+
 </article>
                     <article
         class="phpdocumentor-element
@@ -1512,6 +1474,7 @@ an array. Use null to remove the property.</p>
     <h4 class="phpdocumentor-element__name" id="method_setType">
         setType()
         <a href="classes/ML-JsonLD-Node.html#method_setType" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/ml/json-ld/Node.php"><a href="files/vendor-ml-json-ld-node.html"><abbr title="vendor/ml/json-ld/Node.php">Node.php</abbr></a></abbr>
@@ -1526,6 +1489,8 @@ an array. Use null to remove the property.</p>
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">setType</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$type</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">self</span></code>
 
+    <div class="phpdocumentor-label-line">
+        </div>
     
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
@@ -1534,24 +1499,17 @@ an array. Use null to remove the property.</p>
                 : <span class="phpdocumentor-signature__argument__return-type">mixed</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
-
+                
             </dd>
             </dl>
 
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
 
+            <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">self</span>
-            &mdash;
-        
-    
+        <span class="phpdocumentor-signature__response_type">self</span>
+            </section>
+
 </article>
                     <article
         class="phpdocumentor-element
@@ -1562,6 +1520,7 @@ an array. Use null to remove the property.</p>
     <h4 class="phpdocumentor-element__name" id="method_toJsonLd">
         toJsonLd()
         <a href="classes/ML-JsonLD-Node.html#method_toJsonLd" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/ml/json-ld/Node.php"><a href="files/vendor-ml-json-ld-node.html"><abbr title="vendor/ml/json-ld/Node.php">Node.php</abbr></a></abbr>
@@ -1576,6 +1535,8 @@ an array. Use null to remove the property.</p>
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">toJsonLd</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$useNativeTypes</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">true</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
 
+    <div class="phpdocumentor-label-line">
+        </div>
     
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
@@ -1594,22 +1555,18 @@ will be used instead.</p>
             </dl>
 
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
 
+            <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">mixed</span>
-            &mdash;
-            <section class="phpdocumentor-description"><p>Returns data which can be serialized by
+        <span class="phpdocumentor-signature__response_type">mixed</span>
+                    &mdash;
+                <section class="phpdocumentor-description"><p>Returns data which can be serialized by
 <a href="classes/ML-JsonLD-JsonLD.html#method_toString"><abbr title="\ML\JsonLD\JsonLD::toString()">JsonLD::toString()</abbr></a> (which is a value of any type
 other than a resource) to expanded JSON-LD.</p>
 </section>
 
-    
+            </section>
+
 </article>
                     <article
         class="phpdocumentor-element
@@ -1620,6 +1577,7 @@ other than a resource) to expanded JSON-LD.</p>
     <h4 class="phpdocumentor-element__name" id="method_addReverseProperty">
         addReverseProperty()
         <a href="classes/ML-JsonLD-Node.html#method_addReverseProperty" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/ml/json-ld/Node.php"><a href="files/vendor-ml-json-ld-node.html"><abbr title="vendor/ml/json-ld/Node.php">Node.php</abbr></a></abbr>
@@ -1634,6 +1592,8 @@ other than a resource) to expanded JSON-LD.</p>
     <span class="phpdocumentor-signature__visibility">protected</span>
                     <span class="phpdocumentor-signature__name">addReverseProperty</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$property</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type"><a href="classes/ML-JsonLD-NodeInterface.html"><abbr title="\ML\JsonLD\NodeInterface">NodeInterface</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$node</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
 
+    <div class="phpdocumentor-label-line">
+        </div>
     
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
@@ -1659,17 +1619,7 @@ to this node instance.</p>
             </dl>
 
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
 
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">mixed</span>
-            &mdash;
-        
     
 </article>
                     <article
@@ -1681,6 +1631,7 @@ to this node instance.</p>
     <h4 class="phpdocumentor-element__name" id="method_equalValues">
         equalValues()
         <a href="classes/ML-JsonLD-Node.html#method_equalValues" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/ml/json-ld/Node.php"><a href="files/vendor-ml-json-ld-node.html"><abbr title="vendor/ml/json-ld/Node.php">Node.php</abbr></a></abbr>
@@ -1695,6 +1646,8 @@ to this node instance.</p>
     <span class="phpdocumentor-signature__visibility">protected</span>
                     <span class="phpdocumentor-signature__name">equalValues</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$value1</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$value2</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
 
+    <div class="phpdocumentor-label-line">
+        </div>
         <section class="phpdocumentor-description"><p>Scalars and nodes are checked for identity, value objects for
 equality.</p>
 </section>
@@ -1722,20 +1675,16 @@ equality.</p>
             </dl>
 
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
 
+            <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">bool</span>
-            &mdash;
-            <section class="phpdocumentor-description"><p>Returns true if the two values are equals; otherwise false.</p>
+        <span class="phpdocumentor-signature__response_type">bool</span>
+                    &mdash;
+                <section class="phpdocumentor-description"><p>Returns true if the two values are equals; otherwise false.</p>
 </section>
 
-    
+            </section>
+
 </article>
                     <article
         class="phpdocumentor-element
@@ -1746,6 +1695,7 @@ equality.</p>
     <h4 class="phpdocumentor-element__name" id="method_isValidPropertyValue">
         isValidPropertyValue()
         <a href="classes/ML-JsonLD-Node.html#method_isValidPropertyValue" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/ml/json-ld/Node.php"><a href="files/vendor-ml-json-ld-node.html"><abbr title="vendor/ml/json-ld/Node.php">Node.php</abbr></a></abbr>
@@ -1760,6 +1710,8 @@ equality.</p>
     <span class="phpdocumentor-signature__visibility">protected</span>
                     <span class="phpdocumentor-signature__name">isValidPropertyValue</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$value</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
 
+    <div class="phpdocumentor-label-line">
+        </div>
     
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
@@ -1775,21 +1727,17 @@ equality.</p>
             </dl>
 
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
 
+            <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">bool</span>
-            &mdash;
-            <section class="phpdocumentor-description"><p>Returns true if the value is a valid property value;
+        <span class="phpdocumentor-signature__response_type">bool</span>
+                    &mdash;
+                <section class="phpdocumentor-description"><p>Returns true if the value is a valid property value;
 false otherwise.</p>
 </section>
 
-    
+            </section>
+
 </article>
                     <article
         class="phpdocumentor-element
@@ -1800,6 +1748,7 @@ false otherwise.</p>
     <h4 class="phpdocumentor-element__name" id="method_normalizePropertyValue">
         normalizePropertyValue()
         <a href="classes/ML-JsonLD-Node.html#method_normalizePropertyValue" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/ml/json-ld/Node.php"><a href="files/vendor-ml-json-ld-node.html"><abbr title="vendor/ml/json-ld/Node.php">Node.php</abbr></a></abbr>
@@ -1814,6 +1763,8 @@ false otherwise.</p>
     <span class="phpdocumentor-signature__visibility">protected</span>
                     <span class="phpdocumentor-signature__name">normalizePropertyValue</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$value</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/ML-JsonLD-NodeInterface.html"><abbr title="\ML\JsonLD\NodeInterface">NodeInterface</abbr></a>|<a href="classes/ML-JsonLD-Value.html"><abbr title="\ML\JsonLD\Value">Value</abbr></a></span></code>
 
+    <div class="phpdocumentor-label-line">
+        </div>
     
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
@@ -1829,20 +1780,16 @@ false otherwise.</p>
             </dl>
 
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
 
+            <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type"><a href="classes/ML-JsonLD-NodeInterface.html"><abbr title="\ML\JsonLD\NodeInterface">NodeInterface</abbr></a>|<a href="classes/ML-JsonLD-Value.html"><abbr title="\ML\JsonLD\Value">Value</abbr></a></span>
-            &mdash;
-            <section class="phpdocumentor-description"><p>The normalized value.</p>
+        <span class="phpdocumentor-signature__response_type"><a href="classes/ML-JsonLD-NodeInterface.html"><abbr title="\ML\JsonLD\NodeInterface">NodeInterface</abbr></a>|<a href="classes/ML-JsonLD-Value.html"><abbr title="\ML\JsonLD\Value">Value</abbr></a></span>
+                    &mdash;
+                <section class="phpdocumentor-description"><p>The normalized value.</p>
 </section>
 
-    
+            </section>
+
 </article>
                     <article
         class="phpdocumentor-element
@@ -1853,6 +1800,7 @@ false otherwise.</p>
     <h4 class="phpdocumentor-element__name" id="method_removeReverseProperty">
         removeReverseProperty()
         <a href="classes/ML-JsonLD-Node.html#method_removeReverseProperty" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/ml/json-ld/Node.php"><a href="files/vendor-ml-json-ld-node.html"><abbr title="vendor/ml/json-ld/Node.php">Node.php</abbr></a></abbr>
@@ -1867,6 +1815,8 @@ false otherwise.</p>
     <span class="phpdocumentor-signature__visibility">protected</span>
                     <span class="phpdocumentor-signature__name">removeReverseProperty</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$property</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type"><a href="classes/ML-JsonLD-NodeInterface.html"><abbr title="\ML\JsonLD\NodeInterface">NodeInterface</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$node</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
 
+    <div class="phpdocumentor-label-line">
+        </div>
     
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
@@ -1892,17 +1842,7 @@ to this node instance.</p>
             </dl>
 
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
 
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">mixed</span>
-            &mdash;
-        
     
 </article>
                     <article
@@ -1914,6 +1854,7 @@ to this node instance.</p>
     <h4 class="phpdocumentor-element__name" id="method_doMergeIntoProperty">
         doMergeIntoProperty()
         <a href="classes/ML-JsonLD-Node.html#method_doMergeIntoProperty" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/ml/json-ld/Node.php"><a href="files/vendor-ml-json-ld-node.html"><abbr title="vendor/ml/json-ld/Node.php">Node.php</abbr></a></abbr>
@@ -1928,6 +1869,8 @@ to this node instance.</p>
     <span class="phpdocumentor-signature__visibility">private</span>
                     <span class="phpdocumentor-signature__name">doMergeIntoProperty</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$property</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$existingValues</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$value</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
 
+    <div class="phpdocumentor-label-line">
+        </div>
     
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
@@ -1964,7 +1907,8 @@ values. This MUST NOT be an array.</p>
     
     <h5 class="phpdocumentor-tag-list__heading" id="tags">
         Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/ML-JsonLD-Node.html#method_doMergeIntoProperty#tags" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h5>
     <dl class="phpdocumentor-tag-list">
                                     <dt class="phpdocumentor-tag-list__entry">
@@ -1981,10 +1925,6 @@ string nor a typed value or a node.</p>
                                     </dd>
                                             </dl>
 
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">mixed</span>
-            &mdash;
-        
     
 </article>
             </section>
@@ -2082,7 +2022,75 @@ string nor a typed value or a node.</p>
     </script>
 
     </article>
-                <section data-search-results class="phpdocumentor-search-results phpdocumentor-search-results--hidden">
+                                </section>
+                <section class="phpdocumentor-on-this-page__sidebar">
+                                
+    <section class="phpdocumentor-on-this-page__content">
+        <strong class="phpdocumentor-on-this-page__title">On this page</strong>
+
+        <ul class="phpdocumentor-list -clean">
+            <li class="phpdocumentor-on-this-page-section__title">Table Of Contents</li>
+            <li>
+                <ul class="phpdocumentor-list -clean">
+                                        <li><a href="classes/ML-JsonLD-Node.html#toc-constants">Constants</a></li>
+                                                            <li><a href="classes/ML-JsonLD-Node.html#toc-properties">Properties</a></li>
+                                                            <li><a href="classes/ML-JsonLD-Node.html#toc-methods">Methods</a></li>
+                                    </ul>
+            </li>
+                            <li class="phpdocumentor-on-this-page-section__title">Constants</li>
+                <li>
+                    <ul class="phpdocumentor-list -clean">
+                                                    <li><a href="classes/ML-JsonLD-Node.html#constant_TYPE">TYPE</a></li>
+                                            </ul>
+                </li>
+            
+                            <li class="phpdocumentor-on-this-page-section__title">Properties</li>
+                <li>
+                    <ul class="phpdocumentor-list -clean">
+                                                    <li><a href="classes/ML-JsonLD-Node.html#property_graph">$graph<a href="classes/ML-JsonLD-Node.html"></li>
+                                                    <li><a href="classes/ML-JsonLD-Node.html#property_id">$id<a href="classes/ML-JsonLD-Node.html"></li>
+                                                    <li><a href="classes/ML-JsonLD-Node.html#property_properties">$properties<a href="classes/ML-JsonLD-Node.html"></li>
+                                                    <li><a href="classes/ML-JsonLD-Node.html#property_revProperties">$revProperties<a href="classes/ML-JsonLD-Node.html"></li>
+                                            </ul>
+                </li>
+            
+                        <li class="phpdocumentor-on-this-page-section__title">Methods</li>
+            <li>
+                <ul class="phpdocumentor-list -clean">
+                                            <li><a href="classes/ML-JsonLD-Node.html#method___construct">__construct()</a></li>
+                                            <li><a href="classes/ML-JsonLD-Node.html#method_addPropertyValue">addPropertyValue()</a></li>
+                                            <li><a href="classes/ML-JsonLD-Node.html#method_addType">addType()</a></li>
+                                            <li><a href="classes/ML-JsonLD-Node.html#method_equals">equals()</a></li>
+                                            <li><a href="classes/ML-JsonLD-Node.html#method_getGraph">getGraph()</a></li>
+                                            <li><a href="classes/ML-JsonLD-Node.html#method_getId">getId()</a></li>
+                                            <li><a href="classes/ML-JsonLD-Node.html#method_getNodesWithThisType">getNodesWithThisType()</a></li>
+                                            <li><a href="classes/ML-JsonLD-Node.html#method_getProperties">getProperties()</a></li>
+                                            <li><a href="classes/ML-JsonLD-Node.html#method_getProperty">getProperty()</a></li>
+                                            <li><a href="classes/ML-JsonLD-Node.html#method_getReverseProperties">getReverseProperties()</a></li>
+                                            <li><a href="classes/ML-JsonLD-Node.html#method_getReverseProperty">getReverseProperty()</a></li>
+                                            <li><a href="classes/ML-JsonLD-Node.html#method_getType">getType()</a></li>
+                                            <li><a href="classes/ML-JsonLD-Node.html#method_isBlankNode">isBlankNode()</a></li>
+                                            <li><a href="classes/ML-JsonLD-Node.html#method_removeFromGraph">removeFromGraph()</a></li>
+                                            <li><a href="classes/ML-JsonLD-Node.html#method_removeProperty">removeProperty()</a></li>
+                                            <li><a href="classes/ML-JsonLD-Node.html#method_removePropertyValue">removePropertyValue()</a></li>
+                                            <li><a href="classes/ML-JsonLD-Node.html#method_removeType">removeType()</a></li>
+                                            <li><a href="classes/ML-JsonLD-Node.html#method_setProperty">setProperty()</a></li>
+                                            <li><a href="classes/ML-JsonLD-Node.html#method_setType">setType()</a></li>
+                                            <li><a href="classes/ML-JsonLD-Node.html#method_toJsonLd">toJsonLd()</a></li>
+                                            <li><a href="classes/ML-JsonLD-Node.html#method_addReverseProperty">addReverseProperty()</a></li>
+                                            <li><a href="classes/ML-JsonLD-Node.html#method_equalValues">equalValues()</a></li>
+                                            <li><a href="classes/ML-JsonLD-Node.html#method_isValidPropertyValue">isValidPropertyValue()</a></li>
+                                            <li><a href="classes/ML-JsonLD-Node.html#method_normalizePropertyValue">normalizePropertyValue()</a></li>
+                                            <li><a href="classes/ML-JsonLD-Node.html#method_removeReverseProperty">removeReverseProperty()</a></li>
+                                            <li><a href="classes/ML-JsonLD-Node.html#method_doMergeIntoProperty">doMergeIntoProperty()</a></li>
+                                    </ul>
+            </li>
+                    </ul>
+    </section>
+
+                </section>
+                            </div>
+            <section data-search-results class="phpdocumentor-search-results phpdocumentor-search-results--hidden">
     <section class="phpdocumentor-search-results__dialog">
         <header class="phpdocumentor-search-results__header">
             <h2 class="phpdocumentor-search-results__title">Search results</h2>
@@ -2093,7 +2101,6 @@ string nor a typed value or a node.</p>
         </section>
     </section>
 </section>
-            </div>
         </div>
         <a href="classes/ML-JsonLD-Node.html#top" class="phpdocumentor-back-to-top"><i class="fas fa-chevron-circle-up"></i></a>
 

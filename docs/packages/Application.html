@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/base.css">
             <link rel="preconnect" href="https://fonts.gstatic.com">
-        <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@100;200;300;400;600;700&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;600;700&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="css/template.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css" integrity="sha256-ybRkN9dBjhcS2qrW1z+hfCxq+1aBdwyQM5wlQoQVt/0=" crossorigin="anonymous" />
@@ -19,6 +19,7 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.23.0/plugins/line-highlight/prism-line-highlight.css">
                 <script src="https://cdn.jsdelivr.net/npm/fuse.js@3.4.6"></script>
         <script src="https://cdn.jsdelivr.net/npm/css-vars-ponyfill@2"></script>
+        <script src="js/template.js"></script>
         <script src="js/search.js"></script>
         <script defer src="js/searchIndex.js"></script>
     </head>
@@ -52,7 +53,7 @@
 <label class="phpdocumentor-sidebar__menu-icon" for="sidebar-button">
     Menu
 </label>
-<aside class="phpdocumentor-column -four phpdocumentor-sidebar">
+<aside class="phpdocumentor-column -three phpdocumentor-sidebar">
                     <section class="phpdocumentor-sidebar__category">
             <h2 class="phpdocumentor-sidebar__category-header">Namespaces</h2>
                                     <h4 class="phpdocumentor-sidebar__root-namespace">
@@ -99,186 +100,63 @@
     </section>
 </aside>
 
-            <div class="phpdocumentor-column -eight phpdocumentor-content">
-                    <ul class="phpdocumentor-breadcrumbs">
+            <div class="phpdocumentor-column -nine phpdocumentor-content">
+                                <section>
+                                        <ul class="phpdocumentor-breadcrumbs">
     </ul>
 
     <article class="phpdocumentor-element -package">
         <h2 class="phpdocumentor-content__title">Application</h2>
 
         
+<h3 id="toc">
+    Table of Contents
+    <a href="packages/Application.html#toc" class="headerlink"><i class="fas fa-link"></i></a>
 
-<h3 id="interfaces_class_traits">
-    Interfaces, Classes, Traits and Enums
-    <a href="#interfaces_class_traits" class="headerlink"><i class="fas fa-link"></i></a>
 </h3>
 
-<dl class="phpdocumentor-table-of-contents">
-            <dt class="phpdocumentor-table-of-contents__entry -interface"><a href="classes/ML-JsonLD-DocumentFactoryInterface.html"><abbr title="\ML\JsonLD\DocumentFactoryInterface">DocumentFactoryInterface</abbr></a></dt>
-        <dd>Interface for factories to create DocumentInterface objects</dd>
-            <dt class="phpdocumentor-table-of-contents__entry -interface"><a href="classes/ML-JsonLD-DocumentInterface.html"><abbr title="\ML\JsonLD\DocumentInterface">DocumentInterface</abbr></a></dt>
-        <dd>JSON-LD document interface</dd>
-            <dt class="phpdocumentor-table-of-contents__entry -interface"><a href="classes/ML-JsonLD-DocumentLoaderInterface.html"><abbr title="\ML\JsonLD\DocumentLoaderInterface">DocumentLoaderInterface</abbr></a></dt>
-        <dd>Interface for (remote) document loaders</dd>
-            <dt class="phpdocumentor-table-of-contents__entry -interface"><a href="classes/ML-JsonLD-GraphInterface.html"><abbr title="\ML\JsonLD\GraphInterface">GraphInterface</abbr></a></dt>
-        <dd>JSON-LD graph interface</dd>
-            <dt class="phpdocumentor-table-of-contents__entry -interface"><a href="classes/ML-JsonLD-JsonLdSerializable.html"><abbr title="\ML\JsonLD\JsonLdSerializable">JsonLdSerializable</abbr></a></dt>
-        <dd>The JsonLdSerializable interface</dd>
-            <dt class="phpdocumentor-table-of-contents__entry -interface"><a href="classes/ML-JsonLD-NodeInterface.html"><abbr title="\ML\JsonLD\NodeInterface">NodeInterface</abbr></a></dt>
-        <dd>A generic interface for nodes in a JSON-LD graph.</dd>
-            <dt class="phpdocumentor-table-of-contents__entry -interface"><a href="classes/ML-JsonLD-QuadParserInterface.html"><abbr title="\ML\JsonLD\QuadParserInterface">QuadParserInterface</abbr></a></dt>
-        <dd>Quad parser interface</dd>
-            <dt class="phpdocumentor-table-of-contents__entry -interface"><a href="classes/ML-JsonLD-QuadSerializerInterface.html"><abbr title="\ML\JsonLD\QuadSerializerInterface">QuadSerializerInterface</abbr></a></dt>
-        <dd>Quad serializer interface</dd>
-            <dt class="phpdocumentor-table-of-contents__entry -interface"><a href="classes/rdfInterface-BlankNodeInterface.html"><abbr title="\rdfInterface\BlankNodeInterface">BlankNodeInterface</abbr></a></dt>
-        <dd>Description of RdfTerm</dd>
-            <dt class="phpdocumentor-table-of-contents__entry -interface"><a href="classes/rdfInterface-DataFactoryInterface.html"><abbr title="\rdfInterface\DataFactoryInterface">DataFactoryInterface</abbr></a></dt>
-        <dd></dd>
-            <dt class="phpdocumentor-table-of-contents__entry -interface"><a href="classes/rdfInterface-DatasetCompareInterface.html"><abbr title="\rdfInterface\DatasetCompareInterface">DatasetCompareInterface</abbr></a></dt>
-        <dd>Main, edge(quad) and Dataset-oriented Dataset API</dd>
-            <dt class="phpdocumentor-table-of-contents__entry -interface"><a href="classes/rdfInterface-DatasetInterface.html"><abbr title="\rdfInterface\DatasetInterface">DatasetInterface</abbr></a></dt>
-        <dd>Main, edge(quad) and Dataset-oriented Dataset API</dd>
-            <dt class="phpdocumentor-table-of-contents__entry -interface"><a href="classes/rdfInterface-DatasetListQuadPartsInterface.html"><abbr title="\rdfInterface\DatasetListQuadPartsInterface">DatasetListQuadPartsInterface</abbr></a></dt>
-        <dd>Set of methods for listing distinct Terms being used on a given position
-of dataset quads.</dd>
-            <dt class="phpdocumentor-table-of-contents__entry -interface"><a href="classes/rdfInterface-DatasetMapReduceInterface.html"><abbr title="\rdfInterface\DatasetMapReduceInterface">DatasetMapReduceInterface</abbr></a></dt>
-        <dd>Immutable edge processing methods</dd>
-            <dt class="phpdocumentor-table-of-contents__entry -interface"><a href="classes/rdfInterface-DefaultGraphInterface.html"><abbr title="\rdfInterface\DefaultGraphInterface">DefaultGraphInterface</abbr></a></dt>
-        <dd>Description of RdfTerm</dd>
-            <dt class="phpdocumentor-table-of-contents__entry -interface"><a href="classes/rdfInterface-LiteralInterface.html"><abbr title="\rdfInterface\LiteralInterface">LiteralInterface</abbr></a></dt>
-        <dd>Description of RdfTerm</dd>
-            <dt class="phpdocumentor-table-of-contents__entry -interface"><a href="classes/rdfInterface-NamedNodeInterface.html"><abbr title="\rdfInterface\NamedNodeInterface">NamedNodeInterface</abbr></a></dt>
-        <dd>Description of RdfTerm</dd>
-            <dt class="phpdocumentor-table-of-contents__entry -interface"><a href="classes/rdfInterface-ParserInterface.html"><abbr title="\rdfInterface\ParserInterface">ParserInterface</abbr></a></dt>
-        <dd></dd>
-            <dt class="phpdocumentor-table-of-contents__entry -interface"><a href="classes/rdfInterface-QuadCompareInterface.html"><abbr title="\rdfInterface\QuadCompareInterface">QuadCompareInterface</abbr></a></dt>
-        <dd>Interface allowing to compare Quads.</dd>
-            <dt class="phpdocumentor-table-of-contents__entry -interface"><a href="classes/rdfInterface-QuadInterface.html"><abbr title="\rdfInterface\QuadInterface">QuadInterface</abbr></a></dt>
-        <dd>Extends Term because of RDF*</dd>
-            <dt class="phpdocumentor-table-of-contents__entry -interface"><a href="classes/rdfInterface-QuadIteratorAggregateInterface.html"><abbr title="\rdfInterface\QuadIteratorAggregateInterface">QuadIteratorAggregateInterface</abbr></a></dt>
-        <dd>Description of QuadIteratorAggregateInterface</dd>
-            <dt class="phpdocumentor-table-of-contents__entry -interface"><a href="classes/rdfInterface-QuadIteratorInterface.html"><abbr title="\rdfInterface\QuadIteratorInterface">QuadIteratorInterface</abbr></a></dt>
-        <dd></dd>
-            <dt class="phpdocumentor-table-of-contents__entry -interface"><a href="classes/rdfInterface-RdfNamespaceInterface.html"><abbr title="\rdfInterface\RdfNamespaceInterface">RdfNamespaceInterface</abbr></a></dt>
-        <dd></dd>
-            <dt class="phpdocumentor-table-of-contents__entry -interface"><a href="classes/rdfInterface-SerializerInterface.html"><abbr title="\rdfInterface\SerializerInterface">SerializerInterface</abbr></a></dt>
-        <dd></dd>
-            <dt class="phpdocumentor-table-of-contents__entry -interface"><a href="classes/rdfInterface-TermCompareInterface.html"><abbr title="\rdfInterface\TermCompareInterface">TermCompareInterface</abbr></a></dt>
-        <dd>Description of TermCompare</dd>
-            <dt class="phpdocumentor-table-of-contents__entry -interface"><a href="classes/rdfInterface-TermInterface.html"><abbr title="\rdfInterface\TermInterface">TermInterface</abbr></a></dt>
-        <dd>Description of RdfTerm</dd>
-            <dt class="phpdocumentor-table-of-contents__entry -interface"><a href="classes/rdfInterface-TermIteratorInterface.html"><abbr title="\rdfInterface\TermIteratorInterface">TermIteratorInterface</abbr></a></dt>
-        <dd></dd>
-    
-            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/quickRdfIo-JsonLdParser.html"><abbr title="\quickRdfIo\JsonLdParser">JsonLdParser</abbr></a></dt>
-        <dd>Thin wrapper providing RdfInterface\Parser API for JSON-LD the parser
-provided by the ml/json-ld library.</dd>
-            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/quickRdfIo-JsonLdSerializer.html"><abbr title="\quickRdfIo\JsonLdSerializer">JsonLdSerializer</abbr></a></dt>
-        <dd>Thin wrapper providing RdfInterface\Serializer API for JSON-LD the parser
-provided by the ml/json-ld library.</dd>
-            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/quickRdfIo-JsonLdStreamSerializer.html"><abbr title="\quickRdfIo\JsonLdStreamSerializer">JsonLdStreamSerializer</abbr></a></dt>
-        <dd>A steaming JsonLD serializer. Generates output in the flatten JsonLD format
+
+
+    <h4 id="toc-interfaces">
+        Interfaces
+        <a href="packages/Application.html#toc-interfaces" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <dl class="phpdocumentor-table-of-contents">
+                    <dt class="phpdocumentor-table-of-contents__entry -interface"><a href="classes/ML-JsonLD-DocumentFactoryInterface.html"><abbr title="\ML\JsonLD\DocumentFactoryInterface">DocumentFactoryInterface</abbr></a></dt><dd>Interface for factories to create DocumentInterface objects</dd>            <dt class="phpdocumentor-table-of-contents__entry -interface"><a href="classes/ML-JsonLD-DocumentInterface.html"><abbr title="\ML\JsonLD\DocumentInterface">DocumentInterface</abbr></a></dt><dd>JSON-LD document interface</dd>            <dt class="phpdocumentor-table-of-contents__entry -interface"><a href="classes/ML-JsonLD-DocumentLoaderInterface.html"><abbr title="\ML\JsonLD\DocumentLoaderInterface">DocumentLoaderInterface</abbr></a></dt><dd>Interface for (remote) document loaders</dd>            <dt class="phpdocumentor-table-of-contents__entry -interface"><a href="classes/ML-JsonLD-GraphInterface.html"><abbr title="\ML\JsonLD\GraphInterface">GraphInterface</abbr></a></dt><dd>JSON-LD graph interface</dd>            <dt class="phpdocumentor-table-of-contents__entry -interface"><a href="classes/ML-JsonLD-JsonLdSerializable.html"><abbr title="\ML\JsonLD\JsonLdSerializable">JsonLdSerializable</abbr></a></dt><dd>The JsonLdSerializable interface</dd>            <dt class="phpdocumentor-table-of-contents__entry -interface"><a href="classes/ML-JsonLD-NodeInterface.html"><abbr title="\ML\JsonLD\NodeInterface">NodeInterface</abbr></a></dt><dd>A generic interface for nodes in a JSON-LD graph.</dd>            <dt class="phpdocumentor-table-of-contents__entry -interface"><a href="classes/ML-JsonLD-QuadParserInterface.html"><abbr title="\ML\JsonLD\QuadParserInterface">QuadParserInterface</abbr></a></dt><dd>Quad parser interface</dd>            <dt class="phpdocumentor-table-of-contents__entry -interface"><a href="classes/ML-JsonLD-QuadSerializerInterface.html"><abbr title="\ML\JsonLD\QuadSerializerInterface">QuadSerializerInterface</abbr></a></dt><dd>Quad serializer interface</dd>            <dt class="phpdocumentor-table-of-contents__entry -interface"><a href="classes/rdfInterface-BlankNodeInterface.html"><abbr title="\rdfInterface\BlankNodeInterface">BlankNodeInterface</abbr></a></dt><dd>Description of RdfTerm</dd>            <dt class="phpdocumentor-table-of-contents__entry -interface"><a href="classes/rdfInterface-DataFactoryInterface.html"><abbr title="\rdfInterface\DataFactoryInterface">DataFactoryInterface</abbr></a></dt>            <dt class="phpdocumentor-table-of-contents__entry -interface"><a href="classes/rdfInterface-DatasetCompareInterface.html"><abbr title="\rdfInterface\DatasetCompareInterface">DatasetCompareInterface</abbr></a></dt><dd>Main, edge(quad) and Dataset-oriented Dataset API</dd>            <dt class="phpdocumentor-table-of-contents__entry -interface"><a href="classes/rdfInterface-DatasetInterface.html"><abbr title="\rdfInterface\DatasetInterface">DatasetInterface</abbr></a></dt><dd>Main, edge(quad) and Dataset-oriented Dataset API</dd>            <dt class="phpdocumentor-table-of-contents__entry -interface"><a href="classes/rdfInterface-DatasetListQuadPartsInterface.html"><abbr title="\rdfInterface\DatasetListQuadPartsInterface">DatasetListQuadPartsInterface</abbr></a></dt><dd>Set of methods for listing distinct Terms being used on a given position
+of dataset quads.</dd>            <dt class="phpdocumentor-table-of-contents__entry -interface"><a href="classes/rdfInterface-DatasetMapReduceInterface.html"><abbr title="\rdfInterface\DatasetMapReduceInterface">DatasetMapReduceInterface</abbr></a></dt><dd>Immutable edge processing methods</dd>            <dt class="phpdocumentor-table-of-contents__entry -interface"><a href="classes/rdfInterface-DefaultGraphInterface.html"><abbr title="\rdfInterface\DefaultGraphInterface">DefaultGraphInterface</abbr></a></dt><dd>Description of RdfTerm</dd>            <dt class="phpdocumentor-table-of-contents__entry -interface"><a href="classes/rdfInterface-LiteralInterface.html"><abbr title="\rdfInterface\LiteralInterface">LiteralInterface</abbr></a></dt><dd>Description of RdfTerm</dd>            <dt class="phpdocumentor-table-of-contents__entry -interface"><a href="classes/rdfInterface-NamedNodeInterface.html"><abbr title="\rdfInterface\NamedNodeInterface">NamedNodeInterface</abbr></a></dt><dd>Description of RdfTerm</dd>            <dt class="phpdocumentor-table-of-contents__entry -interface"><a href="classes/rdfInterface-ParserInterface.html"><abbr title="\rdfInterface\ParserInterface">ParserInterface</abbr></a></dt>            <dt class="phpdocumentor-table-of-contents__entry -interface"><a href="classes/rdfInterface-QuadCompareInterface.html"><abbr title="\rdfInterface\QuadCompareInterface">QuadCompareInterface</abbr></a></dt><dd>Interface allowing to compare Quads.</dd>            <dt class="phpdocumentor-table-of-contents__entry -interface"><a href="classes/rdfInterface-QuadInterface.html"><abbr title="\rdfInterface\QuadInterface">QuadInterface</abbr></a></dt><dd>Extends Term because of RDF*</dd>            <dt class="phpdocumentor-table-of-contents__entry -interface"><a href="classes/rdfInterface-QuadIteratorAggregateInterface.html"><abbr title="\rdfInterface\QuadIteratorAggregateInterface">QuadIteratorAggregateInterface</abbr></a></dt><dd>Description of QuadIteratorAggregateInterface</dd>            <dt class="phpdocumentor-table-of-contents__entry -interface"><a href="classes/rdfInterface-QuadIteratorInterface.html"><abbr title="\rdfInterface\QuadIteratorInterface">QuadIteratorInterface</abbr></a></dt>            <dt class="phpdocumentor-table-of-contents__entry -interface"><a href="classes/rdfInterface-RdfNamespaceInterface.html"><abbr title="\rdfInterface\RdfNamespaceInterface">RdfNamespaceInterface</abbr></a></dt>            <dt class="phpdocumentor-table-of-contents__entry -interface"><a href="classes/rdfInterface-SerializerInterface.html"><abbr title="\rdfInterface\SerializerInterface">SerializerInterface</abbr></a></dt>            <dt class="phpdocumentor-table-of-contents__entry -interface"><a href="classes/rdfInterface-TermCompareInterface.html"><abbr title="\rdfInterface\TermCompareInterface">TermCompareInterface</abbr></a></dt><dd>Description of TermCompare</dd>            <dt class="phpdocumentor-table-of-contents__entry -interface"><a href="classes/rdfInterface-TermInterface.html"><abbr title="\rdfInterface\TermInterface">TermInterface</abbr></a></dt><dd>Description of RdfTerm</dd>            <dt class="phpdocumentor-table-of-contents__entry -interface"><a href="classes/rdfInterface-TermIteratorInterface.html"><abbr title="\rdfInterface\TermIteratorInterface">TermIteratorInterface</abbr></a></dt>    </dl>
+
+    <h4 id="toc-classes">
+        Classes
+        <a href="packages/Application.html#toc-classes" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <dl class="phpdocumentor-table-of-contents">
+                    <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/quickRdfIo-JsonLdParser.html"><abbr title="\quickRdfIo\JsonLdParser">JsonLdParser</abbr></a></dt><dd>Thin wrapper providing RdfInterface\Parser API for JSON-LD the parser
+provided by the ml/json-ld library.</dd>            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/quickRdfIo-JsonLdSerializer.html"><abbr title="\quickRdfIo\JsonLdSerializer">JsonLdSerializer</abbr></a></dt><dd>Thin wrapper providing RdfInterface\Serializer API for JSON-LD the parser
+provided by the ml/json-ld library.</dd>            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/quickRdfIo-JsonLdStreamSerializer.html"><abbr title="\quickRdfIo\JsonLdStreamSerializer">JsonLdStreamSerializer</abbr></a></dt><dd>A steaming JsonLD serializer. Generates output in the flatten JsonLD format
 and does it in a greedy way (meaning subjects/predicates/values are acumulated
 within graph/subject/predicate only if adjacent triples share the same
 graph/subject/predicate). On the brigh side it&#039;s fast and has minimal memory
-footprint.</dd>
-            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/quickRdfIo-NQuadsParser.html"><abbr title="\quickRdfIo\NQuadsParser">NQuadsParser</abbr></a></dt>
-        <dd>Parses only n-quads and n-triples but does it fast (thanks to parsing in chunks
-and extensive use of regullar expressions).</dd>
-            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/quickRdfIo-NQuadsSerializer.html"><abbr title="\quickRdfIo\NQuadsSerializer">NQuadsSerializer</abbr></a></dt>
-        <dd>Serializes n-quads and n-quads-star.</dd>
-            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/quickRdfIo-RdfIoException.html"><abbr title="\quickRdfIo\RdfIoException">RdfIoException</abbr></a></dt>
-        <dd>Description of RdfException</dd>
-            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/quickRdfIo-RdfXmlParserState.html"><abbr title="\quickRdfIo\RdfXmlParserState">RdfXmlParserState</abbr></a></dt>
-        <dd></dd>
-            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/quickRdfIo-RdfXmlParser.html"><abbr title="\quickRdfIo\RdfXmlParser">RdfXmlParser</abbr></a></dt>
-        <dd>Streaming RDF-XML parser. Fast and with low memory footprint.</dd>
-            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/quickRdfIo-RdfXmlSerializer.html"><abbr title="\quickRdfIo\RdfXmlSerializer">RdfXmlSerializer</abbr></a></dt>
-        <dd>Simple RDF-XML serializer. It is optimized for speed and low memory footprint.</dd>
-            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/quickRdfIo-ResourceWrapper.html"><abbr title="\quickRdfIo\ResourceWrapper">ResourceWrapper</abbr></a></dt>
-        <dd>A wrapper for a resource providing it with a PSR-7 StreamInterface API.</dd>
-            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/quickRdfIo-TriGParser.html"><abbr title="\quickRdfIo\TriGParser">TriGParser</abbr></a></dt>
-        <dd>Description of Parser</dd>
-            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/quickRdfIo-TrigSerializer.html"><abbr title="\quickRdfIo\TrigSerializer">TrigSerializer</abbr></a></dt>
-        <dd>Serializes to TriG and Turtle formats</dd>
-            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/quickRdfIo-Util.html"><abbr title="\quickRdfIo\Util">Util</abbr></a></dt>
-        <dd>Provides static factory methods for plug&amp;play parsers/serializers creation.</dd>
-            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/ML-JsonLD-DefaultDocumentFactory.html"><abbr title="\ML\JsonLD\DefaultDocumentFactory">DefaultDocumentFactory</abbr></a></dt>
-        <dd>DefaultDocumentFactory creates new Documents</dd>
-            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/ML-JsonLD-Document.html"><abbr title="\ML\JsonLD\Document">Document</abbr></a></dt>
-        <dd>A Document represents a JSON-LD document.</dd>
-            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/ML-JsonLD-Exception-InvalidQuadException.html"><abbr title="\ML\JsonLD\Exception\InvalidQuadException">InvalidQuadException</abbr></a></dt>
-        <dd>Exception that is thrown when an invalid quad is detected.</dd>
-            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/ML-JsonLD-Exception-JsonLdException.html"><abbr title="\ML\JsonLD\Exception\JsonLdException">JsonLdException</abbr></a></dt>
-        <dd>Exception class thrown when an error occurs during parsing.</dd>
-            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/ML-JsonLD-FileGetContentsLoader.html"><abbr title="\ML\JsonLD\FileGetContentsLoader">FileGetContentsLoader</abbr></a></dt>
-        <dd>The FileGetContentsLoader loads remote documents by calling file_get_contents</dd>
-            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/ML-JsonLD-Graph.html"><abbr title="\ML\JsonLD\Graph">Graph</abbr></a></dt>
-        <dd>A Graph represents a JSON-LD graph.</dd>
-            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/ML-JsonLD-JsonLD.html"><abbr title="\ML\JsonLD\JsonLD">JsonLD</abbr></a></dt>
-        <dd>JsonLD</dd>
-            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/ML-JsonLD-LanguageTaggedString.html"><abbr title="\ML\JsonLD\LanguageTaggedString">LanguageTaggedString</abbr></a></dt>
-        <dd>A LanguageTaggedString is a string which is tagged with a language.</dd>
-            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/ML-JsonLD-Node.html"><abbr title="\ML\JsonLD\Node">Node</abbr></a></dt>
-        <dd>A Node represents a node in a JSON-LD graph.</dd>
-            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/ML-JsonLD-NQuads.html"><abbr title="\ML\JsonLD\NQuads">NQuads</abbr></a></dt>
-        <dd>NQuads serializes quads to the NQuads format</dd>
-            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/ML-JsonLD-Processor.html"><abbr title="\ML\JsonLD\Processor">Processor</abbr></a></dt>
-        <dd>Processor processes JSON-LD documents as specified by the JSON-LD
-specification.</dd>
-            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/ML-JsonLD-Quad.html"><abbr title="\ML\JsonLD\Quad">Quad</abbr></a></dt>
-        <dd>A quad</dd>
-            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/ML-JsonLD-RdfConstants.html"><abbr title="\ML\JsonLD\RdfConstants">RdfConstants</abbr></a></dt>
-        <dd>Some RDF constants.</dd>
-            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/ML-JsonLD-RemoteDocument.html"><abbr title="\ML\JsonLD\RemoteDocument">RemoteDocument</abbr></a></dt>
-        <dd>RemoteDocument</dd>
-            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/ML-JsonLD-Test-DocumentTest.html"><abbr title="\ML\JsonLD\Test\DocumentTest">DocumentTest</abbr></a></dt>
-        <dd>Test the parsing of a JSON-LD document into a Document.</dd>
-            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/ML-JsonLD-Test-EarlReportGenerator.html"><abbr title="\ML\JsonLD\Test\EarlReportGenerator">EarlReportGenerator</abbr></a></dt>
-        <dd>EarlReportGenerator</dd>
-            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/ML-JsonLD-Test-FileGetContentsLoaderTest.html"><abbr title="\ML\JsonLD\Test\FileGetContentsLoaderTest">FileGetContentsLoaderTest</abbr></a></dt>
-        <dd>Test the parsing of a JSON-LD document into a Document.</dd>
-            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/ML-JsonLD-Test-GraphTest.html"><abbr title="\ML\JsonLD\Test\GraphTest">GraphTest</abbr></a></dt>
-        <dd>Test the parsing of a JSON-LD document into a Graph.</dd>
-            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/ML-JsonLD-Test-JsonLDApiTest.html"><abbr title="\ML\JsonLD\Test\JsonLDApiTest">JsonLDApiTest</abbr></a></dt>
-        <dd>Tests JsonLD&#039;s API</dd>
-            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/ML-JsonLD-Test-JsonTestCase.html"><abbr title="\ML\JsonLD\Test\JsonTestCase">JsonTestCase</abbr></a></dt>
-        <dd>A JSON Test Case</dd>
-            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/ML-JsonLD-Test-NQuadsTest.html"><abbr title="\ML\JsonLD\Test\NQuadsTest">NQuadsTest</abbr></a></dt>
-        <dd>Tests NQuads</dd>
-            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/ML-JsonLD-Test-TestManifestIterator.html"><abbr title="\ML\JsonLD\Test\TestManifestIterator">TestManifestIterator</abbr></a></dt>
-        <dd>TestManifestIterator reads a test manifest and returns the contained test
-definitions.</dd>
-            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/ML-JsonLD-Test-ValueTest.html"><abbr title="\ML\JsonLD\Test\ValueTest">ValueTest</abbr></a></dt>
-        <dd>Test LanguageTaggedString and TypedValue</dd>
-            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/ML-JsonLD-Test-W3CTestSuiteTest.html"><abbr title="\ML\JsonLD\Test\W3CTestSuiteTest">W3CTestSuiteTest</abbr></a></dt>
-        <dd>The official W3C JSON-LD test suite.</dd>
-            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/ML-JsonLD-TypedValue.html"><abbr title="\ML\JsonLD\TypedValue">TypedValue</abbr></a></dt>
-        <dd>A typed value represents a value with an associated type.</dd>
-            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/ML-JsonLD-Value.html"><abbr title="\ML\JsonLD\Value">Value</abbr></a></dt>
-        <dd>Value is the abstract base class used for typed values and
-language-tagged strings.</dd>
-            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/rdfHelpers-DefaultGraph.html"><abbr title="\rdfHelpers\DefaultGraph">DefaultGraph</abbr></a></dt>
-        <dd>Description of DefaultGraph</dd>
-            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/rdfHelpers-GenericQuadIterator.html"><abbr title="\rdfHelpers\GenericQuadIterator">GenericQuadIterator</abbr></a></dt>
-        <dd>Wrapper making almost anything (e.g. array, generator or a single Quad object)
-a QuadIterator.</dd>
-            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/rdfHelpers-GenericTermIterator.html"><abbr title="\rdfHelpers\GenericTermIterator">GenericTermIterator</abbr></a></dt>
-        <dd>Wrapper making almost anything (e.g. array, generator or a single
-QuadInterface object) a QuadIteratorInterface.</dd>
-            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/rdfHelpers-NtriplesUtil.html"><abbr title="\rdfHelpers\NtriplesUtil">NtriplesUtil</abbr></a></dt>
-        <dd>Description of Util</dd>
-            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/rdfHelpers-RdfHelpersException.html"><abbr title="\rdfHelpers\RdfHelpersException">RdfHelpersException</abbr></a></dt>
-        <dd>Description of RdfHelpersException</dd>
-            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/rdfHelpers-RdfNamespace.html"><abbr title="\rdfHelpers\RdfNamespace">RdfNamespace</abbr></a></dt>
-        <dd>Provides an implementation of rdfInterface\RdfNamespace.</dd>
-    
-            <dt class="phpdocumentor-table-of-contents__entry -trait"><a href="classes/quickRdfIo-TmpStreamParserTrait.html"><abbr title="\quickRdfIo\TmpStreamParserTrait">TmpStreamParserTrait</abbr></a></dt>
-        <dd>Description of TmpStreamTrait</dd>
-            <dt class="phpdocumentor-table-of-contents__entry -trait"><a href="classes/quickRdfIo-TmpStreamSerializerTrait.html"><abbr title="\quickRdfIo\TmpStreamSerializerTrait">TmpStreamSerializerTrait</abbr></a></dt>
-        <dd>Description of TmpStreamSerializerTrait</dd>
-    
-    </dl>
+footprint.</dd>            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/quickRdfIo-NQuadsParser.html"><abbr title="\quickRdfIo\NQuadsParser">NQuadsParser</abbr></a></dt><dd>Parses only n-quads and n-triples but does it fast (thanks to parsing in chunks
+and extensive use of regullar expressions).</dd>            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/quickRdfIo-NQuadsSerializer.html"><abbr title="\quickRdfIo\NQuadsSerializer">NQuadsSerializer</abbr></a></dt><dd>Serializes n-quads and n-quads-star.</dd>            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/quickRdfIo-RdfIoException.html"><abbr title="\quickRdfIo\RdfIoException">RdfIoException</abbr></a></dt><dd>Description of RdfException</dd>            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/quickRdfIo-RdfXmlParserState.html"><abbr title="\quickRdfIo\RdfXmlParserState">RdfXmlParserState</abbr></a></dt>            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/quickRdfIo-RdfXmlParser.html"><abbr title="\quickRdfIo\RdfXmlParser">RdfXmlParser</abbr></a></dt><dd>Streaming RDF-XML parser. Fast and with low memory footprint.</dd>            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/quickRdfIo-RdfXmlSerializer.html"><abbr title="\quickRdfIo\RdfXmlSerializer">RdfXmlSerializer</abbr></a></dt><dd>Simple RDF-XML serializer. It is optimized for speed and low memory footprint.</dd>            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/quickRdfIo-ResourceWrapper.html"><abbr title="\quickRdfIo\ResourceWrapper">ResourceWrapper</abbr></a></dt><dd>A wrapper for a resource providing it with a PSR-7 StreamInterface API.</dd>            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/quickRdfIo-TriGParser.html"><abbr title="\quickRdfIo\TriGParser">TriGParser</abbr></a></dt><dd>Description of Parser</dd>            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/quickRdfIo-TrigSerializer.html"><abbr title="\quickRdfIo\TrigSerializer">TrigSerializer</abbr></a></dt><dd>Serializes to TriG and Turtle formats</dd>            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/quickRdfIo-Util.html"><abbr title="\quickRdfIo\Util">Util</abbr></a></dt><dd>Provides static factory methods for plug&amp;play parsers/serializers creation.</dd>            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/ML-JsonLD-DefaultDocumentFactory.html"><abbr title="\ML\JsonLD\DefaultDocumentFactory">DefaultDocumentFactory</abbr></a></dt><dd>DefaultDocumentFactory creates new Documents</dd>            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/ML-JsonLD-Document.html"><abbr title="\ML\JsonLD\Document">Document</abbr></a></dt><dd>A Document represents a JSON-LD document.</dd>            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/ML-JsonLD-Exception-InvalidQuadException.html"><abbr title="\ML\JsonLD\Exception\InvalidQuadException">InvalidQuadException</abbr></a></dt><dd>Exception that is thrown when an invalid quad is detected.</dd>            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/ML-JsonLD-Exception-JsonLdException.html"><abbr title="\ML\JsonLD\Exception\JsonLdException">JsonLdException</abbr></a></dt><dd>Exception class thrown when an error occurs during parsing.</dd>            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/ML-JsonLD-FileGetContentsLoader.html"><abbr title="\ML\JsonLD\FileGetContentsLoader">FileGetContentsLoader</abbr></a></dt><dd>The FileGetContentsLoader loads remote documents by calling file_get_contents</dd>            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/ML-JsonLD-Graph.html"><abbr title="\ML\JsonLD\Graph">Graph</abbr></a></dt><dd>A Graph represents a JSON-LD graph.</dd>            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/ML-JsonLD-JsonLD.html"><abbr title="\ML\JsonLD\JsonLD">JsonLD</abbr></a></dt><dd>JsonLD</dd>            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/ML-JsonLD-LanguageTaggedString.html"><abbr title="\ML\JsonLD\LanguageTaggedString">LanguageTaggedString</abbr></a></dt><dd>A LanguageTaggedString is a string which is tagged with a language.</dd>            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/ML-JsonLD-Node.html"><abbr title="\ML\JsonLD\Node">Node</abbr></a></dt><dd>A Node represents a node in a JSON-LD graph.</dd>            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/ML-JsonLD-NQuads.html"><abbr title="\ML\JsonLD\NQuads">NQuads</abbr></a></dt><dd>NQuads serializes quads to the NQuads format</dd>            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/ML-JsonLD-Processor.html"><abbr title="\ML\JsonLD\Processor">Processor</abbr></a></dt><dd>Processor processes JSON-LD documents as specified by the JSON-LD
+specification.</dd>            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/ML-JsonLD-Quad.html"><abbr title="\ML\JsonLD\Quad">Quad</abbr></a></dt><dd>A quad</dd>            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/ML-JsonLD-RdfConstants.html"><abbr title="\ML\JsonLD\RdfConstants">RdfConstants</abbr></a></dt><dd>Some RDF constants.</dd>            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/ML-JsonLD-RemoteDocument.html"><abbr title="\ML\JsonLD\RemoteDocument">RemoteDocument</abbr></a></dt><dd>RemoteDocument</dd>            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/ML-JsonLD-Test-DocumentTest.html"><abbr title="\ML\JsonLD\Test\DocumentTest">DocumentTest</abbr></a></dt><dd>Test the parsing of a JSON-LD document into a Document.</dd>            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/ML-JsonLD-Test-EarlReportGenerator.html"><abbr title="\ML\JsonLD\Test\EarlReportGenerator">EarlReportGenerator</abbr></a></dt><dd>EarlReportGenerator</dd>            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/ML-JsonLD-Test-FileGetContentsLoaderTest.html"><abbr title="\ML\JsonLD\Test\FileGetContentsLoaderTest">FileGetContentsLoaderTest</abbr></a></dt><dd>Test the parsing of a JSON-LD document into a Document.</dd>            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/ML-JsonLD-Test-GraphTest.html"><abbr title="\ML\JsonLD\Test\GraphTest">GraphTest</abbr></a></dt><dd>Test the parsing of a JSON-LD document into a Graph.</dd>            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/ML-JsonLD-Test-JsonLDApiTest.html"><abbr title="\ML\JsonLD\Test\JsonLDApiTest">JsonLDApiTest</abbr></a></dt><dd>Tests JsonLD&#039;s API</dd>            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/ML-JsonLD-Test-JsonTestCase.html"><abbr title="\ML\JsonLD\Test\JsonTestCase">JsonTestCase</abbr></a></dt><dd>A JSON Test Case</dd>            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/ML-JsonLD-Test-NQuadsTest.html"><abbr title="\ML\JsonLD\Test\NQuadsTest">NQuadsTest</abbr></a></dt><dd>Tests NQuads</dd>            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/ML-JsonLD-Test-TestManifestIterator.html"><abbr title="\ML\JsonLD\Test\TestManifestIterator">TestManifestIterator</abbr></a></dt><dd>TestManifestIterator reads a test manifest and returns the contained test
+definitions.</dd>            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/ML-JsonLD-Test-ValueTest.html"><abbr title="\ML\JsonLD\Test\ValueTest">ValueTest</abbr></a></dt><dd>Test LanguageTaggedString and TypedValue</dd>            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/ML-JsonLD-Test-W3CTestSuiteTest.html"><abbr title="\ML\JsonLD\Test\W3CTestSuiteTest">W3CTestSuiteTest</abbr></a></dt><dd>The official W3C JSON-LD test suite.</dd>            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/ML-JsonLD-TypedValue.html"><abbr title="\ML\JsonLD\TypedValue">TypedValue</abbr></a></dt><dd>A typed value represents a value with an associated type.</dd>            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/ML-JsonLD-Value.html"><abbr title="\ML\JsonLD\Value">Value</abbr></a></dt><dd>Value is the abstract base class used for typed values and
+language-tagged strings.</dd>            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/rdfHelpers-DefaultGraph.html"><abbr title="\rdfHelpers\DefaultGraph">DefaultGraph</abbr></a></dt><dd>Description of DefaultGraph</dd>            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/rdfHelpers-GenericQuadIterator.html"><abbr title="\rdfHelpers\GenericQuadIterator">GenericQuadIterator</abbr></a></dt><dd>Wrapper making almost anything (e.g. array, generator or a single Quad object)
+a QuadIterator.</dd>            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/rdfHelpers-GenericTermIterator.html"><abbr title="\rdfHelpers\GenericTermIterator">GenericTermIterator</abbr></a></dt><dd>Wrapper making almost anything (e.g. array, generator or a single
+QuadInterface object) a QuadIteratorInterface.</dd>            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/rdfHelpers-NtriplesUtil.html"><abbr title="\rdfHelpers\NtriplesUtil">NtriplesUtil</abbr></a></dt><dd>Description of Util</dd>            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/rdfHelpers-RdfHelpersException.html"><abbr title="\rdfHelpers\RdfHelpersException">RdfHelpersException</abbr></a></dt><dd>Description of RdfHelpersException</dd>            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/rdfHelpers-RdfNamespace.html"><abbr title="\rdfHelpers\RdfNamespace">RdfNamespace</abbr></a></dt><dd>Provides an implementation of rdfInterface\RdfNamespace.</dd>    </dl>
+
+    <h4 id="toc-traits">
+        Traits
+        <a href="packages/Application.html#toc-traits" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <dl class="phpdocumentor-table-of-contents">
+            <dt class="phpdocumentor-table-of-contents__entry -trait"><a href="classes/quickRdfIo-TmpStreamParserTrait.html"><abbr title="\quickRdfIo\TmpStreamParserTrait">TmpStreamParserTrait</abbr></a></dt><dd>Description of TmpStreamTrait</dd>        <dt class="phpdocumentor-table-of-contents__entry -trait"><a href="classes/quickRdfIo-TmpStreamSerializerTrait.html"><abbr title="\quickRdfIo\TmpStreamSerializerTrait">TmpStreamSerializerTrait</abbr></a></dt><dd>Description of TmpStreamSerializerTrait</dd>    </dl>
+
+
+
+
 
 
 
@@ -378,7 +256,29 @@ QuadInterface object) a QuadIteratorInterface.</dd>
     </script>
 
     </article>
-                <section data-search-results class="phpdocumentor-search-results phpdocumentor-search-results--hidden">
+                                </section>
+                <section class="phpdocumentor-on-this-page__sidebar">
+                            
+    <section class="phpdocumentor-on-this-page__content">
+        <strong class="phpdocumentor-on-this-page__title">On this page</strong>
+
+        <ul class="phpdocumentor-list -clean">
+            <li class="phpdocumentor-on-this-page-section__title">Table Of Contents</li>
+            <li>
+                <ul class="phpdocumentor-list -clean">
+                                                                                    <li><a href="packages/Application.html#toc-interfaces">Interfaces</a></li>
+                                                                <li><a href="packages/Application.html#toc-classes">Classes</a></li>
+                                                                <li><a href="packages/Application.html#toc-traits">Traits</a></li>
+                                                                                                </ul>
+            </li>
+
+            
+                    </ul>
+    </section>
+
+                </section>
+                            </div>
+            <section data-search-results class="phpdocumentor-search-results phpdocumentor-search-results--hidden">
     <section class="phpdocumentor-search-results__dialog">
         <header class="phpdocumentor-search-results__header">
             <h2 class="phpdocumentor-search-results__title">Search results</h2>
@@ -389,7 +289,6 @@ QuadInterface object) a QuadIteratorInterface.</dd>
         </section>
     </section>
 </section>
-            </div>
         </div>
         <a href="packages/Application.html#top" class="phpdocumentor-back-to-top"><i class="fas fa-chevron-circle-up"></i></a>
 

@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/base.css">
             <link rel="preconnect" href="https://fonts.gstatic.com">
-        <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@100;200;300;400;600;700&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;600;700&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="css/template.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css" integrity="sha256-ybRkN9dBjhcS2qrW1z+hfCxq+1aBdwyQM5wlQoQVt/0=" crossorigin="anonymous" />
@@ -19,6 +19,7 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.23.0/plugins/line-highlight/prism-line-highlight.css">
                 <script src="https://cdn.jsdelivr.net/npm/fuse.js@3.4.6"></script>
         <script src="https://cdn.jsdelivr.net/npm/css-vars-ponyfill@2"></script>
+        <script src="js/template.js"></script>
         <script src="js/search.js"></script>
         <script defer src="js/searchIndex.js"></script>
     </head>
@@ -52,7 +53,7 @@
 <label class="phpdocumentor-sidebar__menu-icon" for="sidebar-button">
     Menu
 </label>
-<aside class="phpdocumentor-column -four phpdocumentor-sidebar">
+<aside class="phpdocumentor-column -three phpdocumentor-sidebar">
                     <section class="phpdocumentor-sidebar__category">
             <h2 class="phpdocumentor-sidebar__category-header">Namespaces</h2>
                                     <h4 class="phpdocumentor-sidebar__root-namespace">
@@ -99,8 +100,9 @@
     </section>
 </aside>
 
-            <div class="phpdocumentor-column -eight phpdocumentor-content">
-                    <ul class="phpdocumentor-breadcrumbs">
+            <div class="phpdocumentor-column -nine phpdocumentor-content">
+                                <section>
+                                        <ul class="phpdocumentor-breadcrumbs">
             <li class="phpdocumentor-breadcrumb"><a href="namespaces/ml.html">ML</a></li>
             <li class="phpdocumentor-breadcrumb"><a href="namespaces/ml-jsonld.html">JsonLD</a></li>
     </ul>
@@ -129,7 +131,8 @@
 
     <h5 class="phpdocumentor-tag-list__heading" id="tags">
         Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/ML-JsonLD-DocumentInterface.html#tags" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h5>
     <dl class="phpdocumentor-tag-list">
                                     <dt class="phpdocumentor-tag-list__entry">
@@ -145,16 +148,28 @@
 
 
 
-
-
-
 <h3 id="toc">
     Table of Contents
-    <a href="#toc" class="headerlink"><i class="fas fa-link"></i></a>
+    <a href="classes/ML-JsonLD-DocumentInterface.html#toc" class="headerlink"><i class="fas fa-link"></i></a>
+
 </h3>
 
+
+
+
+
+
+
+
+
+
+<h4 id="toc-methods">
+    Methods
+    <a href="classes/ML-JsonLD-DocumentInterface.html#toc-methods" class="headerlink"><i class="fas fa-link"></i></a>
+
+</h4>
 <dl class="phpdocumentor-table-of-contents">
-                        <dt class="phpdocumentor-table-of-contents__entry -method -public">
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/ML-JsonLD-DocumentInterface.html#method_containsGraph">containsGraph()</a>
     <span>
                                 &nbsp;: bool    </span>
@@ -203,7 +218,8 @@
 </dt>
 <dd>Set the document&#039;s IRI</dd>
 
-        </dl>
+    </dl>
+
 
 
 
@@ -213,6 +229,7 @@
         <h3 class="phpdocumentor-elements__header" id="methods">
             Methods
             <a href="classes/ML-JsonLD-DocumentInterface.html#methods" class="headerlink"><i class="fas fa-link"></i></a>
+
         </h3>
                     <article
         class="phpdocumentor-element
@@ -223,6 +240,7 @@
     <h4 class="phpdocumentor-element__name" id="method_containsGraph">
         containsGraph()
         <a href="classes/ML-JsonLD-DocumentInterface.html#method_containsGraph" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/ml/json-ld/DocumentInterface.php"><a href="files/vendor-ml-json-ld-documentinterface.html"><abbr title="vendor/ml/json-ld/DocumentInterface.php">DocumentInterface.php</abbr></a></abbr>
@@ -237,6 +255,8 @@
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">containsGraph</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$name</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
 
+    <div class="phpdocumentor-label-line">
+        </div>
     
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
@@ -252,21 +272,17 @@
             </dl>
 
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
 
+            <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">bool</span>
-            &mdash;
-            <section class="phpdocumentor-description"><p>Returns true if the document contains a graph with the
+        <span class="phpdocumentor-signature__response_type">bool</span>
+                    &mdash;
+                <section class="phpdocumentor-description"><p>Returns true if the document contains a graph with the
 specified name; false otherwise.</p>
 </section>
 
-    
+            </section>
+
 </article>
                     <article
         class="phpdocumentor-element
@@ -277,6 +293,7 @@ specified name; false otherwise.</p>
     <h4 class="phpdocumentor-element__name" id="method_createGraph">
         createGraph()
         <a href="classes/ML-JsonLD-DocumentInterface.html#method_createGraph" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/ml/json-ld/DocumentInterface.php"><a href="files/vendor-ml-json-ld-documentinterface.html"><abbr title="vendor/ml/json-ld/DocumentInterface.php">DocumentInterface.php</abbr></a></abbr>
@@ -291,6 +308,8 @@ specified name; false otherwise.</p>
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">createGraph</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string|<abbr title="\ML\IRI\IRI">IRI</abbr>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$name</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/ML-JsonLD-GraphInterface.html"><abbr title="\ML\JsonLD\GraphInterface">GraphInterface</abbr></a></span></code>
 
+    <div class="phpdocumentor-label-line">
+        </div>
         <section class="phpdocumentor-description"><p>If there exists already a graph with the passed name in the document,
 that graph will be returned instead of creating a new one.</p>
 </section>
@@ -309,20 +328,16 @@ that graph will be returned instead of creating a new one.</p>
             </dl>
 
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
 
+            <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type"><a href="classes/ML-JsonLD-GraphInterface.html"><abbr title="\ML\JsonLD\GraphInterface">GraphInterface</abbr></a></span>
-            &mdash;
-            <section class="phpdocumentor-description"><p>The newly created graph.</p>
+        <span class="phpdocumentor-signature__response_type"><a href="classes/ML-JsonLD-GraphInterface.html"><abbr title="\ML\JsonLD\GraphInterface">GraphInterface</abbr></a></span>
+                    &mdash;
+                <section class="phpdocumentor-description"><p>The newly created graph.</p>
 </section>
 
-    
+            </section>
+
 </article>
                     <article
         class="phpdocumentor-element
@@ -333,6 +348,7 @@ that graph will be returned instead of creating a new one.</p>
     <h4 class="phpdocumentor-element__name" id="method_getGraph">
         getGraph()
         <a href="classes/ML-JsonLD-DocumentInterface.html#method_getGraph" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/ml/json-ld/DocumentInterface.php"><a href="files/vendor-ml-json-ld-documentinterface.html"><abbr title="vendor/ml/json-ld/DocumentInterface.php">DocumentInterface.php</abbr></a></abbr>
@@ -347,6 +363,8 @@ that graph will be returned instead of creating a new one.</p>
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">getGraph</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__return-type">null|string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$name</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/ML-JsonLD-GraphInterface.html"><abbr title="\ML\JsonLD\GraphInterface">GraphInterface</abbr></a>|null</span></code>
 
+    <div class="phpdocumentor-label-line">
+        </div>
     
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
@@ -363,20 +381,16 @@ is passed, the default will be returned.</p>
             </dl>
 
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
 
+            <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type"><a href="classes/ML-JsonLD-GraphInterface.html"><abbr title="\ML\JsonLD\GraphInterface">GraphInterface</abbr></a>|null</span>
-            &mdash;
-            <section class="phpdocumentor-description"><p>Returns the graph if found; null otherwise.</p>
+        <span class="phpdocumentor-signature__response_type"><a href="classes/ML-JsonLD-GraphInterface.html"><abbr title="\ML\JsonLD\GraphInterface">GraphInterface</abbr></a>|null</span>
+                    &mdash;
+                <section class="phpdocumentor-description"><p>Returns the graph if found; null otherwise.</p>
 </section>
 
-    
+            </section>
+
 </article>
                     <article
         class="phpdocumentor-element
@@ -387,6 +401,7 @@ is passed, the default will be returned.</p>
     <h4 class="phpdocumentor-element__name" id="method_getGraphNames">
         getGraphNames()
         <a href="classes/ML-JsonLD-DocumentInterface.html#method_getGraphNames" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/ml/json-ld/DocumentInterface.php"><a href="files/vendor-ml-json-ld-documentinterface.html"><abbr title="vendor/ml/json-ld/DocumentInterface.php">DocumentInterface.php</abbr></a></abbr>
@@ -401,23 +416,21 @@ is passed, the default will be returned.</p>
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">getGraphNames</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, string&gt;</span></code>
 
+    <div class="phpdocumentor-label-line">
+        </div>
     
     
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
 
+            <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">array&lt;string|int, string&gt;</span>
-            &mdash;
-            <section class="phpdocumentor-description"><p>Returns the names of all graphs in the document.</p>
+        <span class="phpdocumentor-signature__response_type">array&lt;string|int, string&gt;</span>
+                    &mdash;
+                <section class="phpdocumentor-description"><p>Returns the names of all graphs in the document.</p>
 </section>
 
-    
+            </section>
+
 </article>
                     <article
         class="phpdocumentor-element
@@ -428,6 +441,7 @@ is passed, the default will be returned.</p>
     <h4 class="phpdocumentor-element__name" id="method_getIri">
         getIri()
         <a href="classes/ML-JsonLD-DocumentInterface.html#method_getIri" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/ml/json-ld/DocumentInterface.php"><a href="files/vendor-ml-json-ld-documentinterface.html"><abbr title="vendor/ml/json-ld/DocumentInterface.php">DocumentInterface.php</abbr></a></abbr>
@@ -442,6 +456,8 @@ is passed, the default will be returned.</p>
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">getIri</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__return-type">bool&nbsp;</span><span class="phpdocumentor-signature__argument__name">$asObject</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">false</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string|<abbr title="\ML\IRI\IRI">IRI</abbr></span></code>
 
+    <div class="phpdocumentor-label-line">
+        </div>
     
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
@@ -458,20 +474,16 @@ is passed, the default will be returned.</p>
             </dl>
 
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
 
+            <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">string|<abbr title="\ML\IRI\IRI">IRI</abbr></span>
-            &mdash;
-            <section class="phpdocumentor-description"><p>The document's IRI (might be empty).</p>
+        <span class="phpdocumentor-signature__response_type">string|<abbr title="\ML\IRI\IRI">IRI</abbr></span>
+                    &mdash;
+                <section class="phpdocumentor-description"><p>The document's IRI (might be empty).</p>
 </section>
 
-    
+            </section>
+
 </article>
                     <article
         class="phpdocumentor-element
@@ -482,6 +494,7 @@ is passed, the default will be returned.</p>
     <h4 class="phpdocumentor-element__name" id="method_removeGraph">
         removeGraph()
         <a href="classes/ML-JsonLD-DocumentInterface.html#method_removeGraph" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/ml/json-ld/DocumentInterface.php"><a href="files/vendor-ml-json-ld-documentinterface.html"><abbr title="vendor/ml/json-ld/DocumentInterface.php">DocumentInterface.php</abbr></a></abbr>
@@ -496,6 +509,8 @@ is passed, the default will be returned.</p>
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">removeGraph</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__return-type">null|string|<a href="classes/ML-JsonLD-GraphInterface.html"><abbr title="\ML\JsonLD\GraphInterface">GraphInterface</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$graph</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">self</span></code>
 
+    <div class="phpdocumentor-label-line">
+        </div>
     
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
@@ -513,18 +528,12 @@ the default will be reset.</p>
             </dl>
 
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
 
+            <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">self</span>
-            &mdash;
-        
-    
+        <span class="phpdocumentor-signature__response_type">self</span>
+            </section>
+
 </article>
                     <article
         class="phpdocumentor-element
@@ -535,6 +544,7 @@ the default will be reset.</p>
     <h4 class="phpdocumentor-element__name" id="method_setIri">
         setIri()
         <a href="classes/ML-JsonLD-DocumentInterface.html#method_setIri" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/ml/json-ld/DocumentInterface.php"><a href="files/vendor-ml-json-ld-documentinterface.html"><abbr title="vendor/ml/json-ld/DocumentInterface.php">DocumentInterface.php</abbr></a></abbr>
@@ -549,6 +559,8 @@ the default will be reset.</p>
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">setIri</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$iri</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">self</span></code>
 
+    <div class="phpdocumentor-label-line">
+        </div>
     
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
@@ -557,24 +569,17 @@ the default will be reset.</p>
                 : <span class="phpdocumentor-signature__argument__return-type">mixed</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
-
+                
             </dd>
             </dl>
 
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
 
+            <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">self</span>
-            &mdash;
-        
-    
+        <span class="phpdocumentor-signature__response_type">self</span>
+            </section>
+
 </article>
             </section>
 
@@ -671,7 +676,39 @@ the default will be reset.</p>
     </script>
 
     </article>
-                <section data-search-results class="phpdocumentor-search-results phpdocumentor-search-results--hidden">
+                                </section>
+                <section class="phpdocumentor-on-this-page__sidebar">
+                            
+    <section class="phpdocumentor-on-this-page__content">
+        <strong class="phpdocumentor-on-this-page__title">On this page</strong>
+
+        <ul class="phpdocumentor-list -clean">
+            <li class="phpdocumentor-on-this-page-section__title">Table Of Contents</li>
+            <li>
+                <ul class="phpdocumentor-list -clean">
+                    <li><a href="classes/ML-JsonLD-DocumentInterface.html#toc-constants">Constants</a></li>
+                    <li><a href="classes/ML-JsonLD-DocumentInterface.html#toc-methods">Methods</a></li>
+                </ul>
+            </li>
+                            <li class="phpdocumentor-on-this-page-section__title">Methods</li>
+                <li>
+                    <ul class="phpdocumentor-list -clean">
+                                                    <li><a href="classes/ML-JsonLD-DocumentInterface.html#method_containsGraph">containsGraph()</a></li>
+                                                    <li><a href="classes/ML-JsonLD-DocumentInterface.html#method_createGraph">createGraph()</a></li>
+                                                    <li><a href="classes/ML-JsonLD-DocumentInterface.html#method_getGraph">getGraph()</a></li>
+                                                    <li><a href="classes/ML-JsonLD-DocumentInterface.html#method_getGraphNames">getGraphNames()</a></li>
+                                                    <li><a href="classes/ML-JsonLD-DocumentInterface.html#method_getIri">getIri()</a></li>
+                                                    <li><a href="classes/ML-JsonLD-DocumentInterface.html#method_removeGraph">removeGraph()</a></li>
+                                                    <li><a href="classes/ML-JsonLD-DocumentInterface.html#method_setIri">setIri()</a></li>
+                                            </ul>
+                </li>
+            
+                    </ul>
+    </section>
+
+                </section>
+                            </div>
+            <section data-search-results class="phpdocumentor-search-results phpdocumentor-search-results--hidden">
     <section class="phpdocumentor-search-results__dialog">
         <header class="phpdocumentor-search-results__header">
             <h2 class="phpdocumentor-search-results__title">Search results</h2>
@@ -682,7 +719,6 @@ the default will be reset.</p>
         </section>
     </section>
 </section>
-            </div>
         </div>
         <a href="classes/ML-JsonLD-DocumentInterface.html#top" class="phpdocumentor-back-to-top"><i class="fas fa-chevron-circle-up"></i></a>
 

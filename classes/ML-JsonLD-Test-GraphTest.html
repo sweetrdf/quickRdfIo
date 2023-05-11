@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/base.css">
             <link rel="preconnect" href="https://fonts.gstatic.com">
-        <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@100;200;300;400;600;700&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;600;700&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="css/template.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css" integrity="sha256-ybRkN9dBjhcS2qrW1z+hfCxq+1aBdwyQM5wlQoQVt/0=" crossorigin="anonymous" />
@@ -19,6 +19,7 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.23.0/plugins/line-highlight/prism-line-highlight.css">
                 <script src="https://cdn.jsdelivr.net/npm/fuse.js@3.4.6"></script>
         <script src="https://cdn.jsdelivr.net/npm/css-vars-ponyfill@2"></script>
+        <script src="js/template.js"></script>
         <script src="js/search.js"></script>
         <script defer src="js/searchIndex.js"></script>
     </head>
@@ -52,7 +53,7 @@
 <label class="phpdocumentor-sidebar__menu-icon" for="sidebar-button">
     Menu
 </label>
-<aside class="phpdocumentor-column -four phpdocumentor-sidebar">
+<aside class="phpdocumentor-column -three phpdocumentor-sidebar">
                     <section class="phpdocumentor-sidebar__category">
             <h2 class="phpdocumentor-sidebar__category-header">Namespaces</h2>
                                     <h4 class="phpdocumentor-sidebar__root-namespace">
@@ -99,8 +100,9 @@
     </section>
 </aside>
 
-            <div class="phpdocumentor-column -eight phpdocumentor-content">
-                    <ul class="phpdocumentor-breadcrumbs">
+            <div class="phpdocumentor-column -nine phpdocumentor-content">
+                                <section>
+                                        <ul class="phpdocumentor-breadcrumbs">
             <li class="phpdocumentor-breadcrumb"><a href="namespaces/ml.html">ML</a></li>
             <li class="phpdocumentor-breadcrumb"><a href="namespaces/ml-jsonld.html">JsonLD</a></li>
             <li class="phpdocumentor-breadcrumb"><a href="namespaces/ml-jsonld-test.html">Test</a></li>
@@ -124,6 +126,11 @@
     
     </h2>
 
+<div class="phpdocumentor-label-line">
+
+
+</div>
+
         <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/ml/json-ld/Test/GraphTest.php"><a href="files/vendor-ml-json-ld-test-graphtest.html"><abbr title="vendor/ml/json-ld/Test/GraphTest.php">GraphTest.php</abbr></a></abbr>
     :
@@ -137,7 +144,8 @@
 
     <h5 class="phpdocumentor-tag-list__heading" id="tags">
         Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/ML-JsonLD-Test-GraphTest.html#tags" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h5>
     <dl class="phpdocumentor-tag-list">
                                     <dt class="phpdocumentor-tag-list__entry">
@@ -153,16 +161,27 @@
 
 
 
-
-
-
 <h3 id="toc">
     Table of Contents
-    <a href="#toc" class="headerlink"><i class="fas fa-link"></i></a>
+    <a href="classes/ML-JsonLD-Test-GraphTest.html#toc" class="headerlink"><i class="fas fa-link"></i></a>
+
 </h3>
 
+
+
+
+
+
+
+
+
+<h4 id="toc-properties">
+    Properties
+    <a href="classes/ML-JsonLD-Test-GraphTest.html#toc-properties" class="headerlink"><i class="fas fa-link"></i></a>
+
+</h4>
 <dl class="phpdocumentor-table-of-contents">
-                    <dt class="phpdocumentor-table-of-contents__entry -property -protected">
+            <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a href="classes/ML-JsonLD-Test-GraphTest.html#property_documentLoader">$documentLoader</a>
     <span>
                         &nbsp;: mixed            </span>
@@ -176,7 +195,15 @@
 </dt>
 <dd>The graph instance being used throughout the tests.</dd>
 
-                <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    </dl>
+
+<h4 id="toc-methods">
+    Methods
+    <a href="classes/ML-JsonLD-Test-GraphTest.html#toc-methods" class="headerlink"><i class="fas fa-link"></i></a>
+
+</h4>
+<dl class="phpdocumentor-table-of-contents">
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/ML-JsonLD-Test-GraphTest.html#method_testAddInvalidPropertyValue">testAddInvalidPropertyValue()</a>
     <span>
                                 &nbsp;: mixed    </span>
@@ -305,7 +332,8 @@ value</dd>
 </dt>
 <dd>Create the graph to test.</dd>
 
-        </dl>
+    </dl>
+
 
 
 
@@ -316,6 +344,7 @@ value</dd>
         <h3 class="phpdocumentor-elements__header" id="properties">
             Properties
             <a href="classes/ML-JsonLD-Test-GraphTest.html#properties" class="headerlink"><i class="fas fa-link"></i></a>
+
         </h3>
                     <article
         class="
@@ -327,6 +356,7 @@ value</dd>
     <h4 class="phpdocumentor-element__name" id="property_documentLoader">
         $documentLoader
         <a href="classes/ML-JsonLD-Test-GraphTest.html#property_documentLoader" class="headerlink"><i class="fas fa-link"></i></a>
+
         <span class="phpdocumentor-element__modifiers">
                                 </span>
     </h4>
@@ -346,15 +376,8 @@ value</dd>
     </code>
 
     
-        <section class="phpdocumentor-description"></section>
-
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
+    
 
 </article>
                     <article
@@ -367,6 +390,7 @@ value</dd>
     <h4 class="phpdocumentor-element__name" id="property_graph">
         $graph
         <a href="classes/ML-JsonLD-Test-GraphTest.html#property_graph" class="headerlink"><i class="fas fa-link"></i></a>
+
         <span class="phpdocumentor-element__modifiers">
                                 </span>
     </h4>
@@ -388,12 +412,6 @@ value</dd>
     
     
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
 
 </article>
             </section>
@@ -402,6 +420,7 @@ value</dd>
         <h3 class="phpdocumentor-elements__header" id="methods">
             Methods
             <a href="classes/ML-JsonLD-Test-GraphTest.html#methods" class="headerlink"><i class="fas fa-link"></i></a>
+
         </h3>
                     <article
         class="phpdocumentor-element
@@ -412,6 +431,7 @@ value</dd>
     <h4 class="phpdocumentor-element__name" id="method_testAddInvalidPropertyValue">
         testAddInvalidPropertyValue()
         <a href="classes/ML-JsonLD-Test-GraphTest.html#method_testAddInvalidPropertyValue" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/ml/json-ld/Test/GraphTest.php"><a href="files/vendor-ml-json-ld-test-graphtest.html"><abbr title="vendor/ml/json-ld/Test/GraphTest.php">GraphTest.php</abbr></a></abbr>
@@ -426,12 +446,15 @@ value</dd>
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">testAddInvalidPropertyValue</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
 
+    <div class="phpdocumentor-label-line">
+        </div>
     
     
     
     <h5 class="phpdocumentor-tag-list__heading" id="tags">
         Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/ML-JsonLD-Test-GraphTest.html#method_testAddInvalidPropertyValue#tags" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h5>
     <dl class="phpdocumentor-tag-list">
                                     <dt class="phpdocumentor-tag-list__entry">
@@ -445,10 +468,6 @@ value</dd>
                                     </dd>
                                             </dl>
 
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">mixed</span>
-            &mdash;
-        
     
 </article>
                     <article
@@ -460,6 +479,7 @@ value</dd>
     <h4 class="phpdocumentor-element__name" id="method_testAddTypeNotInGraph">
         testAddTypeNotInGraph()
         <a href="classes/ML-JsonLD-Test-GraphTest.html#method_testAddTypeNotInGraph" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/ml/json-ld/Test/GraphTest.php"><a href="files/vendor-ml-json-ld-test-graphtest.html"><abbr title="vendor/ml/json-ld/Test/GraphTest.php">GraphTest.php</abbr></a></abbr>
@@ -475,12 +495,15 @@ graph</p>
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">testAddTypeNotInGraph</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
 
+    <div class="phpdocumentor-label-line">
+        </div>
     
     
     
     <h5 class="phpdocumentor-tag-list__heading" id="tags">
         Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/ML-JsonLD-Test-GraphTest.html#method_testAddTypeNotInGraph#tags" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h5>
     <dl class="phpdocumentor-tag-list">
                                     <dt class="phpdocumentor-tag-list__entry">
@@ -494,10 +517,6 @@ graph</p>
                                     </dd>
                                             </dl>
 
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">mixed</span>
-            &mdash;
-        
     
 </article>
                     <article
@@ -509,6 +528,7 @@ graph</p>
     <h4 class="phpdocumentor-element__name" id="method_testContains">
         testContains()
         <a href="classes/ML-JsonLD-Test-GraphTest.html#method_testContains" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/ml/json-ld/Test/GraphTest.php"><a href="files/vendor-ml-json-ld-test-graphtest.html"><abbr title="vendor/ml/json-ld/Test/GraphTest.php">GraphTest.php</abbr></a></abbr>
@@ -523,20 +543,12 @@ graph</p>
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">testContains</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
 
+    <div class="phpdocumentor-label-line">
+        </div>
     
     
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
 
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">mixed</span>
-            &mdash;
-        
     
 </article>
                     <article
@@ -548,6 +560,7 @@ graph</p>
     <h4 class="phpdocumentor-element__name" id="method_testCreateExistingNode">
         testCreateExistingNode()
         <a href="classes/ML-JsonLD-Test-GraphTest.html#method_testCreateExistingNode" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/ml/json-ld/Test/GraphTest.php"><a href="files/vendor-ml-json-ld-test-graphtest.html"><abbr title="vendor/ml/json-ld/Test/GraphTest.php">GraphTest.php</abbr></a></abbr>
@@ -562,20 +575,12 @@ graph</p>
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">testCreateExistingNode</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
 
+    <div class="phpdocumentor-label-line">
+        </div>
     
     
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
 
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">mixed</span>
-            &mdash;
-        
     
 </article>
                     <article
@@ -587,6 +592,7 @@ graph</p>
     <h4 class="phpdocumentor-element__name" id="method_testGetNodes">
         testGetNodes()
         <a href="classes/ML-JsonLD-Test-GraphTest.html#method_testGetNodes" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/ml/json-ld/Test/GraphTest.php"><a href="files/vendor-ml-json-ld-test-graphtest.html"><abbr title="vendor/ml/json-ld/Test/GraphTest.php">GraphTest.php</abbr></a></abbr>
@@ -601,20 +607,12 @@ graph</p>
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">testGetNodes</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
 
+    <div class="phpdocumentor-label-line">
+        </div>
     
     
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
 
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">mixed</span>
-            &mdash;
-        
     
 </article>
                     <article
@@ -626,6 +624,7 @@ graph</p>
     <h4 class="phpdocumentor-element__name" id="method_testMerge">
         testMerge()
         <a href="classes/ML-JsonLD-Test-GraphTest.html#method_testMerge" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/ml/json-ld/Test/GraphTest.php"><a href="files/vendor-ml-json-ld-test-graphtest.html"><abbr title="vendor/ml/json-ld/Test/GraphTest.php">GraphTest.php</abbr></a></abbr>
@@ -640,20 +639,12 @@ graph</p>
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">testMerge</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
 
+    <div class="phpdocumentor-label-line">
+        </div>
     
     
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
 
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">mixed</span>
-            &mdash;
-        
     
 </article>
                     <article
@@ -665,6 +656,7 @@ graph</p>
     <h4 class="phpdocumentor-element__name" id="method_testNodeIsBlankNode">
         testNodeIsBlankNode()
         <a href="classes/ML-JsonLD-Test-GraphTest.html#method_testNodeIsBlankNode" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/ml/json-ld/Test/GraphTest.php"><a href="files/vendor-ml-json-ld-test-graphtest.html"><abbr title="vendor/ml/json-ld/Test/GraphTest.php">GraphTest.php</abbr></a></abbr>
@@ -679,20 +671,12 @@ graph</p>
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">testNodeIsBlankNode</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
 
+    <div class="phpdocumentor-label-line">
+        </div>
     
     
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
 
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">mixed</span>
-            &mdash;
-        
     
 </article>
                     <article
@@ -704,6 +688,7 @@ graph</p>
     <h4 class="phpdocumentor-element__name" id="method_testNodePropertyUniqueness">
         testNodePropertyUniqueness()
         <a href="classes/ML-JsonLD-Test-GraphTest.html#method_testNodePropertyUniqueness" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/ml/json-ld/Test/GraphTest.php"><a href="files/vendor-ml-json-ld-test-graphtest.html"><abbr title="vendor/ml/json-ld/Test/GraphTest.php">GraphTest.php</abbr></a></abbr>
@@ -718,20 +703,12 @@ graph</p>
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">testNodePropertyUniqueness</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
 
+    <div class="phpdocumentor-label-line">
+        </div>
     
     
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
 
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">mixed</span>
-            &mdash;
-        
     
 </article>
                     <article
@@ -743,6 +720,7 @@ graph</p>
     <h4 class="phpdocumentor-element__name" id="method_testNodeRelationships">
         testNodeRelationships()
         <a href="classes/ML-JsonLD-Test-GraphTest.html#method_testNodeRelationships" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/ml/json-ld/Test/GraphTest.php"><a href="files/vendor-ml-json-ld-test-graphtest.html"><abbr title="vendor/ml/json-ld/Test/GraphTest.php">GraphTest.php</abbr></a></abbr>
@@ -757,20 +735,12 @@ graph</p>
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">testNodeRelationships</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
 
+    <div class="phpdocumentor-label-line">
+        </div>
     
     
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
 
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">mixed</span>
-            &mdash;
-        
     
 </article>
                     <article
@@ -782,6 +752,7 @@ graph</p>
     <h4 class="phpdocumentor-element__name" id="method_testNodeRemoval">
         testNodeRemoval()
         <a href="classes/ML-JsonLD-Test-GraphTest.html#method_testNodeRemoval" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/ml/json-ld/Test/GraphTest.php"><a href="files/vendor-ml-json-ld-test-graphtest.html"><abbr title="vendor/ml/json-ld/Test/GraphTest.php">GraphTest.php</abbr></a></abbr>
@@ -796,20 +767,12 @@ graph</p>
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">testNodeRemoval</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
 
+    <div class="phpdocumentor-label-line">
+        </div>
     
     
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
 
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">mixed</span>
-            &mdash;
-        
     
 </article>
                     <article
@@ -821,6 +784,7 @@ graph</p>
     <h4 class="phpdocumentor-element__name" id="method_testNodeReverseRelationships">
         testNodeReverseRelationships()
         <a href="classes/ML-JsonLD-Test-GraphTest.html#method_testNodeReverseRelationships" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/ml/json-ld/Test/GraphTest.php"><a href="files/vendor-ml-json-ld-test-graphtest.html"><abbr title="vendor/ml/json-ld/Test/GraphTest.php">GraphTest.php</abbr></a></abbr>
@@ -835,20 +799,12 @@ graph</p>
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">testNodeReverseRelationships</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
 
+    <div class="phpdocumentor-label-line">
+        </div>
     
     
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
 
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">mixed</span>
-            &mdash;
-        
     
 </article>
                     <article
@@ -860,6 +816,7 @@ graph</p>
     <h4 class="phpdocumentor-element__name" id="method_testNodeReverseRelationshipsUpdated">
         testNodeReverseRelationshipsUpdated()
         <a href="classes/ML-JsonLD-Test-GraphTest.html#method_testNodeReverseRelationshipsUpdated" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/ml/json-ld/Test/GraphTest.php"><a href="files/vendor-ml-json-ld-test-graphtest.html"><abbr title="vendor/ml/json-ld/Test/GraphTest.php">GraphTest.php</abbr></a></abbr>
@@ -874,20 +831,12 @@ graph</p>
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">testNodeReverseRelationshipsUpdated</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
 
+    <div class="phpdocumentor-label-line">
+        </div>
     
     
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
 
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">mixed</span>
-            &mdash;
-        
     
 </article>
                     <article
@@ -899,6 +848,7 @@ graph</p>
     <h4 class="phpdocumentor-element__name" id="method_testNodeTypeRemoval">
         testNodeTypeRemoval()
         <a href="classes/ML-JsonLD-Test-GraphTest.html#method_testNodeTypeRemoval" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/ml/json-ld/Test/GraphTest.php"><a href="files/vendor-ml-json-ld-test-graphtest.html"><abbr title="vendor/ml/json-ld/Test/GraphTest.php">GraphTest.php</abbr></a></abbr>
@@ -913,20 +863,12 @@ graph</p>
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">testNodeTypeRemoval</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
 
+    <div class="phpdocumentor-label-line">
+        </div>
     
     
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
 
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">mixed</span>
-            &mdash;
-        
     
 </article>
                     <article
@@ -938,6 +880,7 @@ graph</p>
     <h4 class="phpdocumentor-element__name" id="method_testSerializeGraph">
         testSerializeGraph()
         <a href="classes/ML-JsonLD-Test-GraphTest.html#method_testSerializeGraph" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/ml/json-ld/Test/GraphTest.php"><a href="files/vendor-ml-json-ld-test-graphtest.html"><abbr title="vendor/ml/json-ld/Test/GraphTest.php">GraphTest.php</abbr></a></abbr>
@@ -952,20 +895,12 @@ graph</p>
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">testSerializeGraph</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
 
+    <div class="phpdocumentor-label-line">
+        </div>
     
     
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
 
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">mixed</span>
-            &mdash;
-        
     
 </article>
                     <article
@@ -977,6 +912,7 @@ graph</p>
     <h4 class="phpdocumentor-element__name" id="method_testSerializeNode">
         testSerializeNode()
         <a href="classes/ML-JsonLD-Test-GraphTest.html#method_testSerializeNode" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/ml/json-ld/Test/GraphTest.php"><a href="files/vendor-ml-json-ld-test-graphtest.html"><abbr title="vendor/ml/json-ld/Test/GraphTest.php">GraphTest.php</abbr></a></abbr>
@@ -991,20 +927,12 @@ graph</p>
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">testSerializeNode</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
 
+    <div class="phpdocumentor-label-line">
+        </div>
     
     
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
 
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">mixed</span>
-            &mdash;
-        
     
 </article>
                     <article
@@ -1016,6 +944,7 @@ graph</p>
     <h4 class="phpdocumentor-element__name" id="method_testSetInvalidTypeArray">
         testSetInvalidTypeArray()
         <a href="classes/ML-JsonLD-Test-GraphTest.html#method_testSetInvalidTypeArray" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/ml/json-ld/Test/GraphTest.php"><a href="files/vendor-ml-json-ld-test-graphtest.html"><abbr title="vendor/ml/json-ld/Test/GraphTest.php">GraphTest.php</abbr></a></abbr>
@@ -1031,12 +960,15 @@ value when an array is used.</p>
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">testSetInvalidTypeArray</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
 
+    <div class="phpdocumentor-label-line">
+        </div>
     
     
     
     <h5 class="phpdocumentor-tag-list__heading" id="tags">
         Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/ML-JsonLD-Test-GraphTest.html#method_testSetInvalidTypeArray#tags" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h5>
     <dl class="phpdocumentor-tag-list">
                                     <dt class="phpdocumentor-tag-list__entry">
@@ -1050,10 +982,6 @@ value when an array is used.</p>
                                     </dd>
                                             </dl>
 
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">mixed</span>
-            &mdash;
-        
     
 </article>
                     <article
@@ -1065,6 +993,7 @@ value when an array is used.</p>
     <h4 class="phpdocumentor-element__name" id="method_testSetInvalidTypeValue">
         testSetInvalidTypeValue()
         <a href="classes/ML-JsonLD-Test-GraphTest.html#method_testSetInvalidTypeValue" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/ml/json-ld/Test/GraphTest.php"><a href="files/vendor-ml-json-ld-test-graphtest.html"><abbr title="vendor/ml/json-ld/Test/GraphTest.php">GraphTest.php</abbr></a></abbr>
@@ -1080,12 +1009,15 @@ value</p>
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">testSetInvalidTypeValue</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
 
+    <div class="phpdocumentor-label-line">
+        </div>
     
     
     
     <h5 class="phpdocumentor-tag-list__heading" id="tags">
         Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/ML-JsonLD-Test-GraphTest.html#method_testSetInvalidTypeValue#tags" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h5>
     <dl class="phpdocumentor-tag-list">
                                     <dt class="phpdocumentor-tag-list__entry">
@@ -1099,10 +1031,6 @@ value</p>
                                     </dd>
                                             </dl>
 
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">mixed</span>
-            &mdash;
-        
     
 </article>
                     <article
@@ -1114,6 +1042,7 @@ value</p>
     <h4 class="phpdocumentor-element__name" id="method_setUp">
         setUp()
         <a href="classes/ML-JsonLD-Test-GraphTest.html#method_setUp" class="headerlink"><i class="fas fa-link"></i></a>
+
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/ml/json-ld/Test/GraphTest.php"><a href="files/vendor-ml-json-ld-test-graphtest.html"><abbr title="vendor/ml/json-ld/Test/GraphTest.php">GraphTest.php</abbr></a></abbr>
@@ -1128,20 +1057,12 @@ value</p>
     <span class="phpdocumentor-signature__visibility">protected</span>
                     <span class="phpdocumentor-signature__name">setUp</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
 
+    <div class="phpdocumentor-label-line">
+        </div>
     
     
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                </dl>
 
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">mixed</span>
-            &mdash;
-        
     
 </article>
             </section>
@@ -1239,7 +1160,58 @@ value</p>
     </script>
 
     </article>
-                <section data-search-results class="phpdocumentor-search-results phpdocumentor-search-results--hidden">
+                                </section>
+                <section class="phpdocumentor-on-this-page__sidebar">
+                                
+    <section class="phpdocumentor-on-this-page__content">
+        <strong class="phpdocumentor-on-this-page__title">On this page</strong>
+
+        <ul class="phpdocumentor-list -clean">
+            <li class="phpdocumentor-on-this-page-section__title">Table Of Contents</li>
+            <li>
+                <ul class="phpdocumentor-list -clean">
+                                                            <li><a href="classes/ML-JsonLD-Test-GraphTest.html#toc-properties">Properties</a></li>
+                                                            <li><a href="classes/ML-JsonLD-Test-GraphTest.html#toc-methods">Methods</a></li>
+                                    </ul>
+            </li>
+            
+                            <li class="phpdocumentor-on-this-page-section__title">Properties</li>
+                <li>
+                    <ul class="phpdocumentor-list -clean">
+                                                    <li><a href="classes/ML-JsonLD-Test-GraphTest.html#property_documentLoader">$documentLoader<a href="classes/ML-JsonLD-Test-GraphTest.html"></li>
+                                                    <li><a href="classes/ML-JsonLD-Test-GraphTest.html#property_graph">$graph<a href="classes/ML-JsonLD-Test-GraphTest.html"></li>
+                                            </ul>
+                </li>
+            
+                        <li class="phpdocumentor-on-this-page-section__title">Methods</li>
+            <li>
+                <ul class="phpdocumentor-list -clean">
+                                            <li><a href="classes/ML-JsonLD-Test-GraphTest.html#method_testAddInvalidPropertyValue">testAddInvalidPropertyValue()</a></li>
+                                            <li><a href="classes/ML-JsonLD-Test-GraphTest.html#method_testAddTypeNotInGraph">testAddTypeNotInGraph()</a></li>
+                                            <li><a href="classes/ML-JsonLD-Test-GraphTest.html#method_testContains">testContains()</a></li>
+                                            <li><a href="classes/ML-JsonLD-Test-GraphTest.html#method_testCreateExistingNode">testCreateExistingNode()</a></li>
+                                            <li><a href="classes/ML-JsonLD-Test-GraphTest.html#method_testGetNodes">testGetNodes()</a></li>
+                                            <li><a href="classes/ML-JsonLD-Test-GraphTest.html#method_testMerge">testMerge()</a></li>
+                                            <li><a href="classes/ML-JsonLD-Test-GraphTest.html#method_testNodeIsBlankNode">testNodeIsBlankNode()</a></li>
+                                            <li><a href="classes/ML-JsonLD-Test-GraphTest.html#method_testNodePropertyUniqueness">testNodePropertyUniqueness()</a></li>
+                                            <li><a href="classes/ML-JsonLD-Test-GraphTest.html#method_testNodeRelationships">testNodeRelationships()</a></li>
+                                            <li><a href="classes/ML-JsonLD-Test-GraphTest.html#method_testNodeRemoval">testNodeRemoval()</a></li>
+                                            <li><a href="classes/ML-JsonLD-Test-GraphTest.html#method_testNodeReverseRelationships">testNodeReverseRelationships()</a></li>
+                                            <li><a href="classes/ML-JsonLD-Test-GraphTest.html#method_testNodeReverseRelationshipsUpdated">testNodeReverseRelationshipsUpdated()</a></li>
+                                            <li><a href="classes/ML-JsonLD-Test-GraphTest.html#method_testNodeTypeRemoval">testNodeTypeRemoval()</a></li>
+                                            <li><a href="classes/ML-JsonLD-Test-GraphTest.html#method_testSerializeGraph">testSerializeGraph()</a></li>
+                                            <li><a href="classes/ML-JsonLD-Test-GraphTest.html#method_testSerializeNode">testSerializeNode()</a></li>
+                                            <li><a href="classes/ML-JsonLD-Test-GraphTest.html#method_testSetInvalidTypeArray">testSetInvalidTypeArray()</a></li>
+                                            <li><a href="classes/ML-JsonLD-Test-GraphTest.html#method_testSetInvalidTypeValue">testSetInvalidTypeValue()</a></li>
+                                            <li><a href="classes/ML-JsonLD-Test-GraphTest.html#method_setUp">setUp()</a></li>
+                                    </ul>
+            </li>
+                    </ul>
+    </section>
+
+                </section>
+                            </div>
+            <section data-search-results class="phpdocumentor-search-results phpdocumentor-search-results--hidden">
     <section class="phpdocumentor-search-results__dialog">
         <header class="phpdocumentor-search-results__header">
             <h2 class="phpdocumentor-search-results__title">Search results</h2>
@@ -1250,7 +1222,6 @@ value</p>
         </section>
     </section>
 </section>
-            </div>
         </div>
         <a href="classes/ML-JsonLD-Test-GraphTest.html#top" class="phpdocumentor-back-to-top"><i class="fas fa-chevron-circle-up"></i></a>
 
