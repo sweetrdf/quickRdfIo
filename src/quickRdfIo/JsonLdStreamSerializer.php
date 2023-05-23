@@ -202,6 +202,6 @@ class JsonLdStreamSerializer implements \rdfInterface\SerializerInterface {
 
     private function prepareContext(iRdfNamespace $context): void {
         $this->context     = array_flip($context->getAll());
-        $this->contextJson = '"@context":' . json_encode($this->context, JSON_UNESCAPED_SLASHES) . ",";
+        $this->contextJson = '"@context":' . json_encode($context->getAll(), JSON_UNESCAPED_SLASHES) . ",";
     }
 }
