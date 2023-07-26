@@ -172,30 +172,35 @@
     <span>
                                 &nbsp;: <a href="classes/rdfInterface-BlankNodeInterface.html"><abbr title="\rdfInterface\BlankNodeInterface">BlankNodeInterface</abbr></a>    </span>
 </dt>
+<dd>Creates a new RDF blank node.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/rdfInterface-DataFactoryInterface.html#method_defaultGraph">defaultGraph()</a>
     <span>
                                 &nbsp;: <a href="classes/rdfInterface-DefaultGraphInterface.html"><abbr title="\rdfInterface\DefaultGraphInterface">DefaultGraphInterface</abbr></a>    </span>
 </dt>
+<dd>Returns an RDF default graph object.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/rdfInterface-DataFactoryInterface.html#method_literal">literal()</a>
     <span>
                                 &nbsp;: <a href="classes/rdfInterface-LiteralInterface.html"><abbr title="\rdfInterface\LiteralInterface">LiteralInterface</abbr></a>    </span>
 </dt>
+<dd>Creates a new RDF literal.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/rdfInterface-DataFactoryInterface.html#method_namedNode">namedNode()</a>
     <span>
                                 &nbsp;: <a href="classes/rdfInterface-NamedNodeInterface.html"><abbr title="\rdfInterface\NamedNodeInterface">NamedNodeInterface</abbr></a>    </span>
 </dt>
+<dd>Creates a new RDF named node.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/rdfInterface-DataFactoryInterface.html#method_quad">quad()</a>
     <span>
                                 &nbsp;: <a href="classes/rdfInterface-QuadInterface.html"><abbr title="\rdfInterface\QuadInterface">QuadInterface</abbr></a>    </span>
 </dt>
+<dd>Creates a new RDF quad.</dd>
 
     </dl>
 
@@ -224,11 +229,12 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/sweetrdf/rdf-interface/src/rdfInterface/DataFactoryInterface.php"><a href="files/vendor-sweetrdf-rdf-interface-src-rdfinterface-datafactoryinterface.html"><abbr title="vendor/sweetrdf/rdf-interface/src/rdfInterface/DataFactoryInterface.php">DataFactoryInterface.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">39</span>
+    <span class="phpdocumentor-element-found-in__line">51</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Creates a new RDF blank node.</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
             <span class="phpdocumentor-signature__static">static</span>        <span class="phpdocumentor-signature__name">blankNode</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__return-type">string|<abbr title="\Stringable">Stringable</abbr>|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$iri</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/rdfInterface-BlankNodeInterface.html"><abbr title="\rdfInterface\BlankNodeInterface">BlankNodeInterface</abbr></a></span></code>
@@ -269,11 +275,12 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/sweetrdf/rdf-interface/src/rdfInterface/DataFactoryInterface.php"><a href="files/vendor-sweetrdf-rdf-interface-src-rdfinterface-datafactoryinterface.html"><abbr title="vendor/sweetrdf/rdf-interface/src/rdfInterface/DataFactoryInterface.php">DataFactoryInterface.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">45</span>
+    <span class="phpdocumentor-element-found-in__line">103</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Returns an RDF default graph object.</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
             <span class="phpdocumentor-signature__static">static</span>        <span class="phpdocumentor-signature__name">defaultGraph</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/rdfInterface-DefaultGraphInterface.html"><abbr title="\rdfInterface\DefaultGraphInterface">DefaultGraphInterface</abbr></a></span></code>
@@ -304,18 +311,51 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/sweetrdf/rdf-interface/src/rdfInterface/DataFactoryInterface.php"><a href="files/vendor-sweetrdf-rdf-interface-src-rdfinterface-datafactoryinterface.html"><abbr title="vendor/sweetrdf/rdf-interface/src/rdfInterface/DataFactoryInterface.php">DataFactoryInterface.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">41</span>
+    <span class="phpdocumentor-element-found-in__line">94</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Creates a new RDF literal.</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
             <span class="phpdocumentor-signature__static">static</span>        <span class="phpdocumentor-signature__name">literal</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">int|float|string|bool|<abbr title="\Stringable">Stringable</abbr>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$value</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">string|<abbr title="\Stringable">Stringable</abbr>|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$lang</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">string|<abbr title="\Stringable">Stringable</abbr>|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$datatype</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/rdfInterface-LiteralInterface.html"><abbr title="\rdfInterface\LiteralInterface">LiteralInterface</abbr></a></span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
-    
+        <section class="phpdocumentor-description"><p>If the $datatype is null or empty, it must be set according to the
+$value and $lang parameter values:</p>
+<ul>
+<li>if $lang is not empty, the $datatype must be set to
+<code class="prettyprint">http://www.w3.org/1999/02/22-rdf-syntax-ns#langString</code>
+</li>
+<li>if $lang is empty or null, the $datatype depends on the PHP type of the
+$value parameter:
+<ul>
+<li>bool - <code class="prettyprint">http://www.w3.org/2001/XMLSchema#boolean</code>
+</li>
+<li>int - <code class="prettyprint">http://www.w3.org/2001/XMLSchema#integer</code>
+</li>
+<li>float - <code class="prettyprint">http://www.w3.org/2001/XMLSchema#decimal</code>
+</li>
+<li>string - <code class="prettyprint">http://www.w3.org/2001/XMLSchema#string</code>
+</li>
+<li>Stringable object - <code class="prettyprint">http://www.w3.org/2001/XMLSchema#string</code> or
+any other more precise XSD datatype if the implementation is able
+to derive it from the object class</li>
+</ul>
+</li>
+</ul>
+<p>The created literal must have valid combination of datatype and lang tag
+(meaning the datatype is rdf:langString if and only if the literal has
+a lang tag). It's up to the implementation how to assure it. Both throwing
+an exception and one of $lang/$datatype taking precedense over the other
+are considered valid solutions. Of course the implementation behavior
+should be documented.</p>
+<p>See https://www.w3.org/TR/rdf11-concepts/#section-Graph-Literal for
+a reference.</p>
+</section>
+
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
@@ -323,21 +363,36 @@
                 : <span class="phpdocumentor-signature__argument__return-type">int|float|string|bool|<abbr title="\Stringable">Stringable</abbr></span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                
+                    <section class="phpdocumentor-description"><p>Literal's value.
+Only values which can be casted to a string are allowed so it's clear
+how to obtain literal's value lexical form (see the RDF specification
+mentioned above). The lexical forms of scalar values must be created
+(returned by the getValue() method) in a way that back-casting them
+to the scalar type gives an equal value (probably the only tricky case
+here is boolean <code class="prettyprint">false</code>).</p>
+</section>
+
             </dd>
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-signature__argument__name">$lang</span>
                 : <span class="phpdocumentor-signature__argument__return-type">string|<abbr title="\Stringable">Stringable</abbr>|null</span>
                  = <span class="phpdocumentor-signature__argument__default-value">null</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                
+                    <section class="phpdocumentor-description"><p>Literal's lang tag. If null or empty string, the literal
+is assumed not to have a lang tag (as an empty lang tag is not allowed in RDF).</p>
+</section>
+
             </dd>
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-signature__argument__name">$datatype</span>
                 : <span class="phpdocumentor-signature__argument__return-type">string|<abbr title="\Stringable">Stringable</abbr>|null</span>
                  = <span class="phpdocumentor-signature__argument__default-value">null</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                
+                    <section class="phpdocumentor-description"><p>Literal's datatype. If it's null, the datatype
+must be assigned according to the $lang and $value parameter values.
+The detailed procedure is described above.</p>
+</section>
+
             </dd>
             </dl>
 
@@ -363,11 +418,12 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/sweetrdf/rdf-interface/src/rdfInterface/DataFactoryInterface.php"><a href="files/vendor-sweetrdf-rdf-interface-src-rdfinterface-datafactoryinterface.html"><abbr title="vendor/sweetrdf/rdf-interface/src/rdfInterface/DataFactoryInterface.php">DataFactoryInterface.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">37</span>
+    <span class="phpdocumentor-element-found-in__line">43</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Creates a new RDF named node.</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
             <span class="phpdocumentor-signature__static">static</span>        <span class="phpdocumentor-signature__name">namedNode</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string|<abbr title="\Stringable">Stringable</abbr>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$iri</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/rdfInterface-NamedNodeInterface.html"><abbr title="\rdfInterface\NamedNodeInterface">NamedNodeInterface</abbr></a></span></code>
@@ -408,11 +464,12 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/sweetrdf/rdf-interface/src/rdfInterface/DataFactoryInterface.php"><a href="files/vendor-sweetrdf-rdf-interface-src-rdfinterface-datafactoryinterface.html"><abbr title="vendor/sweetrdf/rdf-interface/src/rdfInterface/DataFactoryInterface.php">DataFactoryInterface.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">47</span>
+    <span class="phpdocumentor-element-found-in__line">113</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Creates a new RDF quad.</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
             <span class="phpdocumentor-signature__static">static</span>        <span class="phpdocumentor-signature__name">quad</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href="classes/rdfInterface-TermInterface.html"><abbr title="\rdfInterface\TermInterface">TermInterface</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$subject</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type"><a href="classes/rdfInterface-NamedNodeInterface.html"><abbr title="\rdfInterface\NamedNodeInterface">NamedNodeInterface</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$predicate</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type"><a href="classes/rdfInterface-TermInterface.html"><abbr title="\rdfInterface\TermInterface">TermInterface</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$object</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type"><a href="classes/rdfInterface-NamedNodeInterface.html"><abbr title="\rdfInterface\NamedNodeInterface">NamedNodeInterface</abbr></a>|<a href="classes/rdfInterface-BlankNodeInterface.html"><abbr title="\rdfInterface\BlankNodeInterface">BlankNodeInterface</abbr></a>|<a href="classes/rdfInterface-DefaultGraphInterface.html"><abbr title="\rdfInterface\DefaultGraphInterface">DefaultGraphInterface</abbr></a>|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$graph</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/rdfInterface-QuadInterface.html"><abbr title="\rdfInterface\QuadInterface">QuadInterface</abbr></a></span></code>
