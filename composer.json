@@ -18,8 +18,8 @@
         "ext-pcre": "*",
         "ext-xmlreader" : "*",
         "zozlak/rdf-constants": "^1.1",
-        "sweetrdf/rdf-interface": "^1.0.0",
-        "sweetrdf/rdf-helpers": "^1.0.0",
+        "sweetrdf/rdf-interface": "^1.0.0 | ^2.0.0-RC1",
+        "sweetrdf/rdf-helpers": "^1.0.2",
         "pietercolpaert/hardf": "*",
         "ml/json-ld": "^1.2"
     },
@@ -37,9 +37,9 @@
         "phpstan/phpstan": "*",
         "php-coveralls/php-coveralls": "^2.4",
         "squizlabs/php_codesniffer": "*",
-        "sweetrdf/quick-rdf": "^1.0.0",
+        "sweetrdf/quick-rdf": "^2.0.0-RC1",
         "sweetrdf/term-templates": "^1.0.0",
-        "sweetrdf/simple-rdf": "^1.0.0"
+        "sweetrdf/simple-rdf": "^2.0.0-RC1"
     },
     "autoload-dev": {
         "psr-4": {

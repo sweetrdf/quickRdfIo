@@ -26,12 +26,11 @@
 
 namespace quickRdfIo;
 
-use rdfInterface\DataFactoryInterface as iDataFactory;
-use rdfInterface\QuadInterface as iQuad;
-use rdfInterface\BlankNodeInterface as iBlankNode;
-use rdfInterface\DatasetInterface as iDataset;
-use rdfInterface\ParserInterface as iParser;
-use rdfInterface\DatasetMapReduceInterface as iDatasetMapReduce;
+use rdfInterface\DataFactoryInterface;
+use rdfInterface\QuadInterface;
+use rdfInterface\BlankNodeInterface;
+use rdfInterface\DatasetInterface;
+use rdfInterface\ParserInterface;
 use quickRdf\Dataset;
 
 /**
@@ -41,23 +40,23 @@ use quickRdf\Dataset;
  */
 trait TestUtilsTrait {
 
-    private iDataFactory $df;
-    private iParser $refParser;
+    private DataFactoryInterface $df;
+    private ParserInterface $refParser;
 
-    private function unblank(iQuad $quad): iQuad {
+    private function unblank(QuadInterface $quad): QuadInterface {
         $sbj = $quad->getSubject();
-        if ($sbj instanceof iBlankNode) {
+        if ($sbj instanceof BlankNodeInterface) {
             $quad = $quad->withSubject($this->df->namedNode('bn:' . $sbj->getValue()));
         }
         $obj = $quad->getObject();
-        if ($obj instanceof iBlankNode) {
+        if ($obj instanceof BlankNodeInterface) {
             $quad = $quad->withObject($this->df->namedNode('bn:' . $obj->getValue()));
         }
         return $quad;
     }
 
-    private function assertDatasetsEqual(iDataset $test, iDataset $ref,
-                                         string $msg = ''): void {
+    private function assertDatasetsEqual(DatasetInterface $test,
+                                         DatasetInterface $ref, string $msg = ''): void {
         if ($ref->equals($test) === false) {
             echo "\n" .
             "REF:\n$ref" .
@@ -69,14 +68,14 @@ trait TestUtilsTrait {
         $this->assertTrue($ref->equals($test), $msg);
     }
 
-    private function blankGraphAsDefaultGraph(iQuad $q): iQuad {
-        if ($q->getGraph() instanceof iBlankNode) {
+    private function blankGraphAsDefaultGraph(QuadInterface $q): QuadInterface {
+        if ($q->getGraph() instanceof BlankNodeInterface) {
             return $q->withGraph($this->df->defaultGraph());
         }
         return $q;
     }
 
-    private function parseRef(string $refFile, bool $unblank): iDatasetMapReduce {
+    private function parseRef(string $refFile, bool $unblank): DatasetInterface {
         $refInput = fopen($refFile, 'r') ?: throw new \RuntimeException("Failed to open $refFile");
         $ref      = new Dataset();
         $ref->add($this->refParser->parseStream($refInput));
