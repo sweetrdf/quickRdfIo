@@ -160,10 +160,7 @@ class TriGParser implements iParser, iQuadIterator {
 
     public function rewind(): void {
         if ($this->input->tell() !== 0) {
-            $ret = $this->input->rewind();
-            if ($ret !== true) {
-                throw new RdfIoException("Can't seek in the input stream");
-            }
+            $this->input->rewind();
         }
         $this->next();
     }
