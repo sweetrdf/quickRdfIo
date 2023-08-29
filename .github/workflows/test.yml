@@ -23,7 +23,7 @@ jobs:
         php vendor/bin/php-coveralls -v
     - name: document
       run: |
-        docker run --rm -v $(pwd):/data phpdoc/phpdoc:3 -d src -d vendor/sweetrdf/rdf-interface/src -d vendor/sweetrdf/rdf-helpers/src/ -d vendor/ml/json-ld -t docs
+        docker run --rm -v $(pwd):/data phpdoc/phpdoc:3 --directory=src --directory=vendor/sweetrdf/rdf-interface/src --directory=vendor/sweetrdf/rdf-helpers/src/ --directory=vendor/ml/json-ld --target=docs
         git fetch && git checkout docs --
         for i in `ls -1 | grep -v ^docs$`; do rm -fR $i ; done
         cp -R docs/* .
