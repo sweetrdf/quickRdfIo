@@ -3271,6 +3271,31 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/rdfHelpers-GenericTermIterator.html#method_valid"
         },                {
+            "fqsen": "\\rdfHelpers\\GenericTermIterator\u003A\u003Avalid2\u0028\u0029",
+            "name": "valid2",
+            "summary": "",
+            "url": "classes/rdfHelpers-GenericTermIterator.html#method_valid2"
+        },                {
+            "fqsen": "\\rdfHelpers\\GenericTermIterator\u003A\u003Acontains\u0028\u0029",
+            "name": "contains",
+            "summary": "",
+            "url": "classes/rdfHelpers-GenericTermIterator.html#method_contains"
+        },                {
+            "fqsen": "\\rdfHelpers\\GenericTermIterator\u003A\u003AgetValues\u0028\u0029",
+            "name": "getValues",
+            "summary": "Extracts\u0020values\u0020of\u0020all\u0020terms\u0020and\u0020returns\u0020them\u0020as\u0020an\u0020array.",
+            "url": "classes/rdfHelpers-GenericTermIterator.html#method_getValues"
+        },                {
+            "fqsen": "\\rdfHelpers\\GenericTermIterator\u003A\u003A\u0024skip",
+            "name": "skip",
+            "summary": "",
+            "url": "classes/rdfHelpers-GenericTermIterator.html#property_skip"
+        },                {
+            "fqsen": "\\rdfHelpers\\GenericTermIterator\u003A\u003A\u0024intersect",
+            "name": "intersect",
+            "summary": "",
+            "url": "classes/rdfHelpers-GenericTermIterator.html#property_intersect"
+        },                {
             "fqsen": "\\rdfHelpers\\GenericTermIterator\u003A\u003A\u0024iter",
             "name": "iter",
             "summary": "",
@@ -3656,6 +3681,11 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/rdfInterface-LiteralInterface.html#constant_CAST_DATATYPE"
         },                {
+            "fqsen": "\\rdfInterface\\MultipleQuadsMatchedException",
+            "name": "MultipleQuadsMatchedException",
+            "summary": "Specialization\u0020of\u0020the\u0020\\UnexpectedValueException\u0020indicating\u0020multiple\u0020quads\nmatch\u0020while\u0020accessing\u0020a\u0020DatasetInterface\u0020object\u0020using\u0020the\u0020ArrayAccess\u0020syntax\n\u0028\u0024dataset\u005Boffset\u005D\u0029",
+            "url": "classes/rdfInterface-MultipleQuadsMatchedException.html"
+        },                {
             "fqsen": "\\rdfInterface\\NamedNodeInterface",
             "name": "NamedNodeInterface",
             "summary": "Description\u0020of\u0020RdfTerm",
@@ -3855,6 +3885,26 @@ Search.appendIndex(
             "name": "current",
             "summary": "",
             "url": "classes/rdfInterface-TermIteratorInterface.html#method_current"
+        },                {
+            "fqsen": "\\rdfInterface\\TermIteratorInterface\u003A\u003Acontains\u0028\u0029",
+            "name": "contains",
+            "summary": "",
+            "url": "classes/rdfInterface-TermIteratorInterface.html#method_contains"
+        },                {
+            "fqsen": "\\rdfInterface\\TermIteratorInterface\u003A\u003Askip\u0028\u0029",
+            "name": "skip",
+            "summary": "",
+            "url": "classes/rdfInterface-TermIteratorInterface.html#method_skip"
+        },                {
+            "fqsen": "\\rdfInterface\\TermIteratorInterface\u003A\u003Aintersect\u0028\u0029",
+            "name": "intersect",
+            "summary": "",
+            "url": "classes/rdfInterface-TermIteratorInterface.html#method_intersect"
+        },                {
+            "fqsen": "\\rdfInterface\\TermIteratorInterface\u003A\u003AgetValues\u0028\u0029",
+            "name": "getValues",
+            "summary": "Extracts\u0020values\u0020of\u0020all\u0020terms\u0020and\u0020returns\u0020them\u0020as\u0020an\u0020array.",
+            "url": "classes/rdfInterface-TermIteratorInterface.html#method_getValues"
         },                {
             "fqsen": "\\",
             "name": "\\",
