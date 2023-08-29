@@ -37,7 +37,8 @@ use rdfInterface\RdfNamespaceInterface as iRdfNamespace;
  */
 trait TmpStreamSerializerTrait {
 
-    public function serialize(iQuadIterator | iQuadIteratorAggregate $graph, ?iRdfNamespace $nmsp = null): string {
+    public function serialize(iQuadIterator | iQuadIteratorAggregate $graph,
+                              ?iRdfNamespace $nmsp = null): string {
         $output = '';
         $stream = fopen('php://memory', 'r+');
         if ($stream === false) {
@@ -48,10 +49,13 @@ trait TmpStreamSerializerTrait {
         if ($len === false || $len < 0) {
             throw new RdfIoException('Failed to seek in output streem');
         }
-        rewind($stream);
-        $output = fread($stream, $len);
-        if ($output === false) {
-            throw new RdfIoException('Failed to read from output streem');
+        $output = '';
+        if ($len > 0) {
+            rewind($stream);
+            $output = fread($stream, $len);
+            if ($output === false) {
+                throw new RdfIoException('Failed to read from output streem');
+            }
         }
         fclose($stream);
         return $output;
