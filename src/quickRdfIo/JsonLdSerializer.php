@@ -26,9 +26,8 @@
 
 namespace quickRdfIo;
 
+use Traversable;
 use Psr\Http\Message\StreamInterface;
-use rdfInterface\QuadIteratorInterface as iQuadIterator;
-use rdfInterface\QuadIteratorAggregateInterface as iQuadIteratorAggregate;
 use rdfInterface\RdfNamespaceInterface as iRdfNamespace;
 use rdfInterface\QuadInterface as iQuad;
 use rdfInterface\DefaultGraphInterface as iDefaultGraph;
@@ -107,14 +106,14 @@ class JsonLdSerializer implements \rdfInterface\SerializerInterface {
 
     /**
      * 
-     * @param iQuadIterator|iQuadIteratorAggregate $graph
+     * @param Traversable<iQuad>|array<iQuad> $graph
      * @param iRdfNamespace|null $nmsp If passed, it's used for compacting the
      *   output. Unfortunately only property URIs can be compacted that way
      *   (of course for that full property URIs must be registered as "namespaces").
      * @return string
      * @throws RdfIoException
      */
-    public function serialize(iQuadIterator | iQuadIteratorAggregate $graph,
+    public function serialize(Traversable | array $graph,
                               ?iRdfNamespace $nmsp = null): string {
         $doc = new Document($this->baseUri);
         foreach ($graph as $quad) {
@@ -198,13 +197,12 @@ class JsonLdSerializer implements \rdfInterface\SerializerInterface {
     /**
      * 
      * @param resource | StreamInterface $output
-     * @param iQuadIterator|iQuadIteratorAggregate $graph
+     * @param Traversable<iQuad>|array<iQuad> $graph
      * @param iRdfNamespace|null $nmsp unused but required for compatibility with
      *   the `\rdfInterface\Serializer`.
      * @return void
      */
-    public function serializeStream(mixed $output,
-                                    iQuadIterator | iQuadIteratorAggregate $graph,
+    public function serializeStream(mixed $output, Traversable | array $graph,
                                     iRdfNamespace | null $nmsp = null): void {
         if (is_resource($output)) {
             $output = new ResourceWrapper($output);

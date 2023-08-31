@@ -26,16 +26,15 @@
 
 namespace quickRdfIo;
 
+use Traversable;
 use Psr\Http\Message\StreamInterface;
-use rdfInterface\QuadIteratorInterface as iQuadIterator;
-use rdfInterface\QuadIteratorAggregateInterface as iQuadIteratorAggregate;
 use rdfInterface\RdfNamespaceInterface as iRdfNamespace;
-use rdfInterface\QuadInterface as iQuad;
 use rdfInterface\LiteralInterface as iLiteral;
 use rdfInterface\NamedNodeInterface as iNamedNode;
 use rdfInterface\BlankNodeInterface as iBlankNode;
 use rdfInterface\TermInterface as iTerm;
 use rdfInterface\DefaultGraphInterface as iDefaultGraph;
+use rdfInterface\QuadInterface as iQuad;
 use zozlak\RdfConstants as RDF;
 
 /**
@@ -80,14 +79,14 @@ class JsonLdStreamSerializer implements \rdfInterface\SerializerInterface {
     /**
      * 
      * @param resource | StreamInterface $output output to serialize to
-     * @param iQuadIterator|iQuadIteratorAggregate $graph data to serialize
+     * @param Traversable<iQuad>|array<iQuad> $graph data to serialize
      * @param iRdfNamespace|null $nmsp allows to provide context for predicates.
      *   For that, register full predicate URIs as namespaces in the `$nmsp`
      *   object.
      * @return void
      */
     public function serializeStream(mixed $output,
-                                    iQuadIterator | iQuadIteratorAggregate $graph,
+                                    Traversable|array $graph,
                                     iRdfNamespace | null $nmsp = null): void {
         if (is_resource($output)) {
             $output = new ResourceWrapper($output);

@@ -26,12 +26,11 @@
 
 namespace quickRdfIo;
 
+use Traversable;
 use Psr\Http\Message\StreamInterface;
 use rdfHelpers\NtriplesUtil;
 use rdfInterface\QuadInterface as iQuad;
 use rdfInterface\DefaultGraphInterface as iDefaultGraph;
-use rdfInterface\QuadIteratorInterface as iQuadIterator;
-use rdfInterface\QuadIteratorAggregateInterface as iQuadIteratorAggregate;
 use rdfInterface\RdfNamespaceInterface as iRdfNamespace;
 
 /**
@@ -43,37 +42,10 @@ class NQuadsSerializer implements \rdfInterface\SerializerInterface {
 
     use TmpStreamSerializerTrait;
 
-    public function __construct() {
-        
-    }
-
-    /**
-     * 
-     * @param resource | StreamInterface $output
-     * @param iQuadIterator|iQuadIteratorAggregate $graph
-     * @param iRdfNamespace|null $nmsp
-     * @return void
-     */
-    public function serializeStream(mixed $output,
-                                    iQuadIterator | iQuadIteratorAggregate $graph,
-                                    ?iRdfNamespace $nmsp = null
-    ): void {
-        if (is_resource($output)) {
-            $output = new ResourceWrapper($output);
-        }
-        if (!($output instanceof StreamInterface)) {
-            throw new RdfIoException("Output has to be a resource or " . StreamInterface::class . " object");
-        }
-
-        foreach ($graph as $i) {
-            $output->write($this->serializeQuad($i));
-        }
-    }
-
-    private function serializeQuad(iQuad $quad, string $end = " .\n"): string {
+    static public function serializeQuad(iQuad $quad, string $end = " .\n"): string {
         $subject = $quad->getSubject();
         if ($subject instanceof iQuad) {
-            $subject = '<< ' . $this->serializeQuad($subject, '') . ' >>';
+            $subject = '<< ' . self::serializeQuad($subject, '') . ' >>';
         } else {
             $subject = NtriplesUtil::serializeIri($subject);
         }
@@ -82,7 +54,7 @@ class NQuadsSerializer implements \rdfInterface\SerializerInterface {
 
         $object = $quad->getObject();
         if ($object instanceof iQuad) {
-            $object = '<< ' . $this->serializeQuad($object, '') . ' >>';
+            $object = '<< ' . self::serializeQuad($object, '') . ' >>';
         } else {
             $object = NtriplesUtil::serialize($object);
         }
@@ -95,5 +67,31 @@ class NQuadsSerializer implements \rdfInterface\SerializerInterface {
         }
 
         return "$subject $predicate $object $graph$end";
+    }
+
+    public function __construct() {
+        
+    }
+
+    /**
+     * 
+     * @param resource | StreamInterface $output
+     * @param Traversable<iQuad>|array<iQuad> $graph
+     * @param iRdfNamespace|null $nmsp
+     * @return void
+     */
+    public function serializeStream(mixed $output, Traversable | array $graph,
+                                    ?iRdfNamespace $nmsp = null
+    ): void {
+        if (is_resource($output)) {
+            $output = new ResourceWrapper($output);
+        }
+        if (!($output instanceof StreamInterface)) {
+            throw new RdfIoException("Output has to be a resource or " . StreamInterface::class . " object");
+        }
+
+        foreach ($graph as $i) {
+            $output->write(self::serializeQuad($i));
+        }
     }
 }

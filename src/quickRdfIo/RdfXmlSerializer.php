@@ -26,14 +26,14 @@
 
 namespace quickRdfIo;
 
+use Traversable;
 use Psr\Http\Message\StreamInterface;
-use rdfInterface\QuadIteratorInterface as iQuadIterator;
-use rdfInterface\QuadIteratorAggregateInterface as iQuadIteratorAggregate;
 use rdfInterface\RdfNamespaceInterface as iRdfNamespace;
 use rdfInterface\LiteralInterface as iLiteral;
 use rdfInterface\NamedNodeInterface as iNamedNode;
 use rdfInterface\BlankNodeInterface as iBlankNode;
 use rdfInterface\DefaultGraphInterface as iDefaultGraph;
+use rdfInterface\QuadInterface as iQuad;
 use zozlak\RdfConstants as RDF;
 
 /**
@@ -81,13 +81,12 @@ class RdfXmlSerializer implements \rdfInterface\SerializerInterface {
     /**
      * 
      * @param resource | StreamInterface $output
-     * @param iQuadIterator|iQuadIteratorAggregate $graph
+     * @param Traversable<iQuad>|array<iQuad> $graph
      * @param iRdfNamespace|null $nmsp
      * @return void
      * @throws RdfIoException
      */
-    public function serializeStream(mixed $output,
-                                    iQuadIterator | iQuadIteratorAggregate $graph,
+    public function serializeStream(mixed $output, Traversable | array $graph,
                                     ?iRdfNamespace $nmsp = null): void {
         if (is_resource($output)) {
             $output = new ResourceWrapper($output);
@@ -114,7 +113,7 @@ class RdfXmlSerializer implements \rdfInterface\SerializerInterface {
 
         $prevSbj = null;
         foreach ($graph as $i) {
-            /* @var $i \rdfInterface\Quad */
+            /* @var $i iQuad */
             $s = $i->getSubject();
             $p = $i->getPredicate();
             $o = $i->getObject();
