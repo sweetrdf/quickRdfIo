@@ -36,7 +36,7 @@
         "phpstan/phpstan": "*",
         "php-coveralls/php-coveralls": "^2.4",
         "sweetrdf/quick-rdf": "^2.0.0-RC1",
-        "sweetrdf/term-templates": "^1.0.0",
+        "sweetrdf/term-templates": "^1 | ^2",
         "sweetrdf/simple-rdf": "^2.0.0-RC1"
     },
     "autoload-dev": {
