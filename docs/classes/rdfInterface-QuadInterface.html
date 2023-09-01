@@ -179,6 +179,13 @@ possible for QuadTemplate to extend this interface</li>
 </h4>
 <dl class="phpdocumentor-table-of-contents">
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/rdfInterface-TermCompareInterface.html#method___toString">__toString()</a>
+    <span>
+                                &nbsp;: string    </span>
+</dt>
+<dd>Should return:</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/rdfInterface-TermCompareInterface.html#method_equals">equals()</a>
     <span>
                                 &nbsp;: bool    </span>
@@ -260,6 +267,48 @@ NamedNode/BlankNode graphs also belong to the DefaultGraph).</dd>
             -public
                                                         "
 >
+    <h4 class="phpdocumentor-element__name" id="method___toString">
+        __toString()
+        <a href="classes/rdfInterface-TermCompareInterface.html#method___toString" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="vendor/sweetrdf/rdf-interface/src/rdfInterface/TermCompareInterface.php"><a href="files/vendor-sweetrdf-rdf-interface-src-rdfinterface-termcompareinterface.html"><abbr title="vendor/sweetrdf/rdf-interface/src/rdfInterface/TermCompareInterface.php">TermCompareInterface.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">48</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Should return:</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">__toString</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+        <section class="phpdocumentor-description"><ul>
+<li>an URI for named nodes and blank nodes</li>
+<li>a value in lexical form for literals</li>
+</ul>
+<p>For all other kind of terms the return value depends on the implementation</p>
+</section>
+
+    
+    
+
+            <section>
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type">string</span>
+            </section>
+
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
     <h4 class="phpdocumentor-element__name" id="method_equals">
         equals()
         <a href="classes/rdfInterface-TermCompareInterface.html#method_equals" class="headerlink"><i class="fas fa-link"></i></a>
@@ -275,7 +324,7 @@ NamedNode/BlankNode graphs also belong to the DefaultGraph).</dd>
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">equals</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href="classes/rdfInterface-TermCompareInterface.html"><abbr title="\rdfInterface\TermCompareInterface">TermCompareInterface</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$term</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
+                    <span class="phpdocumentor-signature__name">equals</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href="classes/rdfInterface-TermInterface.html"><abbr title="\rdfInterface\TermInterface">TermInterface</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$term</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -284,7 +333,7 @@ NamedNode/BlankNode graphs also belong to the DefaultGraph).</dd>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-signature__argument__name">$term</span>
-                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/rdfInterface-TermCompareInterface.html"><abbr title="\rdfInterface\TermCompareInterface">TermCompareInterface</abbr></a></span>
+                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/rdfInterface-TermInterface.html"><abbr title="\rdfInterface\TermInterface">TermInterface</abbr></a></span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
                 
@@ -765,6 +814,7 @@ NamedNode/BlankNode graphs also belong to the DefaultGraph).</p>
                             <li class="phpdocumentor-on-this-page-section__title">Methods</li>
                 <li>
                     <ul class="phpdocumentor-list -clean">
+                                                    <li><a href="classes/rdfInterface-TermCompareInterface.html#method___toString">__toString()</a></li>
                                                     <li><a href="classes/rdfInterface-TermCompareInterface.html#method_equals">equals()</a></li>
                                                     <li><a href="classes/rdfInterface-QuadInterface.html#method_getGraph">getGraph()</a></li>
                                                     <li><a href="classes/rdfInterface-QuadInterface.html#method_getObject">getObject()</a></li>

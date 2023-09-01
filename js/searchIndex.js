@@ -3971,6 +3971,11 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/rdfInterface-TermCompareInterface.html#method_equals"
         },                {
+            "fqsen": "\\rdfInterface\\TermCompareInterface\u003A\u003A__toString\u0028\u0029",
+            "name": "__toString",
+            "summary": "Should\u0020return\u003A",
+            "url": "classes/rdfInterface-TermCompareInterface.html#method___toString"
+        },                {
             "fqsen": "\\rdfInterface\\TermInterface",
             "name": "TermInterface",
             "summary": "Description\u0020of\u0020RdfTerm",
