@@ -18,8 +18,8 @@
         "ext-pcre": "*",
         "ext-xmlreader" : "*",
         "zozlak/rdf-constants": "^1.1",
-        "sweetrdf/rdf-interface": "^1.0.0 | ^2.0.0-RC1",
-        "sweetrdf/rdf-helpers": "^1.0.2",
+        "sweetrdf/rdf-interface": "^1.0.0 | ^2.0.0-RC1 | dev-master",
+        "sweetrdf/rdf-helpers": "^1.0.2 | dev-dev",
         "pietercolpaert/hardf": "*",
         "ml/json-ld": "^1.2"
     },
