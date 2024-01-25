@@ -131,11 +131,11 @@ class TriGParser implements iParser, iQuadIterator {
                 if ($quad) {
                     $df   = $this->dataFactory;
                     $sbj  = Util::isBlank($quad['subject']) ?
-                        $df::BlankNode($quad['subject']) : $df::NamedNode($quad['subject']);
-                    $prop = $df::NamedNode($quad['predicate']);
+                        $df::blankNode($quad['subject']) : $df::namedNode($quad['subject']);
+                    $prop = $df::namedNode($quad['predicate']);
                     if (substr($quad['object'], 0, 1) !== '"') {
                         $obj = Util::isBlank($quad['object']) ?
-                            $df::BlankNode($quad['object']) : $df::NamedNode($quad['object']);
+                            $df::blankNode($quad['object']) : $df::namedNode($quad['object']);
                     } else {
                         // as Util::getLiteralValue() doesn't work for multiline values
                         $value    = substr($quad['object'], 1, strrpos($quad['object'], '"') - 1);
@@ -159,6 +159,7 @@ class TriGParser implements iParser, iQuadIterator {
     }
 
     public function rewind(): void {
+        $this->n = 0;
         if ($this->input->tell() !== 0) {
             $this->input->rewind();
         }
