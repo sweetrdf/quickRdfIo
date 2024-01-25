@@ -159,7 +159,7 @@ class TriGParser implements iParser, iQuadIterator {
     }
 
     public function rewind(): void {
-        $this->n = 0;
+        $this->n = -1;
         if ($this->input->tell() !== 0) {
             $this->input->rewind();
         }
