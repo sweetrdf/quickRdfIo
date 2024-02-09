@@ -74,7 +74,6 @@ class Util {
             'n-triples-star',
             'application/n-triples',
             'text/plain' => new NQuadsSerializer(),
-            'application/n-quads',
             'nq',
             'nquads',
             'nquadstar',
