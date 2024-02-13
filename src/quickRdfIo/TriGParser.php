@@ -44,7 +44,7 @@ class TriGParser implements iParser, iQuadIterator {
 
     use TmpStreamParserTrait;
 
-    private const CHUNK_SIZE = 4096; // if it's too big, the regexp used by the hardf to match the prefixed URIs may not match
+    private const CHUNK_SIZE = 100; // if it's too big, the regexp used by the hardf to match the prefixed URIs may not match
 
     private iDataFactory $dataFactory;
 
