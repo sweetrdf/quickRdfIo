@@ -151,8 +151,8 @@ class TriGParser implements iParser, iQuadIterator {
                 }
             });
             while (!$this->input->eof() && $this->quadsBuffer->count() === 0) {
-                $p           = strlen($this->chunk) + self::CHUNK_SIZE - 1;
                 $this->chunk .= $this->input->read(self::CHUNK_SIZE);
+                $p           = strlen($this->chunk) - 1;
                 $cp          = ord($this->chunk[$p]);
                 if ($cp < 127) {
                     // chunk ends with a single-byte UTF-8 character - just parse whole chunk
@@ -168,7 +168,6 @@ class TriGParser implements iParser, iQuadIterator {
                     $this->parser->parseChunk(substr($this->chunk, 0, $p));
                     $this->chunk = substr($this->chunk, $p);
                 }
-                $this->parser->parseChunk($x);
             }
             if ($this->input->eof()) {
                 $this->parser->end();

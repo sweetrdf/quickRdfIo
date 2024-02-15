@@ -1,0 +1,234 @@
+@prefix schema: <http://schema.org/> .
+@prefix gndo: <https://d-nb.info/standards/elementset/gnd#> .
+@prefix lib: <http://purl.org/library/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix editeur: <https://ns.editeur.org/thema/> .
+@prefix geo: <http://www.opengis.net/ont/geosparql#> .
+@prefix umbel: <http://umbel.org/umbel#> .
+@prefix naf: <https://id.loc.gov/authorities/names/> .
+@prefix rdau: <http://rdaregistry.info/Elements/u/> .
+@prefix sf: <http://www.opengis.net/ont/sf#> .
+@prefix bflc: <http://id.loc.gov/ontologies/bflc/> .
+@prefix thesoz: <http://lod.gesis.org/thesoz/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix isbd: <http://iflastandards.info/ns/isbd/elements/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix mesh: <http://id.nlm.nih.gov/mesh/vocab#> .
+@prefix ram: <https://data.bnf.fr/ark:/12148/> .
+@prefix mo: <http://purl.org/ontology/mo/> .
+@prefix marcRole: <http://id.loc.gov/vocabulary/relators/> .
+@prefix agrelon: <https://d-nb.info/standards/elementset/agrelon#> .
+@prefix dcmitype: <http://purl.org/dc/dcmitype/> .
+@prefix nsogg: <https://purl.org/bncf/tid/> .
+@prefix dnbt: <https://d-nb.info/standards/elementset/dnb#> .
+@prefix dbp: <http://dbpedia.org/property/> .
+@prefix embne: <https://datos.bne.es/resource/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix dnb_intern: <http://dnb.de/> .
+@prefix madsrdf: <http://www.loc.gov/mads/rdf/v1#> .
+@prefix cidoc: <http://www.cidoc-crm.org/cidoc-crm/> .
+@prefix v: <http://www.w3.org/2006/vcard/ns#> .
+@prefix ebu: <http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#> .
+@prefix wdrs: <http://www.w3.org/2007/05/powder-s#> .
+@prefix gbv: <http://purl.org/ontology/gbv/> .
+@prefix bibo: <http://purl.org/ontology/bibo/> .
+@prefix agrovoc: <https://aims.fao.org/aos/agrovoc/> .
+@prefix lcsh: <https://id.loc.gov/authorities/subjects/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+
+<https://d-nb.info/gnd/118560077> a gndo:RoyalOrMemberOfARoyalHouse;
+  wdrs:describedby <https://d-nb.info/gnd/118560077/about> .
+
+<https://d-nb.info/gnd/118560077/about> dcterms:license <http://creativecommons.org/publicdomain/zero/1.0/>;
+  dcterms:modified "2022-09-27T16:55:36.000"^^xsd:dateTime;
+  gndo:descriptionLevel <https://d-nb.info/standards/vocab/gnd/description-level#1> .
+
+<https://d-nb.info/gnd/118560077> gndo:gndIdentifier "118560077";
+  foaf:page <https://de.wikipedia.org/wiki/Karl_I._%28%C3%96sterreich-Ungarn%29>;
+  owl:sameAs <https://dbpedia.org/resource/Charles_I_of_Austria>, <http://viaf.org/viaf/76310427>,
+    <https://isni.org/isni/000000006635219X>, <http://www.wikidata.org/entity/Q51068>,
+    <http://id.loc.gov/rwo/agents/n50046481>;
+  gndo:oldAuthorityNumber "(DE-588)1089438923";
+  owl:sameAs <https://d-nb.info/gnd/1089438923>;
+  dnbt:deprecatedUri "https://d-nb.info/gnd/1089438923";
+  gndo:oldAuthorityNumber "(DE-588)1089894554";
+  owl:sameAs <https://d-nb.info/gnd/1089894554>;
+  dnbt:deprecatedUri "https://d-nb.info/gnd/1089894554";
+  gndo:oldAuthorityNumber "(DE-588a)118560077", "(DE-588c)4029678-7";
+  gndo:variantNameForThePerson "Karl Franz Joseph Ludwig Hubert Georg Otto Maria I.";
+  gndo:variantNameEntityForThePerson _:node1hm16sit8x6138915 .
+
+_:node1hm16sit8x6138915 gndo:personalName "Karl Franz Joseph Ludwig Hubert Georg Otto Maria";
+  gndo:counting "I." .
+
+<https://d-nb.info/gnd/118560077> gndo:variantNameForThePerson "Karl IV., Ungarn, König";
+  gndo:variantNameEntityForThePerson _:node1hm16sit8x6138916 .
+
+_:node1hm16sit8x6138916 gndo:personalName "Karl";
+  gndo:counting "IV.";
+  gndo:nameAddition "Ungarn, König" .
+
+<https://d-nb.info/gnd/118560077> gndo:variantNameForThePerson "Karlo IV., Ungarn, König";
+  gndo:variantNameEntityForThePerson _:node1hm16sit8x6138917 .
+
+_:node1hm16sit8x6138917 gndo:personalName "Karlo";
+  gndo:counting "IV.";
+  gndo:nameAddition "Ungarn, König" .
+
+<https://d-nb.info/gnd/118560077> gndo:variantNameForThePerson "IV. Károly magyar király";
+  gndo:variantNameEntityForThePerson _:node1hm16sit8x6138918 .
+
+_:node1hm16sit8x6138918 gndo:personalName "IV. Károly magyar király" .
+
+<https://d-nb.info/gnd/118560077> gndo:variantNameForThePerson "Karel III., Böhmen, König";
+  gndo:variantNameEntityForThePerson _:node1hm16sit8x6138919 .
+
+_:node1hm16sit8x6138919 gndo:personalName "Karel";
+  gndo:counting "III.";
+  gndo:nameAddition "Böhmen, König" .
+
+<https://d-nb.info/gnd/118560077> gndo:variantNameForThePerson "Carlo I.";
+  gndo:variantNameEntityForThePerson _:node1hm16sit8x6138920 .
+
+_:node1hm16sit8x6138920 gndo:personalName "Carlo";
+  gndo:counting "I." .
+
+<https://d-nb.info/gnd/118560077> gndo:variantNameForThePerson "Karol I.";
+  gndo:variantNameEntityForThePerson _:node1hm16sit8x6138921 .
+
+_:node1hm16sit8x6138921 gndo:personalName "Karol";
+  gndo:counting "I." .
+
+<https://d-nb.info/gnd/118560077> gndo:variantNameForThePerson "Charles I.";
+  gndo:variantNameEntityForThePerson _:node1hm16sit8x6138922 .
+
+_:node1hm16sit8x6138922 gndo:personalName "Charles";
+  gndo:counting "I." .
+
+<https://d-nb.info/gnd/118560077> gndo:variantNameForThePerson "Karl I., Österreich-Ungarn, Kaiser";
+  gndo:variantNameEntityForThePerson _:node1hm16sit8x6138923 .
+
+_:node1hm16sit8x6138923 gndo:personalName "Karl";
+  gndo:counting "I.";
+  gndo:nameAddition "Österreich-Ungarn, Kaiser" .
+
+<https://d-nb.info/gnd/118560077> gndo:variantNameForThePerson "Karl Franz Joseph, Österreich, Erzherzog";
+  gndo:variantNameEntityForThePerson _:node1hm16sit8x6138924 .
+
+_:node1hm16sit8x6138924 gndo:personalName "Karl Franz Joseph";
+  gndo:nameAddition "Österreich, Erzherzog" .
+
+<https://d-nb.info/gnd/118560077> gndo:variantNameForThePerson "Karl Franz Josef, Österreich, Erzherzog";
+  gndo:variantNameEntityForThePerson _:node1hm16sit8x6138925 .
+
+_:node1hm16sit8x6138925 gndo:personalName "Karl Franz Josef";
+  gndo:nameAddition "Österreich, Erzherzog" .
+
+<https://d-nb.info/gnd/118560077> gndo:variantNameForThePerson "Karl I, Kaiser von Österreich";
+  gndo:variantNameEntityForThePerson _:node1hm16sit8x6138926 .
+
+_:node1hm16sit8x6138926 gndo:personalName "Karl";
+  gndo:counting "I";
+  gndo:nameAddition "Kaiser von Österreich" .
+
+<https://d-nb.info/gnd/118560077> gndo:variantNameForThePerson "Karl I, Empereur d'Autriche"@fr;
+  gndo:variantNameEntityForThePerson _:node1hm16sit8x6138927 .
+
+_:node1hm16sit8x6138927 gndo:personalName "Karl";
+  gndo:counting "I";
+  gndo:nameAddition "Empereur d'Autriche" .
+
+<https://d-nb.info/gnd/118560077> gndo:variantNameForThePerson "Karl I, Emperor of Austria"@en;
+  gndo:variantNameEntityForThePerson _:node1hm16sit8x6138928 .
+
+_:node1hm16sit8x6138928 gndo:personalName "Karl";
+  gndo:counting "I";
+  gndo:nameAddition "Emperor of Austria" .
+
+<https://d-nb.info/gnd/118560077> gndo:variantNameForThePerson "Karl IV, König von Ungarn";
+  gndo:variantNameEntityForThePerson _:node1hm16sit8x6138929 .
+
+_:node1hm16sit8x6138929 gndo:personalName "Karl";
+  gndo:counting "IV";
+  gndo:nameAddition "König von Ungarn" .
+
+<https://d-nb.info/gnd/118560077> gndo:variantNameForThePerson "Karl IV, Roi d'Hongrie";
+  gndo:variantNameEntityForThePerson _:node1hm16sit8x6138930 .
+
+_:node1hm16sit8x6138930 gndo:personalName "Karl";
+  gndo:counting "IV";
+  gndo:nameAddition "Roi d'Hongrie" .
+
+<https://d-nb.info/gnd/118560077> gndo:variantNameForThePerson "Karl IV, King of Hungary";
+  gndo:variantNameEntityForThePerson _:node1hm16sit8x6138931 .
+
+_:node1hm16sit8x6138931 gndo:personalName "Karl";
+  gndo:counting "IV";
+  gndo:nameAddition "King of Hungary" .
+
+<https://d-nb.info/gnd/118560077> gndo:variantNameForThePerson "Österreich, Karl I. von";
+  gndo:variantNameEntityForThePerson _:node1hm16sit8x6138932 .
+
+_:node1hm16sit8x6138932 gndo:forename "Karl I.";
+  gndo:prefix "von";
+  gndo:surname "Österreich" .
+
+<https://d-nb.info/gnd/118560077> gndo:variantNameForThePerson "Карл I од Аустрије"@sr;
+  gndo:variantNameEntityForThePerson _:node1hm16sit8x6138933 .
+
+_:node1hm16sit8x6138933 gndo:personalName "Карл I од Аустрије" .
+
+<https://d-nb.info/gnd/118560077> gndo:variantNameForThePerson "Карл I (император Австрии)"@sr-Cyrl;
+  gndo:variantNameEntityForThePerson _:node1hm16sit8x6138934 .
+
+_:node1hm16sit8x6138934 gndo:personalName "Карл I (император Австрии)" .
+
+<https://d-nb.info/gnd/118560077> gndo:variantNameForThePerson "Карл I (імператор Австро-Угорщини)"@ru;
+  gndo:variantNameEntityForThePerson _:node1hm16sit8x6138935 .
+
+_:node1hm16sit8x6138935 gndo:personalName "Карл I (імператор Австро-Угорщини)" .
+
+<https://d-nb.info/gnd/118560077> gndo:variantNameForThePerson "Карл I (Австро-Унгария)"@uk;
+  gndo:variantNameEntityForThePerson _:node1hm16sit8x6138936 .
+
+_:node1hm16sit8x6138936 gndo:personalName "Карл I (Австро-Унгария)" .
+
+<https://d-nb.info/gnd/118560077> gndo:preferredNameForThePerson "Karl I., Österreich, Kaiser";
+  gndo:preferredNameEntityForThePerson _:node1hm16sit8x6138937 .
+
+_:node1hm16sit8x6138937 gndo:personalName "Karl";
+  gndo:counting "I.";
+  gndo:nameAddition "Österreich, Kaiser" .
+
+<https://d-nb.info/gnd/118560077> gndo:familialRelationship <https://d-nb.info/gnd/118637126>;
+  agrelon:hasSpouse <https://d-nb.info/gnd/118637126>;
+  gndo:familialRelationship <https://d-nb.info/gnd/138172234>;
+  agrelon:hasParent <https://d-nb.info/gnd/138172234>;
+  gndo:familialRelationship <https://d-nb.info/gnd/118535005>;
+  agrelon:hasAuntUncle <https://d-nb.info/gnd/118535005>;
+  gndo:familialRelationship <https://d-nb.info/gnd/118699873>;
+  agrelon:hasChild <https://d-nb.info/gnd/118699873>;
+  gndo:relatedTerm <https://d-nb.info/gnd/1268976083>;
+  gndo:gender <https://d-nb.info/standards/vocab/gnd/gender#male>;
+  gndo:titleOfNobility <https://d-nb.info/gnd/4114123-4>, <https://d-nb.info/gnd/4031516-2>;
+  gndo:gndSubjectCategory <https://d-nb.info/standards/vocab/gnd/gnd-sc#16.5p>;
+  gndo:geographicAreaCode <https://d-nb.info/standards/vocab/gnd/geographic-area-code#XA-AT>,
+    <https://d-nb.info/standards/vocab/gnd/geographic-area-code#XA-CH>, <https://d-nb.info/standards/vocab/gnd/geographic-area-code#XA-HU>,
+    <https://d-nb.info/standards/vocab/gnd/geographic-area-code#XA-PT>;
+  gndo:biographicalOrHistoricalInformation "1914 Thronanwärter, 1916-1918 Kaiser von Österreich und König von Ungarn, 1917 Sonderfriedensbemühungen, 1918 Regierungsverzicht und schweizer Exil; 1921 zwei gescheiterte Versuche der Rückkehr auf den ungarischen Thron; 2004 Seligsprechung durch Papst Johannes Paul II."@de;
+  gndo:placeOfBirth <https://d-nb.info/gnd/4102987-2>;
+  gndo:placeOfActivity <https://d-nb.info/gnd/4066009-6>, <https://d-nb.info/gnd/4008684-7>;
+  gndo:placeOfExile <https://d-nb.info/gnd/4354758-8>;
+  gndo:placeOfDeath <https://d-nb.info/gnd/4299432-9>;
+  owl:sameAs <https://www.filmportal.de/EF3E7D3A0E4C4C51A72208047CBD0DAB>;
+  gndo:professionOrOccupation _:node1hm16sit8x6138938 .
+
+_:node1hm16sit8x6138938 a rdf:Seq;
+  rdf:_1 <https://d-nb.info/gnd/4043375-4> .
+
+<https://d-nb.info/gnd/118560077> gndo:dateOfBirth "1887-08-17"^^xsd:date;
+  gndo:dateOfDeath "1922-04-01"^^xsd:date .
+

@@ -105,7 +105,6 @@ IN;
      * @return void
      */
     public function testUtfChunk(): void {
-        $input   .= '# ' . str_repeat('𐍈', TriGParser::CHUNK_SIZE);
         $parser  = new TriGParser(new DF());
         $iter    = $parser->parse(file_get_contents(__DIR__ . '/files/issue4.ttl'));
         $triples = iterator_to_array($iter);
