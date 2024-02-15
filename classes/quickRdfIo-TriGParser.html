@@ -187,10 +187,10 @@
 
 </h4>
 <dl class="phpdocumentor-table-of-contents">
-            <dt class="phpdocumentor-table-of-contents__entry -constant -private">
+            <dt class="phpdocumentor-table-of-contents__entry -constant -public">
     <a href="classes/quickRdfIo-TriGParser.html#constant_CHUNK_SIZE">CHUNK_SIZE</a>
     <span>
-        &nbsp;= 100                            </span>
+        &nbsp;= 8192                            </span>
 </dt>
 
     </dl>
@@ -202,6 +202,12 @@
 
 </h4>
 <dl class="phpdocumentor-table-of-contents">
+            <dt class="phpdocumentor-table-of-contents__entry -property -private">
+    <a href="classes/quickRdfIo-TriGParser.html#property_chunk">$chunk</a>
+    <span>
+                        &nbsp;: string            </span>
+</dt>
+
             <dt class="phpdocumentor-table-of-contents__entry -property -private">
     <a href="classes/quickRdfIo-TriGParser.html#property_dataFactory">$dataFactory</a>
     <span>
@@ -332,7 +338,7 @@
             <a href="classes/quickRdfIo-TriGParser.html#constants" class="headerlink"><i class="fas fa-link"></i></a>
 
         </h3>
-                    <article class="phpdocumentor-element -constant -private ">
+                    <article class="phpdocumentor-element -constant -public ">
     <h4 class="phpdocumentor-element__name" id="constant_CHUNK_SIZE">
         CHUNK_SIZE
         <a href="classes/quickRdfIo-TriGParser.html#constant_CHUNK_SIZE" class="headerlink"><i class="fas fa-link"></i></a>
@@ -348,10 +354,10 @@
 
     
     <code class="phpdocumentor-signature phpdocumentor-code ">
-    <span class="phpdocumentor-signature__visibility">private</span>
+    <span class="phpdocumentor-signature__visibility">public</span>
         <span class="phpdocumentor-signature__type">mixed</span>
     <span class="phpdocumentor-signature__name">CHUNK_SIZE</span>
-    = <span class="phpdocumentor-signature__default-value">100</span>
+    = <span class="phpdocumentor-signature__default-value">8192</span>
 </code>
 
 
@@ -369,6 +375,39 @@
             <a href="classes/quickRdfIo-TriGParser.html#properties" class="headerlink"><i class="fas fa-link"></i></a>
 
         </h3>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
+            -private
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="property_chunk">
+        $chunk
+        <a href="classes/quickRdfIo-TriGParser.html#property_chunk" class="headerlink"><i class="fas fa-link"></i></a>
+
+        <span class="phpdocumentor-element__modifiers">
+                                </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/TriGParser.php"><a href="files/src-quickrdfio-trigparser.html"><abbr title="src/quickRdfIo/TriGParser.php">TriGParser.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">58</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+        <span class="phpdocumentor-signature__type">string</span>
+    <span class="phpdocumentor-signature__name">$chunk</span>
+    </code>
+
+    
+    
+    
+
+</article>
                     <article
         class="
             phpdocumentor-element
@@ -452,7 +491,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/TriGParser.php"><a href="files/src-quickrdfio-trigparser.html"><abbr title="src/quickRdfIo/TriGParser.php">TriGParser.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">64</span>
+    <span class="phpdocumentor-element-found-in__line">65</span>
 
     </aside>
 
@@ -551,7 +590,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/TriGParser.php"><a href="files/src-quickrdfio-trigparser.html"><abbr title="src/quickRdfIo/TriGParser.php">TriGParser.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">70</span>
+    <span class="phpdocumentor-element-found-in__line">71</span>
 
     </aside>
 
@@ -584,7 +623,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/TriGParser.php"><a href="files/src-quickrdfio-trigparser.html"><abbr title="src/quickRdfIo/TriGParser.php">TriGParser.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">63</span>
+    <span class="phpdocumentor-element-found-in__line">64</span>
 
     </aside>
 
@@ -655,7 +694,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/TriGParser.php"><a href="files/src-quickrdfio-trigparser.html"><abbr title="src/quickRdfIo/TriGParser.php">TriGParser.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">81</span>
+    <span class="phpdocumentor-element-found-in__line">82</span>
 
     </aside>
 
@@ -733,7 +772,7 @@ to be passed to the pietercolpaert\hardf\TriGParser constructor</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/TriGParser.php"><a href="files/src-quickrdfio-trigparser.html"><abbr title="src/quickRdfIo/TriGParser.php">TriGParser.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">89</span>
+    <span class="phpdocumentor-element-found-in__line">90</span>
 
     </aside>
 
@@ -764,7 +803,7 @@ to be passed to the pietercolpaert\hardf\TriGParser constructor</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/TriGParser.php"><a href="files/src-quickrdfio-trigparser.html"><abbr title="src/quickRdfIo/TriGParser.php">TriGParser.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">113</span>
+    <span class="phpdocumentor-element-found-in__line">115</span>
 
     </aside>
 
@@ -799,7 +838,7 @@ to be passed to the pietercolpaert\hardf\TriGParser constructor</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/TriGParser.php"><a href="files/src-quickrdfio-trigparser.html"><abbr title="src/quickRdfIo/TriGParser.php">TriGParser.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">117</span>
+    <span class="phpdocumentor-element-found-in__line">119</span>
 
     </aside>
 
@@ -830,7 +869,7 @@ to be passed to the pietercolpaert\hardf\TriGParser constructor</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/TriGParser.php"><a href="files/src-quickrdfio-trigparser.html"><abbr title="src/quickRdfIo/TriGParser.php">TriGParser.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">121</span>
+    <span class="phpdocumentor-element-found-in__line">123</span>
 
     </aside>
 
@@ -906,7 +945,7 @@ to be passed to the pietercolpaert\hardf\TriGParser constructor</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/TriGParser.php"><a href="files/src-quickrdfio-trigparser.html"><abbr title="src/quickRdfIo/TriGParser.php">TriGParser.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">98</span>
+    <span class="phpdocumentor-element-found-in__line">99</span>
 
     </aside>
 
@@ -951,7 +990,7 @@ to be passed to the pietercolpaert\hardf\TriGParser constructor</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/TriGParser.php"><a href="files/src-quickrdfio-trigparser.html"><abbr title="src/quickRdfIo/TriGParser.php">TriGParser.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">161</span>
+    <span class="phpdocumentor-element-found-in__line">179</span>
 
     </aside>
 
@@ -982,7 +1021,7 @@ to be passed to the pietercolpaert\hardf\TriGParser constructor</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/TriGParser.php"><a href="files/src-quickrdfio-trigparser.html"><abbr title="src/quickRdfIo/TriGParser.php">TriGParser.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">169</span>
+    <span class="phpdocumentor-element-found-in__line">187</span>
 
     </aside>
 
@@ -1154,6 +1193,7 @@ to be passed to the pietercolpaert\hardf\TriGParser constructor</p>
                             <li class="phpdocumentor-on-this-page-section__title">Properties</li>
                 <li>
                     <ul class="phpdocumentor-list -clean">
+                                                    <li><a href="classes/quickRdfIo-TriGParser.html#property_chunk">$chunk<a href="classes/quickRdfIo-TriGParser.html"></li>
                                                     <li><a href="classes/quickRdfIo-TriGParser.html#property_dataFactory">$dataFactory<a href="classes/quickRdfIo-TriGParser.html"></li>
                                                     <li><a href="classes/quickRdfIo-TriGParser.html#property_input">$input<a href="classes/quickRdfIo-TriGParser.html"></li>
                                                     <li><a href="classes/quickRdfIo-TriGParser.html#property_n">$n<a href="classes/quickRdfIo-TriGParser.html"></li>

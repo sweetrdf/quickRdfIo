@@ -1141,6 +1141,11 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/quickRdfIo-TriGParser.html#property_input"
         },                {
+            "fqsen": "\\quickRdfIo\\TriGParser\u003A\u003A\u0024chunk",
+            "name": "chunk",
+            "summary": "",
+            "url": "classes/quickRdfIo-TriGParser.html#property_chunk"
+        },                {
             "fqsen": "\\quickRdfIo\\TriGParser\u003A\u003A\u0024quadsBuffer",
             "name": "quadsBuffer",
             "summary": "",
