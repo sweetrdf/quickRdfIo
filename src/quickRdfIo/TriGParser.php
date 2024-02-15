@@ -44,7 +44,7 @@ class TriGParser implements iParser, iQuadIterator {
 
     use TmpStreamParserTrait;
 
-    private const CHUNK_SIZE = 100; // if it's too big, the regexp used by the hardf to match the prefixed URIs may not match
+    const CHUNK_SIZE = 8192;
 
     private iDataFactory $dataFactory;
 
@@ -55,6 +55,7 @@ class TriGParser implements iParser, iQuadIterator {
     private array $options;
     private Parser $parser;
     private StreamInterface $input;
+    private string $chunk;
 
     /**
      *
@@ -105,6 +106,7 @@ class TriGParser implements iParser, iQuadIterator {
 
         $this->input       = $input;
         $this->n           = -1;
+        $this->chunk       = '';
         $this->quadsBuffer = new ArrayIterator();
         $this->parser      = new Parser($this->options, null, $this->prefixCallback);
         return $this;
@@ -149,7 +151,24 @@ class TriGParser implements iParser, iQuadIterator {
                 }
             });
             while (!$this->input->eof() && $this->quadsBuffer->count() === 0) {
-                $this->parser->parseChunk($this->input->read(self::CHUNK_SIZE));
+                $p           = strlen($this->chunk) + self::CHUNK_SIZE - 1;
+                $this->chunk .= $this->input->read(self::CHUNK_SIZE);
+                $cp          = ord($this->chunk[$p]);
+                if ($cp < 127) {
+                    // chunk ends with a single-byte UTF-8 character - just parse whole chunk
+                    $this->parser->parseChunk($this->chunk);
+                    $this->chunk = '';
+                } else {
+                    // find the position of the first byte of the UTF-8 character ending the chunk
+                    // parse the chunk part excluding it
+                    while ($cp < 192) {
+                        $p--;
+                        $cp = ord($this->chunk[$p]);
+                    }
+                    $this->parser->parseChunk(substr($this->chunk, 0, $p));
+                    $this->chunk = substr($this->chunk, $p);
+                }
+                $this->parser->parseChunk($x);
             }
             if ($this->input->eof()) {
                 $this->parser->end();

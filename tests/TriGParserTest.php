@@ -82,21 +82,33 @@ IN;
         $t2     = iterator_to_array($parser->parse($input));
         $this->assertEquals($t1, $t2);
     }
-    
+
     public function testMatchesNQuadsSerializer(): void {
         $stream = fopen(__DIR__ . '/files/puzzle4d_100k.nt', 'r');
         if ($stream) {
             $trig = new TriGParser(new DF());
-            $d1 = new Dataset();
+            $d1   = new Dataset();
             $d1->add($trig->parseStream($stream));
-            
+
             fseek($stream, 0);
             $quads = new NQuadsParser(new DF());
-            $d2 = new Dataset();
+            $d2    = new Dataset();
             $d2->add($quads->parseStream($stream));
-            
+
             $this->assertEquals(count($d1), count($d2));
             $this->assertTrue($d1->equals($d2));
         }
+    }
+
+    /**
+     * See https://github.com/sweetrdf/quickRdfIo/issues/4
+     * @return void
+     */
+    public function testUtfChunk(): void {
+        $input   .= '# ' . str_repeat('𐍈', TriGParser::CHUNK_SIZE);
+        $parser  = new TriGParser(new DF());
+        $iter    = $parser->parse(file_get_contents(__DIR__ . '/files/issue4.ttl'));
+        $triples = iterator_to_array($iter);
+        $this->assertCount(148, $triples);
     }
 }
