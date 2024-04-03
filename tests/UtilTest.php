@@ -44,6 +44,16 @@ class UtilTest extends \PHPUnit\Framework\TestCase {
         self::$dfSimple = new \simpleRdf\DataFactory();
     }
 
+    public function testGetParser(): void {
+        $parser = Util::getParser('rdfxml', self::$dfQuick);
+        $this->assertTrue($parser instanceof RdfXmlParser);
+    }
+
+    public function testGetSerializer(): void {
+        $serializer = Util::getSerializer('rdfxml');
+        $this->assertTrue($serializer instanceof RdfXmlSerializer);
+    }
+
     public function testParse(): void {
         $url     = 'https://www.w3.org/2000/10/rdf-tests/RDF-Model-Syntax_1.0/ms_7.2_1.rdf';
         $client  = new \GuzzleHttp\Client();

@@ -82,6 +82,7 @@ class Util {
             'application/n-quads' => new NQuadsSerializer(),
             'xml',
             'rdf',
+            'rdfxml', // EasyRdf is using it in Format::guessFormat
             'application/rdf+xml',
             'text/rdf',
             'application/xml',
@@ -135,6 +136,7 @@ class Util {
             'application/n-quads' => new NQuadsParser($dataFactory, false, NQuadsParser::MODE_QUADS_STAR),
             'xml',
             'rdf',
+            'rdfxml', // EasyRdf is using it in Format::guessFormat
             'application/rdf+xml',
             'text/rdf',
             'application/xml',
