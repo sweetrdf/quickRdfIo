@@ -249,4 +249,16 @@ class NQuadsParserTest extends \PHPUnit\Framework\TestCase {
             $this->assertEquals('Input has to be a resource or Psr\Http\Message\StreamInterface object', $ex->getMessage());
         }
     }
+
+    /**
+     * Demonstrates the problem described in https://github.com/sweetrdf/quickRdfIo/issues/7
+     */
+    public function testMultextEast(): void {
+        $counter = 0;
+        $iterator = Util::parse(__DIR__.'/files/multext-east.owl.nt', new DF(), 'ntriples');
+        foreach ($iterator as $i) {
+            $counter++;
+        }
+        $this->assertEquals(2712, $counter);
+    }
 }
