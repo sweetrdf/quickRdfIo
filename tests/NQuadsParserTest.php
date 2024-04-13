@@ -249,4 +249,16 @@ class NQuadsParserTest extends \PHPUnit\Framework\TestCase {
             $this->assertEquals('Input has to be a resource or Psr\Http\Message\StreamInterface object', $ex->getMessage());
         }
     }
-}
+    
+    /**
+     * https://github.com/sweetrdf/quickRdfIo/issues/7
+     */
+    public function testIssue7(): void {
+        $input = __DIR__ . '/files/issue7.nt';
+        
+        $parser = new NQuadsParser(new DF(), false, NQuadsParser::MODE_TRIPLES);
+        $this->assertCount(2, iterator_to_array($parser->parseStream(fopen($input, 'r'))));
+        
+        $parser = new NQuadsParser(new DF(), false, NQuadsParser::MODE_TRIPLES_STAR);
+        $this->assertCount(2, iterator_to_array($parser->parseStream(fopen($input, 'r'))));
+    }}
