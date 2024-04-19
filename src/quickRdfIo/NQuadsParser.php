@@ -62,8 +62,7 @@ class NQuadsParser implements iParser, iQuadIterator {
     const BLANKNODE3_STRICT = '[-0-9_:A-Za-z\x{00B7}\x{00C0}-\x{00D6}\x{00D8}-\x{00F6}\x{00F8}-\x{02FF}\x{0300}-\x{037D}\x{037F}-\x{1FFF}\x{200C}-\x{200D}\x{203F}-\x{2040}\x{2070}-\x{218F}\x{2C00}-\x{2FEF}\x{3001}-\x{D7FF}\x{F900}-\x{FDCF}\x{FDF0}-\x{FFFD}\x{10000}-\x{EFFFF}.]';
     const BLANKNODE4_STRICT = '[-0-9_:A-Za-z\x{00B7}\x{00C0}-\x{00D6}\x{00D8}-\x{00F6}\x{00F8}-\x{02FF}\x{0300}-\x{037D}\x{037F}-\x{1FFF}\x{200C}-\x{200D}\x{203F}-\x{2040}\x{2070}-\x{218F}\x{2C00}-\x{2FEF}\x{3001}-\x{D7FF}\x{F900}-\x{FDCF}\x{FDF0}-\x{FFFD}\x{10000}-\x{EFFFF}]';
     const BLANKNODE         = '(_:[^\s<.]+)';
-    const LITERAL_STRICT    = '"((?>[^\x{22}\x{5C}\x{0A}\x{0D}]|\\\\[tbnrf"\'\\\\]|\\\\u[0-9A-Fa-f]{4}|\\\\U[0-9A-Fa-f]{8})*)"';
-    const LITERAL           = '"((?>[^"]|\\")*)"';
+    const LITERAL           = '"((?>[^\x{22}\x{5C}\x{0A}\x{0D}]|\\\\[tbnrf"\'\\\\]|\\\\u[0-9A-Fa-f]{4}|\\\\U[0-9A-Fa-f]{8})*)"';
     const STAR_START        = '%\\G\s*<<%';
     const STAR_END          = '%\\G\s*>>%';
     const READ_BUF_SIZE     = 8096;
@@ -155,7 +154,7 @@ class NQuadsParser implements iParser, iQuadIterator {
             $iri     = self::IRIREF_STRICT;
             $blank   = '(' . self::BLANKNODE1_STRICT . self::BLANKNODE2_STRICT . '(?:' . self::BLANKNODE3_STRICT . '*' . self::BLANKNODE4_STRICT . ')?)';
             $lang    = self::LANGTAG_STRICT;
-            $literal = self::LITERAL_STRICT;
+            $literal = self::LITERAL;
             $lineEnd = "\\s*\\.$comment$eol";
             $flags   = 'u';
         } else {
@@ -166,7 +165,7 @@ class NQuadsParser implements iParser, iQuadIterator {
             $lang    = self::LANGTAG;
             $literal = self::LITERAL;
             $lineEnd = "\\s*\\.";
-            $flags   = '';
+            $flags   = 'u';
         }
         $graph = '';
         if ($mode === self::MODE_QUADS || $mode === self::MODE_QUADS_STAR) {
@@ -259,8 +258,8 @@ class NQuadsParser implements iParser, iQuadIterator {
             while (true) {
                 $n++;
                 $this->line = $this->readLine();
-                $ret        = preg_match($this->regexp, $this->line, $matches, PREG_UNMATCHED_AS_NULL);
-                if (0 === (int) $ret && !empty(trim($this->line))) {
+                $ret        = (int) preg_match($this->regexp, $this->line, $matches, PREG_UNMATCHED_AS_NULL);
+                if (0 === $ret && !empty(trim($this->line))) {
                     throw new RdfIoException("Can't parse line $n with error '" . preg_last_error_msg() . "': " . $this->line);
                 }
                 if (($matches[3] ?? null) !== null) {
@@ -339,7 +338,7 @@ class NQuadsParser implements iParser, iQuadIterator {
         if (preg_match(self::STAR_START, $this->line, $matches, 0, $this->offset)) {
             $this->offset += strlen($matches[0]);
             $this->level++;
-            $sbj          = $this->parseStar();
+            $sbj          = $this->parseStar($line);
             $ret          = preg_match($this->regexpPred, $this->line, $matches, PREG_UNMATCHED_AS_NULL, $this->offset);
             if (0 === (int) $ret) {
                 throw new RdfIoException("Failed parsing predicate on line $line with error '" . preg_last_error_msg() . "': " . substr($this->line, $this->offset));
@@ -362,7 +361,7 @@ class NQuadsParser implements iParser, iQuadIterator {
         if (preg_match(self::STAR_START, $this->line, $matches, 0, $this->offset)) {
             $this->offset += strlen($matches[0]);
             $this->level++;
-            $obj          = $this->parseStar();
+            $obj          = $this->parseStar($line);
             $ret          = preg_match($this->regexpGraph, $this->line, $matches, PREG_UNMATCHED_AS_NULL, $this->offset);
             $this->offset += strlen($matches[0]);
             if (($matches[1] ?? null) !== null) {
@@ -371,8 +370,8 @@ class NQuadsParser implements iParser, iQuadIterator {
                 $graph = $this->dataFactory::blankNode($matches[2]);
             }
         } else {
-            $ret = preg_match($this->regexpObjGraph, $this->line, $matches, PREG_UNMATCHED_AS_NULL, $this->offset);
-            if (0 === (int) $ret) {
+            $ret = (int) preg_match($this->regexpObjGraph, $this->line, $matches, PREG_UNMATCHED_AS_NULL, $this->offset);
+            if (0 === $ret) {
                 throw new RdfIoException("Can't parse object on line $line with error '" . preg_last_error_msg() . "': " . substr($this->line, $this->offset));
             }
             $this->offset += strlen($matches[0]);

@@ -78,7 +78,7 @@ class NQuadsParserTest extends \PHPUnit\Framework\TestCase {
      */
     private function readTestLines(string $filename): array {
         $tests = [];
-        $data = file($filename) ?: throw new \RuntimeException("Failed to open $filename");
+        $data  = file($filename) ?: throw new \RuntimeException("Failed to open $filename");
         foreach ($data as $n => $l) {
             if (substr($l, 0, 1) !== '#') {
                 $tests[$n + 1] = $l;
@@ -249,16 +249,19 @@ class NQuadsParserTest extends \PHPUnit\Framework\TestCase {
             $this->assertEquals('Input has to be a resource or Psr\Http\Message\StreamInterface object', $ex->getMessage());
         }
     }
-    
+
     /**
      * https://github.com/sweetrdf/quickRdfIo/issues/7
      */
     public function testIssue7(): void {
-        $input = __DIR__ . '/files/issue7.nt';
-        
-        $parser = new NQuadsParser(new DF(), false, NQuadsParser::MODE_TRIPLES);
-        $this->assertCount(2, iterator_to_array($parser->parseStream(fopen($input, 'r'))));
-        
-        $parser = new NQuadsParser(new DF(), false, NQuadsParser::MODE_TRIPLES_STAR);
-        $this->assertCount(2, iterator_to_array($parser->parseStream(fopen($input, 'r'))));
-    }}
+        $input   = __DIR__ . '/files/issue7.nt';
+        $df      = new DF();
+        $dataset = new \quickRdf\Dataset();
+
+        foreach ($this->getModes(null, null, null)as $i) {
+            $parser = new NQuadsParser($df, $i->strict, $i->mode);
+            $dataset->add($parser->parseStream(fopen($input, 'r')));
+            $this->assertCount(2, $dataset);
+        }
+    }
+}
