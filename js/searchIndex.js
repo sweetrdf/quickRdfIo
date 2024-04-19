@@ -406,11 +406,6 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/quickRdfIo-NQuadsParser.html#constant_BLANKNODE"
         },                {
-            "fqsen": "\\quickRdfIo\\NQuadsParser\u003A\u003ALITERAL_STRICT",
-            "name": "LITERAL_STRICT",
-            "summary": "",
-            "url": "classes/quickRdfIo-NQuadsParser.html#constant_LITERAL_STRICT"
-        },                {
             "fqsen": "\\quickRdfIo\\NQuadsParser\u003A\u003ALITERAL",
             "name": "LITERAL",
             "summary": "",
