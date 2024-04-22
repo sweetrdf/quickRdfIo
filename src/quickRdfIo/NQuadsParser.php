@@ -343,27 +343,27 @@ class NQuadsParser implements iParser, iQuadIterator {
             if (0 === (int) $ret) {
                 throw new RdfIoException("Failed parsing predicate on line $line with error '" . preg_last_error_msg() . "': " . substr($this->line, $this->offset));
             }
-            $this->offset += strlen($matches[0]);
-            $pred         = $this->dataFactory::namedNode($matches[1]);
+            $this->offset += strlen((string) $matches[0]);
+            $pred         = $this->dataFactory::namedNode((string) $matches[1]);
         } else {
             $ret = preg_match($this->regexpSbjPred, $this->line, $matches, PREG_UNMATCHED_AS_NULL, $this->offset);
             if (0 === (int) $ret) {
                 throw new RdfIoException("Failed parsing subject and predicate on line $line with error '" . preg_last_error_msg() . "': " . substr($this->line, $this->offset));
             }
-            $this->offset += strlen($matches[0]);
+            $this->offset += strlen((string) $matches[0]);
             if ($matches[1] !== null) {
                 $sbj = $this->dataFactory::namedNode($this->unescape($matches[1]));
             } else {
                 $sbj = $this->dataFactory::blankNode($matches[2]);
             }
-            $pred = $this->dataFactory::namedNode($matches[3]);
+            $pred = $this->dataFactory::namedNode((string) $matches[3]);
         }
         if (preg_match(self::STAR_START, $this->line, $matches, 0, $this->offset)) {
             $this->offset += strlen($matches[0]);
             $this->level++;
             $obj          = $this->parseStar($line);
             $ret          = preg_match($this->regexpGraph, $this->line, $matches, PREG_UNMATCHED_AS_NULL, $this->offset);
-            $this->offset += strlen($matches[0]);
+            $this->offset += strlen((string) $matches[0]);
             if (($matches[1] ?? null) !== null) {
                 $graph = $this->dataFactory::namedNode($matches[1]);
             } else if (($matches[2] ?? null) !== null) {
@@ -374,7 +374,7 @@ class NQuadsParser implements iParser, iQuadIterator {
             if (0 === $ret) {
                 throw new RdfIoException("Can't parse object on line $line with error '" . preg_last_error_msg() . "': " . substr($this->line, $this->offset));
             }
-            $this->offset += strlen($matches[0]);
+            $this->offset += strlen((string) $matches[0]);
             if ($matches[1] !== null) {
                 $obj = $this->dataFactory::namedNode($matches[1]);
             } elseif ($matches[2] !== null) {
