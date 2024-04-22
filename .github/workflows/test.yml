@@ -6,7 +6,7 @@ jobs:
   phpunit:
     strategy:
       matrix:
-        php: [8.0, 8.1, 8.2, 8.3, 8.4]
+        php: [8.1, 8.2, 8.3, 8.4]
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
@@ -31,16 +31,6 @@ jobs:
         export COVERALLS_RUN_LOCALLY=1
         export COVERALLS_REPO_TOKEN=${{ secrets.coverallsToken }}
         php vendor/bin/php-coveralls -v
-    - name: document
-      run: |
-        docker run --rm -v $(pwd):/data phpdoc/phpdoc:3 --directory=src --directory=vendor/sweetrdf/rdf-interface/src --directory=vendor/sweetrdf/rdf-helpers/src/ --directory=vendor/ml/json-ld --target=docs
-        git fetch && git checkout docs --
-        for i in `ls -1 | grep -v ^docs$`; do rm -fR $i ; done
-        cp -R docs/* .
-        git config user.email "workflow@github.actions"
-        git config user.name "Github Actions Workflow"
-        git add * || true
-        git commit -a -m 'Automatic documentation generation' && git push origin docs || true
   phpstan:
     runs-on: ubuntu-latest
     steps:
