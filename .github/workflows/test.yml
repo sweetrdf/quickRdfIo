@@ -4,14 +4,24 @@ on: push
 
 jobs:
   phpunit:
+    strategy:
+      matrix:
+        php: [8.1, 8.2, 8.3, 8.4]
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
-    - uses: actions/cache@v2
+    - uses: actions/checkout@v4
+    - uses: shivammathur/setup-php@v2
+      with:
+        php-version: ${{ matrix.php }}
+        extensions: dom,json,mbstring,pcre,xmlreader
+        coverage: xdebug
+      env:
+        fail-fast: true
+    - uses: actions/cache@v4
       with: 
         path: vendor
         key: ${{ runner.os }}-composer-${{ hashFiles('**/composer.lock') }}
-        restore-keys: ${{ runner.os }}-composer-
+        restore-keys: ${{ runner.os }}-${{ matrix.php }}-composer-
     - name: composer
       run: composer update
     - name: phpunit
@@ -21,16 +31,6 @@ jobs:
         export COVERALLS_RUN_LOCALLY=1
         export COVERALLS_REPO_TOKEN=${{ secrets.coverallsToken }}
         php vendor/bin/php-coveralls -v
-    - name: document
-      run: |
-        docker run --rm -v $(pwd):/data phpdoc/phpdoc:3 --directory=src --directory=vendor/sweetrdf/rdf-interface/src --directory=vendor/sweetrdf/rdf-helpers/src/ --directory=vendor/ml/json-ld --target=docs
-        git fetch && git checkout docs --
-        for i in `ls -1 | grep -v ^docs$`; do rm -fR $i ; done
-        cp -R docs/* .
-        git config user.email "workflow@github.actions"
-        git config user.name "Github Actions Workflow"
-        git add * || true
-        git commit -a -m 'Automatic documentation generation' && git push origin docs || true
   phpstan:
     runs-on: ubuntu-latest
     steps:
