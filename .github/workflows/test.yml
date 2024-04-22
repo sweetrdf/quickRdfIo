@@ -4,14 +4,24 @@ on: push
 
 jobs:
   phpunit:
+    strategy:
+      matrix:
+        php: [8.0, 8.1, 8.2, 8.3, 8.4]
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
-    - uses: actions/cache@v2
+    - uses: actions/checkout@v4
+    - uses: shivammathur/setup-php@v2
+      with:
+        php-version: ${{ matrix.php }}
+        extensions: dom,json,mbstring,pcre,xmlreader
+        coverage: xdebug
+      env:
+        fail-fast: true
+    - uses: actions/cache@v4
       with: 
         path: vendor
         key: ${{ runner.os }}-composer-${{ hashFiles('**/composer.lock') }}
-        restore-keys: ${{ runner.os }}-composer-
+        restore-keys: ${{ runner.os }}-${{ matrix.php }}-composer-
     - name: composer
       run: composer update
     - name: phpunit
