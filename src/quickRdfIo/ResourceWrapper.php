@@ -77,7 +77,11 @@ class ResourceWrapper implements \Psr\Http\Message\StreamInterface {
     }
 
     public function getContents(): string {
-        return stream_get_contents($this->res) ?: throw new RuntimeException("Reading from resource/stream failed");
+        $data = stream_get_contents($this->res);
+        if ($data === false) {
+            throw new RuntimeException("Reading from resource/stream failed");
+        }
+        return $data;
     }
 
     /**
@@ -123,7 +127,11 @@ class ResourceWrapper implements \Psr\Http\Message\StreamInterface {
      * @return string
      */
     public function read($length): string {
-        return stream_get_contents($this->res, $length) ?: throw new RuntimeException("Reading from resource/stream failed");
+        $data = stream_get_contents($this->res, $length);
+        if ($data === false) {
+            throw new RuntimeException("Reading from resource/stream failed");
+        }
+        return $data;
     }
 
     public function rewind(): void {
