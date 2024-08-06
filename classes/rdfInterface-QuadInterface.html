@@ -131,6 +131,7 @@
 
 
 
+
     <h5 class="phpdocumentor-tag-list__heading" id="tags">
         Tags
         <a href="classes/rdfInterface-QuadInterface.html#tags" class="headerlink"><i class="fas fa-link"></i></a>
@@ -146,7 +147,9 @@
 </section>
 
                                     </dd>
-                                            </dl>
+                                                                </dl>
+
+
 
 
 
@@ -172,68 +175,72 @@
 </h4>
 <dl class="phpdocumentor-table-of-contents">
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/rdfInterface-TermCompareInterface.html#method___toString">__toString()</a>
+    <a class="" href="classes/rdfInterface-TermCompareInterface.html#method___toString">__toString()</a>
     <span>
                                 &nbsp;: string    </span>
 </dt>
 <dd>Should return:</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/rdfInterface-TermCompareInterface.html#method_equals">equals()</a>
+    <a class="" href="classes/rdfInterface-TermCompareInterface.html#method_equals">equals()</a>
     <span>
                                 &nbsp;: bool    </span>
 </dt>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/rdfInterface-QuadCompareInterface.html#method_getGraph">getGraph()</a>
+    <a class="" href="classes/rdfInterface-QuadInterface.html#method_getGraph">getGraph()</a>
     <span>
-                                &nbsp;: <a href="classes/rdfInterface-TermCompareInterface.html"><abbr title="\rdfInterface\TermCompareInterface">TermCompareInterface</abbr></a>|null    </span>
+                                &nbsp;: <a href="classes/rdfInterface-NamedNodeInterface.html"><abbr title="\rdfInterface\NamedNodeInterface">NamedNodeInterface</abbr></a>|<a href="classes/rdfInterface-BlankNodeInterface.html"><abbr title="\rdfInterface\BlankNodeInterface">BlankNodeInterface</abbr></a>|<a href="classes/rdfInterface-DefaultGraphInterface.html"><abbr title="\rdfInterface\DefaultGraphInterface">DefaultGraphInterface</abbr></a>    </span>
+</dt>
+<dd>Null is not allowed to deal with the ambiguity between DefaultGraph and
+null which mean the same (although it should be noted that all quads in
+NamedNode/BlankNode graphs also belong to the DefaultGraph).</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a class="" href="classes/rdfInterface-QuadInterface.html#method_getObject">getObject()</a>
+    <span>
+                                &nbsp;: <a href="classes/rdfInterface-TermInterface.html"><abbr title="\rdfInterface\TermInterface">TermInterface</abbr></a>    </span>
 </dt>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/rdfInterface-QuadCompareInterface.html#method_getObject">getObject()</a>
+    <a class="" href="classes/rdfInterface-QuadInterface.html#method_getPredicate">getPredicate()</a>
     <span>
-                                &nbsp;: <a href="classes/rdfInterface-TermCompareInterface.html"><abbr title="\rdfInterface\TermCompareInterface">TermCompareInterface</abbr></a>|null    </span>
+                                &nbsp;: <a href="classes/rdfInterface-NamedNodeInterface.html"><abbr title="\rdfInterface\NamedNodeInterface">NamedNodeInterface</abbr></a>    </span>
 </dt>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/rdfInterface-QuadCompareInterface.html#method_getPredicate">getPredicate()</a>
+    <a class="" href="classes/rdfInterface-QuadInterface.html#method_getSubject">getSubject()</a>
     <span>
-                                &nbsp;: <a href="classes/rdfInterface-TermCompareInterface.html"><abbr title="\rdfInterface\TermCompareInterface">TermCompareInterface</abbr></a>|null    </span>
+                                &nbsp;: <a href="classes/rdfInterface-TermInterface.html"><abbr title="\rdfInterface\TermInterface">TermInterface</abbr></a>    </span>
 </dt>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/rdfInterface-QuadCompareInterface.html#method_getSubject">getSubject()</a>
-    <span>
-                                &nbsp;: <a href="classes/rdfInterface-TermCompareInterface.html"><abbr title="\rdfInterface\TermCompareInterface">TermCompareInterface</abbr></a>|null    </span>
-</dt>
-
-            <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/rdfInterface-TermInterface.html#method_getValue">getValue()</a>
+    <a class="" href="classes/rdfInterface-QuadInterface.html#method_getValue">getValue()</a>
     <span>
                                 &nbsp;: mixed    </span>
 </dt>
+<dd>Should always throw the \BadMethodCallException</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/rdfInterface-QuadInterface.html#method_withGraph">withGraph()</a>
+    <a class="" href="classes/rdfInterface-QuadInterface.html#method_withGraph">withGraph()</a>
     <span>
                                 &nbsp;: <a href="classes/rdfInterface-QuadInterface.html"><abbr title="\rdfInterface\QuadInterface">QuadInterface</abbr></a>    </span>
 </dt>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/rdfInterface-QuadInterface.html#method_withObject">withObject()</a>
+    <a class="" href="classes/rdfInterface-QuadInterface.html#method_withObject">withObject()</a>
     <span>
                                 &nbsp;: <a href="classes/rdfInterface-QuadInterface.html"><abbr title="\rdfInterface\QuadInterface">QuadInterface</abbr></a>    </span>
 </dt>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/rdfInterface-QuadInterface.html#method_withPredicate">withPredicate()</a>
+    <a class="" href="classes/rdfInterface-QuadInterface.html#method_withPredicate">withPredicate()</a>
     <span>
                                 &nbsp;: <a href="classes/rdfInterface-QuadInterface.html"><abbr title="\rdfInterface\QuadInterface">QuadInterface</abbr></a>    </span>
 </dt>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/rdfInterface-QuadInterface.html#method_withSubject">withSubject()</a>
+    <a class="" href="classes/rdfInterface-QuadInterface.html#method_withSubject">withSubject()</a>
     <span>
                                 &nbsp;: <a href="classes/rdfInterface-QuadInterface.html"><abbr title="\rdfInterface\QuadInterface">QuadInterface</abbr></a>    </span>
 </dt>
@@ -242,8 +249,6 @@
 
 
 
-
-        
 
         
 
@@ -279,6 +284,7 @@
 
     <div class="phpdocumentor-label-line">
         </div>
+    
         <section class="phpdocumentor-description"><ul>
 <li>an URI for named nodes and blank nodes</li>
 <li>a value in lexical form for literals</li>
@@ -287,6 +293,8 @@
 </section>
 
     
+    
+
     
 
             <section>
@@ -321,6 +329,7 @@
     <div class="phpdocumentor-label-line">
         </div>
     
+    
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
@@ -331,6 +340,8 @@
                 
             </dd>
             </dl>
+
+    
 
     
 
@@ -348,30 +359,36 @@
 >
     <h4 class="phpdocumentor-element__name" id="method_getGraph">
         getGraph()
-        <a href="classes/rdfInterface-QuadCompareInterface.html#method_getGraph" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/rdfInterface-QuadInterface.html#method_getGraph" class="headerlink"><i class="fas fa-link"></i></a>
 
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="vendor/sweetrdf/rdf-interface/src/rdfInterface/QuadCompareInterface.php"><a href="files/vendor-sweetrdf-rdf-interface-src-rdfinterface-quadcompareinterface.html"><abbr title="vendor/sweetrdf/rdf-interface/src/rdfInterface/QuadCompareInterface.php">QuadCompareInterface.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="vendor/sweetrdf/rdf-interface/src/rdfInterface/QuadInterface.php"><a href="files/vendor-sweetrdf-rdf-interface-src-rdfinterface-quadinterface.html"><abbr title="vendor/sweetrdf/rdf-interface/src/rdfInterface/QuadInterface.php">QuadInterface.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">48</span>
+    <span class="phpdocumentor-element-found-in__line">53</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Null is not allowed to deal with the ambiguity between DefaultGraph and
+null which mean the same (although it should be noted that all quads in
+NamedNode/BlankNode graphs also belong to the DefaultGraph).</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">getGraph</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/rdfInterface-TermCompareInterface.html"><abbr title="\rdfInterface\TermCompareInterface">TermCompareInterface</abbr></a>|null</span></code>
+                    <span class="phpdocumentor-signature__name">getGraph</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/rdfInterface-NamedNodeInterface.html"><abbr title="\rdfInterface\NamedNodeInterface">NamedNodeInterface</abbr></a>|<a href="classes/rdfInterface-BlankNodeInterface.html"><abbr title="\rdfInterface\BlankNodeInterface">BlankNodeInterface</abbr></a>|<a href="classes/rdfInterface-DefaultGraphInterface.html"><abbr title="\rdfInterface\DefaultGraphInterface">DefaultGraphInterface</abbr></a></span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
     
     
     
+    
+
+    
 
             <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-        <span class="phpdocumentor-signature__response_type"><a href="classes/rdfInterface-TermCompareInterface.html"><abbr title="\rdfInterface\TermCompareInterface">TermCompareInterface</abbr></a>|null</span>
+        <span class="phpdocumentor-signature__response_type"><a href="classes/rdfInterface-NamedNodeInterface.html"><abbr title="\rdfInterface\NamedNodeInterface">NamedNodeInterface</abbr></a>|<a href="classes/rdfInterface-BlankNodeInterface.html"><abbr title="\rdfInterface\BlankNodeInterface">BlankNodeInterface</abbr></a>|<a href="classes/rdfInterface-DefaultGraphInterface.html"><abbr title="\rdfInterface\DefaultGraphInterface">DefaultGraphInterface</abbr></a></span>
             </section>
 
 </article>
@@ -383,30 +400,33 @@
 >
     <h4 class="phpdocumentor-element__name" id="method_getObject">
         getObject()
-        <a href="classes/rdfInterface-QuadCompareInterface.html#method_getObject" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/rdfInterface-QuadInterface.html#method_getObject" class="headerlink"><i class="fas fa-link"></i></a>
 
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="vendor/sweetrdf/rdf-interface/src/rdfInterface/QuadCompareInterface.php"><a href="files/vendor-sweetrdf-rdf-interface-src-rdfinterface-quadcompareinterface.html"><abbr title="vendor/sweetrdf/rdf-interface/src/rdfInterface/QuadCompareInterface.php">QuadCompareInterface.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="vendor/sweetrdf/rdf-interface/src/rdfInterface/QuadInterface.php"><a href="files/vendor-sweetrdf-rdf-interface-src-rdfinterface-quadinterface.html"><abbr title="vendor/sweetrdf/rdf-interface/src/rdfInterface/QuadInterface.php">QuadInterface.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">46</span>
+    <span class="phpdocumentor-element-found-in__line">38</span>
 
     </aside>
 
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">getObject</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/rdfInterface-TermCompareInterface.html"><abbr title="\rdfInterface\TermCompareInterface">TermCompareInterface</abbr></a>|null</span></code>
+                    <span class="phpdocumentor-signature__name">getObject</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/rdfInterface-TermInterface.html"><abbr title="\rdfInterface\TermInterface">TermInterface</abbr></a></span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
     
     
     
+    
+
+    
 
             <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-        <span class="phpdocumentor-signature__response_type"><a href="classes/rdfInterface-TermCompareInterface.html"><abbr title="\rdfInterface\TermCompareInterface">TermCompareInterface</abbr></a>|null</span>
+        <span class="phpdocumentor-signature__response_type"><a href="classes/rdfInterface-TermInterface.html"><abbr title="\rdfInterface\TermInterface">TermInterface</abbr></a></span>
             </section>
 
 </article>
@@ -418,30 +438,33 @@
 >
     <h4 class="phpdocumentor-element__name" id="method_getPredicate">
         getPredicate()
-        <a href="classes/rdfInterface-QuadCompareInterface.html#method_getPredicate" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/rdfInterface-QuadInterface.html#method_getPredicate" class="headerlink"><i class="fas fa-link"></i></a>
 
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="vendor/sweetrdf/rdf-interface/src/rdfInterface/QuadCompareInterface.php"><a href="files/vendor-sweetrdf-rdf-interface-src-rdfinterface-quadcompareinterface.html"><abbr title="vendor/sweetrdf/rdf-interface/src/rdfInterface/QuadCompareInterface.php">QuadCompareInterface.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="vendor/sweetrdf/rdf-interface/src/rdfInterface/QuadInterface.php"><a href="files/vendor-sweetrdf-rdf-interface-src-rdfinterface-quadinterface.html"><abbr title="vendor/sweetrdf/rdf-interface/src/rdfInterface/QuadInterface.php">QuadInterface.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">44</span>
+    <span class="phpdocumentor-element-found-in__line">36</span>
 
     </aside>
 
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">getPredicate</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/rdfInterface-TermCompareInterface.html"><abbr title="\rdfInterface\TermCompareInterface">TermCompareInterface</abbr></a>|null</span></code>
+                    <span class="phpdocumentor-signature__name">getPredicate</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/rdfInterface-NamedNodeInterface.html"><abbr title="\rdfInterface\NamedNodeInterface">NamedNodeInterface</abbr></a></span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
     
     
     
+    
+
+    
 
             <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-        <span class="phpdocumentor-signature__response_type"><a href="classes/rdfInterface-TermCompareInterface.html"><abbr title="\rdfInterface\TermCompareInterface">TermCompareInterface</abbr></a>|null</span>
+        <span class="phpdocumentor-signature__response_type"><a href="classes/rdfInterface-NamedNodeInterface.html"><abbr title="\rdfInterface\NamedNodeInterface">NamedNodeInterface</abbr></a></span>
             </section>
 
 </article>
@@ -453,30 +476,33 @@
 >
     <h4 class="phpdocumentor-element__name" id="method_getSubject">
         getSubject()
-        <a href="classes/rdfInterface-QuadCompareInterface.html#method_getSubject" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/rdfInterface-QuadInterface.html#method_getSubject" class="headerlink"><i class="fas fa-link"></i></a>
 
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="vendor/sweetrdf/rdf-interface/src/rdfInterface/QuadCompareInterface.php"><a href="files/vendor-sweetrdf-rdf-interface-src-rdfinterface-quadcompareinterface.html"><abbr title="vendor/sweetrdf/rdf-interface/src/rdfInterface/QuadCompareInterface.php">QuadCompareInterface.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="vendor/sweetrdf/rdf-interface/src/rdfInterface/QuadInterface.php"><a href="files/vendor-sweetrdf-rdf-interface-src-rdfinterface-quadinterface.html"><abbr title="vendor/sweetrdf/rdf-interface/src/rdfInterface/QuadInterface.php">QuadInterface.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">42</span>
+    <span class="phpdocumentor-element-found-in__line">34</span>
 
     </aside>
 
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">getSubject</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/rdfInterface-TermCompareInterface.html"><abbr title="\rdfInterface\TermCompareInterface">TermCompareInterface</abbr></a>|null</span></code>
+                    <span class="phpdocumentor-signature__name">getSubject</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/rdfInterface-TermInterface.html"><abbr title="\rdfInterface\TermInterface">TermInterface</abbr></a></span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
     
     
     
+    
+
+    
 
             <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-        <span class="phpdocumentor-signature__response_type"><a href="classes/rdfInterface-TermCompareInterface.html"><abbr title="\rdfInterface\TermCompareInterface">TermCompareInterface</abbr></a>|null</span>
+        <span class="phpdocumentor-signature__response_type"><a href="classes/rdfInterface-TermInterface.html"><abbr title="\rdfInterface\TermInterface">TermInterface</abbr></a></span>
             </section>
 
 </article>
@@ -488,17 +514,18 @@
 >
     <h4 class="phpdocumentor-element__name" id="method_getValue">
         getValue()
-        <a href="classes/rdfInterface-TermInterface.html#method_getValue" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/rdfInterface-QuadInterface.html#method_getValue" class="headerlink"><i class="fas fa-link"></i></a>
 
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="vendor/sweetrdf/rdf-interface/src/rdfInterface/TermInterface.php"><a href="files/vendor-sweetrdf-rdf-interface-src-rdfinterface-terminterface.html"><abbr title="vendor/sweetrdf/rdf-interface/src/rdfInterface/TermInterface.php">TermInterface.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="vendor/sweetrdf/rdf-interface/src/rdfInterface/QuadInterface.php"><a href="files/vendor-sweetrdf-rdf-interface-src-rdfinterface-quadinterface.html"><abbr title="vendor/sweetrdf/rdf-interface/src/rdfInterface/QuadInterface.php">QuadInterface.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">36</span>
+    <span class="phpdocumentor-element-found-in__line">45</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Should always throw the \BadMethodCallException</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">getValue</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
@@ -507,6 +534,24 @@
         </div>
     
     
+    
+    
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="classes/rdfInterface-QuadInterface.html#method_getValue#tags" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">throws</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                <span class="phpdocumentor-tag-link"><abbr title="\BadMethodCallException">BadMethodCallException</abbr></span>
+                                                            
+                                             
+                                    </dd>
+                                            </dl>
+
     
 
     
@@ -537,6 +582,7 @@
     <div class="phpdocumentor-label-line">
         </div>
     
+    
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
@@ -547,6 +593,8 @@
                 
             </dd>
             </dl>
+
+    
 
     
 
@@ -582,6 +630,7 @@
     <div class="phpdocumentor-label-line">
         </div>
     
+    
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
@@ -592,6 +641,8 @@
                 
             </dd>
             </dl>
+
+    
 
     
 
@@ -627,6 +678,7 @@
     <div class="phpdocumentor-label-line">
         </div>
     
+    
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
@@ -637,6 +689,8 @@
                 
             </dd>
             </dl>
+
+    
 
     
 
@@ -672,6 +726,7 @@
     <div class="phpdocumentor-label-line">
         </div>
     
+    
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
@@ -682,6 +737,8 @@
                 
             </dd>
             </dl>
+
+    
 
     
 
@@ -803,17 +860,17 @@
                             <li class="phpdocumentor-on-this-page-section__title">Methods</li>
                 <li>
                     <ul class="phpdocumentor-list -clean">
-                                                    <li><a href="classes/rdfInterface-TermCompareInterface.html#method___toString">__toString()</a></li>
-                                                    <li><a href="classes/rdfInterface-TermCompareInterface.html#method_equals">equals()</a></li>
-                                                    <li><a href="classes/rdfInterface-QuadCompareInterface.html#method_getGraph">getGraph()</a></li>
-                                                    <li><a href="classes/rdfInterface-QuadCompareInterface.html#method_getObject">getObject()</a></li>
-                                                    <li><a href="classes/rdfInterface-QuadCompareInterface.html#method_getPredicate">getPredicate()</a></li>
-                                                    <li><a href="classes/rdfInterface-QuadCompareInterface.html#method_getSubject">getSubject()</a></li>
-                                                    <li><a href="classes/rdfInterface-TermInterface.html#method_getValue">getValue()</a></li>
-                                                    <li><a href="classes/rdfInterface-QuadInterface.html#method_withGraph">withGraph()</a></li>
-                                                    <li><a href="classes/rdfInterface-QuadInterface.html#method_withObject">withObject()</a></li>
-                                                    <li><a href="classes/rdfInterface-QuadInterface.html#method_withPredicate">withPredicate()</a></li>
-                                                    <li><a href="classes/rdfInterface-QuadInterface.html#method_withSubject">withSubject()</a></li>
+                                                    <li class=""><a href="classes/rdfInterface-TermCompareInterface.html#method___toString">__toString()</a></li>
+                                                    <li class=""><a href="classes/rdfInterface-TermCompareInterface.html#method_equals">equals()</a></li>
+                                                    <li class=""><a href="classes/rdfInterface-QuadInterface.html#method_getGraph">getGraph()</a></li>
+                                                    <li class=""><a href="classes/rdfInterface-QuadInterface.html#method_getObject">getObject()</a></li>
+                                                    <li class=""><a href="classes/rdfInterface-QuadInterface.html#method_getPredicate">getPredicate()</a></li>
+                                                    <li class=""><a href="classes/rdfInterface-QuadInterface.html#method_getSubject">getSubject()</a></li>
+                                                    <li class=""><a href="classes/rdfInterface-QuadInterface.html#method_getValue">getValue()</a></li>
+                                                    <li class=""><a href="classes/rdfInterface-QuadInterface.html#method_withGraph">withGraph()</a></li>
+                                                    <li class=""><a href="classes/rdfInterface-QuadInterface.html#method_withObject">withObject()</a></li>
+                                                    <li class=""><a href="classes/rdfInterface-QuadInterface.html#method_withPredicate">withPredicate()</a></li>
+                                                    <li class=""><a href="classes/rdfInterface-QuadInterface.html#method_withSubject">withSubject()</a></li>
                                             </ul>
                 </li>
             

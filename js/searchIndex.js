@@ -1858,7 +1858,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\ML\\JsonLD\\LanguageTaggedString\u003A\u003AtoJsonLd\u0028\u0029",
             "name": "toJsonLd",
-            "summary": "\u007B\u0040inheritdoc\u007D",
+            "summary": "Convert\u0020to\u0020expanded\u0020and\u0020flattened\u0020JSON\u002DLD",
             "url": "classes/ML-JsonLD-LanguageTaggedString.html#method_toJsonLd"
         },                {
             "fqsen": "\\ML\\JsonLD\\LanguageTaggedString\u003A\u003Aequals\u0028\u0029",
@@ -3128,7 +3128,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\ML\\JsonLD\\TypedValue\u003A\u003AtoJsonLd\u0028\u0029",
             "name": "toJsonLd",
-            "summary": "\u007B\u0040inheritdoc\u007D",
+            "summary": "Convert\u0020to\u0020expanded\u0020and\u0020flattened\u0020JSON\u002DLD",
             "url": "classes/ML-JsonLD-TypedValue.html#method_toJsonLd"
         },                {
             "fqsen": "\\ML\\JsonLD\\TypedValue\u003A\u003Aequals\u0028\u0029",
@@ -3248,7 +3248,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\rdfHelpers\\DefaultGraph\u003A\u003A__toString\u0028\u0029",
             "name": "__toString",
-            "summary": "",
+            "summary": "Should\u0020return\u003A",
             "url": "classes/rdfHelpers-DefaultGraph.html#method___toString"
         },                {
             "fqsen": "\\rdfHelpers\\DefaultGraph\u003A\u003AgetValue\u0028\u0029",

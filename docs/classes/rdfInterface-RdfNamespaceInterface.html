@@ -127,6 +127,7 @@
         
 
 
+
     <h5 class="phpdocumentor-tag-list__heading" id="tags">
         Tags
         <a href="classes/rdfInterface-RdfNamespaceInterface.html#tags" class="headerlink"><i class="fas fa-link"></i></a>
@@ -142,7 +143,9 @@
 </section>
 
                                     </dd>
-                                            </dl>
+                                                                </dl>
+
+
 
 
 
@@ -168,28 +171,28 @@
 </h4>
 <dl class="phpdocumentor-table-of-contents">
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/rdfInterface-RdfNamespaceInterface.html#method_add">add()</a>
+    <a class="" href="classes/rdfInterface-RdfNamespaceInterface.html#method_add">add()</a>
     <span>
                                 &nbsp;: string    </span>
 </dt>
 <dd>Registers a given URL prefix.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/rdfInterface-RdfNamespaceInterface.html#method_expand">expand()</a>
+    <a class="" href="classes/rdfInterface-RdfNamespaceInterface.html#method_expand">expand()</a>
     <span>
                                 &nbsp;: <a href="classes/rdfInterface-NamedNodeInterface.html"><abbr title="\rdfInterface\NamedNodeInterface">NamedNodeInterface</abbr></a>    </span>
 </dt>
 <dd>Expands a shortened IRI to a NamedNode.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/rdfInterface-RdfNamespaceInterface.html#method_get">get()</a>
+    <a class="" href="classes/rdfInterface-RdfNamespaceInterface.html#method_get">get()</a>
     <span>
                                 &nbsp;: string    </span>
 </dt>
 <dd>Returns a IRI prefix for a given short name.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/rdfInterface-RdfNamespaceInterface.html#method_getAll">getAll()</a>
+    <a class="" href="classes/rdfInterface-RdfNamespaceInterface.html#method_getAll">getAll()</a>
     <span>
                                 &nbsp;: array&lt;string, string&gt;    </span>
 </dt>
@@ -197,14 +200,14 @@
 being namespace short names and array values containing URL prefixes.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/rdfInterface-RdfNamespaceInterface.html#method_remove">remove()</a>
+    <a class="" href="classes/rdfInterface-RdfNamespaceInterface.html#method_remove">remove()</a>
     <span>
                                 &nbsp;: void    </span>
 </dt>
 <dd>Drops a given short name and IRI prefix associated with it.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/rdfInterface-RdfNamespaceInterface.html#method_shorten">shorten()</a>
+    <a class="" href="classes/rdfInterface-RdfNamespaceInterface.html#method_shorten">shorten()</a>
     <span>
                                 &nbsp;: string    </span>
 </dt>
@@ -214,8 +217,6 @@ being namespace short names and array values containing URL prefixes.</dd>
 
 
 
-
-        
 
         
 
@@ -252,6 +253,7 @@ being namespace short names and array values containing URL prefixes.</dd>
     <div class="phpdocumentor-label-line">
         </div>
     
+    
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
@@ -272,6 +274,8 @@ If null or empty, the short name is automatically generated.</p>
 
             </dd>
             </dl>
+
+    
 
     
 
@@ -311,6 +315,7 @@ If null or empty, the short name is automatically generated.</p>
 
     <div class="phpdocumentor-label-line">
         </div>
+    
         <section class="phpdocumentor-description"><p>Throws an error if the short name used in the shortened IRI is unknown or
 when the $shortIri is not a shortened IRI.</p>
 </section>
@@ -351,6 +356,8 @@ when the $shortIri is not a shortened IRI.</p>
                                     </dd>
                                             </dl>
 
+    
+
             <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
         <span class="phpdocumentor-signature__response_type"><a href="classes/rdfInterface-NamedNodeInterface.html"><abbr title="\rdfInterface\NamedNodeInterface">NamedNodeInterface</abbr></a></span>
@@ -383,6 +390,7 @@ when the $shortIri is not a shortened IRI.</p>
 
     <div class="phpdocumentor-label-line">
         </div>
+    
         <section class="phpdocumentor-description"><p>Throws an exception if a given short name isn't registered.</p>
 </section>
 
@@ -413,6 +421,8 @@ when the $shortIri is not a shortened IRI.</p>
                                              
                                     </dd>
                                             </dl>
+
+    
 
             <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
@@ -450,6 +460,9 @@ being namespace short names and array values containing URL prefixes.</p>
     
     
     
+    
+
+    
 
             <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
@@ -484,6 +497,7 @@ being namespace short names and array values containing URL prefixes.</p>
     <div class="phpdocumentor-label-line">
         </div>
     
+    
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
@@ -494,6 +508,8 @@ being namespace short names and array values containing URL prefixes.</p>
                 
             </dd>
             </dl>
+
+    
 
     
 
@@ -525,6 +541,7 @@ being namespace short names and array values containing URL prefixes.</p>
 
     <div class="phpdocumentor-label-line">
         </div>
+    
         <section class="phpdocumentor-description"><p>If corresponding IRI prefix is not registered yet, the behavior depends on
 the $create parameter value. If it's true, a new short name is registered
 automatically. Otherwise an expception is thrown.</p>
@@ -567,6 +584,8 @@ prefix if there is no matching one?</p>
                                              
                                     </dd>
                                             </dl>
+
+    
 
             <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
@@ -686,12 +705,12 @@ prefix if there is no matching one?</p>
                             <li class="phpdocumentor-on-this-page-section__title">Methods</li>
                 <li>
                     <ul class="phpdocumentor-list -clean">
-                                                    <li><a href="classes/rdfInterface-RdfNamespaceInterface.html#method_add">add()</a></li>
-                                                    <li><a href="classes/rdfInterface-RdfNamespaceInterface.html#method_expand">expand()</a></li>
-                                                    <li><a href="classes/rdfInterface-RdfNamespaceInterface.html#method_get">get()</a></li>
-                                                    <li><a href="classes/rdfInterface-RdfNamespaceInterface.html#method_getAll">getAll()</a></li>
-                                                    <li><a href="classes/rdfInterface-RdfNamespaceInterface.html#method_remove">remove()</a></li>
-                                                    <li><a href="classes/rdfInterface-RdfNamespaceInterface.html#method_shorten">shorten()</a></li>
+                                                    <li class=""><a href="classes/rdfInterface-RdfNamespaceInterface.html#method_add">add()</a></li>
+                                                    <li class=""><a href="classes/rdfInterface-RdfNamespaceInterface.html#method_expand">expand()</a></li>
+                                                    <li class=""><a href="classes/rdfInterface-RdfNamespaceInterface.html#method_get">get()</a></li>
+                                                    <li class=""><a href="classes/rdfInterface-RdfNamespaceInterface.html#method_getAll">getAll()</a></li>
+                                                    <li class=""><a href="classes/rdfInterface-RdfNamespaceInterface.html#method_remove">remove()</a></li>
+                                                    <li class=""><a href="classes/rdfInterface-RdfNamespaceInterface.html#method_shorten">shorten()</a></li>
                                             </ul>
                 </li>
             
