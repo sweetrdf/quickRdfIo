@@ -1036,6 +1036,36 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/quickRdfIo-ResourceWrapper.html#property_res"
         },                {
+            "fqsen": "\\quickRdfIo\\StreamSkipBomTrait",
+            "name": "StreamSkipBomTrait",
+            "summary": "Description\u0020of\u0020StreamSkipBomTrait",
+            "url": "classes/quickRdfIo-StreamSkipBomTrait.html"
+        },                {
+            "fqsen": "\\quickRdfIo\\StreamSkipBomTrait\u003A\u003AskipBom\u0028\u0029",
+            "name": "skipBom",
+            "summary": "",
+            "url": "classes/quickRdfIo-StreamSkipBomTrait.html#method_skipBom"
+        },                {
+            "fqsen": "\\quickRdfIo\\StreamSkipBomTrait\u003A\u003A\u0024invalidBoms2B",
+            "name": "invalidBoms2B",
+            "summary": "",
+            "url": "classes/quickRdfIo-StreamSkipBomTrait.html#property_invalidBoms2B"
+        },                {
+            "fqsen": "\\quickRdfIo\\StreamSkipBomTrait\u003A\u003A\u0024invalidBoms3B",
+            "name": "invalidBoms3B",
+            "summary": "",
+            "url": "classes/quickRdfIo-StreamSkipBomTrait.html#property_invalidBoms3B"
+        },                {
+            "fqsen": "\\quickRdfIo\\StreamSkipBomTrait\u003A\u003A\u0024invalidBoms4B",
+            "name": "invalidBoms4B",
+            "summary": "",
+            "url": "classes/quickRdfIo-StreamSkipBomTrait.html#property_invalidBoms4B"
+        },                {
+            "fqsen": "\\quickRdfIo\\StreamSkipBomTrait\u003A\u003A\u0024bomUtf8",
+            "name": "bomUtf8",
+            "summary": "",
+            "url": "classes/quickRdfIo-StreamSkipBomTrait.html#property_bomUtf8"
+        },                {
             "fqsen": "\\quickRdfIo\\TmpStreamParserTrait",
             "name": "TmpStreamParserTrait",
             "summary": "Description\u0020of\u0020TmpStreamTrait",

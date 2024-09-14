@@ -124,7 +124,7 @@
     
             <span class="phpdocumentor-element__extends">
             uses
-                            <a href="classes/quickRdfIo-TmpStreamParserTrait.html"><abbr title="\quickRdfIo\TmpStreamParserTrait">TmpStreamParserTrait</abbr></a>                    </span>
+                            <a href="classes/quickRdfIo-TmpStreamParserTrait.html"><abbr title="\quickRdfIo\TmpStreamParserTrait">TmpStreamParserTrait</abbr></a>,                             <a href="classes/quickRdfIo-StreamSkipBomTrait.html"><abbr title="\quickRdfIo\StreamSkipBomTrait">StreamSkipBomTrait</abbr></a>                    </span>
     </h2>
 
 <div class="phpdocumentor-label-line">
@@ -206,6 +206,12 @@
 </h4>
 <dl class="phpdocumentor-table-of-contents">
             <dt class="phpdocumentor-table-of-contents__entry -property -private">
+    <a class="" href="classes/quickRdfIo-StreamSkipBomTrait.html#property_bomUtf8">$bomUtf8</a>
+    <span>
+                        &nbsp;: mixed            </span>
+</dt>
+
+            <dt class="phpdocumentor-table-of-contents__entry -property -private">
     <a class="" href="classes/quickRdfIo-TriGParser.html#property_chunk">$chunk</a>
     <span>
                         &nbsp;: string            </span>
@@ -221,6 +227,24 @@
     <a class="" href="classes/quickRdfIo-TriGParser.html#property_input">$input</a>
     <span>
                         &nbsp;: <abbr title="\Psr\Http\Message\StreamInterface">StreamInterface</abbr>            </span>
+</dt>
+
+            <dt class="phpdocumentor-table-of-contents__entry -property -private">
+    <a class="" href="classes/quickRdfIo-StreamSkipBomTrait.html#property_invalidBoms2B">$invalidBoms2B</a>
+    <span>
+                        &nbsp;: mixed            </span>
+</dt>
+
+            <dt class="phpdocumentor-table-of-contents__entry -property -private">
+    <a class="" href="classes/quickRdfIo-StreamSkipBomTrait.html#property_invalidBoms3B">$invalidBoms3B</a>
+    <span>
+                        &nbsp;: mixed            </span>
+</dt>
+
+            <dt class="phpdocumentor-table-of-contents__entry -property -private">
+    <a class="" href="classes/quickRdfIo-StreamSkipBomTrait.html#property_invalidBoms4B">$invalidBoms4B</a>
+    <span>
+                        &nbsp;: mixed            </span>
 </dt>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -private">
@@ -327,6 +351,12 @@
                                 &nbsp;: void    </span>
 </dt>
 
+            <dt class="phpdocumentor-table-of-contents__entry -method -private">
+    <a class="" href="classes/quickRdfIo-StreamSkipBomTrait.html#method_skipBom">skipBom()</a>
+    <span>
+                                &nbsp;: void    </span>
+</dt>
+
     </dl>
 
 
@@ -348,7 +378,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/TriGParser.php"><a href="files/src-quickrdfio-trigparser.html"><abbr title="src/quickRdfIo/TriGParser.php">TriGParser.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">47</span>
+    <span class="phpdocumentor-element-found-in__line">48</span>
 
     </aside>
 
@@ -385,6 +415,42 @@
             -private
                                                         "
 >
+    <h4 class="phpdocumentor-element__name" id="property_bomUtf8">
+        $bomUtf8
+        <a href="classes/quickRdfIo-StreamSkipBomTrait.html#property_bomUtf8" class="headerlink"><i class="fas fa-link"></i></a>
+
+        <span class="phpdocumentor-element__modifiers">
+                                </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/StreamSkipBomTrait.php"><a href="files/src-quickrdfio-streamskipbomtrait.html"><abbr title="src/quickRdfIo/StreamSkipBomTrait.php">StreamSkipBomTrait.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">54</span>
+
+    </aside>
+
+    
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+        <span class="phpdocumentor-signature__type">mixed</span>
+    <span class="phpdocumentor-signature__name">$bomUtf8</span>
+     = <span class="phpdocumentor-signature__default-value">&quot;﻿&quot;</span></code>
+
+    
+    
+    
+
+    
+
+</article>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
+            -private
+                                                        "
+>
     <h4 class="phpdocumentor-element__name" id="property_chunk">
         $chunk
         <a href="classes/quickRdfIo-TriGParser.html#property_chunk" class="headerlink"><i class="fas fa-link"></i></a>
@@ -395,7 +461,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/TriGParser.php"><a href="files/src-quickrdfio-trigparser.html"><abbr title="src/quickRdfIo/TriGParser.php">TriGParser.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">58</span>
+    <span class="phpdocumentor-element-found-in__line">59</span>
 
     </aside>
 
@@ -431,7 +497,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/TriGParser.php"><a href="files/src-quickrdfio-trigparser.html"><abbr title="src/quickRdfIo/TriGParser.php">TriGParser.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">49</span>
+    <span class="phpdocumentor-element-found-in__line">50</span>
 
     </aside>
 
@@ -467,7 +533,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/TriGParser.php"><a href="files/src-quickrdfio-trigparser.html"><abbr title="src/quickRdfIo/TriGParser.php">TriGParser.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">57</span>
+    <span class="phpdocumentor-element-found-in__line">58</span>
 
     </aside>
 
@@ -493,6 +559,114 @@
             -private
                                                         "
 >
+    <h4 class="phpdocumentor-element__name" id="property_invalidBoms2B">
+        $invalidBoms2B
+        <a href="classes/quickRdfIo-StreamSkipBomTrait.html#property_invalidBoms2B" class="headerlink"><i class="fas fa-link"></i></a>
+
+        <span class="phpdocumentor-element__modifiers">
+                                </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/StreamSkipBomTrait.php"><a href="files/src-quickrdfio-streamskipbomtrait.html"><abbr title="src/quickRdfIo/StreamSkipBomTrait.php">StreamSkipBomTrait.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">38</span>
+
+    </aside>
+
+    
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+        <span class="phpdocumentor-signature__type">mixed</span>
+    <span class="phpdocumentor-signature__name">$invalidBoms2B</span>
+     = <span class="phpdocumentor-signature__default-value">[&quot;\xef\xff&quot; =&gt; &quot;UTF-16 BE&quot;, &quot;\xff\xfe&quot; =&gt; &quot;UTF-16 LE&quot;]</span></code>
+
+    
+    
+    
+
+    
+
+</article>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
+            -private
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="property_invalidBoms3B">
+        $invalidBoms3B
+        <a href="classes/quickRdfIo-StreamSkipBomTrait.html#property_invalidBoms3B" class="headerlink"><i class="fas fa-link"></i></a>
+
+        <span class="phpdocumentor-element__modifiers">
+                                </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/StreamSkipBomTrait.php"><a href="files/src-quickrdfio-streamskipbomtrait.html"><abbr title="src/quickRdfIo/StreamSkipBomTrait.php">StreamSkipBomTrait.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">42</span>
+
+    </aside>
+
+    
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+        <span class="phpdocumentor-signature__type">mixed</span>
+    <span class="phpdocumentor-signature__name">$invalidBoms3B</span>
+     = <span class="phpdocumentor-signature__default-value">[&quot;+/v&quot; =&gt; &quot;UTF-7&quot;, &quot;\xf7dL&quot; =&gt; &quot;UTF-1&quot;, &quot;\x0e\xfe\xff&quot; =&gt; &quot;SCSU&quot;, &quot;\xfb\xee(&quot; =&gt; &quot;BOCU-1&quot;]</span></code>
+
+    
+    
+    
+
+    
+
+</article>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
+            -private
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="property_invalidBoms4B">
+        $invalidBoms4B
+        <a href="classes/quickRdfIo-StreamSkipBomTrait.html#property_invalidBoms4B" class="headerlink"><i class="fas fa-link"></i></a>
+
+        <span class="phpdocumentor-element__modifiers">
+                                </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/StreamSkipBomTrait.php"><a href="files/src-quickrdfio-streamskipbomtrait.html"><abbr title="src/quickRdfIo/StreamSkipBomTrait.php">StreamSkipBomTrait.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">48</span>
+
+    </aside>
+
+    
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+        <span class="phpdocumentor-signature__type">mixed</span>
+    <span class="phpdocumentor-signature__name">$invalidBoms4B</span>
+     = <span class="phpdocumentor-signature__default-value">[&quot;\x00\x00\xfe\xff&quot; =&gt; &quot;UTF-32 BE&quot;, &quot;\xff\xfe\x00\x00&quot; =&gt; &quot;UTF-32 LE&quot;, &quot;\xddsfs&quot; =&gt; &quot;UTF-EBCDIC&quot;, &quot;\x841\x953&quot; =&gt; &quot;GB18030&quot;]</span></code>
+
+    
+    
+    
+
+    
+
+</article>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
+            -private
+                                                        "
+>
     <h4 class="phpdocumentor-element__name" id="property_n">
         $n
         <a href="classes/quickRdfIo-TriGParser.html#property_n" class="headerlink"><i class="fas fa-link"></i></a>
@@ -503,7 +677,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/TriGParser.php"><a href="files/src-quickrdfio-trigparser.html"><abbr title="src/quickRdfIo/TriGParser.php">TriGParser.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">65</span>
+    <span class="phpdocumentor-element-found-in__line">66</span>
 
     </aside>
 
@@ -539,7 +713,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/TriGParser.php"><a href="files/src-quickrdfio-trigparser.html"><abbr title="src/quickRdfIo/TriGParser.php">TriGParser.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">55</span>
+    <span class="phpdocumentor-element-found-in__line">56</span>
 
     </aside>
 
@@ -575,7 +749,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/TriGParser.php"><a href="files/src-quickrdfio-trigparser.html"><abbr title="src/quickRdfIo/TriGParser.php">TriGParser.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">56</span>
+    <span class="phpdocumentor-element-found-in__line">57</span>
 
     </aside>
 
@@ -611,7 +785,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/TriGParser.php"><a href="files/src-quickrdfio-trigparser.html"><abbr title="src/quickRdfIo/TriGParser.php">TriGParser.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">71</span>
+    <span class="phpdocumentor-element-found-in__line">72</span>
 
     </aside>
 
@@ -647,7 +821,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/TriGParser.php"><a href="files/src-quickrdfio-trigparser.html"><abbr title="src/quickRdfIo/TriGParser.php">TriGParser.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">64</span>
+    <span class="phpdocumentor-element-found-in__line">65</span>
 
     </aside>
 
@@ -724,7 +898,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/TriGParser.php"><a href="files/src-quickrdfio-trigparser.html"><abbr title="src/quickRdfIo/TriGParser.php">TriGParser.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">82</span>
+    <span class="phpdocumentor-element-found-in__line">83</span>
 
     </aside>
 
@@ -805,7 +979,7 @@ to be passed to the pietercolpaert\hardf\TriGParser constructor</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/TriGParser.php"><a href="files/src-quickrdfio-trigparser.html"><abbr title="src/quickRdfIo/TriGParser.php">TriGParser.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">90</span>
+    <span class="phpdocumentor-element-found-in__line">91</span>
 
     </aside>
 
@@ -839,7 +1013,7 @@ to be passed to the pietercolpaert\hardf\TriGParser constructor</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/TriGParser.php"><a href="files/src-quickrdfio-trigparser.html"><abbr title="src/quickRdfIo/TriGParser.php">TriGParser.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">115</span>
+    <span class="phpdocumentor-element-found-in__line">116</span>
 
     </aside>
 
@@ -877,7 +1051,7 @@ to be passed to the pietercolpaert\hardf\TriGParser constructor</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/TriGParser.php"><a href="files/src-quickrdfio-trigparser.html"><abbr title="src/quickRdfIo/TriGParser.php">TriGParser.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">119</span>
+    <span class="phpdocumentor-element-found-in__line">120</span>
 
     </aside>
 
@@ -911,7 +1085,7 @@ to be passed to the pietercolpaert\hardf\TriGParser constructor</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/TriGParser.php"><a href="files/src-quickrdfio-trigparser.html"><abbr title="src/quickRdfIo/TriGParser.php">TriGParser.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">123</span>
+    <span class="phpdocumentor-element-found-in__line">124</span>
 
     </aside>
 
@@ -993,7 +1167,7 @@ to be passed to the pietercolpaert\hardf\TriGParser constructor</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/TriGParser.php"><a href="files/src-quickrdfio-trigparser.html"><abbr title="src/quickRdfIo/TriGParser.php">TriGParser.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">99</span>
+    <span class="phpdocumentor-element-found-in__line">100</span>
 
     </aside>
 
@@ -1041,7 +1215,7 @@ to be passed to the pietercolpaert\hardf\TriGParser constructor</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/TriGParser.php"><a href="files/src-quickrdfio-trigparser.html"><abbr title="src/quickRdfIo/TriGParser.php">TriGParser.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">179</span>
+    <span class="phpdocumentor-element-found-in__line">180</span>
 
     </aside>
 
@@ -1075,7 +1249,7 @@ to be passed to the pietercolpaert\hardf\TriGParser constructor</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/TriGParser.php"><a href="files/src-quickrdfio-trigparser.html"><abbr title="src/quickRdfIo/TriGParser.php">TriGParser.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">187</span>
+    <span class="phpdocumentor-element-found-in__line">189</span>
 
     </aside>
 
@@ -1127,6 +1301,50 @@ to be passed to the pietercolpaert\hardf\TriGParser constructor</p>
     
     
     
+    
+
+    
+
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -private
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_skipBom">
+        skipBom()
+        <a href="classes/quickRdfIo-StreamSkipBomTrait.html#method_skipBom" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/StreamSkipBomTrait.php"><a href="files/src-quickrdfio-streamskipbomtrait.html"><abbr title="src/quickRdfIo/StreamSkipBomTrait.php">StreamSkipBomTrait.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">56</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+                    <span class="phpdocumentor-signature__name">skipBom</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><abbr title="\Psr\Http\Message\StreamInterface">StreamInterface</abbr>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$stream</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+    
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$stream</span>
+                : <span class="phpdocumentor-signature__argument__return-type"><abbr title="\Psr\Http\Message\StreamInterface">StreamInterface</abbr></span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+            </dl>
+
     
 
     
@@ -1253,9 +1471,13 @@ to be passed to the pietercolpaert\hardf\TriGParser constructor</p>
                             <li class="phpdocumentor-on-this-page-section__title">Properties</li>
                 <li>
                     <ul class="phpdocumentor-list -clean">
+                                                    <li class=""><a href="classes/quickRdfIo-StreamSkipBomTrait.html#property_bomUtf8">$bomUtf8</a></li>
                                                     <li class=""><a href="classes/quickRdfIo-TriGParser.html#property_chunk">$chunk</a></li>
                                                     <li class=""><a href="classes/quickRdfIo-TriGParser.html#property_dataFactory">$dataFactory</a></li>
                                                     <li class=""><a href="classes/quickRdfIo-TriGParser.html#property_input">$input</a></li>
+                                                    <li class=""><a href="classes/quickRdfIo-StreamSkipBomTrait.html#property_invalidBoms2B">$invalidBoms2B</a></li>
+                                                    <li class=""><a href="classes/quickRdfIo-StreamSkipBomTrait.html#property_invalidBoms3B">$invalidBoms3B</a></li>
+                                                    <li class=""><a href="classes/quickRdfIo-StreamSkipBomTrait.html#property_invalidBoms4B">$invalidBoms4B</a></li>
                                                     <li class=""><a href="classes/quickRdfIo-TriGParser.html#property_n">$n</a></li>
                                                     <li class=""><a href="classes/quickRdfIo-TriGParser.html#property_options">$options</a></li>
                                                     <li class=""><a href="classes/quickRdfIo-TriGParser.html#property_parser">$parser</a></li>
@@ -1278,6 +1500,7 @@ to be passed to the pietercolpaert\hardf\TriGParser constructor</p>
                                             <li class=""><a href="classes/quickRdfIo-TriGParser.html#method_rewind">rewind()</a></li>
                                             <li class=""><a href="classes/quickRdfIo-TriGParser.html#method_valid">valid()</a></li>
                                             <li class=""><a href="classes/quickRdfIo-TmpStreamParserTrait.html#method_closeTmpStream">closeTmpStream()</a></li>
+                                            <li class=""><a href="classes/quickRdfIo-StreamSkipBomTrait.html#method_skipBom">skipBom()</a></li>
                                     </ul>
             </li>
                     </ul>
