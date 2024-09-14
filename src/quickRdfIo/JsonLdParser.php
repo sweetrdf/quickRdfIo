@@ -114,6 +114,9 @@ class JsonLdParser implements iParser, iQuadIterator {
     }
 
     public function parse(string $input): iQuadIterator {
+        if (substr($input, 0, 3) === "\xEF\xBB\xBF") {
+            $input = substr($input, 3);
+        }
         $this->quads = JsonLD::toRdf($input, ['base' => $this->baseUri]);
         return $this;
     }

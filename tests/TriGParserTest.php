@@ -110,4 +110,30 @@ IN;
         $triples = iterator_to_array($iter);
         $this->assertCount(148, $triples);
     }
+
+    /**
+     * https://github.com/sweetrdf/quickRdfIo/issues/10
+     */
+    public function testBom(): void {
+        $df     = new DF();
+        $parser = new TriGParser($df);
+        $inputs = [
+            'issue10_utf16be.nq' => "UTF-16 BE",
+            'issue10_utf32le.nq' => "UTF-32 LE",
+            'issue10_utf7.nq'    => "UTF-7",
+        ];
+        foreach ($inputs as $file => $enc) {
+            try {
+                $parser->parseStream(fopen(__DIR__ . '/files/' . $file, 'r'));
+            } catch (RdfIoException $ex) {
+                $this->assertEquals("Input stream has wrong encoding $enc", $ex->getMessage());
+            }
+        }
+
+        $dataset = new \quickRdf\Dataset();
+        $dataset->add($parser->parseStream(fopen(__DIR__ . '/files/issue10_utf8.nq', 'r')));
+        $this->assertCount(1, $dataset);
+        $q       = $df->quad(df::namedNode('http://foo'), DF::namedNode('http://bar'), DF::namedNode('http://baz'));
+        $this->assertTrue($q->equals($dataset[0]));
+    }
 }

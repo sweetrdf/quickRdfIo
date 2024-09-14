@@ -26,7 +26,7 @@
 
 namespace quickRdfIo;
 
-use quickRdf\DataFactory;
+use quickRdf\DataFactory as DF;
 use quickRdf\Dataset;
 
 /**
@@ -42,7 +42,7 @@ class JsonLdTest extends \PHPUnit\Framework\TestCase {
     private JsonLdSerializer $serializer;
 
     public function setUp(): void {
-        $this->df         = new DataFactory();
+        $this->df         = new DF();
         $this->refParser  = new NQuadsParser($this->df, false, NQuadsParser::MODE_QUADS);
         $this->parser     = new JsonLdParser($this->df);
         $this->serializer = new JsonLdSerializer(null);
@@ -70,5 +70,23 @@ class JsonLdTest extends \PHPUnit\Framework\TestCase {
         $dataset = $dataset->map(fn($x) => $this->blankGraphAsDefaultGraph($x));
         $this->assertEquals($ref->count(), $dataset->count());
         $this->assertTrue($ref->equals($dataset));
+    }
+
+    /**
+     * https://github.com/sweetrdf/quickRdfIo/issues/10
+     */
+    public function testBom(): void {
+        $ref    = new Dataset();
+        $quad   = DF::quad(df::namedNode('http://foo'), DF::namedNode('http://bar'), DF::namedNode('http://baz'));
+        $ref->add($quad);
+        $output = tmpfile();
+        fwrite($output, "\xEF\xBB\xBF");
+        $this->serializer->serializeStream($output, $ref);
+
+        fseek($output, 0);
+        $dataset = new Dataset();
+        $dataset->add($this->parser->parseStream($output));
+        $this->assertCount(1, $dataset);
+        $this->assertTrue($quad->equals($dataset[0]));
     }
 }

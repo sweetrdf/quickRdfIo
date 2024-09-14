@@ -43,6 +43,9 @@ use rdfInterface\DataFactoryInterface as iDataFactory;
  */
 class NQuadsParser implements iParser, iQuadIterator {
 
+    use TmpStreamParserTrait;
+    use StreamSkipBomTrait;
+
     const MODE_TRIPLES      = 1;
     const MODE_QUADS        = 2;
     const MODE_TRIPLES_STAR = 3;
@@ -66,7 +69,6 @@ class NQuadsParser implements iParser, iQuadIterator {
     const STAR_START        = '%\\G\s*<<%';
     const STAR_END          = '%\\G\s*>>%';
     const READ_BUF_SIZE     = 8096;
-    use TmpStreamParserTrait;
 
     /**
      * See https://www.w3.org/TR/n-quads/#grammar-production-ECHAR
@@ -233,6 +235,7 @@ class NQuadsParser implements iParser, iQuadIterator {
         if ($this->input->tell() !== 0) {
             $this->input->rewind();
         }
+        $this->skipBom($this->input);
         if ($this->mode === self::MODE_TRIPLES || $this->mode === self::MODE_QUADS) {
             $this->quads = $this->quadGenerator();
         } else {

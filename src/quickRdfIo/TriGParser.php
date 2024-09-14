@@ -43,6 +43,7 @@ use rdfInterface\DataFactoryInterface as iDataFactory;
 class TriGParser implements iParser, iQuadIterator {
 
     use TmpStreamParserTrait;
+    use StreamSkipBomTrait;
 
     const CHUNK_SIZE = 8192;
 
@@ -181,6 +182,7 @@ class TriGParser implements iParser, iQuadIterator {
         if ($this->input->tell() !== 0) {
             $this->input->rewind();
         }
+        $this->skipBom($this->input);
         $this->next();
     }
 
