@@ -478,7 +478,7 @@ class RdfXmlParser implements iParser, iQuadIterator {
     private function addTriple(iBlankNode | iNamedNode | null $subject,
                                iNamedNode | string $predicate,
                                iNamedNode | iBlankNode | string $object,
-                               string $lang = null, string $datatype = null,
+                               ?string $lang = null, ?string $datatype = null,
                                iBlankNode | iNamedNode | null $reifyAs = null): void {
         $df = $this->dataFactory;
 
