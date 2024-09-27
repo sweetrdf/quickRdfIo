@@ -143,4 +143,38 @@ RO;
 RO;
         $this->assertEquals($refOutput, $output);
     }
+
+    /**
+     * A little surprisingly resourcePropertyElt allows only single nodeElement
+     * value so a syntax like
+     * ```xml
+     * <rdf:Description rdf:about="http://sbj" xmlns:myNmsp="http://">
+     *   <myNmsp:predicate>
+     *     <rdf:Description rdf:about="http://obj1"/>
+     *     <rdf:Description rdf:about="http://obj2"/>
+     *   </myNmsp:predicate>
+     * </rdf:Description>
+     * ```
+     * is an invalid serialization of
+     * ```
+     * <http://sbj> <http://predicate> <http://obj1> .
+     * <http://sbj> <http://predicate> <http://obj2> .
+     * ```
+     * (see https://www.w3.org/TR/rdf-syntax-grammar/#section-grammar-summary)
+     */
+    public function testSingleValuePerPredicate(): void {
+        $sbj  = DF::namedNode('http://sbj');
+        $pred = DF::namedNode('http://prop');
+        $data = new Dataset();
+        $data->add(DF::quad($sbj, $pred, DF::namedNode('http://obj1')));
+        $data->add(DF::quad($sbj, $pred, DF::namedNode('http://obj2')));
+
+        $serializer = new RdfXmlSerializer(false);
+        $output     = $serializer->serialize($data);
+        $refOutput  = <<<RO
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"><rdf:Description rdf:about="http://sbj"><ns:prop xmlns:ns="http://" rdf:resource="http://obj1"/><ns:prop xmlns:ns="http://" rdf:resource="http://obj2"/></rdf:Description></rdf:RDF>
+RO;
+        $this->assertEquals($refOutput, $output);
+    }
 }
