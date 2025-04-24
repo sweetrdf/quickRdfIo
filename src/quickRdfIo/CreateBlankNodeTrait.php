@@ -3,7 +3,7 @@
 /*
  * The MIT License
  *
- * Copyright 2021 zozlak.
+ * Copyright 2025 zozlak.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -26,37 +26,24 @@
 
 namespace quickRdfIo;
 
-use rdfInterface\QuadIteratorInterface as iQuadIterator;
+use rdfInterface\BlankNodeInterface as iBlankNode;
+use rdfInterface\DataFactoryInterface as iDataFactory;
 
 /**
- * Description of TmpStreamTrait
  *
  * @author zozlak
  */
-trait TmpStreamParserTrait {
+trait CreateBlankNodeTrait {
 
-    /**
-     *
-     * @var resource|null
-     */
-    private $tmpStream;
+    private string $baseUri = '';
+    private iDataFactory $dataFactory;
 
-    public function parse(string $input, string $baseUri = ''): iQuadIterator {
-        $this->closeTmpStream();
-        $tmp = fopen('php://memory', 'r+');
-        if ($tmp === false) {
-            throw new RdfIoException('Failed to convert input to stream');
+
+    public function createBlankNode(string $iri): iBlankNode {
+        if (str_starts_with($iri, '_:')) {
+            $iri = substr($iri, 2);
         }
-        $this->tmpStream = $tmp;
-        fwrite($this->tmpStream, $input);
-        rewind($this->tmpStream);
-        return $this->parseStream($this->tmpStream, $baseUri);
-    }
-
-    private function closeTmpStream(): void {
-        if (is_resource($this->tmpStream)) {
-            fclose($this->tmpStream);
-            $this->tmpStream = null;
-        }
+        $iri = '_:' . $this->baseUri . (!empty($this->baseUri) ? '/' : '') . $iri;
+        return $this->dataFactory::blankNode($iri);
     }
 }

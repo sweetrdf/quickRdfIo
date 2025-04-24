@@ -48,8 +48,9 @@ use rdfInterface\DataFactoryInterface as iDataFactory;
  */
 class JsonLdParser implements iParser, iQuadIterator {
 
+    use CreateBlankNodeTrait;
+
     private iDataFactory $dataFactory;
-    private ?string $baseUri = null;
     private ?iQuad $curQuad = null;
 
     /**
@@ -61,11 +62,11 @@ class JsonLdParser implements iParser, iQuadIterator {
     public function __construct(iDataFactory $dataFactory,
                                 ?string $baseUri = null) {
         $this->dataFactory = $dataFactory;
-        $this->baseUri     = $baseUri;
+        $this->baseUri     = $baseUri ?? '';
     }
 
     public function setBaseUri(?string $baseUri): void {
-        $this->baseUri = $baseUri;
+        $this->baseUri = $baseUri ?? '';
     }
 
     public function current(): iQuad | null {
@@ -77,7 +78,7 @@ class JsonLdParser implements iParser, iQuadIterator {
         if ($this->curQuad === null) {
             /* @var $quad JsonLdQuad */
             $sbj = $quad->getSubject();
-            $sbj = $sbj->getScheme() === '_' ? $df->blankNode((string) $sbj) : $df->namedNode((string) $sbj);
+            $sbj = $sbj->getScheme() === '_' ? $this->createBlankNode((string) $sbj) : $df->namedNode((string) $sbj);
 
             $pred = $df->namedNode((string) $quad->getProperty());
 
@@ -113,11 +114,14 @@ class JsonLdParser implements iParser, iQuadIterator {
         $this->curQuad = null;
     }
 
-    public function parse(string $input): iQuadIterator {
+    public function parse(string $input, string $baseUri = ''): iQuadIterator {
         if (substr($input, 0, 3) === "\xEF\xBB\xBF") {
             $input = substr($input, 3);
         }
-        $this->quads = JsonLD::toRdf($input, ['base' => $this->baseUri]);
+        if (!empty($baseUri)) {
+            $this->baseUri = $baseUri;
+        }
+        $this->quads = JsonLD::toRdf($input, ['base' => empty($this->baseUri) ? null : $this->baseUri]);
         return $this;
     }
 
@@ -126,9 +130,9 @@ class JsonLdParser implements iParser, iQuadIterator {
      * @param resource | StreamInterface $input
      * @return iQuadIterator
      */
-    public function parseStream($input): iQuadIterator {
-        $input = is_resource($input) ? stream_get_contents($input) : $input->getContents();
-        return $this->parse($input ?: '');
+    public function parseStream($input, string $baseUri = ''): iQuadIterator {
+        $input         = is_resource($input) ? stream_get_contents($input) : $input->getContents();
+        return $this->parse($input ?: '', $baseUri);
     }
 
     public function rewind(): void {

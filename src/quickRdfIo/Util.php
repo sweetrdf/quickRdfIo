@@ -193,8 +193,11 @@ class Util {
                 $stream = fopen('php://memory', 'r+') ?: throw new RdfIoException('Failed to convert input to a stream');
                 fwrite($stream, $input);
                 rewind($stream);
-            } elseif (empty($format)) {
-                $format = $input;
+            } else {
+                if (empty($format)) {
+                    $format  = $input;
+                }
+                $baseUri ??= 'file://' . $input;
             }
             $input = $stream;
         }
@@ -217,7 +220,7 @@ class Util {
         if ($parser === null) {
             $parser = self::getParser($format ?? '', $dataFactory, $baseUri);
         }
-        return $parser->parseStream($input);
+        return $parser->parseStream($input, $baseUri ?? '');
     }
 
     /**

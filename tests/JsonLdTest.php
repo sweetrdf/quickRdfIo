@@ -89,4 +89,44 @@ class JsonLdTest extends \PHPUnit\Framework\TestCase {
         $this->assertCount(1, $dataset);
         $this->assertTrue($quad->equals($dataset[0]));
     }
+
+    /**
+     * https://github.com/sweetrdf/quickRdfIo/issues/11
+     */
+    public function testBlank(): void {
+        $json1   = '[{"http://foo":[{"@value":"l1"}]}]';
+        $json2   = '[{"http://foo":[{"@value":"l2"}]}]';
+
+        // no baseUri
+        $dataset = new Dataset();
+        $dataset->add($this->parser->parse($json1));
+        $dataset->add($this->parser->parse($json2));
+        $this->assertCount(2, $dataset);
+        $anySbj = $dataset->getSubject();
+        foreach($dataset as $q) {
+            $this->assertTrue($anySbj->equals($q->getSubject()));
+        }
+
+        // same baseUri
+        $dataset = new Dataset();
+        $dataset->add($this->parser->parse($json1, 'http://same.base'));
+        $dataset->add($this->parser->parse($json2, 'http://same.base'));
+        $this->assertCount(2, $dataset);
+        $anySbj = $dataset->getSubject();
+        foreach($dataset as $q) {
+            $this->assertTrue($anySbj->equals($q->getSubject()));
+        }
+
+        // different baseUri
+        $dataset = new Dataset();
+        $dataset->add($this->parser->parse($json1, 'http://same.base'));
+        $dataset->add($this->parser->parse($json2, 'http://other.base'));
+        $this->assertCount(2, $dataset);
+        $firstSbj = null;
+        foreach($dataset as $q) {
+            $firstSbj ??= $q->getSubject();
+            $lastSbj  = $q->getSubject();
+        }
+        $this->assertFalse($firstSbj->equals($lastSbj));
+    }
 }

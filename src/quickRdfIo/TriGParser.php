@@ -44,6 +44,7 @@ class TriGParser implements iParser, iQuadIterator {
 
     use TmpStreamParserTrait;
     use StreamSkipBomTrait;
+    use CreateBlankNodeTrait;
 
     const CHUNK_SIZE = 8192;
 
@@ -97,7 +98,7 @@ class TriGParser implements iParser, iQuadIterator {
      * @param resource | StreamInterface $input
      * @return iQuadIterator
      */
-    public function parseStream($input): iQuadIterator {
+    public function parseStream($input, string $baseUri = ''): iQuadIterator {
         if (is_resource($input)) {
             $input = new ResourceWrapper($input);
         }
@@ -110,6 +111,7 @@ class TriGParser implements iParser, iQuadIterator {
         $this->chunk       = '';
         $this->quadsBuffer = new ArrayIterator();
         $this->parser      = new Parser($this->options, null, $this->prefixCallback);
+        $this->baseUri     = $baseUri;
         return $this;
     }
 
@@ -134,11 +136,11 @@ class TriGParser implements iParser, iQuadIterator {
                 if ($quad) {
                     $df   = $this->dataFactory;
                     $sbj  = Util::isBlank($quad['subject']) ?
-                        $df::blankNode($quad['subject']) : $df::namedNode($quad['subject']);
+                        $this->createBlankNode($quad['subject']) : $df::namedNode($quad['subject']);
                     $prop = $df::namedNode($quad['predicate']);
                     if (substr($quad['object'], 0, 1) !== '"') {
                         $obj = Util::isBlank($quad['object']) ?
-                            $df::blankNode($quad['object']) : $df::namedNode($quad['object']);
+                            $this->createBlankNode($quad['object']) : $df::namedNode($quad['object']);
                     } else {
                         // as Util::getLiteralValue() doesn't work for multiline values
                         $value    = substr($quad['object'], 1, strrpos($quad['object'], '"') - 1);

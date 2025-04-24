@@ -123,4 +123,53 @@ class RdfXmlParserTest extends \PHPUnit\Framework\TestCase {
 
         $this->assertTrue($ntDataset->equals($xmlDataset));
     }
+
+    /**
+     * https://github.com/sweetrdf/quickRdfIo/issues/11
+     */
+    public function testBlank(): void {
+        $xml1   = <<<IN
+<?xml version="1.0"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <rdf:Description rdf:nodeID="b">
+        <dc:title>l1</dc:title>
+    </rdf:Description>
+</rdf:RDF>
+IN;
+        $xml2   = str_replace('<dc:title>l1</dc:title>', '<dc:title>l2</dc:title>', $xml1);
+        $df     = new DataFactory();
+        $parser = new RdfXmlParser($df);
+
+        // no baseUri
+        $dataset = new Dataset();
+        $dataset->add($parser->parse($xml1));
+        $dataset->add($parser->parse($xml2));
+        $this->assertCount(2, $dataset);
+        $anySbj = $dataset->getSubject();
+        foreach($dataset as $q) {
+            $this->assertTrue($anySbj->equals($q->getSubject()));
+        }
+
+        // same baseUri
+        $dataset = new Dataset();
+        $dataset->add($parser->parse($xml1, 'http://same.base'));
+        $dataset->add($parser->parse($xml2, 'http://same.base'));
+        $this->assertCount(2, $dataset);
+        $anySbj = $dataset->getSubject();
+        foreach($dataset as $q) {
+            $this->assertTrue($anySbj->equals($q->getSubject()));
+        }
+
+        // different baseUri
+        $dataset = new Dataset();
+        $dataset->add($parser->parse($xml1, 'http://same.base'));
+        $dataset->add($parser->parse($xml2, 'http://other.base'));
+        $this->assertCount(2, $dataset);
+        $firstSbj = null;
+        foreach($dataset as $q) {
+            $firstSbj ??= $q->getSubject();
+            $lastSbj  = $q->getSubject();
+        }
+        $this->assertFalse($firstSbj->equals($lastSbj));
+    }
 }

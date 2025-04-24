@@ -101,6 +101,9 @@ class RdfXmlParser implements iParser, iQuadIterator {
     const XML_LANG             = 'http://www.w3.org/XML/1998/namespacelang';
     const CHUNK_SIZE           = 1000000;
 
+    use CreateBlankNodeTrait;
+    use TmpStreamParserTrait;
+
     /**
      * 
      * @var array<string>
@@ -124,12 +127,10 @@ class RdfXmlParser implements iParser, iQuadIterator {
         self::RDF_DATATYPE,
         self::XML_LANG,
     ];
-    use TmpStreamParserTrait;
 
     private iDataFactory $dataFactory;
     private StreamInterface $input;
     private XmlParser $parser;
-    private string $baseUri;
     private string $baseUriDefault;
     private string $baseUriEmpty;
     private ?int $key = null;
@@ -202,7 +203,7 @@ class RdfXmlParser implements iParser, iQuadIterator {
      * @param resource | StreamInterface $input
      * @return iQuadIterator
      */
-    public function parseStream($input): iQuadIterator {
+    public function parseStream($input, string $baseUri = ''): iQuadIterator {
         if (is_resource($input)) {
             $input = new ResourceWrapper($input);
         }
@@ -211,6 +212,9 @@ class RdfXmlParser implements iParser, iQuadIterator {
         }
 
         $this->input = $input;
+        if (!empty($baseUri)) {
+            $this->baseUriDefault = $baseUri;
+        }
         return $this;
     }
 
@@ -316,7 +320,7 @@ class RdfXmlParser implements iParser, iQuadIterator {
         } elseif (isset($attributes[self::RDF_ID])) {
             $subject = $this->handleElementId($attributes[self::RDF_ID]);
         } elseif (isset($attributes[self::RDF_NODEID])) {
-            $subject = $this->dataFactory->blankNode('_:' . $attributes[self::RDF_NODEID]);
+            $subject = $this->createBlankNode('_:' . $attributes[self::RDF_NODEID]);
         } else {
             $subject = $this->dataFactory->blankNode();
         }
@@ -384,7 +388,7 @@ class RdfXmlParser implements iParser, iQuadIterator {
             $this->addTriple(null, $this->state->predicate, $subjectTmp);
         } elseif (isset($attributes[self::RDF_NODEID])) {
             // rdf:nodeID attribute
-            $subjectTmp = $this->dataFactory->blankNode($attributes[self::RDF_NODEID]);
+            $subjectTmp = $this->createBlankNode($attributes[self::RDF_NODEID]);
             $this->addTriple(null, $this->state->predicate, $subjectTmp);
         }
 

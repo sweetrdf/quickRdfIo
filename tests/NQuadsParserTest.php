@@ -284,10 +284,50 @@ class NQuadsParserTest extends \PHPUnit\Framework\TestCase {
             }
         }
 
-        $dataset = new \quickRdf\Dataset();
+        $dataset = new Dataset();
         $dataset->add($parser->parseStream(fopen(__DIR__ . '/files/issue10_utf8.nq', 'r')));
         $this->assertCount(1, $dataset);
         $q       = $df->quad(df::namedNode('http://foo'), DF::namedNode('http://bar'), DF::namedNode('http://baz'));
         $this->assertTrue($q->equals($dataset[0]));
+    }
+
+    /**
+     * https://github.com/sweetrdf/quickRdfIo/issues/11
+     */
+    public function testBlank(): void {
+        $df     = new DF();
+        $parser = new NQuadsParser($df);
+
+        // no baseUri
+        $dataset = new Dataset();
+        $dataset->add($parser->parse('_:b <http://foo> "l1" .'));
+        $dataset->add($parser->parse('_:b <http://foo> "l2" .'));
+        $this->assertCount(2, $dataset);
+        $anySbj = $dataset->getSubject();
+        foreach($dataset as $q) {
+            $this->assertTrue($anySbj->equals($q->getSubject()));
+        }
+
+        // same baseUri
+        $dataset = new Dataset();
+        $dataset->add($parser->parse('_:b <http://foo> "l1" .', 'http://same.base'));
+        $dataset->add($parser->parse('_:b <http://foo> "l2" .', 'http://same.base'));
+        $this->assertCount(2, $dataset);
+        $anySbj = $dataset->getSubject();
+        foreach($dataset as $q) {
+            $this->assertTrue($anySbj->equals($q->getSubject()));
+        }
+
+        // different baseUri
+        $dataset = new Dataset();
+        $dataset->add($parser->parse('_:b <http://foo> "l1" .', 'http://same.base'));
+        $dataset->add($parser->parse('_:b <http://foo> "l2" .', 'http://other.base'));
+        $this->assertCount(2, $dataset);
+        $firstSbj = null;
+        foreach($dataset as $q) {
+            $firstSbj ??= $q->getSubject();
+            $lastSbj  = $q->getSubject();
+        }
+        $this->assertFalse($firstSbj->equals($lastSbj));
     }
 }

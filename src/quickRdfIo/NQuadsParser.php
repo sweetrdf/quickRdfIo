@@ -45,6 +45,7 @@ class NQuadsParser implements iParser, iQuadIterator {
 
     use TmpStreamParserTrait;
     use StreamSkipBomTrait;
+    use CreateBlankNodeTrait;
 
     const MODE_TRIPLES      = 1;
     const MODE_QUADS        = 2;
@@ -207,7 +208,7 @@ class NQuadsParser implements iParser, iQuadIterator {
      * @param resource | StreamInterface $input
      * @return iQuadIterator
      */
-    public function parseStream($input): iQuadIterator {
+    public function parseStream($input, string $baseUri = ''): iQuadIterator {
         if (is_resource($input)) {
             $input = new ResourceWrapper($input);
         }
@@ -215,7 +216,10 @@ class NQuadsParser implements iParser, iQuadIterator {
             throw new RdfIoException("Input has to be a resource or " . StreamInterface::class . " object");
         }
 
-        $this->input = $input;
+        $this->input   = $input;
+        if (!empty($baseUri)) {
+            $this->baseUri = $baseUri;
+        }
         return $this;
     }
 
@@ -286,7 +290,7 @@ class NQuadsParser implements iParser, iQuadIterator {
         if ($matches[1] !== null) {
             $sbj = $df::namedNode($this->unescape($matches[1]));
         } else {
-            $sbj = $df::blankNode($matches[2]);
+            $sbj = $this->createBlankNode($matches[2]);
         }
 
         $pred = $df::namedNode($this->unescape($matches[3] ?? ''));
@@ -294,7 +298,7 @@ class NQuadsParser implements iParser, iQuadIterator {
         if ($matches[4] !== null) {
             $obj = $df::namedNode($matches[4]);
         } elseif ($matches[5] !== null) {
-            $obj = $df::blankNode($matches[5]);
+            $obj = $this->createBlankNode($matches[5]);
         } else {
             $value = $matches[6] ?? '';
             $value = $this->unescape($value);
@@ -303,7 +307,7 @@ class NQuadsParser implements iParser, iQuadIterator {
         if (($matches[9] ?? null) !== null) {
             $graph = $df::namedNode((string) $matches[9]);
         } elseif (($matches[10] ?? null) !== null) {
-            $graph = $df::blankNode($matches[10]);
+            $graph = $this->createBlankNode($matches[10]);
         }
         return $df::quad($sbj, $pred, $obj, $graph ?? null);
     }
@@ -316,6 +320,7 @@ class NQuadsParser implements iParser, iQuadIterator {
     private function starQuadGenerator(): Generator {
         $n = 0;
         try {
+            /** @phpstan-ignore while.alwaysTrue */
             while (true) {
                 $n++;
                 $this->offset = 0;
@@ -357,7 +362,7 @@ class NQuadsParser implements iParser, iQuadIterator {
             if ($matches[1] !== null) {
                 $sbj = $this->dataFactory::namedNode($this->unescape($matches[1]));
             } else {
-                $sbj = $this->dataFactory::blankNode($matches[2]);
+                $sbj = $this->createBlankNode($matches[2]);
             }
             $pred = $this->dataFactory::namedNode($matches[3]);
         }
@@ -370,7 +375,7 @@ class NQuadsParser implements iParser, iQuadIterator {
             if (($matches[1] ?? null) !== null) {
                 $graph = $this->dataFactory::namedNode($matches[1]);
             } else if (($matches[2] ?? null) !== null) {
-                $graph = $this->dataFactory::blankNode($matches[2]);
+                $graph = $this->createBlankNode($matches[2]);
             }
         } else {
             $ret = (int) preg_match($this->regexpObjGraph, $this->line, $matches, PREG_UNMATCHED_AS_NULL, $this->offset);
@@ -381,7 +386,7 @@ class NQuadsParser implements iParser, iQuadIterator {
             if ($matches[1] !== null) {
                 $obj = $this->dataFactory::namedNode($matches[1]);
             } elseif ($matches[2] !== null) {
-                $obj = $this->dataFactory::blankNode($matches[2]);
+                $obj = $this->createBlankNode($matches[2]);
             } else {
                 $value = $matches[3] ?? '';
                 $value = $this->unescape($value);
@@ -390,7 +395,7 @@ class NQuadsParser implements iParser, iQuadIterator {
             if (($matches[6] ?? null) !== null) {
                 $graph = $this->dataFactory::namedNode($matches[6]);
             } elseif (($matches[7] ?? null) !== null) {
-                $graph = $this->dataFactory::blankNode($matches[7]);
+                $graph = $this->createBlankNode($matches[7]);
             }
         }
         $regexpEnd = $this->level > 0 ? self::STAR_END : $this->regexpLineEnd;

@@ -28,6 +28,7 @@ namespace quickRdfIo;
 
 use rdfInterface\DataFactoryInterface as iDataFactory;
 use rdfInterface\QuadInterface as iQuad;
+use quickRdf\Dataset;
 
 /**
  * Description of UtilTest
@@ -113,5 +114,46 @@ class UtilTest extends \PHPUnit\Framework\TestCase {
                 $this->assertGreaterThan($outStreamPos, ftell($outStream));
             }
         }
+    }
+
+    /**
+     * https://github.com/sweetrdf/quickRdfIo/issues/11
+     */
+    public function testBlank(): void {
+        $file1 = __DIR__ . '/files/issue11_1.nt';
+        $file2 = __DIR__ . '/files/issue11_2.nt';
+
+        // no baseUri
+        $dataset = new Dataset();
+        $dataset->add(Util::parse($file1, self::$dfQuick));
+        $dataset->add(Util::parse($file2, self::$dfQuick));
+        $this->assertCount(2, $dataset);
+        $firstSbj = null;
+        foreach($dataset as $q) {
+            $firstSbj ??= $q->getSubject();
+            $lastSbj  = $q->getSubject();
+        }
+        
+        // same baseUri
+        $dataset = new Dataset();
+        $dataset->add(Util::parse($file1, self::$dfQuick, 'application/n-triples'));
+        $dataset->add(Util::parse($file2, self::$dfQuick, 'application/n-triples', 'file://' . $file1));
+        $this->assertCount(2, $dataset);
+        $anySbj = $dataset->getSubject();
+        foreach($dataset as $q) {
+            $this->assertTrue($anySbj->equals($q->getSubject()));
+        }
+
+        // different baseUri
+        $dataset = new Dataset();
+        $dataset->add(Util::parse($file1, self::$dfQuick, 'application/n-triples', 'https://doc1'));
+        $dataset->add(Util::parse($file2, self::$dfQuick, 'application/n-triples', 'https://doc2'));
+        $this->assertCount(2, $dataset);
+        $firstSbj = null;
+        foreach($dataset as $q) {
+            $firstSbj ??= $q->getSubject();
+            $lastSbj  = $q->getSubject();
+        }
+        $this->assertFalse($firstSbj->equals($lastSbj));
     }
 }
