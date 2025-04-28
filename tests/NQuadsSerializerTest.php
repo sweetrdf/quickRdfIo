@@ -36,13 +36,17 @@ use quickRdf\Dataset;
  */
 class NQuadsSerializerTest extends \PHPUnit\Framework\TestCase {
 
+    use TestUtilsTrait;
+
     public function checkRoundtrip(string $file): void {
+        $this->df   = new DF();
         $parser     = new NQuadsParser(new DF());
         $serializer = new NQuadsSerializer();
 
         $dInput = new Dataset();
         $sInput = file_get_contents($file) ?: throw new \RuntimeException("Failed to open $file");
         $dInput->add($parser->parse($sInput));
+        $dInput->forEach(fn($q) => $this->unblank($q));
         $output = $serializer->serialize($dInput);
 
         $dOutput = new Dataset();

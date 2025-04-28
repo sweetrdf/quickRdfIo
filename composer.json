@@ -18,7 +18,7 @@
         "ext-pcre": "*",
         "ext-xmlreader" : "*",
         "zozlak/rdf-constants": "^1.1",
-        "sweetrdf/rdf-interface": "^2 | ^3",
+        "sweetrdf/rdf-interface": "^3.2",
         "sweetrdf/rdf-helpers": "^2",
         "pietercolpaert/hardf": ">=0.3.1 <1",
         "ml/json-ld": "^1.2"

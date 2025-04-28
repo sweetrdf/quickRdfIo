@@ -26,6 +26,7 @@
 
 namespace quickRdfIo;
 
+use rdfInterface\ParserInterface as iParser;
 use quickRdf\DataFactory;
 use quickRdf\Dataset;
 use quickRdf\Quad;
@@ -82,7 +83,7 @@ class RdfXmlParserTest extends \PHPUnit\Framework\TestCase {
 
                     $refInput = fopen("$baseDir/" . substr($i, 0, -3) . "nt", 'r') ?: throw new \RuntimeException("Failed to open the test file");
                     $ref      = new Dataset();
-                    $ref->add($ntParser->parseStream($refInput));
+                    $ref->add($ntParser->parseStream($refInput, iParser::BLANK_NODES_PRESERVE));
                     $ref      = $ref->map(fn($x) => $this->unblank($x));
                     $this->assertDatasetsEqual($dataset, $ref, "Failed on $i");
                 }
@@ -145,8 +146,8 @@ IN;
         $dataset->add($parser->parse($xml1));
         $dataset->add($parser->parse($xml2));
         $this->assertCount(2, $dataset);
-        $anySbj = $dataset->getSubject();
-        foreach($dataset as $q) {
+        $anySbj  = $dataset->getSubject();
+        foreach ($dataset as $q) {
             $this->assertTrue($anySbj->equals($q->getSubject()));
         }
 
@@ -155,18 +156,18 @@ IN;
         $dataset->add($parser->parse($xml1, 'http://same.base'));
         $dataset->add($parser->parse($xml2, 'http://same.base'));
         $this->assertCount(2, $dataset);
-        $anySbj = $dataset->getSubject();
-        foreach($dataset as $q) {
+        $anySbj  = $dataset->getSubject();
+        foreach ($dataset as $q) {
             $this->assertTrue($anySbj->equals($q->getSubject()));
         }
 
         // different baseUri
-        $dataset = new Dataset();
+        $dataset  = new Dataset();
         $dataset->add($parser->parse($xml1, 'http://same.base'));
         $dataset->add($parser->parse($xml2, 'http://other.base'));
         $this->assertCount(2, $dataset);
         $firstSbj = null;
-        foreach($dataset as $q) {
+        foreach ($dataset as $q) {
             $firstSbj ??= $q->getSubject();
             $lastSbj  = $q->getSubject();
         }

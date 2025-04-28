@@ -26,6 +26,7 @@
 
 namespace quickRdfIo;
 
+use rdfInterface\ParserInterface as iParser;
 use rdfInterface\BlankNodeInterface as iBlankNode;
 use rdfInterface\DataFactoryInterface as iDataFactory;
 
@@ -35,15 +36,21 @@ use rdfInterface\DataFactoryInterface as iDataFactory;
  */
 trait CreateBlankNodeTrait {
 
-    private string $baseUri = '';
+    static private $blankMap = [];
+    private string $baseUri  = '';
     private iDataFactory $dataFactory;
-
 
     public function createBlankNode(string $iri): iBlankNode {
         if (str_starts_with($iri, '_:')) {
             $iri = substr($iri, 2);
         }
-        $iri = '_:' . $this->baseUri . (!empty($this->baseUri) ? '/' : '') . $iri;
-        return $this->dataFactory::blankNode($iri);
+        $key = $this->baseUri . '/' . $iri;
+        if (!isset(self::$blankMap[$key])) {
+            if ($this->baseUri !== iParser::BLANK_NODES_PRESERVE) {
+                $iri = null;
+            }
+            self::$blankMap[$key] = $this->dataFactory::blankNode($iri);
+        }
+        return self::$blankMap[$key];
     }
 }

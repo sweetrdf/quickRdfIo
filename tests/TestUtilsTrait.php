@@ -31,6 +31,7 @@ use rdfInterface\QuadInterface;
 use rdfInterface\BlankNodeInterface;
 use rdfInterface\DatasetInterface;
 use rdfInterface\ParserInterface;
+use rdfInterface\DefaultGraphInterface;
 use quickRdf\Dataset;
 
 /**
@@ -46,11 +47,19 @@ trait TestUtilsTrait {
     private function unblank(QuadInterface $quad): QuadInterface {
         $sbj = $quad->getSubject();
         if ($sbj instanceof BlankNodeInterface) {
-            $quad = $quad->withSubject($this->df->namedNode('bn:' . $sbj->getValue()));
+            $quad = $quad->withSubject($this->df->namedNode('_unblanked' . $sbj->getValue()));
+        } elseif ($sbj instanceof QuadInterface) {
+            $quad = $quad->withSubject($this->unblank($sbj));
         }
         $obj = $quad->getObject();
         if ($obj instanceof BlankNodeInterface) {
-            $quad = $quad->withObject($this->df->namedNode('bn:' . $obj->getValue()));
+            $quad = $quad->withObject($this->df->namedNode('_unblanked' . $obj->getValue()));
+        } elseif ($obj instanceof QuadInterface) {
+            $quad = $quad->withObject($this->unblank($obj));
+        }
+        $graph = $quad->getGraph();
+        if ($graph instanceof BlankNodeInterface) {
+            $quad = $quad->withGraph($this->df->namedNode('_unblanked' . $graph->getValue()));
         }
         return $quad;
     }
