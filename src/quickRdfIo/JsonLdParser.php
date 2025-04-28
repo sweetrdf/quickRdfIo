@@ -93,9 +93,9 @@ class JsonLdParser implements iParser, iQuadIterator {
                 throw new RdfIoException("Unsupported object class " . $obj::class);
             }
 
-            $graph = $quad->getGraph();
-            if (!empty((string) $graph)) {
-                $graph = $graph->getScheme() === '_' ? $df->blankNode((string) $graph) : $df->namedNode($graph);
+            $graph = (string) $quad->getGraph();
+            if (!empty($graph) && !str_starts_with($graph, '_:')) {
+                $graph = $df->namedNode($graph);
             } else {
                 $graph = $df->DefaultGraph();
             }
@@ -131,7 +131,7 @@ class JsonLdParser implements iParser, iQuadIterator {
      * @return iQuadIterator
      */
     public function parseStream($input, string $baseUri = ''): iQuadIterator {
-        $input         = is_resource($input) ? stream_get_contents($input) : $input->getContents();
+        $input = is_resource($input) ? stream_get_contents($input) : $input->getContents();
         return $this->parse($input ?: '', $baseUri);
     }
 
