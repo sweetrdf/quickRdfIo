@@ -152,9 +152,7 @@
                 </dt>
                 <dd class="phpdocumentor-tag-list__definition">
                                                                                 
-                                                 <section class="phpdocumentor-description"><p>\ArrayAccess&lt;QuadInterface|QuadIteratorInterface|callable|int&lt;0, 0&gt;, QuadInterface&gt;</p>
-</section>
-
+                                             
                                     </dd>
                                                                 </dl>
 
@@ -289,7 +287,7 @@
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a class="" href="classes/rdfInterface-DatasetInterface.html#method_getPredicate">getPredicate()</a>
     <span>
-                                &nbsp;: <a href="classes/rdfInterface-TermInterface.html"><abbr title="\rdfInterface\TermInterface">TermInterface</abbr></a>|null    </span>
+                                &nbsp;: <a href="classes/rdfInterface-NamedNodeInterface.html"><abbr title="\rdfInterface\NamedNodeInterface">NamedNodeInterface</abbr></a>|null    </span>
 </dt>
 <dd>Fetches subject of a first quad matching a given filter or null if no quad matches the filter.</dd>
 
@@ -693,7 +691,7 @@ All quads for which the callable returns true are copied.</li>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">delete</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href="classes/rdfInterface-QuadCompareInterface.html"><abbr title="\rdfInterface\QuadCompareInterface">QuadCompareInterface</abbr></a>|<a href="classes/rdfInterface-QuadIteratorInterface.html"><abbr title="\rdfInterface\QuadIteratorInterface">QuadIteratorInterface</abbr></a>|<a href="classes/rdfInterface-QuadIteratorAggregateInterface.html"><abbr title="\rdfInterface\QuadIteratorAggregateInterface">QuadIteratorAggregateInterface</abbr></a>|callable&nbsp;</span><span class="phpdocumentor-signature__argument__name">$filter</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/rdfInterface-DatasetInterface.html"><abbr title="\rdfInterface\DatasetInterface">DatasetInterface</abbr></a></span></code>
+                    <span class="phpdocumentor-signature__name">delete</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__return-type"><a href="classes/rdfInterface-QuadCompareInterface.html"><abbr title="\rdfInterface\QuadCompareInterface">QuadCompareInterface</abbr></a>|<a href="classes/rdfInterface-QuadIteratorInterface.html"><abbr title="\rdfInterface\QuadIteratorInterface">QuadIteratorInterface</abbr></a>|<a href="classes/rdfInterface-QuadIteratorAggregateInterface.html"><abbr title="\rdfInterface\QuadIteratorAggregateInterface">QuadIteratorAggregateInterface</abbr></a>|callable|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$filter</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/rdfInterface-DatasetInterface.html"><abbr title="\rdfInterface\DatasetInterface">DatasetInterface</abbr></a></span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -715,8 +713,8 @@ All quads for which the callable returns true are copied.</li>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-signature__argument__name">$filter</span>
-                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/rdfInterface-QuadCompareInterface.html"><abbr title="\rdfInterface\QuadCompareInterface">QuadCompareInterface</abbr></a>|<a href="classes/rdfInterface-QuadIteratorInterface.html"><abbr title="\rdfInterface\QuadIteratorInterface">QuadIteratorInterface</abbr></a>|<a href="classes/rdfInterface-QuadIteratorAggregateInterface.html"><abbr title="\rdfInterface\QuadIteratorAggregateInterface">QuadIteratorAggregateInterface</abbr></a>|callable</span>
-                            </dt>
+                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/rdfInterface-QuadCompareInterface.html"><abbr title="\rdfInterface\QuadCompareInterface">QuadCompareInterface</abbr></a>|<a href="classes/rdfInterface-QuadIteratorInterface.html"><abbr title="\rdfInterface\QuadIteratorInterface">QuadIteratorInterface</abbr></a>|<a href="classes/rdfInterface-QuadIteratorAggregateInterface.html"><abbr title="\rdfInterface\QuadIteratorAggregateInterface">QuadIteratorAggregateInterface</abbr></a>|callable|null</span>
+                 = <span class="phpdocumentor-signature__argument__default-value">null</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
                 
             </dd>
@@ -996,8 +994,7 @@ All quads for which the callable returns true are copied.</li>
         <section class="phpdocumentor-description"><p>All quads matching the $filter parameter are modified.</p>
 <p>The $filter can be specified as:</p>
 <ul>
-<li>
-<code class="prettyprint">null</code> which matches all quads.</li>
+<li><code class="prettyprint">null</code> which matches all quads.</li>
 <li>An object implementing the \rdfInterface\QuadCompareInterface
 (e.g. a single quad)</li>
 <li>An object implementing the \rdfInterface\QuadIteratorInterface
@@ -1306,7 +1303,7 @@ All quads for which the callable returns true are copied.</li>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">getPredicate</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__return-type"><a href="classes/rdfInterface-QuadCompareInterface.html"><abbr title="\rdfInterface\QuadCompareInterface">QuadCompareInterface</abbr></a>|<a href="classes/rdfInterface-QuadIteratorInterface.html"><abbr title="\rdfInterface\QuadIteratorInterface">QuadIteratorInterface</abbr></a>|<a href="classes/rdfInterface-QuadIteratorAggregateInterface.html"><abbr title="\rdfInterface\QuadIteratorAggregateInterface">QuadIteratorAggregateInterface</abbr></a>|callable|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$filter</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/rdfInterface-TermInterface.html"><abbr title="\rdfInterface\TermInterface">TermInterface</abbr></a>|null</span></code>
+                    <span class="phpdocumentor-signature__name">getPredicate</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__return-type"><a href="classes/rdfInterface-QuadCompareInterface.html"><abbr title="\rdfInterface\QuadCompareInterface">QuadCompareInterface</abbr></a>|<a href="classes/rdfInterface-QuadIteratorInterface.html"><abbr title="\rdfInterface\QuadIteratorInterface">QuadIteratorInterface</abbr></a>|<a href="classes/rdfInterface-QuadIteratorAggregateInterface.html"><abbr title="\rdfInterface\QuadIteratorAggregateInterface">QuadIteratorAggregateInterface</abbr></a>|callable|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$filter</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/rdfInterface-NamedNodeInterface.html"><abbr title="\rdfInterface\NamedNodeInterface">NamedNodeInterface</abbr></a>|null</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -1329,7 +1326,7 @@ All quads for which the callable returns true are copied.</li>
 
             <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-        <span class="phpdocumentor-signature__response_type"><a href="classes/rdfInterface-TermInterface.html"><abbr title="\rdfInterface\TermInterface">TermInterface</abbr></a>|null</span>
+        <span class="phpdocumentor-signature__response_type"><a href="classes/rdfInterface-NamedNodeInterface.html"><abbr title="\rdfInterface\NamedNodeInterface">NamedNodeInterface</abbr></a>|null</span>
             </section>
 
 </article>
@@ -1814,8 +1811,7 @@ callback function.</p>
 signature. Matching quads are the ones for which the callable returns
 <code class="prettyprint">true</code>.
 If more than one quad is matched \UnexpectedValueException must be thrown.</li>
-<li>
-<code class="prettyprint">0</code>. This is a shorthand syntax for checking if the dataset is empty.</li>
+<li><code class="prettyprint">0</code>. This is a shorthand syntax for checking if the dataset is empty.</li>
 </ul>
 <p>If the $offset is specified differently, \UnexpectedValueException is thrown.</p>
 <p>If exactly one quad is matched, <code class="prettyprint">true</code> is returned.</p>
@@ -1901,8 +1897,7 @@ If more than one quad is matched \UnexpectedValueException must be thrown.</li>
 <li>A callable with the <code class="prettyprint">fn(\rdfInterface\Quad, \rdfInterface\Dataset): bool</code>
 signature. Matching quads are the ones for which the callable returns
 <code class="prettyprint">true</code>.</li>
-<li>
-<code class="prettyprint">0</code> Returns any single quad.
+<li><code class="prettyprint">0</code> Returns any single quad.
 The main use case is enabling the <code class="prettyprint">$dataset[0] ?? $defaultQuad</code> syntax
 for &quot;unpacking&quot; a dataset containing one or zero quads.
 As quads within a dataset don't have order, it makes no sense to access
@@ -1990,9 +1985,7 @@ throw an \UnexpectedValueException.</li>
     
         <section class="phpdocumentor-description"><p>Offset can be specified as:</p>
 <ul>
-<li>
-<code class="prettyprint">null</code> which is just a shorthand to <code class="prettyprint">add($value)</code>
-</li>
+<li><code class="prettyprint">null</code> which is just a shorthand to <code class="prettyprint">add($value)</code></li>
 <li>An object implementing the \rdfInterface\QuadCompare interface.
 If more than one quad is matched \UnexpectedValueException must be thrown.</li>
 <li>A callable with the <code class="prettyprint">fn(\rdfInterface\Quad, \rdfInterface\Dataset): bool</code>

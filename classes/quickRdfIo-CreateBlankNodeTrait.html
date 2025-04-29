@@ -103,27 +103,18 @@
             <div class="phpdocumentor-column -nine phpdocumentor-content">
                                 <section>
                                         <ul class="phpdocumentor-breadcrumbs">
-            <li class="phpdocumentor-breadcrumb"><a href="namespaces/rdfinterface.html">rdfInterface</a></li>
+            <li class="phpdocumentor-breadcrumb"><a href="namespaces/quickrdfio.html">quickRdfIo</a></li>
     </ul>
 
-    <article class="phpdocumentor-element -interface">
+    <article class="phpdocumentor-element -trait">
         <h2 class="phpdocumentor-content__title">
-    QuadIteratorInterface
-            <span class="phpdocumentor-element__extends">
-            extends
-                            <abbr title="\Iterator">Iterator</abbr>                    </span>
-                <div class="phpdocumentor-element__package">
-            in
-            <ul class="phpdocumentor-breadcrumbs">
-                                    <li><a href="packages/Application.html">Application</a></li>
-                            </ul>
-        </div>
+    CreateBlankNodeTrait
     </h2>
 
         <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="vendor/sweetrdf/rdf-interface/src/rdfInterface/QuadIteratorInterface.php"><a href="files/vendor-sweetrdf-rdf-interface-src-rdfinterface-quaditeratorinterface.html"><abbr title="vendor/sweetrdf/rdf-interface/src/rdfInterface/QuadIteratorInterface.php">QuadIteratorInterface.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/CreateBlankNodeTrait.php"><a href="files/src-quickrdfio-createblanknodetrait.html"><abbr title="src/quickRdfIo/CreateBlankNodeTrait.php">CreateBlankNodeTrait.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">34</span>
+    <span class="phpdocumentor-element-found-in__line">37</span>
 
     </aside>
 
@@ -133,7 +124,7 @@
 
     <h5 class="phpdocumentor-tag-list__heading" id="tags">
         Tags
-        <a href="classes/rdfInterface-QuadIteratorInterface.html#tags" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/quickRdfIo-CreateBlankNodeTrait.html#tags" class="headerlink"><i class="fas fa-link"></i></a>
 
     </h5>
     <dl class="phpdocumentor-tag-list">
@@ -146,13 +137,6 @@
 </section>
 
                                     </dd>
-                                                <dt class="phpdocumentor-tag-list__entry">
-                    <span class="phpdocumentor-tag__name">extends</span>
-                </dt>
-                <dd class="phpdocumentor-tag-list__definition">
-                                                                                
-                                             
-                                    </dd>
                                                                 </dl>
 
 
@@ -161,7 +145,7 @@
 
 <h3 id="toc">
     Table of Contents
-    <a href="classes/rdfInterface-QuadIteratorInterface.html#toc" class="headerlink"><i class="fas fa-link"></i></a>
+    <a href="classes/quickRdfIo-CreateBlankNodeTrait.html#toc" class="headerlink"><i class="fas fa-link"></i></a>
 
 </h3>
 
@@ -173,17 +157,42 @@
 
 
 
+<h4 id="toc-properties">
+    Properties
+    <a href="classes/quickRdfIo-CreateBlankNodeTrait.html#toc-properties" class="headerlink"><i class="fas fa-link"></i></a>
+
+</h4>
+<dl class="phpdocumentor-table-of-contents">
+            <dt class="phpdocumentor-table-of-contents__entry -property -private">
+    <a class="" href="classes/quickRdfIo-CreateBlankNodeTrait.html#property_baseUri">$baseUri</a>
+    <span>
+                        &nbsp;: string            </span>
+</dt>
+
+            <dt class="phpdocumentor-table-of-contents__entry -property -private">
+    <a class="" href="classes/quickRdfIo-CreateBlankNodeTrait.html#property_blankMap">$blankMap</a>
+    <span>
+                        &nbsp;: mixed            </span>
+</dt>
+
+            <dt class="phpdocumentor-table-of-contents__entry -property -private">
+    <a class="" href="classes/quickRdfIo-CreateBlankNodeTrait.html#property_dataFactory">$dataFactory</a>
+    <span>
+                        &nbsp;: <a href="classes/rdfInterface-DataFactoryInterface.html"><abbr title="\rdfInterface\DataFactoryInterface">DataFactoryInterface</abbr></a>            </span>
+</dt>
+
+    </dl>
 
 <h4 id="toc-methods">
     Methods
-    <a href="classes/rdfInterface-QuadIteratorInterface.html#toc-methods" class="headerlink"><i class="fas fa-link"></i></a>
+    <a href="classes/quickRdfIo-CreateBlankNodeTrait.html#toc-methods" class="headerlink"><i class="fas fa-link"></i></a>
 
 </h4>
 <dl class="phpdocumentor-table-of-contents">
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a class="" href="classes/rdfInterface-QuadIteratorInterface.html#method_current">current()</a>
+    <a class="" href="classes/quickRdfIo-CreateBlankNodeTrait.html#method_createBlankNode">createBlankNode()</a>
     <span>
-                                &nbsp;: <a href="classes/rdfInterface-QuadInterface.html"><abbr title="\rdfInterface\QuadInterface">QuadInterface</abbr></a>|null    </span>
+                                &nbsp;: <a href="classes/rdfInterface-BlankNodeInterface.html"><abbr title="\rdfInterface\BlankNodeInterface">BlankNodeInterface</abbr></a>    </span>
 </dt>
 
     </dl>
@@ -193,10 +202,127 @@
 
         
 
+        
+    <section class="phpdocumentor-properties">
+        <h3 class="phpdocumentor-elements__header" id="properties">
+            Properties
+            <a href="classes/quickRdfIo-CreateBlankNodeTrait.html#properties" class="headerlink"><i class="fas fa-link"></i></a>
+
+        </h3>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
+            -private
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="property_baseUri">
+        $baseUri
+        <a href="classes/quickRdfIo-CreateBlankNodeTrait.html#property_baseUri" class="headerlink"><i class="fas fa-link"></i></a>
+
+        <span class="phpdocumentor-element__modifiers">
+                                </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/CreateBlankNodeTrait.php"><a href="files/src-quickrdfio-createblanknodetrait.html"><abbr title="src/quickRdfIo/CreateBlankNodeTrait.php">CreateBlankNodeTrait.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">40</span>
+
+    </aside>
+
+    
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+        <span class="phpdocumentor-signature__type">string</span>
+    <span class="phpdocumentor-signature__name">$baseUri</span>
+     = <span class="phpdocumentor-signature__default-value">&#039;&#039;</span></code>
+
+    
+    
+    
+
+    
+
+</article>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
+            -private
+            -static                                            "
+>
+    <h4 class="phpdocumentor-element__name" id="property_blankMap">
+        $blankMap
+        <a href="classes/quickRdfIo-CreateBlankNodeTrait.html#property_blankMap" class="headerlink"><i class="fas fa-link"></i></a>
+
+        <span class="phpdocumentor-element__modifiers">
+                                </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/CreateBlankNodeTrait.php"><a href="files/src-quickrdfio-createblanknodetrait.html"><abbr title="src/quickRdfIo/CreateBlankNodeTrait.php">CreateBlankNodeTrait.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">39</span>
+
+    </aside>
+
+    
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+    <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__type">mixed</span>
+    <span class="phpdocumentor-signature__name">$blankMap</span>
+     = <span class="phpdocumentor-signature__default-value">[]</span></code>
+
+    
+    
+    
+
+    
+
+</article>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
+            -private
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="property_dataFactory">
+        $dataFactory
+        <a href="classes/quickRdfIo-CreateBlankNodeTrait.html#property_dataFactory" class="headerlink"><i class="fas fa-link"></i></a>
+
+        <span class="phpdocumentor-element__modifiers">
+                                </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/CreateBlankNodeTrait.php"><a href="files/src-quickrdfio-createblanknodetrait.html"><abbr title="src/quickRdfIo/CreateBlankNodeTrait.php">CreateBlankNodeTrait.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">41</span>
+
+    </aside>
+
+    
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+        <span class="phpdocumentor-signature__type"><a href="classes/rdfInterface-DataFactoryInterface.html"><abbr title="\rdfInterface\DataFactoryInterface">DataFactoryInterface</abbr></a></span>
+    <span class="phpdocumentor-signature__name">$dataFactory</span>
+    </code>
+
+    
+    
+    
+
+    
+
+</article>
+            </section>
+
             <section class="phpdocumentor-methods">
         <h3 class="phpdocumentor-elements__header" id="methods">
             Methods
-            <a href="classes/rdfInterface-QuadIteratorInterface.html#methods" class="headerlink"><i class="fas fa-link"></i></a>
+            <a href="classes/quickRdfIo-CreateBlankNodeTrait.html#methods" class="headerlink"><i class="fas fa-link"></i></a>
 
         </h3>
                     <article
@@ -205,35 +331,45 @@
             -public
                                                         "
 >
-    <h4 class="phpdocumentor-element__name" id="method_current">
-        current()
-        <a href="classes/rdfInterface-QuadIteratorInterface.html#method_current" class="headerlink"><i class="fas fa-link"></i></a>
+    <h4 class="phpdocumentor-element__name" id="method_createBlankNode">
+        createBlankNode()
+        <a href="classes/quickRdfIo-CreateBlankNodeTrait.html#method_createBlankNode" class="headerlink"><i class="fas fa-link"></i></a>
 
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="vendor/sweetrdf/rdf-interface/src/rdfInterface/QuadIteratorInterface.php"><a href="files/vendor-sweetrdf-rdf-interface-src-rdfinterface-quaditeratorinterface.html"><abbr title="vendor/sweetrdf/rdf-interface/src/rdfInterface/QuadIteratorInterface.php">QuadIteratorInterface.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/CreateBlankNodeTrait.php"><a href="files/src-quickrdfio-createblanknodetrait.html"><abbr title="src/quickRdfIo/CreateBlankNodeTrait.php">CreateBlankNodeTrait.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">36</span>
+    <span class="phpdocumentor-element-found-in__line">43</span>
 
     </aside>
 
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">current</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/rdfInterface-QuadInterface.html"><abbr title="\rdfInterface\QuadInterface">QuadInterface</abbr></a>|null</span></code>
+                    <span class="phpdocumentor-signature__name">createBlankNode</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$iri</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/rdfInterface-BlankNodeInterface.html"><abbr title="\rdfInterface\BlankNodeInterface">BlankNodeInterface</abbr></a></span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
     
     
-    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$iri</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+            </dl>
+
     
 
     
 
             <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-        <span class="phpdocumentor-signature__response_type"><a href="classes/rdfInterface-QuadInterface.html"><abbr title="\rdfInterface\QuadInterface">QuadInterface</abbr></a>|null</span>
+        <span class="phpdocumentor-signature__response_type"><a href="classes/rdfInterface-BlankNodeInterface.html"><abbr title="\rdfInterface\BlankNodeInterface">BlankNodeInterface</abbr></a></span>
             </section>
 
 </article>
@@ -243,7 +379,7 @@
     <div class="phpdocumentor-modal-bg" data-exit-button></div>
     <div class="phpdocumentor-modal-container">
         <div class="phpdocumentor-modal-content">
-            <pre style="max-height: 500px; overflow-y: scroll" data-src="files/vendor/sweetrdf/rdf-interface/src/rdfInterface/QuadIteratorInterface.php.txt" class="language-php line-numbers linkable-line-numbers"></pre>
+            <pre style="max-height: 500px; overflow-y: scroll" data-src="files/src/quickRdfIo/CreateBlankNodeTrait.php.txt" class="language-php line-numbers linkable-line-numbers"></pre>
         </div>
         <button data-exit-button class="phpdocumentor-modal__close">&times;</button>
     </div>
@@ -334,7 +470,7 @@
     </article>
                                 </section>
                 <section class="phpdocumentor-on-this-page__sidebar">
-                            
+                                
     <section class="phpdocumentor-on-this-page__content">
         <strong class="phpdocumentor-on-this-page__title">On this page</strong>
 
@@ -342,17 +478,24 @@
             <li class="phpdocumentor-on-this-page-section__title">Table Of Contents</li>
             <li>
                 <ul class="phpdocumentor-list -clean">
-                    <li><a href="classes/rdfInterface-QuadIteratorInterface.html#toc-constants">Constants</a></li>
-                    <li><a href="classes/rdfInterface-QuadIteratorInterface.html#toc-methods">Methods</a></li>
-                </ul>
+                                                            <li><a href="classes/quickRdfIo-CreateBlankNodeTrait.html#toc-properties">Properties</a></li>
+                                                            <li><a href="classes/quickRdfIo-CreateBlankNodeTrait.html#toc-methods">Methods</a></li>
+                                    </ul>
             </li>
-                            <li class="phpdocumentor-on-this-page-section__title">Methods</li>
-                <li>
-                    <ul class="phpdocumentor-list -clean">
-                                                    <li class=""><a href="classes/rdfInterface-QuadIteratorInterface.html#method_current">current()</a></li>
-                                            </ul>
-                </li>
-            
+                                    <li class="phpdocumentor-on-this-page-section__title">Properties</li>
+            <li>
+                <ul class="phpdocumentor-list -clean">
+                                            <li class=""><a href="classes/quickRdfIo-CreateBlankNodeTrait.html#property_baseUri">$baseUri</a></li>
+                                            <li class=""><a href="classes/quickRdfIo-CreateBlankNodeTrait.html#property_blankMap">$blankMap</a></li>
+                                            <li class=""><a href="classes/quickRdfIo-CreateBlankNodeTrait.html#property_dataFactory">$dataFactory</a></li>
+                                    </ul>
+            </li>
+                                    <li class="phpdocumentor-on-this-page-section__title">Methods</li>
+            <li>
+                <ul class="phpdocumentor-list -clean">
+                                            <li class=""><a href="classes/quickRdfIo-CreateBlankNodeTrait.html#method_createBlankNode">createBlankNode()</a></li>
+                                    </ul>
+            </li>
                     </ul>
     </section>
 
@@ -370,7 +513,7 @@
     </section>
 </section>
         </div>
-        <a href="classes/rdfInterface-QuadIteratorInterface.html#top" class="phpdocumentor-back-to-top"><i class="fas fa-chevron-circle-up"></i></a>
+        <a href="classes/quickRdfIo-CreateBlankNodeTrait.html#top" class="phpdocumentor-back-to-top"><i class="fas fa-chevron-circle-up"></i></a>
 
     </main>
 

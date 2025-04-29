@@ -344,19 +344,14 @@
 $value and $lang parameter values:</p>
 <ul>
 <li>if $lang is not empty, the $datatype must be set to
-<code class="prettyprint">http://www.w3.org/1999/02/22-rdf-syntax-ns#langString</code>
-</li>
+<code class="prettyprint">http://www.w3.org/1999/02/22-rdf-syntax-ns#langString</code></li>
 <li>if $lang is empty or null, the $datatype depends on the PHP type of the
 $value parameter:
 <ul>
-<li>bool - <code class="prettyprint">http://www.w3.org/2001/XMLSchema#boolean</code>
-</li>
-<li>int - <code class="prettyprint">http://www.w3.org/2001/XMLSchema#integer</code>
-</li>
-<li>float - <code class="prettyprint">http://www.w3.org/2001/XMLSchema#decimal</code>
-</li>
-<li>string - <code class="prettyprint">http://www.w3.org/2001/XMLSchema#string</code>
-</li>
+<li>bool - <code class="prettyprint">http://www.w3.org/2001/XMLSchema#boolean</code></li>
+<li>int - <code class="prettyprint">http://www.w3.org/2001/XMLSchema#integer</code></li>
+<li>float - <code class="prettyprint">http://www.w3.org/2001/XMLSchema#decimal</code></li>
+<li>string - <code class="prettyprint">http://www.w3.org/2001/XMLSchema#string</code></li>
 <li>Stringable object - <code class="prettyprint">http://www.w3.org/2001/XMLSchema#string</code> or
 any other more precise XSD datatype if the implementation is able
 to derive it from the object class</li>

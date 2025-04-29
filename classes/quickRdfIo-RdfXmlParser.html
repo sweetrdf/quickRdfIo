@@ -124,7 +124,7 @@
     
             <span class="phpdocumentor-element__extends">
             uses
-                            <a href="classes/quickRdfIo-TmpStreamParserTrait.html"><abbr title="\quickRdfIo\TmpStreamParserTrait">TmpStreamParserTrait</abbr></a>                    </span>
+                            <a href="classes/quickRdfIo-CreateBlankNodeTrait.html"><abbr title="\quickRdfIo\CreateBlankNodeTrait">CreateBlankNodeTrait</abbr></a>,                             <a href="classes/quickRdfIo-TmpStreamParserTrait.html"><abbr title="\quickRdfIo\TmpStreamParserTrait">TmpStreamParserTrait</abbr></a>                    </span>
     </h2>
 
 <div class="phpdocumentor-label-line">
@@ -315,7 +315,7 @@
 </h4>
 <dl class="phpdocumentor-table-of-contents">
             <dt class="phpdocumentor-table-of-contents__entry -property -private">
-    <a class="" href="classes/quickRdfIo-RdfXmlParser.html#property_baseUri">$baseUri</a>
+    <a class="" href="classes/quickRdfIo-CreateBlankNodeTrait.html#property_baseUri">$baseUri</a>
     <span>
                         &nbsp;: string            </span>
 </dt>
@@ -330,6 +330,12 @@
     <a class="" href="classes/quickRdfIo-RdfXmlParser.html#property_baseUriEmpty">$baseUriEmpty</a>
     <span>
                         &nbsp;: string            </span>
+</dt>
+
+            <dt class="phpdocumentor-table-of-contents__entry -property -private">
+    <a class="" href="classes/quickRdfIo-CreateBlankNodeTrait.html#property_blankMap">$blankMap</a>
+    <span>
+                        &nbsp;: mixed            </span>
 </dt>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -private">
@@ -422,6 +428,12 @@
     <a class="" href="classes/quickRdfIo-RdfXmlParser.html#method___destruct">__destruct()</a>
     <span>
                                 &nbsp;: mixed    </span>
+</dt>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a class="" href="classes/quickRdfIo-CreateBlankNodeTrait.html#method_createBlankNode">createBlankNode()</a>
+    <span>
+                                &nbsp;: <a href="classes/rdfInterface-BlankNodeInterface.html"><abbr title="\rdfInterface\BlankNodeInterface">BlankNodeInterface</abbr></a>    </span>
 </dt>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
@@ -1156,15 +1168,15 @@
 >
     <h4 class="phpdocumentor-element__name" id="property_baseUri">
         $baseUri
-        <a href="classes/quickRdfIo-RdfXmlParser.html#property_baseUri" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/quickRdfIo-CreateBlankNodeTrait.html#property_baseUri" class="headerlink"><i class="fas fa-link"></i></a>
 
         <span class="phpdocumentor-element__modifiers">
                                 </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/RdfXmlParser.php"><a href="files/src-quickrdfio-rdfxmlparser.html"><abbr title="src/quickRdfIo/RdfXmlParser.php">RdfXmlParser.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/CreateBlankNodeTrait.php"><a href="files/src-quickrdfio-createblanknodetrait.html"><abbr title="src/quickRdfIo/CreateBlankNodeTrait.php">CreateBlankNodeTrait.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">132</span>
+    <span class="phpdocumentor-element-found-in__line">40</span>
 
     </aside>
 
@@ -1174,7 +1186,7 @@
     <span class="phpdocumentor-signature__visibility">private</span>
         <span class="phpdocumentor-signature__type">string</span>
     <span class="phpdocumentor-signature__name">$baseUri</span>
-    </code>
+     = <span class="phpdocumentor-signature__default-value">&#039;&#039;</span></code>
 
     
     
@@ -1200,7 +1212,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/RdfXmlParser.php"><a href="files/src-quickrdfio-rdfxmlparser.html"><abbr title="src/quickRdfIo/RdfXmlParser.php">RdfXmlParser.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">133</span>
+    <span class="phpdocumentor-element-found-in__line">134</span>
 
     </aside>
 
@@ -1236,7 +1248,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/RdfXmlParser.php"><a href="files/src-quickrdfio-rdfxmlparser.html"><abbr title="src/quickRdfIo/RdfXmlParser.php">RdfXmlParser.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">134</span>
+    <span class="phpdocumentor-element-found-in__line">135</span>
 
     </aside>
 
@@ -1247,6 +1259,42 @@
         <span class="phpdocumentor-signature__type">string</span>
     <span class="phpdocumentor-signature__name">$baseUriEmpty</span>
     </code>
+
+    
+    
+    
+
+    
+
+</article>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
+            -private
+            -static                                            "
+>
+    <h4 class="phpdocumentor-element__name" id="property_blankMap">
+        $blankMap
+        <a href="classes/quickRdfIo-CreateBlankNodeTrait.html#property_blankMap" class="headerlink"><i class="fas fa-link"></i></a>
+
+        <span class="phpdocumentor-element__modifiers">
+                                </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/CreateBlankNodeTrait.php"><a href="files/src-quickrdfio-createblanknodetrait.html"><abbr title="src/quickRdfIo/CreateBlankNodeTrait.php">CreateBlankNodeTrait.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">39</span>
+
+    </aside>
+
+    
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+    <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__type">mixed</span>
+    <span class="phpdocumentor-signature__name">$blankMap</span>
+     = <span class="phpdocumentor-signature__default-value">[]</span></code>
 
     
     
@@ -1272,7 +1320,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/RdfXmlParser.php"><a href="files/src-quickrdfio-rdfxmlparser.html"><abbr title="src/quickRdfIo/RdfXmlParser.php">RdfXmlParser.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">129</span>
+    <span class="phpdocumentor-element-found-in__line">131</span>
 
     </aside>
 
@@ -1308,7 +1356,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/RdfXmlParser.php"><a href="files/src-quickrdfio-rdfxmlparser.html"><abbr title="src/quickRdfIo/RdfXmlParser.php">RdfXmlParser.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">141</span>
+    <span class="phpdocumentor-element-found-in__line">142</span>
 
     </aside>
 
@@ -1344,7 +1392,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/RdfXmlParser.php"><a href="files/src-quickrdfio-rdfxmlparser.html"><abbr title="src/quickRdfIo/RdfXmlParser.php">RdfXmlParser.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">130</span>
+    <span class="phpdocumentor-element-found-in__line">132</span>
 
     </aside>
 
@@ -1380,7 +1428,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/RdfXmlParser.php"><a href="files/src-quickrdfio-rdfxmlparser.html"><abbr title="src/quickRdfIo/RdfXmlParser.php">RdfXmlParser.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">135</span>
+    <span class="phpdocumentor-element-found-in__line">136</span>
 
     </aside>
 
@@ -1416,7 +1464,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/RdfXmlParser.php"><a href="files/src-quickrdfio-rdfxmlparser.html"><abbr title="src/quickRdfIo/RdfXmlParser.php">RdfXmlParser.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">122</span>
+    <span class="phpdocumentor-element-found-in__line">125</span>
 
     </aside>
 
@@ -1452,7 +1500,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/RdfXmlParser.php"><a href="files/src-quickrdfio-rdfxmlparser.html"><abbr title="src/quickRdfIo/RdfXmlParser.php">RdfXmlParser.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">147</span>
+    <span class="phpdocumentor-element-found-in__line">148</span>
 
     </aside>
 
@@ -1488,7 +1536,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/RdfXmlParser.php"><a href="files/src-quickrdfio-rdfxmlparser.html"><abbr title="src/quickRdfIo/RdfXmlParser.php">RdfXmlParser.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">131</span>
+    <span class="phpdocumentor-element-found-in__line">133</span>
 
     </aside>
 
@@ -1524,7 +1572,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/RdfXmlParser.php"><a href="files/src-quickrdfio-rdfxmlparser.html"><abbr title="src/quickRdfIo/RdfXmlParser.php">RdfXmlParser.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">108</span>
+    <span class="phpdocumentor-element-found-in__line">111</span>
 
     </aside>
 
@@ -1560,7 +1608,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/RdfXmlParser.php"><a href="files/src-quickrdfio-rdfxmlparser.html"><abbr title="src/quickRdfIo/RdfXmlParser.php">RdfXmlParser.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">153</span>
+    <span class="phpdocumentor-element-found-in__line">154</span>
 
     </aside>
 
@@ -1596,7 +1644,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/RdfXmlParser.php"><a href="files/src-quickrdfio-rdfxmlparser.html"><abbr title="src/quickRdfIo/RdfXmlParser.php">RdfXmlParser.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">154</span>
+    <span class="phpdocumentor-element-found-in__line">155</span>
 
     </aside>
 
@@ -1668,7 +1716,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/RdfXmlParser.php"><a href="files/src-quickrdfio-rdfxmlparser.html"><abbr title="src/quickRdfIo/RdfXmlParser.php">RdfXmlParser.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">160</span>
+    <span class="phpdocumentor-element-found-in__line">161</span>
 
     </aside>
 
@@ -1709,7 +1757,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/RdfXmlParser.php"><a href="files/src-quickrdfio-rdfxmlparser.html"><abbr title="src/quickRdfIo/RdfXmlParser.php">RdfXmlParser.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">162</span>
+    <span class="phpdocumentor-element-found-in__line">163</span>
 
     </aside>
 
@@ -1762,7 +1810,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/RdfXmlParser.php"><a href="files/src-quickrdfio-rdfxmlparser.html"><abbr title="src/quickRdfIo/RdfXmlParser.php">RdfXmlParser.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">167</span>
+    <span class="phpdocumentor-element-found-in__line">168</span>
 
     </aside>
 
@@ -1788,6 +1836,54 @@
             -public
                                                         "
 >
+    <h4 class="phpdocumentor-element__name" id="method_createBlankNode">
+        createBlankNode()
+        <a href="classes/quickRdfIo-CreateBlankNodeTrait.html#method_createBlankNode" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/CreateBlankNodeTrait.php"><a href="files/src-quickrdfio-createblanknodetrait.html"><abbr title="src/quickRdfIo/CreateBlankNodeTrait.php">CreateBlankNodeTrait.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">43</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">createBlankNode</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$iri</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/rdfInterface-BlankNodeInterface.html"><abbr title="\rdfInterface\BlankNodeInterface">BlankNodeInterface</abbr></a></span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+    
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$iri</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+            </dl>
+
+    
+
+    
+
+            <section>
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type"><a href="classes/rdfInterface-BlankNodeInterface.html"><abbr title="\rdfInterface\BlankNodeInterface">BlankNodeInterface</abbr></a></span>
+            </section>
+
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
     <h4 class="phpdocumentor-element__name" id="method_current">
         current()
         <a href="classes/quickRdfIo-RdfXmlParser.html#method_current" class="headerlink"><i class="fas fa-link"></i></a>
@@ -1796,7 +1892,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/RdfXmlParser.php"><a href="files/src-quickrdfio-rdfxmlparser.html"><abbr title="src/quickRdfIo/RdfXmlParser.php">RdfXmlParser.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">177</span>
+    <span class="phpdocumentor-element-found-in__line">178</span>
 
     </aside>
 
@@ -1834,7 +1930,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/RdfXmlParser.php"><a href="files/src-quickrdfio-rdfxmlparser.html"><abbr title="src/quickRdfIo/RdfXmlParser.php">RdfXmlParser.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">181</span>
+    <span class="phpdocumentor-element-found-in__line">182</span>
 
     </aside>
 
@@ -1872,7 +1968,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/RdfXmlParser.php"><a href="files/src-quickrdfio-rdfxmlparser.html"><abbr title="src/quickRdfIo/RdfXmlParser.php">RdfXmlParser.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">185</span>
+    <span class="phpdocumentor-element-found-in__line">186</span>
 
     </aside>
 
@@ -1913,7 +2009,7 @@
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">parse</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$input</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/rdfInterface-QuadIteratorInterface.html"><abbr title="\rdfInterface\QuadIteratorInterface">QuadIteratorInterface</abbr></a></span></code>
+                    <span class="phpdocumentor-signature__name">parse</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$input</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$baseUri</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">&#039;&#039;</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/rdfInterface-QuadIteratorInterface.html"><abbr title="\rdfInterface\QuadIteratorInterface">QuadIteratorInterface</abbr></a></span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -1925,6 +2021,13 @@
                 <span class="phpdocumentor-signature__argument__name">$input</span>
                 : <span class="phpdocumentor-signature__argument__return-type">string</span>
                             </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$baseUri</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                 = <span class="phpdocumentor-signature__argument__default-value">&#039;&#039;</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
                 
             </dd>
@@ -1954,14 +2057,14 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/RdfXmlParser.php"><a href="files/src-quickrdfio-rdfxmlparser.html"><abbr title="src/quickRdfIo/RdfXmlParser.php">RdfXmlParser.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">205</span>
+    <span class="phpdocumentor-element-found-in__line">206</span>
 
     </aside>
 
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">parseStream</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">resource|<abbr title="\Psr\Http\Message\StreamInterface">StreamInterface</abbr>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$input</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/rdfInterface-QuadIteratorInterface.html"><abbr title="\rdfInterface\QuadIteratorInterface">QuadIteratorInterface</abbr></a></span></code>
+                    <span class="phpdocumentor-signature__name">parseStream</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">resource|<abbr title="\Psr\Http\Message\StreamInterface">StreamInterface</abbr>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$input</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$baseUri</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">&#039;&#039;</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/rdfInterface-QuadIteratorInterface.html"><abbr title="\rdfInterface\QuadIteratorInterface">QuadIteratorInterface</abbr></a></span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -1975,6 +2078,17 @@
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
                 
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$baseUri</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                 = <span class="phpdocumentor-signature__argument__default-value">&#039;&#039;</span>            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>allows to specify the base URI of the parsed document
+so a parser can correctly determine which blank nodes belong to the same
+document (see also the <code class="prettyprint">BLANK_NODES_PRESERVE</code> constant)</p>
+</section>
+
             </dd>
             </dl>
 
@@ -2002,7 +2116,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/RdfXmlParser.php"><a href="files/src-quickrdfio-rdfxmlparser.html"><abbr title="src/quickRdfIo/RdfXmlParser.php">RdfXmlParser.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">217</span>
+    <span class="phpdocumentor-element-found-in__line">221</span>
 
     </aside>
 
@@ -2036,7 +2150,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/RdfXmlParser.php"><a href="files/src-quickrdfio-rdfxmlparser.html"><abbr title="src/quickRdfIo/RdfXmlParser.php">RdfXmlParser.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">173</span>
+    <span class="phpdocumentor-element-found-in__line">174</span>
 
     </aside>
 
@@ -2080,7 +2194,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/RdfXmlParser.php"><a href="files/src-quickrdfio-rdfxmlparser.html"><abbr title="src/quickRdfIo/RdfXmlParser.php">RdfXmlParser.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">241</span>
+    <span class="phpdocumentor-element-found-in__line">245</span>
 
     </aside>
 
@@ -2118,7 +2232,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/RdfXmlParser.php"><a href="files/src-quickrdfio-rdfxmlparser.html"><abbr title="src/quickRdfIo/RdfXmlParser.php">RdfXmlParser.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">478</span>
+    <span class="phpdocumentor-element-found-in__line">482</span>
 
     </aside>
 
@@ -2231,7 +2345,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/RdfXmlParser.php"><a href="files/src-quickrdfio-rdfxmlparser.html"><abbr title="src/quickRdfIo/RdfXmlParser.php">RdfXmlParser.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">566</span>
+    <span class="phpdocumentor-element-found-in__line">570</span>
 
     </aside>
 
@@ -2279,7 +2393,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/RdfXmlParser.php"><a href="files/src-quickrdfio-rdfxmlparser.html"><abbr title="src/quickRdfIo/RdfXmlParser.php">RdfXmlParser.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">464</span>
+    <span class="phpdocumentor-element-found-in__line">468</span>
 
     </aside>
 
@@ -2323,7 +2437,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/RdfXmlParser.php"><a href="files/src-quickrdfio-rdfxmlparser.html"><abbr title="src/quickRdfIo/RdfXmlParser.php">RdfXmlParser.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">427</span>
+    <span class="phpdocumentor-element-found-in__line">431</span>
 
     </aside>
 
@@ -2367,7 +2481,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/RdfXmlParser.php"><a href="files/src-quickrdfio-rdfxmlparser.html"><abbr title="src/quickRdfIo/RdfXmlParser.php">RdfXmlParser.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">252</span>
+    <span class="phpdocumentor-element-found-in__line">256</span>
 
     </aside>
 
@@ -2433,7 +2547,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/RdfXmlParser.php"><a href="files/src-quickrdfio-rdfxmlparser.html"><abbr title="src/quickRdfIo/RdfXmlParser.php">RdfXmlParser.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">460</span>
+    <span class="phpdocumentor-element-found-in__line">464</span>
 
     </aside>
 
@@ -2484,7 +2598,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/RdfXmlParser.php"><a href="files/src-quickrdfio-rdfxmlparser.html"><abbr title="src/quickRdfIo/RdfXmlParser.php">RdfXmlParser.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">452</span>
+    <span class="phpdocumentor-element-found-in__line">456</span>
 
     </aside>
 
@@ -2542,7 +2656,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/RdfXmlParser.php"><a href="files/src-quickrdfio-rdfxmlparser.html"><abbr title="src/quickRdfIo/RdfXmlParser.php">RdfXmlParser.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">305</span>
+    <span class="phpdocumentor-element-found-in__line">309</span>
 
     </aside>
 
@@ -2593,7 +2707,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/RdfXmlParser.php"><a href="files/src-quickrdfio-rdfxmlparser.html"><abbr title="src/quickRdfIo/RdfXmlParser.php">RdfXmlParser.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">360</span>
+    <span class="phpdocumentor-element-found-in__line">364</span>
 
     </aside>
 
@@ -2644,7 +2758,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/RdfXmlParser.php"><a href="files/src-quickrdfio-rdfxmlparser.html"><abbr title="src/quickRdfIo/RdfXmlParser.php">RdfXmlParser.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">292</span>
+    <span class="phpdocumentor-element-found-in__line">296</span>
 
     </aside>
 
@@ -2688,7 +2802,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/RdfXmlParser.php"><a href="files/src-quickrdfio-rdfxmlparser.html"><abbr title="src/quickRdfIo/RdfXmlParser.php">RdfXmlParser.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">513</span>
+    <span class="phpdocumentor-element-found-in__line">517</span>
 
     </aside>
 
@@ -2739,7 +2853,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/RdfXmlParser.php"><a href="files/src-quickrdfio-rdfxmlparser.html"><abbr title="src/quickRdfIo/RdfXmlParser.php">RdfXmlParser.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">574</span>
+    <span class="phpdocumentor-element-found-in__line">578</span>
 
     </aside>
 
@@ -2783,7 +2897,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/RdfXmlParser.php"><a href="files/src-quickrdfio-rdfxmlparser.html"><abbr title="src/quickRdfIo/RdfXmlParser.php">RdfXmlParser.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">471</span>
+    <span class="phpdocumentor-element-found-in__line">475</span>
 
     </aside>
 
@@ -2817,7 +2931,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/RdfXmlParser.php"><a href="files/src-quickrdfio-rdfxmlparser.html"><abbr title="src/quickRdfIo/RdfXmlParser.php">RdfXmlParser.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">553</span>
+    <span class="phpdocumentor-element-found-in__line">557</span>
 
     </aside>
 
@@ -2866,7 +2980,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/RdfXmlParser.php"><a href="files/src-quickrdfio-rdfxmlparser.html"><abbr title="src/quickRdfIo/RdfXmlParser.php">RdfXmlParser.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">528</span>
+    <span class="phpdocumentor-element-found-in__line">532</span>
 
     </aside>
 
@@ -3037,9 +3151,10 @@
                             <li class="phpdocumentor-on-this-page-section__title">Properties</li>
                 <li>
                     <ul class="phpdocumentor-list -clean">
-                                                    <li class=""><a href="classes/quickRdfIo-RdfXmlParser.html#property_baseUri">$baseUri</a></li>
+                                                    <li class=""><a href="classes/quickRdfIo-CreateBlankNodeTrait.html#property_baseUri">$baseUri</a></li>
                                                     <li class=""><a href="classes/quickRdfIo-RdfXmlParser.html#property_baseUriDefault">$baseUriDefault</a></li>
                                                     <li class=""><a href="classes/quickRdfIo-RdfXmlParser.html#property_baseUriEmpty">$baseUriEmpty</a></li>
+                                                    <li class=""><a href="classes/quickRdfIo-CreateBlankNodeTrait.html#property_blankMap">$blankMap</a></li>
                                                     <li class=""><a href="classes/quickRdfIo-RdfXmlParser.html#property_dataFactory">$dataFactory</a></li>
                                                     <li class=""><a href="classes/quickRdfIo-RdfXmlParser.html#property_elementIds">$elementIds</a></li>
                                                     <li class=""><a href="classes/quickRdfIo-RdfXmlParser.html#property_input">$input</a></li>
@@ -3060,6 +3175,7 @@
                 <ul class="phpdocumentor-list -clean">
                                             <li class=""><a href="classes/quickRdfIo-RdfXmlParser.html#method___construct">__construct()</a></li>
                                             <li class=""><a href="classes/quickRdfIo-RdfXmlParser.html#method___destruct">__destruct()</a></li>
+                                            <li class=""><a href="classes/quickRdfIo-CreateBlankNodeTrait.html#method_createBlankNode">createBlankNode()</a></li>
                                             <li class=""><a href="classes/quickRdfIo-RdfXmlParser.html#method_current">current()</a></li>
                                             <li class=""><a href="classes/quickRdfIo-RdfXmlParser.html#method_key">key()</a></li>
                                             <li class=""><a href="classes/quickRdfIo-RdfXmlParser.html#method_next">next()</a></li>

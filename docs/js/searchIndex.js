@@ -1,6 +1,31 @@
 Search.appendIndex(
     [
                 {
+            "fqsen": "\\quickRdfIo\\CreateBlankNodeTrait",
+            "name": "CreateBlankNodeTrait",
+            "summary": "",
+            "url": "classes/quickRdfIo-CreateBlankNodeTrait.html"
+        },                {
+            "fqsen": "\\quickRdfIo\\CreateBlankNodeTrait\u003A\u003AcreateBlankNode\u0028\u0029",
+            "name": "createBlankNode",
+            "summary": "",
+            "url": "classes/quickRdfIo-CreateBlankNodeTrait.html#method_createBlankNode"
+        },                {
+            "fqsen": "\\quickRdfIo\\CreateBlankNodeTrait\u003A\u003A\u0024blankMap",
+            "name": "blankMap",
+            "summary": "",
+            "url": "classes/quickRdfIo-CreateBlankNodeTrait.html#property_blankMap"
+        },                {
+            "fqsen": "\\quickRdfIo\\CreateBlankNodeTrait\u003A\u003A\u0024baseUri",
+            "name": "baseUri",
+            "summary": "",
+            "url": "classes/quickRdfIo-CreateBlankNodeTrait.html#property_baseUri"
+        },                {
+            "fqsen": "\\quickRdfIo\\CreateBlankNodeTrait\u003A\u003A\u0024dataFactory",
+            "name": "dataFactory",
+            "summary": "",
+            "url": "classes/quickRdfIo-CreateBlankNodeTrait.html#property_dataFactory"
+        },                {
             "fqsen": "\\quickRdfIo\\JsonLdParser",
             "name": "JsonLdParser",
             "summary": "Thin\u0020wrapper\u0020providing\u0020RdfInterface\\Parser\u0020API\u0020for\u0020JSON\u002DLD\u0020the\u0020parser\nprovided\u0020by\u0020the\u0020ml\/json\u002Dld\u0020library.",
@@ -55,11 +80,6 @@ Search.appendIndex(
             "name": "dataFactory",
             "summary": "",
             "url": "classes/quickRdfIo-JsonLdParser.html#property_dataFactory"
-        },                {
-            "fqsen": "\\quickRdfIo\\JsonLdParser\u003A\u003A\u0024baseUri",
-            "name": "baseUri",
-            "summary": "",
-            "url": "classes/quickRdfIo-JsonLdParser.html#property_baseUri"
         },                {
             "fqsen": "\\quickRdfIo\\JsonLdParser\u003A\u003A\u0024curQuad",
             "name": "curQuad",
@@ -870,11 +890,6 @@ Search.appendIndex(
             "name": "parser",
             "summary": "",
             "url": "classes/quickRdfIo-RdfXmlParser.html#property_parser"
-        },                {
-            "fqsen": "\\quickRdfIo\\RdfXmlParser\u003A\u003A\u0024baseUri",
-            "name": "baseUri",
-            "summary": "",
-            "url": "classes/quickRdfIo-RdfXmlParser.html#property_baseUri"
         },                {
             "fqsen": "\\quickRdfIo\\RdfXmlParser\u003A\u003A\u0024baseUriDefault",
             "name": "baseUriDefault",
@@ -3888,22 +3903,22 @@ Search.appendIndex(
         },                {
             "fqsen": "\\rdfInterface\\DatasetNodeInterface\u003A\u003AgetSubject\u0028\u0029",
             "name": "getSubject",
-            "summary": "Fetches\u0020subject\u0020of\u0020a\u0020first\u0020quad\u0020having\u0020subject\u0020matching\u0020dataset\nnode\u0027s\u0020node\u0020and\u0020a\u0020given\u0020filter\u0020or\u0020null\u0020otherwise.",
+            "summary": "Fetches\u0020subject\u0020of\u0020a\u0020first\u0020quad\u0020matching\u0020a\u0020given\u0020filter\u0020and\u0020subject\nmatching\u0020dataset\u0020node\u0027s\u0020node\u0020or\u0020null\u0020otherwise.",
             "url": "classes/rdfInterface-DatasetNodeInterface.html#method_getSubject"
         },                {
             "fqsen": "\\rdfInterface\\DatasetNodeInterface\u003A\u003AgetPredicate\u0028\u0029",
             "name": "getPredicate",
-            "summary": "Fetches\u0020subject\u0020of\u0020a\u0020first\u0020quad\u0020having\u0020subject\u0020matching\u0020dataset\nnode\u0027s\u0020node\u0020and\u0020a\u0020given\u0020filter\u0020or\u0020null\u0020otherwise.",
+            "summary": "Fetches\u0020predicate\u0020of\u0020a\u0020first\u0020quad\u0020matching\u0020a\u0020given\u0020filter\u0020and\u0020subject\nmatching\u0020dataset\u0020node\u0027s\u0020node\u0020or\u0020null\u0020otherwise.",
             "url": "classes/rdfInterface-DatasetNodeInterface.html#method_getPredicate"
         },                {
             "fqsen": "\\rdfInterface\\DatasetNodeInterface\u003A\u003AgetObject\u0028\u0029",
             "name": "getObject",
-            "summary": "Fetches\u0020object\u0020of\u0020a\u0020first\u0020quad\u0020\u0020having\u0020subject\u0020matching\u0020dataset\nnode\u0027s\u0020node\u0020and\u0020a\u0020given\u0020filter\u0020or\u0020null\u0020otherwise.",
+            "summary": "Fetches\u0020object\u0020of\u0020a\u0020first\u0020quad\u0020mathing\u0020a\u0020given\u0020filter\u0020and\u0020subject\nmatching\u0020dataset\u0020node\u0027s\u0020node\u0020or\u0020null\u0020otherwise.",
             "url": "classes/rdfInterface-DatasetNodeInterface.html#method_getObject"
         },                {
             "fqsen": "\\rdfInterface\\DatasetNodeInterface\u003A\u003AgetGraph\u0028\u0029",
             "name": "getGraph",
-            "summary": "Fetches\u0020graph\u0020of\u0020a\u0020first\u0020quad\u0020\u0020having\u0020subject\u0020matching\u0020dataset\nnode\u0027s\u0020node\u0020and\u0020a\u0020given\u0020filter\u0020or\u0020null\u0020otherwise.",
+            "summary": "Fetches\u0020graph\u0020of\u0020a\u0020first\u0020quad\u0020matching\u0020a\u0020given\u0020filter\u0020and\u0020subject\nmatching\u0020dataset\u0020node\u0027s\u0020node\u0020or\u0020null\u0020otherwise.",
             "url": "classes/rdfInterface-DatasetNodeInterface.html#method_getGraph"
         },                {
             "fqsen": "\\rdfInterface\\DatasetNodeInterface\u003A\u003AgetSubjectValue\u0028\u0029",
@@ -4010,6 +4025,11 @@ Search.appendIndex(
             "name": "parseStream",
             "summary": "",
             "url": "classes/rdfInterface-ParserInterface.html#method_parseStream"
+        },                {
+            "fqsen": "\\rdfInterface\\ParserInterface\u003A\u003ABLANK_NODES_PRESERVE",
+            "name": "BLANK_NODES_PRESERVE",
+            "summary": "\u0060\u0024baseUri\u0060\u0020value\u0020to\u0020be\u0020used\u0020when\u0020identifiers\u0020of\u0020blanks\u0020nodes\u0020encountered\n\u0020in\u0020the\u0020input\u0020source\u0020should\u0020be\u0020preserved.\u0020If\u0020you\u0020need\u0020it\u0020on\u0020production,\n\u0020think\u0020twice.\u0020It\u0020can\u0020be\u0020a\u0020last\u0020resort\u0020though\u0020in\u0020some\u0020corner\u0020cases\u0020like\n\u0020parsing\u0020reference\u0020test\u0020outputs.",
+            "url": "classes/rdfInterface-ParserInterface.html#constant_BLANK_NODES_PRESERVE"
         },                {
             "fqsen": "\\rdfInterface\\QuadCompareInterface",
             "name": "QuadCompareInterface",

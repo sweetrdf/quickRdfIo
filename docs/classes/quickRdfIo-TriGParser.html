@@ -124,7 +124,7 @@
     
             <span class="phpdocumentor-element__extends">
             uses
-                            <a href="classes/quickRdfIo-TmpStreamParserTrait.html"><abbr title="\quickRdfIo\TmpStreamParserTrait">TmpStreamParserTrait</abbr></a>,                             <a href="classes/quickRdfIo-StreamSkipBomTrait.html"><abbr title="\quickRdfIo\StreamSkipBomTrait">StreamSkipBomTrait</abbr></a>                    </span>
+                            <a href="classes/quickRdfIo-TmpStreamParserTrait.html"><abbr title="\quickRdfIo\TmpStreamParserTrait">TmpStreamParserTrait</abbr></a>,                             <a href="classes/quickRdfIo-StreamSkipBomTrait.html"><abbr title="\quickRdfIo\StreamSkipBomTrait">StreamSkipBomTrait</abbr></a>,                             <a href="classes/quickRdfIo-CreateBlankNodeTrait.html"><abbr title="\quickRdfIo\CreateBlankNodeTrait">CreateBlankNodeTrait</abbr></a>                    </span>
     </h2>
 
 <div class="phpdocumentor-label-line">
@@ -205,6 +205,18 @@
 
 </h4>
 <dl class="phpdocumentor-table-of-contents">
+            <dt class="phpdocumentor-table-of-contents__entry -property -private">
+    <a class="" href="classes/quickRdfIo-CreateBlankNodeTrait.html#property_baseUri">$baseUri</a>
+    <span>
+                        &nbsp;: string            </span>
+</dt>
+
+            <dt class="phpdocumentor-table-of-contents__entry -property -private">
+    <a class="" href="classes/quickRdfIo-CreateBlankNodeTrait.html#property_blankMap">$blankMap</a>
+    <span>
+                        &nbsp;: mixed            </span>
+</dt>
+
             <dt class="phpdocumentor-table-of-contents__entry -property -private">
     <a class="" href="classes/quickRdfIo-StreamSkipBomTrait.html#property_bomUtf8">$bomUtf8</a>
     <span>
@@ -304,6 +316,12 @@
 </dt>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a class="" href="classes/quickRdfIo-CreateBlankNodeTrait.html#method_createBlankNode">createBlankNode()</a>
+    <span>
+                                &nbsp;: <a href="classes/rdfInterface-BlankNodeInterface.html"><abbr title="\rdfInterface\BlankNodeInterface">BlankNodeInterface</abbr></a>    </span>
+</dt>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a class="" href="classes/quickRdfIo-TriGParser.html#method_current">current()</a>
     <span>
                                 &nbsp;: <a href="classes/rdfInterface-QuadInterface.html"><abbr title="\rdfInterface\QuadInterface">QuadInterface</abbr></a>    </span>
@@ -378,7 +396,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/TriGParser.php"><a href="files/src-quickrdfio-trigparser.html"><abbr title="src/quickRdfIo/TriGParser.php">TriGParser.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">48</span>
+    <span class="phpdocumentor-element-found-in__line">49</span>
 
     </aside>
 
@@ -408,6 +426,78 @@
             <a href="classes/quickRdfIo-TriGParser.html#properties" class="headerlink"><i class="fas fa-link"></i></a>
 
         </h3>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
+            -private
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="property_baseUri">
+        $baseUri
+        <a href="classes/quickRdfIo-CreateBlankNodeTrait.html#property_baseUri" class="headerlink"><i class="fas fa-link"></i></a>
+
+        <span class="phpdocumentor-element__modifiers">
+                                </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/CreateBlankNodeTrait.php"><a href="files/src-quickrdfio-createblanknodetrait.html"><abbr title="src/quickRdfIo/CreateBlankNodeTrait.php">CreateBlankNodeTrait.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">40</span>
+
+    </aside>
+
+    
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+        <span class="phpdocumentor-signature__type">string</span>
+    <span class="phpdocumentor-signature__name">$baseUri</span>
+     = <span class="phpdocumentor-signature__default-value">&#039;&#039;</span></code>
+
+    
+    
+    
+
+    
+
+</article>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
+            -private
+            -static                                            "
+>
+    <h4 class="phpdocumentor-element__name" id="property_blankMap">
+        $blankMap
+        <a href="classes/quickRdfIo-CreateBlankNodeTrait.html#property_blankMap" class="headerlink"><i class="fas fa-link"></i></a>
+
+        <span class="phpdocumentor-element__modifiers">
+                                </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/CreateBlankNodeTrait.php"><a href="files/src-quickrdfio-createblanknodetrait.html"><abbr title="src/quickRdfIo/CreateBlankNodeTrait.php">CreateBlankNodeTrait.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">39</span>
+
+    </aside>
+
+    
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+    <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__type">mixed</span>
+    <span class="phpdocumentor-signature__name">$blankMap</span>
+     = <span class="phpdocumentor-signature__default-value">[]</span></code>
+
+    
+    
+    
+
+    
+
+</article>
                     <article
         class="
             phpdocumentor-element
@@ -461,7 +551,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/TriGParser.php"><a href="files/src-quickrdfio-trigparser.html"><abbr title="src/quickRdfIo/TriGParser.php">TriGParser.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">59</span>
+    <span class="phpdocumentor-element-found-in__line">60</span>
 
     </aside>
 
@@ -497,7 +587,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/TriGParser.php"><a href="files/src-quickrdfio-trigparser.html"><abbr title="src/quickRdfIo/TriGParser.php">TriGParser.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">50</span>
+    <span class="phpdocumentor-element-found-in__line">51</span>
 
     </aside>
 
@@ -533,7 +623,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/TriGParser.php"><a href="files/src-quickrdfio-trigparser.html"><abbr title="src/quickRdfIo/TriGParser.php">TriGParser.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">58</span>
+    <span class="phpdocumentor-element-found-in__line">59</span>
 
     </aside>
 
@@ -677,7 +767,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/TriGParser.php"><a href="files/src-quickrdfio-trigparser.html"><abbr title="src/quickRdfIo/TriGParser.php">TriGParser.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">66</span>
+    <span class="phpdocumentor-element-found-in__line">67</span>
 
     </aside>
 
@@ -713,7 +803,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/TriGParser.php"><a href="files/src-quickrdfio-trigparser.html"><abbr title="src/quickRdfIo/TriGParser.php">TriGParser.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">56</span>
+    <span class="phpdocumentor-element-found-in__line">57</span>
 
     </aside>
 
@@ -749,7 +839,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/TriGParser.php"><a href="files/src-quickrdfio-trigparser.html"><abbr title="src/quickRdfIo/TriGParser.php">TriGParser.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">57</span>
+    <span class="phpdocumentor-element-found-in__line">58</span>
 
     </aside>
 
@@ -785,7 +875,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/TriGParser.php"><a href="files/src-quickrdfio-trigparser.html"><abbr title="src/quickRdfIo/TriGParser.php">TriGParser.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">72</span>
+    <span class="phpdocumentor-element-found-in__line">73</span>
 
     </aside>
 
@@ -821,7 +911,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/TriGParser.php"><a href="files/src-quickrdfio-trigparser.html"><abbr title="src/quickRdfIo/TriGParser.php">TriGParser.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">65</span>
+    <span class="phpdocumentor-element-found-in__line">66</span>
 
     </aside>
 
@@ -898,7 +988,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/TriGParser.php"><a href="files/src-quickrdfio-trigparser.html"><abbr title="src/quickRdfIo/TriGParser.php">TriGParser.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">83</span>
+    <span class="phpdocumentor-element-found-in__line">84</span>
 
     </aside>
 
@@ -979,7 +1069,7 @@ to be passed to the pietercolpaert\hardf\TriGParser constructor</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/TriGParser.php"><a href="files/src-quickrdfio-trigparser.html"><abbr title="src/quickRdfIo/TriGParser.php">TriGParser.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">91</span>
+    <span class="phpdocumentor-element-found-in__line">92</span>
 
     </aside>
 
@@ -1005,6 +1095,54 @@ to be passed to the pietercolpaert\hardf\TriGParser constructor</p>
             -public
                                                         "
 >
+    <h4 class="phpdocumentor-element__name" id="method_createBlankNode">
+        createBlankNode()
+        <a href="classes/quickRdfIo-CreateBlankNodeTrait.html#method_createBlankNode" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/CreateBlankNodeTrait.php"><a href="files/src-quickrdfio-createblanknodetrait.html"><abbr title="src/quickRdfIo/CreateBlankNodeTrait.php">CreateBlankNodeTrait.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">43</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">createBlankNode</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$iri</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/rdfInterface-BlankNodeInterface.html"><abbr title="\rdfInterface\BlankNodeInterface">BlankNodeInterface</abbr></a></span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+    
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$iri</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+            </dl>
+
+    
+
+    
+
+            <section>
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type"><a href="classes/rdfInterface-BlankNodeInterface.html"><abbr title="\rdfInterface\BlankNodeInterface">BlankNodeInterface</abbr></a></span>
+            </section>
+
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
     <h4 class="phpdocumentor-element__name" id="method_current">
         current()
         <a href="classes/quickRdfIo-TriGParser.html#method_current" class="headerlink"><i class="fas fa-link"></i></a>
@@ -1013,7 +1151,7 @@ to be passed to the pietercolpaert\hardf\TriGParser constructor</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/TriGParser.php"><a href="files/src-quickrdfio-trigparser.html"><abbr title="src/quickRdfIo/TriGParser.php">TriGParser.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">116</span>
+    <span class="phpdocumentor-element-found-in__line">118</span>
 
     </aside>
 
@@ -1051,7 +1189,7 @@ to be passed to the pietercolpaert\hardf\TriGParser constructor</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/TriGParser.php"><a href="files/src-quickrdfio-trigparser.html"><abbr title="src/quickRdfIo/TriGParser.php">TriGParser.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">120</span>
+    <span class="phpdocumentor-element-found-in__line">122</span>
 
     </aside>
 
@@ -1085,7 +1223,7 @@ to be passed to the pietercolpaert\hardf\TriGParser constructor</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/TriGParser.php"><a href="files/src-quickrdfio-trigparser.html"><abbr title="src/quickRdfIo/TriGParser.php">TriGParser.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">124</span>
+    <span class="phpdocumentor-element-found-in__line">126</span>
 
     </aside>
 
@@ -1126,7 +1264,7 @@ to be passed to the pietercolpaert\hardf\TriGParser constructor</p>
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">parse</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$input</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/rdfInterface-QuadIteratorInterface.html"><abbr title="\rdfInterface\QuadIteratorInterface">QuadIteratorInterface</abbr></a></span></code>
+                    <span class="phpdocumentor-signature__name">parse</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$input</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$baseUri</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">&#039;&#039;</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/rdfInterface-QuadIteratorInterface.html"><abbr title="\rdfInterface\QuadIteratorInterface">QuadIteratorInterface</abbr></a></span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -1138,6 +1276,13 @@ to be passed to the pietercolpaert\hardf\TriGParser constructor</p>
                 <span class="phpdocumentor-signature__argument__name">$input</span>
                 : <span class="phpdocumentor-signature__argument__return-type">string</span>
                             </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$baseUri</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                 = <span class="phpdocumentor-signature__argument__default-value">&#039;&#039;</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
                 
             </dd>
@@ -1167,14 +1312,14 @@ to be passed to the pietercolpaert\hardf\TriGParser constructor</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/TriGParser.php"><a href="files/src-quickrdfio-trigparser.html"><abbr title="src/quickRdfIo/TriGParser.php">TriGParser.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">100</span>
+    <span class="phpdocumentor-element-found-in__line">101</span>
 
     </aside>
 
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">parseStream</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">resource|<abbr title="\Psr\Http\Message\StreamInterface">StreamInterface</abbr>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$input</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/rdfInterface-QuadIteratorInterface.html"><abbr title="\rdfInterface\QuadIteratorInterface">QuadIteratorInterface</abbr></a></span></code>
+                    <span class="phpdocumentor-signature__name">parseStream</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">resource|<abbr title="\Psr\Http\Message\StreamInterface">StreamInterface</abbr>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$input</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$baseUri</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">&#039;&#039;</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/rdfInterface-QuadIteratorInterface.html"><abbr title="\rdfInterface\QuadIteratorInterface">QuadIteratorInterface</abbr></a></span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -1188,6 +1333,17 @@ to be passed to the pietercolpaert\hardf\TriGParser constructor</p>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
                 
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$baseUri</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                 = <span class="phpdocumentor-signature__argument__default-value">&#039;&#039;</span>            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>allows to specify the base URI of the parsed document
+so a parser can correctly determine which blank nodes belong to the same
+document (see also the <code class="prettyprint">BLANK_NODES_PRESERVE</code> constant)</p>
+</section>
+
             </dd>
             </dl>
 
@@ -1215,7 +1371,7 @@ to be passed to the pietercolpaert\hardf\TriGParser constructor</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/TriGParser.php"><a href="files/src-quickrdfio-trigparser.html"><abbr title="src/quickRdfIo/TriGParser.php">TriGParser.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">180</span>
+    <span class="phpdocumentor-element-found-in__line">182</span>
 
     </aside>
 
@@ -1249,7 +1405,7 @@ to be passed to the pietercolpaert\hardf\TriGParser constructor</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/TriGParser.php"><a href="files/src-quickrdfio-trigparser.html"><abbr title="src/quickRdfIo/TriGParser.php">TriGParser.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">189</span>
+    <span class="phpdocumentor-element-found-in__line">191</span>
 
     </aside>
 
@@ -1471,6 +1627,8 @@ to be passed to the pietercolpaert\hardf\TriGParser constructor</p>
                             <li class="phpdocumentor-on-this-page-section__title">Properties</li>
                 <li>
                     <ul class="phpdocumentor-list -clean">
+                                                    <li class=""><a href="classes/quickRdfIo-CreateBlankNodeTrait.html#property_baseUri">$baseUri</a></li>
+                                                    <li class=""><a href="classes/quickRdfIo-CreateBlankNodeTrait.html#property_blankMap">$blankMap</a></li>
                                                     <li class=""><a href="classes/quickRdfIo-StreamSkipBomTrait.html#property_bomUtf8">$bomUtf8</a></li>
                                                     <li class=""><a href="classes/quickRdfIo-TriGParser.html#property_chunk">$chunk</a></li>
                                                     <li class=""><a href="classes/quickRdfIo-TriGParser.html#property_dataFactory">$dataFactory</a></li>
@@ -1492,6 +1650,7 @@ to be passed to the pietercolpaert\hardf\TriGParser constructor</p>
                 <ul class="phpdocumentor-list -clean">
                                             <li class=""><a href="classes/quickRdfIo-TriGParser.html#method___construct">__construct()</a></li>
                                             <li class=""><a href="classes/quickRdfIo-TriGParser.html#method___destruct">__destruct()</a></li>
+                                            <li class=""><a href="classes/quickRdfIo-CreateBlankNodeTrait.html#method_createBlankNode">createBlankNode()</a></li>
                                             <li class=""><a href="classes/quickRdfIo-TriGParser.html#method_current">current()</a></li>
                                             <li class=""><a href="classes/quickRdfIo-TriGParser.html#method_key">key()</a></li>
                                             <li class=""><a href="classes/quickRdfIo-TriGParser.html#method_next">next()</a></li>
