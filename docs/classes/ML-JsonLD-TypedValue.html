@@ -281,14 +281,14 @@
             phpdocumentor-element
             -property
             -protected
-                                                        "
+                                                                    "
 >
     <h4 class="phpdocumentor-element__name" id="property_value">
         $value
         <a href="classes/ML-JsonLD-Value.html#property_value" class="headerlink"><i class="fas fa-link"></i></a>
 
         <span class="phpdocumentor-element__modifiers">
-                                </span>
+                                            </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/ml/json-ld/Value.php"><a href="files/vendor-ml-json-ld-value.html"><abbr title="vendor/ml/json-ld/Value.php">Value.php</abbr></a></abbr>
@@ -301,13 +301,15 @@
 
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">protected</span>
-        <span class="phpdocumentor-signature__type">string</span>
+        <span class="phpdocumentor-signature__visibility">protected</span>
+            <span class="phpdocumentor-signature__type">string</span>
     <span class="phpdocumentor-signature__name">$value</span>
     </code>
 
     
     
+    
+
     
 
     
@@ -318,14 +320,14 @@
             phpdocumentor-element
             -property
             -private
-                                                        "
+                                                                    "
 >
     <h4 class="phpdocumentor-element__name" id="property_type">
         $type
         <a href="classes/ML-JsonLD-TypedValue.html#property_type" class="headerlink"><i class="fas fa-link"></i></a>
 
         <span class="phpdocumentor-element__modifiers">
-                                </span>
+                                            </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/ml/json-ld/TypedValue.php"><a href="files/vendor-ml-json-ld-typedvalue.html"><abbr title="vendor/ml/json-ld/TypedValue.php">TypedValue.php</abbr></a></abbr>
@@ -338,13 +340,15 @@
 
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">private</span>
-        <span class="phpdocumentor-signature__type">string</span>
+        <span class="phpdocumentor-signature__visibility">private</span>
+            <span class="phpdocumentor-signature__type">string</span>
     <span class="phpdocumentor-signature__name">$type</span>
     </code>
 
     
     
+    
+
     
 
     
@@ -857,6 +861,8 @@ other than a resource) to expanded JSON-LD.</p>
                         if (xhr.status < 400 && xhr.responseText) {
                             code.textContent = xhr.responseText;
                             Prism.highlightElement(code);
+                            d=document.getElementsByClassName("line-numbers");
+                            d[0].scrollTop = d[0].children[1].offsetTop;
                             return;
                         }
 

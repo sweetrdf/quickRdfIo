@@ -248,14 +248,14 @@
             phpdocumentor-element
             -property
             -protected
-                                                        "
+                                                                    "
 >
     <h4 class="phpdocumentor-element__name" id="property_iri">
         $iri
         <a href="classes/ML-JsonLD-Test-FileGetContentsLoaderTest.html#property_iri" class="headerlink"><i class="fas fa-link"></i></a>
 
         <span class="phpdocumentor-element__modifiers">
-                                </span>
+                                            </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/ml/json-ld/Test/FileGetContentsLoaderTest.php"><a href="files/vendor-ml-json-ld-test-filegetcontentsloadertest.html"><abbr title="vendor/ml/json-ld/Test/FileGetContentsLoaderTest.php">FileGetContentsLoaderTest.php</abbr></a></abbr>
@@ -267,13 +267,15 @@
     
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">protected</span>
-        <span class="phpdocumentor-signature__type">mixed</span>
+        <span class="phpdocumentor-signature__visibility">protected</span>
+            <span class="phpdocumentor-signature__type">mixed</span>
     <span class="phpdocumentor-signature__name">$iri</span>
     </code>
 
     
     
+    
+
     
 
     
@@ -284,14 +286,14 @@
             phpdocumentor-element
             -property
             -protected
-                                                        "
+                                                                    "
 >
     <h4 class="phpdocumentor-element__name" id="property_loader">
         $loader
         <a href="classes/ML-JsonLD-Test-FileGetContentsLoaderTest.html#property_loader" class="headerlink"><i class="fas fa-link"></i></a>
 
         <span class="phpdocumentor-element__modifiers">
-                                </span>
+                                            </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/ml/json-ld/Test/FileGetContentsLoaderTest.php"><a href="files/vendor-ml-json-ld-test-filegetcontentsloadertest.html"><abbr title="vendor/ml/json-ld/Test/FileGetContentsLoaderTest.php">FileGetContentsLoaderTest.php</abbr></a></abbr>
@@ -303,13 +305,15 @@
     
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">protected</span>
-        <span class="phpdocumentor-signature__type">mixed</span>
+        <span class="phpdocumentor-signature__visibility">protected</span>
+            <span class="phpdocumentor-signature__type">mixed</span>
     <span class="phpdocumentor-signature__name">$loader</span>
     </code>
 
     
     
+    
+
     
 
     
@@ -599,6 +603,8 @@
                         if (xhr.status < 400 && xhr.responseText) {
                             code.textContent = xhr.responseText;
                             Prism.highlightElement(code);
+                            d=document.getElementsByClassName("line-numbers");
+                            d[0].scrollTop = d[0].children[1].offsetTop;
                             return;
                         }
 

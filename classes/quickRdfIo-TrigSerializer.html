@@ -336,14 +336,14 @@
             phpdocumentor-element
             -property
             -private
-                                                        "
+                                                                    "
 >
     <h4 class="phpdocumentor-element__name" id="property_mode">
         $mode
         <a href="classes/quickRdfIo-TrigSerializer.html#property_mode" class="headerlink"><i class="fas fa-link"></i></a>
 
         <span class="phpdocumentor-element__modifiers">
-                                </span>
+                                            </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/TrigSerializer.php"><a href="files/src-quickrdfio-trigserializer.html"><abbr title="src/quickRdfIo/TrigSerializer.php">TrigSerializer.php</abbr></a></abbr>
@@ -355,13 +355,15 @@
     
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">private</span>
-        <span class="phpdocumentor-signature__type">int</span>
+        <span class="phpdocumentor-signature__visibility">private</span>
+            <span class="phpdocumentor-signature__type">int</span>
     <span class="phpdocumentor-signature__name">$mode</span>
     </code>
 
     
     
+    
+
     
 
     
@@ -372,14 +374,14 @@
             phpdocumentor-element
             -property
             -private
-                                                        "
+                                                                    "
 >
     <h4 class="phpdocumentor-element__name" id="property_strict">
         $strict
         <a href="classes/quickRdfIo-TrigSerializer.html#property_strict" class="headerlink"><i class="fas fa-link"></i></a>
 
         <span class="phpdocumentor-element__modifiers">
-                                </span>
+                                            </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/TrigSerializer.php"><a href="files/src-quickrdfio-trigserializer.html"><abbr title="src/quickRdfIo/TrigSerializer.php">TrigSerializer.php</abbr></a></abbr>
@@ -391,13 +393,15 @@
     
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">private</span>
-        <span class="phpdocumentor-signature__type">bool</span>
+        <span class="phpdocumentor-signature__visibility">private</span>
+            <span class="phpdocumentor-signature__type">bool</span>
     <span class="phpdocumentor-signature__name">$strict</span>
     </code>
 
     
     
+    
+
     
 
     
@@ -637,6 +641,8 @@ an exception is rised.</p>
                         if (xhr.status < 400 && xhr.responseText) {
                             code.textContent = xhr.responseText;
                             Prism.highlightElement(code);
+                            d=document.getElementsByClassName("line-numbers");
+                            d[0].scrollTop = d[0].children[1].offsetTop;
                             return;
                         }
 

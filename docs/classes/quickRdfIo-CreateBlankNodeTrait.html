@@ -137,7 +137,7 @@
 </section>
 
                                     </dd>
-                                                                </dl>
+                                            </dl>
 
 
 
@@ -214,14 +214,14 @@
             phpdocumentor-element
             -property
             -private
-                                                        "
+                                                                    "
 >
     <h4 class="phpdocumentor-element__name" id="property_baseUri">
         $baseUri
         <a href="classes/quickRdfIo-CreateBlankNodeTrait.html#property_baseUri" class="headerlink"><i class="fas fa-link"></i></a>
 
         <span class="phpdocumentor-element__modifiers">
-                                </span>
+                                            </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/CreateBlankNodeTrait.php"><a href="files/src-quickrdfio-createblanknodetrait.html"><abbr title="src/quickRdfIo/CreateBlankNodeTrait.php">CreateBlankNodeTrait.php</abbr></a></abbr>
@@ -233,13 +233,15 @@
     
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">private</span>
-        <span class="phpdocumentor-signature__type">string</span>
+        <span class="phpdocumentor-signature__visibility">private</span>
+            <span class="phpdocumentor-signature__type">string</span>
     <span class="phpdocumentor-signature__name">$baseUri</span>
      = <span class="phpdocumentor-signature__default-value">&#039;&#039;</span></code>
 
     
     
+    
+
     
 
     
@@ -250,14 +252,14 @@
             phpdocumentor-element
             -property
             -private
-            -static                                            "
+            -static                                                        "
 >
     <h4 class="phpdocumentor-element__name" id="property_blankMap">
         $blankMap
         <a href="classes/quickRdfIo-CreateBlankNodeTrait.html#property_blankMap" class="headerlink"><i class="fas fa-link"></i></a>
 
         <span class="phpdocumentor-element__modifiers">
-                                </span>
+                                            </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/CreateBlankNodeTrait.php"><a href="files/src-quickrdfio-createblanknodetrait.html"><abbr title="src/quickRdfIo/CreateBlankNodeTrait.php">CreateBlankNodeTrait.php</abbr></a></abbr>
@@ -269,13 +271,15 @@
     
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">private</span>
-    <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__type">mixed</span>
+        <span class="phpdocumentor-signature__visibility">private</span>
+        <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__type">mixed</span>
     <span class="phpdocumentor-signature__name">$blankMap</span>
      = <span class="phpdocumentor-signature__default-value">[]</span></code>
 
     
     
+    
+
     
 
     
@@ -286,14 +290,14 @@
             phpdocumentor-element
             -property
             -private
-                                                        "
+                                                                    "
 >
     <h4 class="phpdocumentor-element__name" id="property_dataFactory">
         $dataFactory
         <a href="classes/quickRdfIo-CreateBlankNodeTrait.html#property_dataFactory" class="headerlink"><i class="fas fa-link"></i></a>
 
         <span class="phpdocumentor-element__modifiers">
-                                </span>
+                                            </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/CreateBlankNodeTrait.php"><a href="files/src-quickrdfio-createblanknodetrait.html"><abbr title="src/quickRdfIo/CreateBlankNodeTrait.php">CreateBlankNodeTrait.php</abbr></a></abbr>
@@ -305,13 +309,15 @@
     
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">private</span>
-        <span class="phpdocumentor-signature__type"><a href="classes/rdfInterface-DataFactoryInterface.html"><abbr title="\rdfInterface\DataFactoryInterface">DataFactoryInterface</abbr></a></span>
+        <span class="phpdocumentor-signature__visibility">private</span>
+            <span class="phpdocumentor-signature__type"><a href="classes/rdfInterface-DataFactoryInterface.html"><abbr title="\rdfInterface\DataFactoryInterface">DataFactoryInterface</abbr></a></span>
     <span class="phpdocumentor-signature__name">$dataFactory</span>
     </code>
 
     
     
+    
+
     
 
     
@@ -411,6 +417,8 @@
                         if (xhr.status < 400 && xhr.responseText) {
                             code.textContent = xhr.responseText;
                             Prism.highlightElement(code);
+                            d=document.getElementsByClassName("line-numbers");
+                            d[0].scrollTop = d[0].children[1].offsetTop;
                             return;
                         }
 

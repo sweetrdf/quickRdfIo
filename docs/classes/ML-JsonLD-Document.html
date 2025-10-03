@@ -306,14 +306,14 @@
             phpdocumentor-element
             -property
             -protected
-                                                        "
+                                                                    "
 >
     <h4 class="phpdocumentor-element__name" id="property_defaultGraph">
         $defaultGraph
         <a href="classes/ML-JsonLD-Document.html#property_defaultGraph" class="headerlink"><i class="fas fa-link"></i></a>
 
         <span class="phpdocumentor-element__modifiers">
-                                </span>
+                                            </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/ml/json-ld/Document.php"><a href="files/vendor-ml-json-ld-document.html"><abbr title="vendor/ml/json-ld/Document.php">Document.php</abbr></a></abbr>
@@ -325,8 +325,8 @@
     
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">protected</span>
-        <span class="phpdocumentor-signature__type"><a href="classes/ML-JsonLD-GraphInterface.html"><abbr title="\ML\JsonLD\GraphInterface">GraphInterface</abbr></a></span>
+        <span class="phpdocumentor-signature__visibility">protected</span>
+            <span class="phpdocumentor-signature__type"><a href="classes/ML-JsonLD-GraphInterface.html"><abbr title="\ML\JsonLD\GraphInterface">GraphInterface</abbr></a></span>
     <span class="phpdocumentor-signature__name">$defaultGraph</span>
      = <span class="phpdocumentor-signature__default-value">null</span></code>
 
@@ -338,20 +338,22 @@
 
     
 
+    
+
 </article>
                     <article
         class="
             phpdocumentor-element
             -property
             -protected
-                                                        "
+                                                                    "
 >
     <h4 class="phpdocumentor-element__name" id="property_iri">
         $iri
         <a href="classes/ML-JsonLD-Document.html#property_iri" class="headerlink"><i class="fas fa-link"></i></a>
 
         <span class="phpdocumentor-element__modifiers">
-                                </span>
+                                            </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/ml/json-ld/Document.php"><a href="files/vendor-ml-json-ld-document.html"><abbr title="vendor/ml/json-ld/Document.php">Document.php</abbr></a></abbr>
@@ -363,8 +365,8 @@
     
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">protected</span>
-        <span class="phpdocumentor-signature__type"><abbr title="\ML\IRI\IRI">IRI</abbr></span>
+        <span class="phpdocumentor-signature__visibility">protected</span>
+            <span class="phpdocumentor-signature__type"><abbr title="\ML\IRI\IRI">IRI</abbr></span>
     <span class="phpdocumentor-signature__name">$iri</span>
      = <span class="phpdocumentor-signature__default-value">null</span></code>
 
@@ -376,20 +378,22 @@
 
     
 
+    
+
 </article>
                     <article
         class="
             phpdocumentor-element
             -property
             -protected
-                                                        "
+                                                                    "
 >
     <h4 class="phpdocumentor-element__name" id="property_namedGraphs">
         $namedGraphs
         <a href="classes/ML-JsonLD-Document.html#property_namedGraphs" class="headerlink"><i class="fas fa-link"></i></a>
 
         <span class="phpdocumentor-element__modifiers">
-                                </span>
+                                            </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/ml/json-ld/Document.php"><a href="files/vendor-ml-json-ld-document.html"><abbr title="vendor/ml/json-ld/Document.php">Document.php</abbr></a></abbr>
@@ -401,14 +405,16 @@
     
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">protected</span>
-        <span class="phpdocumentor-signature__type">array&lt;string|int, mixed&gt;</span>
+        <span class="phpdocumentor-signature__visibility">protected</span>
+            <span class="phpdocumentor-signature__type">array&lt;string|int, mixed&gt;</span>
     <span class="phpdocumentor-signature__name">$namedGraphs</span>
      = <span class="phpdocumentor-signature__default-value">array()</span></code>
 
     
         <section class="phpdocumentor-description"><p>An associative array holding all named graphs in the document</p>
 </section>
+
+    
 
     
 
@@ -1031,6 +1037,8 @@ other than a resource) to expanded JSON-LD.</p>
                         if (xhr.status < 400 && xhr.responseText) {
                             code.textContent = xhr.responseText;
                             Prism.highlightElement(code);
+                            d=document.getElementsByClassName("line-numbers");
+                            d[0].scrollTop = d[0].children[1].offsetTop;
                             return;
                         }
 

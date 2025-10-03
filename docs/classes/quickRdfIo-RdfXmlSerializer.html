@@ -281,14 +281,14 @@ like http://foo/123 which is shortened to ns:123 which is invalid in XML.</li>
             phpdocumentor-element
             -property
             -private
-                                                        "
+                                                                    "
 >
     <h4 class="phpdocumentor-element__name" id="property_prefixes">
         $prefixes
         <a href="classes/quickRdfIo-RdfXmlSerializer.html#property_prefixes" class="headerlink"><i class="fas fa-link"></i></a>
 
         <span class="phpdocumentor-element__modifiers">
-                                </span>
+                                            </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/RdfXmlSerializer.php"><a href="files/src-quickrdfio-rdfxmlserializer.html"><abbr title="src/quickRdfIo/RdfXmlSerializer.php">RdfXmlSerializer.php</abbr></a></abbr>
@@ -300,13 +300,15 @@ like http://foo/123 which is shortened to ns:123 which is invalid in XML.</li>
     
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">private</span>
-        <span class="phpdocumentor-signature__type">array&lt;string, string&gt;</span>
+        <span class="phpdocumentor-signature__visibility">private</span>
+            <span class="phpdocumentor-signature__type">array&lt;string, string&gt;</span>
     <span class="phpdocumentor-signature__name">$prefixes</span>
     </code>
 
     
     
+    
+
     
 
     
@@ -317,14 +319,14 @@ like http://foo/123 which is shortened to ns:123 which is invalid in XML.</li>
             phpdocumentor-element
             -property
             -private
-                                                        "
+                                                                    "
 >
     <h4 class="phpdocumentor-element__name" id="property_prettyPrint">
         $prettyPrint
         <a href="classes/quickRdfIo-RdfXmlSerializer.html#property_prettyPrint" class="headerlink"><i class="fas fa-link"></i></a>
 
         <span class="phpdocumentor-element__modifiers">
-                                </span>
+                                            </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/RdfXmlSerializer.php"><a href="files/src-quickrdfio-rdfxmlserializer.html"><abbr title="src/quickRdfIo/RdfXmlSerializer.php">RdfXmlSerializer.php</abbr></a></abbr>
@@ -336,13 +338,15 @@ like http://foo/123 which is shortened to ns:123 which is invalid in XML.</li>
     
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">private</span>
-        <span class="phpdocumentor-signature__type">bool</span>
+        <span class="phpdocumentor-signature__visibility">private</span>
+            <span class="phpdocumentor-signature__type">bool</span>
     <span class="phpdocumentor-signature__name">$prettyPrint</span>
     </code>
 
     
     
+    
+
     
 
     
@@ -679,6 +683,8 @@ like http://foo/123 which is shortened to ns:123 which is invalid in XML.</li>
                         if (xhr.status < 400 && xhr.responseText) {
                             code.textContent = xhr.responseText;
                             Prism.highlightElement(code);
+                            d=document.getElementsByClassName("line-numbers");
+                            d[0].scrollTop = d[0].children[1].offsetTop;
                             return;
                         }
 

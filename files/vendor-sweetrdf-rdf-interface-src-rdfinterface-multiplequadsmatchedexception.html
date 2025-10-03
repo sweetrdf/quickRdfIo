@@ -109,14 +109,12 @@
         <h2 class="phpdocumentor-content__title">MultipleQuadsMatchedException.php</h2>
 
         
+        
+        
+        
 
 
-
-
-
-
-
-
+        
 <h3 id="toc">
     Table of Contents
     <a href="files/vendor-sweetrdf-rdf-interface-src-rdfinterface-multiplequadsmatchedexception.html#toc" class="headerlink"><i class="fas fa-link"></i></a>
@@ -135,7 +133,6 @@
                     <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/rdfInterface-MultipleQuadsMatchedException.html"><abbr title="\rdfInterface\MultipleQuadsMatchedException">MultipleQuadsMatchedException</abbr></a></dt><dd>Specialization of the \UnexpectedValueException indicating multiple quads
 match while accessing a DatasetInterface object using the ArrayAccess syntax
 ($dataset[offset])</dd>    </dl>
-
 
 
 
@@ -184,6 +181,8 @@ match while accessing a DatasetInterface object using the ArrayAccess syntax
                         if (xhr.status < 400 && xhr.responseText) {
                             code.textContent = xhr.responseText;
                             Prism.highlightElement(code);
+                            d=document.getElementsByClassName("line-numbers");
+                            d[0].scrollTop = d[0].children[1].offsetTop;
                             return;
                         }
 

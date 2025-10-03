@@ -109,14 +109,12 @@
         <h2 class="phpdocumentor-content__title">JsonLdStreamSerializer.php</h2>
 
         
+        
+        
+        
 
 
-
-
-
-
-
-
+        
 <h3 id="toc">
     Table of Contents
     <a href="files/src-quickrdfio-jsonldstreamserializer.html#toc" class="headerlink"><i class="fas fa-link"></i></a>
@@ -137,7 +135,6 @@ and does it in a greedy way (meaning subjects/predicates/values are acumulated
 within graph/subject/predicate only if adjacent triples share the same
 graph/subject/predicate). On the brigh side it&#039;s fast and has minimal memory
 footprint.</dd>    </dl>
-
 
 
 
@@ -186,6 +183,8 @@ footprint.</dd>    </dl>
                         if (xhr.status < 400 && xhr.responseText) {
                             code.textContent = xhr.responseText;
                             Prism.highlightElement(code);
+                            d=document.getElementsByClassName("line-numbers");
+                            d[0].scrollTop = d[0].children[1].offsetTop;
                             return;
                         }
 

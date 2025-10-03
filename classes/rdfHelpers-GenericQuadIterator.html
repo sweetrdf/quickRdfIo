@@ -258,14 +258,14 @@ a QuadIterator.</p>
             phpdocumentor-element
             -property
             -private
-                                                        "
+                                                                    "
 >
     <h4 class="phpdocumentor-element__name" id="property_iter">
         $iter
         <a href="classes/rdfHelpers-GenericQuadIterator.html#property_iter" class="headerlink"><i class="fas fa-link"></i></a>
 
         <span class="phpdocumentor-element__modifiers">
-                                </span>
+                                            </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="vendor/sweetrdf/rdf-helpers/src/rdfHelpers/GenericQuadIterator.php"><a href="files/vendor-sweetrdf-rdf-helpers-src-rdfhelpers-genericquaditerator.html"><abbr title="vendor/sweetrdf/rdf-helpers/src/rdfHelpers/GenericQuadIterator.php">GenericQuadIterator.php</abbr></a></abbr>
@@ -277,13 +277,15 @@ a QuadIterator.</p>
     
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">private</span>
-        <span class="phpdocumentor-signature__type"><abbr title="\Iterator">Iterator</abbr>&lt;string|int, <a href="classes/rdfInterface-QuadInterface.html"><abbr title="\rdfInterface\QuadInterface">QuadInterface</abbr></a>&gt;</span>
+        <span class="phpdocumentor-signature__visibility">private</span>
+            <span class="phpdocumentor-signature__type"><abbr title="\Iterator">Iterator</abbr>&lt;string|int, <a href="classes/rdfInterface-QuadInterface.html"><abbr title="\rdfInterface\QuadInterface">QuadInterface</abbr></a>&gt;</span>
     <span class="phpdocumentor-signature__name">$iter</span>
     </code>
 
     
     
+    
+
     
 
     
@@ -557,6 +559,8 @@ a QuadIterator.</p>
                         if (xhr.status < 400 && xhr.responseText) {
                             code.textContent = xhr.responseText;
                             Prism.highlightElement(code);
+                            d=document.getElementsByClassName("line-numbers");
+                            d[0].scrollTop = d[0].children[1].offsetTop;
                             return;
                         }
 

@@ -109,14 +109,12 @@
         <h2 class="phpdocumentor-content__title">Value.php</h2>
 
         
+        
+        
+        
 
 
-
-
-
-
-
-
+        
 <h3 id="toc">
     Table of Contents
     <a href="files/vendor-ml-json-ld-value.html#toc" class="headerlink"><i class="fas fa-link"></i></a>
@@ -134,7 +132,6 @@
     <dl class="phpdocumentor-table-of-contents">
                     <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/ML-JsonLD-Value.html"><abbr title="\ML\JsonLD\Value">Value</abbr></a></dt><dd>Value is the abstract base class used for typed values and
 language-tagged strings.</dd>    </dl>
-
 
 
 
@@ -183,6 +180,8 @@ language-tagged strings.</dd>    </dl>
                         if (xhr.status < 400 && xhr.responseText) {
                             code.textContent = xhr.responseText;
                             Prism.highlightElement(code);
+                            d=document.getElementsByClassName("line-numbers");
+                            d[0].scrollTop = d[0].children[1].offsetTop;
                             return;
                         }
 

@@ -109,14 +109,12 @@
         <h2 class="phpdocumentor-content__title">LanguageTaggedString.php</h2>
 
         
+        
+        
+        
 
 
-
-
-
-
-
-
+        
 <h3 id="toc">
     Table of Contents
     <a href="files/vendor-ml-json-ld-languagetaggedstring.html#toc" class="headerlink"><i class="fas fa-link"></i></a>
@@ -133,7 +131,6 @@
     </h4>
     <dl class="phpdocumentor-table-of-contents">
                     <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/ML-JsonLD-LanguageTaggedString.html"><abbr title="\ML\JsonLD\LanguageTaggedString">LanguageTaggedString</abbr></a></dt><dd>A LanguageTaggedString is a string which is tagged with a language.</dd>    </dl>
-
 
 
 
@@ -182,6 +179,8 @@
                         if (xhr.status < 400 && xhr.responseText) {
                             code.textContent = xhr.responseText;
                             Prism.highlightElement(code);
+                            d=document.getElementsByClassName("line-numbers");
+                            d[0].scrollTop = d[0].children[1].offsetTop;
                             return;
                         }
 
