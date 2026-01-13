@@ -61,16 +61,6 @@
 </h4>
 
                                     <h4 class="phpdocumentor-sidebar__root-namespace">
-    <a href="namespaces/ml.html" class="">ML</a>
-</h4>
-    <ul class="phpdocumentor-list">
-                    <li>
-                <a href="namespaces/ml-jsonld.html" class="">JsonLD</a>
-                
-            </li>
-            </ul>
-
-                                    <h4 class="phpdocumentor-sidebar__root-namespace">
     <a href="namespaces/rdfhelpers.html" class="">rdfHelpers</a>
 </h4>
 
@@ -165,10 +155,8 @@ be carefull when parsing large inputs.</p>
                                     </dd>
                                             </dl>
 
-
-
-
-
+    
+    
 <h3 id="toc">
     Table of Contents
     <a href="classes/quickRdfIo-JsonLdParser.html#toc" class="headerlink"><i class="fas fa-link"></i></a>
@@ -223,7 +211,7 @@ be carefull when parsing large inputs.</p>
             <dt class="phpdocumentor-table-of-contents__entry -property -private">
     <a class="" href="classes/quickRdfIo-JsonLdParser.html#property_quads">$quads</a>
     <span>
-                        &nbsp;: array&lt;int, <a href="classes/ML-JsonLD-Quad.html"><abbr title="\ML\JsonLD\Quad">Quad</abbr></a>&gt;            </span>
+                        &nbsp;: array&lt;int, <abbr title="\ML\JsonLD\Quad">Quad</abbr>&gt;            </span>
 </dt>
 
     </dl>
@@ -340,9 +328,8 @@ be carefull when parsing large inputs.</p>
     
     
 
-    
-
-    
+        
+        
 
 </article>
                     <article
@@ -378,9 +365,8 @@ be carefull when parsing large inputs.</p>
     
     
 
-    
-
-    
+        
+        
 
 </article>
                     <article
@@ -416,9 +402,8 @@ be carefull when parsing large inputs.</p>
     
     
 
-    
-
-    
+        
+        
 
 </article>
                     <article
@@ -454,9 +439,8 @@ be carefull when parsing large inputs.</p>
     
     
 
-    
-
-    
+        
+        
 
 </article>
                     <article
@@ -484,7 +468,7 @@ be carefull when parsing large inputs.</p>
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
         <span class="phpdocumentor-signature__visibility">private</span>
-            <span class="phpdocumentor-signature__type">array&lt;int, <a href="classes/ML-JsonLD-Quad.html"><abbr title="\ML\JsonLD\Quad">Quad</abbr></a>&gt;</span>
+            <span class="phpdocumentor-signature__type">array&lt;int, <abbr title="\ML\JsonLD\Quad">Quad</abbr>&gt;</span>
     <span class="phpdocumentor-signature__name">$quads</span>
     </code>
 
@@ -492,9 +476,8 @@ be carefull when parsing large inputs.</p>
     
     
 
-    
-
-    
+        
+        
 
 </article>
             </section>
@@ -526,7 +509,7 @@ be carefull when parsing large inputs.</p>
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">__construct</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href="classes/rdfInterface-DataFactoryInterface.html"><abbr title="\rdfInterface\DataFactoryInterface">DataFactoryInterface</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$dataFactory</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">string|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$baseUri</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+                    <span class="phpdocumentor-signature__name">__construct</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type"><a href="classes/rdfInterface-DataFactoryInterface.html"><abbr title="\rdfInterface\DataFactoryInterface">DataFactoryInterface</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$dataFactory</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">string|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$baseUri</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -535,8 +518,8 @@ be carefull when parsing large inputs.</p>
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$dataFactory</span>
-                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/rdfInterface-DataFactoryInterface.html"><abbr title="\rdfInterface\DataFactoryInterface">DataFactoryInterface</abbr></a></span>
+                <span class="phpdocumentor-argument-list__argument__name">$dataFactory</span>
+                : <span class="phpdocumentor-argument-list__argument__type"><a href="classes/rdfInterface-DataFactoryInterface.html"><abbr title="\rdfInterface\DataFactoryInterface">DataFactoryInterface</abbr></a></span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
                     <section class="phpdocumentor-description"><p>factory to be used to generate RDF terms.</p>
@@ -544,9 +527,9 @@ be carefull when parsing large inputs.</p>
 
             </dd>
                     <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$baseUri</span>
-                : <span class="phpdocumentor-signature__argument__return-type">string|null</span>
-                 = <span class="phpdocumentor-signature__argument__default-value">null</span>            </dt>
+                <span class="phpdocumentor-argument-list__argument__name">$baseUri</span>
+                : <span class="phpdocumentor-argument-list__argument__type">string|null</span>
+                 = <span class="phpdocumentor-argument-list__argument__default-value">null</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
                 
             </dd>
@@ -554,8 +537,8 @@ be carefull when parsing large inputs.</p>
 
     
 
+        
     
-
     
 </article>
                     <article
@@ -579,7 +562,7 @@ be carefull when parsing large inputs.</p>
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">createBlankNode</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$iri</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/rdfInterface-BlankNodeInterface.html"><abbr title="\rdfInterface\BlankNodeInterface">BlankNodeInterface</abbr></a></span></code>
+                    <span class="phpdocumentor-signature__name">createBlankNode</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$iri</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/rdfInterface-BlankNodeInterface.html"><abbr title="\rdfInterface\BlankNodeInterface">BlankNodeInterface</abbr></a></span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -588,8 +571,8 @@ be carefull when parsing large inputs.</p>
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$iri</span>
-                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                <span class="phpdocumentor-argument-list__argument__name">$iri</span>
+                : <span class="phpdocumentor-argument-list__argument__type">string</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
                 
@@ -598,8 +581,8 @@ be carefull when parsing large inputs.</p>
 
     
 
+        
     
-
             <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
         <span class="phpdocumentor-signature__response_type"><a href="classes/rdfInterface-BlankNodeInterface.html"><abbr title="\rdfInterface\BlankNodeInterface">BlankNodeInterface</abbr></a></span>
@@ -636,8 +619,8 @@ be carefull when parsing large inputs.</p>
     
     
 
+        
     
-
             <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
         <span class="phpdocumentor-signature__response_type"><a href="classes/rdfInterface-QuadInterface.html"><abbr title="\rdfInterface\QuadInterface">QuadInterface</abbr></a>|null</span>
@@ -674,8 +657,8 @@ be carefull when parsing large inputs.</p>
     
     
 
+        
     
-
             <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
         <span class="phpdocumentor-signature__response_type">int|null</span>
@@ -712,8 +695,8 @@ be carefull when parsing large inputs.</p>
     
     
 
+        
     
-
     
 </article>
                     <article
@@ -737,7 +720,7 @@ be carefull when parsing large inputs.</p>
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">parse</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$input</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$baseUri</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">&#039;&#039;</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/rdfInterface-QuadIteratorInterface.html"><abbr title="\rdfInterface\QuadIteratorInterface">QuadIteratorInterface</abbr></a></span></code>
+                    <span class="phpdocumentor-signature__name">parse</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$input</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$baseUri</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">''</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/rdfInterface-QuadIteratorInterface.html"><abbr title="\rdfInterface\QuadIteratorInterface">QuadIteratorInterface</abbr></a></span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -746,16 +729,16 @@ be carefull when parsing large inputs.</p>
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$input</span>
-                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                <span class="phpdocumentor-argument-list__argument__name">$input</span>
+                : <span class="phpdocumentor-argument-list__argument__type">string</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
                 
             </dd>
                     <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$baseUri</span>
-                : <span class="phpdocumentor-signature__argument__return-type">string</span>
-                 = <span class="phpdocumentor-signature__argument__default-value">&#039;&#039;</span>            </dt>
+                <span class="phpdocumentor-argument-list__argument__name">$baseUri</span>
+                : <span class="phpdocumentor-argument-list__argument__type">string</span>
+                 = <span class="phpdocumentor-argument-list__argument__default-value">''</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
                     <section class="phpdocumentor-description"><p>allows to specify the base URI of the parsed document
 so a parser can correctly determine which blank nodes belong to the same
@@ -767,8 +750,8 @@ document (see also the <code class="prettyprint">BLANK_NODES_PRESERVE</code> con
 
     
 
+        
     
-
             <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
         <span class="phpdocumentor-signature__response_type"><a href="classes/rdfInterface-QuadIteratorInterface.html"><abbr title="\rdfInterface\QuadIteratorInterface">QuadIteratorInterface</abbr></a></span>
@@ -796,7 +779,7 @@ document (see also the <code class="prettyprint">BLANK_NODES_PRESERVE</code> con
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">parseStream</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">resource|<abbr title="\Psr\Http\Message\StreamInterface">StreamInterface</abbr>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$input</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$baseUri</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">&#039;&#039;</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/rdfInterface-QuadIteratorInterface.html"><abbr title="\rdfInterface\QuadIteratorInterface">QuadIteratorInterface</abbr></a></span></code>
+                    <span class="phpdocumentor-signature__name">parseStream</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">resource|<abbr title="\Psr\Http\Message\StreamInterface">StreamInterface</abbr>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$input</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$baseUri</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">''</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/rdfInterface-QuadIteratorInterface.html"><abbr title="\rdfInterface\QuadIteratorInterface">QuadIteratorInterface</abbr></a></span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -805,16 +788,16 @@ document (see also the <code class="prettyprint">BLANK_NODES_PRESERVE</code> con
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$input</span>
-                : <span class="phpdocumentor-signature__argument__return-type">resource|<abbr title="\Psr\Http\Message\StreamInterface">StreamInterface</abbr></span>
+                <span class="phpdocumentor-argument-list__argument__name">$input</span>
+                : <span class="phpdocumentor-argument-list__argument__type">resource|<abbr title="\Psr\Http\Message\StreamInterface">StreamInterface</abbr></span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
                 
             </dd>
                     <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$baseUri</span>
-                : <span class="phpdocumentor-signature__argument__return-type">string</span>
-                 = <span class="phpdocumentor-signature__argument__default-value">&#039;&#039;</span>            </dt>
+                <span class="phpdocumentor-argument-list__argument__name">$baseUri</span>
+                : <span class="phpdocumentor-argument-list__argument__type">string</span>
+                 = <span class="phpdocumentor-argument-list__argument__default-value">''</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
                     <section class="phpdocumentor-description"><p>allows to specify the base URI of the parsed document
 so a parser can correctly determine which blank nodes belong to the same
@@ -826,8 +809,8 @@ document (see also the <code class="prettyprint">BLANK_NODES_PRESERVE</code> con
 
     
 
+        
     
-
             <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
         <span class="phpdocumentor-signature__response_type"><a href="classes/rdfInterface-QuadIteratorInterface.html"><abbr title="\rdfInterface\QuadIteratorInterface">QuadIteratorInterface</abbr></a></span>
@@ -864,8 +847,8 @@ document (see also the <code class="prettyprint">BLANK_NODES_PRESERVE</code> con
     
     
 
+        
     
-
     
 </article>
                     <article
@@ -889,7 +872,7 @@ document (see also the <code class="prettyprint">BLANK_NODES_PRESERVE</code> con
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">setBaseUri</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$baseUri</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
+                    <span class="phpdocumentor-signature__name">setBaseUri</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">string|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$baseUri</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -898,8 +881,8 @@ document (see also the <code class="prettyprint">BLANK_NODES_PRESERVE</code> con
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$baseUri</span>
-                : <span class="phpdocumentor-signature__argument__return-type">string|null</span>
+                <span class="phpdocumentor-argument-list__argument__name">$baseUri</span>
+                : <span class="phpdocumentor-argument-list__argument__type">string|null</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
                 
@@ -908,8 +891,8 @@ document (see also the <code class="prettyprint">BLANK_NODES_PRESERVE</code> con
 
     
 
+        
     
-
     
 </article>
                     <article
@@ -942,8 +925,8 @@ document (see also the <code class="prettyprint">BLANK_NODES_PRESERVE</code> con
     
     
 
+        
     
-
             <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
         <span class="phpdocumentor-signature__response_type">bool</span>
