@@ -222,9 +222,6 @@ class RdfXmlParser implements iParser, iQuadIterator {
         if ($this->input->tell() !== 0) {
             $this->input->rewind();
         }
-        if (isset($this->parser)) {
-            xml_parser_free($this->parser);
-        }
         $this->nmsp       = [];
         $this->elementIds = [];
         $this->state      = new RdfXmlParserState();
