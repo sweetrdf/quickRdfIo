@@ -35,23 +35,26 @@ use Psr\Http\Message\StreamInterface;
  */
 trait StreamSkipBomTrait {
 
-    private $invalidBoms2B = [
+    /** @var array<string, string> */
+    private array $invalidBoms2B = [
         "\xEF\xFF" => "UTF-16 BE",
         "\xFF\xFE" => "UTF-16 LE",
     ];
-    private $invalidBoms3B = [
+    /** @var array<string, string> */
+    private array $invalidBoms3B = [
         "\x2B\x2F\x76" => "UTF-7",
         "\xF7\x64\x4C" => "UTF-1",
         "\x0E\xFE\xFF" => "SCSU",
         "\xFB\xEE\x28" => "BOCU-1",
     ];
-    private $invalidBoms4B = [
+    /** @var array<string, string> */
+    private array $invalidBoms4B = [
         "\x00\x00\xFE\xFF" => "UTF-32 BE",
         "\xFF\xFE\x00\x00" => "UTF-32 LE",
         "\xDD\x73\x66\x73" => "UTF-EBCDIC",
         "\x84\x31\x95\x33" => "GB18030",
     ];
-    private $bomUtf8       = "\xEF\xBB\xBF";
+    private string $bomUtf8 = "\xEF\xBB\xBF";
 
     private function skipBom(StreamInterface $stream): void {
         if ($stream->isSeekable()) {

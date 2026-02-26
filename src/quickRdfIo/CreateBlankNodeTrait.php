@@ -36,7 +36,8 @@ use rdfInterface\DataFactoryInterface as iDataFactory;
  */
 trait CreateBlankNodeTrait {
 
-    static private $blankMap = [];
+    /** @var array<string, iBlankNode> */
+    static private array $blankMap = [];
     private string $baseUri  = '';
     private iDataFactory $dataFactory;
 

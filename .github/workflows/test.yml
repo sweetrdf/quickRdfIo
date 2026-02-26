@@ -9,7 +9,7 @@ jobs:
         php: [8.1, 8.2, 8.3, 8.4, 8.5]
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@v6
     - uses: shivammathur/setup-php@v2
       with:
         php-version: ${{ matrix.php }}
@@ -17,16 +17,19 @@ jobs:
         coverage: xdebug
       env:
         fail-fast: true
-    - uses: actions/cache@v4
+    - uses: actions/cache@v5
       with: 
         path: vendor
         key: ${{ runner.os }}-composer-${{ hashFiles('**/composer.lock') }}
         restore-keys: ${{ runner.os }}-${{ matrix.php }}-composer-
     - name: composer
       run: composer update
+    - name: phpstan
+      run: vendor/bin/phpstan analyze -l 4 src
     - name: phpunit
       run: XDEBUG_MODE=coverage vendor/bin/phpunit
     - name: coveralls
+      if: ${{ matrix.php == 8.5 }}
       run: |
         export COVERALLS_RUN_LOCALLY=1
         export COVERALLS_REPO_TOKEN=${{ secrets.coverallsToken }}
@@ -34,11 +37,11 @@ jobs:
   phpstan:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@v6
     - uses: shivammathur/setup-php@v2
       with:
-        php-version: 8.4
-    - uses: actions/cache@v4
+        php-version: 8.5
+    - uses: actions/cache@v5
       with: 
         path: vendor
         key: ${{ runner.os }}-composer-${{ hashFiles('**/composer.lock') }}

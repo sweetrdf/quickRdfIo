@@ -60,7 +60,7 @@ class NQuadsSerializer implements \rdfInterface\SerializerInterface {
         }
 
         $graph = $quad->getGraph();
-        if ($graph !== null && !($graph instanceof iDefaultGraph)) {
+        if ($graph instanceof iDefaultGraph) {
             $graph = NtriplesUtil::serializeIri($graph);
         } else {
             $graph = '';
