@@ -320,7 +320,6 @@ class NQuadsParser implements iParser, iQuadIterator {
     private function starQuadGenerator(): Generator {
         $n = 0;
         try {
-            /** @phpstan-ignore while.alwaysTrue */
             while (true) {
                 $n++;
                 $this->offset = 0;
