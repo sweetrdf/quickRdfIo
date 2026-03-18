@@ -165,12 +165,6 @@ class RdfXmlParser implements iParser, iQuadIterator {
         $this->baseUriDefault = $baseUri;
     }
 
-    public function __destruct() {
-        if (isset($this->parser)) {
-            xml_parser_free($this->parser);
-        }
-    }
-
     public function setBaseUri(string $baseUri): void {
         $this->baseUriDefault = $baseUri;
     }
