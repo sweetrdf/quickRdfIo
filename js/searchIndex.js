@@ -661,11 +661,6 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/quickRdfIo-RdfXmlParser.html#method___construct"
         },                {
-            "fqsen": "\\quickRdfIo\\RdfXmlParser\u003A\u003A__destruct\u0028\u0029",
-            "name": "__destruct",
-            "summary": "",
-            "url": "classes/quickRdfIo-RdfXmlParser.html#method___destruct"
-        },                {
             "fqsen": "\\quickRdfIo\\RdfXmlParser\u003A\u003AsetBaseUri\u0028\u0029",
             "name": "setBaseUri",
             "summary": "",

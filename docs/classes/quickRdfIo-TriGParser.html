@@ -202,13 +202,13 @@
             <dt class="phpdocumentor-table-of-contents__entry -property -private">
     <a class="" href="classes/quickRdfIo-CreateBlankNodeTrait.html#property_blankMap">$blankMap</a>
     <span>
-                        &nbsp;: mixed            </span>
+                        &nbsp;: array&lt;string, <a href="classes/rdfInterface-BlankNodeInterface.html"><abbr title="\rdfInterface\BlankNodeInterface">BlankNodeInterface</abbr></a>&gt;            </span>
 </dt>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -private">
     <a class="" href="classes/quickRdfIo-StreamSkipBomTrait.html#property_bomUtf8">$bomUtf8</a>
     <span>
-                        &nbsp;: mixed            </span>
+                        &nbsp;: string            </span>
 </dt>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -private">
@@ -232,19 +232,19 @@
             <dt class="phpdocumentor-table-of-contents__entry -property -private">
     <a class="" href="classes/quickRdfIo-StreamSkipBomTrait.html#property_invalidBoms2B">$invalidBoms2B</a>
     <span>
-                        &nbsp;: mixed            </span>
+                        &nbsp;: array&lt;string, string&gt;            </span>
 </dt>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -private">
     <a class="" href="classes/quickRdfIo-StreamSkipBomTrait.html#property_invalidBoms3B">$invalidBoms3B</a>
     <span>
-                        &nbsp;: mixed            </span>
+                        &nbsp;: array&lt;string, string&gt;            </span>
 </dt>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -private">
     <a class="" href="classes/quickRdfIo-StreamSkipBomTrait.html#property_invalidBoms4B">$invalidBoms4B</a>
     <span>
-                        &nbsp;: mixed            </span>
+                        &nbsp;: array&lt;string, string&gt;            </span>
 </dt>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -private">
@@ -430,7 +430,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/CreateBlankNodeTrait.php"><a href="files/src-quickrdfio-createblanknodetrait.html"><abbr title="src/quickRdfIo/CreateBlankNodeTrait.php">CreateBlankNodeTrait.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">40</span>
+    <span class="phpdocumentor-element-found-in__line">41</span>
 
     </aside>
 
@@ -467,7 +467,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/CreateBlankNodeTrait.php"><a href="files/src-quickrdfio-createblanknodetrait.html"><abbr title="src/quickRdfIo/CreateBlankNodeTrait.php">CreateBlankNodeTrait.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">39</span>
+    <span class="phpdocumentor-element-found-in__line">40</span>
 
     </aside>
 
@@ -475,7 +475,7 @@
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
         <span class="phpdocumentor-signature__visibility">private</span>
-        <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__type">mixed</span>
+        <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__type">array&lt;string, <a href="classes/rdfInterface-BlankNodeInterface.html"><abbr title="\rdfInterface\BlankNodeInterface">BlankNodeInterface</abbr></a>&gt;</span>
     <span class="phpdocumentor-signature__name">$blankMap</span>
      = <span class="phpdocumentor-signature__default-value">[]</span></code>
 
@@ -504,7 +504,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/StreamSkipBomTrait.php"><a href="files/src-quickrdfio-streamskipbomtrait.html"><abbr title="src/quickRdfIo/StreamSkipBomTrait.php">StreamSkipBomTrait.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">54</span>
+    <span class="phpdocumentor-element-found-in__line">57</span>
 
     </aside>
 
@@ -512,7 +512,7 @@
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
         <span class="phpdocumentor-signature__visibility">private</span>
-            <span class="phpdocumentor-signature__type">mixed</span>
+            <span class="phpdocumentor-signature__type">string</span>
     <span class="phpdocumentor-signature__name">$bomUtf8</span>
      = <span class="phpdocumentor-signature__default-value">&quot;﻿&quot;</span></code>
 
@@ -652,7 +652,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/StreamSkipBomTrait.php"><a href="files/src-quickrdfio-streamskipbomtrait.html"><abbr title="src/quickRdfIo/StreamSkipBomTrait.php">StreamSkipBomTrait.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">38</span>
+    <span class="phpdocumentor-element-found-in__line">39</span>
 
     </aside>
 
@@ -660,7 +660,7 @@
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
         <span class="phpdocumentor-signature__visibility">private</span>
-            <span class="phpdocumentor-signature__type">mixed</span>
+            <span class="phpdocumentor-signature__type">array&lt;string, string&gt;</span>
     <span class="phpdocumentor-signature__name">$invalidBoms2B</span>
      = <span class="phpdocumentor-signature__default-value">[&quot;\xef\xff&quot; =&gt; &quot;UTF-16 BE&quot;, &quot;\xff\xfe&quot; =&gt; &quot;UTF-16 LE&quot;]</span></code>
 
@@ -689,7 +689,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/StreamSkipBomTrait.php"><a href="files/src-quickrdfio-streamskipbomtrait.html"><abbr title="src/quickRdfIo/StreamSkipBomTrait.php">StreamSkipBomTrait.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">42</span>
+    <span class="phpdocumentor-element-found-in__line">44</span>
 
     </aside>
 
@@ -697,7 +697,7 @@
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
         <span class="phpdocumentor-signature__visibility">private</span>
-            <span class="phpdocumentor-signature__type">mixed</span>
+            <span class="phpdocumentor-signature__type">array&lt;string, string&gt;</span>
     <span class="phpdocumentor-signature__name">$invalidBoms3B</span>
      = <span class="phpdocumentor-signature__default-value">[&quot;+/v&quot; =&gt; &quot;UTF-7&quot;, &quot;\xf7dL&quot; =&gt; &quot;UTF-1&quot;, &quot;\x0e\xfe\xff&quot; =&gt; &quot;SCSU&quot;, &quot;\xfb\xee(&quot; =&gt; &quot;BOCU-1&quot;]</span></code>
 
@@ -726,7 +726,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/StreamSkipBomTrait.php"><a href="files/src-quickrdfio-streamskipbomtrait.html"><abbr title="src/quickRdfIo/StreamSkipBomTrait.php">StreamSkipBomTrait.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">48</span>
+    <span class="phpdocumentor-element-found-in__line">51</span>
 
     </aside>
 
@@ -734,7 +734,7 @@
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
         <span class="phpdocumentor-signature__visibility">private</span>
-            <span class="phpdocumentor-signature__type">mixed</span>
+            <span class="phpdocumentor-signature__type">array&lt;string, string&gt;</span>
     <span class="phpdocumentor-signature__name">$invalidBoms4B</span>
      = <span class="phpdocumentor-signature__default-value">[&quot;\x00\x00\xfe\xff&quot; =&gt; &quot;UTF-32 BE&quot;, &quot;\xff\xfe\x00\x00&quot; =&gt; &quot;UTF-32 LE&quot;, &quot;\xddsfs&quot; =&gt; &quot;UTF-EBCDIC&quot;, &quot;\x841\x953&quot; =&gt; &quot;GB18030&quot;]</span></code>
 
@@ -1105,7 +1105,7 @@ to be passed to the pietercolpaert\hardf\TriGParser constructor</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/CreateBlankNodeTrait.php"><a href="files/src-quickrdfio-createblanknodetrait.html"><abbr title="src/quickRdfIo/CreateBlankNodeTrait.php">CreateBlankNodeTrait.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">43</span>
+    <span class="phpdocumentor-element-found-in__line">44</span>
 
     </aside>
 
@@ -1479,7 +1479,7 @@ document (see also the <code class="prettyprint">BLANK_NODES_PRESERVE</code> con
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/StreamSkipBomTrait.php"><a href="files/src-quickrdfio-streamskipbomtrait.html"><abbr title="src/quickRdfIo/StreamSkipBomTrait.php">StreamSkipBomTrait.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">56</span>
+    <span class="phpdocumentor-element-found-in__line">59</span>
 
     </aside>
 
