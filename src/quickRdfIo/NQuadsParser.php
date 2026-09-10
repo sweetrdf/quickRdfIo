@@ -29,11 +29,13 @@ namespace quickRdfIo;
 use Generator;
 use SplQueue;
 use LogicException;
+use BadMethodCallException;
 use Psr\Http\Message\StreamInterface;
 use rdfInterface\QuadIteratorInterface as iQuadIterator;
 use rdfInterface\ParserInterface as iParser;
 use rdfInterface\QuadInterface as iQuad;
 use rdfInterface\DataFactoryInterface as iDataFactory;
+use rdfInterface\DatasetIteratorInterface as iDatasetIterator;
 
 /**
  * Parses only n-quads and n-triples but does it fast (thanks to parsing in chunks
@@ -221,6 +223,14 @@ class NQuadsParser implements iParser, iQuadIterator {
             $this->baseUri = $baseUri;
         }
         return $this;
+    }
+
+    public function parseMessages(string $input, string $baseUri = ''): iDatasetIterator {
+        throw new BadMethodCallException();
+    }
+
+    public function parseMessagesStream($input, string $baseUri = ''): iDatasetIterator {
+        throw new BadMethodCallException();
     }
 
     public function current(): iQuad {

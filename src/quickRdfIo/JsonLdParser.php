@@ -26,6 +26,7 @@
 
 namespace quickRdfIo;
 
+use BadMethodCallException;
 use Psr\Http\Message\StreamInterface;
 use ML\IRI\IRI;
 use ML\JsonLD\JsonLD;
@@ -36,6 +37,7 @@ use rdfInterface\QuadIteratorInterface as iQuadIterator;
 use rdfInterface\ParserInterface as iParser;
 use rdfInterface\QuadInterface as iQuad;
 use rdfInterface\DataFactoryInterface as iDataFactory;
+use rdfInterface\DatasetIteratorInterface as iDatasetIterator;
 
 /**
  * Thin wrapper providing RdfInterface\Parser API for JSON-LD the parser
@@ -133,6 +135,14 @@ class JsonLdParser implements iParser, iQuadIterator {
     public function parseStream($input, string $baseUri = ''): iQuadIterator {
         $input = is_resource($input) ? stream_get_contents($input) : $input->getContents();
         return $this->parse($input ?: '', $baseUri);
+    }
+
+    public function parseMessages(string $input, string $baseUri = ''): iDatasetIterator {
+        throw new BadMethodCallException();
+    }
+
+    public function parseMessagesStream($input, string $baseUri = ''): iDatasetIterator {
+        throw new BadMethodCallException();
     }
 
     public function rewind(): void {

@@ -27,6 +27,7 @@
 namespace quickRdfIo;
 
 use XmlParser;
+use BadMethodCallException;
 use Psr\Http\Message\StreamInterface;
 use rdfInterface\QuadIteratorInterface as iQuadIterator;
 use rdfInterface\ParserInterface as iParser;
@@ -34,6 +35,7 @@ use rdfInterface\QuadInterface as iQuad;
 use rdfInterface\DataFactoryInterface as iDataFactory;
 use rdfInterface\BlankNodeInterface as iBlankNode;
 use rdfInterface\NamedNodeInterface as iNamedNode;
+use rdfInterface\DatasetIteratorInterface as iDatasetIterator;
 use zozlak\RdfConstants as RDF;
 
 class RdfXmlParserState {
@@ -210,6 +212,14 @@ class RdfXmlParser implements iParser, iQuadIterator {
             $this->baseUriDefault = $baseUri;
         }
         return $this;
+    }
+
+    public function parseMessages(string $input, string $baseUri = ''): iDatasetIterator {
+        throw new BadMethodCallException("There is nor RDF-XML serialization of RDF Messages");
+    }
+
+    public function parseMessagesStream($input, string $baseUri = ''): iDatasetIterator {
+        throw new BadMethodCallException("There is nor RDF-XML serialization of RDF Messages");
     }
 
     public function rewind(): void {

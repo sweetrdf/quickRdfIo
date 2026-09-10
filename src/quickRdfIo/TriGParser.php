@@ -27,6 +27,7 @@
 namespace quickRdfIo;
 
 use ArrayIterator;
+use BadMethodCallException;
 use Psr\Http\Message\StreamInterface;
 use pietercolpaert\hardf\Util;
 use pietercolpaert\hardf\TriGParser as Parser;
@@ -34,6 +35,7 @@ use rdfInterface\QuadIteratorInterface as iQuadIterator;
 use rdfInterface\ParserInterface as iParser;
 use rdfInterface\QuadInterface as iQuad;
 use rdfInterface\DataFactoryInterface as iDataFactory;
+use rdfInterface\DatasetIteratorInterface as iDatasetIterator;
 
 /**
  * Description of Parser
@@ -113,6 +115,14 @@ class TriGParser implements iParser, iQuadIterator {
         $this->parser      = new Parser($this->options, null, $this->prefixCallback);
         $this->baseUri     = $baseUri;
         return $this;
+    }
+
+    public function parseMessages(string $input, string $baseUri = ''): iDatasetIterator {
+        throw new BadMethodCallException();
+    }
+
+    public function parseMessagesStream($input, string $baseUri = ''): iDatasetIterator {
+        throw new BadMethodCallException();
     }
 
     public function current(): iQuad {
