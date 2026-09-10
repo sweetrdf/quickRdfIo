@@ -66,6 +66,16 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/quickRdfIo-JsonLdParser.html#method_parseStream"
         },                {
+            "fqsen": "\\quickRdfIo\\JsonLdParser\u003A\u003AparseMessages\u0028\u0029",
+            "name": "parseMessages",
+            "summary": "",
+            "url": "classes/quickRdfIo-JsonLdParser.html#method_parseMessages"
+        },                {
+            "fqsen": "\\quickRdfIo\\JsonLdParser\u003A\u003AparseMessagesStream\u0028\u0029",
+            "name": "parseMessagesStream",
+            "summary": "",
+            "url": "classes/quickRdfIo-JsonLdParser.html#method_parseMessagesStream"
+        },                {
             "fqsen": "\\quickRdfIo\\JsonLdParser\u003A\u003Arewind\u0028\u0029",
             "name": "rewind",
             "summary": "",
@@ -275,6 +285,16 @@ Search.appendIndex(
             "name": "parseStream",
             "summary": "",
             "url": "classes/quickRdfIo-NQuadsParser.html#method_parseStream"
+        },                {
+            "fqsen": "\\quickRdfIo\\NQuadsParser\u003A\u003AparseMessages\u0028\u0029",
+            "name": "parseMessages",
+            "summary": "",
+            "url": "classes/quickRdfIo-NQuadsParser.html#method_parseMessages"
+        },                {
+            "fqsen": "\\quickRdfIo\\NQuadsParser\u003A\u003AparseMessagesStream\u0028\u0029",
+            "name": "parseMessagesStream",
+            "summary": "",
+            "url": "classes/quickRdfIo-NQuadsParser.html#method_parseMessagesStream"
         },                {
             "fqsen": "\\quickRdfIo\\NQuadsParser\u003A\u003Acurrent\u0028\u0029",
             "name": "current",
@@ -685,6 +705,16 @@ Search.appendIndex(
             "name": "parseStream",
             "summary": "",
             "url": "classes/quickRdfIo-RdfXmlParser.html#method_parseStream"
+        },                {
+            "fqsen": "\\quickRdfIo\\RdfXmlParser\u003A\u003AparseMessages\u0028\u0029",
+            "name": "parseMessages",
+            "summary": "",
+            "url": "classes/quickRdfIo-RdfXmlParser.html#method_parseMessages"
+        },                {
+            "fqsen": "\\quickRdfIo\\RdfXmlParser\u003A\u003AparseMessagesStream\u0028\u0029",
+            "name": "parseMessagesStream",
+            "summary": "",
+            "url": "classes/quickRdfIo-RdfXmlParser.html#method_parseMessagesStream"
         },                {
             "fqsen": "\\quickRdfIo\\RdfXmlParser\u003A\u003Arewind\u0028\u0029",
             "name": "rewind",
@@ -1125,6 +1155,16 @@ Search.appendIndex(
             "name": "parseStream",
             "summary": "",
             "url": "classes/quickRdfIo-TriGParser.html#method_parseStream"
+        },                {
+            "fqsen": "\\quickRdfIo\\TriGParser\u003A\u003AparseMessages\u0028\u0029",
+            "name": "parseMessages",
+            "summary": "",
+            "url": "classes/quickRdfIo-TriGParser.html#method_parseMessages"
+        },                {
+            "fqsen": "\\quickRdfIo\\TriGParser\u003A\u003AparseMessagesStream\u0028\u0029",
+            "name": "parseMessagesStream",
+            "summary": "",
+            "url": "classes/quickRdfIo-TriGParser.html#method_parseMessagesStream"
         },                {
             "fqsen": "\\quickRdfIo\\TriGParser\u003A\u003Acurrent\u0028\u0029",
             "name": "current",
@@ -1791,6 +1831,16 @@ Search.appendIndex(
             "summary": "Returns\u0020result\u0020of\u0020calling\u0020the\u0020getValue\u0028\u0029\u0020method\u0020on\u0020a\u0020subject\u0020of\u0020a\u0020first\u0020quad\u0020matching\u0020a\u0020given\u0020filter\u0020or\u0020null\u0020if\u0020no\u0020quad\u0020matches\u0020the\u0020filter.",
             "url": "classes/rdfInterface-DatasetInterface.html#method_getGraphValue"
         },                {
+            "fqsen": "\\rdfInterface\\DatasetIteratorInterface",
+            "name": "DatasetIteratorInterface",
+            "summary": "",
+            "url": "classes/rdfInterface-DatasetIteratorInterface.html"
+        },                {
+            "fqsen": "\\rdfInterface\\DatasetIteratorInterface\u003A\u003Acurrent\u0028\u0029",
+            "name": "current",
+            "summary": "",
+            "url": "classes/rdfInterface-DatasetIteratorInterface.html#method_current"
+        },                {
             "fqsen": "\\rdfInterface\\DatasetNodeInterface",
             "name": "DatasetNodeInterface",
             "summary": "Node\u002Doriented\u0020graph\u0020API\u0020interface.",
@@ -2065,6 +2115,16 @@ Search.appendIndex(
             "name": "parseStream",
             "summary": "",
             "url": "classes/rdfInterface-ParserInterface.html#method_parseStream"
+        },                {
+            "fqsen": "\\rdfInterface\\ParserInterface\u003A\u003AparseMessages\u0028\u0029",
+            "name": "parseMessages",
+            "summary": "",
+            "url": "classes/rdfInterface-ParserInterface.html#method_parseMessages"
+        },                {
+            "fqsen": "\\rdfInterface\\ParserInterface\u003A\u003AparseMessagesStream\u0028\u0029",
+            "name": "parseMessagesStream",
+            "summary": "",
+            "url": "classes/rdfInterface-ParserInterface.html#method_parseMessagesStream"
         },                {
             "fqsen": "\\rdfInterface\\ParserInterface\u003A\u003ABLANK_NODES_PRESERVE",
             "name": "BLANK_NODES_PRESERVE",
