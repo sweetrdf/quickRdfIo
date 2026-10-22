@@ -1121,6 +1121,11 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/quickRdfIo-TmpStreamParserTrait.html#method_closeTmpStream"
         },                {
+            "fqsen": "\\quickRdfIo\\TmpStreamParserTrait\u003A\u003AinitTmpStream\u0028\u0029",
+            "name": "initTmpStream",
+            "summary": "",
+            "url": "classes/quickRdfIo-TmpStreamParserTrait.html#method_initTmpStream"
+        },                {
             "fqsen": "\\quickRdfIo\\TmpStreamParserTrait\u003A\u003A\u0024tmpStream",
             "name": "tmpStream",
             "summary": "",
@@ -1135,6 +1140,56 @@ Search.appendIndex(
             "name": "serialize",
             "summary": "",
             "url": "classes/quickRdfIo-TmpStreamSerializerTrait.html#method_serialize"
+        },                {
+            "fqsen": "\\quickRdfIo\\TriGMessageIterator",
+            "name": "TriGMessageIterator",
+            "summary": "Wrapper\u0020over\u0020the\u0020TriGParser\u0020class\u0020implementing\u0020the\u0020DatasetIteratorInterface",
+            "url": "classes/quickRdfIo-TriGMessageIterator.html"
+        },                {
+            "fqsen": "\\quickRdfIo\\TriGMessageIterator\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "",
+            "url": "classes/quickRdfIo-TriGMessageIterator.html#method___construct"
+        },                {
+            "fqsen": "\\quickRdfIo\\TriGMessageIterator\u003A\u003Acurrent\u0028\u0029",
+            "name": "current",
+            "summary": "",
+            "url": "classes/quickRdfIo-TriGMessageIterator.html#method_current"
+        },                {
+            "fqsen": "\\quickRdfIo\\TriGMessageIterator\u003A\u003Akey\u0028\u0029",
+            "name": "key",
+            "summary": "",
+            "url": "classes/quickRdfIo-TriGMessageIterator.html#method_key"
+        },                {
+            "fqsen": "\\quickRdfIo\\TriGMessageIterator\u003A\u003Anext\u0028\u0029",
+            "name": "next",
+            "summary": "",
+            "url": "classes/quickRdfIo-TriGMessageIterator.html#method_next"
+        },                {
+            "fqsen": "\\quickRdfIo\\TriGMessageIterator\u003A\u003Arewind\u0028\u0029",
+            "name": "rewind",
+            "summary": "",
+            "url": "classes/quickRdfIo-TriGMessageIterator.html#method_rewind"
+        },                {
+            "fqsen": "\\quickRdfIo\\TriGMessageIterator\u003A\u003Avalid\u0028\u0029",
+            "name": "valid",
+            "summary": "",
+            "url": "classes/quickRdfIo-TriGMessageIterator.html#method_valid"
+        },                {
+            "fqsen": "\\quickRdfIo\\TriGMessageIterator\u003A\u003A\u0024parser",
+            "name": "parser",
+            "summary": "",
+            "url": "classes/quickRdfIo-TriGMessageIterator.html#property_parser"
+        },                {
+            "fqsen": "\\quickRdfIo\\TriGMessageIterator\u003A\u003A\u0024message",
+            "name": "message",
+            "summary": "",
+            "url": "classes/quickRdfIo-TriGMessageIterator.html#property_message"
+        },                {
+            "fqsen": "\\quickRdfIo\\TriGMessageIterator\u003A\u003A\u0024n",
+            "name": "n",
+            "summary": "",
+            "url": "classes/quickRdfIo-TriGMessageIterator.html#property_n"
         },                {
             "fqsen": "\\quickRdfIo\\TriGParser",
             "name": "TriGParser",
@@ -1191,6 +1246,16 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/quickRdfIo-TriGParser.html#method_valid"
         },                {
+            "fqsen": "\\quickRdfIo\\TriGParser\u003A\u003AgetMessageCounter\u0028\u0029",
+            "name": "getMessageCounter",
+            "summary": "",
+            "url": "classes/quickRdfIo-TriGParser.html#method_getMessageCounter"
+        },                {
+            "fqsen": "\\quickRdfIo\\TriGParser\u003A\u003Ainit\u0028\u0029",
+            "name": "init",
+            "summary": "",
+            "url": "classes/quickRdfIo-TriGParser.html#method_init"
+        },                {
             "fqsen": "\\quickRdfIo\\TriGParser\u003A\u003ACHUNK_SIZE",
             "name": "CHUNK_SIZE",
             "summary": "",
@@ -1223,7 +1288,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\quickRdfIo\\TriGParser\u003A\u003A\u0024quadsBuffer",
             "name": "quadsBuffer",
-            "summary": "",
+            "summary": "Container\u0020for\u0020\u007Bquad,\u0020messageCounter\u007D\u0020pairs",
             "url": "classes/quickRdfIo-TriGParser.html#property_quadsBuffer"
         },                {
             "fqsen": "\\quickRdfIo\\TriGParser\u003A\u003A\u0024n",

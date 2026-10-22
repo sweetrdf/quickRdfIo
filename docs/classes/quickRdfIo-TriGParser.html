@@ -276,8 +276,9 @@
             <dt class="phpdocumentor-table-of-contents__entry -property -private">
     <a class="" href="classes/quickRdfIo-TriGParser.html#property_quadsBuffer">$quadsBuffer</a>
     <span>
-                        &nbsp;: <abbr title="\ArrayIterator">ArrayIterator</abbr>&lt;int, <a href="classes/rdfInterface-QuadInterface.html"><abbr title="\rdfInterface\QuadInterface">QuadInterface</abbr></a>&gt;            </span>
+                        &nbsp;: <abbr title="\ArrayIterator">ArrayIterator</abbr>&lt;string|int, <abbr title="array{0: \rdfInterface\QuadInterface, 1: int|null}">QuadInterface, 1: int|null}</abbr>&gt;            </span>
 </dt>
+<dd>Container for {quad, messageCounter} pairs</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -private">
     <a class="" href="classes/quickRdfIo-TmpStreamParserTrait.html#property_tmpStream">$tmpStream</a>
@@ -314,7 +315,13 @@
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a class="" href="classes/quickRdfIo-TriGParser.html#method_current">current()</a>
     <span>
-                                &nbsp;: <a href="classes/rdfInterface-QuadInterface.html"><abbr title="\rdfInterface\QuadInterface">QuadInterface</abbr></a>    </span>
+                                &nbsp;: <a href="classes/rdfInterface-QuadInterface.html"><abbr title="\rdfInterface\QuadInterface">QuadInterface</abbr></a>|null    </span>
+</dt>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a class="" href="classes/quickRdfIo-TriGParser.html#method_getMessageCounter">getMessageCounter()</a>
+    <span>
+                                &nbsp;: int|null    </span>
 </dt>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
@@ -367,6 +374,18 @@
 
             <dt class="phpdocumentor-table-of-contents__entry -method -private">
     <a class="" href="classes/quickRdfIo-TmpStreamParserTrait.html#method_closeTmpStream">closeTmpStream()</a>
+    <span>
+                                &nbsp;: void    </span>
+</dt>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -private">
+    <a class="" href="classes/quickRdfIo-TriGParser.html#method_init">init()</a>
+    <span>
+                                &nbsp;: void    </span>
+</dt>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -private">
+    <a class="" href="classes/quickRdfIo-TmpStreamParserTrait.html#method_initTmpStream">initTmpStream()</a>
     <span>
                                 &nbsp;: void    </span>
 </dt>
@@ -929,11 +948,12 @@
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Container for {quad, messageCounter} pairs</p>
+
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
         <span class="phpdocumentor-signature__visibility">private</span>
-            <span class="phpdocumentor-signature__type"><abbr title="\ArrayIterator">ArrayIterator</abbr>&lt;int, <a href="classes/rdfInterface-QuadInterface.html"><abbr title="\rdfInterface\QuadInterface">QuadInterface</abbr></a>&gt;</span>
+            <span class="phpdocumentor-signature__type"><abbr title="\ArrayIterator">ArrayIterator</abbr>&lt;string|int, <abbr title="array{0: \rdfInterface\QuadInterface, 1: int|null}">QuadInterface, 1: int|null}</abbr>&gt;</span>
     <span class="phpdocumentor-signature__name">$quadsBuffer</span>
     </code>
 
@@ -1084,7 +1104,7 @@ to be passed to the pietercolpaert\hardf\TriGParser constructor</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/TriGParser.php"><a href="files/src-quickrdfio-trigparser.html"><abbr title="src/quickRdfIo/TriGParser.php">TriGParser.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">94</span>
+    <span class="phpdocumentor-element-found-in__line">95</span>
 
     </aside>
 
@@ -1166,14 +1186,14 @@ to be passed to the pietercolpaert\hardf\TriGParser constructor</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/TriGParser.php"><a href="files/src-quickrdfio-trigparser.html"><abbr title="src/quickRdfIo/TriGParser.php">TriGParser.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">128</span>
+    <span class="phpdocumentor-element-found-in__line">119</span>
 
     </aside>
 
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">current</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/rdfInterface-QuadInterface.html"><abbr title="\rdfInterface\QuadInterface">QuadInterface</abbr></a></span></code>
+                    <span class="phpdocumentor-signature__name">current</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/rdfInterface-QuadInterface.html"><abbr title="\rdfInterface\QuadInterface">QuadInterface</abbr></a>|null</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -1186,7 +1206,45 @@ to be passed to the pietercolpaert\hardf\TriGParser constructor</p>
     
             <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-        <span class="phpdocumentor-signature__response_type"><a href="classes/rdfInterface-QuadInterface.html"><abbr title="\rdfInterface\QuadInterface">QuadInterface</abbr></a></span>
+        <span class="phpdocumentor-signature__response_type"><a href="classes/rdfInterface-QuadInterface.html"><abbr title="\rdfInterface\QuadInterface">QuadInterface</abbr></a>|null</span>
+            </section>
+
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_getMessageCounter">
+        getMessageCounter()
+        <a href="classes/quickRdfIo-TriGParser.html#method_getMessageCounter" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/TriGParser.php"><a href="files/src-quickrdfio-trigparser.html"><abbr title="src/quickRdfIo/TriGParser.php">TriGParser.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">200</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">getMessageCounter</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">int|null</span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+    
+    
+    
+    
+
+        
+    
+            <section>
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type">int|null</span>
             </section>
 
 </article>
@@ -1204,7 +1262,7 @@ to be passed to the pietercolpaert\hardf\TriGParser constructor</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/TriGParser.php"><a href="files/src-quickrdfio-trigparser.html"><abbr title="src/quickRdfIo/TriGParser.php">TriGParser.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">132</span>
+    <span class="phpdocumentor-element-found-in__line">123</span>
 
     </aside>
 
@@ -1238,7 +1296,7 @@ to be passed to the pietercolpaert\hardf\TriGParser constructor</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/TriGParser.php"><a href="files/src-quickrdfio-trigparser.html"><abbr title="src/quickRdfIo/TriGParser.php">TriGParser.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">136</span>
+    <span class="phpdocumentor-element-found-in__line">127</span>
 
     </aside>
 
@@ -1327,7 +1385,7 @@ to be passed to the pietercolpaert\hardf\TriGParser constructor</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/TriGParser.php"><a href="files/src-quickrdfio-trigparser.html"><abbr title="src/quickRdfIo/TriGParser.php">TriGParser.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">120</span>
+    <span class="phpdocumentor-element-found-in__line">109</span>
 
     </aside>
 
@@ -1386,7 +1444,7 @@ document (see also the <code class="prettyprint">BLANK_NODES_PRESERVE</code> con
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/TriGParser.php"><a href="files/src-quickrdfio-trigparser.html"><abbr title="src/quickRdfIo/TriGParser.php">TriGParser.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">124</span>
+    <span class="phpdocumentor-element-found-in__line">114</span>
 
     </aside>
 
@@ -1445,7 +1503,7 @@ document (see also the <code class="prettyprint">BLANK_NODES_PRESERVE</code> con
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/TriGParser.php"><a href="files/src-quickrdfio-trigparser.html"><abbr title="src/quickRdfIo/TriGParser.php">TriGParser.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">103</span>
+    <span class="phpdocumentor-element-found-in__line">104</span>
 
     </aside>
 
@@ -1504,7 +1562,7 @@ document (see also the <code class="prettyprint">BLANK_NODES_PRESERVE</code> con
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/TriGParser.php"><a href="files/src-quickrdfio-trigparser.html"><abbr title="src/quickRdfIo/TriGParser.php">TriGParser.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">192</span>
+    <span class="phpdocumentor-element-found-in__line">187</span>
 
     </aside>
 
@@ -1538,7 +1596,7 @@ document (see also the <code class="prettyprint">BLANK_NODES_PRESERVE</code> con
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/TriGParser.php"><a href="files/src-quickrdfio-trigparser.html"><abbr title="src/quickRdfIo/TriGParser.php">TriGParser.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">201</span>
+    <span class="phpdocumentor-element-found-in__line">196</span>
 
     </aside>
 
@@ -1576,7 +1634,7 @@ document (see also the <code class="prettyprint">BLANK_NODES_PRESERVE</code> con
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/TmpStreamParserTrait.php"><a href="files/src-quickrdfio-tmpstreamparsertrait.html"><abbr title="src/quickRdfIo/TmpStreamParserTrait.php">TmpStreamParserTrait.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">56</span>
+    <span class="phpdocumentor-element-found-in__line">49</span>
 
     </aside>
 
@@ -1590,6 +1648,101 @@ document (see also the <code class="prettyprint">BLANK_NODES_PRESERVE</code> con
     
     
     
+    
+
+        
+    
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -private
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_init">
+        init()
+        <a href="classes/quickRdfIo-TriGParser.html#method_init" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/TriGParser.php"><a href="files/src-quickrdfio-trigparser.html"><abbr title="src/quickRdfIo/TriGParser.php">TriGParser.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">207</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+                    <span class="phpdocumentor-signature__name">init</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">resource|<abbr title="\Psr\Http\Message\StreamInterface">StreamInterface</abbr>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$input</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$baseUri</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+    
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-argument-list__argument__name">$input</span>
+                : <span class="phpdocumentor-argument-list__argument__type">resource|<abbr title="\Psr\Http\Message\StreamInterface">StreamInterface</abbr></span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-argument-list__argument__name">$baseUri</span>
+                : <span class="phpdocumentor-argument-list__argument__type">string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+            </dl>
+
+    
+
+        
+    
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -private
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_initTmpStream">
+        initTmpStream()
+        <a href="classes/quickRdfIo-TmpStreamParserTrait.html#method_initTmpStream" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/quickRdfIo/TmpStreamParserTrait.php"><a href="files/src-quickrdfio-tmpstreamparsertrait.html"><abbr title="src/quickRdfIo/TmpStreamParserTrait.php">TmpStreamParserTrait.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">56</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+                    <span class="phpdocumentor-signature__name">initTmpStream</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$input</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+    
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-argument-list__argument__name">$input</span>
+                : <span class="phpdocumentor-argument-list__argument__type">string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+            </dl>
+
     
 
         
@@ -1694,6 +1847,7 @@ document (see also the <code class="prettyprint">BLANK_NODES_PRESERVE</code> con
                                             <li class=""><a href="classes/quickRdfIo-TriGParser.html#method___destruct">__destruct()</a></li>
                                             <li class=""><a href="classes/quickRdfIo-CreateBlankNodeTrait.html#method_createBlankNode">createBlankNode()</a></li>
                                             <li class=""><a href="classes/quickRdfIo-TriGParser.html#method_current">current()</a></li>
+                                            <li class=""><a href="classes/quickRdfIo-TriGParser.html#method_getMessageCounter">getMessageCounter()</a></li>
                                             <li class=""><a href="classes/quickRdfIo-TriGParser.html#method_key">key()</a></li>
                                             <li class=""><a href="classes/quickRdfIo-TriGParser.html#method_next">next()</a></li>
                                             <li class=""><a href="classes/quickRdfIo-TmpStreamParserTrait.html#method_parse">parse()</a></li>
@@ -1703,6 +1857,8 @@ document (see also the <code class="prettyprint">BLANK_NODES_PRESERVE</code> con
                                             <li class=""><a href="classes/quickRdfIo-TriGParser.html#method_rewind">rewind()</a></li>
                                             <li class=""><a href="classes/quickRdfIo-TriGParser.html#method_valid">valid()</a></li>
                                             <li class=""><a href="classes/quickRdfIo-TmpStreamParserTrait.html#method_closeTmpStream">closeTmpStream()</a></li>
+                                            <li class=""><a href="classes/quickRdfIo-TriGParser.html#method_init">init()</a></li>
+                                            <li class=""><a href="classes/quickRdfIo-TmpStreamParserTrait.html#method_initTmpStream">initTmpStream()</a></li>
                                             <li class=""><a href="classes/quickRdfIo-StreamSkipBomTrait.html#method_skipBom">skipBom()</a></li>
                                     </ul>
             </li>
