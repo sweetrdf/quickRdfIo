@@ -28,6 +28,12 @@ Originally developed for the [quickRdf](https://github.com/sweetrdf/quickRdf) li
 [2] Use the `jsonld-stream` value for the `$format` parameter of the `\quickRdfIo\Util::serialize()` to use this serializer.  
 [3] Outputs data only in the extremely flattened Json-LD but works in a streaming mode.  
 
+### RDF Messages
+
+Currently only parsing and only of `n-triples`, `n-triples*`, `n-quads`, `n-quads*`, `turtle` and `trig` formats is supported.
+
+It is implemented in the `TriGParser` class which is using  [pietercolpaert/hardf](https://github.com/pietercolpaert/hardf) under the hood.
+
 ## Installation
 
 * Obtain the [Composer](https://getcomposer.org)
