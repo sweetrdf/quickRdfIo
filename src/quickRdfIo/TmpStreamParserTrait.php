@@ -42,14 +42,7 @@ trait TmpStreamParserTrait {
     private $tmpStream;
 
     public function parse(string $input, string $baseUri = ''): iQuadIterator {
-        $this->closeTmpStream();
-        $tmp = fopen('php://memory', 'r+');
-        if ($tmp === false) {
-            throw new RdfIoException('Failed to convert input to stream');
-        }
-        $this->tmpStream = $tmp;
-        fwrite($this->tmpStream, $input);
-        rewind($this->tmpStream);
+        $this->initTmpStream($input);
         return $this->parseStream($this->tmpStream, $baseUri);
     }
 
@@ -58,5 +51,16 @@ trait TmpStreamParserTrait {
             fclose($this->tmpStream);
             $this->tmpStream = null;
         }
+    }
+    
+    private function initTmpStream(string $input): void {
+        $this->closeTmpStream();
+        $tmp = fopen('php://memory', 'r+');
+        if ($tmp === false) {
+            throw new RdfIoException('Failed to convert input to stream');
+        }
+        $this->tmpStream = $tmp;
+        fwrite($this->tmpStream, $input);
+        rewind($this->tmpStream);
     }
 }

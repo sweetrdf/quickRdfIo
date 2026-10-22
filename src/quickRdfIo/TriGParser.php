@@ -26,16 +26,16 @@
 
 namespace quickRdfIo;
 
+use Exception;
 use ArrayIterator;
-use BadMethodCallException;
 use Psr\Http\Message\StreamInterface;
 use pietercolpaert\hardf\Util;
 use pietercolpaert\hardf\TriGParser as Parser;
 use rdfInterface\QuadIteratorInterface as iQuadIterator;
 use rdfInterface\ParserInterface as iParser;
 use rdfInterface\QuadInterface as iQuad;
-use rdfInterface\DataFactoryInterface as iDataFactory;
 use rdfInterface\DatasetIteratorInterface as iDatasetIterator;
+use rdfInterface\DataFactoryInterface as iDataFactory;
 
 /**
  * Description of Parser
@@ -62,8 +62,8 @@ class TriGParser implements iParser, iQuadIterator {
     private string $chunk;
 
     /**
-     *
-     * @var ArrayIterator<int, iQuad>
+     * Container for {quad, messageCounter} pairs
+     * @var ArrayIterator<array{0: iQuad, 1: int|null}>
      */
     private ArrayIterator $quadsBuffer;
     private int $n;
@@ -86,9 +86,10 @@ class TriGParser implements iParser, iQuadIterator {
     public function __construct(iDataFactory $dataFactory, array $options = [],
                                 callable | null $prefixCallback = null
     ) {
-        $this->dataFactory    = $dataFactory;
-        $this->options        = $options;
-        $this->prefixCallback = $prefixCallback;
+        $this->dataFactory         = $dataFactory;
+        $this->options             = $options;
+        $this->options['messages'] = true;
+        $this->prefixCallback      = $prefixCallback;
     }
 
     public function __destruct() {
@@ -101,32 +102,22 @@ class TriGParser implements iParser, iQuadIterator {
      * @return iQuadIterator
      */
     public function parseStream($input, string $baseUri = ''): iQuadIterator {
-        if (is_resource($input)) {
-            $input = new ResourceWrapper($input);
-        }
-        if (!($input instanceof StreamInterface)) {
-            throw new RdfIoException("Input has to be a resource or " . StreamInterface::class . " object");
-        }
-
-        $this->input       = $input;
-        $this->n           = -1;
-        $this->chunk       = '';
-        $this->quadsBuffer = new ArrayIterator();
-        $this->parser      = new Parser($this->options, null, $this->prefixCallback);
-        $this->baseUri     = $baseUri;
+        $this->init($input, $baseUri);
         return $this;
     }
 
     public function parseMessages(string $input, string $baseUri = ''): iDatasetIterator {
-        throw new BadMethodCallException();
+        $this->initTmpStream($input);
+        return $this->parseMessagesStream($this->tmpStream, $baseUri);
     }
 
     public function parseMessagesStream($input, string $baseUri = ''): iDatasetIterator {
-        throw new BadMethodCallException();
+        $this->init($input, $baseUri);
+        return new TriGMessageIterator($this);
     }
 
-    public function current(): iQuad {
-        return $this->quadsBuffer->current();
+    public function current(): iQuad | null {
+        return $this->quadsBuffer->current()[0] ?? null;
     }
 
     public function key(): mixed {
@@ -138,7 +129,8 @@ class TriGParser implements iParser, iQuadIterator {
         if (!$this->quadsBuffer->valid()) {
             $this->quadsBuffer = new ArrayIterator();
             $this->parser->setTripleCallback(function (
-                ?\Exception $e, ?array $quad
+                ?Exception $e, ?array $quad, ?array $prefixes = null,
+                ?int $counter = null
             ): void {
                 if ($e) {
                     throw $e;
@@ -160,7 +152,10 @@ class TriGParser implements iParser, iQuadIterator {
                     }
                     $graph               = !empty($quad['graph']) ?
                         $df::namedNode($quad['graph']) : $df::defaultGraph();
-                    $this->quadsBuffer[] = $df::quad($sbj, $prop, $obj, $graph);
+                    $this->quadsBuffer[] = [
+                        $df::quad($sbj, $prop, $obj, $graph),
+                        $counter
+                    ];
                 }
             });
             while (!$this->input->eof() && $this->quadsBuffer->count() === 0) {
@@ -200,5 +195,28 @@ class TriGParser implements iParser, iQuadIterator {
 
     public function valid(): bool {
         return $this->quadsBuffer->valid();
+    }
+
+    public function getMessageCounter(): int | null {
+        return $this->quadsBuffer->current()[1] ?? null;
+    }
+
+    /**
+     * @param resource | \Psr\Http\Message\StreamInterface $input
+     */
+    private function init($input, string $baseUri): void {
+        if (is_resource($input)) {
+            $input = new ResourceWrapper($input);
+        }
+        if (!($input instanceof StreamInterface)) {
+            throw new RdfIoException("Input has to be a resource or " . StreamInterface::class . " object");
+        }
+
+        $this->input       = $input;
+        $this->n           = -1;
+        $this->chunk       = '';
+        $this->quadsBuffer = new ArrayIterator();
+        $this->baseUri     = $baseUri;
+        $this->parser      = new Parser($this->options, null, $this->prefixCallback);
     }
 }

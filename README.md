@@ -95,6 +95,26 @@ $dataset->add(\quickRdfIo\Util::parse($url, $dataFactory));
 echo $dataset;
 ```
 
+#### Parsing RDF Messages
+
+```php
+include 'vendor/autoload.php';
+
+// create a DataFactory - it's needed by all parsers
+// (DataFactory implementation comes from other package, here sweetrdf/quick-rdf)
+$dataFactory = new \quickRdf\DataFactory();
+
+// get the TriGParser - it's the only one capable of parsing RDF Messages
+$parser = \quickRdfIo\Util::getParser('application/trig', $dataFactory);
+// open the input
+$stream = fopen('messagesStreamFile', 'r');
+// parse messages
+foreach($parser->parseMessagesStream($stream) as $dataset) {
+    echo "### MESSAGE:\n" . $dataset;
+}
+fclose($stream);
+```
+
 ### Basic serialization
 
 Just use `\quickRdfIo\Util::serialize($data, $format, $output, $nmsp)`, where: 
