@@ -218,7 +218,7 @@ class Util {
             $input->rewind();
         }
         if ($parser === null) {
-            $parser = self::getParser($format ?? '', $dataFactory, $baseUri);
+            $parser = self::getParser($format, $dataFactory, $baseUri);
         }
         return $parser->parseStream($input, $baseUri ?? '');
     }
